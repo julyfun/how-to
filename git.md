@@ -10,3 +10,7 @@ git push -u origin main
 git config --global core.editor "nvim"
 ```
 
+## git 和远端分支比较
+
+git diff main origin/main
+
