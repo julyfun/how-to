@@ -1,4 +1,7 @@
 ## 使用系统粘贴板
+
+in init.vim:
+
 set clipboard=unnamedplus
 
 ## `~/.config/nvim`
@@ -28,3 +31,18 @@ https://github.com/wbthomason/packer.nvim
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   vim.cmd('colorscheme rose-pine')
 ```
+
+
+## fish 没有高亮
+
+nvim 版本太低
+
+## 如果装了 Packer 以后一进 nvim 就报错
+
+```
+Error detected while processing /home/strife/.local/share/nvim/plugged/nvim-treesitter/plugin/nvim-treesitter.lua:
+E5113: Error while calling lua chunk: .../plugged/nvim-treesitter/lua/nvim-treesitter/configs.lua:104: attempt to call field 'nvim_create_augroup' (a
+nil value)
+```
+
+这是因为 nvim 版本太低
