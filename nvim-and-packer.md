@@ -1,3 +1,6 @@
+## 使用系统粘贴板
+set clipboard=unnamedplus
+
 ## `~/.config/nvim`
 
 nvim
