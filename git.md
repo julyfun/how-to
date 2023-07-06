@@ -14,3 +14,13 @@ git config --global core.editor "nvim"
 
 git diff main origin/main
 
+## 删除远端分支
+
+在网页端删除比较好。
+
+```
+git push origin --delete repo
+git push origin :repo
+```
+
+
