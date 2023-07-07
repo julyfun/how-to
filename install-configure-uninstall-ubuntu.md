@@ -109,6 +109,18 @@ mv clash /usr/local/bin
 
 github 搜 oh-my-fish. 用 curl 下载的。
 
+```
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+```
+
+bass
+
+```
+omf install bass
+omf install l
+```
+
+
 ### neovim
 
 In ~/.config/nvim/init.vim
