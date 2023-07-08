@@ -175,6 +175,8 @@ pip install clang-format
 
 pip install clang-tidy
 
+- error lens
+
 ### cuda
 
 ```

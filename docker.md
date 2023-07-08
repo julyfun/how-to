@@ -10,10 +10,7 @@ in the container:
 
 ```
 apt install openssh-server
-service start ssh
-```
-
-似乎无法连接 root 用户。可以新建一个 sudo 用户
+service ssh start
 
 ```
 useradd nvidia
@@ -31,4 +28,12 @@ usermod -aG sudo nvidia
 然后在左边插件栏目里对 ssh 的容器下载 clangd 插件
 
 新建一个 1.cpp 然后打开这个 cpp，vscode 会提示你下载 clangd-server.
+
+## docker 容器查看 usb 列表
+
+sudo apt install usbutils
+
+lsusb
+
+居然这样就可以捏。
 
