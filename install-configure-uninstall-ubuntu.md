@@ -22,7 +22,7 @@
 
 ```
 sudo apt install konsole
-sudo apt install neovim
+sudo apt install neovim # 这个版本会比较老，之后去 neovim release 下个新的
 sudo apt install git
 sudo apt install curl
 ```
