@@ -51,9 +51,8 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-security main restr
 
 ```
 ssh-keygen -t rsa
+ssh-copy-id username@remote-server
 ```
-
-拷贝到服务器 `authorized_keys` 的文件末尾。呃，好像不同的 ssh key 之间得有空行。
 
 现在可以免密码连接服务器了。
 
