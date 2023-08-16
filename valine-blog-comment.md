@@ -1,0 +1,17 @@
+- leancloud 注册账号创建应用，把域名填入安全域名。
+- valine 的 js 放入 `<head>`
+- 把 leancloud 上的 appid 和 appkey 放入 html body 中的
+
+```html
+          <div id="vcomments"></div>
+          <script>
+            new Valine({
+              el: '#vcomments',
+              appId: 'Jx6fTElQS3cweoHbEj8wyWLt-gzGzoHsz',
+              appKey: '0LI9g0Hq8L8ShGBdxlnPZjdb'
+            })
+          </script>
+```
+
+- 调节它的位置和 css。
+
