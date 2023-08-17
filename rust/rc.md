@@ -27,3 +27,5 @@ fn func(v: &mut Vec<Rc<dyn Output>>) {
 }
 ```
 
+神奇的是，Rc<Type> 可以直接调用 Type 的成员函数，我也不知道为什么。
+
