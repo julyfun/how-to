@@ -23,4 +23,13 @@ git push origin --delete repo
 git push origin :repo
 ```
 
+## Rename a repo
+
+在网页端 settings.
+
+然后
+
+```
+git remote set-url origin git@github.com:someuser/newprojectname.git
+```
 
