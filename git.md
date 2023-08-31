@@ -33,3 +33,11 @@ git push origin :repo
 git remote set-url origin git@github.com:someuser/newprojectname.git
 ```
 
+## 小体积拷贝
+
+```
+git clone --filter=blob:none
+git clone --filter=tree:0
+git clone --depth=1
+```
+
