@@ -31,3 +31,8 @@ gT
 :tabmove 2
 :tabn 3
 ```
+
+## 关闭其他标签
+
+:only!
+
