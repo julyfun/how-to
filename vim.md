@@ -1,3 +1,7 @@
+## 大小写敏感搜索
+
+`\C` 开头
+
 ## Delete parathese () [] {}
 ```
 di[vhp
