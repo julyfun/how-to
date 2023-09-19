@@ -8,3 +8,5 @@
 
 run 了以后是一个 TUI 打钩界面，其中甚至包含 nvidia-smi。一般有 smi 的情况下 smi 不打钩，但是如果没有 smi 就打钩。
 
+23.9.19 以上方法（用 cuda.run 装 nvidia-smi）报错了，要先装 nvidia-smi 再装 cuda.
+
