@@ -2,3 +2,9 @@
 
 直接搜 cuda-toolkit 装。
 
+虽然 nvidia 官方貌似只提供 16.04 的 toolkit.run，然而似乎在 18.04 上也可以直接 run.
+
+那么这个时候你要搜索老版本 ubuntu 上关闭图形界面以后装 nvidia 驱动的方式。为什么要禁用图形界面 + reboot 呢，老夫也不知道。
+
+run 了以后是一个 TUI 打钩界面，其中甚至包含 nvidia-smi。一般有 smi 的情况下 smi 不打钩，但是如果没有 smi 就打钩。
+
