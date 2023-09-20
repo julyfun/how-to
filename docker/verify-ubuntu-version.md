@@ -1,0 +1,2 @@
+cat /etc/lsb-release
+
