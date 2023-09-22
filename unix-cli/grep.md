@@ -4,3 +4,7 @@
 grep -nr <str> <path>
 ```
 
+## Options
+
+- -i: ignore cases
+
