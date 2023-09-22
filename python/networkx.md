@@ -69,3 +69,11 @@ nx.draw_random(G2, with_labels=True, font_weight='bold')
 plt.show()
 ```
 
+## draw in particular position
+
+```py
+G=nx.Graph()
+G.add_edges_from([[1,2],[2,3],[3,1]])
+position={1:[0,2],2:[2,0],3:[0,0]} #dictionnaire où on précise les coordonnées de chacun des sommets
+nx.draw(G,pos=position)
+```
