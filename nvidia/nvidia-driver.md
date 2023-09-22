@@ -21,6 +21,8 @@ Failed to initialize NVML: Driver/library version mismatch
 
 Well you should reboot! as in https://stackoverflow.com/questions/43022843/nvidia-nvml-driver-library-version-mismatch
 
+如果不行，执行下面的东西，你看得懂吧？
+
 https://askubuntu.com/questions/902636/nvidia-smi-command-not-found-ubuntu-16-04
 
 ```
