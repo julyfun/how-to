@@ -14,7 +14,9 @@ run 了以后是一个 TUI 打钩界面，其中甚至包含 nvidia-smi。一般
 
 这次是要把 nvidia-driver 384 换成 nvidia-driver 470. 因为 384 不支持 cuda 9.2.
 
-先下载一个 run
+先 `sudo apt purge nvidia-*`. 它删除了 1G 多的东西，其中看起来还有 cuda-toolkit 相关，只不过后缀有 384 所以我肯定就不要了。
+
+先下载一个驱动.run:
 
 - 搜索: https://www.nvidia.com/en-us/geforce/drivers/
 - 搜索结果: https://www.nvidia.com/en-us/geforce/drivers/results/205995/
