@@ -1,3 +1,5 @@
+Only need to use the default "Python" extension.
+
 Command:
 
 Select Interpreter

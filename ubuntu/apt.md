@@ -6,3 +6,7 @@ The apt-purge removes the package and purges any configuration files associated 
 
 23.9.26: maybe. after tested.
 
+## is apt purge something-* ok?
+
+23.9.26: after tested: for nvidia, maybe. for qt6, that's dangerous.
+
