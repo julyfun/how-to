@@ -1,0 +1,2 @@
+conda clean --all
+
