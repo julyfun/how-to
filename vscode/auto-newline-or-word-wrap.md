@@ -1,0 +1,2 @@
+Settings -> word wrap
+
