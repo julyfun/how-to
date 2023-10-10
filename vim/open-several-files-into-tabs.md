@@ -1,2 +1,4 @@
 :tabe <filename>
 
+:edit <filename>
+
