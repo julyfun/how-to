@@ -10,3 +10,7 @@ call plug#end()
 
 然后在一个 nvim 中运行 :PlugInstall
 
+## 配置文件位置
+
+`$HOME/.local/share/nvim/site/autoload/plug.vim`
+
