@@ -32,3 +32,5 @@ in your init.vim.
 
 It will remember 5j, not one of hjkl.
 
+just kidding, although https://www.vim.org/scripts/script.php?script_id=2174 says so, it doesn't seem to work now.
+
