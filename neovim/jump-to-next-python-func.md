@@ -16,3 +16,7 @@ https://github.com/jeetsukumaran/vim-pythonsense
 :PlugInstall
 ```
 
+## 别装 python-mode 插件
+
+这玩意不好装，有网络问题。
+
