@@ -1,5 +1,7 @@
 docker build . --network=host
 
+https://www.cnblogs.com/freeaihub/p/13206077.html
+
 在 Dockerfile 中这么写：
 
 ```Dockerfile
@@ -17,8 +19,7 @@ environment:
   - MYSQL_PASSWORD=nextcloud
 ```
 
-https://www.cnblogs.com/freeaihub/p/13206077.html
-
+docker-compose up -d
 
 参考一个 xy_cpp 的 Dockerfile
 
