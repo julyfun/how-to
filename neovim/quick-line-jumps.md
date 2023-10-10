@@ -22,6 +22,9 @@ and paste stuffs like
 :noremap <expr> F repmo#ZapKey('F')|sunmap F
 :noremap <expr> t repmo#ZapKey('t')|sunmap t
 :noremap <expr> T repmo#ZapKey('T')|sunmap T
+
+" 只记忆 count jumps
+:let g:repmo_require_count = 1
 ```
 
 in your init.vim.
