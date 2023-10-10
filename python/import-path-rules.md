@@ -20,3 +20,14 @@ print(sys.path, type(sys.path))
 
 该语句后所有的 import （就算 import 文件中的 import 也可以）都会用这个新的 path.
 
+## 注意 import 后不再能文件夹寻址
+
+如果有 plant/apple/eat.py
+
+你可以 import plant.apple.eat.some
+
+但不可以 import plant 之后 
+
+再 a = plant.apple.eat.some()
+
+
