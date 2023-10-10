@@ -26,3 +26,9 @@ and paste stuffs like
 
 in your init.vim.
 
+## Usage
+
+5j;;;;hjkl;;;
+
+It will remember 5j, not one of hjkl.
+
