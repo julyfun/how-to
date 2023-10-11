@@ -1,3 +1,5 @@
+插个 hdml 口到显示器上。
+
 ## Ubuntu 22.04
 
 see Settings -> Displays
