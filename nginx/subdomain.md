@@ -4,6 +4,8 @@
 
 ![](assets/61541ecfe31ed87aa0b7ded2cc82a696.png)
 
+> xy_cpp: 第一个不用管
+
 然后参考以下文件：
 
 ```
@@ -42,3 +44,6 @@ server {
     return 404; # managed by Certbot
 }
 ```
+
+> xy_cpp: 这个没有证书的话删掉ssl的相关配置
+
