@@ -22,4 +22,7 @@ ssh-copy-id docker2
 
 reboot
 
+## mac 睡眠后无法连接 zero-tier ssh
+
+此时 linux 却可以连接。这时候我重启，连不上，等了几分钟然后就连上了。
 
