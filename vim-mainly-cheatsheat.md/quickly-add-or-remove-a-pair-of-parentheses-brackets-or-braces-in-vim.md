@@ -2,3 +2,6 @@ https://stackoverflow.com/questions/2084210/how-to-quickly-remove-a-pair-of-pare
 
 you need `'tpope/vim-surround'`
 
+- remove: `ds(`
+- add: `ysiw(`
+
