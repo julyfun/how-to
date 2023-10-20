@@ -4,7 +4,7 @@ The apt-purge removes the package and purges any configuration files associated 
 
 ## is install --fix-broken ok?
 
-23.9.26: maybe. after tested.
+23.9.26: maybe. Tested.
 
 ## is apt purge something-* ok?
 
