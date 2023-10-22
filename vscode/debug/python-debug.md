@@ -1,4 +1,4 @@
-[verified]
+This method is verified!
 
 https://code.visualstudio.com/docs/python/debugging
 
@@ -64,4 +64,8 @@ Add a breakpoint,
 Click the green delta in "Run python and debug" menu,
 
 Everything is well! And watch params in the menu!
+
+## Remote
+
+Using vscode-ssh is also ok to run python debug in remote machine.
 
