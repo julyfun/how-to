@@ -1,4 +1,4 @@
-- 网易见外：https://jianwai.youdao.com/audioTransfer （已经验证，转换时间是音频长度一半左右）
+- 网易见外：https://jianwai.youdao.com/audioTransfer （已经验证，转换时间是音频长度一半左右，正确率一般）
 
 - 悦录网页端：http://www.voiceclub.cn/#/home/transaudio
 
