@@ -1,6 +1,6 @@
 ## 正定正义
 
-$A$ is s.p.d. if only if:
+$A$ is s.p.d. if only if for any $v$:
 
 $$v ^ T A v > 0$$
 
