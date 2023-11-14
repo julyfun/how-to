@@ -8,7 +8,7 @@ set(CMAKE_BUILD_TYPE "Debug")
 
 现在，用 vscode 命令面板唤出 debug 面板。
 
-面板里有一个链接让你创建 `launch.json`。你就创建，然后这个 json 内容改成这样：
+面板里有一个链接让你创建 `launch.json`。你点击会让你选择调试环境，你选 LLDB 他生成一个 json，然后这个 json 内容改成这样：
 
 ```json
 {
@@ -28,5 +28,5 @@ set(CMAKE_BUILD_TYPE "Debug")
 
 这边 "program" 条目你改成要执行的文件。没错直接可执行文件就行了。
 
-现在在源文件里面加一个断点，然后捏点击 debug 面板上方的绿色播放按钮。他就会停在断电了。
+现在在源文件里面加一个断点，然后捏点击 debug 面板上方的播放按钮。他就会停在断点了。
 
