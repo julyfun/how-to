@@ -1,9 +1,7 @@
 ```
-
 sudo nmcli device wifi rescan
 nmcli dev wifi list
 sudo nmcli dev wifi connect sic-guest password sicguest
-
 ```
 
 ## the result should be like
