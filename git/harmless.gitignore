@@ -1,0 +1,6 @@
+.vscode/
+.nvimlog
+*.swp
+.DS_Store
+.vs/
+
