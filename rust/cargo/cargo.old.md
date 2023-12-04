@@ -9,3 +9,4 @@ rm -rf ~/.cargo/registry/index/* ~/.cargo/.package-cache
 ```
 cargo build/run --bin <crate_name>
 ```
+
