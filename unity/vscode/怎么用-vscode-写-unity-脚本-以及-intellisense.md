@@ -16,6 +16,10 @@ Darwin floriandeMacBook-Air.local 22.5.0 Darwin Kernel Version 22.5.0: Mon Apr 2
 
 让你选择要不要为工作区使用 C# 插件。你就选择使用。然后它让你重启工作区，就有智能提示了。
 
+## 过几天又“在计算机上找不到 .NET SDK” ... path...
+
+重启电脑，没啥办法。
+
 ## 另一个可能的方案
 
 https://zhuanlan.zhihu.com/p/601343633?utm_id=0
