@@ -27,3 +27,5 @@ mixin: # object
     - "DOMAIN-SUFFIX,bilibili.com,Direct"
 ```
 
+记得开启 Mixin 模式，cfw 在首页。
+
