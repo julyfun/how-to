@@ -24,8 +24,22 @@ Edit. In rules array, add:
 mixin: # object
   rules:
     - "DOMAIN-SUFFIX,openai.com,Proxy"
-    - "DOMAIN-SUFFIX,bilibili.com,Direct"
+    - "DOMAIN-SUFFIX,bilibili.com,DIRECT"
 ```
 
-记得开启 Mixin 模式，cfw 在首页。
+记得开启 Mixin 模式，cfw 中在首页。
+
+- 如果 yaml 一 Mixin 就炸（指全部走直连了）
+
+那就用 js 文件吧。选择用 Javascript 而不是 yaml，然后写：
+
+```js
+module.exports.parse = async (
+{ content, name, url },
+{ yaml, axios, notify }
+) => {
+content.rules.unshift("DOMAIN-KEYWORD,wikimedia,Proxy");
+return {...content};
+};
+```
 
