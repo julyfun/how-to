@@ -5,3 +5,7 @@ you need `'tpope/vim-surround'`
 - remove: `ds(`
 - add: `ysiw(`
 
+```
+ys$` select util end of line and add `
+```
+
