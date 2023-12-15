@@ -4,7 +4,12 @@
 
 # [editor files]
 .nvimlog
+*.swp
+vscode/*
 
 # [obsidian]
 .obsidian
+
+# [py]
+__pycache__
 
