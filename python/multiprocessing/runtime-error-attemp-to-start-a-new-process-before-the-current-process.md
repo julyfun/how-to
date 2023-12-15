@@ -15,7 +15,7 @@ As the note said, add `__main__`` guard and add `freeze_support()` and the begin
 
 ```
 if __name__ == "__main__":
-    multiprocessing.freeze_support()
+    # multiprocessing.freeze_support() # may be not needed
     start = time.time()
     ...
 ```
