@@ -6,3 +6,7 @@ https://stackoverflow.com/questions/74624084/could-not-auto-determine-entry-poin
 
 重启终端环境。
 
+## another another solution
+
+回到根目录进行 run dev.
+
