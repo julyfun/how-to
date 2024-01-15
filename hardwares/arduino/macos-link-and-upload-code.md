@@ -8,3 +8,7 @@
 * In arduino IDE there is a default piece of code. In your menu bar, choose Tools -> Board -> Arduino AVR Boards -> Arduino Uno. And Tools -> Port -> `/dev/cu.usbserial-140`.
 * Press the right arrow button in arduino IDE, this compiles and uploads the code.
 
+## VSCode
+
+You can use VSCode Arduino extension instead of Arduino IDE. Everything is easy.
+
