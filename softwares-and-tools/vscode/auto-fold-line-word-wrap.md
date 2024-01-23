@@ -1,5 +1,5 @@
 ---
-keywords: 自动换行, word wrap
+keywords: [自动换行, word wrap]
 ---
 
 Settings -> word wrap
