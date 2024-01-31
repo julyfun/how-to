@@ -26,6 +26,10 @@ hint: or --ff-only on the command line to override the configured default per
 hint: invocation.
 ```
 
+## First Check
+
+Check if you have tried `git pull`.
+
 ## Sol 1
 
 Use github desktop, just pull and no problem occurs.
