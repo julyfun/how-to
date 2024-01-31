@@ -4,6 +4,8 @@
 
 https://github.com/jeetsukumaran/vim-pythonsense
 
+## 使用 VimPlug 安装此插件
+
 在 init.vim 中加到 call#begin 后
 
 ```
