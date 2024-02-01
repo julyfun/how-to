@@ -30,8 +30,10 @@ sudo vim /etc/proxychains.conf
 
 ## （可能不需要）设置 git 的代理
 
+```
 git config --global https.proxy 'socks://127.0.0.1:7890'
 git config --global http.proxy 'http://127.0.0.1:7890'
+```
 
 ## （可能不需要）检查 Shell 配置文件中是否正确配置了 proxy 环境变量
 
