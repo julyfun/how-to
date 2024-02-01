@@ -7,3 +7,5 @@ export CUDA_HOME=/usr/local/cuda-9.2
 export PATH=/usr/local/cuda-9.2/bin:$PATH
 ```
 
+> Reproduced and solved on 2024-2-1.
+
