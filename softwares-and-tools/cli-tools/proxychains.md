@@ -5,9 +5,13 @@ date: 2024-1-31
 system: Ubuntu 22.04
 ---
 
-首先需要一个梯子。比如 clash-for-windows + 一个机场，clash-for-windows 的 port 为 7890
+## 问题情况
+
+从 SJTU 开着梯子访问 github 比较流畅，不排除是因为 SJTU 网络自带 github。回杭州以后开着梯子上 Ubuntu，能 Chrome 上 github 但命令行 ssh -T git@github.com 都不行。（其实写完此文以后第二天莫名其妙又可以了）
 
 ## 安装 proxychains
+
+首先需要一个梯子。比如 clash-for-windows + 一个机场，clash-for-windows 的 port 为 7890
 
 ref: https://zhuanlan.zhihu.com/p/166375631
 
