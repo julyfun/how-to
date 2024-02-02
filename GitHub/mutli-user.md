@@ -19,3 +19,10 @@ Host github-julyfun
 
 ssh -T git@github-julyfun
 
+## Usage
+
+```
+git remote set-url origin git@github-julyfun:foo/bar.git
+git clone git@github-julyfun:ArnaudRinquin/atom-zentabs.git
+```
+
