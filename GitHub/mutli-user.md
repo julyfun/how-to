@@ -1,3 +1,5 @@
+*This multi-user means mutli github users in one machine.*
+ 
 ssh-keygen another key with another password.
 
 name it id_rsa_julyfun
