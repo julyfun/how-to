@@ -11,7 +11,7 @@ How to do anything.
 
 - Search via browsing files, or IDE search engines, or command line tools like `grep` and `find`.
     - Or `mfa` fish shell tools. See [https://github.com/julyfun/mfa.fish](https://github.com/julyfun/mfa.fish).
-    - `jd <file_or_directory_name>` to locate directories(topics) or articles by their names.
+    - `jd <file_or_directory_name>` to locate(`cd`) directories(which are topics), or edit(`nvim`) articles by their names.
     - `jst gf <file_content_or_title>` to search by title and content.
     - `jst find <directory_name_or_file_title>` to search by title.
     - `jst git o <file_path>` to browse the file on github.
