@@ -3,7 +3,7 @@ reliability: 20%
 suppose-you-know: python 输入输出
 ---
 
-## 函数 `def func():`
+## 1. 函数 `def func():`
 
 ### 语法
 
@@ -37,7 +37,7 @@ def even(n):
     return False # 可以按条件写多条 return 语句
 ```
 
-## 集合 `set()`
+## 2. 集合 `set()`
 
 ### 语法
 
@@ -85,7 +85,7 @@ print(len(s))
 
 https://www.runoob.com/python3/python3-set.html
 
-## 字典 `dict()`
+## 3. 字典 `dict()`
 
 ![](https://www.runoob.com/wp-content/uploads/2016/04/py-dict-3.png)
 
@@ -156,7 +156,7 @@ for c, cnt in ma.items():
         print(c, cnt)
 ```
 
-## 排序 `.sort()` `sorted()`
+## 4. 排序 `.sort()` `sorted()`
 
 ref: https://www.freecodecamp.org/chinese/news/python-sort-how-to-sort-a-list-in-python/
 
