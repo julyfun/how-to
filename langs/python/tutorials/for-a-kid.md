@@ -85,7 +85,7 @@ print(len(s))
 
 https://www.runoob.com/python3/python3-set.html
 
-## 字典
+## 字典 `dict()`
 
 ![](https://www.runoob.com/wp-content/uploads/2016/04/py-dict-3.png)
 
@@ -156,7 +156,7 @@ for c, cnt in ma.items():
         print(c, cnt)
 ```
 
-## 排序
+## 排序 `.sort()` `sorted()`
 
 ref: https://www.freecodecamp.org/chinese/news/python-sort-how-to-sort-a-list-in-python/
 
