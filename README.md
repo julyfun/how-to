@@ -11,11 +11,13 @@ How to do anything.
 
 - Search via browsing files, or IDE search engines, or command line tools like `grep` and `find`.
     - Or `mfa` fish shell tools. See [https://github.com/julyfun/mfa.fish](https://github.com/julyfun/mfa.fish).
-    - `jd` to locate directories(topics) or articles by their names.
-    - `jst gf` to search by title and content.
-    - `jst find` to search by title.
+    - `jd <file_or_directory_name>` to locate directories(topics) or articles by their names.
+    - `jst gf <file_content_or_title>` to search by title and content.
+    - `jst find <directory_name_or_file_title>` to search by title.
+    - `jst git o <file_path>` to browse the file on github.
+    - `jpf <file_path>` to commit and push quickly.
     - Use [autojump](https://github.com/wting/autojump) to locate directories by recent accessed paths.
-- Create new articles freely. Try not to provide confusing information.
+- Create new articles freely if you think this can help people. Try not to provide confusing information.
 
 ## To do
 
