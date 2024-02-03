@@ -1,5 +1,9 @@
 How to do anything.
 
+## Contributors are welcomed
+
+If you meet problems on editing or pushing, please open an issue.
+
 ## Advantages
 
 - Easy to write new articles and and synchronize.
