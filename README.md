@@ -13,7 +13,7 @@ If you meet problems on editing or pushing, please open an issue.
 
 ## How to make use of this repo
 
-- Search via browsing files, or IDE search engines, or command line tools like `grep` and `find`.
+- Search by browsing files, or IDE search engines, or command line tools like `grep` and `find`.
     - Or `mfa` fish shell tools. See [https://github.com/julyfun/mfa.fish](https://github.com/julyfun/mfa.fish).
     - `jd <file_or_directory_name>` to locate(`cd`) directories(which are topics), or edit(`nvim`) articles by their names.
     - `jst gf <file_content_or_title>` to search by title and content.
