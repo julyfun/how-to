@@ -1,12 +1,12 @@
 How to do anything.
 
-## Contributors are welcomed
+## Contributions are welcomed
 
 If you meet problems on editing or pushing, please open an issue.
 
 ## Advantages
 
-- Easy to write new articles and and synchronize.
+- Easy to write new articles and synchronize.
 - Git provides article histories.
 - Plain text which is easy to search, has very few redundant informaiton.
 - File & directories structure, familiar and easy to expand. 
