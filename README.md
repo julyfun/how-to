@@ -21,6 +21,7 @@ If you meet problems on editing or pushing, please open an issue.
     - `jst git o <file_path>` to browse the file on github.
     - `jpf <file_path>` to commit and push quickly.
     - Use [autojump](https://github.com/wting/autojump) to locate directories by recent accessed paths.
+- Articles may be written in non-english language. Use Google Translate then, most of the time it's useful. 
 - Create new articles freely if you think this can help people. Try not to provide confusing information.
 
 ## To do
