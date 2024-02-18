@@ -41,7 +41,7 @@ If you meet problems on editing or pushing, please open an issue.
 
 ---
 
-### Answer types
+### Types of answers
 
 - 使用某种工具过程中，出现了报错 / 意外，如何解决？
     - 例：打开 `neovim` 出现了带有 `E303` 关键字的错误，通常是因为什么？如何解决？
