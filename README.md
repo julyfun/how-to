@@ -61,8 +61,13 @@ If you meet problems on editing or pushing, please open an issue.
 - 评论者。
 - 作者评估，该文章有多高可信度？
 
-### What answers are needed or not needed
+### Which answers are needed
 
-- 需要文章的：网站 SSL 证书过期，如何重新申请并配置新 SSL 证书？这种问题容易忘记，而写一篇文章可以很好规避再次犯错。
-- 不需要文章的：课堂笔记类。有些问题极大程度上依靠熟练度解决，本仓库不应该花时间回答这类问题。
+- 网站 SSL 证书过期，如何重新申请并配置新 SSL 证书？这种问题容易忘记，而写一篇文章可以很好规避再次犯错。
+
+
+### Which answers are not needed
+
+- 课堂笔记类。有些问题极大程度上依靠熟练度解决，本仓库不应该花时间回答这类问题。
+- 有对应的具体文档的系统内容。例如 iPadOS 如何关闭检测 Mac 的鼠标和键盘。这些问题有官方的系统的文档，不应该花时间重新写一份，导致抢占官方文档的地位。
 
