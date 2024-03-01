@@ -46,5 +46,5 @@ else
 end
 ```
 
-This still outputs 1. Consistant.
+This still outputs 1. Consistent.
 
