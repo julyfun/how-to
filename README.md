@@ -4,8 +4,6 @@ How to do anything.
 
 If you meet problems on editing or pushing, please open an issue.
 
-test..
-
 ## Advantages
 
 - Easy to write new articles and synchronize.
