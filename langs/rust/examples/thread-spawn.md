@@ -1,3 +1,4 @@
+```rs
 use std::thread;
 
 fn is_prime(n: i32) -> bool {
@@ -49,4 +50,5 @@ fn main() {
 
     println!("{}", total_count);
 }
+```
 
