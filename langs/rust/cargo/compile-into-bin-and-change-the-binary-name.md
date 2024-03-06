@@ -10,3 +10,7 @@ name = "garden"
 path = "src/main.rs"
 ```
 
+## How to get the bin file
+
+When you try `cargo run` or `cargo build`, it automatically build a bin file called like `target/release/rust`.
+
