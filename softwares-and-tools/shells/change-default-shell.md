@@ -4,3 +4,5 @@ sudo vim /etc/shells
 chsh -s /usr/bin/fish # maybe sudo chsh
 ```
 
+Restart your terminal and see if this works.
+
