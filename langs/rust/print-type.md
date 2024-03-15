@@ -4,4 +4,3 @@ fn print_type_of<T>(_: &T) {
 }
 ```
 
-
