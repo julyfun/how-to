@@ -4,6 +4,8 @@ for idx, row in f5.iterrows():
     plt.plot(DIMS, row.values + EPS, label=f"{FUNC_NAMES[idx]}")
     # 这是对数轴
     # plt.semilogy(DIMS, row.values + EPS, label=f"{FUNC_NAMES[idx]}")
+    # 这是 x 和 y 轴都改为对数形式
+    # plt.loglog(DIMS, row.values + EPS, label=f"{FUNC_NAMES[idx]}")
 
 # 加上图例（就是图标）
 plt.legend()
