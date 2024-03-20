@@ -2,6 +2,8 @@ How to do anything.
 
 ## Contributions are welcomed
 
+Feel free to add new articles in this repo.
+
 If you meet problems on editing or pushing, please open an issue.
 
 ## Advantages
