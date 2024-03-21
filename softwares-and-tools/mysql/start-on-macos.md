@@ -5,7 +5,7 @@ os: macos 13.4 M1
 
 ref (_unreliable_): https://stackoverflow.com/questions/15450091/error-2002-hy000-cant-connect-to-local-mysql-server-through-socket-tmp-mys
 
-+ Download dmg from official. Something like https://cdn.mysql.com//Downloads/MySQL-8.3/mysql-8.3.0-macos14-arm64.dmg.
++ Download dmg from official. Something like https://cdn.mysql.com//Downloads/MySQL-8.3/mysql-8.3.0-macos14-arm64.dmg .
 + Run the dmg. You will have cli tools then, now you have:
 
 ```
