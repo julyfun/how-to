@@ -12,3 +12,5 @@ Done! Surely!
 
 直接有实时编辑和预览的。
 
+> 补充: vscode 中的编译和渲染都不需要 brew install typst，只需要装插件就可以了。
+
