@@ -56,7 +56,7 @@ If you meet problems on editing or pushing, please open an issue.
 
 - 文章语言 (Language)
 - 作者和联系方式（用于追问） - 自动生成
-- 作者假定读者知道什么知识。（例如：矩阵乘法、熟练掌握傅里叶分析）
+- 作者假定读者知道什么知识。（例如：矩阵乘法, 熟练掌握傅里叶分析, brew）
 - 信息来源：是第一手找到解决方案，还是在 StackOverflow 等地找到其他人解决方案，并在本人环境验证其可行？
 - 如何复现？环境：操作系统以及版本，实践日期，`uname -a`，gcc 等软件版本
 - 验证者 testers 和验证次数，包括原作者的使用次数。
