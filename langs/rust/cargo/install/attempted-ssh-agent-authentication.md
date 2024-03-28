@@ -21,9 +21,7 @@ Caused by:
 
 ref: https://stackoverflow.com/questions/62640383/how-to-make-gitconfigs-insteadof-work-with-cargo
 
-Use bash, `export CARGO_NET_GIT_FETCH_WITH_CLI=true`.
+For bash, `export CARGO_NET_GIT_FETCH_WITH_CLI=true`.
 
-> Why fish shell is not ok?
->
-> Oh fish shell is also ok after `export CARGO_NET_GIT_FETCH_WITH_CLI=true` on 2024-3-28.
+For fish , `set -gx CARGO_NET_GIT_FETCH_WITH_CLI true`.
 
