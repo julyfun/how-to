@@ -16,13 +16,9 @@ If you meet problems on editing or pushing, please open an issue.
 ## How to make use of this repo
 
 - Search by browsing files, or IDE search engines, or command line tools like `grep` and `find`.
-    - Or `mfa` fish shell tools. See [https://github.com/julyfun/mfa.fish](https://github.com/julyfun/mfa.fish).
-    - `jd <file_or_directory_name>` to locate(`cd`) directories(which are topics), or edit(`nvim`) articles by their names.
-    - `jst gf <file_content_or_title>` to search by title and content.
-    - `jst find <directory_name_or_file_title>` to search by title.
-    - `jst git o <file_path>` to browse the file on github.
-    - `jpf <file_path>` to commit and push quickly.
     - Use [autojump](https://github.com/wting/autojump) to locate directories by recent accessed paths.
+    - Use [fzf.fish](https://github.com/PatrickF1/fzf.fish) to find articles smoothly.
+    - Alternative: `mfa` fish shell tools. See [mfa.fish](https://github.com/julyfun/mfa.fish).
 - Articles may be written in non-english language. Use Google Translate then, most of the time it's useful. 
 - Create new articles freely if you think this can help people. Try not to provide confusing information.
 
