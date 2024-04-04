@@ -1,5 +1,5 @@
 ---
-fish shell version: 3.7.0
+fish-shell-version: 3.7.0
 ---
 
 ## Strange `-n`
