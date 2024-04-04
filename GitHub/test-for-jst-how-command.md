@@ -6,5 +6,3 @@ author: Julyfun MacOS13.4 M1
 suppose-you-know: [computer]
 ---
 
-Is this working?
-
