@@ -38,6 +38,12 @@ If you meet problems on editing or pushing, please open an issue.
 
 - Spending too much time answering or editing questions that relies largely on proficiency.
 
+## File Suffixes
+
+- `.1.md`: Don't know how, this is a question.
+- `.todo.md`: Knowing how, but not written yet.
+- [no-longer-used] `.todo.md | .old.md`
+
 ---
 
 ### Types of answers
