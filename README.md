@@ -42,7 +42,7 @@ If you meet problems on editing or pushing, please open an issue.
 
 - `.1.md`: Don't know how, this is a question.
 - `.todo.md`: Knowing how, but not written yet.
-- [no-longer-used] `.todo.md | .old.md`
+- `.old.md`: Should be removed cuz too old.
 
 ---
 
