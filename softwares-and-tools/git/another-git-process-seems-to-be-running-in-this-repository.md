@@ -1,3 +1,5 @@
+## Problem
+
 ```
 fatal: Unable to create '/home/julyfun/Documents/GitHub/julyfun/PlasticBag/.git/index.lock': File exists.
 
