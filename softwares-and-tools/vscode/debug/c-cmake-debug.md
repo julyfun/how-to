@@ -34,3 +34,9 @@ set(CMAKE_BUILD_TYPE "Debug")
 
 如果你要输入数据，就在面板的“终端”里面输入。
 
+## Problem
+
+- 点击创建 launch.json 的时候可能会卡。
+
+这可能是因为某些其他语言的 vscode debugger 在试图更新自己的配置。建议手动创建 launch.json 或者等一等就会有。
+
