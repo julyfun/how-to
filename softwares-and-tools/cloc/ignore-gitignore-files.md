@@ -13,5 +13,6 @@ ref: https://github.com/AlDanial/cloc/issues/49
 
 ```
 git ls-files . | xargs cloc
+cloc --vcs git
 ```
 
