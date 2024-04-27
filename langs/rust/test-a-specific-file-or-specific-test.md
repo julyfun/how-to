@@ -35,5 +35,7 @@ cargo test test_mod_name::test_fn_name -- --exact
 cargo test --package school_info repeat_students_should_not_get_full_marks -- --exact
 # To show output
 cargo test --package py-like --test io -- tests::main --exact --nocapture
+# test1() in helper.rs
+cargo test helper::test1 -- --exact
 ```
 
