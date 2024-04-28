@@ -14,4 +14,5 @@ docker images
 
 - Tencent Lemon
 - Daisy Disk (Try for free)
+- dust (cli)
 
