@@ -12,7 +12,7 @@ keywords: [Add, ownership, dereference, PartialEq]
 
 # Why do some trait implementations receive values, while others take references?
 
-![](8438e93d773c9ef64ea904dafa7cb994.jpg)
+![](/assets/8438e93d773c9ef64ea904dafa7cb994.jpg)
 
 related: 
 
