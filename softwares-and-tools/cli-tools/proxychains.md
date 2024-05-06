@@ -67,3 +67,15 @@ ProxyChains-3.1 (http://proxychains.sf.net)
 Hi julyfun! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
+## 若 proxychains git push 要你输入 http://github.com 的若 
+
+应该强制 git 走 ssh
+
+ref: https://ricostacruz.com/posts/github-always-ssh
+
+```
+git config --global url."git@github.com:".insteadOf "https://github.com/"
+```
+
+> verified on 2024-5-6, ubuntu 20.04
+
