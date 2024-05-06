@@ -27,4 +27,5 @@ Host github.com
 
 - reopen clash for windows: still ok to ssh
 - git clone: ok
+- git pull and push: ok
 
