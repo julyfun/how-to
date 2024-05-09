@@ -11,13 +11,26 @@ keywords: []
 # Enable mouse
 
 ref: https://www.nodeseek.com/post-18315-1
+ref: https://unix.stackexchange.com/questions/516800/how-do-i-enable-tmux-mouse-support
 
 for `tmux 3.0a` on ubuntu 20.04:
 
 ```
 ctrl + b
-:set mouse on
+:set -g mouse on
 ```
 
-you can add this to `~/.tmux.conf`
+## In source file
+
+you can add that command to `~/.tmux.conf` (with no `:`)
+
+and then:
+
+```
+exit tmux
+tmux kill-server
+tmux
+```
+
+> verified on 24.5.9, ubuntu 20.04, 4090
 
