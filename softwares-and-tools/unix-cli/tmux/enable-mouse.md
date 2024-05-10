@@ -33,4 +33,5 @@ tmux
 ```
 
 > verified on 24.5.9, ubuntu 20.04, 4090
+> verified on 24.5.10
 
