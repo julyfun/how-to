@@ -10,6 +10,8 @@ keywords: [wsl, win11, wsl2]
 
 # Install wsl and use cmake in vscode
 
+> 假设您在 win11 下。
+
 - 安装 wsl，ref: https://zhuanlan.zhihu.com/p/475462241
 
 其实大多数 win11 电脑只需要在 PowerShell 中执行以下，等待安装（进度条可能显示 0% 很久）：
