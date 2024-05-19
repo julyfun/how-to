@@ -13,3 +13,5 @@ keywords: []
 * Install Code Runner
 * Install clangd (it will suggest you download clang server, so you agree) 
 
+* In settings, search "code runner terminal", check "Run in terminal"
+
