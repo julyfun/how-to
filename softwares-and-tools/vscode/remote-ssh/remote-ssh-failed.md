@@ -8,6 +8,8 @@
 
 * 24.5.21
 
+（不知有没有用）先删除本地 known_hosts
+
 先删除远程 `~/.vscode-server/`
 
 在本地 VSCode Settings 文件中加入
