@@ -6,13 +6,13 @@
 
 试试 https://stackoverflow.com/questions/64034813/vs-code-remote-ssh-connection-not-working 中的所有方法
 
-* 24.5.21
+### 24.5.21
 
-（不知有没有用）先删除本地 known_hosts
+* （应该没有用）先删除本地 known_hosts
 
-先删除远程 `~/.vscode-server/`
+* 删除远程 `~/.vscode-server/`
 
-在本地 VSCode Settings 文件中加入
+* 在本地 VSCode Settings 文件中加入
 
 ```
     "remote.SSH.useLocalServer": false,
