@@ -30,5 +30,11 @@ textareas.forEach(function(textarea) {
 textareas[0].click();
 ```
 
+每学期的过程评价的 class 稍有不同，需检查网页源码中 mui-table-view-cell 元素下的 class (以 `li-` 开头）。例如，可能需要将上述代码的第一行改为：
+
+```
+var mui = document.querySelectorAll('li.mui-table-view-cell.li-11B257C0903EB5F4E065F8163EE1DCCC')
+```
+
 对于每个课程复制到 Console，注意不知道网页检测了什么的缘故，必须要三个文本框都点击一下他才允许提交。
 
