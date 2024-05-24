@@ -1,5 +1,13 @@
 How to do anything.
 
+## Utils
+
+```
+# show abnormal files
+git ls-files | grep -v '\.md$' | grep -v '\.md"$'
+```
+
+
 ## Contributions are welcomed
 
 Feel free to add new articles in this repo.
