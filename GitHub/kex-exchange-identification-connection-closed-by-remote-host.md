@@ -23,9 +23,12 @@ Host github.com
   Port 443
 ```
 
+> verified on 24/5/28, for a new user on Ubuntu, adding this content to `config` is useful.
+
 ## Post test
 
 - reopen clash for windows: still ok to ssh
 - git clone: ok
 - git pull and push: ok
+
 
