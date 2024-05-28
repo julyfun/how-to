@@ -1,6 +1,10 @@
 - 时间: 23.7.3
 - 系统: 双系统 win11 + ubuntu 22.04
 
+ref: https://zhuanlan.zhihu.com/p/461271487
+
+ref: https://www.cnblogs.com/easy5weikai/p/17470402.html
+
 ## Uninstall
 
 1. F2 进入 BIOS，进入 Boot，把 Windows 移到最上面，Save and Exit
