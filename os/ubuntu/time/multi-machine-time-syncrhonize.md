@@ -22,7 +22,7 @@ sudo vim /etc/ntp.conf
 文件最后写入：
 
 ```
-restrict 192.168.43.0 mask 255.255.255.0 nomodify notrap
+restrict 192.168.43.0 mask 255.255.255.0 nomodify notrap # 将前三位改成你的子网
 server 127.127.1.0 # local clock
 fudge 127.127.1.0 stratum 10
 ```
@@ -38,4 +38,8 @@ sudo /etc/init.d/ntp restart
 使用 ifconfig, `nmcli dev` 和设置查看是否连接正确。实践时，重启 ntp 服务之后两台机子的时间就同步了。
 
 如果不同步，请继续参考 ref。
+
+## Problem
+
+- restart 服务后依然没有同步：试试看 reboot
 
