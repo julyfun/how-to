@@ -8,3 +8,9 @@ https://www.ff98sha.me/tools/messycode/
 
 恢复后可网页搜索理应出现的文字，比如搜索“的”。
 
+## QQ音乐解码
+
+```
+https://ncm.worthsee.com/
+```
+
