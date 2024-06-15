@@ -10,6 +10,10 @@ keywords: []
 
 # SSL connect error
 
+```
+warning: spurious network error (3 tries remaining): [35] SSL connect error (Recv failure: Connection reset by peer)
+```
+
 ref: https://stackoverflow.com/questions/41937618/cargo-is-unable-to-download-a-file-due-to-a-ssl-connect-error
 
 Try something like:
