@@ -21,3 +21,18 @@
 
 成功。
 
+### 24.6.19
+
+* error: 无法连接远程，插件输出 connectionTimeout
+* problem: 在插件输出中发现 ssh 命令是 `ssh -v -T -D 49942 -o ConnectTimeout=15 47.103.61.134`，没有用户名很奇怪（虽然使用 remote-ssh 的时候我是带用户名的）
+* 在 ~/.ssh/config 中添加一个 config 记录，手动指定用户名和服务器
+
+```
+Host mfa
+    HostName 47.103.61.134
+    User julyfun
+```
+
+* 再检查检查有没有重复的 HostName，删除重复的
+* 成功
+
