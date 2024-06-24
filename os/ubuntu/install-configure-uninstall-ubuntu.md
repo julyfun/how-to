@@ -14,11 +14,23 @@ ref: https://www.cnblogs.com/easy5weikai/p/17470402.html
 
 1. 买一个 U 盘
 2. 下载 ubuntu-amd64.iso
-3. 用 Rufus 软件把 U 盘变成启动盘
-4. 计算机管理 -> C 盘压缩出 200 MB 作为 存放 Ubuntu EFI。另外开一个未知分区作为 Ubuntu 硬盘
+3. 用 Rufus 软件把 U 盘变成启动盘（需下载）
+4. 计算机管理 -> C 盘压缩出 200 MB 作为 存放 Ubuntu EFI。另外开一个未知分区作为 Ubuntu 硬盘（很可能不需要）
 5. 重启进入 BIOS，修改 Boot Mode 为 UEFI Only，然后把 U 盘放在 Windows 上面
 6. 分区，200 MB 作为 efi ，剩下所有作为 `/`
 7. Install，改 BIOS 中的启动顺序
+
+## 特殊系统
+
+### win10 + 华硕主板
+
+- 进入 bios 很难，见：
+
+https://zhuanlan.zhihu.com/p/374951491
+
+- 开启 CSM 也不方便，见：
+
+https://www.machunjie.com/linux/302.html
 
 ## Configure to your style
 
