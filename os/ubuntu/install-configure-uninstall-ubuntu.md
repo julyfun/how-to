@@ -32,6 +32,8 @@ https://zhuanlan.zhihu.com/p/374951491
 
 https://www.machunjie.com/linux/302.html
 
+> 以上在 24-6-24 测试成功。
+
 ## Configure to your style
 
 ### 终端
