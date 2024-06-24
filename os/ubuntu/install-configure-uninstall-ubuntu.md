@@ -106,19 +106,11 @@ mfa init
 接下来可以用另一台电脑传递文件和信息了。
 
 
-### clash
+### clash for windows
 
-github 搜 clash，找 Release。下载下来 gzip 以后是一个可执行文件，chmod 以后直接可以执行。
+下载 Clash for windows，运行可执行文件，放入配置文件 (.yaml)
 
-```
-# 如果你没法连上 github
-mfa ul clash.gz
-mfa dl clash.gz
-gzip -d clash.gz
-mv clash /usr/local/bin
-```
-
-简单说一下，首次运行 clash 时会在 ~/.config/clash 中生成默认配置文件。同样下载 `clash_for_windows_pkg`，`tar -zxvf` 以后是一个文件夹，里面 cfw 文件是可执行文件。
+- 记住 Ubuntu 中必须把 Settings -> Network proxy 改成 127.0.0.1:7890（我把 http, https, socks5 都改成这个了，可以）
 
 cfw 会调用 clash。如果 ./cfw 报错：
 
@@ -130,8 +122,6 @@ FATA[0000] Parse config error: yaml: unmarshal errors:
 那是因为 ~/.config/clash 里面的配置废了。rm -rf 以后在重新运行一次 clash，输出三行后可以退出。
 
 > 同样把可以用的 profiles.yaml 传过去，用 clash for windows 打开.
-
-然后呢 Settings -> Network proxy 改成 127.0.0.1:7890
 
 ## Oh my fish
 
