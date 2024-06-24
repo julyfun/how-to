@@ -13,12 +13,18 @@ keywords: []
 ref: https://blog.51cto.com/u_14193285/5985919
 
 ```
-sudo hciconfig hci0 down && \ #关闭蓝牙设备 
-sudo rmmod btusb && \ #卸载蓝牙模块 
-sudo modprobe btusb && \ #重加载蓝牙模块 
-sudo rfkill unblock bluetooth && \ #解锁蓝牙设备 
-sudo hciconfig hci0 up && \ #开启蓝牙设备 
-sudo systemctl restart bluetooth #重启蓝牙服务
+# 关闭蓝牙设备 
+sudo hciconfig hci0 down
+# 卸载蓝牙模块 
+sudo rmmod btusb
+# 重加载蓝牙模块 
+sudo modprobe btusb
+# 解锁蓝牙设备 
+sudo rfkill unblock bluetooth
+# 开启蓝牙设备 
+sudo hciconfig hci0 up 
+#重启蓝牙服务
+sudo systemctl restart bluetooth
 ```
 
 我这边做到 `hci0 up` 就无法继续了，但是没关系，关机 30s 后恢复，蓝牙就正常工作了。
