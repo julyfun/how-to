@@ -29,3 +29,9 @@ sudo systemctl restart bluetooth
 
 我这边做到 `hci0 up` 就无法继续了，但是没关系，关机 30s 后恢复，蓝牙就正常工作了。
 
+> 下午又挂了！而且上面方法没用了！
+
+试试这个，又成功启动了：
+
+https://blog.csdn.net/Insight__/article/details/132777714kko
+
