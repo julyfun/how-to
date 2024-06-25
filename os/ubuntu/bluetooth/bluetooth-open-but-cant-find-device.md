@@ -33,5 +33,31 @@ sudo systemctl restart bluetooth
 
 试试这个，又成功启动了：
 
-https://blog.csdn.net/Insight__/article/details/132777714kko
+https://blog.csdn.net/Insight__/article/details/132777714
+
+```
+# 卸载并重新加载btusb内核模块（支持蓝牙设备的内核模块）
+sudo rmmod btusb
+sleep 1
+sudo modprobe btusb
+
+# 安装蓝牙工具和工具包
+# 使用apt安装blueman蓝牙管理工具
+sudo apt install blueman
+# 使用apt-get安装blue-utils蓝牙实用工具
+sudo apt-get install blue-utils
+# 使用apt-get安装bluez蓝牙套件的所有相关包
+sudo apt-get install bluez*
+ 
+# 3、启动蓝牙服务
+sudo service bluetooth start
+ 
+# 4、重新解除蓝牙设备的阻止
+# 阻止蓝牙设备
+rfkill block bluetooth
+# 解除对蓝牙设备的阻止
+rfkill unblock bluetooth 
+```
+
+> this cmd verified to be effective on 24.6.25
 
