@@ -1,16 +1,20 @@
 - 时间: 23.7.3
 - 系统: 双系统 win11 + ubuntu 22.04
 
-ref: https://zhuanlan.zhihu.com/p/461271487
-
-ref: https://www.cnblogs.com/easy5weikai/p/17470402.html
-
 ## Uninstall
 
 1. F2 进入 BIOS，进入 Boot，把 Windows 移到最上面，Save and Exit
 2. Win + R listpart 删除 Ubuntu 分区（由 15 GB 开头的“未知”分区）。给系统分区命名，然后用管理员打开记事本，打开其中文件资源管理器删除系统分区下 EFI 下 Ubuntu。
 
+see: https://blog.csdn.net/Wenyuanbo/article/details/126381967
+
+注意：就算你装 ubuntu 的时候没有手动分出 efi，仍然需要删除该教程中第一个 EFI/ubuntu 文件夹（用记事本那个），但第二个 EFI 分区不用删。
+
 ## Install
+
+ref: https://zhuanlan.zhihu.com/p/461271487
+
+ref: https://www.cnblogs.com/easy5weikai/p/17470402.html
 
 1. 买一个 U 盘
 2. 下载 ubuntu-amd64.iso
