@@ -21,6 +21,7 @@ Save your computer!
 ## Save
 
 - del 进入 bios，Advanced Mode -> Boot -> Secure Boot -> 选择 Windows UEFI，Standard，重启
+- 如果没有变化就多重启几次
 - 继续启动，进入安全模式 https://jingyan.baidu.com/article/6b97984db5c2975da2b0bfd4.html
 - 安全模式重新启动，进入设备管理器卸载显卡（测试可勾选删除驱动软件）
 - 重启成功！
