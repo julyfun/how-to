@@ -10,6 +10,26 @@ see: https://blog.csdn.net/Wenyuanbo/article/details/126381967
 
 注意：就算你装 ubuntu 的时候没有手动分出 efi，仍然需要删除该教程中第一个 EFI/ubuntu 文件夹（用记事本那个），但第二个 EFI 分区不用删。
 
+1. 进入 BIOS，把 Windows 移到最先启动，保存退出
+2. 如下
+
+```
+# win + R, diskpart
+list disk
+# 选择 ubuntu 所在磁盘
+select disk 0
+# 选择 ubuntu 所在分区，类型必为未知，可在磁盘管理中查看
+select partition 5
+delete partition override
+# 选择 ubuntu EFI 所在分区，一般是 1
+select partition 1
+assign letter=P
+# 记事本管理员打开，选择 打开 -> 删除 P 盘 EFI/ubuntu
+remove letter=P
+```
+
+Done. 进磁盘管理看看 ubuntu 分区是不是变成未分配了。
+
 ## Install
 
 ref: https://zhuanlan.zhihu.com/p/461271487
