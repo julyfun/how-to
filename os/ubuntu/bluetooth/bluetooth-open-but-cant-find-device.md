@@ -61,4 +61,5 @@ rfkill unblock bluetooth
 
 > this cmd verified to be effective on 24.6.25
 > this cmd verified to be effective on 24.6.25 again, the rmmod and modprobe is enough
+> this cmd verified to be effective on 24.6.27 again, the rmmod and modprobe is enough
 

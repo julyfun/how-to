@@ -3,7 +3,7 @@ How to do anything.
 ## Utils
 
 ```
-# show abnormal files
+# show abnormal tracked files
 git ls-files | grep -v '\.md$' | grep -v '\.md"$'
 ```
 
