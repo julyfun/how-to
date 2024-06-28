@@ -20,6 +20,8 @@ keywords: [wsl, win11, wsl2]
 wsl --install -d Ubuntu
 ```
 
+> 24.6.28 win10 此命令安装时提示网络相关错误，重新试了好几次居然安装好了。
+
 此时相当于在你的 windows 里安装一个 ubuntu，默认安装 Ubuntu 22.04。接下来它会自动创建 ubuntu 的管理员用户，让你输入用户名。
 
 - 所以你就输入管理员用户名和密码，完成安装，关闭 PowerShell
