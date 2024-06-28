@@ -10,6 +10,8 @@ keywords: []
 
 # Ping windows
 
+启用一些防火墙规则
+
 see: https://jingyan.baidu.com/article/f3ad7d0f344d6209c3345b05.html
 see: https://blog.csdn.net/qianshuiliyu/article/details/127194528
 
