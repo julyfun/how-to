@@ -35,7 +35,6 @@ Done.
 
 ## Test
 
-- 
 - Create unix like cmake project
 - cd build
 - cmake ..
