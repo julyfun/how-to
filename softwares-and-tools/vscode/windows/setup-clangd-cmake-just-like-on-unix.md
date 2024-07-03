@@ -10,6 +10,8 @@ keywords: []
 
 # Setup clangd, cmake just like on unix
 
+ref: https://blog.csdn.net/tyKuGengty/article/details/120119820 (not reliable)
+
 ## Don't
 
 - **Don't use clangd exe downloaded by clangd extension in vscode.**
