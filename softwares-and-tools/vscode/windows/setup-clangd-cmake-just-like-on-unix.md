@@ -40,3 +40,16 @@ Done.
 - cmake ..
 - Reload vscode window and see if it can find headers
 
+## If you want lsp without cmake
+
+Add this two flags to your vscode clangd fallback flags:
+
+```
+-IC:/msys64/mingw64/include/c++/14.1.0
+--target=x86_64-w64-windows-gnu
+```
+
+check if a single file can find headers.
+
+(Tested ok)
+
