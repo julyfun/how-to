@@ -11,6 +11,7 @@ keywords: []
 # Setup clangd, cmake just like on unix
 
 ref: https://blog.csdn.net/tyKuGengty/article/details/120119820 (not reliable)
+ref: https://www.perplexity.ai/search/windows-shang-ru-he-huo-qu-he-UAy020tWRWG50tRSmDYuIw#0
 
 ## Don't
 
