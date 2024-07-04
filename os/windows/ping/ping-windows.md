@@ -15,7 +15,7 @@ keywords: []
 see: https://jingyan.baidu.com/article/f3ad7d0f344d6209c3345b05.html
 see: https://blog.csdn.net/qianshuiliyu/article/details/127194528
 
-可以照着这个做，但是设置完后记得右边点击“启动规则”：
+可以照着这个做，它提到的作用域是右键 -> 属性里的作用域，但是设置完后记得右边点击“启动规则”：
 
 see: https://www.jianshu.com/p/8b201c7edd70
 
