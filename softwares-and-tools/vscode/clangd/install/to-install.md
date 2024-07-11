@@ -21,5 +21,13 @@ sudo add-apt-repository "deb http://apt.llvm.org/$(lsb_release -cs)/ llvm-toolch
 sudo apt update
 ```
 
-and install freely.
+Now install freely. like:
+
+```
+sudo apt install clangd-18
+```
+
+This will install a bin file named clangd-18.
+
+> verified on 24.7.11, on wsl
 
