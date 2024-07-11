@@ -43,3 +43,5 @@ sudo locale-gen
 sudo locale-gen
 ```
 
+- No need to reboot.
+
