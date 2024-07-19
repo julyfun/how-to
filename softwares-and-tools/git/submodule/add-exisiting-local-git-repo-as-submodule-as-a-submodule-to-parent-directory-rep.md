@@ -12,6 +12,7 @@ keywords: []
 
 ```
 git submodule add ./Segmentation1 Segmentation1
+# below is optional
 git submodule absorbgitdirs Segmentation1
 git config -f .gitmodules submodule.Segmentation1.url \
         https://github.com/etc/path.git
