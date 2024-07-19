@@ -5,8 +5,9 @@ How to do anything.
 ```
 # show abnormal tracked files
 git ls-files | grep -v '\.md$' | grep -v '\.md"$'
+# list recent updated files (but ordered by name)
+git diff --name-only HEAD~100..HEAD
 ```
-
 
 ## Contributions are welcomed
 
