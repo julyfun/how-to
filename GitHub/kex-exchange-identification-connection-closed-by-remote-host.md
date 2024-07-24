@@ -24,6 +24,7 @@ Host github.com
 ```
 
 > verified on 24/5/28, for a new user on Ubuntu, adding this content to `config` is useful.
+> verified on 24/7/24, worked for wsl when suddenly can't connect git by cli.
 
 ## Post test
 
