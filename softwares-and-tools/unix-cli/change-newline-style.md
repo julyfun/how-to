@@ -26,7 +26,6 @@ The :e ++ff=dos command tells Vim to read the file again, forcing dos file forma
 
 ```
 :e ++ff=dos 
-:e ++ff=dos 
 :wq
 ```
 
