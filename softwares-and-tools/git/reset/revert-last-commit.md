@@ -1,10 +1,8 @@
-https://blog.csdn.net/w958796636/article/details/53611133
+ref: https://blog.csdn.net/w958796636/article/details/53611133
 
 ```
 git reset HEAD^
 ```
-
-https://blog.csdn.net/w958796636/article/details/53611133
 
 HEAD^的意思是上一个版本，也可以写成HEAD~1
 

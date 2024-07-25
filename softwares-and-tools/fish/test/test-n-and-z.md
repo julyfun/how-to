@@ -2,9 +2,16 @@
 fish-shell-version: 3.7.0
 ---
 
+## TLDR
+
+`test -n` returns true iff string is unset or (set and non-zero); (in fact because -n didn't receive any string)
+
+`test -z` return true iff string is unset or (set and zero);
+
 ## Strange `-n`
 
 ```fish
+# ttt is not set
 if test -n $ttt
     echo 1
 else

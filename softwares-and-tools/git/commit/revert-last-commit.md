@@ -1,0 +1,1 @@
+../reset/revert-last-commit.md
