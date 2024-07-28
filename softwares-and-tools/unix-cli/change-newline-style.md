@@ -8,24 +8,14 @@ suppose-you-know: [computer]
 keywords: []
 ---
 
-# change newline style
-
 ref: https://stackoverflow.com/questions/2613800/how-to-convert-dos-windows-newline-crlf-to-unix-newline-lf
-
-```
-vim file.txt -c "set ff=unix" -c ":wq"
-vim file.txt -c "set ff=dos" -c ":wq"
-```
-
-## update, you may use these commands
 
 ref: https://unix.stackexchange.com/questions/32001/what-is-m-and-how-do-i-get-rid-of-it
 
-The :e ++ff=dos command tells Vim to read the file again, forcing dos file format. Vim will remove CRLF and LF-only line endings, leaving only the text of each line in the buffer.
-
+在 vim 中执行以下两行可以把 dos 类型的 CRLF 改为 unix LF:
 
 ```
+:set ff=unix
 :e ++ff=dos 
-:wq
 ```
 
