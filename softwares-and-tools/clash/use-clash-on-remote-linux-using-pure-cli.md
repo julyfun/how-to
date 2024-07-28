@@ -6,9 +6,9 @@
 
 > This is minimal steps
 
-- Get a clash core, from like https://public.890535.xyz/clash/Clash.Core/
-- Use this shell tool: see: https://github.com/Elegycloud/clash-for-linux-backup
-- Install proxychains
+- Get a web url for vpn subscription
+- Use this shell tool: see: https://github.com/Elegycloud/clash-for-linux-backup (some clash core are included)
+- Use `proxychains`. Search `proxychains` under this how-to repo.
 
-
+> Verified on 24.7.29
 
