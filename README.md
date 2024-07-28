@@ -39,8 +39,8 @@ If you meet problems on editing or pushing, please open an issue.
 
 - [x] Better commit message by fish shell script.
 - [x] Smart content search engine. `jd` and `jst gf`.
-- [ ] Integrate to `mfa.fish`.
-- [ ] Website for this repo.
+- [x] Integrate to `mfa.fish`.
+- [x] Website for this repo.
 - [ ] Identify language and location of an article.
 
 ## Do
