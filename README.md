@@ -2,7 +2,13 @@ How to do anything.
 
 ## News!
 
-https://how-to.fun is now available! This site imports how-to as a submodule, so it will automatically update as `how-to` updates! 
+[how-to.fun](https://how-to.fun) is now available! This site imports how-to as a submodule, so it will automatically update as `how-to` updates! 
+
+## How to make use of this website?
+
+If you find the article not in your local language, we recommmend the chrome extension `Immersive Translate` for you. Not only can it translate quickly, but it can also display bilingual comparisons
+
+> 使用 `Immersive Translate` 插件，不仅可以快速翻译，而且可以显示双语对照。
 
 ## Utils
 
