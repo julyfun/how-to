@@ -27,17 +27,17 @@ sudo apt install proxychains
 sudo vim /etc/proxychains.conf
 ```
 
-- （可能不需要）取消前面 `dynamic_chain` 的注释；注释掉 `strict_chain`
+- `dynamic_chain` 的注释；注释掉 `strict_chain`
 - 在末尾 `[ProxyList]` 中添加 `socks5 127.0.0.1 7890` 其中端口号取决于你 vpn 的 port
 
-## （可能不需要）设置 git 的代理
+## （通常不需要）设置 git 的代理
 
 ```
 git config --global https.proxy 'socks://127.0.0.1:7890'
 git config --global http.proxy 'http://127.0.0.1:7890'
 ```
 
-## （可能不需要）检查 Shell 配置文件中是否正确配置了 proxy 环境变量
+## （通常不需要）检查 Shell 配置文件中是否正确配置了 proxy 环境变量
 
 例如在 fish shell 中是：
 
