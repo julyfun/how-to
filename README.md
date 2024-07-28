@@ -6,9 +6,9 @@ How to do anything.
 
 ## How to make use of this website?
 
-If you find the article not in your local language, we recommmend the chrome extension `Immersive Translate` for you. Not only can it translate quickly, but it can also display bilingual comparisons
+If you find the article not in your local language, we recommmend the chrome extension [`Immersive Translate`](https://immersivetranslate.com/) for you. Not only can it translate quickly, but it can also display bilingual comparisons
 
-> 使用 `Immersive Translate` 插件，不仅可以快速翻译，而且可以显示双语对照。
+> 使用 [`Immersive Translate`](https://immersivetranslate.com/) 插件，不仅可以快速翻译，而且可以显示双语对照。
 
 ## Utils
 
