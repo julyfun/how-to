@@ -1,5 +1,9 @@
 How to do anything.
 
+## News!
+
+https://how-to.fun is now available! This site imports how-to as a submodule, so it will automatically update as `how-to` updates! 
+
 ## Utils
 
 ```
