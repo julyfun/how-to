@@ -3,7 +3,7 @@
 ??? info "Problem environment"
 
     - author: >>>
-    - ask date: >>>
+    - edited date: >>>
     - expected environment: >>>
 
 ## Details of the problem / Steps to reproduce the error
@@ -17,7 +17,7 @@ _No details_
 ??? info "Answer environment"
 
     - author: As in the problem
-    - verified date: As in the problem
+    - edited date: As in the problem
     - verified environment: As in the problem
 
 - ref: >>>
