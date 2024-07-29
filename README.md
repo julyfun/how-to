@@ -6,7 +6,7 @@ How to do anything.
 
 !!! info "Old articles here may be CSDN-like"
 
-    This repo starts early and old articles here may provide not enough information for a problem. Still most of them are useful and not very hard to replicate. Recently, we introduced `template.md`, so articles written later will follow this template and try to provide more precise context for any problem.
+    This repo starts early and old articles here may provide not enough information for a problem, most of which are just quick-notes, yet useful and not hard to replicate. Recently, we introduced `template.md`, so articles written later will follow this template and try to provide more precise context for any problem.
 
 ## How to make use of this website?
 
@@ -17,7 +17,7 @@ If you find the article not in your local language, we recommmend the chrome ext
 
 ## Contributions are welcomed
 
-Feel free to add new articles in this repo.
+Feel free to add new articles in this repo. Recommending `template.md` here to start with.
 
 If you meet problems on editing or pushing, please open an issue.
 
@@ -44,7 +44,7 @@ If you meet problems on editing or pushing, please open an issue.
 
 - Spending too much time answering or editing questions that relies largely on proficiency.
 
-## File Suffixes
+## File Suffixes (deprecated)
 
 - `.1.md`: Don't know how, this is a question.
 - `.todo.md`: Knowing how, but not written yet.
