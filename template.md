@@ -21,6 +21,3 @@ _No response_
 - ref: no
 
 _Answer here_ >>>
-
-[//]: # "Ex: > verified by zzz@github again on ... You may add video URL"
-[//]: # "You can add --- Answer 2 here, copy Answer 1 above"
