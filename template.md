@@ -1,4 +1,4 @@
-# >>> How to ...
+# >>> This is a template
 
 ??? info "Problem environment"
 
