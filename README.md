@@ -4,6 +4,9 @@ How to do anything.
 
     [how-to.fun](https://how-to.fun) is now available! This site imports how-to as a submodule, so it will automatically update as `how-to` updates! 
 
+!!! info "Old articles here may be CSDN-like"
+    This repo starts early and old articles here may provide not enough information for a problem. Recently, we introduced `template.md`, articles written later will follow this template and try to provide more precise context for any problem.
+
 ## How to make use of this website?
 
 If you find the article not in your local language, we recommmend the chrome extension [`Immersive Translate`](https://immersivetranslate.com/) for you. Not only can it translate quickly, but it can also display bilingual comparisons
@@ -50,6 +53,7 @@ If you meet problems on editing or pushing, please open an issue.
 
 ### Types of answers (deprecated)
 
+- notes
 - types of question
     - tool usage: under(all / path), demand() - what to do
     - tool error: under(all), error() - what to do
