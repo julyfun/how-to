@@ -9,4 +9,3 @@ ref: https://docs.github.com/en/authentication/securing-your-account-with-two-fa
 ```
 https://github.com/settings/security?type=app#two-factor-summary
 ```
-
