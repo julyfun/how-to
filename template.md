@@ -1,7 +1,6 @@
 [//]: # (Ex: How to clone a Git repository into a specific folder? / `TLS error` when ssh to github / Best way to setup ros2 on Mac M1)
 # __template
-[//]: # (Ex for env: all / unix / ubuntu22.04, git2.12, fish shell 3.7.1 / macos all version, git all version)
-- template version: 24.7.29
+[//]: # (Ex: all / unix / ubuntu22.04, git2.12, fish shell 3.7.1 / macos all version, git all version)
 - expected environment: __
 
 ## Details of the problem / Steps to reproduce the error
