@@ -1,4 +1,4 @@
-# >>> How to ...
+# kex_exchange_identification: Connection closed by remote host
 
 ??? info "Problem environment"
 
