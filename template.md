@@ -1,8 +1,4 @@
-[//]: # "Ex: How to clone a Git repository into a specific folder? / `TLS error` when ssh to github / Best way to setup ros2 on Mac M1"
-
-# >>> template
-
-[//]: # "Ex: all / unix / ubuntu22.04, git2.12, fish shell 3.7.1 / macos all version, git all version"
+# >>> How to ...
 
 ??? info "Expand to show environments"
 
@@ -16,17 +12,13 @@ _No response_
 
 ## Answer 1
 
-[//]: # "If reference is very reliable, like cppference.com, you could leave it unverified"
-
 ??? info "Expand to show environments"
 
     - author: julyfun@github
     - verified date: >>>
     - verified environment: As in the problem
 
-[//]: # "Ex: original / https://... / chatgpt"
-
-- ref: >>>
+- ref: no
 
 _Answer here_ >>>
 

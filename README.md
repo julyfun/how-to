@@ -2,9 +2,9 @@ How to do anything.
 
 !!! tip "News"
 
-    [how-to.fun](https://how-to.fun) is now available! This site imports how-to as a submodule, so it will automatically update as `how-to` updates! 
+    [how-to.fun](https://how-to.fun) is now available! This site imports how-to as a submodule, so it will automatically update as `how-to` updates!
 
-!!! info "Old articles here may be CSDN-like"
+!!! warning "Old articles here may be CSDN-like"
 
     This repo starts early and old articles here may provide not enough information for a problem, most of which are just quick-notes, yet useful and not hard to replicate. Recently, we introduced `template.md`, so articles written later will follow this template and try to provide more precise context for any problem.
 
@@ -13,7 +13,6 @@ How to do anything.
 If you find the article not in your local language, we recommmend the chrome extension [`Immersive Translate`](https://immersivetranslate.com/) for you. Not only can it translate quickly, but it can also display bilingual comparisons
 
 > 人生短暂，使用 [`Immersive Translate`](https://immersivetranslate.com/) 插件，不仅可以快速翻译，而且可以显示双语对照。
-
 
 ## Contributions are welcomed
 
@@ -26,7 +25,7 @@ If you meet problems on editing or pushing, please open an issue.
 - Easy to write new articles and synchronize.
 - Git provides article histories.
 - Plain text which is easy to search, has very few redundant informaiton.
-- File & directories structure, familiar and easy to expand. 
+- File & directories structure, familiar and easy to expand.
 
 ## To do
 
@@ -56,39 +55,41 @@ If you meet problems on editing or pushing, please open an issue.
 
 - notes
 - types of question
-    - tool usage: under(all / path), demand() - what to do
-    - tool error: under(all), error() - what to do
+
+  - tool usage: under(all / path), demand() - what to do
+  - tool error: under(all), error() - what to do
 
 - limitation: under which hope to work
 
 - pip - Using mkdocs failed loading extension pymdownx despite it being installed
-    - tool(mkdocs, pip).error => fix
+  - tool(mkdocs, pip).error => fix
 - git - GnuTLS recv error (-110): The TLS connection was non-properly terminated
-    - tool(git.(pull/ssh)).error => fix
+  - tool(git.(pull/ssh)).error => fix
 - How to add new line in Markdown presentation?
-    - under markdown, we have a demand => usage
+  - under markdown, we have a demand => usage
 - anaconda - How can I activate a Conda environment from PowerShell?
-    - under anaconda
+  - under anaconda
 
-[//]: # (comments)
+[//]: # "comments"
 
 - each part of answer:
-    - answerer (auto)
-    - suppose-readers-know (ai auto)
-    - ref or original? (default ref: )
-    - verified date and env (auto)
+
+  - answerer (auto)
+  - suppose-readers-know (ai auto)
+  - ref or original? (default ref: )
+  - verified date and env (auto)
 
 - 使用某种工具过程中，出现了报错 / 意外，如何解决？
-    - env-to-reproduce (default: os-ver, env-ver, tool-ver, steps-to-reproduce)
-    - 例：打开 `neovim` 出现了带有 `E303` 关键字的错误，通常是因为什么？如何解决？
+  - env-to-reproduce (default: os-ver, env-ver, tool-ver, steps-to-reproduce)
+  - 例：打开 `neovim` 出现了带有 `E303` 关键字的错误，通常是因为什么？如何解决？
 - 在使用一种工具的情况下，能否满足一个需求？
-    - How to make shallow git submodules?
+  - How to make shallow git submodules?
 - 遭遇某种需求，知道存在一种工具，如何安装和使用这种工具？
-    - 例：stl `upper_bound` 和 `lower_bound` 的区别
-    - 例：需要强制命令行走代理，知道 `proxychains` 工具可能解决此需求，问该工具是否兼容 macos？如何安装和使用，安装和使用中可能会遇到什么问题？
-    - 例：在 Ubuntu 中希望更好的终端，知道 `konsole` 工具，问如何安装、配置和使用该工具？
+  - 例：stl `upper_bound` 和 `lower_bound` 的区别
+  - 例：需要强制命令行走代理，知道 `proxychains` 工具可能解决此需求，问该工具是否兼容 macos？如何安装和使用，安装和使用中可能会遇到什么问题？
+  - 例：在 Ubuntu 中希望更好的终端，知道 `konsole` 工具，问如何安装、配置和使用该工具？
 - 有某种需求，应该使用什么工具 / 方法为佳？
-    - 例：在 mac 上学习 ros，应该用什么工具 / 方法安装？
+  - 例：在 mac 上学习 ros，应该用什么工具 / 方法安装？
 
 ### Information needed for judging reliability
 
@@ -118,4 +119,3 @@ git ls-files | grep -v '\.md$' | grep -v '\.md"$'
 # list recent updated files (but ordered by name)
 git diff --name-only HEAD~100..HEAD
 ```
-
