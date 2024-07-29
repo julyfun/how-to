@@ -1,6 +1,26 @@
-## How to apply
+# 学生怎样申请 Copilot 可以提高成功率
 
-Julyfun: 最好：
+??? info "Expand to show environments"
+
+    - expected environment: all
+
+## Details of the problem / Steps to reproduce the error
+
+_No response_
+
+---
+
+## Answer 1
+
+??? info "Expand to show environments"
+
+    - author: julyfun@github
+    - verified date: 2023 秋
+    - verified environment: As in the problem
+
+- ref: no
+
+最好：
 
 - 用 Windows 申请
 - 不要用 VPN，以便 IP 在学校附近
@@ -9,7 +29,6 @@ Julyfun: 最好：
 - 在 education.github.com 申请时简述里面强调自己是真的学生
 - Please correct your github billing informaion (In profile)
 
-对 SJTU:
+对于 SJTU:
 
 - 拍刷卡的学生证就行
-
