@@ -5,6 +5,7 @@ How to do anything.
     [how-to.fun](https://how-to.fun) is now available! This site imports how-to as a submodule, so it will automatically update as `how-to` updates! 
 
 !!! info "Old articles here may be CSDN-like"
+
     This repo starts early and old articles here may provide not enough information for a problem. Recently, we introduced `template.md`, articles written later will follow this template and try to provide more precise context for any problem.
 
 ## How to make use of this website?
