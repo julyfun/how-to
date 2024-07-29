@@ -1,8 +1,8 @@
 How to do anything.
 
-## News!
+!!! tip "News"
 
-[how-to.fun](https://how-to.fun) is now available! This site imports how-to as a submodule, so it will automatically update as `how-to` updates! 
+    [how-to.fun](https://how-to.fun) is now available! This site imports how-to as a submodule, so it will automatically update as `how-to` updates! 
 
 ## How to make use of this website?
 
@@ -10,14 +10,6 @@ If you find the article not in your local language, we recommmend the chrome ext
 
 > 使用 [`Immersive Translate`](https://immersivetranslate.com/) 插件，不仅可以快速翻译，而且可以显示双语对照。
 
-## Utils
-
-```
-# show abnormal tracked files
-git ls-files | grep -v '\.md$' | grep -v '\.md"$'
-# list recent updated files (but ordered by name)
-git diff --name-only HEAD~100..HEAD
-```
 
 ## Contributions are welcomed
 
@@ -31,15 +23,6 @@ If you meet problems on editing or pushing, please open an issue.
 - Git provides article histories.
 - Plain text which is easy to search, has very few redundant informaiton.
 - File & directories structure, familiar and easy to expand. 
-
-## How to make use of this repo
-
-- Search by browsing files, or IDE search engines, or command line tools like `grep` and `find`.
-    - Use [autojump](https://github.com/wting/autojump) to locate directories by recent accessed paths.
-    - Use [fzf.fish](https://github.com/PatrickF1/fzf.fish) to find articles smoothly.
-    - Alternative: `mfa` fish shell tools. See [mfa.fish](https://github.com/julyfun/mfa.fish).
-- Articles may be written in non-english language. Use Google Translate then, most of the time it's useful. 
-- Create new articles freely if you think this can help people. Try not to provide confusing information.
 
 ## To do
 
@@ -93,4 +76,13 @@ If you meet problems on editing or pushing, please open an issue.
 
 - 课堂笔记类。有些问题极大程度上依靠熟练度解决，本仓库不应该花时间回答这类问题。
 - 有对应的具体文档的系统内容。例如 iPadOS 如何关闭检测 Mac 的鼠标和键盘。这些问题有官方的系统的文档，不应该花时间重新写一份，导致抢占官方文档的地位。
+
+## Utils
+
+```
+# show abnormal tracked files
+git ls-files | grep -v '\.md$' | grep -v '\.md"$'
+# list recent updated files (but ordered by name)
+git diff --name-only HEAD~100..HEAD
+```
 
