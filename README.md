@@ -6,7 +6,7 @@ How to do anything.
 
 !!! info "Old articles here may be CSDN-like"
 
-    This repo starts early and old articles here may provide not enough information for a problem. Recently, we introduced `template.md`, articles written later will follow this template and try to provide more precise context for any problem.
+    This repo starts early and old articles here may provide not enough information for a problem. Still most of them are useful and not very hard to replicate. Recently, we introduced `template.md`, so articles written later will follow this template and try to provide more precise context for any problem.
 
 ## How to make use of this website?
 
