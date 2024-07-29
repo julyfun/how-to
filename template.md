@@ -4,7 +4,7 @@
 - template version: 24.7.29
 - expected environment: ___
 
-## Detail of the problem / Steps to reproduce the error
+## Details of the problem / Steps to reproduce the error
 
 *No response*
 
