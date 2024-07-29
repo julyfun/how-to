@@ -1,8 +1,8 @@
 # 在 ios 上使用 2-factor authentication
 
-??? info "Expand to show environments"
+??? info "Problem environment"
 
-    - expected environment: >>>
+    - expected environment: ios
 
 ## Details of the problem / Steps to reproduce the error
 
@@ -12,7 +12,7 @@ _No response_
 
 ## Answer 1
 
-??? info "Expand to show environments"
+??? info "Answer environment"
 
     - author: julyfun@github
     - verified date: 24-7-29

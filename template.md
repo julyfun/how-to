@@ -1,6 +1,6 @@
 # >>> How to ...
 
-??? info "Expand to show environments"
+??? info "Problem environment"
 
     - expected environment: >>>
 
@@ -10,11 +10,11 @@ _No response_
 
 ---
 
-## Answer 1
+# Answer 1
 
-??? info "Expand to show environments"
+??? info "Answer environment"
 
-    - author: julyfun@github
+    - author: >>>
     - verified date: >>>
     - verified environment: As in the problem
 

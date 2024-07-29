@@ -1,14 +1,38 @@
----
-type: draft
-date: 2024-05-06
-language: "Chinese"
-os: "Linux julyfun-Lenovo-XiaoXinAir-14IIL-2020 5.19.0-46-generic #47~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jun 21 15:35:31 UTC 2 x86_64 x86_64 x86_64 GNU/Linux"
-author: "Julyfun Ubuntu22.04 amd64"
-suppose-you-know: [computer]
-keywords: []
+# >>> How to ...
+
+??? info "Problem environment"
+
+    - expected environment: unix
+
+## Details of the problem / Steps to reproduce the error
+
+Some time when you try to connect to github, you may get this error:
+
+```
+kex_exchange_identification: Connection closed by remote host
+```
+
 ---
 
-# kex_exchange_identification: Connection closed by remote host
+# Answer 1
+
+??? info "Answer environment"
+
+    - author: julyfun@github
+    - verified date: 24-7-29
+    - verified environment: As in the problem
+
+- ref: no
+
+## TLDR
+
+Add this to your `~/.ssh/config`:
+
+```
+Host github.com
+  Hostname 20.200.245.248
+  Port 443
+```
 
 ## What I've done before the problem is solved (don't know which one worked):
 
@@ -31,5 +55,3 @@ Host github.com
 - reopen clash for windows: still ok to ssh
 - git clone: ok
 - git pull and push: ok
-
-
