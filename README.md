@@ -8,7 +8,7 @@ How to do anything.
 
 If you find the article not in your local language, we recommmend the chrome extension [`Immersive Translate`](https://immersivetranslate.com/) for you. Not only can it translate quickly, but it can also display bilingual comparisons
 
-> 使用 [`Immersive Translate`](https://immersivetranslate.com/) 插件，不仅可以快速翻译，而且可以显示双语对照。
+> 人生短暂，使用 [`Immersive Translate`](https://immersivetranslate.com/) 插件，不仅可以快速翻译，而且可以显示双语对照。
 
 
 ## Contributions are welcomed
@@ -48,13 +48,42 @@ If you meet problems on editing or pushing, please open an issue.
 
 ---
 
-### Types of answers
+### Types of answers (deprecated)
+
+- types of question
+    - tool usage: under(all / path), demand() - what to do
+    - tool error: under(all), error() - what to do
+
+- limitation: under which hope to work
+
+- pip - Using mkdocs failed loading extension pymdownx despite it being installed
+    - tool(mkdocs, pip).error => fix
+- git - GnuTLS recv error (-110): The TLS connection was non-properly terminated
+    - tool(git.(pull/ssh)).error => fix
+- How to add new line in Markdown presentation?
+    - under markdown, we have a demand => usage
+- anaconda - How can I activate a Conda environment from PowerShell?
+    - under anaconda
+
+[//]: # (comments)
+
+- each part of answer:
+    - answerer (auto)
+    - suppose-readers-know (ai auto)
+    - ref or original? (default ref: )
+    - verified date and env (auto)
 
 - 使用某种工具过程中，出现了报错 / 意外，如何解决？
+    - env-to-reproduce (default: os-ver, env-ver, tool-ver, steps-to-reproduce)
     - 例：打开 `neovim` 出现了带有 `E303` 关键字的错误，通常是因为什么？如何解决？
-- 遭遇某种需求，知道存在一种工具，如何安装和使用这种工具？是否已存在更先进工具 / 替代工具？
+- 在使用一种工具的情况下，能否满足一个需求？
+    - How to make shallow git submodules?
+- 遭遇某种需求，知道存在一种工具，如何安装和使用这种工具？
+    - 例：stl `upper_bound` 和 `lower_bound` 的区别
     - 例：需要强制命令行走代理，知道 `proxychains` 工具可能解决此需求，问该工具是否兼容 macos？如何安装和使用，安装和使用中可能会遇到什么问题？
     - 例：在 Ubuntu 中希望更好的终端，知道 `konsole` 工具，问如何安装、配置和使用该工具？
+- 有某种需求，应该使用什么工具 / 方法为佳？
+    - 例：在 mac 上学习 ros，应该用什么工具 / 方法安装？
 
 ### Information needed for judging reliability
 
@@ -70,7 +99,6 @@ If you meet problems on editing or pushing, please open an issue.
 ### Which answers are needed
 
 - 网站 SSL 证书过期，如何重新申请并配置新 SSL 证书？这种问题容易忘记，而写一篇文章可以很好规避再次犯错。
-
 
 ### Which answers are not needed
 
