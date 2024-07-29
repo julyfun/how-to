@@ -20,11 +20,9 @@ _No response_
 
 ??? info "Expand to show environments"
 
-    hello
-
-- author: julyfun@github
-- verified date: >>>
-- verified environment: As in the problem
+    - author: julyfun@github
+    - verified date: >>>
+    - verified environment: As in the problem
 
 [//]: # "Ex: original / https://... / chatgpt"
 
@@ -33,4 +31,4 @@ _No response_
 _Answer here_ >>>
 
 [//]: # "Ex: > verified by zzz@github again on ... You may add video URL"
-[//]: # "You can add --- Answer 2 here"
+[//]: # "You can add --- Answer 2 here, copy Answer 1 above"
