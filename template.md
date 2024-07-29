@@ -1,12 +1,12 @@
 # >>> This is a template
 
-??? info "Problem environment"
+??? info "Problem details"
 
     - expected environment: >>>
 
-## Details of the problem / Steps to reproduce the error
+    ## Details of the problem / Steps to reproduce the error
 
-_No response_
+    _No response_
 
 ---
 
@@ -17,7 +17,6 @@ _No response_
     - author: >>>
     - verified date: >>>
     - verified environment: As in the problem
-
-- ref: no
+    - ref: >>>
 
 _Answer here_ >>>

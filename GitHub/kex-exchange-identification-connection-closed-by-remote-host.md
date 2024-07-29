@@ -4,13 +4,13 @@
 
     - expected environment: unix
 
-## Details of the problem / Steps to reproduce the error
+    ## Details of the problem / Steps to reproduce the error
 
-Some time when you try to connect to github, you may get this error:
+    Some time when you try to connect to github, you may get this error:
 
-```
-kex_exchange_identification: Connection closed by remote host
-```
+    ```
+    kex_exchange_identification: Connection closed by remote host
+    ```
 
 ---
 
