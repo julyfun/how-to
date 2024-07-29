@@ -1,6 +1,6 @@
 # kex_exchange_identification: Connection closed by remote host
 
-??? info "Problem environment"
+??? info "Problem details"
 
     - expected environment: unix
 
@@ -21,10 +21,9 @@
     - author: julyfun@github
     - verified date: 24-7-29
     - verified environment: As in the problem
+    - ref: no
 
-- ref: no
-
-## TLDR
+### TLDR
 
 Add this to your `~/.ssh/config`:
 
@@ -34,7 +33,7 @@ Host github.com
   Port 443
 ```
 
-## What I've done before the problem is solved (don't know which one worked):
+### What I've done before the problem is solved (don't know which one worked):
 
 - Close clash for windows
 - cancel `http_proxy` and other proxy ports in shell config file (config.fish) and `~/.gitconfig`
@@ -50,7 +49,7 @@ Host github.com
 > verified on 24/5/28, for a new user on Ubuntu, adding this content to `config` is useful.
 > verified on 24/7/24, worked for wsl when suddenly can't connect git by cli.
 
-## Post test
+### Post test
 
 - reopen clash for windows: still ok to ssh
 - git clone: ok
