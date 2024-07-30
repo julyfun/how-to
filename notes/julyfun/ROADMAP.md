@@ -15,8 +15,8 @@
     - [ ] day1 https://www.skyzh.dev/blog/2022-01-22-rust-type-exercise-in-database-executors/
     - [ ] 向量化执行引擎： https://blog.csdn.net/qq_35423190/article/details/123129172
     - [ ] comptime: https://blog.zhuangty.com/zig-lang-comptime/
+    
 [[cs自学指南]]
 
 ## 一般
 - [ ] 创建动态内容 https://segmentfault.com/a/1190000009604779
-

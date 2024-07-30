@@ -5,8 +5,9 @@
 .nvimlog
 *.swp
 .vscode/*
-.zed/*
+**/.zed/*
 .obsidian
+.obsidian.vimrc
 
 # [py]
 __pycache__
