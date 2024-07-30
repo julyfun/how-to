@@ -19,7 +19,7 @@ _No details_
     - author: As in the problem
     - edited date: As in the problem
     - verified environment: As in the problem
-    - assume you know: _No assumption_
+    - assume readers know: _No assumption_
 
 - ref: >>>
 
