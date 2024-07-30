@@ -1,13 +1,11 @@
-
 # [os files]
 .DS_Store
 
 # [editor files]
 .nvimlog
 *.swp
-vscode/*
-
-# [obsidian]
+.vscode/*
+.zed/*
 .obsidian
 
 # [py]
