@@ -11,4 +11,7 @@
 - Use `proxychains`. Search `proxychains` under this how-to repo.
 
 > Verified on 24.7.29
+>
+> On 24.7.30, it crashed. Successfully restarted by using tmux on remote, kill and start the whole clash-for-linux-backup. If UI is missing, try `killall clash-for-linux`
+
 
