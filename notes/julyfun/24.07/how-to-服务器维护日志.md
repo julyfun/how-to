@@ -8,6 +8,8 @@
 
 以为是 clash-for-linux 仓库的问题，拉了 clash-core 和 clashmeta 来测测，还是会干爆。
 
+发现新工具 `gg`， https://github.com/mzz2017/gg?tab=readme-ov-file 当时没外网拉不下来，以后测测
+
 clash core log 有一堆脏东西：
 
 ![](https://telegraph-image-bhi.pages.dev/file/ea010a8ac7358b859ce23.png)
@@ -21,4 +23,3 @@ Done!
 所以这是被攻击了吧。然而不懂：
 - 为啥只有开 clash 才被攻击？
 - 人家咋不用 ssh 攻击？
-
