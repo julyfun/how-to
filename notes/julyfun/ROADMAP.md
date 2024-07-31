@@ -2,6 +2,11 @@
 - [ ] 强化学习入门 https://rail.eecs.berkeley.edu/deeprlcourse/
     - [ ] homework 1
         - [ ] https://rail.eecs.berkeley.edu/deeprlcourse/deeprlcourse/static/slides/lec-1.pdf
+- [ ] 更多强化学习资料
+	- [ ] Notion 三件套 #private https://www.notion.so/tt-tang/30b7b6709a9641f5bf77b16ca103855c
+		- [ ] OPENAI RL https://spinningup.openai.com/en/latest/user/introduction.html
+		- [ ] 知乎 https://www.zhihu.com/column/c_1186982555915599872
+		- [ ] 实际 research 代码框架 https://github.com/DLR-RM/stable-baselines3
 
 ## 有用
 - [ ] 编译原理 [[北大编译实践]]
