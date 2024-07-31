@@ -16,6 +16,7 @@
 - [ ] zig 语法 https://www.zhihu.com/question/50121841/answer/2725592129
 - [ ] fishbot 与电机控制
 - [ ] d2l 中，搭建优秀网络结构
+    - [ ] https://zh.d2l.ai/chapter_convolutional-modern/alexnet.html
 - [ ] 类型体操 pk
     - [ ] day1 https://www.skyzh.dev/blog/2022-01-22-rust-type-exercise-in-database-executors/
     - [ ] 向量化执行引擎： https://blog.csdn.net/qq_35423190/article/details/123129172
