@@ -1,13 +1,10 @@
 # >>> This is a template
 
-<details class="info">
-<summary><strong>Problem environment</strong></summary>
- 
-- author: >>> <br/>
-- edited date: >>> <br/>
-- expected environment: >>> <br/>
+??? info "Problem environment"
 
-</details>
+    - author: >>>
+    - edited date: >>>
+    - expected environment: >>>
 
 ## Details of the problem / Steps to reproduce the error
 
@@ -22,4 +19,3 @@ _No details_
 _Answer here_ >>>
 
 > verified on >>>
-
