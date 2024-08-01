@@ -1,2 +1,3 @@
 - [x] 参数提示： https://github.com/zed-industries/zed/issues/4879
     - [x] https://github.com/zed-industries/zed/pull/12909
+- [ ] 合并 tabbar: https://github.com/zed-industries/zed/issues/5066
