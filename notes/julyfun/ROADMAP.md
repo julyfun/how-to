@@ -21,6 +21,7 @@
     - [ ] day1 https://www.skyzh.dev/blog/2022-01-22-rust-type-exercise-in-database-executors/
     - [ ] 向量化执行引擎： https://blog.csdn.net/qq_35423190/article/details/123129172
     - [ ] comptime: https://blog.zhuangty.com/zig-lang-comptime/
+- [ ] 通用优化库。先学习 yolo 等，以考虑自变量是否可以是非固定空间。
 
 [[cs自学指南]]
 
