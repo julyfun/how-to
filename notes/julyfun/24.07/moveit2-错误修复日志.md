@@ -2,6 +2,8 @@
 
 重启电脑解决。
 
+> 8.2: 重启 wsl 即可。
+
 ## 有一个机械臂的 urdf 如何配置双机械臂
 
 众所周知 moveit setup assistant 输入 urdf 输出所有配置文件。所以你需要修改你原有的 urdf：所有 joint 和 link 加上 `left_` 前缀，再复制 `<robot>` 标签内的所有内容，所有 joint 和 link 加上 `right_` 前缀，两机械臂相对位置用 `world_to_(left/right)_base` 表示。接下来用 setup assistant 就行了。
