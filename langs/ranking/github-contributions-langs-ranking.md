@@ -1,2 +1,2 @@
-https://madnight.github.io/githut/#/pull_requests/2023/3
+see: https://madnight.github.io/githut/#/pull_requests/2023/3
 
