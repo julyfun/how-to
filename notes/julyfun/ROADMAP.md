@@ -16,8 +16,8 @@
 - [ ] zig 语法 https://www.zhihu.com/question/50121841/answer/2725592129
 - [ ] fishbot 与电机控制
 - [ ] d2l 中，搭建优秀网络结构
-    - [x] https://zh.d2l.ai/chapter_convolutional-modern/alexnet.html
-    - [x] https://zh.d2l.ai/chapter_convolutional-modern/vgg.html
+    - [x] 7.4 Done
+    - [ ] 看下 Googlenet 训练时间和显存占用
 - [ ] 类型体操 pk
     - [ ] day1 https://www.skyzh.dev/blog/2022-01-22-rust-type-exercise-in-database-executors/
     - [ ] 向量化执行引擎： https://blog.csdn.net/qq_35423190/article/details/123129172
@@ -27,4 +27,4 @@
 [[cs自学指南]]
 
 ## 一般
-- [ ] 创建动态内容 https://segmentfault.com/a/1190000009604779
+- [ ] next.js 创建动态内容 https://segmentfault.com/a/1190000009604779
