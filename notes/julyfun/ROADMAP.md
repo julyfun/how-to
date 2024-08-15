@@ -7,7 +7,9 @@
         - [ ] OPENAI RL https://spinningup.openai.com/en/latest/user/introduction.html
         - [ ] 知乎 https://www.zhihu.com/column/c_1186982555915599872
         - [ ] 实际 research 代码框架 https://github.com/DLR-RM/stable-baselines3
-
+- [ ] d2l 中，搭建优秀网络结构
+    - [x] 7.4 Done
+    - [ ] 看下 Googlenet 训练时间和显存占用
 ## 有用
 - [ ] 编译原理 [[北大编译实践]]
     - [x] https://pku-minic.github.io/online-doc/#/lv1-main/structure
@@ -15,9 +17,6 @@
     - [ ] https://pku-minic.github.io/online-doc/#/lv1-main/parsing-main
 - [ ] zig 语法 https://www.zhihu.com/question/50121841/answer/2725592129
 - [ ] fishbot 与电机控制
-- [ ] d2l 中，搭建优秀网络结构
-    - [x] 7.4 Done
-    - [ ] 看下 Googlenet 训练时间和显存占用
 - [ ] 类型体操 pk
     - [ ] day1 https://www.skyzh.dev/blog/2022-01-22-rust-type-exercise-in-database-executors/
     - [ ] 向量化执行引擎： https://blog.csdn.net/qq_35423190/article/details/123129172
