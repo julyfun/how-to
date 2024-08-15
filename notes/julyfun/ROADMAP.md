@@ -28,3 +28,7 @@
 
 ## 一般
 - [ ] next.js 创建动态内容 https://segmentfault.com/a/1190000009604779
+
+## TOWRITE
+
+- 电能相比热能的优势
