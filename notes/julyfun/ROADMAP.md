@@ -7,9 +7,13 @@
         - [ ] OPENAI RL https://spinningup.openai.com/en/latest/user/introduction.html
         - [ ] 知乎 https://www.zhihu.com/column/c_1186982555915599872
         - [ ] 实际 research 代码框架 https://github.com/DLR-RM/stable-baselines3
+- [ ] yyu 的 rl 教程 https://hrl.boyuai.com/
+    - [ ] 1
 - [ ] d2l 中，搭建优秀网络结构
     - [x] 7.4 Done
+    - [x] 7.7 Done
     - [ ] 看下 Googlenet 训练时间和显存占用
+
 ## 有用
 - [ ] 编译原理 [[北大编译实践]]
     - [x] https://pku-minic.github.io/online-doc/#/lv1-main/structure
