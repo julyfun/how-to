@@ -9,6 +9,9 @@
 .obsidian
 .obsidian.vimrc
 
+# [binary]
+1
+
 # [py]
 __pycache__
 
