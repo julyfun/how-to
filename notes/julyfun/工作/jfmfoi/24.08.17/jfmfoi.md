@@ -34,8 +34,11 @@ int main() { // 以下主函数
 ```
 
 - st 表: https://www.luogu.com.cn/problem/P3865
+- 集合求和: https://www.luogu.com.cn/problem/P2415
+- 倍增: 忠诚: https://www.luogu.com.cn/problem/P1816
 
 作业:
 
 - 麦森数: https://www.luogu.com.cn/problem/P1045
 - 逆序对: https://www.luogu.com.cn/problem/P1908
+- 喷泉: https://www.luogu.com.cn/problem/solution/P7167
