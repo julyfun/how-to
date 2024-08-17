@@ -33,11 +33,13 @@ int main() { // 以下主函数
 }
 ```
 
-- st 表: https://www.luogu.com.cn/problem/P3865
-- 集合求和: https://www.luogu.com.cn/problem/P2415
-- 倍增: 忠诚: https://www.luogu.com.cn/problem/P1816
+## 作业 - 简单
 
-作业:
+- st 表: https://www.luogu.com.cn/problem/P3865
+- (数学)集合求和: https://www.luogu.com.cn/problem/P2415
+- (st 表) 忠诚: https://www.luogu.com.cn/problem/P1816
+
+## 附加作业（可选）
 
 - 麦森数: https://www.luogu.com.cn/problem/P1045
 - 逆序对: https://www.luogu.com.cn/problem/P1908
