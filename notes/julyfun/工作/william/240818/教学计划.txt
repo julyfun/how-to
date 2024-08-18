@@ -42,7 +42,23 @@ s3 = s1.difference(s2)
 print(s3) # {1, 2}
 ```
 
-## 例题 2
+## 例题 1
+
+https://www.luogu.com.cn/problem/P1059
+
+使用 set 实现去重和排序
+
+```py
+s = sorted(list(set))
+```
+
+## 例题 2：真题
+
+https://usaco.org/index.php?page=viewproblem2&cpid=1111
+
+使用 set 不重复地存储每个祖先年份所在的段，找出最大的 k - 1 的间隔从答案中减去。
+
+## 作业例题
 
 木材仓库 https://www.luogu.com.cn/problem/P5250
 
@@ -84,27 +100,3 @@ for i in range(1, n + 1):
                     print(lower_bound[-1])
                     operations_set.remove(lower_bound[-1])
 ```
-
-## 例题 3 / 作业
-
-给定两个数组 nums1 和 nums2 ，返回 它们的交集 。输出结果中的每个元素一定是 唯一 的。我们可以 不考虑输出结果的顺序 。
-
-```
-示例 1：
-
-输入：nums1 = [1,2,2,1], nums2 = [2,2]
-输出：[2]
-示例 2：
-
-输入：nums1 = [4,9,5], nums2 = [9,4,9,8,4]
-输出：[9,4]
-解释：[4,9] 也是可通过的
-```
-
-法一：
-
-我们可以，两个集合当中的内容都放进 两个 set 当中，第一个是 去重，第二是排序，好查找。然后，去两个set 一个一个遍历比较，有相同的就是交集。
-
-法二：
-
-还有比 法一 更好的方法，开始也都把两个集合放到 两个 set 当中。然后中序遍历保存结果，比如是下面两个结果：
