@@ -26,7 +26,7 @@ HEAD^的意思是上一个版本，也可以写成HEAD~1
 注意完成这个操作后，就恢复到了上一次的commit状态
 ```
 
-## undo 第一个 commit
+## undo 第一个 init commit
 
 ref: https://stackoverflow.com/questions/6632191/how-to-revert-initial-git-commit
 
