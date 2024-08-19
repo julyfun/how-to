@@ -1,7 +1,4 @@
 ## 非常重要
-- [ ] 强化学习入门 https://rail.eecs.berkeley.edu/deeprlcourse/
-    - [ ] homework 1
-        - [ ] https://rail.eecs.berkeley.edu/deeprlcourse/deeprlcourse/static/slides/lec-1.pdf
 - [ ] 其他强化学习资料
     - [ ] Notion 三件套 #private https://www.notion.so/tt-tang/30b7b6709a9641f5bf77b16ca103855c
         - [ ] OPENAI RL https://spinningup.openai.com/en/latest/user/introduction.html
@@ -25,7 +22,7 @@
     - [ ] day1 https://www.skyzh.dev/blog/2022-01-22-rust-type-exercise-in-database-executors/
     - [ ] 向量化执行引擎： https://blog.csdn.net/qq_35423190/article/details/123129172
     - [ ] comptime: https://blog.zhuangty.com/zig-lang-comptime/
-- [ ] 通用优化库。先学习 yolo 等，以考虑自变量是否可以是非固定空间。
+- [ ] 自建通用优化库。先学习 yolo 等，以考虑自变量是否可以是非固定空间。
 
 [[cs自学指南]]
 
@@ -35,3 +32,4 @@
 ## TOWRITE
 
 - 电能相比热能的优势
+- 解释与预测
