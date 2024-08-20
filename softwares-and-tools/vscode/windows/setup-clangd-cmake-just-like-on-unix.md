@@ -58,7 +58,20 @@ check if a single file can find headers.
 
 ## Use ninja
 
+In msys2:
+
 ```
 pacman -S mingw-w64-x86_64-ninja
 ```
+
+Write cmake as usual. ref: https://blog.51cto.com/u_15127539/3336648
+
+```
+cd build
+# I forget if I need to specify "build for ninja". This just works on my win10 now
+cmake ..
+ninja install
+```
+
+Go to `install/bin/` and check generated executable.
 
