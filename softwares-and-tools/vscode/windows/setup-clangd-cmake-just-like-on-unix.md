@@ -56,3 +56,9 @@ check if a single file can find headers.
 
 (Tested ok)
 
+## Use ninja
+
+```
+pacman -S mingw-w64-x86_64-ninja
+```
+
