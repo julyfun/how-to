@@ -1,4 +1,5 @@
 ## 非常重要
+
   - [ ] Notion 三件套 #private https://www.notion.so/tt-tang/30b7b6709a9641f5bf77b16ca103855c
       - [ ] OPENAI RL https://spinningup.openai.com/en/latest/user/introduction.html
       - [ ] 知乎 https://www.zhihu.com/column/c_1186982555915599872
@@ -11,6 +12,8 @@
     - [ ] 看下 Googlenet 训练时间和显存占用
 
 ## 有用
+
+- [ ] mkdocs 网页渲染 typst
 - [ ] 编译原理 [[北大编译实践]]
     - [x] https://pku-minic.github.io/online-doc/#/lv1-main/structure
     - [x] https://pku-minic.github.io/online-doc/#/lv1-main/lexer-parser
