@@ -22,3 +22,5 @@ plt.plot(xf, 2.0 / N * np.abs(yf[:N // 2])) # Normalize and plot
 ```
 
 ref: https://zhuanlan.zhihu.com/p/620462217 含有 FFT 算法证明
+
+> verified using sin wave (generate + fft) on 24.8.21
