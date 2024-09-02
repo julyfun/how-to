@@ -11,7 +11,9 @@ suppose-you-know: [computer]
 
 ref: https://blog.csdn.net/czczczzczc/article/details/115595695
 
-cli: ibus-setup
+```
+ibus-setup
+```
 
 -> Emoji -> Delete "Emoji annotation"
 
