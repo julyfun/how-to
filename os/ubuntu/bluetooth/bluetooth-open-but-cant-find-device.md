@@ -10,6 +10,16 @@ keywords: []
 
 # Bluetooth open but cant find device
 
+## Try this first
+
+```
+sudo rmmod btusb
+sleep 1
+sudo modprobe btusb
+```
+
+## If failed, try:
+
 ref: https://blog.51cto.com/u_14193285/5985919
 
 ```
@@ -60,6 +70,10 @@ rfkill unblock bluetooth
 ```
 
 > this cmd verified to be effective on 24.6.25
+>
 > this cmd verified to be effective on 24.6.25 again, the rmmod and modprobe is enough
+>
 > this cmd verified to be effective on 24.6.27 again, the rmmod and modprobe is enough
+>
+> this cmd verified to be effective on 24.9.9 on linux, the rmmod and modprobe is enough
 
