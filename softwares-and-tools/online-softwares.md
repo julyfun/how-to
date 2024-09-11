@@ -20,3 +20,9 @@ https://cloudconvert.com/ogg-to-mp3
 
 https://www.souziti.com/
 
+## pdf to word
+
+best is:
+
+https://pdfcandy.com/cn/pdf-to-word.html
+
