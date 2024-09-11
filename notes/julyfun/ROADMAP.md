@@ -7,6 +7,7 @@
     - [x] 7.7 Done
     - [ ] 看下 Googlenet 训练时间和显存占用
 	- [ ] https://d2l.ai/chapter_attention-mechanisms-and-transformers/queries-keys-values.html
+- [ ] 上层模型训练
 	
 ## 有用
 
