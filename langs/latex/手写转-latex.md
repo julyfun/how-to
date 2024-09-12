@@ -6,3 +6,5 @@
 
 # 手写转 Latex
 
+https://simpletex.net/ai/latex_ocr
+
