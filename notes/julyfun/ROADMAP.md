@@ -6,11 +6,12 @@
     - [x] 7.4 Done
     - [x] 7.7 Done
     - [ ] 看下 Googlenet 训练时间和显存占用
-	- [ ] https://d2l.ai/chapter_attention-mechanisms-and-transformers/queries-keys-values.html
+  	- [ ] https://d2l.ai/chapter_attention-mechanisms-and-transformers/queries-keys-values.html
 - [ ] 上层模型训练 https://blog.csdn.net/qq_42589613/article/details/139207148
-	- [ ] 部署
-	- [ ] 加速
-	
+  	- [ ] 部署
+  	- [ ] 加速
+- [ ] 法语课程
+
 ## 有用
 
   - [ ] Notion 三件套 #private https://www.notion.so/tt-tang/30b7b6709a9641f5bf77b16ca103855c
