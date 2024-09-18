@@ -6,5 +6,9 @@
 
 # Pylance can't find some modules
 
+Just do some settings like this:
+
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/Screenshot%20from%202024-09-18%2017-54-04.webp)
+
+> verified
 
