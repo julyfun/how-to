@@ -1,7 +1,8 @@
 ## 非常重要
 
+- [ ] 尽快学习语言
 - [ ] yyu 的 rl 教程 https://hrl.boyuai.com/
-    - [ ] https://hrl.boyuai.com/chapter/1/%E5%A4%9A%E8%87%82%E8%80%81%E8%99%8E%E6%9C%BA
+    - [x] https://hrl.boyuai.com/chapter/1/%E5%A4%9A%E8%87%82%E8%80%81%E8%99%8E%E6%9C%BA
 - [ ] d2l 中，搭建优秀网络结构
     - [x] 7.4 Done
     - [x] 7.7 Done
@@ -10,7 +11,6 @@
 - [ ] 上层模型训练 https://blog.csdn.net/qq_42589613/article/details/139207148
   	- [ ] 部署
   	- [ ] 加速
-- [ ] 法语课程
 
 ## 有用
 
