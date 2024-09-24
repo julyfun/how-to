@@ -1,0 +1,4 @@
+```
+pacman -S net-utils
+```
+
