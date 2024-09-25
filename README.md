@@ -76,3 +76,7 @@ git diff --name-only HEAD~100..HEAD
 
 图床: https://telegraph-image-bhi.pages.dev/
 
+```
+watch -n 1800 fish -c "jp"
+```
+
