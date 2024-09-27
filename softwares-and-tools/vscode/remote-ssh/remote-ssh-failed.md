@@ -36,3 +36,14 @@ Host mfa
 * 再检查检查有没有重复的 HostName，删除重复的
 * 成功
 
+### 24.9.27
+
+今天即使在 ssh config 中配好了 Host，还是 SSH Timed out. 排除法发现是 vscode ssh 命令自带的 `ssh -T` 选项造成的超时，该选项要求不分配伪终端。
+
+结果还是通过在本地 settings 中添加此来解决:
+
+```
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.useExecServer": false,
+```
+

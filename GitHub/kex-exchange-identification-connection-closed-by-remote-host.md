@@ -55,3 +55,10 @@ Host github.com
 - reopen clash for windows: still ok to ssh
 - git clone: ok
 - git pull and push: ok
+
+### 24.9.27
+
+- windows 上和 wsl2 中无法访问阿里云服务器 ssh
+- solve: 关闭了 Clash Verge 的服务模式（未关闭 tun）
+- solve2: 开启服务模式 + TUN 并选择直连也可以。这台机子如果不开 TUN, wsl2 的网速异常龟速，即使 win 内的网速正常。
+

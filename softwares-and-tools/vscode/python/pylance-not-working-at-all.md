@@ -10,3 +10,7 @@ See the output panel of Python extension.
 
 It usually requires newest version of vscode. Like now I'm 1.90, and `[error] sendStartupTelemetry() failed. Error: The language client requires VS Code version ^1.91.0 but received version 1.90.0`
 
+### 24.9.28
+
+- 尝试插件 Python Extensions，今天可能是这玩意解决了 pylance 未显示问题。
+
