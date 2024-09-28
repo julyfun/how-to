@@ -54,7 +54,6 @@ int main() {
 
     int testCases;
     std::cin >> testCases;
-    std::cout << "ok\n";
     for (int t = 0; t < testCases; ++t) {
         int n;
         std::cin >> n;
@@ -62,12 +61,15 @@ int main() {
         for (int i = 1; i <= n; ++i) {
             std::cin >> a[i];
         }
-        int leastValue = 1e9;
+        int firstMinRound = 1e9, win = 0;
         for (int i = 1; i <= n; ++i) {
-            leastValue = std::min(leastValue, toWin[a[i]]);
-            std::cout << toWin[a[i]] << ' ';
+            if (toWin[a[i]] / 2 + 1 < firstMinRound) {
+                firstMinRound = toWin[a[i]] / 2 + 1;
+                win = toWin[a[i]] % 2;
+            }
+
         }
-        if (leastValue % 2 == 1) {
+        if (win == 1) {
             std::cout << "Farmer John" << std::endl;
         } else {
             std::cout << "Farmer Nhoj" << std::endl;
