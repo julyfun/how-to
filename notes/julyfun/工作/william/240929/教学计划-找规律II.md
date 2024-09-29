@@ -84,6 +84,20 @@ https://usaco.org/index.php?page=viewproblem2&cpid=918
 
 最多的步数：定义总距离为每对相邻奶牛之间距离 - 1 的和。如果边缘有两头奶牛相邻，发现每步一定可以只让距离减 1，而第一步一定会把两端移到中间某个位置，故最优方案就是两端先造成一个相邻，之后不断减 1
 
+```py
+n = int(input())
+a = [int(input()) for _ in range(n)]
+a.sort()
+t = 0
+minans = 1e9
+for s in range(n):
+    while t + 1 <= n - 1 and a[t + 1] - a[s] + 1 <= n:
+        t += 1
+    minans = min(minans, n - (t - s + 1))
+print(minans)
+totdis = a[n - 1] - a[0] - (n - 1)
+print(totdis - min(a[2] - a[1], a[n - 1] - a[n - 2]) + 1)
+```
 ## 作业题:
 
 ## COW Operations
