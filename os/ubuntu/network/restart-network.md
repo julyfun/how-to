@@ -10,5 +10,7 @@ Ubuntu 22.04
 
 ```
 service network-manager restart
+# or
+sudo systemctl restart NetworkManager
 ```
 
