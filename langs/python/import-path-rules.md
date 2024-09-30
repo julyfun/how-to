@@ -4,7 +4,9 @@ keywords: [workspace]
 
 对于一个项目，你执行 python somewhere/main.py
 
-则 main.py 运行的所有东西，包括 main.py import 的 py，其中的 import 的 sys.path（sys.path 会决定 import 的位置） 均为 somewhere/（即 main.py 所在的位置）。例如 main.py 中 from pkg1.animal import eat, animal.py 有 from mantis import something，则 mantis 必须在 main.py 所在文件夹下，不可以在 pkg1/ 中。
+则 main.py 运行的所有东西，包括 main.py import 的 py，其中的 import 的 sys.path（sys.path 会决定 import 的位置） 均为 somewhere/（即 main.py 所在的位置）。
+
+> 例如 main.py 中 from pkg1.animal import eat, animal.py 有 from mantis import something，则 mantis 必须在 main.py 所在文件夹下，不可以在 pkg1/ 中。
 
 但是 vscode 的智能提示比较呆，会从当前文件 __init__.py 的祖先文件夹都会自动加入智能提示的 sys.path.
 
