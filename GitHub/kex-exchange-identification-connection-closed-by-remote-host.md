@@ -12,18 +12,6 @@ Some time when you try to connect to github, you may get this error:
 kex_exchange_identification: Connection closed by remote host
 ```
 
----
-
-## Answer 1
-
-??? info "Answer environment"
-
-    - author: julyfun@github
-    - verified date: 24-7-29
-    - verified environment: As in the problem
-
-- ref: no
-
 ### TLDR
 
 Add this to your `~/.ssh/config`:
