@@ -4,7 +4,7 @@
 - author: Julyfun MacOS14.5 M1
 - suppose-you-know: nothing
 
-> This is minimal steps
+> These are minimal steps
 
 - Get a web url for vpn subscription
 - Use this shell tool: see: https://github.com/Elegycloud/clash-for-linux-backup (some clash core are included)
@@ -13,5 +13,4 @@
 > Verified on 24.7.29
 >
 > On 24.7.30, it crashed. Successfully restarted by using tmux on remote, kill and start the whole clash-for-linux-backup. If UI is missing, try `killall clash-for-linux`
-
 
