@@ -26,3 +26,14 @@ Done! clash 又正常了，所以你才能看到这篇博客。
 
 或许昨天白天不是 clash 挂了而是节点挂了，晚上是设置过于简单密码才被轰炸的。果真如此的话还是得开 9090 端口去选节点。
 
+## 10.20
+
+- 最近又挂了，不得不重新开放 external 端口
+- 在阿里云开放端口 X
+- 删除 clash-for-linux-backup 中的 conf/config.yaml
+- 重新 sudo bash start.sh
+- 修改 conf/config.yaml 中的 external 端口
+- sudo bash restart.sh
+- proxy_on
+- 访问看看
+
