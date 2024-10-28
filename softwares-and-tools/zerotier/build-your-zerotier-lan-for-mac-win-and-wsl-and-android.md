@@ -42,7 +42,9 @@ AllowUsers *
 - Remeber to set planet file in upright `...`
     - After setting, you need restart the app
 - Screen bluring?
-    - screen orientation is wrong!
+    - the screen orientation rustdesk got is wrong! 可能是实际竖屏，传输横屏，就雪花屏了
+- Too high latency?
+    - Seems to relate to encoder, try other video encode like vp8.
 
 ## Rustdesk
 
