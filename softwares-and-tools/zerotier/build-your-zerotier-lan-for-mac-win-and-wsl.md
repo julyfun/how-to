@@ -37,6 +37,11 @@ AllowUsers *
     - If failed, try adding `RequestTTY force` in ssh config to wsl 
 - Success!
 
+## Android
+
+- Remeber to set planet file in upright `...`
+    - After setting, you need restart the app
+
 ## Rustdesk
 
 - Directly input your ip in rustdesk
