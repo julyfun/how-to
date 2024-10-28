@@ -9,7 +9,7 @@
 - Basic tutorial : https://github.com/xubiaolin/docker-zerotier-planet
     - `200 Join OK` on windows but windows is not listed in webui?
         - Double check the Port you selected when `./deploy.sh` is allows in your server security group!
-        - Make sure you've `Easy Setup` the ip range (like in tutorial) (I make the IP range look like SJTU ethernet)
+        - Make sure you've `Easy Setup` the ip range (like in tutorial) (Don't make the ip range look like your ethernet)
 
 ## wsl2 special part
 
