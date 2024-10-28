@@ -10,11 +10,12 @@ keywords: []
 
 # Disbale capslock on win10
 
-see: 
+The two methods below seems to have some bugs in some cases:
 
 https://support.lenovo.com/us/en/solutions/ht501231-press-shift-key-to-turn-off-caps-lock-in-windows-810
-
-or
-
 https://www.wikihow.com/Turn-Off-Caps-Lock
+
+I prefer Powertoy (github) in this tutorial:
+
+https://nerdschalk.com/top-5-ways-to-disable-caps-lock-on-windows-11/
 

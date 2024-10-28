@@ -12,3 +12,15 @@
 
 > 24.10.28，先重装内核再执行 ms 官方的挂载命令，可通过 test.py 测试
 
+每次重启电脑后，均需要
+
+```
+# powershell
+usbipd list
+usbipd bind --busid <busid, ex: 4-4>
+usbipd attach --wsl --busid <busid>
+
+# wsl
+sudo chmod 777 /dev/video0 
+```
+
