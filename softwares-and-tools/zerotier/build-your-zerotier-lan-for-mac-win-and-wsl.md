@@ -6,5 +6,5 @@
 
 # Build your zerotier LAN for mac, win and wsl
 
-
+- Can't ping wsl2 though webui show all devices are ONLINE?
 
