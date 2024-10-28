@@ -37,6 +37,11 @@ AllowUsers *
     - If failed, try adding `RequestTTY force` in ssh config to wsl 
 - Success!
 
+## Rustdesk
+
+- Directly input your ip in rustdesk
+    - Ok!
+
 ## Problems
 
 - Can't ping wsl2 though webui show all devices are ONLINE?
