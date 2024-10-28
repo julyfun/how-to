@@ -34,6 +34,7 @@ AllowUsers *
 
 - (Maybe necessary) Allow 2222 port in windows firewall rule settings.
 - ssh like this: `ssh julyfun@10.81.23.35 -p 2222`
+    - If failed, try adding `RequestTTY force` in ssh config to wsl 
 - Success!
 
 ## Problems
