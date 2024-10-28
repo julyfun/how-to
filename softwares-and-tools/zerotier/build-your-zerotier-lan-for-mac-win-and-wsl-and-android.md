@@ -4,7 +4,7 @@
 - author: "Julyfun MacOS14.5 M1"
 - assume-you-know: [computer]
 
-# Build your zerotier LAN for mac, win and wsl
+# Build your zerotier LAN for mac, win and wsl and android
 
 - Basic tutorial : https://github.com/xubiaolin/docker-zerotier-planet
     - `200 Join OK` on windows but windows is not listed in webui?
@@ -41,6 +41,8 @@ AllowUsers *
 
 - Remeber to set planet file in upright `...`
     - After setting, you need restart the app
+- Screen bluring?
+    - screen orientation is wrong!
 
 ## Rustdesk
 
