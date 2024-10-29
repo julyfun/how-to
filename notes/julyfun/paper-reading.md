@@ -1,6 +1,11 @@
+## 10.29
+
+- [ ] Probing the 3D Awareness of Visual Foundation Models
+
+
 ## 10.26
 
-- [  ] 形同我写的 IK 的 RelexedIK 2018:  https://m.roboticsproceedings.org/rss14/p43.pdf
+- [x] 形同我写的 IK 的 RelexedIK 2018:  https://m.roboticsproceedings.org/rss14/p43.pdf
     - 优化用 scipy slsqp
 
 ## 10.19
