@@ -5,35 +5,9 @@
 - SuGAR:
     - 生成 colmap 数据集
         - [ok, win]: https://blog.csdn.net/yangyu0515/article/details/131308012
-        - [?, linux]: https://www.cnblogs.com/Todd-Qi/p/10792685.html
+        - [?]: https://www.cnblogs.com/Todd-Qi/p/10792685.html
         - 不要拍摄黑物体，物体偶尔露出屏幕外没事
-        - Dense 很慢，半个多小时还没好
-    - Install
-        - cuda 12.3 不行，见 readme
-        - 安装 gaussian 时还是报错 `error: [Errno 2] No such file or directory: ':/usr/local/cuda/bin/nvcc'` ?
-            - 因为 `$CUDA_HOME` 环境变量多了个冒号... 去环境配置里把冒号删了就 ok
-                - fish shell is ok
-            - success!
-    - 以以下文件结构成功开 Train
-    ```
-    dataset
-    ├── database.db
-    ├── images
-    │   ├── 5_0.jpg
-    │   ├── ...
-    │   ├── 5_98.jpg
-    │   └── 5_99.jpg
-    └── sparse
-        └── 0
-            ├── cameras.bin
-            ├── images.bin
-            ├── points3D.bin
-            ├── points3D.ply
-            └── project.ini
-    ```
-    - hello
-- Grounded-SAM 抠图
-    - 可以扣小熊虫 🆗
+    - cuda 12.3 不行，见 readme
 
 ## 10.29
 
