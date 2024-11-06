@@ -1,3 +1,7 @@
+## 11.6
+
+- [ ] #[hand, rgb] RGB 重建手部 mesh: https://github.com/geopavlakos/hamer
+
 ## 10.29
 
 - [ ] https://arxiv.org/abs/2404.08636: 探索大模型的 3D 泛化识别 Probing the 3D Awareness of Visual Foundation Models
