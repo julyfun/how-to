@@ -78,3 +78,23 @@ git diff --name-only HEAD~100..HEAD
 watch -n 1800 fish -c "jp"
 ```
 
+- type
+
+```
+.h
+.md
+.rs
+.js
+.py
+.jpg
+.typ
+.gitignore
+.css
+.cpp
+.json
+.png
+.ipynb
+.txt
+.vimrc
+```
+
