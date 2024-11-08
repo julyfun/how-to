@@ -1,0 +1,2 @@
+- 作用：对于连续的状态和离散的动作，可通过采样方式更新神经网络（input: state | output: value of all actions)
+- ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241108230928.webp)
