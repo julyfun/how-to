@@ -19,3 +19,5 @@ class DynaQ:
             (s, a), (r, s_) = random.choice(list(self.model.items()))
             self.q_learning(s, a, r, s_)
 ```
+
+done.
