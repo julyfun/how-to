@@ -37,4 +37,54 @@ class ...:
         self.Q_table[s0, a0] += self.alpha * td_error
 ```
 
+```python
+# DQN
+class ...:
+    def update(self, transition_dict):
+        states = torch.tensor(transition_dict['states'],
+                              dtype=torch.float).to(self.device)
+        actions = torch.tensor(transition_dict['actions']).view(-1, 1).to(
+            self.device)
+        rewards = torch.tensor(transition_dict['rewards'],
+                               dtype=torch.float).view(-1, 1).to(self.device)
+        next_states = torch.tensor(transition_dict['next_states'],
+                                   dtype=torch.float).to(self.device)
+        dones = torch.tensor(transition_dict['dones'],
+                             dtype=torch.float).view(-1, 1).to(self.device)
+
+        q_values = self.q_net(states).gather(1, actions)  # Q值
+        # 下个状态的最大Q值
+        max_next_q_values = self.target_q_net(next_states).max(1)[0].view(
+            -1, 1)
+        q_targets = rewards + self.gamma * max_next_q_values * (1 - dones
+                                                                )  # TD误差目标
+        dqn_loss = torch.mean(F.mse_loss(q_values, q_targets))  # 均方误差损失函数
+        self.optimizer.zero_grad()  # PyTorch中默认梯度会累积,这里需要显式将梯度置为0
+        dqn_loss.backward()  # 反向传播更新参数
+        self.optimizer.step()
+
+        if self.count % self.target_update == 0:
+            self.target_q_net.load_state_dict(
+                self.q_net.state_dict())  # 更新目标网络
+        self.count += 1
+
+
+action = agent.take_action(state)
+next_state, reward, done, _ = env.step(action)
+replay_buffer.add(state, action, reward, next_state, done)
+state = next_state
+# 当buffer数据的数量超过一定值后,才进行Q网络训练
+if replay_buffer.size() > minimal_size:
+    b_s, b_a, b_r, b_ns, b_d = replay_buffer.sample(batch_size)
+    transition_dict = {
+        'states': b_s,
+        'actions': b_a,
+        'next_states': b_ns,
+        'rewards': b_r,
+        'dones': b_d
+    }
+    agent.update(transition_dict)
+```
+
 done.
+    
