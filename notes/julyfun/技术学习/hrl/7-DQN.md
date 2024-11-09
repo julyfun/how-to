@@ -1,4 +1,4 @@
-- 作用：对于连续的状态和离散的动作，可通过采样方式更新神经网络
+- DQN 作用：对于连续的状态和离散的动作，可通过采样方式更新神经网络
     - Input: state
     - Output: value of all actions
     - 这就是学了个 $Q$，有了 $Q$ 策略就是选最大价值动作。
@@ -18,7 +18,9 @@
 
 ## 目标网络 + 训练网络
 
-其实就是复制两份网络，训练网络每次批量优化时都会更新（目标网络暂不更新），其中损失函数使用目标网络计算，每隔 $C$ 步将目标网络同步到训练网络。注意神经网络形式化的损失函数总是 $sum (F(x_i) - y_i^tilde)^2$，在下方原文中可以见到。
+其实就是复制两份网络，训练网络每次批量优化时都会更新（目标网络暂不更新），其中损失函数使用目标网络计算，每隔 $C$ 步将目标网络同步到训练网络。注意神经网络形式化的损失函数总是 $sum (F(x_i) - y_i^"hat")^2$，在下方原文中可以见到。
+
+- $w^-$ : 目标网络的权重
 
 ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241108231747.webp)
 
@@ -49,15 +51,16 @@ class ...:
                                dtype=torch.float).view(-1, 1).to(self.device)
         next_states = torch.tensor(transition_dict['next_states'],
                                    dtype=torch.float).to(self.device)
+        # dones[i]: 第 i 个状态是否为终止状态
         dones = torch.tensor(transition_dict['dones'],
                              dtype=torch.float).view(-1, 1).to(self.device)
 
-        q_values = self.q_net(states).gather(1, actions)  # Q值
-        # 下个状态的最大Q值
-        max_next_q_values = self.target_q_net(next_states).max(1)[0].view(
-            -1, 1)
-        q_targets = rewards + self.gamma * max_next_q_values * (1 - dones
-                                                                )  # TD误差目标
+        # `gather`函数用于从输出中选择特定的Q值。`1`表示在第二个维度（动作维度）进行选择，`actions`是动作的索引
+        # q_values 上面存了梯度
+        q_values = self.q_net(states).gather(1, actions)  # 训练网络给出的 Q值, y
+        # 下个状态的最大Q值，目标网络给出，part of y^hat
+        max_next_q_values = self.target_q_net(next_states).max(1)[0].view(-1, 1)
+        q_targets = rewards + self.gamma * max_next_q_values * (1 - dones) # 终止状态不考虑下步奖励
         dqn_loss = torch.mean(F.mse_loss(q_values, q_targets))  # 均方误差损失函数
         self.optimizer.zero_grad()  # PyTorch中默认梯度会累积,这里需要显式将梯度置为0
         dqn_loss.backward()  # 反向传播更新参数
@@ -87,4 +90,3 @@ if replay_buffer.size() > minimal_size:
 ```
 
 done.
-    
