@@ -67,9 +67,10 @@ class ...:
         dones = torch.tensor(transition_dict['dones'],
                              dtype=torch.float).view(-1, 1).to(self.device)
 
+        # q_values: 训练网络给出的 Q值, 作为 y^hat，上面存了梯度
         # `gather`函数用于从输出中选择特定的Q值。`1`表示在第二个维度（动作维度）进行选择，`actions`是动作的索引
-        # q_values 上面存了梯度
-        q_values = self.q_net(states).gather(1, actions)  # 训练网络给出的 Q值, 作为 y^hat
+        # [q] gather 也能存梯度么?
+        q_values = self.q_net(states).gather(1, actions)
         # 下个状态的最大Q值，目标网络给出，这是 y^real 的一部分
         max_next_q_values = self.target_q_net(next_states).max(1)[0].view(-1, 1)
         q_targets = rewards + self.gamma * max_next_q_values * (1 - dones) # 终止状态不考虑下步奖励
