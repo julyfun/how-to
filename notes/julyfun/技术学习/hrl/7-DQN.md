@@ -8,14 +8,16 @@
 
 - 由于 Q-learning 是这样的:
 - ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241108231138.webp)
-- 所以对于一个批量的采样 ${(s_i, a_i, r_i, s_i^prime)}$，可以这样设计损失函数:
-    - 注意下面损失函数里有 $Q$ 本身，无法方便求损失，所以设计了训练网络和目标网络。这里 $w$ 是 MLP 权重。
+- 所以对于一个**批量的采样** ${(s_i, a_i, r_i, s_i^prime)}$，可以这样设计损失函数:
+    - 注意下面损失函数里有 $Q$ 本身，无法方便求损失，所以后面设计了双网络（训练网络和目标网络）。这里 $w$ 是 MLP 权重。
 - ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241108231239.webp)
 - 损失函数为 $0$ 时，满足: 动作奖励函数 = 该动作奖励 + $gamma times$ 随机采样后续状态下最优动作奖励函数
 
-## 经验回放 experience replay
+## 训练细节: 经验回放 experience replay
 
 将历次采样放入缓冲区，取缓冲区的若干次数据（而不是最近一次）作为一个小批量来优化 $Q_w$
+
+- 整个训练过程中，
 
 ## 目标网络 + 训练网络
 
