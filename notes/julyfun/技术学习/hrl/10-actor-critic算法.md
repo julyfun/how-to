@@ -28,7 +28,7 @@ class ActorCritic:
         td_delta = td_target - self.critic(states)  # 时序差分误差
         log_probs = torch.log(self.actor(states).gather(1, actions))
         actor_loss = torch.mean(-log_probs * td_delta.detach())
-        # 均方误差损失函数
+        # 均方误差损失函数，这里直接 detach() 来实现类似 Double DQN 的效果... （不演了是吧）
         critic_loss = torch.mean(
             F.mse_loss(self.critic(states), td_target.detach()))
         self.actor_optimizer.zero_grad()
@@ -47,4 +47,16 @@ class PolicyNet(torch.nn.Module):
     def forward(self, x):
         x = F.relu(self.fc1(x))
         return F.softmax(self.fc2(x), dim=1)
+        
+class ValueNet(torch.nn.Module):
+    def __init__(self, state_dim, hidden_dim):
+        super(ValueNet, self).__init__()
+        self.fc1 = torch.nn.Linear(state_dim, hidden_dim)
+        self.fc2 = torch.nn.Linear(hidden_dim, 1)
+
+    def forward(self, x):
+        x = F.relu(self.fc1(x))
+        return self.fc2(x)
 ```
+
+- 效果：抖动比基于蒙特卡洛的 REINFORCE 收敛更快，且非常稳定.
