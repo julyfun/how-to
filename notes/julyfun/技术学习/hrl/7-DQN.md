@@ -1,6 +1,6 @@
 - DQN 作用：对于连续的状态和离散的动作，可通过采样方式更新神经网络
-    - Input: state
-    - Output: value of all actions
+    - Input: 状态（并不含动作）
+    - Output: 各种动作的动作价值
     - 这就是学了个 $Q$，有了 $Q$ 策略就是选最大价值动作。
 - 本章训练环境为小车上平面倒立摆的控制，奖励函数: 坚持 1 帧获得奖励 1，倾斜度数或者偏离程度过大或坚持 200 帧则结束。
 - ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241108230928.webp)
@@ -15,13 +15,12 @@
 
 ## 训练细节: 经验回放 experience replay
 
-将历次采样放入缓冲区，取缓冲区的若干次数据（而不是最近一次）作为一个小批量来优化 $Q_w$
-
-- 整个训练过程中，
+- 将历次采样放入缓冲区，取缓冲区的若干次数据（而不是最近一次）作为一个小批量来优化 $Q_w$
+- 整个训练过程中，`replay_buffer` 不重置，每次训练拿出的数据大小为 `batch_size`
 
 ## 目标网络 + 训练网络
 
-其实就是复制两份网络，训练网络每次批量优化时都会更新（目标网络暂不更新），其中损失函数使用目标网络计算，每隔 $C$ 步将目标网络同步到训练网络。注意神经网络形式化的损失函数总是 $sum (F(x_i) - y_i^"hat")^2$，在下方原文中可以见到。
+其实就是复制两份网络，训练网络每次批量优化时都会更新（目标网络暂不更新），其中损失函数使用目标网络计算，每隔 $C$ 步将目标网络同步到训练网络。注意神经网络形式化的损失函数总是 $sum (F(x_i) - y_i^"real")^2$，在下方原文中可以见到。
 
 - $w^-$ : 目标网络的权重
 
@@ -70,8 +69,8 @@ class ...:
 
         # `gather`函数用于从输出中选择特定的Q值。`1`表示在第二个维度（动作维度）进行选择，`actions`是动作的索引
         # q_values 上面存了梯度
-        q_values = self.q_net(states).gather(1, actions)  # 训练网络给出的 Q值, y
-        # 下个状态的最大Q值，目标网络给出，part of y^hat
+        q_values = self.q_net(states).gather(1, actions)  # 训练网络给出的 Q值, 作为 y^hat
+        # 下个状态的最大Q值，目标网络给出，这是 y^real 的一部分
         max_next_q_values = self.target_q_net(next_states).max(1)[0].view(-1, 1)
         q_targets = rewards + self.gamma * max_next_q_values * (1 - dones) # 终止状态不考虑下步奖励
         dqn_loss = torch.mean(F.mse_loss(q_values, q_targets))  # 均方误差损失函数
