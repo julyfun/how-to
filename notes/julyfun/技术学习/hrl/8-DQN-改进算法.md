@@ -17,6 +17,20 @@
             max_next_q_values = self.target_q_net(next_states).max(1)[0].view(-1, 1)
 ```
 
+### 结果可视化
+
+打印了两个图.
+
+1. 打印每个 episode 的回报移动平均
+2. 对每个时间步，记录该 episode （模拟采样周期）内的移动最大值，这是用于观察是否有 $Q$ 超限的情况
+
+```py
+                while not done: # 每个模拟时间步
+                    action = agent.take_action(state)
+                    max_q_value = agent.max_q_value(
+                        state) * 0.005 + max_q_value * 0.995  # 平滑处理
+                    max_q_value_list.append(max_q_value)  # 保存每个状态的最大Q值
+```
 
 ## Dueling DQN
 
@@ -53,4 +67,8 @@ class VAnet(torch.nn.Module):
         return Q
 ```
 
-- 效果 : 学习更加稳定（回报曲线），
+- 效果 : 学习更加稳定（回报曲线），得到回报的最大值也更优秀.
+
+## DQN 对 Q 值过高估计的定量分析
+
+- 利用简单的累积分布函数知识（初中数学知识），如果 Q-net 的 $m$ 个动作的输出会随机偏大偏小，则取最大值后，期望
