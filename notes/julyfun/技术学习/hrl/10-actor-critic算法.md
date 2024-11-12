@@ -7,7 +7,7 @@
 
 先来看 Actor + Critic 包装器的 update
 
-```py
+```python
 class ActorCritic:
     ...
     def update(self, transition_dict):
@@ -47,7 +47,7 @@ class PolicyNet(torch.nn.Module):
     def forward(self, x):
         x = F.relu(self.fc1(x))
         return F.softmax(self.fc2(x), dim=1)
-        
+
 class ValueNet(torch.nn.Module):
     def __init__(self, state_dim, hidden_dim):
         super(ValueNet, self).__init__()

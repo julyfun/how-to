@@ -3,7 +3,7 @@
 
 ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241108222049.webp)
 
-```py
+```python
 class DynaQ:
     ...
     def q_learning(self, s0, a0, r, s1):

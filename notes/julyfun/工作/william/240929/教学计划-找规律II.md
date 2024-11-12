@@ -8,7 +8,7 @@ https://usaco.org/index.php?page=viewproblem2&cpid=1255
 
 有，若偶数，则次数为 i // 2，否则若为 4k + 1，则取最大质数满足取完后为 4k，而 4k + 3 类似:
 
-```py
+```python
     if i % 2 == 0:
         towin[i] = i / 2
     elif i % 4 == 1:
@@ -27,9 +27,9 @@ https://usaco.org/index.php?page=viewproblem2&cpid=1255
 
 首先用质数筛筛出质数。对于取完次数为 k 的房间，需要第 k / 2 + 1 轮到这个房间才能有人输。
 
-```py
+```python
 N = int(5e6)
-once = [True] * (N + 1) 
+once = [True] * (N + 1)
 prime = []
 for i in range(2, N + 1):
     if once[i]:
@@ -84,7 +84,7 @@ https://usaco.org/index.php?page=viewproblem2&cpid=918
 
 最多的步数：定义总距离为每对相邻奶牛之间距离 - 1 的和。如果边缘有两头奶牛相邻，发现每步一定可以只让距离减 1，而第一步一定会把两端移到中间某个位置，故最优方案就是两端先造成一个相邻，之后不断减 1
 
-```py
+```python
 n = int(input())
 a = [int(input()) for _ in range(n)]
 a.sort()

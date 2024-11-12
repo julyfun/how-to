@@ -9,7 +9,7 @@
 
 ### Double DQN 代码区别
 
-```py
+```python
         if self.dqn_type == 'DoubleDQN': # DQN与Double DQN的区别
             max_action = self.q_net(next_states).max(1)[1].view(-1, 1)
             max_next_q_values = self.target_q_net(next_states).gather(1, max_action)
@@ -24,7 +24,7 @@
 1. 打印每个 episode 的回报移动平均
 2. 对每个时间步，记录该 episode （模拟采样周期）内的移动最大值，这是用于观察是否有 $Q$ 超限的情况
 
-```py
+```python
                 while not done: # 每个模拟时间步
                     action = agent.take_action(state)
                     max_q_value = agent.max_q_value(
@@ -51,7 +51,7 @@
 
 - 基本上与 DQN 的区别只有下述代码:
 
-```py
+```python
 class VAnet(torch.nn.Module):
     ''' 只有一层隐藏层的A网络和V网络 '''
     def __init__(self, state_dim, hidden_dim, action_dim):

@@ -1,6 +1,6 @@
 ## 例题 1 set 用法
 
-```py
+```python
 s2 = {1, 2, 3, 4, 5}
 print(s2) # {1, 2, 3, 4, 5}
 s3 = set([6, 7, 8, 9, 10])
@@ -48,7 +48,7 @@ https://www.luogu.com.cn/problem/P1059
 
 使用 set 实现去重和排序
 
-```py
+```python
 s = sorted(list(set))
 ```
 
@@ -64,7 +64,7 @@ https://usaco.org/index.php?page=viewproblem2&cpid=1111
 
 用 set 实现 add 和 lower_bound 操作
 
-```py
+```python
 n = int(input())
 operations_set = set()  # Using a set to store unique integers
 
