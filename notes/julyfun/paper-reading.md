@@ -1,3 +1,11 @@
+## 11.13
+
+- UMI pretrain 单一夹爪泛化 action: https://umi-gripper.github.io/
+- fastumi: https://fastumi.com/
+- 差不多的: https://robotutilitymodels.com/
+- robot data scailing laws: https://data-scaling-laws.github.io/
+- RGB + handpose pretrain: Egomimic: https://egomimic.github.io/
+
 ## 11.6
 
 - [ ] #[hand, rgb] RGB 重建手部 mesh: https://github.com/geopavlakos/hamer
