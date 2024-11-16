@@ -1,18 +1,23 @@
 see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
 
-- 上一章用 $G_t$ 代替 $Q_pi (s, a)$
+- 上一章用 $G_t$ 代替 $Q^pi (s, a)$，现在用时序差分残差公式代替之.
+    - 因为 $Q = r + gamma V$.
+    - 所以训练一个 $V$ 网路就行
 
 - 原文已经写的很像回忆提纲了
-- 训练一个价值网络
+- 训练一个价值网络:
     - Input : 状态 $s$
     - Output : $V(s)$
     - Loss: $$1 / 2 (r + gamma V_omega (s_(t + 1)) - V_omega (s_t))^2$$
          - 其中 $r + gamma V_omega (s_(t + 1))$ 不参与梯度计算. 代码中使用 `detach()` 直接实现，不用双网络.
+         - 和 DQN 一样训练数据来源于采样池.
+         - 训练过程和 Actor 的关系？Actor 提供了采样池，Act
 
 先来看 Actor + Critic 包装器的 update
 
 ```python
 class ActorCritic:
+    # self.critic = ValueNet(state_dim, hidden_dim).to(device)  # 价值网络
     ...
     def update(self, transition_dict):
         states = torch.tensor(transition_dict['states'],
