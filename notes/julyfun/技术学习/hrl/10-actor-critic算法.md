@@ -1,3 +1,5 @@
+see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
+
 - 原文已经写的很像回忆提纲了
 - 训练一个价值网络
     - Input : 状态 $s$
