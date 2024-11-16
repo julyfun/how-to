@@ -1,3 +1,9 @@
+## 11.16
+
+- Diffusion 生成 Floor Plan. https://arxiv.org/pdf/2410.11908v1
+- https://github.com/luozn15/FloorplanGAN/blob/master/RPlan_EDA.ipynb
+- Floor layout GAN: https://dl.acm.org/doi/abs/10.1145/3570991.3571057
+
 ## 11.13
 
 - UMI pretrain 单一夹爪泛化 action: https://umi-gripper.github.io/
