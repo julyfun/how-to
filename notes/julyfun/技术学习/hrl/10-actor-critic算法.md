@@ -11,7 +11,9 @@ see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
     - Loss: $$1 / 2 (r + gamma V_omega (s_(t + 1)) - V_omega (s_t))^2$$
          - 其中 $r + gamma V_omega (s_(t + 1))$ 不参与梯度计算. 代码中使用 `detach()` 直接实现，不用双网络.
          - 和 DQN 一样训练数据来源于采样池.
-         - 训练过程和 Actor 的关系？Actor 提供了采样池，Act
+         - 训练过程和 Actor 的关系？Actor 产生了采样池，Actor 变强后采样分布会变化
+             - 采样数据为 $(s_i, a_i, r_i, s_i^prime)$.
+             - 注意采样的 $a$ 并不影响 $V$ 梯度下降，乱采样也能训练出正确的 $V$ 网络
 
 先来看 Actor + Critic 包装器的 update
 
