@@ -1,6 +1,6 @@
 ## 11.18
 
-- Diffusion 原理简述 (建议配合 GPT): https://blog.csdn.net/qq_42951560/article/details/126606685
+- Diffusion 原理简述 (建议配合 GPT): https://www.mindspore.cn/tutorials/zh-CN/r2.4.0/generative/diffusion.html 
 
 ## 11.16
 
