@@ -1,3 +1,7 @@
+## 11.18
+
+- Diffusion 原理简述 (建议配合 GPT): https://blog.csdn.net/qq_42951560/article/details/126606685
+
 ## 11.16
 
 - Diffusion 生成 Floor Plan. https://arxiv.org/pdf/2410.11908v1
