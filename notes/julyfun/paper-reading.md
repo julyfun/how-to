@@ -1,9 +1,6 @@
 ## 11.18
 
 - Diffusion 原理简述 (建议配合 GPT): https://www.mindspore.cn/tutorials/zh-CN/r2.4.0/generative/diffusion.html 
-- speit ML AE & GAN:
-    - AE 就是自己学习降维，Encoder 输出位若干维度向量.
-    - VAE 的 Encoder 输出改为一个均值和一个标准差.
 
 ## 11.16
 
