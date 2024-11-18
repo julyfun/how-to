@@ -1,7 +1,8 @@
 ## 11.18
 
 - Diffusion 原理简述 (建议配合 GPT): https://www.mindspore.cn/tutorials/zh-CN/r2.4.0/generative/diffusion.html 
-
+- opencv-python 功能列表: https://opencv-python-tutorials.readthedocs.io/zh/latest/4.%20OpenCV%E4%B8%AD%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/4.5.%20%E5%BD%A2%E6%80%81%E5%8F%98%E6%8D%A2/
+                                     
 ## 11.16
 
 - Diffusion 生成 Floor Plan. https://arxiv.org/pdf/2410.11908v1
