@@ -6,7 +6,7 @@ see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
 
 - 原文已经写的很像回忆提纲了
 - 训练一个价值网络:
-    - Input : 状态 $s$
+    - Input : 可微状态 $s$
     - Output : $V(s)$
     - Loss: $$1 / 2 (r + gamma V_omega (s_(t + 1)) - V_omega (s_t))^2$$
          - 其中 $r + gamma V_omega (s_(t + 1))$ 不参与梯度计算. 代码中使用 `detach()` 直接实现，不用双网络.

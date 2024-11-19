@@ -14,9 +14,16 @@ In windows terminal:
 
 ref: https://blog.csdn.net/qq_37085158/article/details/131041223
 
+First, 
+
 ```
-ubuntu.exe config --default-user <user_name>
+adduser <name>
+usermod -aG sudo <name>
 ```
 
-> 可能 ubuntu.exe 没有，需切换为 ubuntu2204.exe 等。
+```
+ubuntu2204.exe config --default-user <name>
+```
+
+> 可能使用 ubuntu.exe
 
