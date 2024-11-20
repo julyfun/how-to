@@ -3,7 +3,8 @@
 - 清华的具身大模型: https://rdt-robotics.github.io/rdt-robotics/
     - https://arxiv.org/html/2410.07864?_immersive_translate_auto_translate=1
     - 视觉模型 Sig
-- https://robotics-transformer-x.github.io/
+- 跨具身模型 RTX 数据集: https://robotics-transformer-x.github.io/
+
 
 ## 11.18
 
