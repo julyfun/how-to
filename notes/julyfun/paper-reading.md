@@ -1,3 +1,10 @@
+## 11.20
+
+- 清华的具身大模型: https://rdt-robotics.github.io/rdt-robotics/
+    - https://arxiv.org/html/2410.07864?_immersive_translate_auto_translate=1
+    - 视觉模型 Sig
+- https://robotics-transformer-x.github.io/
+
 ## 11.18
 
 - Diffusion 原理简述 (建议配合 GPT): https://www.mindspore.cn/tutorials/zh-CN/r2.4.0/generative/diffusion.html 
