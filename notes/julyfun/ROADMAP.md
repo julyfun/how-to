@@ -48,3 +48,6 @@ test
 
 - 电能相比热能的优势
 - 解释与预测
+
+![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241120222327.webp)
+![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241120232003.webp)

@@ -1,0 +1,10 @@
+- **[Chain rules for Entropy]**
+    - 计算有记忆源的信息熵公式.
+    - $$H(X^N) = sum_(i = 1)^N H(X_i | X_(1..i - 1))$$
+- **[带记忆多符号离散平稳源的极限熵]**
+    - 定义为 ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241122170613.webp)
+    - ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241122170649.webp)
+        - 平均符号熵和条件熵都会趋于稳定值（极限熵）.
+            - [?]
+ - [微分熵] 
+     - $$h(X) = - integral_S f(x) log f(x) dif x$$
