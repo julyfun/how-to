@@ -15,12 +15,39 @@
 每次重启电脑后，均需要
 
 ```
-# powershell
+# 管理员 powershell
 usbipd list
 usbipd bind --busid <busid, ex: 4-4>
 usbipd attach --wsl --busid <busid>
 
 # wsl
 sudo chmod 777 /dev/video0 
+# 查看有无
+ls /dev/video*
+lsusb
+```
+
+```py
+import cv2
+
+W=640
+H=480
+cap = cv2.VideoCapture(0) # 可能需要改，改此运行成功 24.11.26
+cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M','J','P','G'))
+#cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('Y','U','Y','V'))
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, W)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, H)
+cap.set(cv2.CAP_PROP_FPS, 30)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        continue
+    cv2.imshow('usb cam test', frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
 ```
 
