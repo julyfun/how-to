@@ -1,7 +1,8 @@
 ## 11.27
 
-- RGB + handpose pretrain: Egomimic: https://egomimic.github.io/
-- Dart: Vision Pro 虚拟环境收集数据
+- Egomimic - RGB + handpose pretrain
+    - https://egomimic.github.io/
+- Dart: Vision Pro 纯虚拟环境收集数据
 - 再看看 Pi0: 网络不适应夹爪，最后阶段 fine tune 一下
     - 夹爪 prompt?
 
