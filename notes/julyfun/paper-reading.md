@@ -5,7 +5,6 @@
     - 视觉模型 Sig
 - 跨具身模型 RTX 数据集: https://robotics-transformer-x.github.io/
 
-
 ## 11.18
 
 - Diffusion 原理简述 (建议配合 GPT): https://www.mindspore.cn/tutorials/zh-CN/r2.4.0/generative/diffusion.html 
