@@ -1,3 +1,10 @@
+## 11.27
+
+- RGB + handpose pretrain: Egomimic: https://egomimic.github.io/
+- Dart: Vision Pro 虚拟环境收集数据
+- 再看看 Pi0: 网络不适应夹爪，最后阶段 fine tune 一下
+    - 夹爪 prompt?
+
 ## 11.20
 
 - 清华的具身大模型: https://rdt-robotics.github.io/rdt-robotics/
@@ -23,7 +30,6 @@
 - fastumi: https://fastumi.com/
 - 差不多的: https://robotutilitymodels.com/
 - robot data scailing laws: https://data-scaling-laws.github.io/
-- RGB + handpose pretrain: Egomimic: https://egomimic.github.io/
 
 ## 11.6
 
