@@ -25,5 +25,6 @@ The following succeeds for building sam-2 with cu118:
 ```
 pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118
 pip install --no-build-isolation -e .
+# and delete these packages in `setup.py`
 ```
 
