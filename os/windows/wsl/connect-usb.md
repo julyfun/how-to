@@ -21,7 +21,7 @@ usbipd bind --busid <busid, ex: 4-4>
 usbipd attach --wsl --busid <busid>
 
 # wsl
-sudo chmod 777 /dev/video0 
+sudo chmod 777 /dev/video*
 # 查看有无
 ls /dev/video*
 lsusb

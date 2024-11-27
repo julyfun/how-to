@@ -20,7 +20,7 @@ version links are from: https://download.pytorch.org/whl/torch_stable.html
 
 - method above is ok to download, but still failed to build.
 
-This succeed for building sam-2 with cu118:
+The following succeeds for building sam-2 with cu118:
 
 ```
 pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118
