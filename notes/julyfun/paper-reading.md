@@ -4,6 +4,7 @@
     - https://arxiv.org/html/2410.07864?_immersive_translate_auto_translate=1
     - 视觉模型 Sig
 - 跨具身模型 RTX 数据集: https://robotics-transformer-x.github.io/
+    - 数据集下载: https://blog.csdn.net/qq_47572336/article/details/133592256?spm=1001.2014.3001.5502
 
 ## 11.18
 
