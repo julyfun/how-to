@@ -6,5 +6,14 @@
     - ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241122170649.webp)
         - 平均符号熵和条件熵都会趋于稳定值（极限熵）.
             - [?]
+ 
+## 连续熵
+
  - [微分熵] 
+    - 这是去掉无穷大项以后的相对熵.
      - $$h(X) = - integral_S f(x) log f(x) dif x$$
+    - 计算机内部先离散.
+
+## 杂项
+
+- 条件熵一定小于无条件熵
