@@ -18,8 +18,13 @@
 
 $$
 integral e^(-t^2) t^2 dif t &= u^circle v - u^(circle circle) v^prime \
-&= [-1 / 2 e^(-t^2) dot t]_(-oo)^(+oo) - integral e^(-t^2)
+&= [-1 / 2 e^(-t^2) dot t]_(-oo)^(+oo) - integral -1 / 2 e^(-t^2) dif t \
+&= 0 + 1 / 2 sqrt(pi)
 $$
+
+- 最大熵定理
+    - 同样方差情况下，正态分布熵最大.
+- $H_0$ : 符号等概率分布情况下具有的熵. $= log_2$
 
 ## 杂项
 
