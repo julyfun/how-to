@@ -17,8 +17,8 @@
     - 逆天，我推的. 注意积 $e^(-t^2)t^2$ 时，令 $u = e^(-t^2)t, v = t$
 
 $$
-integral e^(-t^2) t^2 dif t &= u^circle v - u^(circle circle) v \
-&= [-1 / 2 e^(-t^2) ]_(-oo)^(+oo)
+integral e^(-t^2) t^2 dif t &= u^circle v - u^(circle circle) v^prime \
+&= [-1 / 2 e^(-t^2) dot t]_(-oo)^(+oo) - integral e^(-t^2)
 $$
 
 ## 杂项
