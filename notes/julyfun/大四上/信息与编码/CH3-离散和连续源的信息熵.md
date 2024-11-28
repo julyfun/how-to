@@ -21,6 +21,7 @@ integral e^(-t^2) t^2 dif t &= u^circle v - u^(circle circle) v^prime \
 &= [-1 / 2 e^(-t^2) dot t]_(-oo)^(+oo) - integral -1 / 2 e^(-t^2) dif t \
 &= 0 + 1 / 2 sqrt(pi)
 $$
+![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241128115147.webp)
 
 - 最大熵定理
     - 同样方差情况下，正态分布熵最大.
