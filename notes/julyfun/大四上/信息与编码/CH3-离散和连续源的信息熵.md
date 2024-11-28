@@ -14,7 +14,12 @@
      - $$h(X) = - integral_S f(x) log f(x) dif x$$
     - 计算机内部先离散.
 - [**正态分布熵**]
-    - 逆天，我推的.
+    - 逆天，我推的. 注意积 $e^(-t^2)t^2$ 时，令 $u = e^(-t^2)t, v = t$
+
+$$
+integral e^(-t^2) t^2 dif t &= u^circle v - u^(circle circle) v \
+&= [-1 / 2 e^(-t^2) ]_(-oo)^(+oo)
+$$
 
 ## 杂项
 
