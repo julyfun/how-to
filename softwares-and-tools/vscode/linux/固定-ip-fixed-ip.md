@@ -6,5 +6,11 @@
 
 # 固定 ip
 
+## 1.
+
 see: https://blog.csdn.net/u010521062/article/details/114067036
+
+## 2.
+
+![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241206152405.webp)
 
