@@ -1,0 +1,804 @@
+# 摸鱼日志
+
+## 12.6
+
+- [wsl, zerotier, ssh] 如果 mac ping wsl 延迟很大，ssh 不上，检查 win 的 clash verge. 今天因为开了全局导致 ping time 350ms，web ui 也显示 300ms, 关了全局就 ok.
+- [ ] shadow 计划:
+    - 将 hand fps 拉高，不然看起来很不平滑
+    - 记得更新 cpp & ringbuffer
+- [pycocotool] 报错
+
+```
+      cc1: fatal error: ../common/maskApi.c: No such file or directory
+      compilation terminated.
+      error: command '/usr/bin/gcc' failed with exit code 1
+```
+
+- .
+    - try
+        - `conda install cython`
+        - `pip install cython`
+        - [fail]
+    - try: `pip install ... --only-binary=:all:`
+        - [ok]
+- 给 jetson nano 刷机
+
+## 12.5
+
+- jetson nano orin 20.04:
+    - Clash Verge: 使用 `WEBKIT_DISABLE_COMPOSITING_MODE=1 clash-verge` 启动 clash verge
+        - 记得安装 ..2gtk4.0-37
+        - [ok]
+
+## 12.2
+
+- [抵抗困倦] 玉兰苑鸡排铁板烧吃了 70% + 饭后散步 15min
+    - 昨日睡眠 7h
+    - 20min 后困的不行. 睡着了 1h
+
+## 11.30
+
+- 视觉注意力机制: https://www.zhihu.com/question/485458547/answer/3093372098
+
+## 11.29
+
+- GPIO 协议 8 模式图解: https://blog.csdn.net/weixin_45784125/article/details/139125987
+
+## 11.28
+
+- rust 线程池: https://www.cnblogs.com/linyihai/p/15885327.html
+
+## 11.27
+
+- 这两天 lmz 的 AWS 一直没法 SSH 连，已配好 SSH 安全组，仍然报错
+    - kex_exchange_identification: Connection closed by remote host
+    - [success] 是 Clash 问题，AWS 和 aliyun 都会 ban vpn ip，所以直接开直连就连上了.
+- `ImportError: /home/julyfun/miniconda3/envs/ml/lib/python3.9/site-packages/torch/lib/../../nvidia/cusparse/lib/libcusparse.so.12: undefined symbol: __nvJitLinkAddData_12_5, version libnvJitLink.so.12`
+    - 情况：torch 2.5.0+cu121, `import torch` 报错.
+    - [success] /usr/local/cuda 指向了 12.3 报此错，改为 11.8 正常 import
+- Streaming-Grounded-SAM-2
+    - torch2.3.1+cu121
+    - nvcc 12.3
+    - triton error? ref: https://github.com/triton-lang/triton/issues/625
+        - just `pip uninstall triton` and `pip install triton` (wtf why ok?)
+    - `python demo.py --model Qwen2-7B-Instruct-AWQ`
+    - [success]
+- [ ] 👍 舵机原理: https://blog.csdn.net/weixin_38288325/article/details/132366604
+- 机器人动力学：牛顿欧拉法，拉普拉斯方程
+
+## 11.26
+
+- 不错的自监督学习简介, 含损失函数: https://juejin.cn/post/7211053184731037754
+
+## 11.24
+
+- SG90 舵机: http://www.51hei.com/bbs/dpj-156595-1.html
+
+## 11.24
+
+- web typst: https://www.npmjs.com/package/@myriaddreamin/typst-ts-web-compiler
+- 统计 wsl disk 占用: `sudo ncdu / --exclude /mnt` (apt)
+
+## 11.18
+
+- NOIP 真题: https://github.com/winterant/oi
+- 后验 ref: https://blog.csdn.net/qq_23947237/article/details/78265026
+    - 知目的地 15 公里，知小哥到达时间 20min，求小哥走路、骑车和开车的概率
+    - 开车概率比较大，由果反推因概率，这是后验概率，记为 $P(theta | x)$
+- 先验
+    - 知小哥喜欢健身，求小哥走路、骑车和开车去公园的概率
+    - 走路概率比较大。由因推过，先验概率，记为 $P(theta)$
+- 最大似然估计（ML，Maximum Likelihood）目标是找出一组参数 $theta$，使得模型产生出观测数据 $x$ 的概率最大：
+- [ ] 看完 h2l 后看看 transformer 另一解析: https://jalammar.github.io/illustrated-transformer/ 
+- speit ML AE & GAN:
+    - AE 就是自己学习降维，Encoder 输出位若干维度向量.
+    - VAE 的 Encoder 输出改为一个均值和一个标准差.
+    - ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241118160010.webp)
+- win10 机房 FTP 配置: https://blog.csdn.net/2301_78216479/article/details/138161487
+    - [success]
+
+## 11.17
+
+- C++ easy debug extension: C/C++ Runner (click button debugging)
+
+## 11.16
+
+- wsl install font: https://blog.csdn.net/u010469411/article/details/130420529
+    - For my typst, download SongTi SC Regular & Bold & Black: https://en.maisfontes.com/font-family/download-songti-fonts?utm_source=search
+
+## 11.15
+
+- ssh win failed
+    - [done] clash verge 开了全局
+
+## 11.13
+
+- C++ GUI with python - imgui: https://pyimgui.readthedocs.io/en/latest/guide/first-steps.html
+- Gaussian Splatting 数学原理: http://www.yindaheng98.top/%E5%9B%BE%E5%BD%A2%E5%AD%A6/3DGaussianSplatting.html#splatting
+
+- 优化问题，RL 和 DL
+    - 优化问题: 知 F(x), 梯度下降求 x 最小化 F
+    - DL: 不知 F(x)，知若干对 x, y，用各种权重层 w 拟合 F
+        - 一个 batch 内，固定 x，从而知 Loss，求 w（视为自变量）最小化 Loss，转变为优化问题
+    - RL: 这是一个多步问题
+        - 不知 V(s)
+
+
+## 11.12
+
+- G-SAM-2. 目标：根据 TEXT_PROMPT 分割小熊虫
+    - Run `python grounded_sam2_local_demo.py` in docker
+        - `Failed to load custom C++ ops. Running on CPU mode Only!`
+            - Tried this:
+            - https://github.com/IDEA-Research/Grounded-Segment-Anything/issues/152
+            - 还是一样报错
+        - 后来我用了 `python grounded_sam2_hf_model_demo.py`，没去测 `local_demo`，没报上述问题
+        ```
+        File "/home/appuser/Grounded-SAM-2/grounded_sam2_hf_model_demo.py", line 132, in <module>
+            detections = sv.Detections(
+        TypeError: Detections.__init__() got an unexpected keyword argument 'mask'
+        ```
+    - 重新 `make run`，可以通过视频识别基础测试
+    - [undone]
+    
+- 试图使用 G-SAM1
+    - 直接 make build-image，运行警告 CPU mode only
+        - 手动修改 Dockerfile,  依据 `https://github.com/IDEA-Research/Grounded-Segment-Anything/issues/434`
+        - `apt install` 处报错. [unnoted]
+        - [undone]
+    - 试图不用 Docker (构建失败时间代价太大），用 conda
+        - 低级错误: 环境变量 CUDA_HOME
+        - [success] text prompt 输出分割图片成功！
+
+- 下面安装命令行 colmap (wsl2, ubuntu22.04)
+    - 先 https://colmap.github.io/install.html#pre-built-binaries
+        - 我使用 `cmake -DCMAKE_CUDA_ARCHITECTURES=89 ..`
+            - ref: https://docs.nvidia.com/datacenter/tesla/drivers/index.html#cuda-arch-matrix
+        - `make -j8`
+        - `sudo make install`
+        - [success]
+
+
+- d2l.transformer
+    - 记得用 AI
+
+## 11.9
+
+- reluctant tasks: william 的备课.
+    - just ok
+
+## 11.8
+
+- [ ] typst OCR 试试这个: https://github.com/ParaN3xus/typress
+
+## 11.6
+
+- SuGAR:
+    - 生成 colmap 数据集
+        - [success, win11]: https://blog.csdn.net/yangyu0515/article/details/131308012
+        - [?, linux]: https://www.cnblogs.com/Todd-Qi/p/10792685.html
+        - 黑物体容易重构失败 (右下角 images 突然减为 0，发生间断）
+        - 物体偶尔露出屏幕外没事
+        - Dense 很慢，2h 的样子
+    - Install
+        - cuda 12.3 不行，见 readme
+        - 安装 gaussian 时还是报错 `error: [Errno 2] No such file or directory: ':/usr/local/cuda/bin/nvcc'` ?
+            - 因为 `$CUDA_HOME` 环境变量多了个冒号. 去环境配置里把冒号删了就 ok
+                - fish shell is ok
+            - [success]
+    - 以以下文件结构成功开始 Train
+```
+dataset
+├── database.db
+├── images
+│   ├── 5_0.jpg
+│   ├── ...
+│   ├── 5_98.jpg
+│   └── 5_99.jpg
+└── sparse
+    └── 0
+        ├── cameras.bin
+        ├── images.bin
+        ├── points3D.bin
+        ├── points3D.ply
+        └── project.ini
+```
+    - 报错没某某驱动，就 `conda install -c conda-forge libstdcxx-ng`
+    - Train 过程中报错没 ninja: 记得先装之
+        - retrain 注意 python 参数加入 gaussian 模型 pt 位置 (see readme)
+        - 再 retrain 可以修改 train.py 将 refined pt 模型载入之前全删了，保留 pt path
+    - 由于 wsl2, 修改 `sugar_utils/mesh_rasterization.py:102` 处 `dr.RasterizeGLContext()` 为 `dr.RasterizeGudaContext()`（根据 issue)
+    - [success]
+        - 生成依托答辩的 mesh
+        - !! 放到 meshlab 下居然非常 ok 的 mesh
+    - 另一天重做了一次，报错：
+```
+[WARNING] Background is empty.
+Finished computing meshes.
+Foreground mesh: None
+Background mesh: None
+
+-----Decimating and cleaning meshes-----
+
+Processing decimation target: 200000
+Cleaning mesh...
+Traceback (most recent call last):
+  File "/home/julyfun/Documents/GitHub/SuGaR/train.py", line 157, in <module>
+    coarse_mesh_path = extract_mesh_from_coarse_sugar(coarse_mesh_args)[0]
+  File "/home/julyfun/Documents/GitHub/SuGaR/sugar_extractors/coarse_mesh.py", line 478, in extract_mesh_from_coarse_sugar
+    raise ValueError("Both foreground and background meshes are empty. Please provide a valid bounding box for the scene.")
+ValueError: Both foreground and background meshes are empty. Please provide a valid bounding box for the scene.
+```
+        - 试试看 colmap 删除未提取的图片
+        - 怀疑不能抠图
+        - [undone]
+
+- Grounded-SAM 2 抠图
+    - 可以手动扣小熊虫 🆗
+
+## 11.5
+
+- cuda12.3 装 torch 确实只需要:
+    - `pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/cu121`
+    - https://pytorch.org/get-started/previous-versions/
+
+## 11.2
+
+- amov doc: https://docs.amovlab.com//allspark2-orin/#/src/%E5%BC%80%E5%8F%91%E5%B8%AE%E5%8A%A9/%E5%AE%89%E8%A3%85%E7%BB%84%E4%BB%B6/%E5%AE%89%E8%A3%85%E7%BB%84%E4%BB%B6
+
+## 10.31
+
+- 生物对称机理:
+    - https://www.perplexity.ai/search/sheng-wu-wei-shi-yao-neng-chan-9yrtH0kGTN.Wr6yfiWageA
+- 某硕士地暖铺设: https://skemman.is/bitstream/1946/42094/1/masters-14.pdf  
+    - 机器人轨迹覆盖 https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=649051
+
+- [ ] 基础调参技巧 https://www.zhihu.com/question/25097993/answer/3410497378
+
+## 10.30
+
+- [薛寒, xuehan, 学长, 论文] https://github.com/xiaoxiaoxh/UniFolding
+
+## 10.29
+
+- 激励文章: https://mp.weixin.qq.com/s?__biz=MzkwNDMxMzg1NA==&mid=2247484280&idx=1&sn=12621abd79c5ca8431795a1bb1b10340&chksm=c089ade9f7fe24ffb05207a739e866d5fb49cf3e0100956f81ab65f186ea39cf343b179709a3&scene=21#wechat_redirect
+    - 华人图谱!
+
+## 10.28
+
+- 机器人会议: https://www.cnblogs.com/Gaowaly/p/18419856
+- youtube 字幕下载: https://downsub.com/zh/site/youtube/
+
+## 10.21
+
+- 睡觉 3:10 - 7:50
+## 10.20
+
+- 睡觉 3:30 - 12:00
+- http://moodle.speit.sjtu.edu.cn/pluginfile.php/46609/mod_resource/content/1/SJTU__2024_European_fiscal_policy.pdf
+
+## 10.19
+
+- 重配宿舍服务器内网穿透
+    - [ ] zzx?
+    - [ ] 使用 mfa 配穿透？省的额外交钱
+    - 这样就可以修好 how-to 网站了
+- [ ] 微调小 LLM
+- 睡眠 4:00 - 11:50, 午觉 2h+ 
+    - ...
+
+## 10.18
+
+- WOOCLAP.com 实时学生答题
+- [ ] 配置 p2p: https://linux.do/t/topic/75095/36?page=2
+
+- 8-10 在配 rustdesk p2p, 直接用 zerotier ok 但是非常慢
+    - 为什么不考虑向日葵呢（😁
+- 10-11 做 ml tp 6
+    - 怎么花的有点久了
+- 糟糕的睡眠似乎长久以来降低了我所有工作的效率！
+- 睡眠 3:30 - 7:50
+
+## 10.16
+
+- 睡眠 4:30 - 7:40 wtf
+
+- 看起来 wsl2 不支持 NUMA 从而无法使用 tensorflow gpu
+
+## 10.15
+
+- report
+    - 遗传算法编码 fail - 代码
+    - kruskal 没有拓展性
+
+- 约定加分项
+- 18:40 实验室 +300
+- 洗澡 +100
+
+- 决策树回忆提纲: https://blog.caiyongji.com/2021/02/25/machine-learning-5.html
+- [ ] rustdesk p2p 打洞: https://luotianyi.vc/6542.html
+- [ ] https://unifolding.robotflow.ai/
+
+
+## 10.14
+
+- 遗传路径规划: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1345203
+
+## 10.13
+
+- cget c++ 包管理: https://github.com/pfultz2/cget
+
+## 10.11
+- [ ] 支持向量入门: https://zhuanlan.zhihu.com/p/40857202
+- [ ] 支持向量简单: https://cuijiahua.com/blog/2017/11/ml_8_svm_1.html
+- [ ] 支持向量数学 https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/stat-learn-svm.html
+- [ ] 简洁的支持向量: https://blog.csdn.net/chikily_yongfeng/article/details/105607154
+
+## 10.9
+
+- [x] 尝试 mkdocs + wypst 但是发现不简单
+- Did you work for...?
+- [ ] 强化学习概述: https://daiwk.github.io/posts/rl-introduction.html
+- [ ] Tauri APP: https://v1.tauri.app/zh-cn/v1/guides/getting-started/setup/next-js/
+
+## 10.7
+
+- 还可以的免费文档翻译: https://www.onlinedoctranslator.com/en/?utm_source=onlinedoctranslator&utm_medium=docx&utm_campaign=attribution
+
+## 10.5
+
+- [ ] 值得一做，遗传算法，OJ 算法题: https://www.cnblogs.com/Link-Cut-Y/p/17281139.html
+- 奇怪的工程搜索网站: https://explorer.globe.engineer/
+
+## 10.2
+
+- urdf 描述:
+    - link 和 joint 均为一个坐标系
+    - joint 有 parent link 和 child link，其 child link 坐标系与 joint 永远一致
+    - joint 发生运动时，其坐标系将发生运动，计算方式为: `<origin>` 描述了 joint 在原始状态下相对 parent link 坐标系的变换，与此同时通过 `<axis>` + `变量 q` 来决定额外发生的变换
+    - `<axis>` 形如 `<axis xyz="1 0 0" />`，这里 xyz 是 joint 自己原始状态下的 xyz
+    - 也就是说 joint 运动时相对上一个 joint 的变换会更新，但相对下一个 joint 的变换不会更新
+
+- [x] 四元数插值: 球面线性插值 or 线性插值（需归一化）
+- #def 四元数
+
+```
+w = cos(theta/2)  
+x  = ax * sin(theta/2)  
+y  = ay * sin(theta/2)  
+z  = az * sin(theta/2)
+- 表示旋转轴单位向量 ax, ay, az，旋转角 theta
+- 四元数多对一旋转：考虑反转旋转轴和旋转角
+```
+
+## 10.1
+
+- [x] 李群李代数指数映射对数映射: https://blog.csdn.net/shao918516/article/details/116604377
+- 大学各种微分方程: https://blog.csdn.net/qq_35357274/article/details/109935169
+
+## 9.30
+
+- shadow hand 手指关节定义 https://www.shadowrobot.com/wp-content/uploads/2022/03/shadow_dexterous_hand_e_technical_specification.pdf
+
+### nuc 网络修复日志
+
+- `nmap -sn 10.9.11.0/24`
+
+- 昨天晚上开始彻底连不上 nuc 了 `ssh: connect to host 10.9.11.2 port 22: No route to host` ping 不通
+- 换网线没用
+- 换 nuc USB / 路由器网口，没用。经测试网口 + 网线 + 拓展坞配套能让 mac 接入局域网
+- nuc 接到 laptop 工位这里的网线和拖线板上，居然可连了
+- 用 nuc 桌面取消了自动连接的 Wifi
+- 插回工作台拖线板，又不可连了
+- 又接到 laptop 工位上，又可连了
+- 怀疑拖线板插座质量问题，接回工作台拖线板，从第三个插座换第五个，居然可连了
+- 从第五个插座换回第三个，居然依然可连
+    - 也就是说所有配置和昨晚不变（除了 Wifi），换来换去就可连了
+- 过了十分钟又坏了
+- 换到第五插座又好了，希望这次稳定点
+
+## 9.29
+
+- 睡眠 2:30 - 8:45 | -150
+- 中心任务打断：
+    - 下去看参观交龙的人
+
+- 工作上课迟到 -600
+- [ ] 80min 内链路层 160
+- [ ] 准备计网 TP 60
+- [x] 60min 内实习报告  +240
+    - 实际上花了 3h 多
+
+- CCF 会议期刊分类 https://ccf.atom.im/
+
+## 9.28
+
+- [ ] easymotion
+
+## 9.27
+
+- 配置 wsl 内网穿透 👌🏻 以下 ok
+    - [x] https://blog.csdn.net/weixin_43224069/article/details/130619170
+    - [x] https://blog.csdn.net/weixin_43224069/article/details/130621752
+    - 坑点:
+        - 注意 vscode remote-ssh 连接时需要特殊配置，见文章 `kex`
+        - 不开 Clash Verge TUN + 服务模式会龟速，开了 TUN 如果不直连的话，可能会访问不了阿里云服务器
+- [ ] wsl 配 cuda, 没错 wsl2 下需要又配一次: https://blog.csdn.net/VVBBBBB/article/details/134129558
+    - [x] 我按照另一教程多版本 cuda + cudnn 安装成功: https://blog.csdn.net/tianzhenba/article/details/137403606
+        - 除了 cudnn 的 cp 命令文件夹名需要调整以外，都 ok
+
+## 9.26
+
+ - 睡眠 3:30 - 8:30 + 11:30 - 15:00 | -210 - 210
+ - 中心任务打断
+
+ - [x] FASTAPI: https://www.runoob.com/fastapi/fastapi-request-response.html +50
+ - [x] 10.2 +150
+ - [x] 1.2 +150
+ - [ ] 计网链路层 +150
+ - [ ] 大拇指 ik +200
+	 - [ ] 首先看清楚 quest3 旋转轴
+
+- [ ] Cookie 的具体属性: https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Cookies
+- [ ] 生成对抗网络的损失定义: https://blog.csdn.net/DFCED/article/details/105175097
+## 9.25
+
+- 睡眠 1:30 - 8:30
+- 中心任务打断
+    - .
+- [ ] 大拇指 ik: 主要是之前仓库的接口比较抽象 +200
+	- [ ] ruckig?
+	- [ ] opentv 优化库
+- [ ] 8 自由度 ik
+- [x] 准备英语自我介绍 +100
+
+## 9.23
+
+- 睡眠 7:15 ~ 11:50
+	- 中心任务打断
+
+- 3d 重建: https://github.com/graphdeco-inria/gaussian-splatting
+## 9.20
+
+- 睡眠 5 ~ 11:30
+- 中心任务打断
+	- 光纤百科
+
+- [ ] 计网 下一章
+## 9.19
+
+装了电脑
+## 9.18
+
+- 中心任务打断
+    - 新闻
+    - 修复 mac vscode bug
+
+## 9.15
+
+- 中心任务打断
+    - jst.fish
+
+## 9.14
+
+- 中心任务打断:
+     - github.com
+     - jst.fish++
+
+- [ ] rviz show obj +300
+    - stl -> urdf -> RobotModel component
+- [ ] 臂力器购买
+
+## 9.12
+
+- typst FAQ 中文: https://typst-doc-cn.github.io/guide/FAQ.html
+- 旋转广义插值: https://zhuanlan.zhihu.com/p/88780398
+
+## 9.11
+
+- 深度学习名词扫盲: https://blog.csdn.net/qq_18555105/article/details/121345833
+- 数据集如何放置: https://blog.csdn.net/weixin_61961691/article/details/139436386
+
+## 9.9
+
+markdown 转微信公众号文章 https://md.qikqiak.com/
+
+## 9.2 周一计划
+
+- exe-total: -200 - 280 = -480
+- 中心任务打断:
+    - how-to 分布式仓库 ++
+    - linux zed
+    - jst.fish
+    - jst.fish
+    - 搓背
+    - jst.fish
+
+- [ ] 录制 optitrack +200
+
+## 8.25 周日计划
+
+- [x] 考察大零号湾集训场地，尝试 ipad / mac 投屏
+
+## 8.24 周六计划
+
+- exe-total: 0
+- 中心任务打断
+
+- [ ] jfmfoi 打印初赛练习题 +50
+- [ ] 14:00 - 17:00 优雅地上课 +200
+
+## 8.23 计划
+
+- exe-total: 0
+- 中心任务打断
+    - 其他
+    - 中午迟到 10min ++
+    - 水群
+    - 清理磁盘
+
+- [x] jfmf 详细表 +50 early++
+- [x] 完善 aubo readme +100
+- [ ] jfmfoi + william 备课 +150
+- [x] 准备实习报告图片视频材料 +50
+- [ ] 碰撞调用 plan() 尝试 +100
+- [x] 校方实习评价表 +100
+- [x] 离职手续 +50
+- [ ] 安排杭州旅游 +100
+- [ ] 给学生买书？
+
+### others
+
+- [ ] AnyTeleop、Open-TeleVision、Bunny-VisionPro——从RGB相机到VR远程控制机器人: https://blog.csdn.net/v_JULY_v/article/details/140384810
+
+## 8.22 计划
+
+- exe-total: 250 - 600 - 210 = -560
+- 中心任务打断
+    - 写完安排困倦疲惫睡觉 +++
+    - steam
+    - zhihu
+    - qq music
+
+- [ ] 备课 jfmfoi 和 william: +100
+- [ ] jfmfoi 理解初赛答题 +100
+- [ ] 今天得会默写 transformer 了吧 +400
+- [x] jfmfoi 询问是否可集训 +50
+- [x] jfmfoi 集训安排详表 +200
+
+### 其他
+
+- [ ] 机械臂雅可比教程: https://www.cnblogs.com/caster99/p/4725914.html
+
+## 8.21 计划
+
+- exe-total: 450 - 280 - 600 + 100 = -330
+- 中心任务打断
+     - zhihu rust lifetime ++
+     - zed preview
+     - 黑吗喽新闻
+     - jst upa
+     - 飞书文档
+     - 知乎
+     - wishlist -280
+
+- [x] 200min 滤波 +400
+- [x] jfmfoi 后期规划 +50
+- [ ] 会写 transformer +300
+- [ ] rl 第二章 +100
+- [ ] 备课 jfmfoi 和 william: +100
+- [ ] jfmfoi 理解初赛答题 +100
+- [x] 问问 jfmfoi 啥时候开学，是否可暑假集训 +50
+- [x] 获得上级学长下学期课表 +50
+
+### others
+
+- [x] 愚蠢的静态检测消除抖动: https://www.researchgate.net/profile/Wenzhen-Yang/publication/303366293_A_Master-Slave_Control_Method_for_Dexterous_Hands_with_Shaking_Elimination_Strategy/links/5cc2b16d92851c8d22050bda/A-Master-Slave-Control-Method-for-Dexterous-Hands-with-Shaking-Elimination-Strategy.pdf
+
+## 8.20 计划
+
+- exe-total: 600 - 150 - 360 = 90
+- 中心任务打断
+    - 维基 苏林
+    - 搜索游戏 CG
+    - 公众号推文
+    - 获取一篇论文的引用数: 上 https://www.webofscience.com/wos/alldb/basic-search 就可以搜到，而且还有引用的文章列表
+    - typst 论文模板 https://github.com/hitszosa/universal-hit-thesis
+    - 搬迁 notes 部分笔记
+    - 存论文
+    - xy 聊天黑吗喽
+    - 回头写 win ninja how-to
+    - toml 语法
+    - 灵巧手腱绳驱动
+    - fft 回忆笔记
+    - -360
+
+- [x] 平滑优化 fast_control +400
+- [x] matplot 3d 轨迹 +100
+- [x] 和周工聊聊 next step +100
+- [ ] 和 yzy 聊聊 RL 之复现 +200 - half
+- [ ] 和学弟聊聊实验室怎么样了 +100 - half
+- [ ] 问问上级学长下学期课表 +50
+- [ ] 催各个小朋友做作业 +100
+
+### others
+
+- 机械手消抖论文 2019: 主从式手术机器人主手消抖方法 https://www.webofscience.com/wos/alldb/full-record/CSCD:6505295
+
+## 8.19
+
+- exe-total: -50
+- 中心任务打断
+    - github 编辑
+    - notion
+    - jst.fish
+    - fishshell
+
+- [x] 计网第一章 +50
+- [ ] 30min 内双向循环神经网络 +50 failed
+- [ ] 香橙派尝试装机至少 30min +50 failed
+- [x] 30min 内强化学习第一章 +100
+
+notes:
+
+- [ ] LLaMA 训练细节以及 LLaMA 模型 https://github.com/ymcui/Chinese-LLaMA-Alpaca/wiki/%E8%AE%AD%E7%BB%83%E7%BB%86%E8%8A%82
+- [x] 模型显存计算 https://www.cnblogs.com/pam-sh/p/18259728
+    - 7B fp16 推理显存 16 - 20GB, 使用 AdamW fp16/bf16 训练需要 55-60GB 显存
+    - 推理 2-3X，训练 8-10X
+    - 训练时 model weight = 2X (因为 2bytes) , gradient 2X，优化器 8X
+    - 微调时 model weight = 2X，Adaptor weight 可选 2.5% 比例则为 0.05X，gradient 和 optimizer states 共 0.25X
+
+## 8.18
+
+维尼新做了 aubo program update 解决了透传延迟的问题，现在居然稳定 8ms 延迟了，遥操作又快了。
+
+## 8.15
+
+双 tracker 适配也做好了，开摆！
+
+### notion or not
+
+- no:
+    - 可渲染 typst math 的前端
+    - notion 网络不好
+    - 不好被搜索
+    - 不好迁移发布到知乎等
+
+- yes:
+    - 显示图片方便
+    - 不用手动同步
+    - 可视化编辑
+    - 方便多端编辑
+    - 很好的 AI 集成
+
+## 8.14
+
+- [ ] tcp 图解: https://www.cnblogs.com/jojop/p/14111160.html
+- [ ] web 多人联机卡牌，是时候启动虫虫了: https://github.com/igorsheg/set-up
+
+## 8.5
+
+- [ ] 写一个自动化美工工具，用 segment-anything 把上传的图片分割出来并像素化，附加调亮度和手动调整像素格功能。输入：上传图片 + 物品名称。输出：像素化，背景透明的物品图片。
+
+## 8.3
+
+https://products.codeporting.app/zh/convert/ai/cpp-to-python/
+
+## 8.2
+
+### ...
+
+```
+*  (HEAD -> main, origin/main, origin/HEAD) readme   24-08-02 13:01 5259837 Julyfun MacOS14.5 M1
+*  init bug                                          24-08-02 13:01 c0e2adc Julyfun MacOS14.5 M1
+*  readme                                            24-08-02 13:01 9b9e6fa Julyfun MacOS14.5 M1
+*  correct jst-mfa command usage                     24-08-02 12:12 3417259 Julyfun MacOS14.5 M1
+*  用 return 代替部分 return 0 以返回上一命令是否成.. 24-08-02 12:12 e624d2f Julyfun MacOS14.5 M1
+*  结构更新，采用 XDG 范式；新增 usage-count         24-08-02 12:12 0fb8d2e Julyfun MacOS14.5 M1
+```
+
+### 下午班
+
+- [x] SE3 插值: https://github.com/stack-of-tasks/pinocchio/blob/master/examples/interpolation-SE3.cpp
+
+难崩。
+
+### 晚上班
+
+- [ ] 如果当前这个 publish traj 的方案行不通，再用这个试试: https://www.perplexity.ai/search/xiang-moveit-group1-joint-traj-6qX9SW4pTVikXsLrVYpzng#0
+
+### 其他
+
+- [x] Linux 基本目录规范 ——XDG 介绍: https://winddoing.github.io/post/ef694e1f.html
+
+## 8.1
+
+摸鱼中，有空想给 how-to 写个 ai.
+
+### add this to roadmap
+
+- [ ] astro 前端入门: https://www.cnblogs.com/chuckQu/p/17413402.html 这是拷贝外网文章，然而外网原文居然代码块元素挂了
+
+## 7.31
+
+### 睡眠
+
+昨晚修服务器 + 娱乐，最后睡了 6.5h 左右。什么时候集成小米手环 api 直接统计我睡眠数据啊。
+
+今天一定要打开生产力模式！
+
+### 上午班
+
+结果上午班又新闻 + 博客玩了一会儿。
+
+最后时间刷了会 Typst 和 Latex 的旧闻。
+
+### 下午班
+
+先看了下 zig 增量编译咋样了，没查到，根据论坛找到了 rustc 的增量编译相关：
+
+https://rustc-dev-guide.rust-lang.org/queries/incremental-compilation.html#the-basic-algorithm
+
+也不知道增量编译会不会在 link time 增量呢，没写过编译器不懂。
+
+- [x] 梯度下降轨迹规划速览: https://www.cnblogs.com/ironstark/p/5544164.html
+- [x] mediapipe 手部姿态识别官网 demo: https://mediapipe-studio.webapps.google.com/demo/hand_landmarker?hl=zh-cn
+- [x] 人手为何 27 自由度: https://www.zhihu.com/question/21710229 其实我只是想获取手心姿态
+- [x] 获取 2.5D 手部姿态论文介绍: https://juejin.cn/post/7268955025211424779 终于在看新玩意了
+    - [ ] 论文: https://arxiv.org/pdf/2006.10214
+- [ ] 2017 年 rgb => hand3d https://github.com/lmb-freiburg/hand3d
+- [x] Open-Television 新出的低延迟遥操作，带 ik smooth 算法: https://arxiv.org/pdf/2407.01512
+    - [ ] 其中提到 dex-retargeting，将人手关键点转换为关节角度 本质上和逆解类似，in: 手指位置 method: 优化问题最小化机械手关节位置和手指关节位置差 out: 关节角度
+    - [ ] 提到向量优化用的是 Sequential Least-Squares Quadratic Programming (SLSQP) algorithm [29 ] as implemented in NLopt
+
+### 晚上班
+
+继续看论文尤其是 ik smooth 那篇，但是效率不是很高，环境太吵了~
+
+### 晚上
+
+整理宿舍，被 🐷 遇到虫折腾。
+
+### 其他不错的玩意
+
+- [ ] SSD 系列目标检测介绍: https://blog.csdn.net/qq_27825451/article/details/89137697
+- [ ] typst paper 官网模板: https://typst.app/universe/search/?kind=templates&q=paper 目前似乎没有跨栏图片的解决方法
+- [ ] 变换矩阵与 SE3 关系说明: https://blog.csdn.net/weixin_36965307/article/details/123546945
+    - [ ] 更多奇妙公式 https://www.cnblogs.com/gooutlook/p/17840013.html
+    - [ ] SLAM 十四讲 B站: https://www.bilibili.com/video/BV1LT411V7zv/
+
+## 7.30
+
+### 睡眠
+
+睡太早，半夜醒来刷了会手机更睡不着。最后加起来睡了 5.5h 的样子
+
+有诗云：
+
+> 想得太多，睡得太早
+>
+> 床板梆硬，床位短小
+>
+> 天气燥热，蚊虫叮咬
+>
+> 下午瑞幸，晚上醒脑
+>
+> 失眠焦虑，恶性循环
+>
+> 欲挑毛病，何患无辞
+
+### 上午
+
+为了新增 how-to 文章，一直在写 jst.fish
+
+### 下午
+
+找实时机械臂 tracking 论文。
+
+### 晚上
+
+先刷了会米国总统新闻和维基，又在配博客自动脚本之类的。
+
+### 回家
+
+折腾了海岛奇兵，发现服务器 clash 挂了没法自动更新博客，后来发现 TCP 端口被攻击，详见修复日志。
