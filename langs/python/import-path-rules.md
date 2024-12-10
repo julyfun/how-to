@@ -8,7 +8,7 @@ keywords: [workspace]
 
 > 例如 main.py 中 from pkg1.animal import eat, animal.py 有 from mantis import something，则 mantis 必须在 main.py 所在文件夹下，不可以在 pkg1/ 中。
 
-但是 vscode 的智能提示比较呆，会从当前文件 __init__.py 的祖先文件夹都会自动加入智能提示的 sys.path.
+但是 vscode 的智能提示比较呆，当前文件 __init__.py 的祖先文件夹都会自动加入智能提示的 sys.path.
 
 ## other solutions
 
