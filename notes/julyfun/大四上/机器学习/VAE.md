@@ -1,11 +1,14 @@
-https://spaces.ac.cn/archives/5253
+- 关于 VAE 理解的教程： https://spaces.ac.cn/archives/5253
 
 - 假定 $p(Z|X)$ 为一正态分布.
-    - 注意不是假设 $p(Z)$为正态分布，不同 $X$ 显然必须有不同的隐藏分布，否则解码器无法区分它们，训练时将崩溃.
+    - 注意不是假设 $p(Z)$为正态分布，不同 $X$ 显然必须有不同的隐藏分布，否则解码器无法区分它们，训练时 $X_i$ 和 $X^"hat"_i$ 就无法对应上.
 - 训练编码器使得样本对应的 $mu$ 和 $log sigma^2$ 既要接近正态分布，又要有些微区分使得解码器能够将其还原到对应图像.
-- 正态分布参数为 runtime 参数，不是 train-time 权重.
+    - 接近正态又要有些微区分，这是一个权衡问题.
+    - 如果隐空间是一维的，那正态分布采个样以后，不同样本直接就混在一起了，所以我感觉是一个样本是在多个隐空间维度上有某种偏向.
+- Hint:
+    - 正态分布参数为 runtime 参数，不是 train-time 权重.
 
-大致代码:
+大致代码（见 speit-ml-tp 仓库） :
 
 ```python
 from torch.nn.functional import binary_cross_entropy
