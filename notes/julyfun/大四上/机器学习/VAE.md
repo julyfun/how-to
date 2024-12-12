@@ -1,8 +1,11 @@
 https://spaces.ac.cn/archives/5253
 
 - 假定 $p(Z|X)$ 为一正态分布.
-    - 注意不是假设 $p(Z)$为正态分布，不同 $X$ 显然必须有不同的均值，否则
+    - 注意不是假设 $p(Z)$为正态分布，不同 $X$ 显然必须有不同的隐藏分布，否则解码器无法区分它们，训练时将崩溃.
+- 训练编码器使得样本对应的 $mu$ 和 $log sigma^2$ 既要接近正态分布，又要有些微区分使得解码器能够将其还原到对应图像.
 - 正态分布参数为 runtime 参数，不是 train-time 权重.
+
+大致代码:
 
 ```python
 from torch.nn.functional import binary_cross_entropy
