@@ -4,3 +4,10 @@
 
 那么你需要 https://github.com/microsoft/vscode-docker/wiki/Troubleshooting
 
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+docker run hello-world
+```
+
