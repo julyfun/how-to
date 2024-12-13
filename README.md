@@ -8,24 +8,11 @@ How to do anything.
 
     New articles here will provide better problem-related information.
 
-## How to make use of this site?
+## Search your tricks in:
 
-If you find the article not in your local language, we recommmend the chrome extension [`Immersive Translate`](https://immersivetranslate.com/) for you. Not only can it translate quickly, but it can also display bilingual comparisons
-
-> 人生短暂，使用 [`Immersive Translate`](https://immersivetranslate.com/) 插件，不仅可以快速翻译，而且可以显示双语对照。
-
-## Contributions are welcomed
-
-Feel free to add new articles in this repo. Recommending `template.md` here to start with.
-
-If you meet problems on editing or pushing, please open an issue.
-
-## Advantages
-
-- Easy to write new articles and synchronize.
-- Git provides article histories.
-- Plain text which is easy to search, has very few redundant informaiton.
-- File & directories structure, familiar and easy to expand.
+- NOTE
+- time note (24/09, 24/11...)
+- by folder and file name (jd)
 
 ## To do
 
