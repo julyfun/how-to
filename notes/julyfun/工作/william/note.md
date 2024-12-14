@@ -1,9 +1,5 @@
-- 题单: https://www.luogu.com.cn/training/424544#problems
-    - 黄
-        - 8183 Done
-        - 3662 done
-        - 
 - 真题单: https://www.luogu.com.cn/problem/list?keyword=%5BUSACO%5D%20S&type=AT%7CB%7CCF%7CP%7CSP%7CUVA&difficulty=3&page=1
+- [old] 题单: https://www.luogu.com.cn/training/424544#problems
 
 ---
 
