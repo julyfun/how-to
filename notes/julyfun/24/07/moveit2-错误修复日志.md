@@ -2,7 +2,7 @@
 
 重启电脑解决。
 
-> 8.2: 重启 wsl 即可。
+> 8.2 update: 重启 wsl 即可。
 
 ## 有一个机械臂的 urdf 如何配置双机械臂
 
@@ -19,6 +19,7 @@
 ## tf 查找不到一个显然存在的 frame
 
 - tf 查找别放在构造函数里，解决。
+- buffer & listener 所在 node 必须 spin
 
 ## joint angles 0.000000s
 
@@ -45,3 +46,4 @@
 
 * 网上搜 wsl 如何关闭共享 win 环境变量
 * 解决
+

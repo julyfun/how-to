@@ -11,6 +11,7 @@
 
 # [binary]
 1
+:w
 
 # [py]
 __pycache__
