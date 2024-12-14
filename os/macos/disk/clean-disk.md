@@ -1,7 +1,7 @@
 ```
-yarn clean cache
 brew cleanup --prune=all
 pip cache purge
+yarn clean cache
 rvm cleanup all
 ```
 
