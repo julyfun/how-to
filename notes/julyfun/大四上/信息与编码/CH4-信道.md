@@ -37,12 +37,15 @@
     - ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241215220505.webp)
 - **[对称]**
     - 每一行和每一列包含相同元素.
+    - 性质:
+        - 若输入等概率，则输出等概率.
+    - 容量: 取输入对称，结果为 $H(Y) - H(Y | X)$ = $log s - $
 - **[准对称]**
     - 输入对称而输出不对称，每一行元素相同
+    - 容量: 需要划分为若干对称矩阵.
+    - ![image.png|600](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241215222151.webp)
 
-### 信道容量计算
-
- - https://blog.csdn.net/qq_36488756/article/details/110517599
+ - ref: https://blog.csdn.net/qq_36488756/article/details/110517599
 
 ### 扩展信道
 
