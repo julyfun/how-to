@@ -4,6 +4,8 @@
 
 ```
 docker run -it -h $(hostname) -e DISPLAY=$DISPLAY -e XAUTHORITY=/tmp/xauth -v ~/ws/docker2:/home -v ~/.Xauthority:/tmp/xauth -v /tmp/.X11-unix:/tmp/.X11-unix --net=host -d ros:humble-ros-base-jammy 
+# then after committing:
+docker run -it -h $(hostname) --device=/dev/ttyUSB0 -e DISPLAY=$DISPLAY -e XAUTHORITY=/tmp/xauth -v ~/ws/docker2:/home -v ~/.Xauthority:/tmp/xauth -v /tmp/.X11-unix:/tmp/.X11-unix --net=host -d new1
 ```
 
 ```
