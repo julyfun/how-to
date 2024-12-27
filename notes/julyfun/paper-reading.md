@@ -1,3 +1,13 @@
+## 12.25
+
+- RDT: https://github.com/thu-ml/RoboticsDiffusionTransformer
+- 24.10.31 pi0: https://www.physicalintelligence.company/blog/pi0
+- ALOHA + ACT: https://github.com/tonyzhaozh/act
+- OpenVLA: https://github.com/openvla/openvla
+- octo Open-Source Generalist Robot Policy: https://octo-models.github.io/
+
+- 2023 具身智能 survey: https://eai-vc.github.io/
+
 ## 11.27
 
 - Egomimic - RGB + handpose pretrain

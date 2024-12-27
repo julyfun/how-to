@@ -1,5 +1,13 @@
 # how-to 服务器维护日志
 
+## 12.25
+
+- 又挂了。[ok] 重进 dashboard 的时候记得:
+
+```
+在`API Base URL`一栏中输入：http://\<ip\>:9090 ，在`Secret(optional)`一栏中输入    启动成功后输出的Secret。
+```
+
 ## 10.20
 
 - 最近又挂了，不得不重新开放 external 端口
