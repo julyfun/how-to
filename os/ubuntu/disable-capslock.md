@@ -4,5 +4,7 @@ sudo apt install gnome-tweaks
 
 gnome-tweaks
 
--> Keyboard & Mouse -> Additional.. -> Capslock behavior -> disable capslock
+-> Keyboard & Mouse -> Additional Layout Options -> Capslock behavior -> disable capslock / caps lock is disabled
+
+> ok for ubuntu 20.04
 
