@@ -12,7 +12,7 @@ click 'create launch.json'
 
 A file is created.
 
-To run shell script for python like this:
+If you wanna run shell script for python like this:
 
 ```sh
 CUDA_VISIBLE_DEVICES=0 python cloth_funnels/run_sim.py \
