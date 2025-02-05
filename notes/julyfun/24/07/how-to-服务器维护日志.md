@@ -13,11 +13,13 @@
 - 最近又挂了，不得不重新开放 external 端口
 - 在阿里云开放自定义端口
 - 删除 clash-for-linux-backup 中的 conf/config.yaml
-- 重新 sudo bash start.sh
+- 重新 `sudo bash start.sh`
 - 修改 conf/config.yaml 中的 external 端口
-- sudo bash restart.sh
-- source /etc/profile.d/clash.sh
-- proxy_on
+```
+sudo bash restart.sh
+source /etc/profile.d/clash.sh
+proxy_on
+```
 - 访问看看
 
 
