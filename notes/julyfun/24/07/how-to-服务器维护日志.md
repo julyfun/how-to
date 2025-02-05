@@ -5,7 +5,7 @@
 - 又挂了。[ok] 重进 dashboard 的时候记得:
 
 ```
-在`API Base URL`一栏中输入：http://\<ip\>:9090 ，在`Secret(optional)`一栏中输入    启动成功后输出的Secret。
+在`API Base URL`一栏中输入：`http://<ip>:10050`，在`Secret(optional)`一栏中输入    启动成功后输出的Secret。
 ```
 
 ## 10.20
@@ -20,8 +20,8 @@ sudo bash restart.sh
 source /etc/profile.d/clash.sh
 proxy_on
 ```
-- 访问看看
-
+- 访问 10050 看看
+- [240205] 按照上述方法 ok。我还修改了 start.sh 使之可以读取本地文件.
 
 ## 7.31
 
