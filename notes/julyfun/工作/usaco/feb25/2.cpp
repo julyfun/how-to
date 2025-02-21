@@ -12,7 +12,7 @@ int main() {
     }
     int empty = 0;
     for (int i = 0; i <= n; i++) {
-        cout << max(cnt[i], empty);
+        cout << max(cnt[i], empty) << endl;
         if (cnt[i] == 0)
             empty++;
     }
