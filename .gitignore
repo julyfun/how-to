@@ -12,6 +12,8 @@
 # [binary]
 1
 :w
+*.zip
+*.rar
 
 # [py]
 __pycache__
