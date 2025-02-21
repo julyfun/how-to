@@ -1,0 +1,76 @@
+[1m[32m   Compiling(B[m 3.cpp                                                                                                         [1m[32m    Finished(B[m 3.cpp                                                                                                         
+[1m[32m     Running(B[m 3.cpp                                                                                                         
+------
+---
+4
+len: 4
+YES
+------
+---
+4
+len: 4
+NO
+------
+---
+4
+len: 4
+YES
+------
+---
+6
+len: 6
+NO
+------
+---
+10
+len: 5
+YES
+------
+---
+8
+len: 8
+---
+6
+len: 3
+YES
+------
+---
+9
+len: 9
+---
+7
+len: 7
+YES
+------
+---
+16
+len: 8
+not L
+---
+6
+len: 3
+YES
+------
+---
+24
+len: 12
+---
+10
+len: 5
+YES
+------
+---
+9
+len: 9
+not L
+not R
+NO
+------
+---
+6
+len: 6
+not L
+---
+5
+len: 5
+NO

@@ -3,8 +3,8 @@ using namespace std;
 const int N = 1e2 + 10;
 int cnt[N];
 bool check(int n, int a0[]) {
-    // cout << "---" << endl;
-    // cout << n << endl;
+    cout << "---" << endl;
+    cout << n << endl;
     int len = -1;
     for (int i = 1; i <= n; i++) {
         if (n % i == 0) {
@@ -20,7 +20,7 @@ bool check(int n, int a0[]) {
             }
         }
     }
-    // cout << "len: " << len << endl;
+    cout << "len: " << len << endl;
     cnt[1] = cnt[2] = cnt[3] = 0;
     int num = 0;
     for (int i = 1; i <= len; i++) {
@@ -51,7 +51,7 @@ bool check(int n, int a0[]) {
         }
     }
     if (l != -1) return check(len - l, a0 + l);
-    // cout << "not L" << endl;
+    cout << "not L" << endl;
     int r = -1;
     for (int i = len - 1; ; i--) {
         if (a0[i] != a0[i + 1]) {
@@ -66,7 +66,7 @@ bool check(int n, int a0[]) {
         }
     }
     if (r != -1) return check(r - 1, a0);
-    // cout << "not R" << endl;
+    cout << "not R" << endl;
     return false;
 }
 
@@ -74,6 +74,7 @@ int a[N];
 int main() {
     int t; cin >> t;
     while (t--) {
+        cout << "------" << endl;
         int n, k; 
         cin >> n >> k;
         for (int i = 1; i <= n; i++)
