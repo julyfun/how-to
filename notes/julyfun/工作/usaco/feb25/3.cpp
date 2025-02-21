@@ -50,7 +50,7 @@ bool check(int n, int a0[]) {
             break;
         }
     }
-    if (l != -1) return check(len - l, a0 + l);
+    if (l != -1 && check(len - l, a0 + l)) return true;
     // cout << "not L" << endl;
     int r = -1;
     for (int i = len - 1; ; i--) {
@@ -65,7 +65,7 @@ bool check(int n, int a0[]) {
             break;
         }
     }
-    if (r != -1) return check(r - 1, a0);
+    if (r != -1 && check(r - 1, a0)) return true;
     // cout << "not R" << endl;
     return false;
 }
@@ -74,7 +74,7 @@ int a[N];
 int main() {
     int t; cin >> t;
     while (t--) {
-        cout << "------" << endl;
+        // cout << "------" << endl;
         int n, k; 
         cin >> n >> k;
         for (int i = 1; i <= n; i++)
