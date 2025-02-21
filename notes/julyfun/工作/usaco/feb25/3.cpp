@@ -2,7 +2,7 @@
 using namespace std;
 const int N = 1e2 + 10;
 int cnt[N];
-bool check(int n, int a0[]) {
+bool check(int n, int a0[], int k) {
     // cout << "---" << endl;
     // cout << n << endl;
     int len = -1;
@@ -30,6 +30,20 @@ bool check(int n, int a0[]) {
     if (num == 1)
         return true;
     if (num == 2) {
+        if (k == 3) {
+            for (int i = 1; i <= len; i++) {
+                if (!(i == 1 || a0[i] == a0[i - 1]))
+                    break;
+                if (check(len - i, a0 + i, 2))
+                    return true;
+            }
+            for (int i = len; i >= 1; i--) {
+                if (!(i == len || a0[i] == a0[i + 1]))
+                    break;
+                if (check(i - 1, a0, 2))
+                    return true;
+            }
+        }
         int changed = 0;
         for (int i = 2; i <= len; i++) {
             changed += a0[i] != a0[i - 1];
@@ -50,7 +64,7 @@ bool check(int n, int a0[]) {
             break;
         }
     }
-    if (l != -1 && check(len - l, a0 + l)) return true;
+    if (l != -1 && check(len - l, a0 + l, 2)) return true;
     // cout << "not L" << endl;
     int r = -1;
     for (int i = len - 1; ; i--) {
@@ -65,7 +79,7 @@ bool check(int n, int a0[]) {
             break;
         }
     }
-    if (r != -1 && check(r - 1, a0)) return true;
+    if (r != -1 && check(r - 1, a0, 2)) return true;
     // cout << "not R" << endl;
     return false;
 }
@@ -79,7 +93,7 @@ int main() {
         cin >> n >> k;
         for (int i = 1; i <= n; i++)
             cin >> a[i];
-        if (check(n, a))
+        if (check(n, a, k))
             cout << "YES" << endl;
         else
             cout << "NO" << endl;
