@@ -20,6 +20,7 @@ int main() {
                 continue;
             }
             int x = last_cont_start[a[p]];
+            last_cont_start[a[p]] = p;
             if (x != 0) {
                 int rep = p - x;
                 for (int i = 1; i <= rep; i++) {
@@ -30,8 +31,9 @@ int main() {
                     p++;
                 }
             }
-            last_cont_start[a[p]] = p;
-            p++;
+            else {
+                p++;
+            }
         }
         if (ok)
             cout << "YES" << endl;
