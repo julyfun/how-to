@@ -51,7 +51,6 @@ test
 
 ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241120222327.webp)
 ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241120232003.webp)
-<<<<<<< Updated upstream
 
 ### 项目概述
 
@@ -102,5 +101,3 @@ test
 - **总体描述**：对你所做工作的总体描述，解释你是如何理解任务的，以及你为解决任务所做的工作，用通俗语言描述，无需代码。
 - **潜在局限性**：描述你方法的潜在局限性，可能存在的问题，以及在不同数据或稍有不同的条件下可能会遇到的困难。
 - **扩展想法**：如果你有如何扩展这个项目的有趣想法，也请描述一下。
-=======
->>>>>>> Stashed changes
