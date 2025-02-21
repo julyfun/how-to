@@ -14,6 +14,7 @@ int main() {
     int ans = 0;
     for (int i = 1; i <= n; i++) {
         cin >> (c[i] + 1);
+            // 我们找到成对的镜像对称格子，每对是 4 个格子（例如整个网格左上角，左下角，右上角，右下角就是一对）
         for (int j = 1; j <= n; j++) {
             int x = i > n / 2 ? n - i + 1 : i, y = j > n / 2 ? n - j + 1 : j;
             sharp[x][y] += c[i][j] == '#';
