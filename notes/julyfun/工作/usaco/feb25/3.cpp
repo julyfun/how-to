@@ -3,6 +3,8 @@ using namespace std;
 const int N = 1e2 + 10;
 int cnt[N];
 bool check(int n, int a0[]) {
+    // cout << "---" << endl;
+    // cout << n << endl;
     int len = -1;
     for (int i = 1; i <= n; i++) {
         if (n % i == 0) {
@@ -18,6 +20,7 @@ bool check(int n, int a0[]) {
             }
         }
     }
+    // cout << "len: " << len << endl;
     cnt[1] = cnt[2] = cnt[3] = 0;
     int num = 0;
     for (int i = 1; i <= len; i++) {
@@ -39,7 +42,7 @@ bool check(int n, int a0[]) {
         if (a0[i] != a0[i - 1]) {
             l = i - 1;
             for (int j = i; j <= len; j++) {
-                if (a0[j] == a0[i]) {
+                if (a0[j] == a0[1]) {
                     l = -1;
                     break;
                 }
@@ -47,9 +50,10 @@ bool check(int n, int a0[]) {
             break;
         }
     }
-    if (l != -1) return check(n - l, a0 + l);
+    if (l != -1) return check(len - l, a0 + l);
+    // cout << "not L" << endl;
     int r = -1;
-    for (int i = len; ; i--) {
+    for (int i = len - 1; ; i--) {
         if (a0[i] != a0[i + 1]) {
             r = i + 1;
             for (int j = i; j >= 1; j--) {
@@ -61,7 +65,8 @@ bool check(int n, int a0[]) {
             break;
         }
     }
-    if (r != -1) return check(n - r, a0);
+    if (r != -1) return check(r - 1, a0);
+    // cout << "not R" << endl;
     return false;
 }
 
