@@ -1,4 +1,7 @@
+## 25.3.4
 
+- [ok] https://down.npee.cn/
+- [slow] https://ghfast.top/
 
 ## dead
 
