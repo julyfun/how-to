@@ -1,5 +1,15 @@
 # how-to 服务器维护日志
 
+## 25.3.14
+
+- [ok]
+
+```
+bash
+sudo bash start2.sh
+proxy_on
+```
+
 ## 12.25
 
 - 又挂了。[ok] 重进 dashboard 的时候记得:
