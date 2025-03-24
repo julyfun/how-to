@@ -36,3 +36,8 @@
 
 这些命令将提供有关已设置的断点和监视点的信息，以便您了解当前调试会话中的各个断点和监视点。
 
+## 补充
+
+- `c`: continue the program.
+- `r`: start the program.
+
