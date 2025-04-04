@@ -1,2 +1,2 @@
-- 视频支持: https://github.com/typst/typst/issues/955
+- [ ] 视频支持: https://github.com/typst/typst/issues/955
 - ...
