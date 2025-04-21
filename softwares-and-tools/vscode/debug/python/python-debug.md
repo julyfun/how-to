@@ -52,6 +52,9 @@ Add args like:
                 "wandb=disabled",
                 "fold_finish=True",
                 "dump_visualizations=True"],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
         }
     ]
 }
