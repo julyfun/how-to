@@ -189,6 +189,8 @@ XMODIFIERS=@im=fcitx
 
 不断地 logout。
 
+[later 2025] For ubuntu 22.04, 我没有成功使用 sogou pinyin，最后用的 Google Pinyin (同样是 fcitx 框架）
+
 ### 常用软件
 
 ```
