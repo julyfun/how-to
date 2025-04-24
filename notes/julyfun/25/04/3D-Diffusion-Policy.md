@@ -1,0 +1,25 @@
+- `robot_runner.py: RobotRunner.get_action`
+	- `obs = self.get_n_steps_obs()`
+		- obs <- update_obs() 就是 append <- Base_task.get_obs()
+			- **observation** - 包含来自各种相机的观察数据
+			   - 相机数据包括 `head_camera`, `left_camera`, `right_camera`, `front_camera` 等
+			   - 每个相机可以包含以下数据（取决于 `data_type` 设置）：
+			     - `rgb` - RGB图像数据
+			     - `mesh_segmentation` - 网格分割数据
+			     - `actor_segmentation` - 实体分割数据
+			     - `depth` - 深度图像数据
+			     - 相机内参和外参矩阵
+			- **pointcloud** - 点云数据
+			   - 如果 `data_type['pointcloud']` 为 True，则包含点云数据
+			   - 可以选择是否合并多个相机的点云数据
+			- **joint_action** - 机器人关节状态
+			   - 如果 `data_type['qpos']` 为 True，包含机器人关节角度
+			   - 双臂模式下，包含左臂和右臂的关节角度
+			   - 单臂模式下，仅包含右臂的关节角度
+			- **endpose** - 机器人末端执行器姿态
+			   - 如果 `data_type['endpose']` 为 True，包含末端执行器的位置和姿态
+			   - 双臂模式下，包含左右两个末端执行器的信息（位置x,y,z，欧拉角roll,pitch,yaw，以及夹爪状态）
+			   - 单臂模式下，仅包含右臂末端执行器信息
+			- **vision_tactile** - 视觉触觉传感器数据（当 `TACTILE_ON` 为 True 时）
+			   - 如果 `data_type['vision_tactile']` 为 True，包含触觉传感器的RGB图像数据
+	- 
