@@ -1,4 +1,4 @@
-- `robot_runner.py: RobotRunner.get_action`
+- `robot_runner.py: RobotRunner.get_action()`
 	- `obs = self.get_n_steps_obs()`
 		- obs <- update_obs() 就是 append <- Base_task.get_obs()
 			- **observation** - 包含来自各种相机的观察数据
@@ -22,4 +22,7 @@
 			   - 单臂模式下，仅包含右臂末端执行器信息
 			- **vision_tactile** - 视觉触觉传感器数据（当 `TACTILE_ON` 为 True 时）
 			   - 如果 `data_type['vision_tactile']` 为 True，包含触觉传感器的RGB图像数据
-	- 
+		- obs: `Dict`
+			- key => 将最近 n 个观测的 key 在第 0 维度拼接. 形状为 (n_steps, ) + shape_of_the_value
+				- n_steps 在参数 yaml 里为 n_obs_steps = 3
+			
