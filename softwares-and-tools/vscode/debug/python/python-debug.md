@@ -42,6 +42,7 @@ Add args like, [tested ok]:
             "type": "python",
             "request": "launch",
             "program": "${file}",
+            // "program": "${workspaceFolder}/script/eval_policy.py", // 这样也行
             "console": "integratedTerminal",
             "args": ["name=\"demo-single\"",
                 "load=models/longsleeve_canonicalized_alignment.pth",
@@ -53,7 +54,8 @@ Add args like, [tested ok]:
                 "fold_finish=True",
                 "dump_visualizations=True"],
             "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
+                "CUDA_VISIBLE_DEVICES": "0",
+                "HYDRA_FULL_ERROR": "1",
             },
         }
     ]
