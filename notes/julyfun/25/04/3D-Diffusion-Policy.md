@@ -28,3 +28,13 @@
 				- n_steps 在参数 yaml 里为 n_obs_steps = 3
 		- 在前面 unsqueeze 一个长度为 1 的维度后送进 predict_action()
 - `DP3.predict_action()` (dp3.py)
+
+## More
+
+- `DP3Encoder`
+	- 输入
+		- `point_cloud_key` => B x 3 x N 的 点云 (B: batch)
+		- `class PointNetEncoderXYZ`
+			- MLP: `[Linear + LayerNorm + ReLU]` x 3
+				-  3 => 64 => 128 => 256 => max => Linear + LayerNorm (128)
+	
