@@ -37,4 +37,7 @@
 		- `class PointNetEncoderXYZ`
 			- MLP: `[Linear + LayerNorm + ReLU]` x 3
 				-  3 => 64 => 128 => 256 => max => Linear + LayerNorm (128)
+			- 输入:
+				- B x 3 x N
+			- 输出: 
 	
