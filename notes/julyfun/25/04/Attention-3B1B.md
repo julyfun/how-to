@@ -1,3 +1,4 @@
+# 自注意力
 - 考虑:
     - mole 一词在不同上下文有不同含义.
     - 嵌入层将 mole 转换为泛型向量以后，Transformer 的下一层会**根据上下文再加一个偏移向量**。
@@ -19,8 +20,10 @@
 
 - 其实就是有 n 组上面这写矩阵，自行学习不同的注意力机制. 比如除了“形容词-名词”修饰，还有可能是“名词推测”、“动作导致形状变化”等注意力机制。GPT-3 中是 96 个头.
 - 最后的嵌入结果就是加在一起.
-- ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428225325.png)
+ ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428225325.png)
 
 ## 多层多头注意力
 
-- 每次经过一个多头 Attention 以后会过 MLP，然后再过多头 Attention，重复多层. GPT-3 
+- 每次经过一个多头 Attention 以后会过 MLP，然后再过多头 Attention，重复多层. GPT-3 中是 96 层.
+ ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428225647.png)
+# 交叉注意力 
