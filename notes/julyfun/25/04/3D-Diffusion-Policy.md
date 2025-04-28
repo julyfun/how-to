@@ -26,18 +26,25 @@
 		- obs: `Dict`
 			- key => 将最近 n 个观测的 key 在第 0 维度拼接. 形状为 (n_steps, ) + shape_of_the_value
 				- n_steps 在参数 yaml 里为 n_obs_steps = 3
-		- 在前面 unsqueeze 一个长度为 1 的维度后送进 predict_action()
+		- 在前面 unsqueeze 一个长度为 1 的维度后送进 `DP3.predict_action()`
 - `DP3.predict_action()` (dp3.py)
+	- Input (`obs_dict`):
+		- `'point_cloud'`: (1, 3, 1024, 6)
+		- `'agent_pos'`: 3 x 14 就是关节角度
+	- normalize
+	- 两个都送入 `DP3Encoder`
 
 ## More
 
 - `DP3Encoder`
 	- 输入
-		- `point_cloud_key` => B x 3 x N 的 点云 (B: batch)
-		- `class PointNetEncoderXYZ`
-			- MLP: `[Linear + LayerNorm + ReLU]` x 3
-				-  3 => 64 => 128 => 256 => max => Linear + LayerNorm (128)
-			- 输入:
-				- B x 3 x N
-			- 输出: 
+		- `'point_cloud'` => B x N x 3的 点云 (B: batch) = (3, 1024, 3) 送入:
+	- `class PointNetEncoderXYZ`
+		- MLP: `[Linear + LayerNorm + ReLU]` x 3
+			-  channels: 3 => 64 => 128 => 256 => max => Linear + LayerNorm (128)
+		- forward:
+			- (B, N, 3) = (3, 1024, 3)
+			- mlp => (3, 1024, 256)
+			- max => (3, 256)
+			- Linear + LayerNorm => (3, 128)
 	
