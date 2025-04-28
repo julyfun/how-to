@@ -6,5 +6,5 @@ gnome-tweaks
 
 -> Keyboard & Mouse -> Additional Layout Options -> Capslock behavior -> disable capslock / caps lock is disabled
 
-> ok for ubuntu 20.04
+> ok for ubuntu 20.04 & 22.04
 
