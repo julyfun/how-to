@@ -42,9 +42,11 @@
 	- `class PointNetEncoderXYZ`
 		- MLP: `[Linear + LayerNorm + ReLU]` x 3
 			-  channels: 3 => 64 => 128 => 256 => max => Linear + LayerNorm (128)
-		- forward:
+		- `forward()`:
 			- (B, N, 3) = (3, 1024, 3)
 			- mlp => (3, 1024, 256)
 			- max => (3, 256)
 			- Linear + LayerNorm => (3, 128)
+	 - `self.state_mlp`: 简单的 MLP. state_mlp_size = (64, 64).
+	 - 最后 cat 成 (3, 192)
 	
