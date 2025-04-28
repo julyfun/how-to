@@ -27,3 +27,6 @@
 - 每次经过一个多头 Attention 以后会过 MLP，然后再过多头 Attention，重复多层. GPT-3 中是 96 层.
  ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428225647.png)
 # 交叉注意力 
+- 文本和图像做交叉注意力时，
+	- 文本 $==>^("CLIP or BERT")$ Embedding。随后计算 KV.
+	- 图像 $==>^("resnet 等")$ Embedding, 然后计算 Q.
