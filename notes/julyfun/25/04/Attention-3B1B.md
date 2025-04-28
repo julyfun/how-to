@@ -37,7 +37,7 @@
 			- 猫区域的 Q 与“cat”的 K 相似度高 → 这些区域的注意力权重较大。
 			- 最终，来自文本 V 的“猫”语义被注入到图像中猫的区域.
 - 以下代码来自: GitHub/RoboTwin/policy/3D-Diffusion-Policy/3D-Diffusion-Policy/diffusion_policy_3d/model/diffusion/conditional_unet1d.py
-- 可以看出输入是 
+- 可以看出输入被用来计算 Q，而 condition 被用来计算 K, Q
 ```python
 class CrossAttention(nn.Module):
     def __init__(self, in_dim, cond_dim, out_dim):
@@ -49,20 +49,17 @@ class CrossAttention(nn.Module):
     def forward(self, x, cond):
         # x: [batch_size, t_act, in_dim]
         # cond: [batch_size, t_obs, cond_dim]
-
+		# 下面 horizon 就是 t_act.
         # Project x and cond to query, key, and value
+		# 注意 nn.Linear 是右乘，即 x @ weights.T
+		# weights 形状为 out_dim * in_dim（和创建时相反）
         query = self.query_proj(x)  # [batch_size, horizon, out_dim]
         key = self.key_proj(cond)   # [batch_size, horizon, out_dim]
         value = self.value_proj(cond)  # [batch_size, horizon, out_dim]
-
-
         # Compute attention
         attn_weights = torch.matmul(query, key.transpose(-2, -1))  # [batch_size, horizon, horizon]
         attn_weights = F.softmax(attn_weights, dim=-1)
-
         # Apply attention
         attn_output = torch.matmul(attn_weights, value)  # [batch_size, horizon, out_dim]
-        
         return attn_output
-    
 ```
