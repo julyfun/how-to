@@ -15,3 +15,12 @@
 	- $W_q, W_k$ 和两个 $W_v$ 是一样参数量. GPT-3 中是 $128 times 12288$ ($W_(v, "up")$ 为 $12288 times 128$)
 - 经过注意力以后的嵌入结果：加起来，如下图。下面 $Delta E_i^->$ 就是一个注意力.
 	![image.png|600](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428223207.png)
+## 多头注意力
+
+- 其实就是有 n 组上面这写矩阵，自行学习不同的注意力机制. 比如除了“形容词-名词”修饰，还有可能是“名词推测”、“动作导致形状变化”等注意力机制。GPT-3 中是 96 个头.
+- 最后的嵌入结果就是加在一起.
+- ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428225325.png)
+
+## 多层多头注意力
+
+- 每次经过一个多头 Attention 以后会过 MLP，然后再过多头 Attention，重复多层. GPT-3 
