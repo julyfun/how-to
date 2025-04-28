@@ -30,3 +30,39 @@
 - 文本和图像做交叉注意力时，
 	- 文本 $==>^("CLIP or BERT")$ Embedding。随后计算 KV.
 	- 图像 $==>^("resnet 等")$ Embedding, 然后计算 Q.
+	- 这是文本到图像的注意力，即通过文本得到图像中文本对应的内容，并将其给予更高的权重.
+		- [AI] PS:
+			- **Q 来自图像，K/V 来自文本** → 这是一个从图像“查询”文本的过程。
+			- 注意力权重反映的是“图像需要从文本中获取什么信息”
+			- 猫区域的 Q 与“cat”的 K 相似度高 → 这些区域的注意力权重较大。
+			- 最终，来自文本 V 的“猫”语义被注入到图像中猫的区域.
+- 以下代码来自: GitHub/RoboTwin/policy/3D-Diffusion-Policy/3D-Diffusion-Policy/diffusion_policy_3d/model/diffusion/conditional_unet1d.py
+- 可以看出输入是 
+```python
+class CrossAttention(nn.Module):
+    def __init__(self, in_dim, cond_dim, out_dim):
+        super().__init__()
+        self.query_proj = nn.Linear(in_dim, out_dim)
+        self.key_proj = nn.Linear(cond_dim, out_dim)
+        self.value_proj = nn.Linear(cond_dim, out_dim)
+
+    def forward(self, x, cond):
+        # x: [batch_size, t_act, in_dim]
+        # cond: [batch_size, t_obs, cond_dim]
+
+        # Project x and cond to query, key, and value
+        query = self.query_proj(x)  # [batch_size, horizon, out_dim]
+        key = self.key_proj(cond)   # [batch_size, horizon, out_dim]
+        value = self.value_proj(cond)  # [batch_size, horizon, out_dim]
+
+
+        # Compute attention
+        attn_weights = torch.matmul(query, key.transpose(-2, -1))  # [batch_size, horizon, horizon]
+        attn_weights = F.softmax(attn_weights, dim=-1)
+
+        # Apply attention
+        attn_output = torch.matmul(attn_weights, value)  # [batch_size, horizon, out_dim]
+        
+        return attn_output
+    
+```
