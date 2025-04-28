@@ -10,3 +10,4 @@
 ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428220719.png)
 ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428220832.png)
 - $V_i^-> = W_v dot E_i^->$  表示对其他词应该造成什么偏置。比如上图从 creature 到蓝色毛茸茸生物的箭头.
+	- 这里如果真用 $W_v$ 这个矩阵的话，唯独就爆炸了. 我们先编码再解码，实际上 $V_i^-> = W$
