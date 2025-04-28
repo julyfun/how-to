@@ -1,3 +1,5 @@
+- 符号
+	- `T`: 预测轨迹长度
 - `RobotRunner.get_action()` (robot_runner.py)
 	- `obs = self.get_n_steps_obs()`
 		- obs <- update_obs() 就是 append <- Base_task.get_obs()
@@ -23,16 +25,22 @@
 			- **vision_tactile** - 视觉触觉传感器数据（当 `TACTILE_ON` 为 True 时）
 			   - 如果 `data_type['vision_tactile']` 为 True，包含触觉传感器的RGB图像数据
 		- 随后拿出 pointcloud -> point_cloud, joint_action -> agent_pos
-		- obs: `Dict`
-			- key => 将最近 n 个观测的 key 在第 0 维度拼接. 形状为 (n_steps, ) + shape_of_the_value
+		- 得到 obs: `Dict`
+			- each_key => 将最近 n 个观测的 key 在第 0 维度拼接. 形状为 `(n_steps, ) + shape_of_the_value`
 				- n_steps 在参数 yaml 里为 n_obs_steps = 3
-		- 在前面 unsqueeze 一个长度为 1 的维度后送进 `DP3.predict_action()`
-- `DP3.predict_action()` (dp3.py)
-	- Input (`obs_dict`):
-		- `'point_cloud'`: (1, 3, 1024, 6)
-		- `'agent_pos'`: 3 x 14 就是关节角度
-	- normalize
-	- 两个都送入 `DP3Encoder`
+		- 在前面 unsqueeze 一个长度为 1 的维度后送进 `DP3.predict_action()` [意义不明]
+- `class DP3:` 
+	- `predict_action()` (dp3.py)
+		- Input (`obs_dict`):
+			- `'point_cloud'`: (1, 3, 1024, 6)
+			- `'agent_pos'`: (3, 14) 就是关节角度
+		- 过程:
+			- normalize
+			- 两个都送入 `DP3Encoder`，得到 (3, 192)，压扁成 (1, 576)
+			- 送入 `self.condition_sapmle()`
+	- `condition_sample():`
+		- ps:
+			- 出的 traj shape 是 (B, T, action_dim) = (1, 8, 14)
 
 ## More
 
