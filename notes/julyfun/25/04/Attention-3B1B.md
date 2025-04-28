@@ -13,5 +13,5 @@
 	- 这里如果真用 $W_v$ 这个矩阵的话，唯独就爆炸了. 我们先编码再解码，实际上 $V_i^-> = W_(v, "up") dot W_(v, "down") dot E_i^->$
 - PS:
 	- $W_q, W_k$ 和两个 $W_v$ 是一样参数量. GPT-3 中是 $128 times 12288$ ($W_(v, "up")$ 为 $12288 times 128$)
-- 经过注意力以后的嵌入结果：加起来，如下图。
+- 经过注意力以后的嵌入结果：加起来，如下图。下面 $Delta E_i^->$ 就是一个注意力.
 	![image.png|600](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428223207.png)
