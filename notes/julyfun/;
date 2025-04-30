@@ -1,14 +1,12 @@
 ## 5.1
 
 - RT1
-    - Transfromer 出轨迹
-    - 3Hz inference
+    - Transfromer 出轨迹 3Hz inference
     - 实验：
         - 结合仿真数据训练或者其他机械臂的数据训练，也可以学到新技能.
         - 少一点数据，训练效果会如何变化？
             - 多样性减少的影响更大!
 - RT2:
-    - Use pretrained VLM. (PaLI-X, PaLM-E)
 
 ## 4.27
 
