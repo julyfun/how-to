@@ -40,6 +40,8 @@
             - if global_cond:
     			- 两个都送入 `DP3Encoder`，得到 (3, 192)，压扁成 (1, 576)
                 - mask 就是全部 mask 掉, 所有动作都需要通过扩散模型生成
+            - else:
+                - mask 观察特征保持可见
 			- 送入 `self.condition_sapmle()`
 	- `condition_sample():`
 		- ps:
