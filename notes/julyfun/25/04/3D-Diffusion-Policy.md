@@ -1,5 +1,6 @@
 - 符号
 	- `T`: 预测轨迹长度
+- `eval_policy.py` 调用 `deploy_policy.py:eval()`，其调用 `RobotRunner.get_action()`
 - `RobotRunner.get_action()` (robot_runner.py)
 	- `obs = self.get_n_steps_obs()`
 		- obs <- update_obs() 就是 append <- Base_task.get_obs()
@@ -43,12 +44,12 @@
             - else:
                 - mask 观察特征保持可见
 			- 送入 `self.condition_sapmle()`
-            - return
+            - return. 实测表明一次预测 6 步且会把这 6 步执行完，再预测下 6 步.
 	- `condition_sample():`
 		- ps:
 			- 出的 traj shape 是 (B, T, action_dim) = (1, 8, 14)
 
-## More
+## Inner
 
 - `DP3Encoder`
 	- 输入
@@ -63,4 +64,7 @@
 			- Linear + LayerNorm => (3, 128)
 	 - `self.state_mlp`: 简单的 MLP. state_mlp_size = (64, 64).
 	 - 最后 cat 成 (3, 192)
-	
+
+## Outer
+
+
