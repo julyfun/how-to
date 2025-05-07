@@ -3,7 +3,7 @@
 - `RobotRunner.get_action()` (robot_runner.py)
 	- `obs = self.get_n_steps_obs()`
 		- obs <- update_obs() 就是 append <- Base_task.get_obs()
-			- **observation** - 包含来自各种相机的观察数据
+			- [ai] **observation** - 包含来自各种相机的观察数据
 			   - 相机数据包括 `head_camera`, `left_camera`, `right_camera`, `front_camera` 等
 			   - 每个相机可以包含以下数据（取决于 `data_type` 设置）：
 			     - `rgb` - RGB图像数据
