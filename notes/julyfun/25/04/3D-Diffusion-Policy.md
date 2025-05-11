@@ -1,8 +1,10 @@
 - 符号
 	- `T`: 预测轨迹长度
+- `eval_policy.py` 调用 `deploy_policy.py:eval()`，其调用 `RobotRunner.get_action()`
 - `RobotRunner.get_action()` (robot_runner.py)
 	- `obs = self.get_n_steps_obs()`
 		- obs <- update_obs() 就是 append <- Base_task.get_obs()
+            - [ai]
 			- **observation** - 包含来自各种相机的观察数据
 			   - 相机数据包括 `head_camera`, `left_camera`, `right_camera`, `front_camera` 等
 			   - 每个相机可以包含以下数据（取决于 `data_type` 设置）：
@@ -24,7 +26,7 @@
 			   - 单臂模式下，仅包含右臂末端执行器信息
 			- **vision_tactile** - 视觉触觉传感器数据（当 `TACTILE_ON` 为 True 时）
 			   - 如果 `data_type['vision_tactile']` 为 True，包含触觉传感器的RGB图像数据
-		- 随后拿出 pointcloud -> point_cloud, joint_action -> agent_pos
+		- 随后拿出两个数据并重命名: pointcloud -> point_cloud, joint_action -> agent_pos
 		- 得到 obs: `Dict`
 			- each_key => 将最近 n 个观测的 key 在第 0 维度拼接. 形状为 `(n_steps, ) + shape_of_the_value`
 				- n_steps 在参数 yaml 里为 n_obs_steps = 3
@@ -36,13 +38,18 @@
 			- `'agent_pos'`: (3, 14) 就是关节角度
 		- 过程:
 			- normalize
-			- 两个都送入 `DP3Encoder`，得到 (3, 192)，压扁成 (1, 576)
+            - if global_cond:
+    			- 两个都送入 `DP3Encoder`，得到 (3, 192)，压扁成 (1, 576)
+                - mask 就是全部 mask 掉, 所有动作都需要通过扩散模型生成
+            - else:
+                - mask 观察特征保持可见
 			- 送入 `self.condition_sapmle()`
+            - return. 实测表明一次预测 6 步且会把这 6 步执行完，再预测下 6 步.
 	- `condition_sample():`
 		- ps:
 			- 出的 traj shape 是 (B, T, action_dim) = (1, 8, 14)
 
-## More
+## Inner
 
 - `DP3Encoder`
 	- 输入
@@ -57,4 +64,7 @@
 			- Linear + LayerNorm => (3, 128)
 	 - `self.state_mlp`: 简单的 MLP. state_mlp_size = (64, 64).
 	 - 最后 cat 成 (3, 192)
-	
+
+## Outer
+
+

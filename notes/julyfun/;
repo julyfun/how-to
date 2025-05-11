@@ -1,37 +1,12 @@
-<<<<<<< HEAD
-## 4.29
-
-- [dataset, visualize] huggingface 上录的数据集可以可视化: https://huggingface.co/spaces/lerobot/visualize_dataset?dataset=julyfun%2Fso100_pick_and_place_v4_50&episode=0
-- [机器人动力学大纲] https://blog.csdn.net/Bellwen/article/details/129200899
-    - 拉格朗日力学
-    - 多自由度机器人的动力学方程
-    - 机器人的静力分析
-    - 坐标系间力与力矩的变换
-- [毕设] 写论文看这个，讲到了各种痛点: https://www.bilibili.com/video/BV1QxB9YuERU
-    - 22:04 视角 Diversity 可视化
-=======
-## 5.9
-
-- [net, ios, ping] Can't ping iphone?
-    - [ok] Check WPA settings. Set to "WPA2 个人版(WPA2 AES)" instead of "WPA / WPA2" solved the problem for me.
-
-## 5.7
-
-- [ ] Rust 内核调度器? https://arighi.blogspot.com/2024/02/writing-scheduler-for-linux-in-rust.html
-
 ## 5.1
 
-- [wifi, cli]
-    - `nmcli dev wifi connect sic-guest password xxx`
-    - kernel module
-        - `lsmod | grep wifi`
-        - `sudo modprobe -r <模块名>  # 例如：sudo modprobe -r iwlwifi`
-        - `sudo modprobe <>`
-    - or `sudo systemctl restart NetworkManager-dispatcher.service`
-- [watch with sudo, ok] `watch -n 2 "echo xxx | sudo -S ls"`
-
-
->>>>>>> 30f67be2cb61a7fd67f7ca166aa503db1ad7e4ec
+- RT1
+    - Transfromer 出轨迹 3Hz inference
+    - 实验：
+        - 结合仿真数据训练或者其他机械臂的数据训练，也可以学到新技能.
+        - 少一点数据，训练效果会如何变化？
+            - 多样性减少的影响更大!
+- RT2:
 
 ## 4.27
 
@@ -233,10 +208,7 @@ check_font()
 
 - [csdiy] for lmz
     - https://wdxtub.com/work/
-<<<<<<< Updated upstream
 - 4070s added something here.
-=======
->>>>>>> Stashed changes
 - mac added something else here.
 
 ## 2.12
