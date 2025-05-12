@@ -1,7 +1,10 @@
 # 25
 
-## 4.17 AnyGrasp
+## 5.12
 
+- Diffusion Policy 架构精读: https://blog.csdn.net/v_JULY_v/article/details/143651718
+
+## 4.17 AnyGrasp
 
 
 # 24
