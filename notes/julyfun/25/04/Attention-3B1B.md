@@ -63,3 +63,8 @@ class CrossAttention(nn.Module):
         attn_output = torch.matmul(attn_weights, value)  # [batch_size, horizon, out_dim]
         return attn_output
 ```
+- ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428225325.png)
+
+## 多层多头注意力
+
+- 每次经过一个多头 Attention 以后会过 MLP，然后再过多头 Attention，重复多层.
