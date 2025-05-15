@@ -49,10 +49,13 @@
 		- ps:
 			- 出的 traj shape 是 (B, T, action_dim) = (1, 8, 14)
         - 每个去噪步 `model(sample=trajectory, timestep=t, local_cond=local_cond(必为 None), global_cond=global_cond)`
-        - model is `ConditionalUnet1D`:
-            - timestep (形状 (B, ) or int) encoding (SinusoidalPosEmb, Linear, Mish, Linear)
-            - 如 global_cond，则 `global_feature = cat([timestep_embed, global_cond], axis=-1)
+        - model is `ConditionalUnet1D.forward()`:
             ```python
+            ...
+            timestep (形状 (B, ) or int) encoding (SinusoidalPosEmb, Linear, Mish, Linear)
+            如 global_cond，则 `global_feature = cat([timestep_embed, global_cond], axis=-1)
+            x = sample (即 trajactory)
+            ...
             for idx, (resnet, resnet2, downsample) in enumerate(self.down_modules):
                 if self.use_down_condition:
                     x = resnet(x, global_feature)
@@ -66,6 +69,10 @@
                     x = resnet2(x)
                 h.append(x)
                 x = downsample(x)
+            ... 后面有一个 mid_module (ConditionalResidualBlock1D)
+            ... 后面面 Upsample 一毛一样
+            x = self.final_conv(x)
+            return x
             ```
             - 其中 resnet, resnet2, downsample:
             ```python
@@ -79,7 +86,15 @@
                 condition_type=condition_type),
             Downsample1d(dim_out) if not is_last else nn.Identity()
             ```
-            - 其中 `ConditionalResidualBlock1D`
+            - 其中 `ConditionalResidualBlock1D.forward():`
+                - out = Conv1dBlock() (x)
+                - if `cross_attention_add`
+                    - embed = CrossAttention() (x)
+                    - out = out + embed (是 tensor 值加)
+                - out = another Conv1dBlock() (x)
+                - out = out + self.residual_conv(x)
+                - return out
+            
 
 ## Inner
 
