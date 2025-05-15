@@ -39,7 +39,7 @@
 		- 过程:
 			- normalize
             - if global_cond:
-    			- 两个都送入 `DP3Encoder`，得到 (3, 192)，压扁成 (1, 576)
+    			- point_cloud & agent_pos 都送入 `DP3Encoder`，得到 (3, 192)，压扁成 (1, 576)
                 - mask 就是全部 mask 掉, 所有动作都需要通过扩散模型生成
             - else:
                 - mask 观察特征保持可见
@@ -62,7 +62,7 @@
 			- mlp => (3, 1024, 256)
 			- max => (3, 256)
 			- Linear + LayerNorm => (3, 128)
-	 - `self.state_mlp`: 简单的 MLP. state_mlp_size = (64, 64).
+	 - `self.state_mlp`: 简单的 MLP (Linear + ReLU). state_mlp_size = (64, 64).
 	 - 最后 cat 成 (3, 192)
 
 ## Outer
