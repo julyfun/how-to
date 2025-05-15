@@ -48,6 +48,38 @@
 	- `condition_sample():`
 		- ps:
 			- 出的 traj shape 是 (B, T, action_dim) = (1, 8, 14)
+        - 每个去噪步 `model(sample=trajectory, timestep=t, local_cond=local_cond(必为 None), global_cond=global_cond)`
+        - model is `ConditionalUnet1D`:
+            - timestep (形状 (B, ) or int) encoding (SinusoidalPosEmb, Linear, Mish, Linear)
+            - 如 global_cond，则 `global_feature = cat([timestep_embed, global_cond], axis=-1)
+            ```python
+            for idx, (resnet, resnet2, downsample) in enumerate(self.down_modules):
+                if self.use_down_condition:
+                    x = resnet(x, global_feature)
+                    if idx == 0 and len(h_local) > 0:
+                        x = x + h_local[0]
+                    x = resnet2(x, global_feature)
+                else:
+                    x = resnet(x)
+                    if idx == 0 and len(h_local) > 0:
+                        x = x + h_local[0]
+                    x = resnet2(x)
+                h.append(x)
+                x = downsample(x)
+            ```
+            - 其中 resnet, resnet2, downsample:
+            ```python
+            ConditionalResidualBlock1D(
+                dim_in, dim_out, cond_dim=cond_dim, 
+                kernel_size=kernel_size, n_groups=n_groups,
+                condition_type=condition_type),
+            ConditionalResidualBlock1D(
+                dim_out, dim_out, cond_dim=cond_dim, 
+                kernel_size=kernel_size, n_groups=n_groups,
+                condition_type=condition_type),
+            Downsample1d(dim_out) if not is_last else nn.Identity()
+            ```
+            - 其中 `ConditionalResidualBlock1D`
 
 ## Inner
 
