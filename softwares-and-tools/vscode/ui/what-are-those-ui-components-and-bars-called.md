@@ -7,4 +7,5 @@
 - 底部状态栏：状态栏
 - 行宽竖线：rulers
 - Breakpoint 所在列：Glyph Margin （可在设置中关闭）
+- 代码右边的缩放图预览: minimap
 
