@@ -8,4 +8,5 @@
 - 行宽竖线：rulers
 - Breakpoint 所在列：Glyph Margin （可在设置中关闭）
 - 代码右边的缩放图预览: minimap
+- 代码上方固定的若干行父级元素：Sticky Scroll
 
