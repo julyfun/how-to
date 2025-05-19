@@ -10,7 +10,7 @@ keywords:
 
 # choose Conflicts in rebase
 
-![[Pasted image 20240602205500.png]]
+![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250520003409.png)
 
 情况：origin/main 上别人有新 push，本地 main 上自己有 commit，pull with rebase 时发生冲突
 打开 vscode 合并冲突界面，左边是 origin/main，右边是本地的新 commit
