@@ -13,10 +13,11 @@ How to do anything.
 - NOTE
 - time note (24/09, 24/11...)
 - by folder and file name (jd)
+- 滴答清单. (private info)
 
 ## To do
 
-- [x] Better commit message by fish shell script.
+- [] Better commit message by fish shell script.
 - [x] Smart content search engine. `jd` and `jst gf`.
 - [x] Integrate to `mfa.fish`.
 - [x] Website for this repo.
