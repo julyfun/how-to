@@ -30,7 +30,7 @@
 		- 得到 obs: `Dict`
 			- each_key => 将最近 n 个观测的 key 在第 0 维度拼接. 形状为 `(n_steps, ) + shape_of_the_value`
 				- n_steps 在参数 yaml 里为 n_obs_steps = 3
-		- 在前面 unsqueeze 一个长度为 1 的维度后送进 `DP3.predict_action()` [意义不明]
+		- 在前面 unsqueeze 一个长度为 1 的维度后送进 `DP3.predict_action()` （应该是因为推理的时候 batch 必是 1）
 - `class DP3:` 
 	- `predict_action()` (dp3.py)
 		- Input (`obs_dict`):
