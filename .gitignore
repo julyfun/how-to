@@ -18,3 +18,5 @@
 # [py]
 __pycache__
 
+# [ignore]
+ignoreme-*
