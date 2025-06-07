@@ -136,7 +136,7 @@ with torch.no_grad():
     pred_noise = net(noised_x.to(device)).detach().cpu()
     pred = noised_x - pred_noise
 
-fig, axs = plt.subplots(5, 1 figsize=(10, 5))
+fig, axs = plt.subplots(5, 1, figsize=(12, 10))
 axs[0].set_title("Input")
 axs[0].imshow(make_grid(x)[0].clip(0, 1), cmap="Greys")
 
@@ -151,3 +151,16 @@ axs[3].imshow(make_grid(pred_noise)[0].clip(0, 1), cmap="Greys")
 
 axs[4].set_title("Predicted")
 axs[4].imshow(make_grid(pred)[0].clip(0, 1), cmap="Greys")
+
+# %%
+
+n_steps = 10
+x = torch.rand(8, 1, 28, 28).to(device)
+step_history = [x.detach().cpu()] # copy
+
+pred_output_history = []
+
+for i in range(n_steps):
+    with torch.no_grad():
+        pred_noise = net(x)
+    pred_output_history.append(pred_noise.detach().cpu())
