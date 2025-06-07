@@ -125,3 +125,29 @@ plt.plot(losses)
 plt.ylim(0, 0.1)
 
 # %%
+
+x, y = next(iter(train_loader))
+x = x[:8]
+
+amount = torch.linspace(0, 1, x.shape[0])
+noised_x, noise = corrupt(x, amount)
+
+with torch.no_grad():
+    pred_noise = net(noised_x.to(device)).detach().cpu()
+    pred = noised_x - pred_noise
+
+fig, axs = plt.subplots(5, 1 figsize=(10, 5))
+axs[0].set_title("Input")
+axs[0].imshow(make_grid(x)[0].clip(0, 1), cmap="Greys")
+
+axs[1].set_title("Corrupted")
+axs[1].imshow(make_grid(noised_x)[0].clip(0, 1), cmap="Greys")
+
+axs[2].set_title("Noise")
+axs[2].imshow(make_grid(noise)[0].clip(0, 1), cmap="Greys")
+
+axs[3].set_title("Predicted Noise")
+axs[3].imshow(make_grid(pred_noise)[0].clip(0, 1), cmap="Greys")
+
+axs[4].set_title("Predicted")
+axs[4].imshow(make_grid(pred)[0].clip(0, 1), cmap="Greys")
