@@ -164,7 +164,13 @@ for i in range(n_steps):
     with torch.no_grad():
         pred_noise = net(x)
         pred_output_history.append(pred_noise.detach().cpu())
-        beta = 1.0 / n_steps
-        x = (x - pred_noise * beta) / (1 - beta)
-    step_history.append(x.detach().cpu())
+        beta = 1.0 / (n_steps - i)
+        x = (x - pred_noise) * beta + x * (1 - beta)
+        step_history.append(x.detach().cpu())
     
+fig, axs = plt.subplots(n_steps, 2, figsize=(12, 10), sharex=True)
+axs[0, 0].set_title("Input")
+axs[0, 1].set_title("Predicted Noise")
+for i in range(n_steps):
+    axs[i, 0].imshow(make_grid(step_history[i])[0].clip(0, 1), cmap="Greys")
+    axs[i, 1].imshow(make_grid(pred_output_history[i])[0].clip(0, 1), cmap="Greys")
