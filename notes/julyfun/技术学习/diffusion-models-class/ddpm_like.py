@@ -129,12 +129,12 @@ plt.ylim(0, 0.1)
 x, y = next(iter(train_loader))
 x = x[:8]
 
-amount = torch.linspace(0, 1, x.shape[0])
+amount = torch.linspace(0, 0.9, x.shape[0])
 noised_x, noise = corrupt(x, amount)
 
 with torch.no_grad():
     pred_noise = net(noised_x.to(device)).detach().cpu()
-    pred = noised_x - pred_noise
+    pred = (noised_x - pred_noise) / (1 - amount.view(-1, 1, 1, 1))
 
 fig, axs = plt.subplots(5, 1, figsize=(12, 10))
 axs[0].set_title("Input")
@@ -163,4 +163,8 @@ pred_output_history = []
 for i in range(n_steps):
     with torch.no_grad():
         pred_noise = net(x)
-    pred_output_history.append(pred_noise.detach().cpu())
+        pred_output_history.append(pred_noise.detach().cpu())
+        beta = 1.0 / n_steps
+        x = (x - pred_noise * beta) / (1 - beta)
+    step_history.append(x.detach().cpu())
+    
