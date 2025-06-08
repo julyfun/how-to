@@ -74,3 +74,21 @@ images = image_pipe(num_inference_steps=40).images
 images[0]
 
 # %%
+
+from datasets import load_dataset
+from torchvision import transforms
+
+dataset_name = "huggan/smithsonian_butterflies_subset"
+dataset = load_dataset(dataset_name, split="train")
+
+image_size = 256
+batch_size = 4
+
+preprocess = transforms.Compose(
+    [
+        transforms.Resize((image_size, image_size)),
+        transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(),
+        transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]),
+    ]
+)
