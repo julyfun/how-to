@@ -264,5 +264,5 @@ def color_loss(images, target_color=(0.1, 0.9, 0.5)):
     target = target[
         None, :, None, None
     ] # None 位置会插入维度为 1
-    error = torch.abs(images - target).mean()
+    error = torch.abs(images - target).mean() # 得到一个数
     return error
