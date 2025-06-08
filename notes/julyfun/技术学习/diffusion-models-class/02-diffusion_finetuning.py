@@ -159,3 +159,7 @@ for epoch in range(num_epochs):
 
 
 plt.plot(losses)
+
+# %%
+images = image_pipe(num_inference_steps=40).images  
+images[0]
