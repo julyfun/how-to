@@ -117,4 +117,13 @@ num_epochs = 2
 
 for epoch in range(num_epochs):
     for step, batch in enumerate(tqdm(train_dataloader)):
+
         clean_images = batch["images"].to(device)
+        noise = torch.randn_like(clean_images).to(device)
+
+        bs = clean_images.shape[0] # batch size
+
+        timesteps: torch.Tensor = torch.randint(
+            0,
+            image_pipe.scheduler.num_inference_steps
+        )
