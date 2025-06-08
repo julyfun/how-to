@@ -117,6 +117,9 @@ num_epochs = 2
 losses=  []
 grad_accumulation_steps = 2
 
+# 只优化 unet
+opt = torch.optim.AdamW(image_pipe.unet.parameters(), lr=1e-5)
+
 for epoch in range(num_epochs):
     for step, batch in enumerate(tqdm(train_dataloader)):
 
@@ -145,4 +148,14 @@ for epoch in range(num_epochs):
         losses.append(loss.item())
         loss.backward(loss)
 
+        # [梯度累积] 变相增大 batch size，而无需更大 GPU MEM。lr 需要减小。
         if (step + 1) % grad_accumulation_steps == 0:
+            opt.step()
+            opt.zero_grad()
+
+    print(
+        f"Epoch {epoch} ave loss: {sum(losses[len(train_dataloader):]) / len(train_dataloader)}"
+    )
+
+
+plt.plot(losses)
