@@ -230,7 +230,7 @@ card.push_to_hub(hub_model_id)
 
 # %%
 name = "johnowhitaker/sd-class-wikiart-from-bedrooms"
-image_pipe = DDPMPipeline.from_pretrained(name)
+image_pipe = DDPMPipeline.from_pretrained(name).to(device)
 
 scheduler = DDIMScheduler.from_pretrained(name)
 
@@ -238,11 +238,21 @@ scheduler.set_timesteps(num_inference_steps=40)
 
 x = torch.randn(8, 3, 256, 256).to(device)
 
+# %%
+
 for i, t in tqdm(enumerate(scheduler.timesteps)):
     model_input = scheduler.scale_model_input(x, t)
     with torch.no_grad():
         noise_pred = image_pipe.unet(model_input, t)["sample"]
     x = scheduler.step(noise_pred, t, sample=x).prev_sample
 
-grid = make_grid(x, nrow=4).permute(1, 2, 0)
+# %%
+
+grid = make_grid(x, nrow=4)
 plt.imshow(grid.permute(1, 2, 0).cpu().clip(-1, 1) * 0.5 + 0.5)
+
+
+# %%
+type(image_pipe.scheduler)
+
+# %%
