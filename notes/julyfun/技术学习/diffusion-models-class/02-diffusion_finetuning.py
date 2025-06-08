@@ -114,6 +114,8 @@ plt.imshow(grid.permute(1, 2, 0).cpu().clip(-1, 1) * 0.5 + 0.5) # imshow 要求 
 # %%
 
 num_epochs = 2
+losses=  []
+grad_accumulation_steps = 2
 
 for epoch in range(num_epochs):
     for step, batch in enumerate(tqdm(train_dataloader)):
@@ -125,5 +127,22 @@ for epoch in range(num_epochs):
 
         timesteps: torch.Tensor = torch.randint(
             0,
-            image_pipe.scheduler.num_inference_steps
+            image_pipe.scheduler.num_inference_steps,
+            (bs,),
+            device=device,
+        ).long()
+
+        noisy_images = image_pipe.scheduler.add_noise(
+            clean_images,
+            noise,
+            timesteps
         )
+
+        noise_pred = image_pipe.unet(noisy_images, timesteps, return_dict=False)
+        noise_pred = noise_pred[0]
+
+        loss = F.mse_loss(noise_pred, noise)
+        losses.append(loss.item())
+        loss.backward(loss)
+
+        if (step + 1) % grad_accumulation_steps == 0:
