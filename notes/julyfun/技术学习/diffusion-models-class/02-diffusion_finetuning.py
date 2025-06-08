@@ -87,8 +87,26 @@ batch_size = 4
 preprocess = transforms.Compose(
     [
         transforms.Resize((image_size, image_size)),
-        transforms.RandomHorizontalFlip(),
+        transforms.RandomHorizontalFlip(), # 50% 概率水平翻转
         transforms.ToTensor(),
-        transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]),
+        transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]), # (x - mean) / std
     ]
 )
+
+
+# %%
+
+# PIL -> preprocess -> tensor
+def transform(examples):
+    images = [preprocess(image.convert("RGB")) for image in examples["image"]]
+    return {"images": images}
+
+dataset.set_transform(transform)
+
+train_dataloader = torch.utils.data.DataLoader(
+    dataset, batch_size=batch_size, shuffle=True
+)
+
+batch = next(iter(train_dataloader))
+grid = torchvision.utils.make_grid(batch["images"], nrow=4)
+plt.imshow(grid.permute(1, 2, 0).cpu().clip(-1, 1) * 0.5 + 0.5) # imshow 要求 [H, W, C]
