@@ -27,6 +27,7 @@ imgs[0]
 
 # %%
 
+# [Train a new scheduler] Later replace the scheduler in the image_pipe
 scheduler = DDIMScheduler.from_pretrained('google/ddpm-celebahq-256')
 
 scheduler.set_timesteps(num_inference_steps=40)
@@ -68,4 +69,8 @@ for i, t in tqdm(enumerate(scheduler.timesteps)):
 
 # %%
 
-scheduler.step
+image_pipe.scheduler = scheduler
+images = image_pipe(num_inference_steps=40).images
+images[0]
+
+# %%
