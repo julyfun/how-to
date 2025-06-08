@@ -256,3 +256,13 @@ plt.imshow(grid.permute(1, 2, 0).cpu().clip(-1, 1) * 0.5 + 0.5)
 type(image_pipe.scheduler)
 
 # %%
+
+def color_loss(images, target_color=(0.1, 0.9, 0.5)):
+    target = (
+        torch.tensor(target_color, device=images.device) * 2 - 1
+    )
+    target = target[
+        None, :, None, None
+    ] # None 位置会插入维度为 1
+    error = torch.abs(images - target).mean()
+    return error
