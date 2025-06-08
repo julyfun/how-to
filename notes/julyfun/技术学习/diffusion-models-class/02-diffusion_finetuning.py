@@ -59,7 +59,13 @@ for i, t in tqdm(enumerate(scheduler.timesteps)):
         axs[0].imshow(grid.cpu().clip(-1, 1) * 0.5 + 0.5)
         axs[0].set_title(f"Current x (step {i})")
 
+        # 预测的完全去噪结果
         pred_x0 = scheduler_output.pred_original_sample
         grid = make_grid(pred_x0, nrow=4).permute(1, 2, 0)
         axs[1].imshow(grid.cpu().clip(-1, 1) * 0.5 + 0.5)
         axs[1].set_title(f"Predicted denoised (step {i})")
+        plt.show()
+
+# %%
+
+scheduler.step
