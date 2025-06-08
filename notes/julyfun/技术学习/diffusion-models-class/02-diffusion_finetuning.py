@@ -110,3 +110,11 @@ train_dataloader = torch.utils.data.DataLoader(
 batch = next(iter(train_dataloader))
 grid = torchvision.utils.make_grid(batch["images"], nrow=4)
 plt.imshow(grid.permute(1, 2, 0).cpu().clip(-1, 1) * 0.5 + 0.5) # imshow 要求 [H, W, C]
+
+# %%
+
+num_epochs = 2
+
+for epoch in range(num_epochs):
+    for step, batch in enumerate(tqdm(train_dataloader)):
+        clean_images = batch["images"].to(device)
