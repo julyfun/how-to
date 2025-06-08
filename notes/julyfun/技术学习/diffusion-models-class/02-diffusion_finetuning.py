@@ -161,5 +161,82 @@ for epoch in range(num_epochs):
 plt.plot(losses)
 
 # %%
+
+len(train_dataloader) # >>> 250
+
+# %%
 images = image_pipe(num_inference_steps=40).images  
 images[0]
+
+# %%
+image_pipe.save_pretrained("ignoreme-finetuned_butterflies-bad")
+
+# %%
+!ls {"ignoreme-finetuned_butterflies-bad"}
+
+# %%
+from huggingface_hub import HfApi, ModelCard, create_repo, get_full_repo_name
+
+model_name = "ddpm-celebahq-finetuned-bufferflies-2epochs"
+local_folder_name = "ignoreme-finetuned_butterflies-bad"
+desc = "Something for test "
+
+hub_model_id = get_full_repo_name(model_name)
+create_repo(hub_model_id)
+
+api = HfApi()
+api.upload_folder(
+    folder_path=f"{local_folder_name}/scheduler", path_in_repo="",
+    repo_id=hub_model_id
+)
+
+api.upload_folder(
+    folder_path=f"{local_folder_name}/unet", path_in_repo="",
+    repo_id=hub_model_id
+)
+
+# %%
+
+api.upload_file(
+    path_or_fileobj=f"{local_folder_name}/model_index.json", path_in_repo="model_index.json",
+    repo_id=hub_model_id
+)
+
+content = f"""
+
+## Usage
+---
+license: mit
+tags:
+- pytorch
+- diffusers
+- unconditional-image-generation
+- diffusion-models-class
+---
+
+{desc}
+
+```python
+from diffusers import DDPMPipeline
+
+pipeline = DDPMPipeline.from_pretrained('{hub_model_id}')
+image = pipeline().images[0]
+image
+```
+"""
+
+card = ModelCard(content)
+card.push_to_hub(hub_model_id)
+
+# %%
+name = "johnowhitaker/sd-class-wikiart-from-bedrooms"
+image_pipe = DDPMPipeline.from_pretrained(name)
+
+scheduler = DDIMScheduler.from_pretrained(name)
+
+scheduler.set_timesteps(num_inference_steps=40) 
+
+x = torch.randn(8, 3, 256, 256).to(device)
+
+for i, t in tqdm(enumerate(scheduler.timesteps)):
+    model_input
