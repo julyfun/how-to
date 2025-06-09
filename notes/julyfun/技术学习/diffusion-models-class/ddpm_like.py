@@ -173,3 +173,4 @@ for i in range(n_steps):
     axs[i, 0].imshow(make_grid(step_history[i])[0].clip(0, 1), cmap="Greys")
     axs[i, 1].imshow(make_grid(pred_output_history[i])[0].clip(0, 1), cmap="Greys")
     pred_output_history.append(pred_noise.detach().cpu())
+    pred_output_history.append(pred_noise.detach().cpu())
