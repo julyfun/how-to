@@ -29,4 +29,7 @@ plt.imshow(mg(x)[0], cmap='Greys')
 
 # %%
 class ClassConditionedUnet(nn.Module):
-    def __init__(self, num_classes)
+    def __init__(self, num_classes, class_emb_size=4):
+        super().__init__()
+
+        self.class_emb
