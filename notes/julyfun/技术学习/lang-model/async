@@ -1,0 +1,5 @@
+- [80%-sure] 以 Rust 为例，运行到 func().await 时
+    - func() 内部代码完全交由 async runtime 处理
+    - func() 内部通常有等待IO/GPU/定时器的异步部分
+    - 如果 func() 内部全是同步代码，写成异步（async fn）没有实际意义
+    
