@@ -90,7 +90,8 @@ preprocess = transforms.Compose(
         transforms.Resize((image_size, image_size)),
         transforms.RandomHorizontalFlip(), # 50% 概率水平翻转
         transforms.ToTensor(),
-        transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]), # (x - mean) / std
+        # (x - mean) / std，其实就是 * 2 - 1
+        transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]),
     ]
 )
 

@@ -17,7 +17,7 @@ mg = torchvision.utils.make_grid
 
 # %%
 
-dataset = torchvision.datasets.MNIST(root="ignoreme-mnist/", train=True, download=False, transform=torchvision.transforms.ToTensor())
+dataset = torchvision.datasets.FashionMNIST(root="ignoreme-fashion-mnist/", train=True, download=True, transform=torchvision.transforms.ToTensor())
 
 train_dataloader = DataLoader(dataset, batch_size=8, shuffle=True)
 
@@ -27,7 +27,9 @@ print('Input shape:', x.shape, 'Output shape:', y.shape)
 
 print(mg(x).shape)
 plt.imshow(mg(x)[0], cmap='Greys')
+# %%
 
+y[0]
 
 # %%
 class ClassConditionedUnet(nn.Module):
