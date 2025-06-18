@@ -3,6 +3,7 @@
     - 比如 ARView 实际上不是 ARKit 而是 RealityKit
 - 看其他人项目时不清楚每个模块依赖于本项目其他哪些模块，加大重制难度.
 - no namespace
+    - 只能用 class 模拟 namespace
 
 好处:
 - 随便改变文件夹结构不用重写 import.
