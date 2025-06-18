@@ -1,8 +1,8 @@
 ### 隐式导入
 - 一个项目所有符号都在全局.
 - 导致学习 Swift 时不清楚每个符号的来源.
+    - 难以了解模块依赖和 in-out 功能.
     - 比如 ARView 实际上不是 ARKit 而是 RealityKit
-- 看其他人项目时不清楚每个模块依赖于本项目其他哪些模块，加大重制难度.
 - no namespace
     - 只能用 class 模拟 namespace
 
