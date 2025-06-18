@@ -12,6 +12,7 @@
 # [binary]
 1
 :w
+'
 *.zip
 *.rar
 
@@ -20,3 +21,4 @@ __pycache__
 
 # [ignore]
 ignoreme-*
+
