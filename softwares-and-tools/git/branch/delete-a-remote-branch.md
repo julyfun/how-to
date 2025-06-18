@@ -10,6 +10,9 @@ suppose-you-know: [computer]
 # Delete a remote branch
 
 ```
-git push remote_name --delete remote_branch_name
+git push <remote_name> --delete <remote_branch_name>
+
+Example:
+git push origin --delete feat/anchor-visualize
 ```
 
