@@ -31,3 +31,4 @@ model_id = "stabilityai/stable-diffusion-2-1-base"
 pipe = StableDiffusionPipeline.from_pretrained(model_id).to(device)
 
 # %%
+    return Image.open(BytesIO(response.content)).convert("RGB")
