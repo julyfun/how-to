@@ -2,7 +2,7 @@
 
 指的是类别-Conditioned. 或者说 class-label-conditioned.
 
-## 网络输入改成啥样了?
+## 网络输入改成啥样了? 其实就是 concat.
 
 - Unet 输入通道直接改成了 `in_channels=1 + class_emb_size`
 
