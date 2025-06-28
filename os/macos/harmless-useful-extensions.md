@@ -1,6 +1,6 @@
 ---
 author: julyfun
-date: 2024-2-3
+date: 2024-02-03
 ---
 
 * Alfred - Switch between apps

@@ -1,5 +1,5 @@
 ---
-date: 24.3.18
+date: 2024-03-18
 Fish shell version: 3.7.0
 os: macos
 ---

@@ -52,7 +52,7 @@ fout.write(f'{li[0]}\n')
 
 http://www.usaco.org/index.php?page=jan22results
 
-![](assets/WechatIMG6.png)
+![](/assets/WechatIMG6.png)
 
 下载完以后解压得到 `1.in` `1.out` `2.in` `2.out` 等文件。
 

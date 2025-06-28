@@ -2,7 +2,7 @@
 
 在服务商那边加入一个通配符，如
 
-![](assets/61541ecfe31ed87aa0b7ded2cc82a696.png)
+![](/assets/61541ecfe31ed87aa0b7ded2cc82a696.png)
 
 > xy_cpp: 第一个不用管
 
