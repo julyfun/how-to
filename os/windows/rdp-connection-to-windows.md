@@ -1,3 +1,8 @@
+---
+title: rdp-connection-to-windows
+date: 2024-03-06 18:37:15
+tags: []
+---
 Using the RDP protocol, connect to windows desktop from Ubuntu.
 
 Once you type the following command, you will enter full screen mode to windows desktop instantly. RDP shall be set on windows before connecting.

@@ -1,3 +1,8 @@
+---
+title: install-deb
+date: 2024-03-06 20:05:59
+tags: []
+---
 ## 1
 
 Double click it.

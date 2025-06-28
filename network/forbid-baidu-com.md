@@ -1,3 +1,8 @@
+---
+title: forbid-baidu-com
+date: 2023-11-16 19:03:00
+tags: []
+---
 ```
 vim /etc/hosts
 ```

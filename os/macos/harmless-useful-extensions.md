@@ -1,6 +1,8 @@
 ---
 author: julyfun
 date: 2024-02-03
+title: harmless-useful-extensions
+tags: []
 ---
 
 * Alfred - Switch between apps

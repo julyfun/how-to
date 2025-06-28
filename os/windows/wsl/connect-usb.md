@@ -1,8 +1,12 @@
-- reliability: "20% (author)"
-- date: 2024-10-28
-- os: "win11; wsl2 ubuntu 22.04; 5.15.153.1-microsoft-standard-WSL2+ #2 SMP Sun Oct 27 22:02:06 CST 2024 x86_64 x86_64 x86_64 GNU/Linux"
-- author: "4070s wsl julyfun"
-- assume-you-know: [computer]
+---
+reliability: "20% (author)"
+os: "win11; wsl2 ubuntu 22.04; 5.15.153.1-microsoft-standard-WSL2+ #2 SMP Sun Oct 27 22:02:06 CST 2024 x86_64 x86_64 x86_64 GNU/Linux"
+author: "4070s wsl julyfun"
+assume-you-know: [computer]
+date: 2024-10-28
+title: connect usb
+tags: []
+---
 
 # connect usb
 

@@ -1,3 +1,8 @@
+---
+title: connect-minipc
+date: 2024-01-15 01:10:05
+tags: []
+---
 You type `ifconfig`.
 
 如下是一个正常的小电脑的示例。

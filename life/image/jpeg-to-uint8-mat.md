@@ -1,3 +1,8 @@
+---
+title: jpeg-to-uint8-mat
+date: 2024-01-15 01:10:05
+tags: []
+---
 * Step 0: Resize:
 
 https://www.simpleimageresizer.com/resize/jpg

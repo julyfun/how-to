@@ -1,3 +1,8 @@
+---
+title: Vscode cannot connect to remote Linux （_WebSocket close with status code 1006)
+date: 2024-08-02 19:36:32
+tags: []
+---
 # Vscode cannot connect to remote Linux （_WebSocket close with status code 1006)
 
 ??? info "Problem environment"

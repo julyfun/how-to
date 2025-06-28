@@ -1,3 +1,8 @@
+---
+title: python-example
+date: 2024-02-03 00:08:03
+tags: []
+---
 ref: https://blog.csdn.net/m0_37966618/article/details/80374581
 
 ```

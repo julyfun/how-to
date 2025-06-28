@@ -1,3 +1,8 @@
+---
+title: start-service-at-boot
+date: 2024-03-27 13:47:36
+tags: []
+---
 ## Sol 1
 
 查看如下教程，注意，需要 sudo su nvidia -c 'bash /home/nvidia/Workspace/autoaim_startup.sh' 以用 nvidia 环境：

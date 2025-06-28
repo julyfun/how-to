@@ -1,4 +1,9 @@
-- ref: no
+---
+ref: no
+date: 2024-10-29 18:42:52
+title: show-mem-and-swap
+tags: []
+---
 
 ```
 top -l 1 -s 0 | grep PhysMem
