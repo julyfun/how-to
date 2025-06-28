@@ -1,8 +1,9 @@
 ---
-title: typeerror-numpy._dtypemeta-object-is-not-subscriptable-when-import-cv2
+title: "typeerror-numpy dtypemeta-object-is-not-subscriptable-when-import-cv2"
 date: 2024-01-15 01:10:05
 tags: []
 ---
+
 ```
 TypeError: 'numpy._DTypeMeta' object is not subscriptable
 ```

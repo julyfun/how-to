@@ -5,7 +5,7 @@ os: "Linux DESKTOP-I44J4US 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 
 author: [computer]
 date: 2024-07-01
 title: Could not load library dlopen error: /home/julyfun/ros_ws/install/tf_test/lib/libtf_test.so: undefined symbol
-tags: [[]]
+tags: []
 ---
 
 # Could not load library dlopen error: /home/julyfun/ros_ws/install/tf_test/lib/libtf_test.so: undefined symbol

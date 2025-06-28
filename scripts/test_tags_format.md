@@ -1,5 +1,5 @@
 ---
-title: Tags Format Test
+title: "Tags Format Test"
 date: 2023-05-15 10:30:00
 tags: [testing, markdown, formatting, not in array format]
 ---

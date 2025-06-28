@@ -1,5 +1,5 @@
 ---
-title: Array Tags Test
+title: "Array Tags Test"
 date: 2023-06-20 11:45:00
 tags: [markdown, formatting, arrays]
 ---

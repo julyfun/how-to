@@ -1,5 +1,5 @@
 ---
-title: Example Title A
+title: "Example Title A"
 date: 2023-01-01 12:00:00
 tags: [test, example, type-a]
 ---

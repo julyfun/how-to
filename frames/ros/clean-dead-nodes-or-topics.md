@@ -6,7 +6,7 @@ author: "julyfun on yuanzhi laptop-server"
 suppose-you-know: [computer]
 date: 2024-05-08
 title: Clean dead nodes or topics
-tags: [[]]
+tags: []
 ---
 
 # Clean dead nodes or topics
