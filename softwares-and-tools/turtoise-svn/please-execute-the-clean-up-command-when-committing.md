@@ -1,8 +1,12 @@
-- reliability: "20% (author)"
-- date: 2025-03-11
-- os: "win11"
-- author: "4070s"
-- assume-you-know: [computer]
+---
+reliability: "20% (author)"
+os: "win11"
+author: "4070s"
+assume-you-know: [computer]
+date: 2025-03-11
+title: Please execute the `Clean up` command when committing
+tags: []
+---
 
 # Please execute the `Clean up` command when committing
 

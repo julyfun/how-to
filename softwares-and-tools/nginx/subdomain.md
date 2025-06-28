@@ -1,3 +1,8 @@
+---
+title: subdomain
+date: 2024-01-15 01:10:05
+tags: []
+---
 ## #source xy_cpp
 
 在服务商那边加入一个通配符，如

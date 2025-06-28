@@ -1,3 +1,8 @@
+---
+title: DH 描述
+date: 2024-08-16 00:37:08
+tags: []
+---
 - 你先看懂这里面 Z 轴，O，X 轴和 Y 轴如何确定
     https://blog.csdn.net/subtitle_/article/details/130982929?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-130982929-blog-108599703.235^v43^pc_blog_bottom_relevance_base5&spm=1001.2101.3001.4242.1&utm_relevant_index=3
 - 再看这里面的图示

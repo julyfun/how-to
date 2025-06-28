@@ -1,3 +1,8 @@
+---
+title: unit2-01_finetuning_and_guidance
+date: 2025-06-10 01:45:31
+tags: []
+---
 Generating process:
 
 ```python

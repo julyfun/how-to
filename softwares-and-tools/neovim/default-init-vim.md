@@ -1,3 +1,8 @@
+---
+title: default-init-vim
+date: 2024-01-15 01:10:05
+tags: []
+---
 ```vim
 " Configuration file for vim
 set modelines=0		" CVE-2007-2438

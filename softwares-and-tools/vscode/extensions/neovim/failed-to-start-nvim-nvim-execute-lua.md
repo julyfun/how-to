@@ -1,11 +1,11 @@
 ---
 reliability: "[20% (author), 0 / 0 (visitor)]"
-date: 2024-06-25
 language: "Chinese"
 os: "Linux julyfun-System-Product-Name 5.15.0-107-generic #117~20.04.1-Ubuntu SMP Tue Apr 30 10:35:57 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux"
 author: "julyfun"
 suppose-you-know: [computer]
-keywords: []
+date: 2024-06-25
+title: Failed to start nvim nvim_execute_lua
 ---
 
 # Failed to start nvim nvim_execute_lua

@@ -1,3 +1,8 @@
+---
+title: 拉取基础镜像
+date: 2024-01-15 01:10:05
+tags: []
+---
 docker build . --network=host
 
 https://www.cnblogs.com/freeaihub/p/13206077.html

@@ -1,3 +1,8 @@
+---
+title: replace
+date: 2024-01-15 01:10:05
+tags: []
+---
 https://www.baeldung.com/linux/vim-search-replace#:~:text=The%20simplest%20way%20to%20perform,the%20dot%20to%20replace%20it.&text=This%20will%20highlight%20the%20first,key%20to%20jump%20to%20it.
 
 ## cgn 方法

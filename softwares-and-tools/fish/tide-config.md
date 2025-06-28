@@ -1,5 +1,8 @@
 ---
 source: tide command output
+date: 2024-02-08 01:01:54
+title: tide-config
+tags: []
 ---
 
 This is an example.

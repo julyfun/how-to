@@ -1,3 +1,8 @@
+---
+title: nvcc-shows-wrong-version
+date: 2024-03-21 09:26:42
+tags: []
+---
 ## check your /usr/local/
 
 if there is cuda-right-version, it's easy to fix this problem;

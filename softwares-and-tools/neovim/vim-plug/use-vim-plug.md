@@ -1,3 +1,8 @@
+---
+title: use-vim-plug
+date: 2024-01-15 01:10:05
+tags: []
+---
 https://github.com/junegunn/vim-plug
 
 在 init.vim 中加上

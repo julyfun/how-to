@@ -1,3 +1,8 @@
+---
+title: python-debug
+date: 2024-01-23 16:28:56
+tags: []
+---
 This method is verified!
 
 https://code.visualstudio.com/docs/python/debugging

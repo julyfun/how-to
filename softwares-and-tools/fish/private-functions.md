@@ -1,3 +1,8 @@
+---
+title: private-functions
+date: 2024-01-16 21:21:18
+tags: []
+---
 https://stackoverflow.com/questions/25088699/make-fish-functions-private
 
 ```

@@ -1,3 +1,8 @@
+---
+title: CH3-离散和连续源的信息熵
+date: 2024-11-27 02:41:30
+tags: []
+---
 - **[Chain rules for Entropy]**
     - 计算有记忆源的信息熵公式.
     - $$H(X^N) = sum_(i = 1)^N H(X_i | X_(1..i - 1))$$

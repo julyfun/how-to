@@ -1,3 +1,8 @@
+---
+title: 8-DQN-改进算法
+date: 2024-11-09 22:06:20
+tags: []
+---
 ## Double DQN
 
 - 上一章的 DQN 在计算 $y^"real"$ 时，使用的是:

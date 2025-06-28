@@ -1,3 +1,8 @@
+---
+title: jfmfoi
+date: 2024-08-17 12:56:13
+tags: []
+---
 - 快速幂: https://www.luogu.com.cn/problem/P1226
 - 分治最大字段和:
 

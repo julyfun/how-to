@@ -1,11 +1,11 @@
 ---
 reliability: "[40% (author), 0 / 0 (visitor)]"
-date: 2024-07-03
 language: "en"
 os: "win10"
 author: "Julyfun MacOS14.5 M1"
 suppose-you-know: [computer]
-keywords: []
+date: 2024-07-03
+title: Setup clangd, cmake just like on unix
 ---
 
 # Setup clangd, cmake just like on unix

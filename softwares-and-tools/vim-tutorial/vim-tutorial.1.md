@@ -1,3 +1,8 @@
+---
+title: 简易 vim 教程
+date: 2024-08-06 14:08:12
+tags: []
+---
 # 简易 vim 教程
 
 ??? info "Problem environment"

@@ -1,8 +1,10 @@
 ---
 author: julyfun
 location: 杭州，刚从 SJTU 回来
-date: 2024-01-31
 system: Ubuntu 22.04
+date: 2024-01-31
+title: proxychains
+tags: []
 ---
 
 ## 问题情况

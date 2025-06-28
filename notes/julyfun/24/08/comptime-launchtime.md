@@ -1,3 +1,8 @@
+---
+title: comptime? runtime? launchtime!
+date: 2024-09-25 16:58:43
+tags: []
+---
 # comptime? runtime? launchtime!
 
 考虑参数的修改和加载：

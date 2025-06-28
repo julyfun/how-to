@@ -1,3 +1,8 @@
+---
+title: close-all-without-confirmation
+date: 2024-01-15 01:10:05
+tags: []
+---
 It is a extension. 
 
 See https://packagecontrol.io/packages/Close%20All%20without%20Confirmation#:~:text=You%20can%20trigger%20the%20Close,Text%20autocompletes)%20and%20press%20Enter.

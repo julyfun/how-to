@@ -1,3 +1,8 @@
+---
+title: msys2
+date: 2024-09-24 23:11:29
+tags: []
+---
 - `~/.tmux.conf`
 - `~/.config/nvim/init.vim`
 - jst.fish

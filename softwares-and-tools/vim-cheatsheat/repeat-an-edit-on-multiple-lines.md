@@ -1,3 +1,8 @@
+---
+title: repeat-an-edit-on-multiple-lines
+date: 2024-01-15 01:10:05
+tags: []
+---
 https://stackoverflow.com/questions/355907/how-do-i-repeat-an-edit-on-multiple-lines-in-vim
 
 ## 1

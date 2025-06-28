@@ -1,3 +1,8 @@
+---
+title: convert-a-existing-non-empty-directory-to-git
+date: 2024-03-28 09:29:16
+tags: []
+---
 According to:
 
 https://stackoverflow.com/questions/3311774/how-to-convert-existing-non-empty-directory-into-a-git-working-directory-and-pus

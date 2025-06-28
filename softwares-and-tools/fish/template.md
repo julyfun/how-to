@@ -1,3 +1,8 @@
+---
+title: >>> This is a template
+date: 2024-07-30 20:30:20
+tags: []
+---
 # >>> This is a template
 
 ??? info "Problem environment"

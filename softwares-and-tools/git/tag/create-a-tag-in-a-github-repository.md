@@ -1,3 +1,8 @@
+---
+title: create-a-tag-in-a-github-repository
+date: 2024-03-28 21:44:00
+tags: []
+---
 ref: https://stackoverflow.com/questions/18216991/create-a-tag-in-a-github-repository
 
 You can create tags for GitHub by either using:

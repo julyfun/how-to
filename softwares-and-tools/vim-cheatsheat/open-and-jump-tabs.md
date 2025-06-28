@@ -1,3 +1,8 @@
+---
+title: open-and-jump-tabs
+date: 2024-01-15 01:10:05
+tags: []
+---
 
 - :tabe <file> 在新 tab 中打开文件
 - :new 打开新 tab

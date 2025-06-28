@@ -1,3 +1,8 @@
+---
+title: 10-actor-critic算法
+date: 2024-11-11 21:59:18
+tags: []
+---
 see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
 
 - 上一章用 $G_t$ 代替 $Q^pi (s, a)$，现在用时序差分残差公式代替之.

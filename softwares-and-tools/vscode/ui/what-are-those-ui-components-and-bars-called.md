@@ -1,3 +1,8 @@
+---
+title: what-are-those-ui-components-and-bars-called
+date: 2024-03-22 15:21:45
+tags: []
+---
 ## 从上往下
 
 - 有红绿灯的可以关窗口的：Title Bar

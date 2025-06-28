@@ -1,6 +1,11 @@
-- leancloud 注册账号创建应用，把域名填入安全域名。
-- valine 提供的 js 放入 `<head>`
-- 把 leancloud 上的 appid 和 appkey 放入 html body 中的
+---
+leancloud 注册账号创建应用，把域名填入安全域名。
+valine 提供的 js 放入 `<head>`
+把 leancloud 上的 appid 和 appkey 放入 html body 中的
+date: 2024-01-15 01:10:05
+title: valine-blog-comment
+tags: []
+---
 
 ```html
           <div id="vcomments"></div>

@@ -1,6 +1,8 @@
 ---
-date: 2024-03-21
 os: macos 13.4 M1
+date: 2024-03-21
+title: start-on-macos
+tags: []
 ---
 
 ref (_unreliable_): https://stackoverflow.com/questions/15450091/error-2002-hy000-cant-connect-to-local-mysql-server-through-socket-tmp-mys

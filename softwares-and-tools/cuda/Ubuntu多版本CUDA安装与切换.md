@@ -1,4 +1,8 @@
-- source: [Ubuntu多版本CUDA安装与切换 | Yuan](https://qiyuan-z.github.io/2022/01/04/Ubuntu%E5%A4%9A%E7%89%88%E6%9C%ACcuda%E5%AE%89%E8%A3%85%E4%B8%8E%E5%88%87%E6%8D%A2/)
+---
+date: 2025-03-12 02:39:15
+title: Ubuntu多版本CUDA安装与切换
+tags: []
+---
 	- this article is for backpack
 发表于2022-01-04|更新于2022-06-07|[教程](https://qiyuan-z.github.io/categories/%E6%95%99%E7%A8%8B/)
 

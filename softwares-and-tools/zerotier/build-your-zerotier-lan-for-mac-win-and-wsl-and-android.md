@@ -1,8 +1,12 @@
-- reliability: "30% (author)"
-- date: 2024-10-29
-- os: "macos 14.5, wsl2 ubuntu 22.04, win11"
-- author: "Julyfun MacOS14.5 M1"
-- assume-you-know: [computer]
+---
+reliability: "30% (author)"
+os: "macos 14.5, wsl2 ubuntu 22.04, win11"
+author: "Julyfun MacOS14.5 M1"
+assume-you-know: [computer]
+date: 2024-10-29
+title: Build your zerotier LAN for mac, win and wsl and android
+tags: []
+---
 
 # Build your zerotier LAN for mac, win and wsl and android
 

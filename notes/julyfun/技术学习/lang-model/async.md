@@ -1,3 +1,8 @@
+---
+title: async
+date: 2025-06-12 22:37:41
+tags: []
+---
 - 大致概念：[80%-sure] 以 Rust 为例，运行到 func().await 时 (func 为 async fn)
     - func() 内部代码完全交由 async runtime 处理
     - func() 内部通常有等待IO/GPU/定时器的异步部分。**这些部分不由 CPU 负责运算，不应该让 CPU 干等着，所以才写成异步函数.**

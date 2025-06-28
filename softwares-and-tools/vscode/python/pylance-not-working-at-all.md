@@ -1,8 +1,12 @@
-- reliability: "20% (author)"
-- date: 2024-09-25
-- os: "Linux server 5.15.0-122-generic #132~20.04.1-Ubuntu SMP Fri Aug 30 15:50:07 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux"
-- author: "julyfun on shadow251"
-- assume-you-know: [computer]
+---
+reliability: "20% (author)"
+os: "Linux server 5.15.0-122-generic #132~20.04.1-Ubuntu SMP Fri Aug 30 15:50:07 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux"
+author: "julyfun on shadow251"
+assume-you-know: [computer]
+date: 2024-09-25
+title: Pylance not working at all
+tags: []
+---
 
 # Pylance not working at all
 

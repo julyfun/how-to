@@ -1,3 +1,8 @@
+---
+title: harmless-useful-tools
+date: 2024-01-15 01:10:05
+tags: []
+---
 ## autojump
 
 命令行按照历史记录快速跳转文件夹。

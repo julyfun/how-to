@@ -1,3 +1,8 @@
+---
+title: E303-Unable-to-open-swap-file
+date: 2024-01-22 22:11:17
+tags: []
+---
 ## 1
 
 May be because you previously loaded a vim script initialization file, but you failed to load that file now.

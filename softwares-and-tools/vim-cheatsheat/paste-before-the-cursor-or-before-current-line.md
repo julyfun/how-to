@@ -1,3 +1,8 @@
+---
+title: paste-before-the-cursor-or-before-current-line
+date: 2024-01-15 01:10:05
+tags: []
+---
 https://stackoverflow.com/questions/27420164/paste-data-at-the-start-of-line-in-visual-mode
 
 Shift + p

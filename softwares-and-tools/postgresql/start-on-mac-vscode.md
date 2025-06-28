@@ -1,3 +1,8 @@
+---
+title: start-on-mac-vscode
+date: 2024-03-26 15:43:07
+tags: []
+---
 ## Install
 
 ref: https://wiki.qiangyin.me:38080/s/12b24b4e-b01e-4a74-b318-4e97d89f415d

@@ -1,3 +1,8 @@
+---
+title: CH4-信道
+date: 2024-11-29 10:15:55
+tags: []
+---
 - **平均互信息**
     - ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241129102210.webp)
         - 其中 $I(x_i; y_j) = log p(x_i|y_j) / p(x_i)$ 即 X 的信息量减去知道 Y 后 X 的信息量

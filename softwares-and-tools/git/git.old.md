@@ -1,3 +1,8 @@
+---
+title: git.old
+date: 2024-01-15 01:10:05
+tags: []
+---
 ## 第一次上传
 ```
 git push -u origin main

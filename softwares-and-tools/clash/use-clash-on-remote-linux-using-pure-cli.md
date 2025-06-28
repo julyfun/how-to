@@ -1,3 +1,8 @@
+---
+title: Use clash on remote linux, using pure cli
+date: 2024-07-29 01:21:57
+tags: []
+---
 # Use clash on remote linux, using pure cli
 - date: 2024-07-29
 - os: ubuntu 22.04
