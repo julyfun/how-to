@@ -1,7 +1,7 @@
 ---
 fish-shell-version: 3.7.0
 date: 2024-03-01 21:19:42
-title: ttt is not set
+title: "ttt is not set"
 tags: []
 ---
 

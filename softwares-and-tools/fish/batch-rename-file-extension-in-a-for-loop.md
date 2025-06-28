@@ -1,5 +1,5 @@
 ---
-title: batch-rename-file-extension-in-a-for-loop
+title: "batch-rename-file-extension-in-a-for-loop"
 date: 2024-01-16 21:21:18
 tags: []
 ---

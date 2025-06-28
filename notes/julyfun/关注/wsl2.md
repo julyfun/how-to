@@ -1,5 +1,5 @@
 ---
-title: wsl2
+title: "wsl2"
 date: 2025-03-12 02:19:01
 tags: []
 ---

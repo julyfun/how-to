@@ -1,5 +1,5 @@
 ---
-title: get-file-s-path-and-file-name
+title: "get-file-s-path-and-file-name"
 date: 2024-02-01 15:31:16
 tags: []
 ---

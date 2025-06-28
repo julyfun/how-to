@@ -1,5 +1,5 @@
 ---
-title: setup-on-new-pc-with-existing-planet
+title: "setup-on-new-pc-with-existing-planet"
 date: 2025-06-18 21:28:03
 tags: []
 ---

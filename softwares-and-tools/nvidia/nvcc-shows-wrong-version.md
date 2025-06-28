@@ -1,5 +1,5 @@
 ---
-title: nvcc-shows-wrong-version
+title: "nvcc-shows-wrong-version"
 date: 2024-03-21 09:26:42
 tags: []
 ---

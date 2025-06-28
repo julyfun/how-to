@@ -1,5 +1,5 @@
 ---
-title: unit3-01_stable_diffusion_introduction
+title: "unit3-01_stable_diffusion_introduction"
 date: 2025-06-20 18:38:58
 tags: []
 ---

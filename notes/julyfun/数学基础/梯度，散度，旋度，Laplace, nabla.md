@@ -1,5 +1,5 @@
 ---
-title: 梯度，散度，旋度，Laplace, nabla
+title: "梯度，散度，旋度，Laplace, nabla"
 date: 2024-10-09 00:27:06
 tags: []
 ---

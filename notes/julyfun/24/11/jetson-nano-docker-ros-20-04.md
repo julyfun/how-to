@@ -1,5 +1,5 @@
 ---
-title: [deprecated]
+title: "[deprecated]"
 date: 2024-12-13 22:29:00
 tags: []
 ---

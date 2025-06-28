@@ -1,5 +1,5 @@
 ---
-title: another-git-process-seems-to-be-running-in-this-repository
+title: "another-git-process-seems-to-be-running-in-this-repository"
 date: 2024-03-07 09:15:54
 tags: []
 ---

@@ -1,5 +1,5 @@
 ---
-title: macos-link-and-upload-code
+title: "macos-link-and-upload-code"
 date: 2024-01-15 19:38:46
 ---
 * Board type: Arduino Uno

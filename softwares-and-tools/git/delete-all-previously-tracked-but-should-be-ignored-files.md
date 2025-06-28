@@ -1,5 +1,5 @@
 ---
-title: delete-all-previously-tracked-but-should-be-ignored-files
+title: "delete-all-previously-tracked-but-should-be-ignored-files"
 date: 2024-01-22 18:49:31
 tags: []
 ---

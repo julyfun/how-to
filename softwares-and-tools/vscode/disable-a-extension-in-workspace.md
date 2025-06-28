@@ -1,5 +1,5 @@
 ---
-title: disable-a-extension-in-workspace
+title: "disable-a-extension-in-workspace"
 date: 2024-01-27 13:30:52
 tags: []
 ---

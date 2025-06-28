@@ -1,5 +1,5 @@
 ---
-title: lerobot be like
+title: "lerobot be like"
 date: 2025-03-04 19:40:44
 tags: []
 ---

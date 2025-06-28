@@ -1,5 +1,5 @@
 ---
-title: struct-for-cannot-be-nested-inside-a-kernel
+title: "struct-for-cannot-be-nested-inside-a-kernel"
 date: 2024-02-29 16:12:13
 tags: []
 ---

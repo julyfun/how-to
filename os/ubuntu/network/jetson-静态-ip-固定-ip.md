@@ -4,7 +4,7 @@ os: "Darwin floriandeMacBook-Air.local 23.5.0 Darwin Kernel Version 23.5.0: Wed 
 author: "Julyfun MacOS14.5 M1"
 assume-you-know: [computer]
 date: 2025-01-05
-title: jetson 静态 ip 固定 ip
+title: "jetson 静态 ip 固定 ip"
 tags: []
 ---
 

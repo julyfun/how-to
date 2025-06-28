@@ -1,5 +1,5 @@
 ---
-title: note
+title: "note"
 date: 2024-10-09 15:35:46
 tags: []
 ---

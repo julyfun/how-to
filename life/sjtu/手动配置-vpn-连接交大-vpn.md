@@ -4,7 +4,7 @@ os: "Linux DESKTOP-VDB57PP 5.15.153.1-microsoft-standard-WSL2+ #2 SMP Sun Oct 27
 author: "win11"
 assume-you-know: [computer]
 date: 2025-03-11
-title: 手动配置 VPN 连接交大 VPN
+title: "手动配置 VPN 连接交大 VPN"
 tags: []
 ---
 

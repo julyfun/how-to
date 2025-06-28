@@ -5,7 +5,7 @@ os: "Linux server 5.15.0-117-generic #127~20.04.1-Ubuntu SMP Thu Jul 11 15:36:12
 author: "julyfun on yuanzhi laptop-server"
 assume-you-know: [computer]
 date: 2024-09-01
-title: Linux VsCode 无法输入中文
+title: "Linux VsCode 无法输入中文"
 tags: []
 ---
 

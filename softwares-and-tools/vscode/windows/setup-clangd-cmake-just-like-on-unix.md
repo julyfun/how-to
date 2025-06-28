@@ -5,7 +5,7 @@ os: "win10"
 author: "Julyfun MacOS14.5 M1"
 suppose-you-know: [computer]
 date: 2024-07-03
-title: Setup clangd, cmake just like on unix
+title: "Setup clangd, cmake just like on unix"
 ---
 
 # Setup clangd, cmake just like on unix

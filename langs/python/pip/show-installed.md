@@ -5,7 +5,7 @@ os: "Linux server 5.15.0-102-generic #112~20.04.1-Ubuntu SMP Thu Mar 14 14:28:24
 author: "julyfun on yuanzhi laptop-server"
 suppose-you-know: [computer]
 date: 2024-05-07
-title: Show installed
+title: "Show installed"
 tags: []
 ---
 

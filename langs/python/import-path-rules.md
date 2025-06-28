@@ -1,6 +1,6 @@
 ---
 date: 2024-01-15 01:10:05
-title: Add the parent directory to the Python path
+title: "Add the parent directory to the Python path"
 tags: [workspace]
 ---
 

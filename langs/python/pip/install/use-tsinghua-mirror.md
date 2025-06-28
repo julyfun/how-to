@@ -5,7 +5,7 @@ os: "Darwin floriandeMacBook-Air.local 23.5.0 Darwin Kernel Version 23.5.0: Wed 
 author: "Julyfun MacOS14.5 M1"
 suppose-you-know: [computer]
 date: 2024-05-21
-title: Use tsinghua mirror
+title: "Use tsinghua mirror"
 ---
 
 # Use tsinghua mirror

@@ -1,5 +1,5 @@
 ---
-title: buffer-tab-windows-process-a-buffer-shows-when-vim-plug-install
+title: "buffer-tab-windows-process-a-buffer-shows-when-vim-plug-install"
 date: 2024-01-15 01:10:05
 tags: []
 ---

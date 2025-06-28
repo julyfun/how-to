@@ -1,5 +1,5 @@
 ---
-title: First time shallow clone (Or you can mofify .gitmodules manually instead of this command)
+title: "First time shallow clone (Or you can mofify .gitmodules manually instead of this command)"
 date: 2024-07-28 21:45:19
 tags: []
 ---

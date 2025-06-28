@@ -1,5 +1,5 @@
 ---
-title: typst
+title: "typst"
 date: 2024-07-31 16:35:06
 tags: []
 ---

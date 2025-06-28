@@ -4,7 +4,7 @@ os: "Linux Manjusaka 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 23:14:
 author: "Manjusaka"
 assume-you-know: [computer]
 date: 2025-06-01
-title: 修改历史上的 commit message
+title: "修改历史上的 commit message"
 tags: []
 ---
 

@@ -2,7 +2,7 @@
 Fish shell version: 3.7.0
 os: macos
 date: 2024-03-18
-title: env-param-too-many-duplicates
+title: "env-param-too-many-duplicates"
 tags: []
 ---
 

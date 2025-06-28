@@ -1,5 +1,5 @@
 ---
-title: Update all submodules to latest commit
+title: "Update all submodules to latest commit"
 date: 2024-07-28 22:03:59
 tags: []
 ---

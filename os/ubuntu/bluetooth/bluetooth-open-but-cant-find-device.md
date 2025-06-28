@@ -5,7 +5,7 @@ os: "Darwin 192.168.124.17 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1 20:16
 author: "Julyfun MacOS14.5 M1"
 suppose-you-know: [computer]
 date: 2024-06-24
-title: Bluetooth open but cant find device
+title: "Bluetooth open but cant find device"
 ---
 
 # Bluetooth open but cant find device

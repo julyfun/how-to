@@ -5,7 +5,7 @@ os: "Linux julyfun-System-Product-Name 5.15.0-107-generic #117~20.04.1-Ubuntu SM
 author: "julyfun"
 suppose-you-know: [computer]
 date: 2024-06-25
-title: Failed to start nvim nvim_execute_lua
+title: "Failed to start nvim nvim_execute_lua"
 ---
 
 # Failed to start nvim nvim_execute_lua

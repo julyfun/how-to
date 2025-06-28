@@ -1,5 +1,5 @@
 ---
-title: python-example
+title: "python-example"
 date: 2024-02-03 00:08:03
 tags: []
 ---

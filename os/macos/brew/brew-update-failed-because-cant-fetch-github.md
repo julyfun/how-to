@@ -1,5 +1,5 @@
 ---
-title: brew-update-failed-because-cant-fetch-github
+title: "brew-update-failed-because-cant-fetch-github"
 date: 2024-01-15 01:10:05
 tags: []
 ---

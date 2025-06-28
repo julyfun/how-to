@@ -1,5 +1,5 @@
 ---
-title: omg-rust-analyzer-not-working-in-repo-with-build-rs
+title: "omg-rust-analyzer-not-working-in-repo-with-build-rs"
 date: 2024-01-15 01:10:05
 tags: []
 ---

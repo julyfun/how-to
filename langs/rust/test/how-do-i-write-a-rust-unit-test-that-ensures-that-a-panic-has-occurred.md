@@ -5,7 +5,7 @@ os: "Darwin floriandeMacBook-Air.local 22.5.0 Darwin Kernel Version 22.5.0: Mon 
 author: "Julyfun MacOS13.4 M1"
 suppose-you-know: [computer]
 date: 2024-04-28
-title: How do I write a Rust unit test that ensures that a panic has occurred?
+title: "How do I write a Rust unit test that ensures that a panic has occurred?"
 ---
 
 # How do I write a Rust unit test that ensures that a panic has occurred?

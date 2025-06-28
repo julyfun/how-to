@@ -5,7 +5,7 @@ os: "Darwin floriandeAir.bbrouter 23.5.0 Darwin Kernel Version 23.5.0: Wed May  
 author: "Julyfun MacOS14.5 M1"
 suppose-you-know: [computer]
 date: 2024-06-16
-title: Blocking waiting for file lock on the registry index
+title: "Blocking waiting for file lock on the registry index"
 ---
 
 # Blocking waiting for file lock on the registry index

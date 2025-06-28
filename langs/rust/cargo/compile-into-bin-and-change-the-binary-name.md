@@ -1,5 +1,5 @@
 ---
-title: compile-into-bin-and-change-the-binary-name
+title: "compile-into-bin-and-change-the-binary-name"
 date: 2024-01-15 01:10:05
 tags: []
 ---

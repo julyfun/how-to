@@ -5,7 +5,7 @@ os: "Darwin floriandeMacBook-Air.local 22.5.0 Darwin Kernel Version 22.5.0: Mon 
 author: "Julyfun MacOS13.4 M1"
 suppose-you-know: [computer]
 date: 2024-05-10
-title: How to display CPU/GPU usage in top menu bar (right side)?
+title: "How to display CPU/GPU usage in top menu bar (right side)?"
 ---
 
 # How to display CPU/GPU usage in top menu bar (right side)?

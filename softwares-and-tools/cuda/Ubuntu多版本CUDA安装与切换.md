@@ -1,6 +1,6 @@
 ---
 date: 2025-03-12 02:39:15
-title: Ubuntu多版本CUDA安装与切换
+title: "Ubuntu多版本CUDA安装与切换"
 tags: []
 ---
 	- this article is for backpack

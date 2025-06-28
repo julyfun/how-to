@@ -5,7 +5,7 @@ os: "Darwin floriandeMacBook-Air.local 22.5.0 Darwin Kernel Version 22.5.0: Mon 
 author: "Julyfun MacOS13.4 M1"
 suppose-you-know: [computer]
 date: 2024-04-22
-title: Compress a folder
+title: "Compress a folder"
 tags: []
 ---
 

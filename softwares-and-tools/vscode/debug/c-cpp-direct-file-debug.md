@@ -1,5 +1,5 @@
 ---
-title: c-cpp-direct-file-debug
+title: "c-cpp-direct-file-debug"
 date: 2024-01-27 17:40:00
 tags: []
 ---

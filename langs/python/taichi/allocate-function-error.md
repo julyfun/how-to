@@ -1,7 +1,7 @@
 ---
 os: ubuntu
 date: 2024-02-01
-title: allocate-function-error
+title: "allocate-function-error"
 tags: []
 ---
 

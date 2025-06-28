@@ -1,5 +1,5 @@
 ---
-title: How to override heading numbering behavior in Typst
+title: "How to override heading numbering behavior in Typst"
 date: 2024-10-10 15:41:38
 tags: []
 ---

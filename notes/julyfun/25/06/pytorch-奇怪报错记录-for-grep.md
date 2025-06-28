@@ -4,7 +4,7 @@ os: "Linux julyfun-4070s-ubuntu 6.8.0-60-generic #63~22.04.1-Ubuntu SMP PREEMPT_
 author: "julyfun-4070s-ubuntu2204"
 assume-you-know: [computer]
 date: 2025-06-17
-title: pytorch 奇怪报错记录 for grep
+title: "pytorch 奇怪报错记录 for grep"
 tags: []
 ---
 

@@ -3,7 +3,7 @@ author: julyfun
 location: 杭州，刚从 SJTU 回来
 system: Ubuntu 22.04
 date: 2024-01-31
-title: proxychains
+title: "proxychains"
 tags: []
 ---
 

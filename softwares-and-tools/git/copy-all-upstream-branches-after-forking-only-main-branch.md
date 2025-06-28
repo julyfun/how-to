@@ -4,7 +4,7 @@ os: "Linux DESKTOP-VDB57PP 5.15.153.1-microsoft-standard-WSL2+ #2 SMP Sun Oct 27
 author: "deepseek V3"
 assume-you-know: [computer]
 date: 2025-03-24
-title: Copy all upstream branches after forking only main branch
+title: "Copy all upstream branches after forking only main branch"
 tags: []
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: load-init-vim
+title: "load-init-vim"
 date: 2024-02-21 21:40:01
 tags: []
 ---

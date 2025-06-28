@@ -5,7 +5,7 @@ os: "Darwin floriandeMacBook-Air.local 23.5.0 Darwin Kernel Version 23.5.0: Wed 
 author: "Julyfun MacOS14.5 M1"
 suppose-you-know: [computer]
 date: 2024-06-02
-title: Deal with E79 at start and buftype error at save
+title: "Deal with E79 at start and buftype error at save"
 ---
 
 # Deal with E79 at start and buftype error at save

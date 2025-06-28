@@ -4,7 +4,7 @@ os: "Darwin floriandeMacBook-Air.local 23.5.0 Darwin Kernel Version 23.5.0: Wed 
 author: "Julyfun MacOS14.5 M1"
 assume-you-know: [computer]
 date: 2025-01-04
-title: subsystem request failed on channel 0 when ssh
+title: "subsystem request failed on channel 0 when ssh"
 tags: []
 ---
 

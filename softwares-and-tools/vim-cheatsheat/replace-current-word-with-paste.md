@@ -1,5 +1,5 @@
 ---
-title: replace-current-word-with-paste
+title: "replace-current-word-with-paste"
 date: 2024-01-15 01:10:05
 tags: []
 ---

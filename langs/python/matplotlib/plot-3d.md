@@ -5,7 +5,7 @@ os: "Darwin floriandeAir 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1 20:16:5
 author: "Julyfun MacOS14.5 M1"
 assume-you-know: [computer]
 date: 2024-08-21
-title: Plot 3D
+title: "Plot 3D"
 tags: []
 ---
 

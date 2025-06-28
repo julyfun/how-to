@@ -1,5 +1,5 @@
 ---
-title: what-features-should-it-have-f-9s5soB3SSkiy05QCbJ5Frw
+title: "what-features-should-it-have-f-9s5soB3SSkiy05QCbJ5Frw"
 date: 2025-03-04 19:40:44
 tags: []
 ---

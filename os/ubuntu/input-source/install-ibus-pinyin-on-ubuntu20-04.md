@@ -5,7 +5,7 @@ os: "Linux server 5.15.0-107-generic #117~20.04.1-Ubuntu SMP Tue Apr 30 10:35:57
 author: "julyfun on yuanzhi laptop-server"
 suppose-you-know: [computer]
 date: 2024-06-12
-title: Install ibus pinyin on Ubuntu20.04
+title: "Install ibus pinyin on Ubuntu20.04"
 ---
 
 # Install ibus pinyin on Ubuntu20.04

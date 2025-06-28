@@ -1,5 +1,5 @@
 ---
-title: VAE
+title: "VAE"
 date: 2024-12-12 14:35:11
 tags: []
 ---

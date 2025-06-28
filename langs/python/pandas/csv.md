@@ -1,5 +1,5 @@
 ---
-title: 绘制每行数据，使用semilogy绘制对数坐标轴
+title: "绘制每行数据，使用semilogy绘制对数坐标轴"
 date: 2024-01-15 01:10:05
 tags: []
 ---

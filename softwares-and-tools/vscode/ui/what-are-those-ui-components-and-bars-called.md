@@ -1,5 +1,5 @@
 ---
-title: what-are-those-ui-components-and-bars-called
+title: "what-are-those-ui-components-and-bars-called"
 date: 2024-03-22 15:21:45
 tags: []
 ---

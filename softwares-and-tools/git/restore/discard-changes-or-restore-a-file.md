@@ -1,5 +1,5 @@
 ---
-title: discard-changes-or-restore-a-file
+title: "discard-changes-or-restore-a-file"
 date: 2024-04-28 20:14:03
 tags: []
 ---

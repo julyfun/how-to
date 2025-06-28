@@ -1,5 +1,5 @@
 ---
-title: classic-structure
+title: "classic-structure"
 date: 2024-03-28 11:39:31
 tags: []
 ---

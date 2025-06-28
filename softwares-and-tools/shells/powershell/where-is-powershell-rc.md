@@ -4,7 +4,7 @@ os: "Linux DESKTOP-VDB57PP 5.15.153.1-microsoft-standard-WSL2+ #2 SMP Sun Oct 27
 author: "4070s wsl julyfun"
 assume-you-know: [computer]
 date: 2024-11-28
-title: Where is powershell rc
+title: "Where is powershell rc"
 tags: []
 ---
 

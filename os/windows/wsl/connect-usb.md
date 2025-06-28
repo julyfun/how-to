@@ -4,7 +4,7 @@ os: "win11; wsl2 ubuntu 22.04; 5.15.153.1-microsoft-standard-WSL2+ #2 SMP Sun Oc
 author: "4070s wsl julyfun"
 assume-you-know: [computer]
 date: 2024-10-28
-title: connect usb
+title: "connect usb"
 tags: []
 ---
 

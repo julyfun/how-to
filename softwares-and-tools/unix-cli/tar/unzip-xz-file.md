@@ -5,7 +5,7 @@ os: "Linux julyfun-Lenovo-XiaoXinAir-14IIL-2020 5.19.0-46-generic #47~22.04.1-Ub
 author: "Julyfun Ubuntu22.04 amd64"
 suppose-you-know: [computer]
 date: 2024-04-24
-title: Unzip xz file
+title: "Unzip xz file"
 ---
 
 # Unzip xz file

@@ -4,7 +4,7 @@ os: "Linux server 5.15.0-122-generic #132~20.04.1-Ubuntu SMP Fri Aug 30 15:50:07
 author: "julyfun on shadow251"
 assume-you-know: [computer]
 date: 2024-09-29
-title: Restart network
+title: "Restart network"
 tags: []
 ---
 

@@ -4,7 +4,7 @@ os: "win11"
 author: "4070s"
 assume-you-know: [computer]
 date: 2025-03-11
-title: Please execute the `Clean up` command when committing
+title: "Please execute the `Clean up` command when committing"
 tags: []
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: np.array is also ok!
+title: "np.array is also ok!"
 date: 2024-01-15 01:10:05
 tags: []
 ---

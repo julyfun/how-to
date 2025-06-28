@@ -1,5 +1,5 @@
 ---
-title: install-multiple-cuda-versions-and-switch-between-them
+title: "install-multiple-cuda-versions-and-switch-between-them"
 date: 2024-02-01 17:13:53
 tags: []
 ---

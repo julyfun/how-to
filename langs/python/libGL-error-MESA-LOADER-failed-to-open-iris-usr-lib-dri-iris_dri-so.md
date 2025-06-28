@@ -1,5 +1,5 @@
 ---
-title: libGL-error-MESA-LOADER-failed-to-open-iris-usr-lib-dri-iris_dri-so
+title: "libGL-error-MESA-LOADER-failed-to-open-iris-usr-lib-dri-iris_dri-so"
 date: 2024-01-22 18:15:50
 tags: []
 ---

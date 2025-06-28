@@ -1,5 +1,5 @@
 ---
-title: what-does-MLP-do-3B1B
+title: "what-does-MLP-do-3B1B"
 date: 2025-05-18 02:42:51
 tags: []
 ---

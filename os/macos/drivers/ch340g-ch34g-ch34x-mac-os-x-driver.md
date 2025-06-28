@@ -1,5 +1,5 @@
 ---
-title: ch340g-ch34g-ch34x-mac-os-x-driver
+title: "ch340g-ch34g-ch34x-mac-os-x-driver"
 date: 2024-01-15 19:13:47
 tags: []
 ---

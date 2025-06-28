@@ -1,5 +1,5 @@
 ---
-title: string-regex-get-variable
+title: "string-regex-get-variable"
 date: 2024-01-16 21:21:18
 tags: []
 ---

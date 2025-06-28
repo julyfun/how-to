@@ -1,5 +1,5 @@
 ---
-title: errors
+title: "errors"
 date: 2025-06-08 03:18:05
 tags: []
 ---

@@ -1,5 +1,5 @@
 ---
-title: one-command-to-see-assembly-of-c-code
+title: "one-command-to-see-assembly-of-c-code"
 date: 2024-02-21 21:40:01
 tags: []
 ---
