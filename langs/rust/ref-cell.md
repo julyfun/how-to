@@ -1,3 +1,8 @@
+---
+title: ref-cell
+date: 2024-01-15 01:10:05
+tags: []
+---
 Rustln:
 
 由于 Rust 的 mutable 特性，一个结构体中的字段，要么全都是 immutable，要么全部是 mutable，不支持针对部分字段进行设置。比如，在一个 struct 中，可能只有个别的字段需要修改，而其他字段并不需要修改，为了一个字段而将整个 struct 变为 &mut 也是不合理的。

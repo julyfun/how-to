@@ -1,3 +1,8 @@
+---
+title: tarjan
+date: 2024-01-15 01:10:05
+tags: []
+---
 ## 缩点（有向图找强连通分量（互通块））
 
 https://www.luogu.com.cn/problem/P3387

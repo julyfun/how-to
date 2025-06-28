@@ -1,5 +1,7 @@
 ---
-keywords: [workspace]
+date: 2024-01-15 01:10:05
+title: Add the parent directory to the Python path
+tags: [workspace]
 ---
 
 对于一个项目，你执行 python somewhere/main.py

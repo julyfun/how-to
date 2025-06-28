@@ -1,7 +1,6 @@
 ---
 title: This is a Test Type C Document
 date: 2025-06-28 17:43:50
-tags: []
 ---
 # This is a Test Type C Document
 

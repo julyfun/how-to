@@ -1,3 +1,8 @@
+---
+title: C++ to Python
+date: 2024-08-02 22:40:41
+tags: []
+---
 # C++ to Python
 
 ??? info "Problem environment"

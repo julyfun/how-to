@@ -1,3 +1,8 @@
+---
+title: can-t-download-previous-old-version
+date: 2024-01-15 01:10:05
+tags: []
+---
 you should go pytorch.org and find something there.
 
 https://pytorch.org/get-started/previous-versions/

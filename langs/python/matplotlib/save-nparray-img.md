@@ -1,3 +1,8 @@
+---
+title: save-nparray-img
+date: 2024-01-15 01:10:05
+tags: []
+---
 ```py
         # print("[jf]", obs.size())
         # [jf] torch.Size([4, 480, 480])

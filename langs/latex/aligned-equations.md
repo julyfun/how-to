@@ -1,3 +1,8 @@
+---
+title: aligned-equations
+date: 2024-01-15 01:10:05
+tags: []
+---
 ```md
 &&\begin{aligned}
 & g_{t, i, k, j} \mathrel{{+}{=}} C_{t - l_i}^{j - k} * 2^{j - k} , \text{if } i = k \text{ and } a_t < B_i \\

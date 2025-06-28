@@ -1,3 +1,8 @@
+---
+title: Ignoring CMAKE_OSX_SYSROOT value
+date: 2024-07-31 16:35:06
+tags: []
+---
 # Ignoring CMAKE_OSX_SYSROOT value
 
 ??? info "Problem environment"

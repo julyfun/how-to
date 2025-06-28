@@ -1,3 +1,8 @@
+---
+title: libGL-error-MESA-LOADER-failed-to-open-iris-usr-lib-dri-iris_dri-so
+date: 2024-01-22 18:15:50
+tags: []
+---
 ```
 libGL error: failed to load driver: iris
 libGL error: MESA-LOADER: failed to open iris: /usr/lib/dri/iris_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix _dri)

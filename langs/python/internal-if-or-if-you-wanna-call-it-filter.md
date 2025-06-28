@@ -1,3 +1,8 @@
+---
+title: internal-if-or-if-you-wanna-call-it-filter
+date: 2024-01-15 01:10:05
+tags: []
+---
 use filter.
 
 ```py

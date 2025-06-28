@@ -1,3 +1,8 @@
+---
+title: matrix-inverse-print
+date: 2024-02-23 08:37:00
+tags: []
+---
 ```py
 from sympy import *
 

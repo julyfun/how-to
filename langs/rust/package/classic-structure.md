@@ -1,3 +1,8 @@
+---
+title: classic-structure
+date: 2024-03-28 11:39:31
+tags: []
+---
 ref: https://course.rs/basic/crate-module/crate.html
 
 ### 典型的 Package 结构
