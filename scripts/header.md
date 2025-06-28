@@ -1,3 +1,8 @@
+---
+title: header
+date: 2025-06-28 17:31:39
+tags: []
+---
 写一个 python 脚本，对输入文件夹下所有的 .md 文件 (recursively)
 
 如果文章第一行开头是
@@ -32,6 +37,7 @@ recover
 """
 ---
 title: <rec_title>
+date: <git first track date>
 tags: []
 ---
 """
