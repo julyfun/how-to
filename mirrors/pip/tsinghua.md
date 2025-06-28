@@ -6,7 +6,7 @@ author: "Julyfun MacOS14.5 M1"
 suppose-you-know: [computer]
 date: 2024-06-19
 title: Tsinghua
-tags: [[]]
+tags: []
 ---
 
 # Tsinghua
