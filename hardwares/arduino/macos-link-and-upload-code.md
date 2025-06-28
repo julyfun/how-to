@@ -1,3 +1,7 @@
+---
+title: macos-link-and-upload-code
+date: 2024-01-15 19:38:46
+---
 * Board type: Arduino Uno
 * IDE: Arduino IDE 2.2.1
 * MacOS 13.4

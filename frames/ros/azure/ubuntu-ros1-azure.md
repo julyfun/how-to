@@ -1,3 +1,8 @@
+---
+title: ubuntu-ros1-azure
+date: 2024-03-27 13:09:35
+tags: []
+---
 有一篇非常强劲的 csdn 文章详尽介绍了在 Ubuntu 18.04 / 20.04 上如何使用 ROS1 驱动 Azure.
 
 ref: https://blog.csdn.net/m0_56661101/article/details/132160408

@@ -1,3 +1,8 @@
+---
+title: ssh-t-git-github-com-failed
+date: 2023-12-09 16:49:58
+tags: []
+---
 ```
 ssh -T git@github.com
 ```

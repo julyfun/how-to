@@ -1,8 +1,12 @@
-- reliability: "20% (author)"
-- date: 2024-10-29
-- os: "wsl2 in win11, cuda 12.3, Driver Version: 560.94, 4070s"
-- author: "Julyfun MacOS14.5 M1"
-- assume-you-know: [computer]
+---
+reliability: "20% (author)"
+os: "wsl2 in win11, cuda 12.3, Driver Version: 560.94, 4070s"
+author: "Julyfun MacOS14.5 M1"
+assume-you-know: [computer]
+date: 2024-10-29
+title: 日志 install on wsl2
+tags: []
+---
 
 # 日志 install on wsl2
 

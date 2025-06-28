@@ -1,4 +1,9 @@
-- rviz shows:
+---
+rviz shows:
+date: 2024-03-26 22:00:01
+title: cant-open-could-not-contact-ros-master-at
+tags: []
+---
 
 ```
 user@server:~$ rviz  
