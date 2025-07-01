@@ -1,7 +1,7 @@
 ---
-title: "linear"
+title: linear
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["learn", "d2l"]
 ---
 ## 典型线性回归训练过程
 

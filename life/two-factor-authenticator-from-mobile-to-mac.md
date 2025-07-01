@@ -1,7 +1,7 @@
 ---
-title: "two-factor-authenticator-from-mobile-to-mac"
+title: two-factor-authenticator-from-mobile-to-mac
 date: 2023-12-09 15:38:09
-tags: []
+tags: ["life"]
 ---
 Download `Authenticator 2FA` App from App Store..
 

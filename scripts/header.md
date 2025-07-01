@@ -1,9 +1,8 @@
 ---
-title: "Header and Recover Functions for Markdown Files"
+title: Header and Recover Functions for Markdown Files
 date: 2025-06-28 17:31:39
-tags: [hello]
+tags: ["hello", "scripts"]
 ---
-
 # Header and Recover Functions for Markdown Files
 
 写一个 python 脚本，对输入文件夹下所有的 .md 文件 (recursively)

@@ -1,14 +1,15 @@
 ---
-reliability: "20% (author)"
-language: "zh-hans"
-os: "Darwin floriandeMacBook-Air.local 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1 20:16:51 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T8103 arm64"
-author: "Julyfun MacOS14.5 M1"
-assume-you-know: [computer]
+reliability: 20% (author)
+language: zh-hans
+os: 'Darwin floriandeMacBook-Air.local 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1
+  20:16:51 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T8103 arm64'
+author: Julyfun MacOS14.5 M1
+assume-you-know:
+- computer
 date: 2024-08-28
-title: "笛卡尔树上 LCA 为区间最值的说明"
-tags: []
+title: 笛卡尔树上 LCA 为区间最值的说明
+tags: ["langs", "algo"]
 ---
-
 # 笛卡尔树上 LCA 为区间最值的说明
 
 若 x, y 的 LCA 为 a，则 a 为 x ~ y 的区间最小值。

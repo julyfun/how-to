@@ -1,6 +1,7 @@
 ---
-title: "rsproxy-sparse"
+title: rsproxy-sparse
 date: 2024-07-30 21:59:01
+tags: ["mirrors", "rust"]
 ---
 # rsproxy-sparse
 

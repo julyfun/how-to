@@ -1,7 +1,7 @@
 ---
-title: "Best practice for ros2 cpp dependencies"
+title: Best practice for ros2 cpp dependencies
 date: 2024-07-29 14:11:23
-tags: []
+tags: ["frames", "ros2"]
 ---
 [//]: # (Ex: How to clone a Git repository into a specific folder? / `TLS error` when ssh to github / Best way to setup ros2 on Mac M1)
 # Best practice for ros2 cpp dependencies

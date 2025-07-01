@@ -1,7 +1,7 @@
 ---
-title: "CH4-信道"
+title: CH4-信道
 date: 2024-11-29 10:15:55
-tags: []
+tags: ["notes", "julyfun", "大四上", "信息与编码"]
 ---
 - **平均互信息**
     - ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241129102210.webp)

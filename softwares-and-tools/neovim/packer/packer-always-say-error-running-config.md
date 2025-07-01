@@ -1,7 +1,7 @@
 ---
-title: "packer-always-say-error-running-config"
+title: packer-always-say-error-running-config
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "neovim", "packer"]
 ---
 说明这个插件炸了。你需要：
 

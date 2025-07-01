@@ -1,9 +1,8 @@
 ---
 date: 2024-01-15 01:10:05
-title: "hikvision"
-tags: [hikvision, hardware, cv]
+title: hikvision
+tags: ["hikvision", "hardware", "cv", "hardwares"]
 ---
-
 ## libs
 
 https://www.hikrobotics.com/cn/machinevision/service/download?module=0

@@ -1,7 +1,7 @@
 ---
-title: "ubuntu-ros1-azure"
+title: ubuntu-ros1-azure
 date: 2024-03-27 13:09:35
-tags: []
+tags: ["frames", "ros", "azure"]
 ---
 有一篇非常强劲的 csdn 文章详尽介绍了在 Ubuntu 18.04 / 20.04 上如何使用 ROS1 驱动 Azure.
 

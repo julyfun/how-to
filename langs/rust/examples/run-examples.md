@@ -1,7 +1,7 @@
 ---
-title: "run-examples"
+title: run-examples
 date: 2024-04-06 15:15:07
-tags: []
+tags: ["langs", "rust", "examples"]
 ---
 https://stackoverflow.com/questions/54469463/how-do-i-run-a-projects-example-using-cargo
 

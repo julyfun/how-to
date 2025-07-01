@@ -1,7 +1,7 @@
 ---
-title: "async"
+title: async
 date: 2025-06-12 22:37:41
-tags: []
+tags: ["notes", "julyfun", "技术学习", "lang-model"]
 ---
 - 大致概念：[80%-sure] 以 Rust 为例，运行到 func().await 时 (func 为 async fn)
     - func() 内部代码完全交由 async runtime 处理

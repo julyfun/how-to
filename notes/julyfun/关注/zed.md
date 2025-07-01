@@ -1,8 +1,8 @@
 ---
-title: "zed"
+title: zed
 date: 2024-07-31 16:35:06
 updated: 2025-06-30
-tags: []
+tags: ["notes", "julyfun", "关注"]
 ---
 - [x] 参数提示： https://github.com/zed-industries/zed/issues/4879
     - [x] https://github.com/zed-industries/zed/pull/12909

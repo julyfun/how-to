@@ -1,7 +1,7 @@
 ---
-title: "disable-a-extension-in-workspace"
+title: disable-a-extension-in-workspace
 date: 2024-01-27 13:30:52
-tags: []
+tags: ["softwares-and-tools", "vscode"]
 ---
 ref: https://code.visualstudio.com/docs/editor/extension-marketplace#:~:text=If%20you%20don't%20want,after%20you%20disable%20an%20extension.
 

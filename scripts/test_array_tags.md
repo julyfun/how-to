@@ -1,9 +1,8 @@
 ---
-title: "Array Tags Test"
+title: Array Tags Test
 date: 2023-06-20 11:45:00
-tags: [markdown, formatting, arrays]
+tags: ["markdown", "formatting", "arrays", "scripts"]
 ---
-
 # Testing Array Tags Format
 
 This file already has tags in array format to test the script's ability to correctly handle array-formatted tags.

@@ -1,7 +1,7 @@
 ---
-title: "no-gl-h"
+title: no-gl-h
 date: 2023-09-15 21:08:20
-tags: []
+tags: ["GitHub", "real-stanford", "cloth-funnels"]
 ---
 ## Fault
 

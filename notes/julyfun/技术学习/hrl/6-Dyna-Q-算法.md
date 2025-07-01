@@ -1,7 +1,7 @@
 ---
-title: "6-Dyna-Q-算法"
+title: 6-Dyna-Q-算法
 date: 2024-11-08 22:28:28
-tags: []
+tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
 - 在 Q-learning 之上自己再学个超级简单的环境，每次 Q-learning 完之后再根据这个环境去随机更新 $N$ 个.
     - 什么超绝朴素想法。

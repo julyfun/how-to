@@ -1,7 +1,7 @@
 ---
-title: "clean wechat"
+title: clean wechat
 date: 2024-04-01 23:00:22
-tags: []
+tags: ["os", "macos", "disk"]
 ---
 ```
 brew cleanup --prune=all

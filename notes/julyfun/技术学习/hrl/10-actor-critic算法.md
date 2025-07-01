@@ -1,7 +1,7 @@
 ---
-title: "10-actor-critic算法"
+title: 10-actor-critic算法
 date: 2024-11-11 21:59:18
-tags: []
+tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
 see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
 

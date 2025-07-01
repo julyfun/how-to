@@ -1,7 +1,7 @@
 ---
-title: "get-file-s-path-and-file-name"
+title: get-file-s-path-and-file-name
 date: 2024-02-01 15:31:16
-tags: []
+tags: ["softwares-and-tools", "unix-cli"]
 ---
 - `dirname` get the file's dir name.
 - `basename` get the file's name.

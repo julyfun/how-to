@@ -1,7 +1,7 @@
 ---
-title: "record-nvidia-smi-fix-230918"
+title: record-nvidia-smi-fix-230918
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "nvidia"]
 ---
 ```
  9949  sudo ln -sfT /etc/alternatives/cuda/cuda-11.1 /usr/local/cuda

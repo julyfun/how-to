@@ -1,7 +1,7 @@
 ---
-title: "read-ppm"
+title: read-ppm
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["langs", "c"]
 ---
 This file contains a function that reads ppm-3.
 

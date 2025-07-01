@@ -1,7 +1,7 @@
 ---
-title: "start-service-at-boot"
+title: start-service-at-boot
 date: 2024-03-27 13:47:36
-tags: []
+tags: ["os", "ubuntu", "service"]
 ---
 ## Sol 1
 

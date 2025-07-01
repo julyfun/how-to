@@ -1,7 +1,7 @@
 ---
-title: "加上图例（就是图标）"
+title: 加上图例（就是图标）
 date: 2024-03-20 23:04:31
-tags: []
+tags: ["langs", "python", "matplotlib"]
 ---
 ```
 for idx, row in f5.iterrows():

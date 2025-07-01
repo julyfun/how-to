@@ -1,9 +1,8 @@
 ---
-title: "Python Type Utils"
+title: Python Type Utils
 date: 2025-06-24 14:36:22
-tags: [python, python-type]
+tags: ["python", "python-type", "langs", "type"]
 ---
-
 ## Inheritance tree
 
 [tested-ok-and-copy-here]

@@ -1,7 +1,7 @@
 ---
-title: "quick-line-jumps"
+title: quick-line-jumps
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "neovim"]
 ---
 https://github.com/Houl/repmo-vim/tree/master
 

@@ -1,7 +1,7 @@
 ---
-title: "numbers-calculations"
+title: numbers-calculations
 date: 2024-01-16 21:21:18
-tags: []
+tags: ["softwares-and-tools", "fish"]
 ---
 https://stackoverflow.com/questions/25828883/add-a-number-in-fish-script
 

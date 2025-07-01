@@ -1,7 +1,7 @@
 ---
-title: "Ignoring CMAKE_OSX_SYSROOT value"
+title: Ignoring CMAKE_OSX_SYSROOT value
 date: 2024-07-31 16:35:06
-tags: []
+tags: ["langs", "cmake"]
 ---
 # Ignoring CMAKE_OSX_SYSROOT value
 

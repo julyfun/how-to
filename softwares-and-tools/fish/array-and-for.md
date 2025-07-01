@@ -1,7 +1,7 @@
 ---
-title: "array-and-for"
+title: array-and-for
 date: 2024-01-16 21:21:18
-tags: []
+tags: ["softwares-and-tools", "fish"]
 ---
 https://stackoverflow.com/questions/50027770/fish-shell-how-to-append-an-element-to-an-array
 

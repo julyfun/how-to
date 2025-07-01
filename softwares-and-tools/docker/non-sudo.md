@@ -1,7 +1,7 @@
 ---
-title: "non-sudo"
+title: non-sudo
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "docker"]
 ---
 ## 有时你想要以非 sudo 使用 docker 命令
 

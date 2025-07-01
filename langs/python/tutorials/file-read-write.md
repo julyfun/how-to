@@ -2,8 +2,8 @@
 author: julyfun
 reliability: 20%
 date: 2024-02-05 01:37:59
-title: "现在 s 就是 '123 + 1234 = 1357' 了，太神奇了"
-tags: []
+title: 现在 s 就是 '123 + 1234 = 1357' 了，太神奇了
+tags: ["langs", "python", "tutorials"]
 ---
 ****
 ## 1. 常规读入输出

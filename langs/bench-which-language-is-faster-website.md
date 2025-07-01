@@ -1,7 +1,7 @@
 ---
-title: "bench-which-language-is-faster-website"
+title: bench-which-language-is-faster-website
 date: 2023-10-16 17:39:10
-tags: []
+tags: ["langs"]
 ---
 ## Sites
 

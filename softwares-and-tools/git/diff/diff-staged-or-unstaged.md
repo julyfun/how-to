@@ -1,7 +1,7 @@
 ---
-title: "diff-staged-or-unstaged"
+title: diff-staged-or-unstaged
 date: 2024-03-30 17:40:32
-tags: []
+tags: ["softwares-and-tools", "git", "diff"]
 ---
 ref: https://stackoverflow.com/questions/1587846/how-do-i-show-the-changes-which-have-been-staged
 

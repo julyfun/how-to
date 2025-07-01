@@ -1,7 +1,7 @@
 ---
-title: "diff-vs-status"
+title: diff-vs-status
 date: 2024-03-28 09:29:16
-tags: []
+tags: ["softwares-and-tools", "git", "diff"]
 ---
 https://www.cloudbees.com/blog/git-status-in-depth
 

@@ -1,7 +1,7 @@
 ---
-title: "git-pull-local-and-remote-conflict"
+title: git-pull-local-and-remote-conflict
 date: 2024-03-28 09:29:16
-tags: []
+tags: ["softwares-and-tools", "git", "pull"]
 ---
 Commits like
 

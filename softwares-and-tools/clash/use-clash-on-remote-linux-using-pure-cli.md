@@ -1,7 +1,7 @@
 ---
-title: "Use clash on remote linux, using pure cli"
+title: Use clash on remote linux, using pure cli
 date: 2024-07-29 01:21:57
-tags: []
+tags: ["softwares-and-tools", "clash"]
 ---
 # Use clash on remote linux, using pure cli
 - date: 2024-07-29

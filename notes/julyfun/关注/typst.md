@@ -1,7 +1,7 @@
 ---
-title: "typst"
+title: typst
 date: 2024-07-31 16:35:06
-tags: []
+tags: ["notes", "julyfun", "关注"]
 ---
 ## 24.08
 

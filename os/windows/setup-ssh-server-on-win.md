@@ -1,13 +1,13 @@
 ---
-reliability: "20% (author)"
-os: "Win 11"
-author: "Julyfun MacOS14.5 M1"
-assume-you-know: [computer]
+reliability: 20% (author)
+os: Win 11
+author: Julyfun MacOS14.5 M1
+assume-you-know:
+- computer
 date: 2024-11-12
-title: "Setup ssh server on win"
-tags: []
+title: Setup ssh server on win
+tags: ["os", "windows"]
 ---
-
 # Setup ssh server on win
 
 - https://blog.csdn.net/weixin_72910567/article/details/132414264

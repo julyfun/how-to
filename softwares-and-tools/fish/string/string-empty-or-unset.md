@@ -1,7 +1,7 @@
 ---
-title: "string-empty-or-unset"
+title: string-empty-or-unset
 date: 2024-01-16 21:21:18
-tags: []
+tags: ["softwares-and-tools", "fish", "string"]
 ---
 https://stackoverflow.com/questions/47743015/fish-shell-how-to-check-if-a-variable-is-set-empty
 

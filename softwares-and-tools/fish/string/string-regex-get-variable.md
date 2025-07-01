@@ -1,7 +1,7 @@
 ---
-title: "string-regex-get-variable"
+title: string-regex-get-variable
 date: 2024-01-16 21:21:18
-tags: []
+tags: ["softwares-and-tools", "fish", "string"]
 ---
 ```
     git remote -v | string match -rq 'github\.com:(?<remote>[\S]+)\.git'

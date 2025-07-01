@@ -1,7 +1,7 @@
 ---
-title: "kex_exchange_identification: Connection closed by remote host"
+title: 'kex_exchange_identification: Connection closed by remote host'
 date: 2024-05-06 11:06:10
-tags: []
+tags: ["GitHub"]
 ---
 # kex_exchange_identification: Connection closed by remote host
 

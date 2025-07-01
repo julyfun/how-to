@@ -1,7 +1,7 @@
 ---
-title: "python-debug"
+title: python-debug
 date: 2024-01-23 16:28:56
-tags: []
+tags: ["softwares-and-tools", "vscode", "debug", "python"]
 ---
 This method is verified!
 

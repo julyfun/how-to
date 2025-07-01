@@ -1,7 +1,7 @@
 ---
-title: "quickly-add-or-remove-a-pair-of-parentheses-brackets-or-braces-in-vim"
+title: quickly-add-or-remove-a-pair-of-parentheses-brackets-or-braces-in-vim
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "vim-cheatsheat"]
 ---
 https://stackoverflow.com/questions/2084210/how-to-quickly-remove-a-pair-of-parentheses-brackets-or-braces-in-vim
 

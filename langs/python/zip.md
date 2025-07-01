@@ -1,7 +1,7 @@
 ---
-title: "zip"
+title: zip
 date: 2024-03-08 21:59:40
-tags: []
+tags: ["langs", "python"]
 ---
 ```
 >>> a = [1, 2, 3]

@@ -1,7 +1,7 @@
 ---
-title: "forbid-baidu-com"
+title: forbid-baidu-com
 date: 2023-11-16 19:03:00
-tags: []
+tags: ["network"]
 ---
 ```
 vim /etc/hosts

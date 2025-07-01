@@ -1,7 +1,7 @@
 ---
-title: "教学计划-找规律II"
+title: 教学计划-找规律II
 date: 2024-09-29 00:41:17
-tags: []
+tags: ["notes", "julyfun", "工作", "william", "240929"]
 ---
 ## Circular Barn
 

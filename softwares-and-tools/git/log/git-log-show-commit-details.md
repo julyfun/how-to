@@ -1,7 +1,7 @@
 ---
-title: "git-log-show-commit-details"
+title: git-log-show-commit-details
 date: 2024-03-28 09:29:16
-tags: []
+tags: ["softwares-and-tools", "git", "log"]
 ---
 ```
     git log -p path/to/file_or_directory

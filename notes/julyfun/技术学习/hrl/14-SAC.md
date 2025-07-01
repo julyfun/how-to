@@ -1,7 +1,7 @@
 ---
-title: "14-SAC"
+title: 14-SAC
 date: 2024-11-16 12:02:45
-tags: []
+tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
 - DDPG 不是很稳定.
 - 【最大熵强化学习】

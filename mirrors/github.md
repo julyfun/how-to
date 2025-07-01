@@ -1,8 +1,8 @@
 ---
-title: "github"
+title: github
 date: 2024-09-08 21:20:36
+tags: ["mirrors"]
 ---
-
 ## 25.3.4
 
 - [ok] https://down.npee.cn/

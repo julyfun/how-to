@@ -1,7 +1,7 @@
 ---
-title: "拉取基础镜像"
+title: 拉取基础镜像
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "docker"]
 ---
 docker build . --network=host
 

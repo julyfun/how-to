@@ -1,7 +1,7 @@
 ---
-title: "8-DQN-改进算法"
+title: 8-DQN-改进算法
 date: 2024-11-09 22:06:20
-tags: []
+tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
 ## Double DQN
 

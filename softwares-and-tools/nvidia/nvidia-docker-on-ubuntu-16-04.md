@@ -1,7 +1,7 @@
 ---
-title: "nvidia-docker-on-ubuntu-16-04"
+title: nvidia-docker-on-ubuntu-16-04
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "nvidia"]
 ---
 ## Install Docker first
 

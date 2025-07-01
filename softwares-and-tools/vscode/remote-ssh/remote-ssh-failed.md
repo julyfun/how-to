@@ -1,7 +1,7 @@
 ---
-title: "remote-ssh-failed"
+title: remote-ssh-failed
 date: 2024-05-21 15:00:01
-tags: []
+tags: ["softwares-and-tools", "vscode", "remote-ssh"]
 ---
 ## 无法在远程服务器上自动安装 VSCode Server
 

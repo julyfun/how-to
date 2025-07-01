@@ -1,7 +1,7 @@
 ---
-title: "Paper Reading"
+title: Paper Reading
 date: 2024-10-19 15:50:48
-tags: []
+tags: ["notes", "julyfun"]
 ---
 # 25
 

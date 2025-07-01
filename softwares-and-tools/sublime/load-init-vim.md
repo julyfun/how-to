@@ -1,7 +1,7 @@
 ---
-title: "load-init-vim"
+title: load-init-vim
 date: 2024-02-21 21:40:01
-tags: []
+tags: ["softwares-and-tools", "sublime"]
 ---
 ref: https://forum.sublimetext.com/t/actualvim-perfect-vim-input-for-sublime-text-3/26301
 

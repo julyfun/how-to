@@ -1,9 +1,8 @@
 ---
-title: "Example Title A"
+title: Example Title A
 date: 2023-01-01 12:00:00
-tags: [test, example, type-a]
+tags: ["test", "example", "type-a", "scripts", "tests"]
 ---
-
 # This is a Test Type A Document
 
 This document starts with lines that begin with "- " characters.

@@ -1,7 +1,7 @@
 ---
-title: "CH3-离散和连续源的信息熵"
+title: CH3-离散和连续源的信息熵
 date: 2024-11-27 02:41:30
-tags: []
+tags: ["notes", "julyfun", "大四上", "信息与编码"]
 ---
 - **[Chain rules for Entropy]**
     - 计算有记忆源的信息熵公式.

@@ -1,7 +1,7 @@
 ---
-title: "spd-正定矩阵"
+title: spd-正定矩阵
 date: 2023-11-30 16:23:43
-tags: []
+tags: ["learn", "math", "matrix"]
 ---
 ## 正定正义
 

@@ -1,7 +1,7 @@
 ---
-title: "unknown-error-while-init"
+title: unknown-error-while-init
 date: 2024-02-18 20:57:49
-tags: []
+tags: ["langs", "python", "taichi"]
 ---
 ```
 [Taichi] Starting on arch=cuda

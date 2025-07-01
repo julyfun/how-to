@@ -1,7 +1,7 @@
 ---
-title: "unit2-02_class_conditioned_diffusion_model_example"
+title: unit2-02_class_conditioned_diffusion_model_example
 date: 2025-06-10 01:55:37
-tags: []
+tags: ["notes", "julyfun", "技术学习", "diffusion-models-class"]
 ---
 ## Class-conditioned
 

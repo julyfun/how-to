@@ -1,9 +1,8 @@
 ---
-title: "what-does-MLP-do-3B1B"
+title: what-does-MLP-do-3B1B
 date: 2025-05-18 02:42:51
-tags: []
+tags: ["notes", "julyfun", "25", "04"]
 ---
-
 ![image.png|600](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250518022638.png)
 - 结构: Linear + ReLU + Linear
 	- 假设 Attention 输出的 $E^->$ 嵌入维度 10000

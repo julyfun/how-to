@@ -1,7 +1,7 @@
 ---
-title: "create-a-tag-in-a-github-repository"
+title: create-a-tag-in-a-github-repository
 date: 2024-03-28 21:44:00
-tags: []
+tags: ["softwares-and-tools", "git", "tag"]
 ---
 ref: https://stackoverflow.com/questions/18216991/create-a-tag-in-a-github-repository
 

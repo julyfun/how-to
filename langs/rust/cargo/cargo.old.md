@@ -1,7 +1,7 @@
 ---
-title: "cargo.old"
+title: cargo.old
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["langs", "rust", "cargo"]
 ---
 ## Blocking waiting for file lock on the registry index
 

@@ -1,10 +1,9 @@
 ---
-rviz shows:
+rviz shows: null
 date: 2024-03-26 22:00:01
-title: "cant-open-could-not-contact-ros-master-at"
-tags: []
+title: cant-open-could-not-contact-ros-master-at
+tags: ["frames", "ros", "rviz"]
 ---
-
 ```
 user@server:~$ rviz  
 [ INFO] [1711457974.411129714]: rviz version 1.14.20

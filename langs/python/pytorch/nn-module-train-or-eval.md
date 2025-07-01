@@ -1,7 +1,7 @@
 ---
-title: "nn-module-train-or-eval"
+title: nn-module-train-or-eval
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["langs", "python", "pytorch"]
 ---
 https://chat.openai.com/share/2e09879f-32dc-442b-828c-f29402163858
 

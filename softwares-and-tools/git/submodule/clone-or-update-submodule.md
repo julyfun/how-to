@@ -1,7 +1,7 @@
 ---
-title: "clone-or-update-submodule"
+title: clone-or-update-submodule
 date: 2024-04-07 16:02:36
-tags: []
+tags: ["softwares-and-tools", "git", "submodule"]
 ---
 ```
 https://stackoverflow.com/questions/3796927/how-do-i-git-clone-a-repo-including-its-submodules

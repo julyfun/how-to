@@ -1,7 +1,7 @@
 ---
-title: "PLEASE-ASK"
+title: PLEASE-ASK
 date: 2024-09-28 01:15:50
-tags: []
+tags: ["notes", "julyfun", "生活"]
 ---
 任何人找你工作，问清楚：
 

@@ -1,7 +1,7 @@
 ---
-title: "show-stages"
+title: show-stages
 date: 2024-03-28 09:25:09
-tags: []
+tags: ["softwares-and-tools", "git", "stage"]
 ---
 ref: https://stackoverflow.com/questions/1587846/how-do-i-show-the-changes-which-have-been-staged
 

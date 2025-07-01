@@ -1,7 +1,7 @@
 ---
-title: "Swift-糟糕设计"
+title: Swift-糟糕设计
 date: 2025-06-18 16:02:58
-tags: []
+tags: ["notes", "julyfun", "25", "06"]
 ---
 ### 隐式导入
 - 一个项目所有符号都在全局.

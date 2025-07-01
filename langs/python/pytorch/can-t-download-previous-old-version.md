@@ -1,7 +1,7 @@
 ---
-title: "can-t-download-previous-old-version"
+title: can-t-download-previous-old-version
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["langs", "python", "pytorch"]
 ---
 you should go pytorch.org and find something there.
 

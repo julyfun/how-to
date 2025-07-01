@@ -1,7 +1,7 @@
 ---
-title: "简易 vim 教程"
+title: 简易 vim 教程
 date: 2024-08-06 14:08:12
-tags: []
+tags: ["softwares-and-tools", "vim-tutorial"]
 ---
 # 简易 vim 教程
 

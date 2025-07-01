@@ -1,7 +1,7 @@
 ---
-title: "string-join-in-non-empty"
+title: string-join-in-non-empty
 date: 2024-01-16 21:21:18
-tags: []
+tags: ["softwares-and-tools", "fish", "string"]
 ---
 https://fishshell.com/docs/current/cmds/string-join.html
 

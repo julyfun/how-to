@@ -1,7 +1,7 @@
 ---
-title: "networkx"
+title: networkx
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["langs", "python"]
 ---
 this package works together with matplotlib.
 

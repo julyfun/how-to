@@ -1,7 +1,7 @@
 ---
-title: "proxy-error-when-install"
+title: proxy-error-when-install
 date: 2024-02-01 16:25:01
-tags: []
+tags: ["langs", "python", "pip"]
 ---
 ```
 'Connection reset by peer'))': /simple/matplotlib/

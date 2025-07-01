@@ -1,7 +1,7 @@
 ---
-title: "you-have-not-concluded-your-merge-merge-head-exists"
+title: you-have-not-concluded-your-merge-merge-head-exists
 date: 2024-02-28 20:09:57
-tags: []
+tags: ["softwares-and-tools", "git"]
 ---
 ref: https://stackoverflow.com/questions/11646107/you-have-not-concluded-your-merge-merge-head-exists
 

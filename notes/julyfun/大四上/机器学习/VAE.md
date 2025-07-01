@@ -1,7 +1,7 @@
 ---
-title: "VAE"
+title: VAE
 date: 2024-12-12 14:35:11
-tags: []
+tags: ["notes", "julyfun", "大四上", "机器学习"]
 ---
 - 关于 VAE 理解的教程： https://spaces.ac.cn/archives/5253
 

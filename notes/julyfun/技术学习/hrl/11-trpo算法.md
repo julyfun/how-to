@@ -1,7 +1,7 @@
 ---
-title: "11-trpo算法"
+title: 11-trpo算法
 date: 2024-11-11 22:29:41
-tags: []
+tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
 - 对 AC 做了非常多优化
 - 【策略目标】

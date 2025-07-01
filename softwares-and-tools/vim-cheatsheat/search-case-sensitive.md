@@ -1,7 +1,7 @@
 ---
-title: "search-case-sensitive"
+title: search-case-sensitive
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "vim-cheatsheat"]
 ---
 use `/\ccopyright` (`\c`) to make it insensitive.
 

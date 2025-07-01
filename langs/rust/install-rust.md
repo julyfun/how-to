@@ -1,7 +1,7 @@
 ---
-title: "install-rust"
+title: install-rust
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["langs", "rust"]
 ---
 curl https://sh.rustup.rs -sSf | sh
 

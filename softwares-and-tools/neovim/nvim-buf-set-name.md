@@ -1,7 +1,7 @@
 ---
-title: "nvim-buf-set-name"
+title: nvim-buf-set-name
 date: 2024-02-08 09:29:51
-tags: []
+tags: ["softwares-and-tools", "neovim"]
 ---
 nvim_buf_set_name: Vim:E95:
 

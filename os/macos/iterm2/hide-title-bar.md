@@ -1,7 +1,7 @@
 ---
-title: "hide-title-bar"
+title: hide-title-bar
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["os", "macos", "iterm2"]
 ---
 According to:
 

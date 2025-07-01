@@ -1,7 +1,7 @@
 ---
-title: "c-cpp-direct-file-debug"
+title: c-cpp-direct-file-debug
 date: 2024-01-27 17:40:00
-tags: []
+tags: ["softwares-and-tools", "vscode", "debug"]
 ---
 跟 cmake debug 类似。Vscode 的 Debug 程序只是运行一个用 `-g` 编译的可执行文件而已。
 

@@ -1,7 +1,7 @@
 ---
-title: "Rustdesk"
+title: Rustdesk
 date: 2024-08-20 12:36:03
-tags: []
+tags: ["notes", "julyfun", "工具", "remote"]
 ---
 https://www.mintimate.cn/2023/08/27/guideToHostRustDesk/
 

@@ -1,7 +1,7 @@
 ---
-title: "could-not-auto-determine-entry-point-from-rollupoptions"
+title: could-not-auto-determine-entry-point-from-rollupoptions
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["frames", "vite"]
 ---
 https://stackoverflow.com/questions/74624084/could-not-auto-determine-entry-point-from-rollupoptions
 

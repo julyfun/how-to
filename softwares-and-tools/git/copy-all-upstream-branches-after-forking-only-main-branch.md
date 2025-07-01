@@ -1,13 +1,14 @@
 ---
-reliability: "20% (author)"
-os: "Linux DESKTOP-VDB57PP 5.15.153.1-microsoft-standard-WSL2+ #2 SMP Sun Oct 27 22:02:06 CST 2024 x86_64 x86_64 x86_64 GNU/Linux"
-author: "deepseek V3"
-assume-you-know: [computer]
+reliability: 20% (author)
+os: 'Linux DESKTOP-VDB57PP 5.15.153.1-microsoft-standard-WSL2+ #2 SMP Sun Oct 27 22:02:06
+  CST 2024 x86_64 x86_64 x86_64 GNU/Linux'
+author: deepseek V3
+assume-you-know:
+- computer
 date: 2025-03-24
-title: "Copy all upstream branches after forking only main branch"
-tags: []
+title: Copy all upstream branches after forking only main branch
+tags: ["softwares-and-tools", "git"]
 ---
-
 # Copy all upstream branches after forking only main branch
 
 If you've forked a Git repository but only have the `main` (or `master`) branch locally, you can fetch and track **other remote branches** from the original repository (upstream) into your fork. Here's how:

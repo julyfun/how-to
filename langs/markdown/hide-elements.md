@@ -1,7 +1,7 @@
 ---
-title: "数学部分 共 50 分"
+title: 数学部分 共 50 分
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["langs", "markdown"]
 ---
 ```markdown
 <head>

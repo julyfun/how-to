@@ -1,7 +1,7 @@
 ---
-title: "E303-Unable-to-open-swap-file"
+title: E303-Unable-to-open-swap-file
 date: 2024-01-22 22:11:17
-tags: []
+tags: ["softwares-and-tools", "neovim"]
 ---
 ## 1
 

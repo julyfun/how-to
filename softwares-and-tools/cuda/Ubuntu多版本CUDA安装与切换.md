@@ -1,7 +1,7 @@
 ---
 date: 2025-03-12 02:39:15
-title: "Ubuntu多版本CUDA安装与切换"
-tags: []
+title: Ubuntu多版本CUDA安装与切换
+tags: ["softwares-and-tools", "cuda"]
 ---
 	- this article is for backpack
 发表于2022-01-04|更新于2022-06-07|[教程](https://qiyuan-z.github.io/categories/%E6%95%99%E7%A8%8B/)

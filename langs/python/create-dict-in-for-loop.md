@@ -1,7 +1,7 @@
 ---
-title: "create-dict-in-for-loop"
+title: create-dict-in-for-loop
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["langs", "python"]
 ---
 dict(zip(keys, values))
 

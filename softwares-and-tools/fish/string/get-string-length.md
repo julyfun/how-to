@@ -1,7 +1,7 @@
 ---
-title: "Equivalent to test -n $str"
+title: Equivalent to test -n $str
 date: 2024-01-16 21:21:18
-tags: []
+tags: ["softwares-and-tools", "fish", "string"]
 ---
 > string length 'hello, world'
 12

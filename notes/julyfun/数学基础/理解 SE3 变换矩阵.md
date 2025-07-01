@@ -1,7 +1,7 @@
 ---
-title: "理解 SE3 变换矩阵"
+title: 理解 SE3 变换矩阵
 date: 2024-10-09 00:57:13
-tags: []
+tags: ["notes", "julyfun", "数学基础"]
 ---
 ## $"target" A "source" B$ 为 $R, t$ 的意义
 

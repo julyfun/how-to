@@ -1,7 +1,7 @@
 ---
-title: "cant-find-bits-std-c-h-on-macos"
+title: cant-find-bits-std-c-h-on-macos
 date: 2024-01-27 13:17:15
-tags: []
+tags: ["softwares-and-tools", "vscode", "clangd"]
 ---
 ## Clangd in vscode can't find 'bits/stdc++.h' on macos
 

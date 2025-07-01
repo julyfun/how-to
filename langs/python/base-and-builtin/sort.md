@@ -1,7 +1,7 @@
 ---
-title: "按自定义函数排序"
+title: 按自定义函数排序
 date: 2024-02-02 23:48:19
-tags: []
+tags: ["langs", "python", "base-and-builtin"]
 ---
 ref: https://www.freecodecamp.org/chinese/news/python-sort-how-to-sort-a-list-in-python/
 

@@ -1,7 +1,7 @@
 ---
-title: "third-party-keyboard-disable-capslock"
+title: third-party-keyboard-disable-capslock
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["os", "macos"]
 ---
 ## MacOS 13
 

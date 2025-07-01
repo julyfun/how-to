@@ -1,13 +1,16 @@
 ---
-reliability: "[20% (author), 0 / 0 (visitor)]"
-language: "zh-hans"
-os: "Linux DESKTOP-I44J4US 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 23:14:13 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux"
-author: "Julyfun"
-suppose-you-know: [computer]
+reliability: '[20% (author), 0 / 0 (visitor)]'
+language: zh-hans
+os: 'Linux DESKTOP-I44J4US 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 23:14:13
+  UTC 2024 x86_64 x86_64 x86_64 GNU/Linux'
+author: Julyfun
+suppose-you-know:
+- computer
 date: 2024-07-10
-title: "Add exisiting local git repo as submodule as a submodule to parent directory repo?"
+title: Add exisiting local git repo as submodule as a submodule to parent directory
+  repo?
+tags: ["softwares-and-tools", "git", "submodule"]
 ---
-
 # Add exisiting local git repo as submodule as a submodule to parent directory repo?
 
 ```

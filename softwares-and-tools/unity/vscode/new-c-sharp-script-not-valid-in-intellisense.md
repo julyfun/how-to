@@ -1,7 +1,7 @@
 ---
-title: "new-c-sharp-script-not-valid-in-intellisense"
+title: new-c-sharp-script-not-valid-in-intellisense
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "unity", "vscode"]
 ---
 Because if you create new c# file in vscode, it will not be load.
 

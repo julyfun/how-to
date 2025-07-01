@@ -1,7 +1,7 @@
 ---
-title: "deal-with-vim-plug-download-failure"
+title: deal-with-vim-plug-download-failure
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "neovim", "vim-plug"]
 ---
 https://blog.csdn.net/qq_62068963/article/details/124277430
 

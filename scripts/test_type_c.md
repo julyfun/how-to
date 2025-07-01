@@ -1,7 +1,7 @@
 ---
-title: "This is a Test Type C Document"
+title: This is a Test Type C Document
 date: 2023-06-28 17:43:50
-tags: []
+tags: ["scripts"]
 ---
 # This is a Test Type C Document
 

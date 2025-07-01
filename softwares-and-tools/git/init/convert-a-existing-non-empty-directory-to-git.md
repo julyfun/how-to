@@ -1,7 +1,7 @@
 ---
-title: "convert-a-existing-non-empty-directory-to-git"
+title: convert-a-existing-non-empty-directory-to-git
 date: 2024-03-28 09:29:16
-tags: []
+tags: ["softwares-and-tools", "git", "init"]
 ---
 According to:
 

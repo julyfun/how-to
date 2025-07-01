@@ -1,8 +1,8 @@
 ---
 supernova: 80 小节; 主主副 主主副 桥主副尾
 date: 2024-12-28 01:44:28
-title: "asepa-歌曲段落"
-tags: []
+title: asepa-歌曲段落
+tags: ["notes", "julyfun", "24", "12"]
 ---
     - verse1: 24 小节
         - 主 (8 小节）

@@ -1,7 +1,7 @@
 ---
-title: "deque"
+title: deque
 date: 2024-11-09 20:20:04
-tags: []
+tags: ["langs", "python", "collections"]
 ---
 # deque
 

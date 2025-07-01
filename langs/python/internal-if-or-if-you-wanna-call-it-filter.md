@@ -1,7 +1,7 @@
 ---
-title: "internal-if-or-if-you-wanna-call-it-filter"
+title: internal-if-or-if-you-wanna-call-it-filter
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["langs", "python"]
 ---
 use filter.
 

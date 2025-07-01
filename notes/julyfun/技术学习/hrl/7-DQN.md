@@ -1,7 +1,7 @@
 ---
-title: "常规 Q-learning"
+title: 常规 Q-learning
 date: 2024-11-08 23:09:39
-tags: []
+tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
 - DQN 作用：对于连续的状态和离散的动作，可通过采样方式更新神经网络
     - Input: 可微状态（并不含动作）

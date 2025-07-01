@@ -1,9 +1,8 @@
 ---
-title: "Example Title B"
+title: Example Title B
 date: 2023-02-02 14:30:00
-tags: [test, example, type-b]
+tags: ["test", "example", "type-b", "scripts", "tests"]
 ---
-
 # This is a Test Type B Document
 
 This document starts with a YAML front matter section enclosed between `---` delimiters.

@@ -2,10 +2,9 @@
 Fish shell version: 3.7.0
 os: macos
 date: 2024-03-18
-title: "env-param-too-many-duplicates"
-tags: []
+title: env-param-too-many-duplicates
+tags: ["softwares-and-tools", "fish"]
 ---
-
 ## Problem
 
 When `echo $PATH`, many paths appears for tens of times. 

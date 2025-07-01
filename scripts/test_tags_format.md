@@ -1,9 +1,8 @@
 ---
-title: "Tags Format Test"
+title: Tags Format Test
 date: 2023-05-15 10:30:00
-tags: [testing, markdown, formatting, not in array format]
+tags: ["testing", "markdown", "formatting", "not in array format", "scripts"]
 ---
-
 # Testing Tags Format
 
 This file has both keywords and tags fields in non-array format to test the script's ability to convert them into proper array format.

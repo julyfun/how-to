@@ -1,7 +1,7 @@
 ---
-title: "C++ to Python"
+title: C++ to Python
 date: 2024-08-02 22:40:41
-tags: []
+tags: ["langs", "mutual"]
 ---
 # C++ to Python
 

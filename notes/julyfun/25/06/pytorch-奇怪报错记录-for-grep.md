@@ -1,13 +1,14 @@
 ---
-reliability: "20% (author)"
-os: "Linux julyfun-4070s-ubuntu 6.8.0-60-generic #63~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 22 19:00:15 UTC 2 x86_64 x86_64 x86_64 GNU/Linux"
-author: "julyfun-4070s-ubuntu2204"
-assume-you-know: [computer]
+reliability: 20% (author)
+os: 'Linux julyfun-4070s-ubuntu 6.8.0-60-generic #63~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC
+  Tue Apr 22 19:00:15 UTC 2 x86_64 x86_64 x86_64 GNU/Linux'
+author: julyfun-4070s-ubuntu2204
+assume-you-know:
+- computer
 date: 2025-06-17
-title: "pytorch 奇怪报错记录 for grep"
-tags: []
+title: pytorch 奇怪报错记录 for grep
+tags: ["notes", "julyfun", "25", "06"]
 ---
-
 # pytorch 奇怪报错记录 for grep
 
 ## 25.6.17

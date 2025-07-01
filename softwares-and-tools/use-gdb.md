@@ -1,7 +1,7 @@
 ---
-title: "use-gdb"
+title: use-gdb
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools"]
 ---
 在GDB（GNU调试器）中，您可以使用以下命令来实现这些功能：
 

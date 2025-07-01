@@ -1,7 +1,7 @@
 ---
-title: "Sample image tensor dimensions: (channels=3, height=100, width=100)"
+title: 'Sample image tensor dimensions: (channels=3, height=100, width=100)'
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["langs", "python", "pytorch"]
 ---
 ## ChatGPT
 

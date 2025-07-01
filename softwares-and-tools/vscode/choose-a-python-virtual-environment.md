@@ -1,7 +1,7 @@
 ---
-title: "choose-a-python-virtual-environment"
+title: choose-a-python-virtual-environment
 date: 2024-01-15 01:10:05
-tags: []
+tags: ["softwares-and-tools", "vscode"]
 ---
 Only need to use the default "Python" extension.
 

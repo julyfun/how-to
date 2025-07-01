@@ -1,7 +1,7 @@
 ---
-title: "need-to-specify-how-to-reconcile-divergent-branches-when-git-pull"
+title: need-to-specify-how-to-reconcile-divergent-branches-when-git-pull
 date: 2024-03-28 09:29:16
-tags: []
+tags: ["softwares-and-tools", "git", "pull"]
 ---
 ## Error message
 

@@ -1,7 +1,7 @@
 ---
-title: "tag"
+title: tag
 date: 2024-03-29 20:23:10
-tags: []
+tags: ["softwares-and-tools", "git", "tag"]
 ---
 ```
 git tag <tagname>

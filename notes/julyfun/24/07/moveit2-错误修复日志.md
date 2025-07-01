@@ -1,7 +1,7 @@
 ---
-title: "moveit2-错误修复日志"
+title: moveit2-错误修复日志
 date: 2024-09-25 16:58:43
-tags: []
+tags: ["notes", "julyfun", "24", "07"]
 ---
 ## 7.30 启动双机械臂报错一大堆关节找不到，可以 Plan 不能 Execute
 

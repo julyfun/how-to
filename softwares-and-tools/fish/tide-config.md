@@ -1,10 +1,9 @@
 ---
 source: tide command output
 date: 2024-02-08 01:01:54
-title: "tide-config"
-tags: []
+title: tide-config
+tags: ["softwares-and-tools", "fish"]
 ---
-
 This is an example.
 
 ```

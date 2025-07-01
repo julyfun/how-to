@@ -1,13 +1,13 @@
 ---
-reliability: "20% (author)"
-os: "win11"
-author: "4070s"
-assume-you-know: [computer]
+reliability: 20% (author)
+os: win11
+author: 4070s
+assume-you-know:
+- computer
 date: 2025-03-11
-title: "Please execute the `Clean up` command when committing"
-tags: []
+title: Please execute the `Clean up` command when committing
+tags: ["softwares-and-tools", "turtoise-svn"]
 ---
-
 # Please execute the `Clean up` command when committing
 
 - ref: https://blog.csdn.net/weixin_43473773/article/details/121551977

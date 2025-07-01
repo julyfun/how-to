@@ -1,7 +1,7 @@
 ---
-title: "梯度，散度，旋度，Laplace, nabla"
+title: 梯度，散度，旋度，Laplace, nabla
 date: 2024-10-09 00:27:06
-tags: []
+tags: ["notes", "julyfun", "数学基础"]
 ---
 这里 $x_i^->$ 表示一个方向的单位向量
 
