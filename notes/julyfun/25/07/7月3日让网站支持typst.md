@@ -1,7 +1,7 @@
 ---
 title: "7月3日让网站支持 Typst"
 date: 2025-07-03 17:29:13
-tags: [notes, julyfun, 25, 07]
+tags: [notes, julyfun]
 author: "Julyfun M4"
 os: "Darwin tutianpeikeladeMac-mini.local 24.3.0 Darwin Kernel Version 24.3.0: Thu Jan  2 20:22:58 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8132 arm64"
 assume-you-know: [computer]
