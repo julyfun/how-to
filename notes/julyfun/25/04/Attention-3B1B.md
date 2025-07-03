@@ -3,7 +3,8 @@ title: 自注意力
 date: 2025-04-27 21:22:27
 tags: ["notes", "julyfun", "25", "04"]
 ---
-# 自注意力
+
+# 自注意力 Attention 3B1B
 - 考虑:
     - mole 一词在不同上下文有不同含义.
     - 嵌入层将 mole 转换为泛型向量以后，Transformer 的下一层会**根据上下文再加一个偏移向量**。
@@ -16,7 +17,8 @@ tags: ["notes", "julyfun", "25", "04"]
 ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428220719.png)
 ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428220832.png)
 - $V_i^-> = W_v dot E_i^->$  表示对其他词应该造成什么偏置。比如上图从 creature 到蓝色毛茸茸生物的灰色箭头.
-	- 这里如果真用 $W_v$ 这个矩阵的话，唯独就爆炸了. 我们先编码再解码，实际上 $V_i^-> = W_(v, "up") dot W_(v, "down") dot E_i^->$
+	- 这里如果真用 $W_v$ 这个矩阵的话，维度就爆炸了. 我们先编码再解码，实际上 $V_i^-> = W_(v, "up") dot W_(v, "down") dot E_i^->$
+    - K Q 的点积取 >= 0 的部分作为 V 的权重.
 - PS:
 	- $W_q, W_k$ 和两个 $W_v$ 是一样参数量. GPT-3 中是 $128 times 12288$ ($W_(v, "up")$ 为 $12288 times 128$)
 - 经过注意力以后的嵌入结果：加起来，如下图。下面 $Delta E_i^->$ 就是一个注意力.
@@ -70,6 +72,3 @@ class CrossAttention(nn.Module):
 ```
 - ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428225325.png)
 
-## 多层多头注意力
-
-- 每次经过一个多头 Attention 以后会过 MLP，然后再过多头 Attention，重复多层.

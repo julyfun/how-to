@@ -13,3 +13,4 @@ tags: ["softwares-and-tools", "unix-cli", "tmux"]
 
 ctrl-b space | ref: https://superuser.com/questions/493048/how-to-convert-2-horizontal-panes-to-vertical-panes-in-tmux
 
+`:next-layout`
