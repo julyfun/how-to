@@ -1,10 +1,10 @@
 ---
-- title: "@ObservedObject or @StateObject"
-- date: 2025-07-02 16:59:01
-- tags: [langs, swift, ai-then-me]
-- author: "Julyfun M4"
-- os: "Darwin 192.168.2.8 24.3.0 Darwin Kernel Version 24.3.0: Thu Jan  2 20:22:58 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8132 arm64"
-- assume-you-know: [computer]
+title: "@ObservedObject or @StateObject"
+date: 2025-07-02 16:59:01
+tags: [langs, swift, ai-then-me]
+author: "Julyfun M4"
+os: "Darwin 192.168.2.8 24.3.0 Darwin Kernel Version 24.3.0: Thu Jan  2 20:22:58 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8132 arm64"
+assume-you-know: [computer]
 ---
 
 # @ObservedObject or @StateObject
