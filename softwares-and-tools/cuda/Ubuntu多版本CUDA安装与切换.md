@@ -1,9 +1,10 @@
 ---
-date: 2025-03-12 02:39:15
 title: Ubuntu多版本CUDA安装与切换
+date: 2025-03-12 02:39:15
 tags: ["softwares-and-tools", "cuda"]
 ---
-	- this article is for backpack
+
+- this article is for backpack
 发表于2022-01-04|更新于2022-06-07|[教程](https://qiyuan-z.github.io/categories/%E6%95%99%E7%A8%8B/)
 
 |字数总计:521|阅读时长:2分钟|阅读量:15646
@@ -119,3 +120,4 @@ plaintext
 版权声明: 本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。转载请注明来自 [Yuan](https://qiyuan-z.github.io/)！
 
 [Ubuntu](https://qiyuan-z.github.io/tags/Ubuntu/)[CUDA](https://qiyuan-z.github.io/tags/CUDA/)[cuDNN](https://qiyuan-z.github.io/tags/cuDNN/)
+
