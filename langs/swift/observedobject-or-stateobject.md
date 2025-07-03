@@ -1,5 +1,5 @@
 ---
-- title: @ObservedObject or @StateObject
+- title: "@ObservedObject or @StateObject"
 - date: 2025-07-02 16:59:01
 - tags: [langs, swift, ai-then-me]
 - author: "Julyfun M4"
