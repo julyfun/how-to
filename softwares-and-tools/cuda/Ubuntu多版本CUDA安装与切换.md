@@ -83,7 +83,7 @@ plaintext
 
 |   |   |
 |---|---|
-|1  <br>2  <br>3|export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64  <br>export PATH=$PATH:/usr/local/cuda/bin  <br>export CUDA_HOME=$CUDA_HOME:/usr/local/cuda|
+|1  <br>2  <br>3|`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64  <br>export PATH=$PATH:/usr/local/cuda/bin  <br>export CUDA_HOME=$CUDA_HOME:/usr/local/cuda`|
 
 按此设置后，以后更换CUDA版本无需再动环境配置。
 
