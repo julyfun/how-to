@@ -17,3 +17,9 @@ Obsidian-wypst 更是依赖极其原始的 wypst:0.4.0。感觉 npm 这套依赖
 
 ps: 我不喜欢在博客里写个人感慨的东西。如果你在博客 Title 里说你写诗，那你就在博客里展示出来，show me the code.
 
+upd:
+
+Typst 群友 @纸夜 做的 Typst 前端集成决策树.
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/f293f7c68160345a0feb00d31abead6c.png)
+
