@@ -1,3 +1,8 @@
+---
+title: Best practice for ros2 cpp dependencies
+date: 2024-07-29 14:11:23
+tags: ["frames", "ros2"]
+---
 [//]: # (Ex: How to clone a Git repository into a specific folder? / `TLS error` when ssh to github / Best way to setup ros2 on Mac M1)
 # Best practice for ros2 cpp dependencies
 [//]: # (Ex: all / unix / ubuntu22.04, git2.12, fish shell 3.7.1 / macos all version, git all version)

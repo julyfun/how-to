@@ -1,7 +1,8 @@
 ---
-keywords: [workspace]
+date: 2024-01-15 01:10:05
+title: Add the parent directory to the Python path
+tags: ["workspace", "langs", "python"]
 ---
-
 对于一个项目，你执行 python somewhere/main.py
 
 则 main.py 运行的所有东西，包括 main.py import 的 py，其中的 import 的 sys.path（sys.path 会决定 import 的位置） 均为 somewhere/（即 main.py 所在的位置）。

@@ -1,13 +1,16 @@
 ---
-reliability: "50% estimated by the author"
+reliability: 50% estimated by the author
+language: Chinese
+os: 'Darwin floriandeMacBook-Air.local 22.5.0 Darwin Kernel Version 22.5.0: Mon Apr
+  24 20:53:44 PDT 2023; root:xnu-8796.121.2~5/RELEASE_ARM64_T8103 arm64'
+author: Julyfun MacOS13.4 M1
+suppose-you-know:
+- Ubuntu basic usage
+- used to work on Ubuntu
 date: 2024-04-29
-language: "Chinese"
-os: "Darwin floriandeMacBook-Air.local 22.5.0 Darwin Kernel Version 22.5.0: Mon Apr 24 20:53:44 PDT 2023; root:xnu-8796.121.2~5/RELEASE_ARM64_T8103 arm64"
-author: "Julyfun MacOS13.4 M1"
-suppose-you-know: [Ubuntu basic usage, used to work on Ubuntu]
-keywords: [wsl, win11, wsl2]
+title: Install wsl and use cmake in vscode
+tags: ["wsl", "win11", "wsl2", "os", "windows"]
 ---
-
 # Install wsl and use cmake in vscode
 
 > 假设您在 win11 下。

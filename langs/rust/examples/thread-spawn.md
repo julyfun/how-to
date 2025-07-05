@@ -1,3 +1,8 @@
+---
+title: thread-spawn
+date: 2024-03-06 20:56:01
+tags: ["langs", "rust", "examples"]
+---
 ```rs
 use std::thread;
 

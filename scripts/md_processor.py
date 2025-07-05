@@ -117,6 +117,9 @@ def recover(content, rec_title, file_path):
         elif line.startswith('keywords:'):
             # Extract content after "keywords: "
             content = line[9:].strip()
+            # remove [] 
+            if content.startswith('[') and content.endswith(']'):
+                content = content[1:-1].strip()
             if content:
                 tags_content.append(content)
             has_tags = True  # Mark that we have tags now

@@ -1,3 +1,8 @@
+---
+title: draw-plane
+date: 2024-01-26 02:52:47
+tags: ["langs", "python", "taichi"]
+---
 You need `scene.mesh()`
 
 

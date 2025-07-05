@@ -1,3 +1,8 @@
+---
+title: git-branch
+date: 2024-03-28 09:29:16
+tags: ["softwares-and-tools", "git", "branch"]
+---
 git branch
 
 Main Git command for working with branches.

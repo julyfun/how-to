@@ -1,3 +1,8 @@
+---
+title: npm-install-hangs-on-sill-idealtree-build
+date: 2024-01-15 01:10:05
+tags: ["softwares-and-tools", "node"]
+---
 ## Env
 
 MacOS 13 M1

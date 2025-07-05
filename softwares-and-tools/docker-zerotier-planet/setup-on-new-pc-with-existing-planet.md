@@ -1,3 +1,8 @@
+---
+title: setup-on-new-pc-with-existing-planet
+date: 2025-06-18 21:28:03
+tags: ["softwares-and-tools", "docker-zerotier-planet"]
+---
 ## Linux
 
 - sudo snap install zerotier

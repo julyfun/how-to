@@ -1,8 +1,15 @@
+---
+title: zed
+date: 2024-07-31 16:35:06
+updated: 2025-06-30
+tags: ["notes", "julyfun", "关注"]
+---
 - [x] 参数提示： https://github.com/zed-industries/zed/issues/4879
     - [x] https://github.com/zed-industries/zed/pull/12909
 - [ ] 合并 Tab bar: https://github.com/zed-industries/zed/issues/5066
-    - 解决了一半: https://github.com/zed-industries/zed/pull/7356
-- [ ] 选择 Python 环境: https://github.com/zed-industries/zed/issues/7646
+    - 临时解决方案: https://github.com/zed-industries/zed/pull/7356
+- [ ] 选择 Python Exe: https://github.com/zed-industries/zed/issues/7646
 - [ ] easymotion vim: https://github.com/zed-industries/zed/issues/4930
-    - [ ] 更多关于是否使用系统剪切板的选项（其实是为了关闭 d 复制的同时使用系统粘贴板）: https://github.com/zed-industries/zed/issues/11313
 - [ ] Jupyter notebook: https://github.com/zed-industries/zed/issues/5273
+- [ ] sticky scroll: https://github.com/zed-industries/zed/issues/5344
+

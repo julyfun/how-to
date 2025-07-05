@@ -1,3 +1,8 @@
+---
+title: csdiy-学习目录
+date: 2025-02-21 12:06:45
+tags: ["notes", "julyfun", "25", "02"]
+---
 - 课程：计算机系统入门 CSAPP. 原教材讲解较复杂，不推荐，bb 需要 pdf 可以找我. 我感觉直接看视频就行
 - 视频讲解：https://www.bilibili.com/video/BV1cD4y1D7uR/?vd_source=1acae9ee50868a5f41c09d12b0b85307
 - 可选看教材: https://fengmuzi2003.gitbook.io/csapp3e/di-er-zhang-zhong-dian-jie-du

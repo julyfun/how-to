@@ -1,3 +1,8 @@
+---
+title: you-have-not-concluded-your-merge-merge-head-exists
+date: 2024-02-28 20:09:57
+tags: ["softwares-and-tools", "git"]
+---
 ref: https://stackoverflow.com/questions/11646107/you-have-not-concluded-your-merge-merge-head-exists
 
 The problem is your previous pull failed to merge automatically and went to conflict state. And the conflict wasn't resolved properly before the next pull.

@@ -1,3 +1,8 @@
+---
+title: cmake-no-pybind11-config-cmake
+date: 2023-09-15 21:11:26
+tags: ["GitHub", "real-stanford", "cloth-funnels"]
+---
 ## Fault
 
 ```

@@ -1,3 +1,8 @@
+---
+title: docker-desktop-can-t-display-chinese
+date: 2024-01-15 01:10:05
+tags: ["softwares-and-tools", "docker"]
+---
 - 陈亿铭
 - 23.9.20
 

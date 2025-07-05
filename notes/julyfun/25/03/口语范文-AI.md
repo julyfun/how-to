@@ -1,3 +1,8 @@
+---
+title: 口语范文-AI
+date: 2025-03-14 20:31:00
+tags: ["notes", "julyfun", "25", "03"]
+---
 ## 种族平等
 
 Bonjour, le sujet que j'ai choisi aujourd'hui est la représentation des minorités visibles dans les médias.

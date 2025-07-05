@@ -1,3 +1,8 @@
+---
+title: move-viewpoint
+date: 2024-01-15 01:10:05
+tags: ["softwares-and-tools", "unity"]
+---
 ## Macos
 
 - 场景窗口左边小手点一下，就可以用鼠标上下左右移动 viewpoint 了。

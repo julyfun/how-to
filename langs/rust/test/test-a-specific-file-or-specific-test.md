@@ -1,3 +1,8 @@
+---
+title: To show output
+date: 2024-04-28 10:35:52
+tags: ["langs", "rust", "test"]
+---
 ref: https://stackoverflow.com/questions/54585804/how-to-run-a-specific-unit-test-in-rust
 
 ```

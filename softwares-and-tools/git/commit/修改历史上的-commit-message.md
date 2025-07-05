@@ -1,9 +1,14 @@
-- reliability: "20% (author)"
-- date: 2025-06-01
-- os: "Linux Manjusaka 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 23:14:13 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux"
-- author: "Manjusaka"
-- assume-you-know: [computer]
-
+---
+reliability: 20% (author)
+os: 'Linux Manjusaka 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 23:14:13
+  UTC 2024 x86_64 x86_64 x86_64 GNU/Linux'
+author: Manjusaka
+assume-you-know:
+- computer
+date: 2025-06-01
+title: 修改历史上的 commit message
+tags: ["softwares-and-tools", "git", "commit"]
+---
 # 修改历史上的 commit message
 
 - 要修改的 commit hash code 假设为 A

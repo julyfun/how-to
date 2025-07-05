@@ -1,3 +1,8 @@
+---
+title: Update all submodules to latest commit
+date: 2024-07-28 22:03:59
+tags: ["softwares-and-tools", "git", "submodule"]
+---
 # Update all submodules to latest commit
 - date: 2024-07-28
 - os: Darwin floriandeMacBook-Air.local 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1 20:16:51 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T8103 arm64

@@ -1,3 +1,8 @@
+---
+title: No-rule-to-make-target-NvFlexReleaseCUDA_x64.a
+date: 2023-09-15 21:08:20
+tags: ["GitHub", "real-stanford", "cloth-funnels"]
+---
 ## 编译报错
 
 ```

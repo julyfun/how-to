@@ -1,3 +1,8 @@
+---
+title: 怎么用-vscode-写-unity-脚本-以及-intellisense
+date: 2024-01-15 01:10:05
+tags: ["softwares-and-tools", "unity", "vscode"]
+---
 https://zhuanlan.zhihu.com/p/245846735
 
 其中的 Mono SDK 似乎不用安装也可以。

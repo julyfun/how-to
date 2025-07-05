@@ -1,3 +1,8 @@
+---
+title: 3D-Diffusion-Policy
+date: 2025-04-24 18:23:11
+tags: ["notes", "julyfun", "25", "04"]
+---
 - 符号
 	- `T`: 预测轨迹长度
 - `eval_policy.py` 调用 `deploy_policy.py:eval()`，其调用 `RobotRunner.get_action()`

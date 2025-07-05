@@ -1,3 +1,8 @@
+---
+date: 2024-01-15 01:10:05
+title: hikvision
+tags: ["hikvision", "hardware", "cv", "hardwares"]
+---
 ## libs
 
 https://www.hikrobotics.com/cn/machinevision/service/download?module=0
@@ -21,5 +26,3 @@ Offset Y = 向下偏移
 ## 图像亮度
 
 Gain Auto 调节成 Continuous 以后，亮度增益会根据 Brightness 参数自动调整，还不错捏。
-
-

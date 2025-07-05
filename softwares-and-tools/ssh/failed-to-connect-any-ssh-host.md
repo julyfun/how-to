@@ -1,13 +1,14 @@
 ---
-reliability: "[40% (author), 0 / 0 (visitor)]"
+reliability: '[40% (author), 0 / 0 (visitor)]'
+language: Chinese
+os: Ubuntu
+author: Julyfun MacOS14.5 M1
+suppose-you-know:
+- computer
 date: 2024-05-28
-language: "Chinese"
-os: "Ubuntu"
-author: "Julyfun MacOS14.5 M1"
-suppose-you-know: [computer]
-keywords: []
+title: Failed to connect any ssh host
+tags: ["softwares-and-tools", "ssh"]
 ---
-
 # Failed to connect any ssh host
 
 env: ubuntu

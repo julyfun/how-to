@@ -1,3 +1,8 @@
+---
+title: 教学计划-找规律II
+date: 2024-09-29 00:41:17
+tags: ["notes", "julyfun", "工作", "william", "240929"]
+---
 ## Circular Barn
 
 https://usaco.org/index.php?page=viewproblem2&cpid=1255

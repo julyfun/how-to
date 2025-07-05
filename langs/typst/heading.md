@@ -1,3 +1,8 @@
+---
+title: How to override heading numbering behavior in Typst
+date: 2024-10-10 15:41:38
+tags: ["langs", "typst"]
+---
 # How to override heading numbering behavior in Typst
 
 ref: https://stackoverflow.com/questions/78110939/how-to-override-heading-numbering-behavior-in-typst 

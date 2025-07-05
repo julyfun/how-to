@@ -1,3 +1,8 @@
+---
+title: ssh
+date: 2024-01-15 01:10:05
+tags: ["softwares-and-tools", "docker"]
+---
 ## 用 ssh 连接 docker 容器？
 
 in the container:

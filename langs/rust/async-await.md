@@ -1,3 +1,8 @@
+---
+title: async-await
+date: 2024-01-15 01:10:05
+tags: ["langs", "rust"]
+---
 异步，多线程和并行的区别？ - 知则的回答 - 知乎
 
 https://www.zhihu.com/question/28550867/answer/2207913049

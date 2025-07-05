@@ -1,3 +1,8 @@
+---
+title: c-cmake-debug
+date: 2024-01-15 01:10:05
+tags: ["softwares-and-tools", "vscode", "debug"]
+---
 原理是这样的，你编译出来的可执行文件只要是编译的时候开了 Debug 的时候，是可以直接调试的。
 
 所以你在 cmakelists.txt 加上：

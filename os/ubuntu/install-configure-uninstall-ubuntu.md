@@ -1,3 +1,8 @@
+---
+title: win + R, diskpart
+date: 2024-01-15 01:10:05
+tags: ["os", "ubuntu"]
+---
 - 时间: 23.7.3
 - 系统: 双系统 win11 + ubuntu 22.04
 

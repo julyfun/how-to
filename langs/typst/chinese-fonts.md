@@ -1,8 +1,9 @@
-```
+---
 os: macos
-date: 2024-4-1
-```
-
+date: 2024-04-01
+title: chinese-fonts
+tags: ["langs", "typst"]
+---
 - 查看所有字体及其变体
 
 ```

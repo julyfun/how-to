@@ -1,3 +1,8 @@
+---
+title: attempted-ssh-agent-authentication
+date: 2024-03-04 14:43:43
+tags: ["langs", "rust", "cargo", "install"]
+---
 ```
 ✗ cargo build
     Updating crates.io index

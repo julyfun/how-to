@@ -1,3 +1,8 @@
+---
+title: 快速配置-d2l
+date: 2024-08-22 01:08:07
+tags: ["notes", "julyfun", "技术学习", "d2l"]
+---
 ```
 mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh

@@ -1,3 +1,8 @@
+---
+title: compile-into-bin-and-change-the-binary-name
+date: 2024-01-15 01:10:05
+tags: ["langs", "rust", "cargo"]
+---
 According to:
 
 https://www.rustadventure.dev/building-a-digital-garden-cli/structopt-0.3/changing-the-name-of-the-default-cargo-binary

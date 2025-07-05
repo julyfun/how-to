@@ -1,3 +1,8 @@
+---
+title: np.array is also ok!
+date: 2024-01-15 01:10:05
+tags: ["langs", "python", "matplotlib"]
+---
 https://stackoverflow.com/questions/35286540/how-to-display-an-image
 
 ```py

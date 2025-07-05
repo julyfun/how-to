@@ -1,3 +1,8 @@
+---
+title: UART
+date: 2025-05-07 17:58:43
+tags: ["notes", "julyfun", "25", "04"]
+---
 [ai, I get it]
 
 - ## NOTE

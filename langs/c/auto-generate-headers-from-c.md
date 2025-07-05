@@ -1,3 +1,8 @@
+---
+title: auto-generate-headers-from-c
+date: 2024-01-15 01:10:05
+tags: ["langs", "c"]
+---
 ## Sol 1
 
 https://github.com/taylordotfish/autoheaders

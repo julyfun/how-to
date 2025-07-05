@@ -1,3 +1,8 @@
+---
+title: rename-tag
+date: 2024-04-20 22:18:03
+tags: ["softwares-and-tools", "git", "tag"]
+---
 ref: https://stackoverflow.com/questions/1028649/how-do-you-rename-a-git-tag
 
 ```

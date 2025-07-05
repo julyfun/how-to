@@ -1,5 +1,10 @@
-- source: [Ubuntu多版本CUDA安装与切换 | Yuan](https://qiyuan-z.github.io/2022/01/04/Ubuntu%E5%A4%9A%E7%89%88%E6%9C%ACcuda%E5%AE%89%E8%A3%85%E4%B8%8E%E5%88%87%E6%8D%A2/)
-	- this article is for backpack
+---
+title: Ubuntu多版本CUDA安装与切换
+date: 2025-03-12 02:39:15
+tags: ["softwares-and-tools", "cuda"]
+---
+
+- this article is for backpack
 发表于2022-01-04|更新于2022-06-07|[教程](https://qiyuan-z.github.io/categories/%E6%95%99%E7%A8%8B/)
 
 |字数总计:521|阅读时长:2分钟|阅读量:15646
@@ -78,7 +83,7 @@ plaintext
 
 |   |   |
 |---|---|
-|1  <br>2  <br>3|export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64  <br>export PATH=$PATH:/usr/local/cuda/bin  <br>export CUDA_HOME=$CUDA_HOME:/usr/local/cuda|
+|1  <br>2  <br>3|`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64  <br>export PATH=$PATH:/usr/local/cuda/bin  <br>export CUDA_HOME=$CUDA_HOME:/usr/local/cuda`|
 
 按此设置后，以后更换CUDA版本无需再动环境配置。
 
@@ -115,3 +120,4 @@ plaintext
 版权声明: 本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。转载请注明来自 [Yuan](https://qiyuan-z.github.io/)！
 
 [Ubuntu](https://qiyuan-z.github.io/tags/Ubuntu/)[CUDA](https://qiyuan-z.github.io/tags/CUDA/)[cuDNN](https://qiyuan-z.github.io/tags/cuDNN/)
+

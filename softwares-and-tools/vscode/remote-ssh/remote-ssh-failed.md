@@ -1,3 +1,8 @@
+---
+title: remote-ssh-failed
+date: 2024-05-21 15:00:01
+tags: ["softwares-and-tools", "vscode", "remote-ssh"]
+---
 ## 无法在远程服务器上自动安装 VSCode Server
 
 关了梯子试试。23.9.18 这样解决的。但是随即又失败了，没有解决啊。

@@ -1,3 +1,8 @@
+---
+title: k-means-n-hac-n-dbscan
+date: 2024-10-16 22:44:13
+tags: ["notes", "julyfun", "大四上", "机器学习"]
+---
 ## K means
 
 - 目标：自动分 k 类

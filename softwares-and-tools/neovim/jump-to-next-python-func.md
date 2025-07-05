@@ -1,3 +1,8 @@
+---
+title: jump-to-next-python-func
+date: 2024-01-15 01:10:05
+tags: ["softwares-and-tools", "neovim"]
+---
 有时候 [m 会跳到大括号。
 
 那你就装个这个插件。

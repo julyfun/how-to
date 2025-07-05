@@ -1,3 +1,8 @@
+---
+title: Github Desktop 快速提交修改
+date: 2023-09-14 22:24:36
+tags: ["GitHub"]
+---
 [//]: # (Ex: How to clone a Git repository into a specific folder? / `TLS error` when ssh to github / Best way to setup ros2 on Mac M1)
 # Github Desktop 快速提交修改
 [//]: # (Ex: all / unix / ubuntu22.04, git2.12, fish shell 3.7.1 / macos all version, git all version)

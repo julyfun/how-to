@@ -1,7 +1,9 @@
 ---
 fish-shell-version: 3.7.0
+date: 2024-03-01 21:19:42
+title: ttt is not set
+tags: ["softwares-and-tools", "fish", "test"]
 ---
-
 ## TLDR
 
 `test -n` returns true iff string is unset or (set and non-zero); (in fact because -n didn't receive any string)

@@ -1,8 +1,9 @@
 ---
-date: 2024-3-21
 os: macos 13.4 M1
+date: 2024-03-21
+title: start-on-macos
+tags: ["softwares-and-tools", "mysql"]
 ---
-
 ref (_unreliable_): https://stackoverflow.com/questions/15450091/error-2002-hy000-cant-connect-to-local-mysql-server-through-socket-tmp-mys
 
 + Download dmg from official. Something like https://cdn.mysql.com//Downloads/MySQL-8.3/mysql-8.3.0-macos14-arm64.dmg .

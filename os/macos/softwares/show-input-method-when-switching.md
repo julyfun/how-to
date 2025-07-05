@@ -1,3 +1,8 @@
+---
+title: show-input-method-when-switching
+date: 2024-01-15 01:10:05
+tags: ["os", "macos", "softwares"]
+---
 brew install --cask input-source-pro
 
 这会直接装一个 app。

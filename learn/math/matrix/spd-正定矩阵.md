@@ -1,3 +1,8 @@
+---
+title: spd-正定矩阵
+date: 2023-11-30 16:23:43
+tags: ["learn", "math", "matrix"]
+---
 ## 正定正义
 
 $A$ is s.p.d. if only if for any $v$:

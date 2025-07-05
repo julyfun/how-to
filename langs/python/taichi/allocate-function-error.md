@@ -1,8 +1,9 @@
 ---
 os: ubuntu
-date: 2024-2-1
+date: 2024-02-01
+title: allocate-function-error
+tags: ["langs", "python", "taichi"]
 ---
-
 ```
 /home/julyfun/code/taichi-mpm/taichi/external/include/spdlog/fmt/bundled/format.h: In instantiation of ‘void fmt::internal::MemoryBuffer<T, SIZE, Allocator>::grow(std::size_t) [with T = char; long unsigned int SIZE = 500; Allocator = std::allocator<char>; std::size_t = long unsigned int]’:
 /home/julyfun/code/taichi-mpm/taichi/external/include/spdlog/fmt/bundled/format.h:797:6:   required from here

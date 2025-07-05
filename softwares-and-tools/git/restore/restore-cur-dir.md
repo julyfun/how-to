@@ -1,3 +1,8 @@
+---
+title: restore-cur-dir
+date: 2024-04-03 13:35:14
+tags: ["softwares-and-tools", "git", "restore"]
+---
 ref: https://stackoverflow.com/questions/15404535/how-to-git-reset-hard-a-subdirectory
 
 ```

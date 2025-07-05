@@ -1,3 +1,8 @@
+---
+title: VAE
+date: 2024-12-12 14:35:11
+tags: ["notes", "julyfun", "大四上", "机器学习"]
+---
 - 关于 VAE 理解的教程： https://spaces.ac.cn/archives/5253
 
 - 假定 $p(Z|X)$ 为一正态分布.（Z 为隐变量，X 为目标分布）

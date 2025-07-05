@@ -1,12 +1,15 @@
 ---
-reliability: "[20% (author), 0 / 0 (visitor)]"
+reliability: '[20% (author), 0 / 0 (visitor)]'
+language: zh-hans
+os: 'Linux DESKTOP-I44J4US 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 23:14:13
+  UTC 2024 x86_64 x86_64 x86_64 GNU/Linux'
+author:
+- computer
 date: 2024-07-01
-language: "zh-hans"
-os: "Linux DESKTOP-I44J4US 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 23:14:13 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux"
-author: [computer]
-keywords: []
+title: 'Could not load library dlopen error: /home/julyfun/ros_ws/install/tf_test/lib/libtf_test.so:
+  undefined symbol'
+tags: ["frames", "ros2", "runtime-error"]
 ---
-
 # Could not load library dlopen error: /home/julyfun/ros_ws/install/tf_test/lib/libtf_test.so: undefined symbol
 
 ```

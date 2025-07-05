@@ -1,3 +1,8 @@
+---
+title: note
+date: 2024-10-09 15:35:46
+tags: ["notes", "julyfun", "工作", "william"]
+---
 - 真题单: https://www.luogu.com.cn/problem/list?keyword=%5BUSACO%5D%20S&type=AT%7CB%7CCF%7CP%7CSP%7CUVA&difficulty=3&page=1
 - [old] 题单: https://www.luogu.com.cn/training/424544#problems
 

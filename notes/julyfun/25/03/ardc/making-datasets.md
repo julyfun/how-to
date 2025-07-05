@@ -1,3 +1,8 @@
+---
+title: lerobot be like
+date: 2025-03-04 19:40:44
+tags: ["notes", "julyfun", "25", "03", "ardc"]
+---
 # lerobot be like
 
 ```

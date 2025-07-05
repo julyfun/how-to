@@ -1,10 +1,11 @@
 ---
 author: julyfun
 location: 杭州，刚从 SJTU 回来
-date: 2024-1-31
 system: Ubuntu 22.04
+date: 2024-01-31
+title: proxychains
+tags: ["softwares-and-tools", "cli-tools"]
 ---
-
 ## 问题情况
 
 从 SJTU 开着梯子访问 github 比较流畅，不排除是因为 SJTU 网络自带 github。回杭州以后开着梯子上 Ubuntu，能 Chrome 上 github 但命令行 ssh -T git@github.com 都不行。

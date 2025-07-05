@@ -1,3 +1,8 @@
+---
+title: 11-trpo算法
+date: 2024-11-11 22:29:41
+tags: ["notes", "julyfun", "技术学习", "hrl"]
+---
 - 对 AC 做了非常多优化
 - 【策略目标】
     - 修改成新策略 $pi_(theta^prime)$ 下的形式

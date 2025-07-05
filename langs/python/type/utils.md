@@ -1,3 +1,8 @@
+---
+title: Python Type Utils
+date: 2025-06-24 14:36:22
+tags: ["python", "python-type", "langs", "type"]
+---
 ## Inheritance tree
 
 [tested-ok-and-copy-here]
@@ -15,4 +20,3 @@ def print_inheritance_tree(cls, indent='', last=True, is_root=True):
         is_last = i == (len(bases) - 1)
         print_inheritance_tree(base, indent, is_last, is_root=False)
 ```
-

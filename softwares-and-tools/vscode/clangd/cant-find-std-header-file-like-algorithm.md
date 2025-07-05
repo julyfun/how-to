@@ -1,7 +1,9 @@
 ---
 os: macos
+date: 2024-02-19 14:30:11
+title: cant-find-std-header-file-like-algorithm
+tags: ["softwares-and-tools", "vscode", "clangd"]
 ---
-
 If header file like this shows an error:
 
 ```

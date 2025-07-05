@@ -1,3 +1,8 @@
+---
+title: buffer-tab-windows-process-a-buffer-shows-when-vim-plug-install
+date: 2024-01-15 01:10:05
+tags: ["softwares-and-tools", "vim-cheatsheat"]
+---
 一个进程可以有多个 tab.
 
 一个 tab 可以有多个 buffer. 复制当前 buffer 命令为 :vs.

@@ -1,3 +1,8 @@
+---
+title: errors
+date: 2025-06-08 03:18:05
+tags: ["langs", "python", "pytorch"]
+---
 - [25.6.7]
     - `RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor`
     - [ok, problem is] Tensor 不在一个设备上.

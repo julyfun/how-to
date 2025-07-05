@@ -1,3 +1,8 @@
+---
+title: export-to-pdf
+date: 2024-01-15 01:10:05
+tags: ["langs", "python", "ipynb"]
+---
 open .ipynb in your `jupyter notebook` (via command line).
 
 cmd + p

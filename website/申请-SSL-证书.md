@@ -1,8 +1,10 @@
 ---
 platform: 阿里云
 service: nginx
+date: 2024-01-07 15:54:41
+title: 申请-SSL-证书
+tags: ["website"]
 ---
-
 每隔一年这玩意就会过期。
 
 首先打开数字证书管理服务（阿里云），

@@ -1,8 +1,10 @@
 ---
 reliability: 20%
 suppose-you-know: python 输入输出
+date: 2024-02-05 01:37:59
+title: 输出为 {1, 2}，已经自动排序
+tags: ["langs", "python", "tutorials"]
 ---
-
 ## 1. 函数 `def func():`
 
 ### 语法

@@ -1,8 +1,9 @@
 ---
 author: julyfun
-date: 2024-2-3
+date: 2024-02-03
+title: harmless-useful-extensions
+tags: ["os", "macos"]
 ---
-
 * Alfred - Switch between apps
 * Magnet - Windows position manager
 * Scroll Reverser - Manager touchpad and mouse scroll direction.

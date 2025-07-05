@@ -1,3 +1,8 @@
+---
+title: nvim-and-packer-old
+date: 2024-01-15 01:10:05
+tags: ["softwares-and-tools", "neovim"]
+---
 ## 使用系统粘贴板
 
 in init.vim:
