@@ -31,7 +31,7 @@ assume-you-know: [computer]
 
 > 注意 init.vim 和 init.lua 不能共存.
 - 将你的 init.vim 改名为 init2.vim.
-- 添加 init.lua 以及如下内容，它会加在你的 init2.vim，并安装 lazy.nvim 和 flash.nvim.
+- 创建 init.lua，添加如下内容，它会加在你的 init2.vim，并安装 lazy.nvim 和 flash.nvim.
 
 ```lua
 local vimrc = vim.fn.stdpath("config") .. "/init2.vim"
@@ -69,10 +69,13 @@ require("lazy").setup({
       "folke/flash.nvim",
       event = "VeryLazy",
       ---@type Flash.Config
-      opts = {},
+      opts = {
+        modes = {
+          search = { enabled = true }
+        }
+      },
       -- stylua: ignore
       keys = {
-        { "/", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
         { "s", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
         { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
       },
@@ -84,7 +87,12 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
 ```
+> 基于 flash.nvim 文档改动. `search = { enabled = true }` 这一行开启了 search 增强.
+>
+> `<c-s>` 似乎是用于 Toggle flash.nvim.
+
 - 重新启动 nvim，跳出安装窗口，过一会儿就装好了.
 
 ## 其他功能
@@ -93,7 +101,15 @@ require("lazy").setup({
 
 **推荐.** 这是默认开启的，可以增强你的 `f` 和 `F`.
 - 比如你正常地 `f{`，你就会跳到后面第一个 `{`（允许跨行）
-- 并且第一个 `{` 后所有的 `{` 都会高亮，如果你想跳到的其实是第三个 `{`，那么再按两次 `f`.
+- 并且第一个 `{` 后所有的 `{` 都会高亮，如果你想跳到的其实是第三个 `{`，那么再按两次 `f`. 
+- 不喜欢的话上面配置里的 `opts = {}` 可以改为:
+```lua
+opts = {
+  modes = {
+    char = { enabled = false }
+  }
+},
+```
 
 ### treesitter 功能
 
@@ -103,10 +119,9 @@ require("lazy").setup({
 
 ### remote 功能
 
-**不推荐**. 会 Ctrl + O 跳转到上一个光标位置的人就用不着. 上面配置中我没有引入该功能.
+**不推荐**. 会 Ctrl + O 跳转到上一个光标位置的人就用不着. 所以上面配置中我没有引入该功能.
 
 ### 其他
 
-- 上面配置里的 `<c-s>` 似乎是用于 Toggle flash.nvim.
 - 搜索功能正常支持中文字符.
 
