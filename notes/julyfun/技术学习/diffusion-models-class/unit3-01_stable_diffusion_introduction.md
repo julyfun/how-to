@@ -17,5 +17,9 @@ pipe:
 
 ```mermaid
 graph
-    A[text] --> B("`tokenizer`" & text_encoder) --> C[text_embedding]
+    text --> t(tokenizer & text_encoder) --> e[text_embedding]
+    e --> unet(unet)
+    noisy_latents --> unet
+    timestep --> unet
+    unet --> P[noise prediction]
 ```
