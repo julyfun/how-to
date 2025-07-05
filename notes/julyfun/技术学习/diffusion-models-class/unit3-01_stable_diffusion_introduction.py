@@ -81,12 +81,23 @@ print(list(pipe.components.keys()))
 
 gen  = torch.Generator(device=device).manual_seed(42)
 pipe_out = pipe(
-    prompt="pussy, vagina, sex",
+    prompt="British shorthair in the house, cute, high quality",
     negative_prompt="Oversaturated, blurry, low quality",
     height=480, width=480,
-    guidance_scale=8,
+    guidance_scale=2,
     num_inference_steps=35,
     generator=gen
 )
 
 pipe_out.images[0]
+
+# %%
+# [copy]
+cfg_scales = [1.1, 8, 12] #@param
+prompt = "A collie with a pink hat" #@param
+fig, axs = plt.subplots(1, len(cfg_scales), figsize=(16, 5))
+for i, ax in enumerate(axs):
+  im = pipe(prompt, height=480, width=480,
+    guidance_scale=cfg_scales[i], num_inference_steps=35,
+    generator=torch.Generator(device=device).manual_seed(42)).images[0]
+  ax.imshow(im); ax.set_title(f'CFG Scale {cfg_scales[i]}');
