@@ -46,7 +46,7 @@ summary(
     input_size=(1, 3, 64, 64),
     col_names = ["output_size", "num_params"],
     verbose=0,
-    depth=10,
+    depth=3,
 )
 # %%
 txt = ["a lotta cute dogs", "Trump and trump"]
