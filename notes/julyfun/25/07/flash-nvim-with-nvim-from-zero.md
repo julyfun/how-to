@@ -1,10 +1,17 @@
 ---
-title: "flash.nvim with Neovim from Zero"
+title: flash.nvim with Neovim from Zero
 date: 2025-07-05 23:35:56
-tags: ["notes", "julyfun", "25", "07"]
-author: "julyfun-4070s-ubuntu2204"
+tags:
+  - "25"
+  - neovim
+  - vim
+  - flash.nvim
+  - vim-search
+  - lazy.nvim
+author: julyfun-4070s-ubuntu2204
 os: "Linux julyfun-4070s-ubuntu 6.8.0-60-generic #63~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 22 19:00:15 UTC 2 x86_64 x86_64 x86_64 GNU/Linux"
-assume-you-know: [computer]
+assume-you-know:
+  - neovim and init.vim basic usage
 ---
 
 本文假设你：
@@ -20,10 +27,8 @@ assume-you-know: [computer]
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250705233907.png)
 
-按下: `/ n e o` 后，会在多个匹配 neo 的地方显示一个标识字母，按下 q 跳转到第一个 neo 处. 
-> 注意，打下 `/ n` 就会开始匹配，你输入几个字母就匹配几个字母：
->
-> 原有的 `/` 搜索功能不受影响.
+按下: `/ n e o` 后，会在所有匹配 `neo` 的地方显示一个标识字母，按下 `q` 跳转到第一个 `neo` 处：
+> 其实打下 `/ n` 就会开始匹配，你输入几个字母就匹配几个字母. 原有的 `/` 搜索功能不受影响.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250705234039.png)
 
