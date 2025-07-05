@@ -3,6 +3,7 @@
 pipe:
 - unet
 - vae
+    - what for?
 - text_encoder
 - image_encoder
 - feature_extractor

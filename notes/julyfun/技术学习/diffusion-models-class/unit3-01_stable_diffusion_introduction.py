@@ -43,9 +43,10 @@ from torchinfo import summary
 
 summary(
     pipe.vae,
-    input_size=(1, 4, 64, 64),
+    input_size=(1, 3, 64, 64),
     col_names = ["output_size", "num_params"],
-    verbose=0
+    verbose=0,
+    depth=10,
 )
 # %%
 txt = ["a lotta cute dogs", "Trump and trump"]
