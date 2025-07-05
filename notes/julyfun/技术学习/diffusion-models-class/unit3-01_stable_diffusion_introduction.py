@@ -81,10 +81,12 @@ print(list(pipe.components.keys()))
 
 gen  = torch.Generator(device=device).manual_seed(42)
 pipe_out = pipe(
-    prompt="Palette knife painting of an autumn cityscape",
+    prompt="pussy, vagina, sex",
     negative_prompt="Oversaturated, blurry, low quality",
     height=480, width=480,
     guidance_scale=8,
     num_inference_steps=35,
     generator=gen
 )
+
+pipe_out.images[0]
