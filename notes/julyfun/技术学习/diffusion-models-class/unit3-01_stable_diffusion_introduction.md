@@ -3,7 +3,10 @@ title: unit3-01_stable_diffusion_introduction
 date: 2025-06-20 18:38:58
 tags: ["notes", "julyfun", "技术学习", "diffusion-models-class"]
 ---
+
 ## Stable Diffusion Pipeline 的职责是?
+
+说白了 unet 预测的就是 vae 的 latent.
 
 pipe:
 - unet
@@ -19,7 +22,8 @@ pipe:
 graph
     text --> t(tokenizer & text_encoder) --> e[text_embedding]
     e --> unet(unet)
-    noisy_latents --> unet
+    n["noisy_latents (4, 64, 64)"] --> unet
     timestep --> unet
-    unet --> P[noise prediction]
+    unet --> p["noise prediction (4, 64, 64)"]
+    p --> v_d(vae decoder)
 ```
