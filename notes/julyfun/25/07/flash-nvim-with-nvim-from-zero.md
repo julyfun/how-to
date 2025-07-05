@@ -74,8 +74,6 @@ require("lazy").setup({
       keys = {
         { "/", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
         { "s", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-        { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-        { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
         { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
       },
     }
@@ -87,13 +85,28 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 ```
-- 重新启动 nvim，过一会儿就装好了.
+- 重新启动 nvim，跳出安装窗口，过一会儿就装好了.
 
 ## 其他功能
 
 ### flit 功能
 
-这是默认开启的，可以增强你的 `f` 和 `F`. 
-- 比如你正常地 `f{`，你就会正常跳到下一个 `{`（允许跨行）
-- 光标后所有的 `{` 都会高亮。
+**推荐.** 这是默认开启的，可以增强你的 `f` 和 `F`.
+- 比如你正常地 `f{`，你就会跳到后面第一个 `{`（允许跨行）
+- 并且第一个 `{` 后所有的 `{` 都会高亮，如果你想跳到的其实是第三个 `{`，那么再按两次 `f`.
+
+### treesitter 功能
+
+**推荐.** 在支持 treesitter 的环境下按下 `s` 可以显示附近作用域的首尾，按下 label 跳转过去.
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250705235815.png)
+
+### remote 功能
+
+**不推荐**. 会 Ctrl + O 跳转到上一个光标位置的人就用不着. 上面配置中我没有引入该功能.
+
+### 其他
+
+- 上面配置里的 `<c-s>` 似乎是用于 Toggle flash.nvim.
+- 搜索功能正常支持中文字符.
 
