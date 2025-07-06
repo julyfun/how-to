@@ -78,10 +78,14 @@ tags: ["notes", "julyfun", "技术学习", "diffusion-models-class"]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 ## Stable Diffusion Pipeline 的职责是?
 
 说白了 unet 预测的就是 vae 的 latent.
+=======
+## Stable Diffusion Pipeline 的职责是?
+>>>>>>> Stashed changes
 =======
 ## Stable Diffusion Pipeline 的职责是?
 >>>>>>> Stashed changes
@@ -393,6 +397,7 @@ pipe:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ```mermaid
 graph
     text --> t(tokenizer & text_encoder) --> e[text_embedding]
@@ -438,6 +443,8 @@ AutoencoderKL                                      [1, 3, 64, 64]            --
 │    └─SiLU: 2-11                                  [1, 128, 64, 64]          --
 │    └─Conv2d: 2-12                                [1, 3, 64, 64]            3,459
 ```
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
