@@ -5,14 +5,18 @@ tags: ["notes", "julyfun"]
 ---
 # 25
 
+## 7.9
+
+- https://diffusion-tree-sampling.github.io
+
 ## 5.12
 
 - Diffusion Policy 架构精读: https://blog.csdn.net/v_JULY_v/article/details/143651718
 
 ## 4.17 AnyGrasp
 
-
 # 24
+
 ## 12.25
 
 - RDT: https://github.com/thu-ml/RoboticsDiffusionTransformer
