@@ -7,7 +7,10 @@ tags: ["notes", "julyfun"]
 
 ## 7.9
 
-- https://diffusion-tree-sampling.github.io
+[diffusion-model] https://diffusion-tree-sampling.github.io
+- Diffusion 搜索树，加大计算量寻找最优采样，不是 Policy
+[data-collection] https://arxiv.org/pdf/2505.17389
+- 分段采集数据（喇叭形）
 
 ## 5.12
 
