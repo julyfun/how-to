@@ -16,6 +16,8 @@ bash 1.sh
 conda config --set auto_activate_base false
 # add this to rc
 /home/julyfun/miniforge3/bin/mamba shell hook --shell fish | source
+# Note: mamba can't init fish 4.0. See https://github.com/mamba-org/mamba/issues/3847
+#   Use micromamba instread.
 ```
 
 Works today!
