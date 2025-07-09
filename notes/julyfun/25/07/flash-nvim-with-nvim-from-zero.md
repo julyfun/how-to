@@ -131,4 +131,13 @@ opts = {
 
 - 搜索功能正常支持中文字符.
 - vim 插件我认为应该和 vim 原有键位贴近，不能离开了这个功能就不会用 vim 了，毕竟我们经常要在新电脑上用 vi 编辑东西.
+- 如果 git clone failed / checkout failed，可以尝试 .gitconfig 中加入 URL 替换 (works on my mac m1).
+
+```gitconfig
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+
+[url "git@github.com:"]
+    insteadOf = git://github
+```
 
