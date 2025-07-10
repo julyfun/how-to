@@ -1,13 +1,10 @@
-<<<<<<< Updated upstream
 ---
 title: 注意力 Attention 3B1B
 date: 2025-04-27 21:22:27
 tags: ["notes", "julyfun", "25", "04"]
 ---
 
-=======
 # 自注意力 Attention 3B1B
->>>>>>> Stashed changes
 - 考虑:
     - mole 一词在不同上下文有不同含义.
     - 嵌入层将 mole 转换为泛型向量以后，Transformer 的下一层会**根据上下文再加一个偏移向量**。
