@@ -70,7 +70,7 @@ ConditionalUnet1D.forward():
 
     [Downsample]
     x = sample (生成 trajactory)
-    for idx, (#resnet, #resnet2, #downsample) in enumerate(self.down_modules): 
+    for idx, (#resnet, #resnet2, #downsample) in enumerate(self.down_modules):
         if self.use_down_condition:
             x = resnet(x, global_feature)
             if idx == 0 and len(h_local) > 0:
@@ -123,6 +123,7 @@ DP3Encoder:
 class PointNetEncoderXYZ
     MLP: [Linear + LayerNorm + ReLU] x 3
          channels: 3 => 64 => 128 => 256 => max => Linear + LayerNorm (128)
+
     forward():
         (B, N, 3) = (3, 1024, 3)
         mlp => (3, 1024, 256)
@@ -131,4 +132,3 @@ class PointNetEncoderXYZ
         self.state_mlp: 简单的 MLP (Linear + ReLU). state_mlp_size = (64, 64).
         最后 cat 成 (3, 192)
  ```
-
