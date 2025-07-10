@@ -5,6 +5,10 @@ tags: ["notes", "julyfun"]
 ---
 # 25
 
+## 7.10
+
+- DL for manip survey: https://arxiv.org/pdf/2504.08438v1
+
 ## 7.9
 
 [diffusion-model] https://diffusion-tree-sampling.github.io
