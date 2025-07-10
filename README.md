@@ -68,7 +68,7 @@ watch -n 1800 fish -c "jp"
 
 - type
 
-```
+```console
 .h
 .md
 .rs
