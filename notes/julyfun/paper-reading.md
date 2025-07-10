@@ -7,7 +7,8 @@ tags: ["notes", "julyfun"]
 
 ## 7.10
 
-- DL for manip survey: https://arxiv.org/pdf/2504.08438v1
+- [x] DL for manip survey: https://arxiv.org/pdf/2504.08438v1
+- [ ] 增强 obj pos 和轨迹来生成离线演示 https://arxiv.org/abs/2402.17768
 
 ## 7.9
 
