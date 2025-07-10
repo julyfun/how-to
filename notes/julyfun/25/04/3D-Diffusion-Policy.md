@@ -37,25 +37,27 @@ tags: ["notes", "julyfun", "25", "policy"]
                 - n_steps 在参数 yaml 里为 n_obs_steps = 3
         - 在前面 unsqueeze 一个长度为 1 的维度后送进 `DP3.predict_action()` （应该是因为推理的时候 batch 必是 1）
 
-- `class DP3:`
-    - `predict_action()` (dp3.py)
-        - Input (`obs_dict`):
-            - `'point_cloud'`: (1, 3, 1024, 6)
-            - `'agent_pos'`: (3, 14) 就是关节角度
-        - 过程:
-            - normalize
-            - if global_cond:
-                - point_cloud & agent_pos 都送入 `DP3Encoder`，得到 (3, 192)，压扁成 (1, 576)
-                - mask 就是全部 mask 掉, 所有动作都需要通过扩散模型生成
-            - else:
-                - mask 观察特征保持可见
-            - 送入 `self.condition_sapmle()`
-            - return. 实测表明一次预测 6 步且会把这 6 步执行完，再预测下 6 步.
-    - `condition_sample():`
-        - ps:
-            - 出的 traj shape 是 (B, T, action_dim) = (1, 8, 14)
-        - 每个去噪步 `model(sample=trajectory, timestep=t, local_cond=local_cond(必为 None), global_cond=global_cond)`
-        - model is `ConditionalUnet1D.forward()`:
+```python
+class DP3:
+    predict_action() and  (dp3.py)
+        [arg] (obs_dict):
+            'point_cloud': (1, 3, 1024, 6)
+            'agent_pos': (3, 14) 就是关节角度
+
+        normalize()
+        if #global_cond:
+            point_cloud & agent_pos 都送入 DP3Encoder，得到 (3, 192)，压扁成 (1, 576)
+            mask 就是全部 mask 掉, 所有动作都需要通过扩散模型生成
+        else:
+            mask 观察特征保持可见
+            送入 self.condition_sapmle()
+            return. 实测表明一次预测 6 步且会把这 6 步执行完，再预测下 6 步.
+
+    condition_sample():
+        生成的 traj shape 是 (B, T, action_dim) = (1, 8, 14)
+        每个去噪步 model(sample=trajectory, timestep=t, local_cond=local_cond(必为 None), global_cond=global_cond)
+        model is #ConditionalUnet1D.forward():
+```
 
 ```python
 ConditionalUnet1D.forward():
@@ -64,7 +66,7 @@ ConditionalUnet1D.forward():
     timestep: (形状 (B, ) or int)
     encoding: (SinusoidalPosEmb, Linear, Mish, Linear)
 
-    if global_cond { global_feature = cat([timestep_embed, global_cond], axis=-1) }
+    if global_cond: global_feature = cat([timestep_embed, global_cond], axis=-1) }
 
     [Downsample]
     x = sample (生成 trajactory)
@@ -82,7 +84,7 @@ ConditionalUnet1D.forward():
         h.append(x)
         x = downsample(x)
 
-    [mid_module (ConditionalResidualBlock1D)]
+    [mid_module (#ConditionalResidualBlock1D)]
     ...
 
     [Upsample]
@@ -92,7 +94,7 @@ ConditionalUnet1D.forward():
     x = self.final_conv(x)
     return x
 
-[resnet] = ConditionalResidualBlock1D(
+[resnet] = #ConditionalResidualBlock1D(
     dim_in, dim_out, cond_dim=cond_dim,
     kernel_size=kernel_size, n_groups=n_groups,
     condition_type=condition_type
@@ -104,8 +106,7 @@ ConditionalUnet1D.forward():
 ),
 [downsample] = Downsample1d(dim_out) if not is_last else nn.Identity()
 
-
-ConditionalResidualBlock1D.forward():
+[ConditionalResidualBlock1D].forward():
     out = Conv1dBlock() (x)
     if `cross_attention_add`
         embed = CrossAttention() (x)
@@ -115,20 +116,19 @@ ConditionalResidualBlock1D.forward():
     return out
 ```
 
-## Inner
+```python
+DP3Encoder:
+    'point_cloud' => B x N x 3的 点云 (B: batch) = (3, 1024, 3) 送入 PointNetEncoderXYZ:
 
-- `DP3Encoder`
-    - 输入
-        - `'point_cloud'` => B x N x 3的 点云 (B: batch) = (3, 1024, 3) 送入:
-    - `class PointNetEncoderXYZ`
-        - MLP: `[Linear + LayerNorm + ReLU]` x 3
-            -  channels: 3 => 64 => 128 => 256 => max => Linear + LayerNorm (128)
-        - `forward()`:
-            - (B, N, 3) = (3, 1024, 3)
-            - mlp => (3, 1024, 256)
-            - max => (3, 256)
-            - Linear + LayerNorm => (3, 128)
-     - `self.state_mlp`: 简单的 MLP (Linear + ReLU). state_mlp_size = (64, 64).
-     - 最后 cat 成 (3, 192)
+class PointNetEncoderXYZ
+    MLP: [Linear + LayerNorm + ReLU] x 3
+         channels: 3 => 64 => 128 => 256 => max => Linear + LayerNorm (128)
+    forward():
+        (B, N, 3) = (3, 1024, 3)
+        mlp => (3, 1024, 256)
+        max => (3, 256)
+        Linear + LayerNorm => (3, 128)
+        self.state_mlp: 简单的 MLP (Linear + ReLU). state_mlp_size = (64, 64).
+        最后 cat 成 (3, 192)
+ ```
 
-## Outer
