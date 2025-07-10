@@ -17,7 +17,7 @@ tags: ["notes", "julyfun", "技术学习", "diffusion-models-class"]
 def forward(self, x, t, class_labels):
     bs, ch, w, h = x.shape
 
-    # [pre-defined] self.class_emb = nn.Embedding(num_classes, class_emb_size)
+    # [previously] self.class_emb = nn.Embedding(num_classes, class_emb_size)
     class_cond = self.class_emb(class_labels)
     class_cond = class_cond.view(bs, class_cond.shape[1], 1, 1).expand(bs, class_cond.shape[1], w, h)
 
