@@ -1,9 +1,9 @@
 ---
 title: "RoboTwin notes"
 date: 2025-07-10 16:34:31
-tags: ["notes", "julyfun", "25", "07"]
+tags: ["notes", "julyfun", "RoboTwin", "simulation", "manipulation"]
 author: "Julyfun M4"
-os: "Darwin tutianpeikeladeMac-mini.local 24.3.0 Darwin Kernel Version 24.3.0: Thu Jan  2 20:22:58 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8132 arm64"
+os: "Ubuntu22.04 4070S"
 assume-you-know: [computer]
 ---
 
@@ -13,6 +13,9 @@ assume-you-know: [computer]
 ## Setup notes
 uv setup.
 - [note] `uv pip install "git+https://github.com/facebookresearch/pytorch3d.git@stable" --no-build-isolation`
+- OK. all setup.
 
 ## Visualize collection process
+
+task-config 仅含环境配置. `bash collect_data.sh beat_block_hammer demo_randomized 0` 中，demo_randomized 寻找环境 .yml，beat_block_hammer 则寻找 .py.
 
