@@ -132,4 +132,3 @@ class PointNetEncoderXYZ
         self.state_mlp: 简单的 MLP (Linear + ReLU). state_mlp_size = (64, 64).
         最后 cat 成 (3, 192)
  ```
-
