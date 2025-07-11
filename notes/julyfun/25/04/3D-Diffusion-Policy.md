@@ -45,7 +45,7 @@ class DP3:
             'agent_pos': (3, 14) 就是关节角度
 
         normalize()
-        if #global_cond:
+        if @?global_cond:
             point_cloud & agent_pos 都送入 DP3Encoder，得到 (3, 192)，压扁成 (1, 576)
             mask 就是全部 mask 掉, 所有动作都需要通过扩散模型生成
         else:
@@ -56,11 +56,11 @@ class DP3:
     condition_sample():
         生成的 traj shape 是 (B, T, action_dim) = (1, 8, 14)
         每个去噪步 model(sample=trajectory, timestep=t, local_cond=local_cond(必为 None), global_cond=global_cond)
-        model is #ConditionalUnet1D.forward():
+        model is @ConditionalUnet1D.forward():
 ```
 
 ```python
-ConditionalUnet1D.forward():
+[ConditionalUnet1D.forward()]:
     ...
 
     timestep: (形状 (B, ) or int)
@@ -70,7 +70,7 @@ ConditionalUnet1D.forward():
 
     [Downsample]
     x = sample (生成 trajactory)
-    for idx, (#resnet, #resnet2, #downsample) in enumerate(self.down_modules):
+    for idx, (@resnet, @resnet2, @downsample) in enumerate(self.down_modules):
         if self.use_down_condition:
             x = resnet(x, global_feature)
             if idx == 0 and len(h_local) > 0:
@@ -84,7 +84,7 @@ ConditionalUnet1D.forward():
         h.append(x)
         x = downsample(x)
 
-    [mid_module (#ConditionalResidualBlock1D)]
+    [mid_module (@ConditionalResidualBlock1D)]
     ...
 
     [Upsample]
@@ -94,7 +94,7 @@ ConditionalUnet1D.forward():
     x = self.final_conv(x)
     return x
 
-[resnet] = #ConditionalResidualBlock1D(
+[resnet] = @ConditionalResidualBlock1D(
     dim_in, dim_out, cond_dim=cond_dim,
     kernel_size=kernel_size, n_groups=n_groups,
     condition_type=condition_type
@@ -132,3 +132,4 @@ class PointNetEncoderXYZ
         self.state_mlp: 简单的 MLP (Linear + ReLU). state_mlp_size = (64, 64).
         最后 cat 成 (3, 192)
  ```
+
