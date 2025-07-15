@@ -9,10 +9,12 @@ assume-you-know: [computer]
 
 ## Remote
 
-- Show remote branch
+- Show remote branch:
 `git branch -r`
 
-- Fetch all remote branch
-    `git fetch --all`
+- Fetch all remote branch:
+`git fetch --all`
 
-- Create local <branch> of remote
+- Create local <branch> of a remote:
+Just `git checkout <branch>` (not `origin/<branch>`)
+
