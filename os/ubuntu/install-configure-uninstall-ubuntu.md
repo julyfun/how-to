@@ -1,5 +1,5 @@
 ---
-title: win + R, diskpart
+title: Install configure uninstall ubuntu
 date: 2024-01-15 01:10:05
 tags: ["os", "ubuntu"]
 ---
@@ -37,9 +37,10 @@ Done. 进磁盘管理看看 ubuntu 分区是不是变成未分配了。
 
 ## Install
 
-ref: https://zhuanlan.zhihu.com/p/461271487
-
-ref: https://www.cnblogs.com/easy5weikai/p/17470402.html
+- ref: https://zhuanlan.zhihu.com/p/461271487
+- ref: https://www.cnblogs.com/easy5weikai/p/17470402.html
+- y9000p: https://blog.csdn.net/qq_42786957/article/details/127708237
+- y9000p: https://zhuanlan.zhihu.com/p/594500341
 
 1. 买一个 U 盘
 2. 下载 ubuntu-amd64.iso
