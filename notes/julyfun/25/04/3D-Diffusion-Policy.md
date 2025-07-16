@@ -54,7 +54,7 @@ class DP3:
             return. 实测表明一次预测 6 步且会把这 6 步执行完，再预测下 6 步.
 
         ...
-        action_pred: B * T
+        action_pred: (1, 8, 14) (B, T, action_dim)
 
     condition_sample():
         生成的 traj shape 是 (B, T, action_dim) = (1, 8, 14)
