@@ -53,6 +53,9 @@ class DP3:
             送入 self.condition_sapmle()
             return. 实测表明一次预测 6 步且会把这 6 步执行完，再预测下 6 步.
 
+        ...
+        action_pred: B * T
+
     condition_sample():
         生成的 traj shape 是 (B, T, action_dim) = (1, 8, 14)
         每个去噪步 model(sample=trajectory, timestep=t, local_cond=local_cond(必为 None), global_cond=global_cond)
