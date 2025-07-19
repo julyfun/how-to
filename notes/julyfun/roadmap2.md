@@ -8,4 +8,5 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-- [ ] [notes]  attention in diffusion policy
+- [ ] [notes] Film & attention in diffusion policy
+
