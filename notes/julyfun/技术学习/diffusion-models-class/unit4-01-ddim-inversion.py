@@ -32,3 +32,11 @@ negative_prompt = 'blurry, ugly, stock photo'
 im = pipe(prompt, negative_prompt=negative_prompt).images[0]
 im.resize((256, 256)) # Resize for convenient viewing
 
+# %%
+
+timesteps = pipe.scheduler.timesteps.cpu()
+alphas = pipe.scheduler.alphas_cumprod[timesteps]
+plt.plot(timesteps, alphas)
+plt.legend()
+
+# %%
