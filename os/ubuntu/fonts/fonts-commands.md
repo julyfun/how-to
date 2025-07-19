@@ -1,0 +1,21 @@
+---
+title: "Fonts commands"
+date: 2025-07-20 00:38:07
+tags: ["os", "ubuntu", "fonts"]
+author: "julyfun-4070s-ubuntu2204"
+os: "Linux julyfun-4070s-ubuntu 6.8.0-60-generic #63~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 22 19:00:15 UTC 2 x86_64 x86_64 x86_64 GNU/Linux"
+assume-you-know: [computer]
+confidence: 2
+---
+
+```console
+sudo cp ~/Downloads/*.ttf /usr/share/fonts/truetype/
+sudo fc-cache -fv
+```
+
+## Show
+
+```
+fc-list
+```
+
