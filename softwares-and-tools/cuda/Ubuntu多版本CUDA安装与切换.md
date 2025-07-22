@@ -1,6 +1,7 @@
 ---
 title: Ubuntu多版本CUDA安装与切换
 date: 2025-03-12 02:39:15
+title: Ubuntu多版本CUDA安装与切换
 tags: ["softwares-and-tools", "cuda"]
 ---
 

@@ -1,12 +1,10 @@
-<<<<<<< Updated upstream
 ---
 title: 注意力 Attention 3B1B
+title: 自注意力
 date: 2025-04-27 21:22:27
 tags: ["notes", "julyfun", "25", "04"]
 ---
 
-=======
->>>>>>> Stashed changes
 # 自注意力 Attention 3B1B
 - 考虑:
     - mole 一词在不同上下文有不同含义.
