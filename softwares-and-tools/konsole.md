@@ -7,3 +7,7 @@ tags: ["softwares-and-tools"]
 
 Menu > Configure Konsole > Tab Bar > Position
 
+## close toolbar
+
+Settings -> Toolbar shown -> uncheck 2 checkboxes.
+
