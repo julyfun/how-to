@@ -118,7 +118,7 @@ print("Parameters:", sum([p.numel() for p in net.parameters() if p.requires_grad
 # %%
 bs = 128
 train_loader = DataLoader(dataset, batch_size=bs, shuffle=True)
-n_epochs = 3
+n_epochs = 5
 net = FlowUNet(in_channels=1, out_channels=1).to(device)
 
 loss_fn = nn.MSELoss()
