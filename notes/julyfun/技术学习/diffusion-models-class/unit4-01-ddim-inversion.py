@@ -34,6 +34,7 @@ im.resize((256, 256)) # Resize for convenient viewing
 
 # %%
 
+pipe.scheduler.set_timesteps(40)
 timesteps = pipe.scheduler.timesteps.cpu()
 alphas = pipe.scheduler.alphas_cumprod[timesteps]
 plt.plot(timesteps, alphas)

@@ -16,18 +16,16 @@ print(f'Using device: {device}')
 mg = torchvision.utils.make_grid
 
 # %%
-
 dataset = torchvision.datasets.MNIST(root="ignoreme-mnist/", train=True, download=False, transform=torchvision.transforms.ToTensor())
-
 train_dataloader = DataLoader(dataset, batch_size=8, shuffle=True)
 
+# 数据集的 label 作为网络输入一部分
 x, y = next(iter(train_dataloader))
 
 print('Input shape:', x.shape, 'Output shape:', y.shape)
 
 print(mg(x).shape)
 plt.imshow(mg(x)[0], cmap='Greys')
-
 
 # %%
 class ClassConditionedUnet(nn.Module):
@@ -108,10 +106,14 @@ plt.plot(losses)
 # %%
 # show parameter nums
 print(sum(p.numel() for p in net.parameters()))
+
 # %%
+# x 纯噪声
 x = torch.randn(80, 1, 28, 28).to(device)
+# y 是 class
 y = torch.tensor([[i] * 8 for i in range(10)]).flatten().to(device)
-# noise_scheduler.timesteps
+noise_scheduler.timesteps
+
 # %%
 for i, t in tqdm(enumerate(noise_scheduler.timesteps)):
     with torch.no_grad():
