@@ -24,9 +24,9 @@ train_loader = DataLoader(dataset, batch_size=8, shuffle=True)
 
 # %%
 
-from torchvision.utils import make_grid 
+from torchvision.utils import make_grid
 x, y = next(iter(train_loader))
-print(f"x.shape: {x.shape}, y.shape: {y.shape}")    
+print(f"x.shape: {x.shape}, y.shape: {y.shape}")
 plt.imshow(make_grid(x)[0], cmap="Greys")
 print(make_grid(x).shape)
 
@@ -60,7 +60,7 @@ class BasicUNet(nn.Module):
             nn.Conv2d(32, 64, kernel_size=5, padding=2),
             nn.Conv2d(64, 64, kernel_size=5, padding=2),
         ])
-        self.up_layers = nn.ModuleList([    
+        self.up_layers = nn.ModuleList([
             nn.Conv2d(64, 64, kernel_size=5, padding=2),
             nn.Conv2d(64, 32, kernel_size=5, padding=2),
             nn.Conv2d(32, out_channels, kernel_size=5, padding=2),
@@ -92,7 +92,7 @@ x = torch.randn(8, 1, 28, 28)
 print(net(x).shape)
 
 print(sum([p.numel() for p in net.parameters() if p.requires_grad]) )
-sum([p.numel() for p in net.parameters()]) 
+sum([p.numel() for p in net.parameters()])
 
 
 # %%
@@ -119,7 +119,7 @@ for epoch in range(n_epochs):
         opt.step()
 
         losses.append(loss.item())
-        
+
 
 plt.plot(losses)
 plt.ylim(0, 0.1)
@@ -164,8 +164,8 @@ for i in range(n_steps):
     with torch.no_grad():
         pred_noise = net(x)
         pred_output_history.append(pred_noise.detach().cpu())
-        
-    
+
+
 fig, axs = plt.subplots(n_steps, 2, figsize=(12, 10), sharex=True)
 axs[0, 0].set_title("Input")
 axs[0, 1].set_title("Predicted Noise")
