@@ -9,7 +9,6 @@ suppose-you-know:
 date: 2024-06-25
 title: change-newline-style-dos-unix-lf-crlf
 tags: ["softwares-and-tools", "unix-cli", "CRLF"]
-tags: ["softwares-and-tools", "unix-cli"]
 ---
 ref: https://stackoverflow.com/questions/2613800/how-to-convert-dos-windows-newline-crlf-to-unix-newline-lf
 
