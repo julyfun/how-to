@@ -1,7 +1,6 @@
 ---
 title: Ubuntu多版本CUDA安装与切换
 date: 2025-03-12 02:39:15
-title: Ubuntu多版本CUDA安装与切换
 tags: ["softwares-and-tools", "cuda"]
 ---
 
@@ -16,7 +15,7 @@ tags: ["softwares-and-tools", "cuda"]
 
 去[官网](https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10)选择对应安装包，这里选择runfile类型的安装文件`cuda_10.1.243_418.87.00_linux.run`。
 
-执行以下命令，开始安装：  
+执行以下命令，开始安装：
 
 plaintext
 
@@ -121,4 +120,3 @@ plaintext
 版权声明: 本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。转载请注明来自 [Yuan](https://qiyuan-z.github.io/)！
 
 [Ubuntu](https://qiyuan-z.github.io/tags/Ubuntu/)[CUDA](https://qiyuan-z.github.io/tags/CUDA/)[cuDNN](https://qiyuan-z.github.io/tags/cuDNN/)
-
