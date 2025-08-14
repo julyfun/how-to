@@ -10,8 +10,8 @@ How to do anything.
 
 ## Search your tricks in:
 
-- NOTE
-- time note (24/09, 24/11...)
+- 摸鱼日志
+- notes by date (24/09, 24/11...)
 - by folder and file name (jd)
 - 滴答清单. (private info)
 - buffer repo. (private text)
