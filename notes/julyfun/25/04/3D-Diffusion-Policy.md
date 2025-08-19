@@ -2,7 +2,6 @@
 title: 3D-Diffusion-Policy
 date: 2025-04-24 18:23:11
 tags: ["notes", "julyfun", "25", "policy"]
-tags: ["notes", "julyfun", "25", "04"]
 ---
 - 符号
     - `T`: 预测轨迹长度
@@ -55,7 +54,7 @@ class DP3:
             return. 实测表明一次预测 6 步且会把这 6 步执行完，再预测下 6 步.
 
         ...
-        action_pred: (B, T, action_dim) e.g. (1, 8, 14) 
+        action_pred: (B, T, action_dim) e.g. (1, 8, 14)
 
         start = To - 1
         end = start + self.n_action_steps

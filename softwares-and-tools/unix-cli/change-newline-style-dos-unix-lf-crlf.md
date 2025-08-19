@@ -9,7 +9,6 @@ suppose-you-know:
 date: 2024-06-25
 title: change-newline-style-dos-unix-lf-crlf
 tags: ["softwares-and-tools", "unix-cli", "CRLF"]
-tags: ["softwares-and-tools", "unix-cli"]
 ---
 ref: https://stackoverflow.com/questions/2613800/how-to-convert-dos-windows-newline-crlf-to-unix-newline-lf
 
@@ -19,6 +18,5 @@ ref: https://unix.stackexchange.com/questions/32001/what-is-m-and-how-do-i-get-r
 
 ```
 :set ff=unix
-:e ++ff=dos 
+:e ++ff=dos
 ```
-

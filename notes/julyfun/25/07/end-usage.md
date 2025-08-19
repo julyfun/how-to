@@ -1,5 +1,5 @@
 ---
-title: "Terminal Usage"
+title: "End-Usage"
 date: 2025-07-26 18:26:50
 tags: ["notes", "julyfun", "25", "07"]
 author: "4070s wsl julyfun"
@@ -8,12 +8,14 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-一个工具如果 100% 处于依赖的终端，那么其接口设计可以随意一点.
+一个工具如果处于依赖链的终端，那么其接口设计与非终端工具应该采取不同的原则.
 
-终端工具：
-- neovim
+End-usage:
+- Editor keybindings
+- Excel：同一功能通常至少有两种入口
+- shell language
 
 非终端工具：
 - git (自动化脚本)
-- lib
+- `lib.rs`
 

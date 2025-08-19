@@ -12,11 +12,11 @@ tags: ["softwares-and-tools", "ssh", "to-mac"]
 ---
 # ssh mac from win
 
-- Add allowed remote user.
+- Add allowed remote user. 设置 -> 共享 -> 远程登录 -> 打开
 
 ref: https://blog.csdn.net/xicikkk/article/details/53447025
 
-- Make sure the two machine are under the same LAN. 
-
-- Just open powershell and ssh your mac, don't mistake the User Name!
+- Note:
+    - Make sure the two machine are under the same LAN. 
+    - Just open powershell and ssh your mac, don't mistake the User Name!
 
