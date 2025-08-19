@@ -1,5 +1,9 @@
 ---
+<<<<<<< Updated upstream
 title: 注意力 Attention 3B1B
+=======
+title: 自注意力
+>>>>>>> Stashed changes
 date: 2025-04-27 21:22:27
 tags: ["notes", "julyfun", "25", "04"]
 ---
