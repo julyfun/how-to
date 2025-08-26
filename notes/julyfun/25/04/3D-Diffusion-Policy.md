@@ -1,11 +1,7 @@
 ---
 title: 3D-Diffusion-Policy
 date: 2025-04-24 18:23:11
-<<<<<<< Updated upstream
 tags: ["notes", "julyfun", "25", "policy"]
-=======
-tags: ["notes", "julyfun", "25", "04"]
->>>>>>> Stashed changes
 ---
 - 符号
     - `T`: 预测轨迹长度

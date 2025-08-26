@@ -1,9 +1,5 @@
 ---
-<<<<<<< Updated upstream
 title: Install configure uninstall ubuntu
-=======
-title: win + R, diskpart
->>>>>>> Stashed changes
 date: 2024-01-15 01:10:05
 tags: ["os", "ubuntu"]
 ---
@@ -266,4 +262,3 @@ sudo apt install tensorrt
 ### tldr
 
 pip install tldr
-
