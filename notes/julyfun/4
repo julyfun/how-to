@@ -73,8 +73,6 @@ if cfg.task.dataset.val_ratio > 0 and (self.epoch % cfg.training.val_every) == 0
 ```
 [rank5]:[E903 00:30:23.273591037 ProcessGroupNCCL.cpp:685] [Rank 5] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1994, OpType=ALLREDUCE, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600067 milliseconds before timing out.
 ```
-- This is just because `wait_for_everyone` stucks in all GPU process except the main one!
-    - 只有 process 0 运行到了 wait_for_everyone 后面，其他进程都在这里停滞了. 超过 600 秒后进程报如上错误.
 
 ## 9.1
 - [rust, dep] something good
