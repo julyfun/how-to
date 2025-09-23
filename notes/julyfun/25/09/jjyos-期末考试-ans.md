@@ -28,3 +28,18 @@ confidence: 2
     - `environ` 数组，每个变量是 `NAME=VALUE` 形式的字符串
     - `errno`: 记录系统调用和库函数发生的最近一次错误
     - `optarg`, `__progname`, `locale 本地化规则`
+- System V ABI规定进程的初始栈中有一些auxiliary vector entries. 根据你对操作系统的理解，可以有哪些辅助数据，又有什么作用?
+    - AT_EXECFD: 执行文件的文件描述符 现代不再使用
+    - AT_PHDR: 程序头表的地址
+        - 头表描述如何将文件的各个部分映射到进程的虚拟地址空间。头表存储在硬盘文件中.
+    - AT_PHNUM: 程序头表中的条目数
+    - AT_PAGESZ: 系统页面大小
+    - AT_BASE: 动态链接器的基地址
+    - AT_FLAGS: 进程标志
+    - AT_ENTRY: 程序入口点地址
+    - AT_UID, AT_EUID, AT_GID, AT_EGID: 用户和组ID信息
+    - 作用: 提供给程序运行时环境所需的关键信息，帮助动态链接器加载共享库，设置内存布局.
+
+extra:
+- 当您在 Shell 中输入 ./my_program 时，Shell 会调用 execve 系统调用。内核会检查该文件的开头几个字节（称为“魔数”）。如果魔数与 ELF 格式的定义匹配（0x7f 0x45 0x4c 0x46，即 0x7f 'E' 'L' 'F'），内核就将其作为 ELF 文件来解析和加载. 大多可执行文件都是 ELF 格式. 其余还有 shebang, a.out 等格式.
+
