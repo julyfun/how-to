@@ -42,4 +42,12 @@ confidence: 2
 
 extra:
 - 当您在 Shell 中输入 ./my_program 时，Shell 会调用 execve 系统调用。内核会检查该文件的开头几个字节（称为“魔数”）。如果魔数与 ELF 格式的定义匹配（0x7f 0x45 0x4c 0x46，即 0x7f 'E' 'L' 'F'），内核就将其作为 ELF 文件来解析和加载. 大多可执行文件都是 ELF 格式. 其余还有 shebang, a.out 等格式.
+- gcc
+    - gcc -c test.c → 生成 test.o
+        - 预处理（.c→.i）：处理宏和头文件
+        - 编译（.i→.s）：生成汇编代码
+        - 汇编（.s→.o）：生成二进制目标文件
+    - ar rcs libtest.a test.o → 生成静态库
+    - gcc test.o -ltest → 链接生成 a.out (.a, .so 都可以)
+    - gcc -fPIC -shared -o libtest.so test.c → 生成共享库
 
