@@ -1,3 +1,9 @@
+---
+title: README
+date: 2023-11-16 19:03:00
+tags: ["readme"]
+---
+
 How to do anything.
 
 !!! tip "News"
