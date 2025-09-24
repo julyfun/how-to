@@ -1,5 +1,5 @@
 ---
-title: "jjyos 期末考试 ans"
+title: "jjyos 期末考试 Answer"
 date: 2025-09-23 11:21:07
 tags: ["notes", "julyfun", "25", "09"]
 author: "Julyfun MacOS14.5 M1"
