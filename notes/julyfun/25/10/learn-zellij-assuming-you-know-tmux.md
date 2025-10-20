@@ -8,5 +8,16 @@ assume-you-know: [tmux]
 confidence: 2
 ---
 
-- 
+When do you need zellij
+- If you like ghostty on 10/20 2025 and you like ssh and tmux, you will find tmux not working on remote tmux in ghostty.
+    - although this may solve the problem: https://ghostty.org/docs/help/terminfo#ssh
+
+## key
+- `ctrl-b + %` => `ctrl-p + r`
+- `ctrl-b + "` => `ctrl-p + d`
+- Switch between =>`ctrl`
+- Close pane => `ctrl-p + x`
+
+## cool useful key
+- Stack panes `ctrl-p + s` 
 
