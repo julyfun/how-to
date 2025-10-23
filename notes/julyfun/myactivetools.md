@@ -1,5 +1,5 @@
 ---
-title: "toolscollection"
+title: "My active tools"
 date: 2025-09-22 13:14:17
 tags: ["notes", "julyfun"]
 author: "Julyfun M4"
@@ -8,5 +8,10 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-- 25.9.22 几何画板 https://www.geogebra.org/calculator
+## crossplatform
+- OneDrive 25.10.22
+- Cursor
+
+## online
+- 几何画板 25.9.22 https://www.geogebra.org/calculator
 
