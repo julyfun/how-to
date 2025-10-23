@@ -9,5 +9,5 @@ confidence: 2
 ---
 
 - UMI-on-Air
-    - Harsh Gupta
-    - [?] Vanilla Diffusion Policy
+    - Harsh Gupta @CMU
+
