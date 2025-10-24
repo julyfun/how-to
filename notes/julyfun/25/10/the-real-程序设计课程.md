@@ -9,5 +9,6 @@ confidence: 2
 ---
 
 - 事件驱动编程 at least in 2 frameworks
-- 
+- 函数式编程
+- registry pattern
 
