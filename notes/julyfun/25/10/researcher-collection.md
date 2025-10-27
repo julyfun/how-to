@@ -1,5 +1,5 @@
 ---
-title: "Researcher collection"
+title: "researcher.collect"
 date: 2025-09-16 20:52:43
 tags: ["notes", "julyfun", "25", "10"]
 author: "Julyfun M4"

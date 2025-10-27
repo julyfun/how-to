@@ -10,8 +10,14 @@ confidence: 2
 
 ## crossplatform
 - OneDrive 25.10.22
-- Cursor
+- Cursor 25.6
+- Clash Verge | Clash Party 25.1
 
 ## online
 - 几何画板 25.9.22 https://www.geogebra.org/calculator
+
+## cli
+- serie: Better git graph 25.10
+- `brew install translate-shell` `trans -s en -t zh-CN -I`
+
 

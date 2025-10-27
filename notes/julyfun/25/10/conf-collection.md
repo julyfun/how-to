@@ -1,5 +1,5 @@
 ---
-title: "conf-collection"
+title: "conf.collect"
 date: 2025-10-22 17:15:35
 tags: ["notes", "julyfun", "25", "10"]
 author: "Julyfun M4"
