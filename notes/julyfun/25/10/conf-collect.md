@@ -10,6 +10,7 @@ confidence: 2
 
 CoRL:
 - Conf: ~11/6
+- [papers]
 - DexUMI (2025 Best FL)
 
 IROS:
@@ -21,6 +22,12 @@ RSS:
 - DDL: 1/24
 - Rebuttal: 3/24
 - Accept: 4/10
-- Cond: 6/21
+- Conf: 6/21
+- [papers]
 - UMI
+
+## CV
+ICLR:
+- [papers]
+- DuoAttention
 
