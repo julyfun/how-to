@@ -17,6 +17,7 @@ IROS:
 - DDL: 1/5 - 3/2,
 - Accept: 6/30
 - Conf: 
+- Improved-3D-Diffusion-Policy (2025) @Yanjie Ze
 
 RSS:
 - DDL: 1/24
