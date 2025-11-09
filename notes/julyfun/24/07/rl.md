@@ -9,8 +9,15 @@ confidence: 2
 ---
 ## 符号
 - $J(theta)$: 策略的累积奖励的期望，需要最大化
-- $pi$: s 下 a 的概率
+- 顺序: $s_1 => a_1 => s_2$
 - $tau$: 轨迹，表示所有 $s, a$
 
-## 概念
+- $pi(a | s)$：状态 $s$ 下采取 $a$ 的概率
+- $V^pi (s) eq.def EE_pi [G_t | S_t = s]$ **状态价值函数 state-value function**，即还不确定 $a$
+- $Q^pi (s, a) = EE_pi [G_t | S_t = s, A_t = a]$ **动作价值函数 action-value function**，即确定了 $a$
+    - 有 $V^pi (s) = sum_(a in A) pi(a | s) Q^pi (s, a)$
+    - 有 $Q^pi (s, a) = r(s,a) + gamma sum_(s^prime in S) P(s^prime | s, a) V^pi (s^prime)$
+    - $s -->^pi a_i -->^P s^prime$
+
+## 四大强化学习
 - Policy Gradient: 
