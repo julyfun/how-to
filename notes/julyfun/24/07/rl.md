@@ -8,7 +8,8 @@ assume-you-know: [computer]
 confidence: 2
 ---
 ## 符号
-$tau$: 轨迹，表示所有 $s, a$
+- $tau$: 轨迹，表示所有 $s, a$
+- $pi$: s 下 a 的概率
 
 ## 概念
 - Policy Gradient: 
