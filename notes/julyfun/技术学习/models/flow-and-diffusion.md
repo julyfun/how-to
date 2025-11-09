@@ -26,3 +26,6 @@ confidence: 2
 - Conditional Probability Path: 给定前一步的条件（已经是某个特定分布），求下一步路径
 - Marginal Probability Path: 不给定条件（所有分布的加权平均），求下一步路径
 	- 两者在 $t_0$ 是完全一样的，从第二部开始才有区别.
+
+[附]
+- 散度讲解: https://zhuanlan.zhihu.com/p/165479232
