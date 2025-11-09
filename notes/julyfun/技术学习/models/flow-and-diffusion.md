@@ -19,4 +19,4 @@ confidence: 2
 - Diffusion network 预测的就是向量场（输入: t, X 当前位置. 输出: X 速度）
 ![Screenshot from 2025-11-10 01-25-29.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-toScreenshot%20from%202025-11-10%2001-25-29.png)
 ![Screenshot from 2025-11-10 01-24-27.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-toScreenshot%20from%202025-11-10%2001-24-27.png)
-- [qm] 为何噪声到图像的过程可以建模为 SDE
+- [qm] 为何噪声到图像的过程可以建模为 SDE?
