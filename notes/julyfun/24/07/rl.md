@@ -25,6 +25,6 @@ confidence: 2
 		- Actor: 输入 `[机械臂状态，观测]`
 		- 输出 `[动作]` 或者 `[动作的概率分布]`
 	- 推理: 一样
-- Value Based (DQN): 直接训练一个 Q，取最大值对应的动作索引 (no explicit policy)
-- Actor-Critic: 额外加一个价值判断网络
+- Value Based (DQN): 直接训练一个 Q / V，取最大值对应的动作索引 (no explicit policy)
+- Actor-Critic: 有 A 有 Q
 - Model-based: 似乎需要自己训一个模型，自行估计 $s$ 经过 $a$ 如何转移
