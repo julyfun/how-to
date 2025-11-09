@@ -20,4 +20,9 @@ confidence: 2
 - serie: Better git graph 25.10
 - `brew install translate-shell` `trans -s en -t zh-CN -I`
 
+## notes
+
+- Obsidian
+    - [compared to nvim & vscode] in-place render typst math
+    - upload to OSS with ctrl-v
 
