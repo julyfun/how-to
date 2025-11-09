@@ -8,6 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
+- hw1: https://rail.eecs.berkeley.edu/deeprlcourse-fa23/deeprlcourse-fa23/static/homeworks/hw1.pdf
 
 ## 符号
 - $J(theta)$: 策略的累积奖励的期望，需要最大化
