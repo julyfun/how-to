@@ -7,6 +7,5 @@ os: "Linux julyfun-4070s-ubuntu 6.8.0-87-generic #88~22.04.1-Ubuntu SMP PREEMPT_
 assume-you-know: [computer]
 confidence: 2
 ---
-
-$tau$
-
+## 符号
+$tau$: 表示所有 

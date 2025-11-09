@@ -8,21 +8,28 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## crossplatform
-- OneDrive 25.10.22
-- Cursor 25.6
-- Clash Verge | Clash Party 25.1
+## Files, net
+- OneDrive (since 25/10/22)
+- Clash Verge | Clash Party 25/1
+
+## Editor
+- Cursor 25/6
+- Zed 25/1 轻量 AI & good vim
 
 ## online
-- 几何画板 25.9.22 https://www.geogebra.org/calculator
+- 几何画板 25/9/22 https://www.geogebra.org/calculator
 
 ## cli
-- serie: Better git graph 25.10
-- `brew install translate-shell` `trans -s en -t zh-CN -I`
+- serie: Better git graph 25/10
+- `brew install translate-shell` `trans -s en -t zh-CN -I` 25/10
 
 ## notes
-
-- Obsidian
+- neovim 无需多言 23/7
+- Obsidian 24/7
     - [compared to nvim & vscode] in-place render typst math
     - upload to OSS with ctrl-v
+- Picgo 配合 Obsidian
+- Dida 清单 适合存 api-tokens 25/1
+    - 跨所有平台
+    - 私有
 
