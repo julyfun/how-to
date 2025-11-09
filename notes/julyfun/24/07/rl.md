@@ -19,7 +19,7 @@ confidence: 2
     - 有 $Q^pi (s, a) = r(s,a) + gamma sum_(s^prime in S) P(s^prime | s, a) V^pi (s^prime)$
     - $s -->^pi a_i -->^P s^prime$
 
-## 四大强化学习
+## 强化学习类型
 - Policy Gradient: 求 $EE[r]$ 对 $theta$ 的导数.
 	- 训练:
 		- Actor: 输入 `[机械臂状态，观测]`
@@ -27,4 +27,8 @@ confidence: 2
 	- 推理: 一样
 - Value Based (DQN): 直接训练一个 Q / V，取最大值对应的动作索引 (no explicit policy)
 - Actor-Critic: 有 A 有 Q
-- Model-based: 似乎需要自己训一个模型，自行估计 $s$ 经过 $a$ 如何转移
+- Model-based: 有模型自行估计 $s$ 经过 $a$ 如何转移 ( learn $p(s_(t + 1) | s_t, a_t)$ )
+
+## On-off policy
+- off-policy: able to improve the policy without generating new samples from that policy
+- on-policy: any time the policy is changed (even a little bit) we need to generate new samples.
