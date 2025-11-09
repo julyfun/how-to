@@ -9,3 +9,6 @@ confidence: 2
 ---
 ## 符号
 $tau$: 轨迹，表示所有 $s, a$
+
+## 概念
+- Policy Gradient: 
