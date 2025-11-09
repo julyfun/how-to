@@ -21,3 +21,8 @@ confidence: 2
 ![Screenshot from 2025-11-10 01-25-29.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-toScreenshot%20from%202025-11-10%2001-25-29.png)
 ![Screenshot from 2025-11-10 01-24-27.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-toScreenshot%20from%202025-11-10%2001-24-27.png)
 - [qm] 为何噪声到图像的过程可以建模为 SDE?
+
+## Lec 2
+- Conditional Probability Path: 给定前一步的条件（已经是某个特定分布），求下一步路径
+- Marginal Probability Path: 不给定条件（所有分布的加权平均），求下一步路径
+	- 两者在 $t_0$ 是完全一样的，从第二部开始才有区别.
