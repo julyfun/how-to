@@ -9,6 +9,7 @@ confidence: 2
 ---
 https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 - hw1: https://rail.eecs.berkeley.edu/deeprlcourse-fa23/deeprlcourse-fa23/static/homeworks/hw1.pdf
+- hw2: 
 
 ## 符号
 - $J(theta)$: 策略的累积奖励的期望，需要最大化
@@ -35,3 +36,5 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 ## On-off policy
 - off-policy: able to improve the policy without generating new samples from that policy
 - on-policy: any time the policy is changed (even a little bit) we need to generate new samples.
+
+- (and there is offline-RL)
