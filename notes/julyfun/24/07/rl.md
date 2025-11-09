@@ -7,6 +7,8 @@ os: "Linux julyfun-4070s-ubuntu 6.8.0-87-generic #88~22.04.1-Ubuntu SMP PREEMPT_
 assume-you-know: [computer]
 confidence: 2
 ---
+https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
+
 ## 符号
 - $J(theta)$: 策略的累积奖励的期望，需要最大化
 - 顺序: $s_1 => a_1 => s_2$
