@@ -8,4 +8,4 @@ assume-you-know: [computer]
 confidence: 2
 ---
 ## 符号
-$tau$: 表示所有 $s, a$
+$tau$: 轨迹，表示所有 $s, a$
