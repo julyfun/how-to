@@ -10,10 +10,12 @@ confidence: 2
 
 ## cd History
 
+(栈结构，回到祖先不破坏栈，从祖先进入新位置会把祖先和新位置拆出来放到最底下)
+
 ```
-cdh
+cdh # 交互式
+dirh # 非交互
 prevd
 nextd
 ```
-
 
