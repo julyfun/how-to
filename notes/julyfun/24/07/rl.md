@@ -21,3 +21,7 @@ confidence: 2
 
 ## 四大强化学习
 - Policy Gradient: 
+	- 训练:
+		- Actor: 输入 `[机械臂状态，观测]`
+			- 输出 [动作]
+	- 推理: 一样
