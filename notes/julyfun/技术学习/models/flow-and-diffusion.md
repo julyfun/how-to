@@ -23,9 +23,9 @@ confidence: 2
 - [qm] 为何噪声到图像的过程可以建模为 SDE?
 
 ## Lec 2
-- Conditional Probability Path: 给定前一步的条件（已经是某个特定分布），求下一步路径
+- Conditional Probability Path: 给定目标点 $z$（例如 diffusion 中的最终图像），求 $x$ 下一步路径
 - Marginal Probability Path: 不给定条件（所有分布的加权平均），求下一步路径
-	- 两者在 $t_0$ 是完全一样的，从第二部开始才有区别.
+	- 两者在 $t_0$ 是完全一样的，从第二步开始才有区别.
 
 [附]
 - 散度讲解: https://zhuanlan.zhihu.com/p/165479232
