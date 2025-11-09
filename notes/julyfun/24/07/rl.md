@@ -8,8 +8,9 @@ assume-you-know: [computer]
 confidence: 2
 ---
 ## 符号
-- $tau$: 轨迹，表示所有 $s, a$
+- $J(theta)$: 策略的累积奖励的期望，需要最大化
 - $pi$: s 下 a 的概率
+- $tau$: 轨迹，表示所有 $s, a$
 
 ## 概念
 - Policy Gradient: 
