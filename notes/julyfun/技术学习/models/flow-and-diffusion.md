@@ -26,7 +26,7 @@ confidence: 2
 - Conditional Probability Path: 给定目标点 $z$（例如 diffusion 中的最终图像），求 $x$ 下一步路径
 - Marginal Probability Path: 不给定条件（所有分布的加权平均），求下一步路径
 	- 两者在 $t_0$ 是完全一样的，从第二步开始才有区别.
-$$"def" u(x: RR^d, t: [0, 1]) |-> RR^d$$
+- 向量场函数（也可视为梯度或者速度）：$$"def" u(x: RR^d, t: [0, 1]) |-> RR^d$$
 
 [附]
 - 散度讲解: https://zhuanlan.zhihu.com/p/165479232kj
