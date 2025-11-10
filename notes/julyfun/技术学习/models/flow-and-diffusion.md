@@ -19,8 +19,9 @@ confidence: 2
 - https://diffusion.csail.mit.edu/docs/slides_lecture_1.pdf
 - Diffusion network 预测的就是向量场（输入: t, X 当前位置. 输出: X 速度）
 ![Screenshot from 2025-11-10 01-25-29.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-toScreenshot%20from%202025-11-10%2001-25-29.png)
-![Screenshot from 2025-11-10 01-24-27.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-toScreenshot%20from%202025-11-10%2001-24-27.png)
-- [qm] 为何噪声到图像的过程可以建模为 SDE?
+- 改为神经网络形式（引入 $theta$）. 注意这里 $sigma_t$ 可以由时间变化:
+- ![Screenshot from 2025-11-10 01-24-27.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-toScreenshot%20from%202025-11-10%2001-24-27.png)
+- [qm] 为何噪声到图像的过程可以建模为带布朗运动的 SDE?
 
 ## Lec 2
 - Conditional Probability Path: 给定目标点 $z$（例如 diffusion 中的最终图像），求 $x$ 下一步路径
