@@ -14,7 +14,7 @@ confidence: 2
 ---
 - ODE（常微分方程） SDE（随机微分方程, 带随机波动的变化）
 - SDE: 系统的未来状态不仅依赖当前状态，还包含非决定性的随机波动（噪声），因此未来状态是一个概率分布. 方程中多了随机项（通常用布朗运动表示）
-- 教材笔记: https://arxiv.org/pdf/2506.02070
+- 教材笔记，详实简单: https://arxiv.org/pdf/2506.02070
 ## Lec 1
 - https://diffusion.csail.mit.edu/docs/slides_lecture_1.pdf
 - Diffusion network 预测的就是向量场（输入: t, X 当前位置. 输出: X 速度）
@@ -26,6 +26,7 @@ confidence: 2
 - Conditional Probability Path: 给定目标点 $z$（例如 diffusion 中的最终图像），求 $x$ 下一步路径
 - Marginal Probability Path: 不给定条件（所有分布的加权平均），求下一步路径
 	- 两者在 $t_0$ 是完全一样的，从第二步开始才有区别.
+$$"def" u(x: RR^d, t: [0, 1]) |-> RR^d$$
 
 [附]
-- 散度讲解: https://zhuanlan.zhihu.com/p/165479232
+- 散度讲解: https://zhuanlan.zhihu.com/p/165479232kj
