@@ -40,6 +40,7 @@ confidence: 2
 ## Lec3 ok
 
 ## Lec4: Guided (conditional) DDM
+- https://github.com/eje24/iap-diffusion-labs/blob/main/solutions/lab_three_complete.ipynb
 - condition 是怎么加入 UNet: 自己看代码无需多言.
 - ![截屏2025-11-11 11.10.16.png|700](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/%E6%88%AA%E5%B1%8F2025-11-11%2011.10.16.webp)
 
@@ -98,5 +99,33 @@ class ResidualLayer(nn.Module):
 ```
 不禁令人发现：
 - 自然语言适合描述低频信号，而不擅长描述高频信号
+- UNet 通过保留高频信号来抑制信息过于平滑的问题
 - 之所以“*视频能展示的内容远少于占用空间相同的游戏*"是因为 mp4 需要编码高频信号
-- 
+- AE 压缩为低维**潜在向量**的结构之所以能用于生成，是因为它强制学习数据的底层结构
+
+Some question
+- 这里如何编码时间 (bs, 1, 1, 1) => (bs, emb_dim):
+```python
+class FourierEncoder(nn.Module):
+    """
+    Based on https://github.com/lucidrains/denoising-diffusion-pytorch/blob/main/denoising_diffusion_pytorch/karras_unet.py#L183
+    """
+    def __init__(self, dim: int):
+        super().__init__()
+        assert dim % 2 == 0
+        self.half_dim = dim // 2
+        self.weights = nn.Parameter(torch.randn(1, self.half_dim))
+
+    def forward(self, t: torch.Tensor) -> torch.Tensor:
+        """
+        Args:
+        - t: (bs, 1, 1, 1)
+        Returns:
+        - embeddings: (bs, dim)
+        """
+        t = t.view(-1, 1) # (bs, 1)
+        freqs = t * self.weights * 2 * math.pi # (bs, half_dim)
+        sin_embed = torch.sin(freqs) # (bs, half_dim)
+        cos_embed = torch.cos(freqs) # (bs, half_dim)
+        return torch.cat([sin_embed, cos_embed], dim=-1) * math.sqrt(2) # (bs, dim)
+```
