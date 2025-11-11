@@ -29,6 +29,7 @@ confidence: 2
 	- 两者在 $t_0$ 是完全一样的，从第二步开始才有区别.
 - 向量场函数（也可视为梯度或者速度）：$$"def" u(x: RR^d, t: [0, 1]) |-> RR^d$$
 - ![image.png|700](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251111103019.webp)
+- [qm] 为何 score function 这样定义
 
 
 [附]
