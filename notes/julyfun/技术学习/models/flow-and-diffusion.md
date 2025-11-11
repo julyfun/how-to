@@ -104,7 +104,8 @@ class ResidualLayer(nn.Module):
 - AE 压缩为低维**潜在向量**的结构之所以能用于生成，是因为它强制学习数据的底层结构
 
 Some question
-- 这里如何编码时间 (bs, 1, 1, 1) => (bs, emb_dim):
+- 这里如何编码时间 (bs, 1, 1, 1) => (bs, emb_dim)？用了 nn.Parameter.
+- 可能也可以用无需学习的正弦余弦位置编码
 ```python
 class FourierEncoder(nn.Module):
     """
