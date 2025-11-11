@@ -16,6 +16,7 @@ confidence: 2
 - SDE: 系统的未来状态不仅依赖当前状态，还包含非决定性的随机波动（噪声），因此未来状态是一个概率分布. 方程中多了随机项（通常用布朗运动表示）
 - CFM: ?
 - 教材笔记，详实简单: https://arxiv.org/pdf/2506.02070
+- Lab: https://github.com/eje24/iap-diffusion-labs
 ## Lec 1
 - https://diffusion.csail.mit.edu/docs/slides_lecture_1.pdf
 - Diffusion network 预测的就是向量场（输入: t, X 当前位置. 输出: X 速度）
@@ -39,5 +40,59 @@ confidence: 2
 ## Lec3 ok
 
 ## Lec4: Guided (conditional) DDM
-- condition 是怎么加入 UNet:
+- condition 是怎么加入 UNet: 自己看代码无需多言.
 - ![截屏2025-11-11 11.10.16.png|700](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/%E6%88%AA%E5%B1%8F2025-11-11%2011.10.16.webp)
+
+```python
+class ResidualLayer(nn.Module):
+    def __init__(self, channels: int, time_embed_dim: int, y_embed_dim: int):
+        super().__init__()
+        self.block1 = nn.Sequential(
+            nn.SiLU(),
+            nn.BatchNorm2d(channels),
+            nn.Conv2d(channels, channels, kernel_size=3, padding=1)
+        )
+        self.block2 = nn.Sequential(
+            nn.SiLU(),
+            nn.BatchNorm2d(channels),
+            nn.Conv2d(channels, channels, kernel_size=3, padding=1)
+        )
+        # Converts (bs, time_embed_dim) -> (bs, channels)
+        self.time_adapter = nn.Sequential(
+            nn.Linear(time_embed_dim, time_embed_dim),
+            nn.SiLU(),
+            nn.Linear(time_embed_dim, channels)
+        )
+        # Converts (bs, y_embed_dim) -> (bs, channels)
+        self.y_adapter = nn.Sequential(
+            nn.Linear(y_embed_dim, y_embed_dim),
+            nn.SiLU(),
+            nn.Linear(y_embed_dim, channels)
+        )
+        
+    def forward(self, x: torch.Tensor, t_embed: torch.Tensor, y_embed: torch.Tensor) -> torch.Tensor:
+        """
+        Args:
+        - x: (bs, c, h, w)
+        - t_embed: (bs, t_embed_dim)
+        - y_embed: (bs, y_embed_dim)
+        """
+        res = x.clone() # (bs, c, h, w)
+
+        # Initial conv block
+        x = self.block1(x) # (bs, c, h, w)
+
+        # Add time embedding
+        t_embed = self.time_adapter(t_embed).unsqueeze(-1).unsqueeze(-1) # (bs, c, 1, 1)
+        x = x + t_embed
+
+        # Add y embedding (conditional embedding)
+        y_embed = self.y_adapter(y_embed).unsqueeze(-1).unsqueeze(-1) # (bs, c, 1, 1)
+        x = x + y_embed
+
+        # Second conv block
+        x = self.block2(x) # (bs, c, h, w)
+
+        # Add back residual
+        x = x + res # (bs, c, h, w)
+```
