@@ -96,3 +96,7 @@ class ResidualLayer(nn.Module):
         # Add back residual
         x = x + res # (bs, c, h, w)
 ```
+不禁令人发现：
+- 自然语言适合描述低频信号，而不擅长描述高频信号
+- 之所以“*视频能展示的内容远少于占用空间相同的游戏*"是因为 mp4 需要编码高频信号
+- 
