@@ -14,6 +14,7 @@ confidence: 2
 ---
 - ODE（常微分方程） SDE（随机微分方程, 带随机波动的变化）
 - SDE: 系统的未来状态不仅依赖当前状态，还包含非决定性的随机波动（噪声），因此未来状态是一个概率分布. 方程中多了随机项（通常用布朗运动表示）
+- CFM: ?
 - 教材笔记，详实简单: https://arxiv.org/pdf/2506.02070
 ## Lec 1
 - https://diffusion.csail.mit.edu/docs/slides_lecture_1.pdf
@@ -34,3 +35,9 @@ confidence: 2
 
 [附]
 - 很好的散度讲解: https://zhuanlan.zhihu.com/p/165479232kj
+
+## Lec3 ok
+
+## Lec4: Guided (conditional) DDM
+- condition 是怎么加入 UNet:
+- ![截屏2025-11-11 11.10.16.png|700](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/%E6%88%AA%E5%B1%8F2025-11-11%2011.10.16.webp)
