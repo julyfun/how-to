@@ -130,3 +130,4 @@ class FourierEncoder(nn.Module):
         cos_embed = torch.cos(freqs) # (bs, half_dim)
         return torch.cat([sin_embed, cos_embed], dim=-1) * math.sqrt(2) # (bs, dim)
 ```
+- ![截屏2025-11-12 08.13.03.png|700](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/%E6%88%AA%E5%B1%8F2025-11-12%2008.13.03.webp)
