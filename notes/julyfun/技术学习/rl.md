@@ -1,10 +1,15 @@
 ---
-title: "RL"
+title: RL 285
 date: 2024-07-01 15:26:42
-tags: ["notes", "julyfun", "24", "07"]
-author: "julyfun-4070s-ubuntu2204"
+tags:
+  - notes
+  - julyfun
+  - "24"
+  - "07"
+author: julyfun-4070s-ubuntu2204
 os: "Linux julyfun-4070s-ubuntu 6.8.0-87-generic #88~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Oct 14 14:03:14 UTC 2 x86_64 x86_64 x86_64 GNU/Linux"
-assume-you-know: [computer]
+assume-you-know:
+  - computer
 confidence: 2
 ---
 https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
@@ -38,3 +43,5 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 - on-policy: any time the policy is changed (even a little bit) we need to generate new samples.
 
 - (and there is offline-RL)
+
+## Lec5 Policy Gradients
