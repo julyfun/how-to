@@ -49,6 +49,13 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 - Maximum likehood 仅仅让 $theta$ 朝着“这批动作出现概率最大”的方向演进.
 - ![image.png|600](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116164938.webp)
 - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116170620.webp)
+```python
+logits = policy(states)
+loss_fn = torch.nn.CrossEntropyLoss()
+loss = loss_fn(logits, actions) # 离散动作
+loss.backward()
+gradients = [p.grad for p in policy.parameters()]
+```
 - 问题：奖励方差大，训练效率低下。好轨迹梯度可能为 0（累积奖励 0），有效奖励信号丢失. 
 ### 例子：高斯 policy
 这里距离是马氏距离，用协方差使得距离评估更准.
@@ -75,3 +82,8 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
     - [grep] 注意上图 $Pi$ 那个概率在下图这里已经改写为乘积完毕的形式 $pi_(theta^prime) (s_(i,t), a_(i,t ))$.
 - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116180805.webp)
 - 最后还是改用自动求导了，因为显示计算 $log$ 那一项开销太大. 而 $log$ 那一项正好对应平方误差.
+
+### 比梯度下降更好?
+- 直接走到最好的 $theta$!
+- ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116211939.webp)
+- 这里 KL 散度: ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116212127.webp) 通过采样计算.
