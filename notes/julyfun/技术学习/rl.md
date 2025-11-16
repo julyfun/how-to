@@ -46,10 +46,10 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 
 ## Lec5 Policy Gradients
 - https://rail.eecs.berkeley.edu/deeprlcourse-fa23/deeprlcourse-fa23/static/slides/lec-5.pdf
+- Maximum likehood 仅仅让 $theta$ 朝着“这批动作出现概率最大”的方向演进.
 - ![image.png|600](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116164938.webp)
-    - Maximum likehood 仅仅让 $theta$ 朝着“这批动作出现概率最大”的方向演进.
 - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116170620.webp)
-    - 问题：奖励方差大，训练效率低下。好轨迹梯度可能为 0（累积奖励 0），有效奖励信号丢失. 
+- 问题：奖励方差大，训练效率低下。好轨迹梯度可能为 0（累积奖励 0），有效奖励信号丢失. 
 - 换种形式: reward to go:
     - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116171204.webp)
 - 等等先换一个话题，我们求一个 baseline $b$ 并改写奖励为 ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116173030.webp)
@@ -65,3 +65,8 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 ### importance sampling
 - 这个公式就是 IS: $$E_(x tilde p(x)) [f(x)] = E_(x tilde q(x)) [ p(x) / q(x) f(x) ]$$
 - ![image.png|450](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116174112.webp)
+- ![1|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116180142.webp)
+- [ok]
+    - [grep] 注意上图 $Pi$ 那个概率在下图这里已经改写为乘积完毕的形式 $pi_(theta^prime) (s_(i,t), a_(i,t ))$.
+- ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116180805.webp)
+    
