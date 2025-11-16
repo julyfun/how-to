@@ -50,6 +50,11 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 - ![image.png|600](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116164938.webp)
 - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116170620.webp)
 - 问题：奖励方差大，训练效率低下。好轨迹梯度可能为 0（累积奖励 0），有效奖励信号丢失. 
+### 例子：高斯 policy
+这里距离是马氏距离，用协方差使得距离评估更准.
+- ![image.png|450](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116183909.webp)
+
+### 两种优化
 - 换种形式: reward to go:
     - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116171204.webp)
 - 等等先换一个话题，我们求一个 baseline $b$ 并改写奖励为 ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116173030.webp)
@@ -69,4 +74,4 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 - [ok]
     - [grep] 注意上图 $Pi$ 那个概率在下图这里已经改写为乘积完毕的形式 $pi_(theta^prime) (s_(i,t), a_(i,t ))$.
 - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116180805.webp)
-    
+- 最后还是改用自动求导了，因为显示计算 $log$ 那一项开销太大. 而 $log$ 那一项正好对应平方误差.
