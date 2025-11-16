@@ -105,3 +105,8 @@ kl_divergence = torch.distributions.kl.kl_divergence(dist_new, dist_old).mean()
 - ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116213038.webp)
 - 可以通过采样来估计 $F$.
 - ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116213110.webp)
+- WHY this formula? see:
+    - ![image.png|550](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116213504.webp)
+- ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116213626.webp)
+- 选择 $alpha$: natural gradient. 选择 $epsilon$: trust region policy optimization
+- Lec5 end!
