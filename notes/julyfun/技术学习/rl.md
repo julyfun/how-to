@@ -83,7 +83,25 @@ gradients = [p.grad for p in policy.parameters()]
 - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116180805.webp)
 - 最后还是改用自动求导了，因为显示计算 $log$ 那一项开销太大. 而 $log$ 那一项正好对应平方误差.
 
-### 比梯度下降更好?
-- 直接走到最好的 $theta$!
+### 优化的梯度下降?
+- 能直接走到最好的 $theta$吗？
 - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116211939.webp)
-- 这里 KL 散度: ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116212127.webp) 通过采样计算.
+- 上图第一个方法“参数距离约束”依赖于参数的具体形式，不好。
+- 上图 KL 散度: ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116212127.webp) 通过采样计算.
+- ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116212627.webp)
+```python
+# states: (B, S_dim) -> logits: (B, A_dim)
+logits_old = policy_old(states)
+logits_new = policy_new(states)
+
+# 将 logits 转换为概率分布. 连续动作用 Normal 代替 Categorical
+dist_old = torch.distributions.Categorical(logits=logits_old)
+dist_new = torch.distributions.Categorical(logits=logits_new)
+
+# 对所有样本取平均，得到最终的 KL 散度值
+kl_divergence = torch.distributions.kl.kl_divergence(dist_new, dist_old).mean()
+```
+- 进一步：通过 Fisher 信息矩阵近似展开 KL 散度:
+- ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116213038.webp)
+- 可以通过采样来估计 $F$.
+- ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116213110.webp)
