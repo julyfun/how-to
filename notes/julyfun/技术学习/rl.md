@@ -60,4 +60,8 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 - ![image.png|450](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116173232.webp)
 
 ### 为什么 PG 必须是 on-policy
-上述公式是对 $theta$ 求导，$theta$  必须是最新的，求的梯度才有意义。导致效率很低.
+上述公式是对 $theta$ 求导，$theta$  必须是最新的，求的梯度才有意义。导致训练效率很低. 当然你可以多采样几次，相当于 batch 大很多.
+
+### importance sampling
+- 这个公式就是 IS: $$E_(x tilde p(x)) [f(x)] = E_(x tilde q(x)) [ p(x) / q(x) f(x) ]$$
+- ![image.png|450](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116174112.webp)
