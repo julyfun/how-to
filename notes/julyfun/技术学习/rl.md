@@ -46,3 +46,5 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 
 ## Lec5 Policy Gradients
 - https://rail.eecs.berkeley.edu/deeprlcourse-fa23/deeprlcourse-fa23/static/slides/lec-5.pdf
+- ![image.png|600](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116164938.webp)
+    - Maximum likehood 仅仅让 $theta$ 朝着“这批动作出现概率最大”的方向演进.
