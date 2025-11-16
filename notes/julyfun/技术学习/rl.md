@@ -48,3 +48,9 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 - https://rail.eecs.berkeley.edu/deeprlcourse-fa23/deeprlcourse-fa23/static/slides/lec-5.pdf
 - ![image.png|600](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116164938.webp)
     - Maximum likehood 仅仅让 $theta$ 朝着“这批动作出现概率最大”的方向演进.
+- ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116170620.webp)
+    - 问题：奖励方差大，训练效率低下。好轨迹梯度可能为 0（累积奖励 0），有效奖励信号丢失. 
+- 换种形式: reward to go:
+    - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116171204.webp)
+
+
