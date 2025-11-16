@@ -52,5 +52,12 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
     - 问题：奖励方差大，训练效率低下。好轨迹梯度可能为 0（累积奖励 0），有效奖励信号丢失. 
 - 换种形式: reward to go:
     - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116171204.webp)
+- 等等先换一个话题，我们求一个 baseline $b$ 并改写奖励为 ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116173030.webp)
+，目的是使梯度方差最小。推导出最优的 $b$ 为:
+    - ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116172912.webp)
+    - 其中: ![image.png|200](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116172922.webp)
+- 结合以上两个优化，得到:
+- ![image.png|450](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116173232.webp)
 
-
+### 为什么 PG 必须是 on-policy
+上述公式是对 $theta$ 求导，$theta$  必须是最新的，求的梯度才有意义。导致效率很低.
