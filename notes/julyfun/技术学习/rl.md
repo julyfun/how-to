@@ -45,3 +45,4 @@ https://rail.eecs.berkeley.edu/deeprlcourse-fa23/
 - (and there is offline-RL)
 
 ## Lec5 Policy Gradients
+- https://rail.eecs.berkeley.edu/deeprlcourse-fa23/deeprlcourse-fa23/static/slides/lec-5.pdf
