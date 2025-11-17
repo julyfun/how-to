@@ -116,12 +116,4 @@ kl_divergence = torch.distributions.kl.kl_divergence(dist_new, dist_old).mean()
 ![image.png|550](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251117081152.webp)
 show: ![image.png|250](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251117081227.webp)
 
-- 单个 t 内，确定 s, 该单个 s 不同的概率占用不可能超过所有 s 的一半.
-- https://zh.wikipedia.org/wiki/全变差距离 将该公式用于单个 s.? $sup_A|P(A) - Q(A)| = 1 / 2 sum P()$
-    - $$T epsilon >= sum_(t = 1)^T EE(a^*_t != a_t | s_t)$$
-$$EE_!= = "sum of what?"$$ 不等怎么转换为 p 距离
-不等 <= p 距离的一半?
-$P(A)$
-1 / 2 距离  <= 不等的期望?
-
-sigma 不等  >= 全部不等
+- see: https://blog.csdn.net/weixin_55471672/article/details/138329230
