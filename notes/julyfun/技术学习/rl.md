@@ -110,3 +110,7 @@ kl_divergence = torch.distributions.kl.kl_divergence(dist_new, dist_old).mean()
 - ![image.png|350](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116213626.webp)
 - 选择 $alpha$: natural gradient. 选择 $epsilon$: trust region policy optimization
 - Lec5 end!
+
+## Hw1
+
+pis - pi*s <= 1 / 2 
