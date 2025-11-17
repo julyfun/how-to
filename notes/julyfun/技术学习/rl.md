@@ -116,4 +116,6 @@ kl_divergence = torch.distributions.kl.kl_divergence(dist_new, dist_old).mean()
 ![image.png|550](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251117081152.webp)
 show: ![image.png|250](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251117081227.webp)
 
-- 
+- 单个 t 内，确定 s, 该单个 s 不同的概率占用不可能超过所有 s 的一半.
+- https://zh.wikipedia.org/wiki/全变差距离 将该公式用于单个 s.
+    - $$T epsilon >= sum_(t = 1)^T EE(s)$$
