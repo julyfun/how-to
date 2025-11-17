@@ -112,5 +112,8 @@ kl_divergence = torch.distributions.kl.kl_divergence(dist_new, dist_old).mean()
 - Lec5 end!
 
 ## Hw1
+### 1.1 Given
+![image.png|550](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251117081152.webp)
+show: ![image.png|250](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251117081227.webp)
 
-pis - pi*s <= 1 / 2 
+- 
