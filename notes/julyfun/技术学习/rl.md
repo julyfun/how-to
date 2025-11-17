@@ -117,3 +117,8 @@ kl_divergence = torch.distributions.kl.kl_divergence(dist_new, dist_old).mean()
 show: ![image.png|250](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251117081227.webp)
 
 - see: https://blog.csdn.net/weixin_55471672/article/details/138329230
+
+### 1.2
+
+![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251117091902.webp)
+- holy!
