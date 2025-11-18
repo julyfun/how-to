@@ -123,3 +123,5 @@ show: ![image.png|250](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/ho
 
 ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251117091902.webp)
 - holy!
+- The Off-policy policy gradient: 这张图简单易懂:
+- ![image.png|650](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20251116180142.webp)
