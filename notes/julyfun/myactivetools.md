@@ -1,6 +1,6 @@
 ---
 title: "My active tools"
-date: 2025-09-22 13:14:17
+date: 2025-11-20 13:14:17
 tags: ["notes", "julyfun"]
 author: "Julyfun M4"
 os: "Darwin tutianpeikeladeMac-mini.local 24.3.0 Darwin Kernel Version 24.3.0: Thu Jan  2 20:22:58 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8132 arm64"
@@ -22,6 +22,7 @@ confidence: 2
 ## cli
 - serie: Better git graph 25/10
 - `brew install translate-shell` `trans -s en -t zh-CN -I` 25/10
+- ghostty, iTerm2, konsole
 
 ## notes
 - neovim 无需多言 23/7
