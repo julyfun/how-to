@@ -1,6 +1,6 @@
 ---
 title: "Flow vs Diffusion"
-date: 2025-11-19 10:46:56
+date: 2025-11-01 10:46:56
 tags: ["notes", "julyfun", "25", "10"]
 author: "Julyfun MacOS14.5 M1"
 os: "Darwin floriandeMacBook-Air.local 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1 20:16:51 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T8103 arm64"
@@ -38,3 +38,4 @@ pred_v = model(xt, t)                       # predict velocity
 
 loss = ((pred_v - v_true)**2).mean()
 ```
+
