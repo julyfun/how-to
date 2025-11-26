@@ -12,4 +12,12 @@ assume-you-know:
   - computer
 confidence: 2
 ---
-todo
+
+LN: 只要是特征就视为一个分布内，做归一化。
+- 图像 (b, c, h, w): 一个 sample 的 (c, h, w) 归一化
+- emb: (b, length, dimension)：一个 emb 内做归一化 (d, )
+
+BN:
+- 图像 (b, c, h, w): 一个 channel 内归一化 (b, h, w)
+- emb: 刚好和 LN 相反，认为 emb 一个维度是一个分布，(b, l, d) 的 (b, l) 内归一化 内归一化
+
