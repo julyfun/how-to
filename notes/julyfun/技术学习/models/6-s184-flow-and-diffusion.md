@@ -1,5 +1,5 @@
 ---
-title: MIT 6.S184: Flow and diffusion
+title: MIT 6.S184 Flow and diffusion
 date: 2025-11-10 00:39:48
 tags:
   - notes
