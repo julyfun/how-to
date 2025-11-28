@@ -12,7 +12,10 @@ When do you need zellij
 - If you like ghostty on 10/20 2025 and you like ssh and tmux, you will find remote tmux not working with ghostty.
     - although this may solve the problem: https://ghostty.org/docs/help/terminfo#ssh
 
-## key: 其实也是兼容 tmux 的键位
+## key: 其实大部分都兼容
+- `tmux a -t xxx` => `zel a xxx`
+
+原本 zellij 键位:
 - `ctrl-b + %` => `ctrl-p + r`
 - `ctrl-b + "` => `ctrl-p + d`
 - Switch between =>`ctrl`
