@@ -1,6 +1,6 @@
 ---
 title: "Peoples"
-date: 2025-12-04 00:17:36
+date: 2025-07-04 00:17:36
 tags: ["notes", "julyfun"]
 author: "julyfun-4070s-ubuntu2204"
 os: "Linux julyfun-4070s-ubuntu 6.8.0-87-generic #88~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Oct 14 14:03:14 UTC 2 x86_64 x86_64 x86_64 GNU/Linux"
@@ -21,7 +21,7 @@ articles:
 - 高岳 @自动化系，人工智能研究院
 - 王鹤升 @自动化, flx ctz 那块儿的
 ---
-- 张林峰 @人工智能学院 AP @from 清华大学交叉信息学院
+- 张林峰 @人工智能学院 AP @from 清华大学交叉信息学院 .有报道
     - <Be your own teacher: Improve the performance of convolutional neural networks via self distillation> @2019 @cited 1303
 - 张伟楠 @伦敦大学学院
     - ?
@@ -84,6 +84,9 @@ articles:
 - Yu wenye:
     - https://www.alphaxiv.org/abs/2510.02298
 - Miao zhuochen: 10.17 No.2
+- Hongjie: https://tonyfang.net/
+    - Cited 2000
+    - <AnyGrasp>
 
 # 企业
 ## 星海图
