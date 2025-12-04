@@ -63,7 +63,7 @@ articles:
     - AnySkin
 
 ## UCB
-- Pieter Abbeel @teacher 吴恩达
+- Pieter Abbeel @吴恩达的学生
     - DDPM (通讯)
     - SAC - Soft actor critic
     - TRPO - Trust region policy optimization
@@ -73,16 +73,14 @@ articles:
 - Sergey Levine @Pieter 的学生 @副教授 @Google Brain
     - PALM-E, RT1, RT2
     - @学生 /Chelsea Finn (@stanford)
-
+---
 - Trevor Darrell @自动驾驶
     - @学生 UCSD 王小龙, 清华叉院高阳和许华哲
 
 ## UCSD
+- xiaolong wang | https://xiaolonw.github.io/
 - 苏昊 @博士 Stanford
     - ImageNet, ManiSkill
-
-## UC San @54
-- xiaolong wang | https://xiaolonw.github.io/
 
 ## MIT
 - Daniela Rus
