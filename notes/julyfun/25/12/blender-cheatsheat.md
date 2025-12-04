@@ -10,6 +10,8 @@ confidence: 2
 
 ref: https://www.bilibili.com/video/BV1kX4y1m7G5/
 
+version: 5.0.0
+
 ## 视角
 - 中键: 旋转
 - Shift-中键: 平移
@@ -27,4 +29,7 @@ ref: https://www.bilibili.com/video/BV1kX4y1m7G5/
 ## 参考点
 - shift-d, 复制点
     - ? 这个点 K 模式下怎么不能吸附
+
+## 镜像
+- 选中物体 - 右键 - mirror
 
