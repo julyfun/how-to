@@ -8,4 +8,10 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 视角
+- 中键: 旋转
+- Shift-中键: 平移
 
+## 创建
+- Preference - Input 可打开模拟键盘，这样按顶部数字等于按小键盘
+- A: 添加物体
