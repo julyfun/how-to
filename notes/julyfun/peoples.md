@@ -39,6 +39,10 @@ articles:
 - 丁文伯 @SIGS, SSR Group
     - <UmiGen>
 
+## PKU
+- 苏浩
+    - 外骨骼
+
 ## ECNU
 - 文俊杰
     - TinyVLA
@@ -72,6 +76,10 @@ articles:
 
 - Trevor Darrell @自动驾驶
     - @学生 UCSD 王小龙, 清华叉院高阳和许华哲
+
+## UCSD
+- 苏昊 @博士 Stanford
+    - ImageNet, ManiSkill
 
 ## UC San @54
 - xiaolong wang | https://xiaolonw.github.io/
