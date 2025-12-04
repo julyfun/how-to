@@ -15,13 +15,16 @@ ref: https://www.bilibili.com/video/BV1kX4y1m7G5/
 - Shift-中键: 平移
 
 ## 创建
-- Preference - Input 可打开模拟键盘，这样按顶部数字等于按小键盘
-- A: 添加物体
+- `Preference - Input` 可打开模拟键盘，这样按顶部数字等于按小键盘
+- shift-a: 添加物体
 
 ## 选择
 - alt-z: 透显，可选中看不见的点
 
 ## 移动
-- G Z: 拖动沿 Z 轴移动（hint: 选中点可以移动点）
+- g, z: 拖动沿 Z 轴移动（hint: 选中点可以移动点）
 
 ## 参考点
+- shift-d, 复制点
+    - ? 这个点 K 模式下怎么不能吸附
+
