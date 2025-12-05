@@ -35,3 +35,6 @@ version: 5.0.0
 - 选中物体 - 右键 - mirror
 - 修改器: ...
 
+## Looking for some info
+- 绝对变换: ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/7rcv3.png)
+
