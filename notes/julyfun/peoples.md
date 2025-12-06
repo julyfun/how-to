@@ -40,7 +40,7 @@ articles:
     - <UmiGen>
 
 ## PKU
-- 苏浩
+- 苏浩 hao su
     - 外骨骼
 
 ## ECNU
