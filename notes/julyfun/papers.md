@@ -63,7 +63,7 @@ $\pi_{0.5}$ @25/04
 $\pi_{0.6}$ @25/06
 - rating(10)
 - blog: https://blog.csdn.net/v_JULY_v/article/details/154989166
-- 分布式价值函数 $V$:  任务进度打分
+- 分布式价值函数 $V$: 任务进度打分
     - input
     
 
