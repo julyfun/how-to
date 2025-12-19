@@ -79,12 +79,15 @@ articles:
 
 ## UCSD
 - xiaolong wang | https://xiaolonw.github.io/
-- 苏昊 @博士 Stanford
+- 苏昊 hao su @博士 Stanford
     - ImageNet, ManiSkill
 
 ## MIT
 - Daniela Rus
-    - 
+
+## 西北大学 NwU
+- Ruohan Zhang @talk12/5 @38 students
+    - https://ruohanzhang.com/
 
 ## Our Lab
 - Yu wenye:
@@ -107,4 +110,8 @@ articles:
 
 ## 快手
 - Pengfei Wan @Cited 4429
+
+
+Jason? (Dyna)
+Phillip
 
