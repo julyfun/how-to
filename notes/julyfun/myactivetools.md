@@ -18,6 +18,7 @@ confidence: 2
 
 ## online
 - 几何画板 25/9/22 https://www.geogebra.org/calculator
+- 文字转图片 25/12: https://www.lzltool.cn/text2img
 
 ## cli
 - serie: Better git graph 25/10
