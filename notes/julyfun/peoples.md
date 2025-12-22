@@ -104,6 +104,7 @@ articles:
     - 访谈: `https://www.sohu.com/a/877102944_161795` 25.3.29
 - 高继扬、赵行、李天威: 自动驾驶公司从业.
 
+---
 ## 银河通用
 
 ## 松灵 Agilex
@@ -111,7 +112,6 @@ articles:
 ## 快手
 - Pengfei Wan @Cited 4429
 
-
-Jason? (Dyna)
-Phillip
+## Dyna
+- Jason MA 宾州大学
 
