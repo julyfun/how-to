@@ -66,6 +66,10 @@ $\pi_{0.6}$ @25/06
 - 分布式价值函数 $V$: 任务进度打分
     - input
     
+## VLA-RL
+In-Context @Jason Ma
+- https://www.alphaxiv.org/abs/2411.04549
+- 就是不用 权重 而是用 kv_cache 来学习新任务（任务例如判断视频进度）
 
 ## Dataset
 Gen0 11/4 `https://generalistai.com/blog/nov-04-2025-GEN-0`
