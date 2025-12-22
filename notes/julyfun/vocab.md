@@ -9,6 +9,8 @@ confidence: 2
 ---
 
 ```
+obsessed about
+commercially viable.
 pivotal
 slip
 utmost
