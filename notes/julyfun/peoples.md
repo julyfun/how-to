@@ -85,6 +85,10 @@ articles:
 ## MIT
 - Daniela Rus
 
+## Harvard
+- Yilun Du
+    - 带的 wu peilin
+
 ## 西北大学 NwU
 - Ruohan Zhang @talk12/5 @38 students
     - https://ruohanzhang.com/
