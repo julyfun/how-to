@@ -10,8 +10,9 @@ confidence: 2
 
 `lsblk`
 
-? iso
+[q] iso
 
 - [x] uninstall ubuntu
 
+[qa] 压缩卷时可压缩空间远小于实际剩余空间? [tested]: 磁盘管理，右键属性，优化
 

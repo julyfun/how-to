@@ -33,7 +33,6 @@ assign letter=P
 remove letter=P
 # 以上 25/12/24 ok again
 ```
-
 Done. 进磁盘管理看看 ubuntu 分区是不是变成未分配了。
 
 ## Install
