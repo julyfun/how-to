@@ -13,6 +13,7 @@ confidence: 2
 - 设置时钟
 - 分区和格式化
 - 挂载 （为了待会儿能够 pacstrap /mnt base linux linux-firmware）
+    - [wtf] mount /dev/nvmexn1pn /mnt/boot # 这里挂载的得是 EFI 分区（256MB 那个），别挂你的 btrfs 分区
 - pacstrap 给 /mnt 安装系统 (联网) 以及 fish-shell
 
 ## recall
@@ -67,4 +68,6 @@ order:
 [q] fstab? [a] genfstab 会智能扫描当前 /mnt 下的挂载情况，并生成对应的 fstab 配置，以后启动都这样挂载. 你刚 /mnt 是临时挂载的，重启就没了.
 
 [note] /boot 就是 EFI 分区!!
+
+[err] `boot vmlinuz-linux must be readable / The image may not be complete.` [sol] 我是挂载错分区了，退回格式化那一步.
 
