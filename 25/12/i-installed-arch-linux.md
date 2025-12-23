@@ -73,3 +73,5 @@ order:
 
 [err] mount -t -o subvol.. 时 fsconfig() failed: No such file or directory [sol] 你忘记前面还有 mount 了
 
+[err] pacstrap `file not found: /etc/vconsole.conf` [sol] echo "KEYMAP=us" > /mnt/etc/vconsole.conf
+
