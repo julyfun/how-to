@@ -49,18 +49,18 @@ IEEE:
 ## VLA
 Evo-1 @赵波的 @25/11
 
-$\pi_0$
+$pi_0$
 - new from OXE: 预训练 + finetune
 - OXE 并没有预训练 - 后训练.
 
-$\pi_{0, \text{fast}}$
+$pi_(0, "fast")$
 
-$\pi_{0.5}$ @25/04
+$pi_(0.5)$ @25/04
 - 相比 pi0 主打场景泛化 "entirely new environments" "generalize to new settings"
 - Co-training: train on different data sources
     - "requires the right mixture of co-training tasks"
 
-$\pi_{0.6}$ @25/06
+$pi_(0.6)$ @25/06
 - rating(10)
 - blog: https://blog.csdn.net/v_JULY_v/article/details/154989166
 - 分布式价值函数 $V$: 任务进度打分
