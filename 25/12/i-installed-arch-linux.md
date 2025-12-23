@@ -15,6 +15,10 @@ confidence: 2
 - 挂载 （为了待会儿能够 pacstrap /mnt base linux linux-firmware）
     - [wtf] mount /dev/nvmexn1pn /mnt/boot # 这里挂载的得是 EFI 分区（256MB 那个），别挂你的 btrfs 分区
 - pacstrap 给 /mnt 安装系统 (联网) 以及 fish-shell
+- 生成 fstab
+- 切到 /mnt，配置时区、locale 等
+- pacman 安装 grub
+- ok
 
 ## recall
 
@@ -74,4 +78,6 @@ order:
 [err] mount -t -o subvol.. 时 fsconfig() failed: No such file or directory [sol] 你忘记前面还有 mount 了
 
 [err] pacstrap `file not found: /etc/vconsole.conf` [sol] echo "KEYMAP=us" > /mnt/etc/vconsole.conf
+
+[done]
 
