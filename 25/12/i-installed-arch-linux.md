@@ -81,3 +81,4 @@ order:
 
 [done]
 
+[err] 进桌面卡顿 [sol] 在拯救者 UEFI 中开启 Dynamic graphic
