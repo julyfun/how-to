@@ -23,7 +23,7 @@ confidence: 2
 
 [q] `加载内核和initramfs` initramfs?
 
-[q] NVME ssd vs other? [a]
+[q] NVME ssd vs other? [recall]
 
 order:
 1.  **硬件上电** -> **UEFI/BIOS**（固件自检并初始化硬件）
@@ -38,3 +38,9 @@ order:
 
 [q] 如果我要写内核模块，C语言，如何暴露接口给用户态程序
 - [a]
+
+`free -h`
+
+[q] Btrfs? [a] B-Tree filesystem. like zfs. ext4 超级进化版
+
+`fdisk -l`
