@@ -1,6 +1,6 @@
 ---
 title: "I Installed Arch Linux"
-date: 2025-01-01 00:28:40
+date: 2025-12-20 00:28:40
 tags: ["25", "01"]
 author: "julyfun-4070s-ubuntu2204"
 os: "Linux julyfun-4070s-ubuntu 6.8.0-90-generic #91~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 15:20:45 UTC 2 x86_64 x86_64 x86_64 GNU/Linux"
@@ -82,3 +82,8 @@ order:
 [done]
 
 [err] 进桌面卡顿 [sol] 在拯救者 UEFI 中开启 Dynamic graphic
+
+[err] clash verge / party 装不了？ [sol] 先装教程里 pacman 那些软件！
+
+[err] 拼音配置相关: 
+
