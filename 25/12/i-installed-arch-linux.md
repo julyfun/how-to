@@ -12,3 +12,6 @@ confidence: 2
 
 ? iso
 
+- [x] uninstall ubuntu
+
+
