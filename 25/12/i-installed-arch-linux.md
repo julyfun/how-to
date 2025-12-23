@@ -71,3 +71,5 @@ order:
 
 [err] `boot vmlinuz-linux must be readable / The image may not be complete.` [sol] 我是挂载错分区了，退回格式化那一步.
 
+[err] mount -t -o subvol.. 时 fsconfig() failed: No such file or directory [sol] 你忘记前面还有 mount 了
+
