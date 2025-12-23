@@ -64,4 +64,5 @@ order:
 
 [q] pacstrap [re]
 
-[q] fstab? [a]
+[q] fstab? [a] genfstab 会智能扫描当前 /mnt 下的挂载情况，并生成对应的 fstab 配置，以后启动都这样挂载. 你刚 /mnt 是临时挂载的，重启就没了.
+
