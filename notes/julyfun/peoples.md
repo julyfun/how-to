@@ -12,16 +12,15 @@ articles:
 - https://zhuanlan.zhihu.com/p/655943844
 
 ## SJTU
-- 赵波 @AI 学院, ScaleLab
-- 穆尧
+- [x] 穆尧
     - AI 学院 助理教授
     - Robotwin (陈天行)
+- [x] 李永露
+- [x] 王鹤升 @自动化, flx ctz 那块儿的
 - 丁玥, 计算机学院 (洪梦阳)
-- 李永露
 - 高岳 @自动化系，人工智能研究院
-- 王鹤升 @自动化, flx ctz 那块儿的
----
-- 张林峰 @人工智能学院 AP @from 清华大学交叉信息学院 .有报道
+- 赵波 @AI 学院, ScaleLab
+- 张林峰 @人工智能学院 AP @from 清华大学交叉信息学院 .进交大报道
     - <Be your own teacher: Improve the performance of convolutional neural networks via self distillation> @2019 @cited 1303
 - 张伟楠 @伦敦大学学院
     - ?
@@ -48,9 +47,8 @@ articles:
     - TinyVLA
 
 ## Standford
-- 迟宬 cheng chi
+- [x] 迟宬 cheng chi
     - 导师 宋舒然 shuran REAL Stanford
----
 - Mengda Xu @REAL
     - DexUMI
 - Chelsea Finn (RL)
@@ -63,17 +61,16 @@ articles:
     - AnySkin
 
 ## UCB
-- Pieter Abbeel @吴恩达的学生
+- [x] Pieter Abbeel @师从吴恩达
     - DDPM (通讯)
     - SAC - Soft actor critic
     - TRPO - Trust region policy optimization
     - 华人学生张天浩，段岩，陈曦: 独角兽公司 Covariant
     - @学生 John Schulman
     - @学生 吴翼 高阳(博士)
-- Sergey Levine @Pieter 的学生 @副教授 @Google Brain
+- Sergey Levine @师从Pieter @副教授 @Google Brain
     - PALM-E, RT1, RT2
     - @学生 /Chelsea Finn (@stanford)
----
 - Trevor Darrell @自动驾驶
     - @学生 UCSD 王小龙, 清华叉院高阳和许华哲
 
@@ -86,7 +83,7 @@ articles:
 - Daniela Rus
 
 ## Harvard
-- Yilun Du
+- Yilun Du 杜逸伦
     - 带的 wu peilin
 
 ## 西北大学 NwU
@@ -108,7 +105,6 @@ articles:
     - 访谈: `https://www.sohu.com/a/877102944_161795` 25.3.29
 - 高继扬、赵行、李天威: 自动驾驶公司从业.
 
----
 ## 银河通用
 
 ## 松灵 Agilex
