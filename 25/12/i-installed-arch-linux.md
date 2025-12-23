@@ -23,7 +23,7 @@ confidence: 2
 
 [q] `加载内核和initramfs` initramfs?
 
-[q] NVME ssd vs other? [recall]
+[q] NVME ssd vs other? [re]
 
 order:
 1.  **硬件上电** -> **UEFI/BIOS**（固件自检并初始化硬件）
@@ -44,3 +44,8 @@ order:
 [q] Btrfs? [a] B-Tree filesystem. like zfs. ext4 超级进化版
 
 `fdisk -l`
+
+[q] mount zstd? [a] 进程读取/写入硬盘数据居然可以压缩.
+
+[q] 为啥要 mount 才能操作啊，和链接有啥区别
+
