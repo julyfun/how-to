@@ -14,12 +14,12 @@ confidence: 2
 
 - [x] uninstall ubuntu
 
-[qa] 压缩卷时可压缩空间远小于实际剩余空间? 
+[q] 压缩卷时可压缩空间远小于实际剩余空间? 
 - [not-ok] 磁盘管理，右键属性，优化
 - [not-ok] https://blog.csdn.net/Rained_99/article/details/54023914
 - [ok] DiskGenius (橙色图标)，右键 C 盘，调整大小。然后会自动压缩 -> 重启 -> 分区 -> 重启.
 
-[qa] UEFI & GRUB
+[q] UEFI & GRUB
 
 [q] `加载内核和initramfs` initramfs?
 
@@ -35,3 +35,6 @@ order:
 7.  **系统服务** -> **启动登录管理器/图形界面**（Linux：`gdm`, `sddm`等；Windows：`winlogon.exe`）
 8.  **用户登录** -> **启动用户会话与桌面环境**（Linux：`gnome-shell`, `plasma`等；Windows：`explorer.exe`）
 9.  **桌面环境/Shell** -> **用户可以执行应用程序**（如`firefox`, `notepad.exe`）
+
+[q] 如果我要写内核模块，C语言，如何暴露接口给用户态程序
+- [a]
