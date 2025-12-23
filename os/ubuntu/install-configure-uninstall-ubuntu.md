@@ -27,10 +27,11 @@ select disk 0
 select partition 5
 delete partition override
 # 选择 ubuntu EFI 所在分区，一般是 1
-select partition 1
+select partition 1 # Ubuntu EFI
 assign letter=P
-# 记事本管理员打开，选择 打开 -> 删除 P 盘 EFI/ubuntu
+# 管理员打开 notepad，点击 文件 -> 打开 -> 找到 P 盘 -> 删除其中的 EFI/ubuntu
 remove letter=P
+# 以上 25/12/24 ok again
 ```
 
 Done. 进磁盘管理看看 ubuntu 分区是不是变成未分配了。
