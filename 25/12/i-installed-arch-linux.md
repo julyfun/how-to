@@ -8,6 +8,15 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 回忆提纲
+- 禁用服务
+- 设置时钟
+- 分区和格式化
+- 挂载 （为了待会儿能够 pacstrap /mnt base linux linux-firmware）
+- pacstrap 给 /mnt 安装系统 (联网) 以及 fish-shell
+
+## recall
+
 `lsblk`
 
 [q] iso
@@ -52,3 +61,7 @@ order:
 [q] 这分成两个子卷啥意思，有何必要，而且这俩不是包含关系吗 [a] 这样 /home 和非 /home 位于两个子卷。且重装系统可以不覆盖 /home
 
 [q] 每个子卷内部是连续地址吗 [a] 而是高度分散的（交错存储，数据块组）
+
+[q] pacstrap [re]
+
+[q] fstab? [a]
