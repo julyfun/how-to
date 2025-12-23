@@ -8,4 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+`lsblk`
+
+? iso
 
