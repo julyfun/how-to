@@ -14,5 +14,7 @@ confidence: 2
 
 - [x] uninstall ubuntu
 
-[qa] 压缩卷时可压缩空间远小于实际剩余空间? [ok]: 磁盘管理，右键属性，优化
+[qa] 压缩卷时可压缩空间远小于实际剩余空间? 
+- [not-ok] 磁盘管理，右键属性，优化
+- [not-ok] https://blog.csdn.net/Rained_99/article/details/54023914
 
