@@ -19,3 +19,6 @@ confidence: 2
 - [not-ok] https://blog.csdn.net/Rained_99/article/details/54023914
 - [ok] DiskGenius (橙色图标)，右键 C 盘，调整大小。然后会自动压缩 -> 重启 -> 分区 -> 重启.
 
+[qa] UEFI & GRUB
+
+`加载内核和initramfs` [q] initramfs?
