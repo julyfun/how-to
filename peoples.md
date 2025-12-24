@@ -60,6 +60,9 @@ articles:
     - https://www.lerrelpinto.com/
     - AnySkin
 
+## HKU
+- 司马崇昊 @AI lab
+
 ## UCB
 - [x] Pieter Abbeel @师从吴恩达
     - DDPM (通讯)
