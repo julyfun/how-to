@@ -15,3 +15,13 @@ confidence: 2
 ## Panels & bars
 - terminal: <C-/>
 
+## Info
+- Show current file abs path: `:!echo %:p` ref: https://vi.stackexchange.com/a/1885
+- Show keymap: `<leader>sk`
+### Info.notification
+- Show notification: `<leader>n`
+- clear notification: `<leader>un`
+
+## Edit
+- Rename symbol: `:lua vim.lsp.buf.rename()`
+
