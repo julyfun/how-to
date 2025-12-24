@@ -84,6 +84,8 @@ articles:
 
 ## MIT
 - Daniela Rus
+- 韩松
+    - EgoVLA
 
 ## Harvard
 - Yilun Du 杜逸伦
