@@ -25,6 +25,9 @@ confidence: 2
 - `brew install translate-shell` `trans -s en -t zh-CN -I` 25/10
 - ghostty, iTerm2, konsole
 
+## cli.disk
+- dua i `(dua-cil)`
+
 ## notes
 - neovim 无需多言 23/7
 - Obsidian 24/7
@@ -34,4 +37,5 @@ confidence: 2
 - Dida 清单 适合存 api-tokens 25/1
     - 跨所有平台
     - 私有
+
 
