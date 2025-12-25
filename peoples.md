@@ -24,6 +24,7 @@ articles:
     - <Be your own teacher: Improve the performance of convolutional neural networks via self distillation> @2019 @cited 1303
 - 张伟楠 @伦敦大学学院
     - ?
+- 叶南阳 搞得是 cv，现在搞 robot 了 ![](https://www.cs.sjtu.edu.cn/upload/image/jiaoshiml/%E5%8F%B6%E5%8D%97%E9%98%B3.jpg)
 
 ## AI Lab
 - Lei Bai: https://scholar.google.com/citations?user=sakOO04AAAAJ&hl=en
