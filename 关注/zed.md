@@ -11,5 +11,7 @@ tags: ["notes", "julyfun", "关注"]
 - [ ] 选择 Python Exe: https://github.com/zed-industries/zed/issues/7646
 - [ ] easymotion vim: https://github.com/zed-industries/zed/issues/4930
 - [ ] Jupyter notebook: https://github.com/zed-industries/zed/issues/5273
-- [ ] sticky scroll: https://github.com/zed-industries/zed/issues/5344
+- [x] sticky scroll: https://github.com/zed-industries/zed/issues/5344
+    - [ ] 支持 indent provider
+- [ ] Allow customizing text kerning #10348
 
