@@ -10,7 +10,7 @@ confidence: 2
 
 ## 11/26
 Generalist: 如夹爪的量程设计和末端尖锐度,黄色更多是柔性材料，黑色是刚性材料
-- 机械臂是带力控 [qm] 
+- 机械臂是带力控 [q] 
 
 ## 11/25
 - AINA [ok]
@@ -122,7 +122,7 @@ Diff-DAgger: @24/10 U Vir 弗吉尼亚 @275, @Sung-Wook Lee @cited 12
 - DP 高损失值表示当前状态-动作对与训练分布显著不同
 
 ThriftyDAgger UCB
-    - 训练 Q 函数估算当前策略下任务成功收敛的概率以界定风险状态
+- 训练 Q 函数估算当前策略下任务成功收敛的概率以界定风险状态
 
 2.  **《Compliant Residual DAgger: Improving Real-World Contact-Rich Manipulation with Human Corrections》**
     -  **发布背景**：2025年由斯坦福大学团队提出，聚焦现实世界中接触密集型机器人操作任务（如翻书、皮带装配）的DAgger应用痛点，即高质量人工纠错数据采集难、策略更新效率低。
@@ -139,5 +139,9 @@ ThriftyDAgger UCB
     -  **实验成果**：在3个连续控制仿真任务中，相比Safe DAgger平均减少60%的上下文切换；在ABB YuMi机器人的布料操作实验中，不仅保持了同样的上下文切换减少比例，还使任务成功率提升60%。
 
 ## 力控
-ACP @Standford YifanHou ZeyiLiu Chengchi
-- ..
+ACP Adaptive Compliance Policy @Standford YifanHou ZeyiLiu Chengchi
+- [q] Virtual target 是干啥用的？
+是 observation 还是 action?
+在采集数据过程中如何采集 virtual target？
+- [a]
+

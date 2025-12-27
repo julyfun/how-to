@@ -55,6 +55,8 @@ articles:
 - Chelsea Finn (RL)
     - Meta learning??
     - RT-1, RT-2
+- yifan hou ![](https://yifan-hou.github.io/assets/img/yifan_pic_new-480.webp)
+    - ACP, DexUMI, Compliant Residual DAgger(24/10)
 
 ## NYU
 - Pinto
