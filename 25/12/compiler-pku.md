@@ -16,6 +16,9 @@ execute
 - `cargo run -- -koopa hello.c -o hello.koopa`
 - `autotest -koopa -s lv1 /root/compiler`
 
+测试数据:
+- docker /opt/bin/testcases
+
 ## Lv0
 ## Lv1
 - sysy: C-like lang for education
