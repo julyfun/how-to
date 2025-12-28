@@ -9,12 +9,11 @@ confidence: 2
 ---
 
 bookmark
-- https://pku-minic.github.io/online-doc/#/lv2-code-gen/code-gen
+- https://pku-minic.github.io/online-doc/#/lv3-expr/
 
 execute
 - `docker run -it --rm -v /home/julyfun/Documents/GitHub/julyfun/compiler/:/root/compiler maxxing/compiler-dev bash`
 - `cargo run -- -koopa hello.c -o hello.koopa`
-- `autotest -koopa -s lv1 /root/compiler`
 
 测试数据:
 - docker /opt/bin/testcases
@@ -59,4 +58,8 @@ PASSED (7/7)
 ```
 
 顺便就配了一大堆 NVIM.
+
+## Lv2
+
+注意 Value 类型是一个指针. dfg.value(*self); 可以获取实际 ValueData. 然后可以 `match data.kind()`
 
