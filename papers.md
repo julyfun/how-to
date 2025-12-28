@@ -99,6 +99,8 @@ UmiGEN: @Yan Huang, @Wenbo Ding
 Compliant Residual DAgger
 - [abs]: [q] update policies with new data?
     - [q] without interrupting the ongoing?
+    - [q] provide practical guidance?
+    - [note] base + 动作残差 policy
 - [q] 合规干预接口?
 
 ARMADA
