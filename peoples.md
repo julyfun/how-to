@@ -35,9 +35,10 @@ articles:
     - <End-to-end learning of driving models from large-scale video datasets> 2017
     - <Compact bilinear pooling> 2016
     - <Mastering atari games with limited data> 2021
-
 - 丁文伯 @SIGS, SSR Group
     - <UmiGen>
+- haoqiang 范浩强 ![](https://pic3.zhimg.com/v2-cd63c55bf45f7a551f46098101ab8250_1440w.jpg)
+    - 原力灵机
 
 ## PKU
 - 苏浩 hao su
