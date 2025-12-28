@@ -9,13 +9,51 @@ confidence: 2
 ---
 
 bookmark
-- https://pku-minic.github.io/online-doc/#/lv0-env-config/docker
-- https://github.com/pku-minic/koopa/blob/master/koopa/examples/brainfuck/main.rs
+- https://pku-minic.github.io/online-doc/#/lv2-code-gen/code-gen
 
 execute
 - `docker run -it --rm -v /home/julyfun/Documents/GitHub/julyfun/compiler/:/root/compiler maxxing/compiler-dev bash`
 - `cargo run -- -koopa hello.c -o hello.koopa`
+- `autotest -koopa -s lv1 /root/compiler`
 
 ## Lv0
 ## Lv1
 - sysy: C-like lang for education
+## Lv1.4
+Koopa Ir 内存形式没文档. [○･｀Д´･ ○]
+
+```rust
+// WRONG
+let mut main = FunctionData::new(...);
+let zero = main.new_value().integer(0);  // globals 还没初始化, globals.upgrade() 会 panic
+let main = program.new_func(main);       // 太晚了
+
+// RIGHT
+let main_data = FunctionData::new(...);
+let main_func = program.new_func(main_data);  // 先添加，初始化 globals
+let main = program.func_mut(main_func);       // 获取可变引用
+let zero = main.new_value().integer(0);       // 现在 globals 已经设置好了
+```
+
+Result:
+```console
+root@4c93081a761b:~/compiler# cat hello.koopa
+fun @main(): i32 {
+%entry:
+  ret 32
+}
+
+
+    Finished `release` profile [optimized] target(s) in 5.61s
+running test "0_main" ... PASSED
+running test "1_comments" ... PASSED
+running test "2_int_dec" ... PASSED
+running test "3_int_oct" ... PASSED
+running test "4_int_hex" ... PASSED
+running test "5_compact" ... PASSED
+running test "6_whitespaces" ... PASSED
+PASSED (7/7)
+```
+
+顺便就配了一大堆 NVIM.
+
