@@ -97,7 +97,9 @@ UmiGEN: @Yan Huang, @Wenbo Ding
 
 ## DAgger
 Compliant Residual DAgger
-- ?
+- [abs]: [q] update policies with new data?
+    - [q] without interrupting the ongoing?
+- [q] 合规干预接口?
 
 ARMADA
 
@@ -143,5 +145,5 @@ ACP Adaptive Compliance Policy @Standford YifanHou ZeyiLiu Chengchi
 - [q] Virtual target 是干啥用的？
 是 observation 还是 action?
 在采集数据过程中如何采集 virtual target？
-- [a]
+- [a] 是采完以后用时间窗口算的. (virtual - ref) * K刚度 = F力
 
