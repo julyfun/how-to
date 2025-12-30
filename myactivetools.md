@@ -11,8 +11,9 @@ confidence: 2
 ## Files, net
 - OneDrive 25/10
 - Clash Verge | Clash Party 25/1
+- Clean My Mac
 
-## Editor
+## Editor IDE
 - Cursor 25/6
 - Zed 25/1 轻量 AI & good vim
 
@@ -20,8 +21,9 @@ confidence: 2
 - 几何画板 25/9/22 https://www.geogebra.org/calculator
 - 文字转图片 25/12: https://www.lzltool.cn/text2img
 
-## AI
+## AI-cli
 - kimi: Cheap 25/12
+- claudecode + GLM4.7: Cheap 25/12
 
 ## cli
 - [-] serie: Better git graph 25/10
