@@ -9,7 +9,7 @@ confidence: 2
 ---
 
 ## Files, net
-- OneDrive (since 25/10/22)
+- OneDrive 25/10
 - Clash Verge | Clash Party 25/1
 
 ## Editor
@@ -20,13 +20,19 @@ confidence: 2
 - 几何画板 25/9/22 https://www.geogebra.org/calculator
 - 文字转图片 25/12: https://www.lzltool.cn/text2img
 
+## AI
+- kimi: Cheap 25/12
+
 ## cli
-- serie: Better git graph 25/10
+- [-] serie: Better git graph 25/10
 - `brew install translate-shell` `trans -s en -t zh-CN -I` 25/10
 - ghostty, iTerm2, konsole
 
 ## cli.disk
 - dua i `(dua-cil)`
+
+## automize
+- wakatime 25/12 统计 Coding 时间
 
 ## notes
 - neovim 无需多言 23/7
@@ -37,5 +43,4 @@ confidence: 2
 - Dida 清单 适合存 api-tokens 25/1
     - 跨所有平台
     - 私有
-
 
