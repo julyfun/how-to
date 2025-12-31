@@ -105,7 +105,7 @@ Compliant Residual DAgger
 
 ARMADA
 
-Genie Centurion
+Genie Centurion @智元 @25/05
 
 Data-Efficient Multitask DAgger
 - rating(2) 仿真实验数据匮乏，真机没什么实验;
