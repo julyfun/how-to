@@ -97,11 +97,13 @@ UmiGEN: @Yan Huang, @Wenbo Ding
 
 ## DAgger
 Compliant Residual DAgger
+- [quick] 冻结 base，训的是 residual，residual 50hz输出 delta pose 和 target force (target force 使用 admittance controller 施加)
+    - [q] admittance control?
+    - [a]
 - [abs]: [q] update policies with new data?
     - [q] without interrupting the ongoing?
     - [q] provide practical guidance?
     - [note] base + 动作残差 policy
-- [q] 合规干预接口?
 
 ARMADA
 
@@ -130,10 +132,6 @@ Diff-DAgger: @24/10 U Vir 弗吉尼亚 @275, @Sung-Wook Lee @cited 12
 ThriftyDAgger UCB
 - 训练 Q 函数估算当前策略下任务成功收敛的概率以界定风险状态
 
-2.  **《Compliant Residual DAgger: Improving Real-World Contact-Rich Manipulation with Human Corrections》**
-    -  **发布背景**：2025年由斯坦福大学团队提出，聚焦现实世界中接触密集型机器人操作任务（如翻书、皮带装配）的DAgger应用痛点，即高质量人工纠错数据采集难、策略更新效率低。
-    - **核心创新**：设计了合规干预接口与合规残差策略。前者通过合规控制让人类在不中断机器人运行的前提下进行轻柔精准的动作修正；后者结合力反馈与力控制，从人工纠错中学习优化策略。
-    -  **实验成果**：在翻书和皮带装配任务中，使基础策略的成功率提升超50%，性能显著优于从零重训和微调两种传统方式，还为DAgger在现实机器人任务中的落地提供了实操指导。
 5.  **《Soft DAgger: Sample-Efficient Imitation Learning for Control of Soft Robots》**
     -  **发布背景**：2023年发表于《Sensors》，是针对柔性机器人操作控制的开创性DAgger研究。柔性机器人因变形特性难以建模，传统控制方法依赖昂贵的探索技术或强化学习代理，实用性差。
     -  **核心创新**：提出Soft DAgger算法，构建动态行为映射，将机器人任务空间与驱动空间关联，该映射可基于机器人历史状态、专家演示和当前位置预测最优动作。设计了两种算法变体，无需依赖高成本探索即可实现泛化。
