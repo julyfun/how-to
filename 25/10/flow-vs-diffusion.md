@@ -31,10 +31,12 @@ x1 = torch.randn_like(x0)                   # Gaussian prior
 # forward interpolation
 xt = (1 - t) * x0 + t * x1
 
-# true velocity [q] 这不对吧
+# true velocity. 这是 x1 -> x0 的速度
 v_true = x1 - x0
 
-pred_v = model(xt, t)                       # predict velocity
+# 从 x1 走向 x0，在 t 时刻的速度. 相当于 x1 也是一个条件
+pred_v = model(xt, t)
 
 loss = ((pred_v - v_true)**2).mean()
 ```
+
