@@ -31,11 +31,10 @@ x1 = torch.randn_like(x0)                   # Gaussian prior
 # forward interpolation
 xt = (1 - t) * x0 + t * x1
 
-# true velocity
+# true velocity [q] 这不对吧
 v_true = x1 - x0
 
 pred_v = model(xt, t)                       # predict velocity
 
 loss = ((pred_v - v_true)**2).mean()
 ```
-
