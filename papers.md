@@ -101,11 +101,10 @@ UmiGEN: @Yan Huang, @Wenbo Ding
 
 
 ## DAgger
-Compliant Residual DAgger
+Compliant Residual DAgger @mengda xu @yifan hou
 - [quick] 冻结 base，训的是 residual，residual 50hz输出 delta pose 和 target force (target force 使用 admittance controller 施加)
     - [q] admittance control?
     - [a]
-Compliant Residual DAgger @mengda xu @yifan hou
 - [abs]: [q] update policies with new data?
     - [q] without interrupting the ongoing?
     - [q] provide practical guidance?
