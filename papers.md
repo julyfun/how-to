@@ -72,8 +72,11 @@ In-Context @Jason Ma
 - 就是不用 权重 而是用 kv_cache 来学习新任务（任务例如判断视频进度）
 
 ## Dataset
-RoboMind 25/11
-
+RoboCoin 25/11 @北京智源
+- [abs] [q] 如何证明 RTML 独立提点?
+    - [q] 异构性如何解决 ？
+    - [q] 数据后处理和验证 ?
+    - [q] 采了多久?
 
 Gen0 25/11/4 `https://generalistai.com/blog/nov-04-2025-GEN-0`
 - 27000h 数据, 10B+ VLA
@@ -82,7 +85,7 @@ Gen0 25/11/4 `https://generalistai.com/blog/nov-04-2025-GEN-0`
 - 似乎有一套自己的 inference 代码
 - 预训练技巧: 高 pred error 和反向 KL 适合 RL
 
-RoboCoin 24/12
+RoboMind 24/12
 
 ## Data Generation
 DemoGen: 24/10 @THU AI Lab @Zhengrong Xue @Shuying Deng @Huazhe Xu
