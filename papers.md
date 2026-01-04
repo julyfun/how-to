@@ -72,12 +72,17 @@ In-Context @Jason Ma
 - 就是不用 权重 而是用 kv_cache 来学习新任务（任务例如判断视频进度）
 
 ## Dataset
-Gen0 11/4 `https://generalistai.com/blog/nov-04-2025-GEN-0`
+RoboMind 25/11
+
+
+Gen0 25/11/4 `https://generalistai.com/blog/nov-04-2025-GEN-0`
 - 27000h 数据, 10B+ VLA
 - 7B VLA 不会 ossification 僵化，而 LLM 通常是 O(10M)
 - 这个 blog 里有 in-the-wild 都有复杂背景
 - 似乎有一套自己的 inference 代码
 - 预训练技巧: 高 pred error 和反向 KL 适合 RL
+
+RoboCoin 24/12
 
 ## Data Generation
 DemoGen: 24/10 @THU AI Lab @Zhengrong Xue @Shuying Deng @Huazhe Xu
@@ -100,6 +105,7 @@ Compliant Residual DAgger
 - [quick] 冻结 base，训的是 residual，residual 50hz输出 delta pose 和 target force (target force 使用 admittance controller 施加)
     - [q] admittance control?
     - [a]
+Compliant Residual DAgger @mengda xu @yifan hou
 - [abs]: [q] update policies with new data?
     - [q] without interrupting the ongoing?
     - [q] provide practical guidance?
