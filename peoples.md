@@ -43,6 +43,8 @@ articles:
 ## PKU
 - 苏浩 hao su
     - 外骨骼
+- 王鹤 he wang ![](https://n.sinaimg.cn/spider20241118/87/w1080h607/20241118/f53c-56d93fc25d2e5e93dcf5787d1763dc11.jpg)
+    - 银河通用
 
 ## ECNU
 - 文俊杰
@@ -114,7 +116,8 @@ articles:
     - 访谈: `https://www.sohu.com/a/877102944_161795` 25.3.29
 - 高继扬、赵行、李天威: 自动驾驶公司从业.
 
-## 银河通用
+## 银河通用 galbot
+- G1:  ![](https://static-web.stcn.com/upload/wechat/20251219/VakoTLRgLGLicQfBeyRYUse1ITjrl5nSSwHaD8qgFaZiat2I5l6OPrtGstbZYvWKv4kNRyhno59h2qoVfwHibQJsA.png)
 
 ## 松灵 Agilex
 
@@ -126,4 +129,6 @@ articles:
 
 ## 方舟无限
 - AC one 平台
+
+## GenRobot
 

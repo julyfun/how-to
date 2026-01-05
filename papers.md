@@ -47,6 +47,9 @@ IEEE:
 
 
 ## VLA
+Stereo VLA @shengliang deng @he wang @25/12/26
+- 双目视觉输入，用 Foundation Stereo + 左目 DINO + SigLIP
+
 Evo-1 @赵波的 @25/11
 
 $pi_0$
