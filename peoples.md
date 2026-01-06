@@ -38,7 +38,7 @@ articles:
 - 丁文伯 @SIGS, SSR Group
     - <UmiGen>
 - haoqiang 范浩强 ![](https://pic3.zhimg.com/v2-cd63c55bf45f7a551f46098101ab8250_1440w.jpg)
-    - 原力灵机 (范浩强、周而进、汪天才)
+    - 原力灵机 (范浩强、周而进、汪天才) Dexbotic?
 
 ## PKU
 - 苏浩 hao su
@@ -51,8 +51,9 @@ articles:
     - TinyVLA
 
 ## Standford
-- [x] 迟宬 cheng chi
+- [x] 迟宬 cheng chi @本科密歇根
     - 导师 宋舒然 shuran REAL Stanford
+- [x] Tony zhao ![](https://mobile-aloha.github.io/static/images/TonyZhao.jpeg) 赵子豪 @本科UCB
 - Mengda Xu @REAL
     - DexUMI
 - Chelsea Finn (RL)

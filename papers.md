@@ -108,12 +108,11 @@ UmiGEN: @Yan Huang, @Wenbo Ding
 
 ## DAgger
 Compliant Residual DAgger @mengda xu @yifan hou
-- [quick] 冻结 base，训的是 residual，residual 50hz输出 delta pose 和 target force (target force 使用 admittance controller 施加)
-    - [q] admittance control?
-    - [a]
-- [abs]: [q] update policies with new data?
+- [re] 冻结 base，训的是 residual，residual 50hz输出 delta pose 和 target force (target force 使用 admittance controller 施加)
+- [idea] replay buffer 对 intervention data 的采样频率更高.
+- [abs]:
+    - [q] admittance control? [a] 虚拟弹簧
     - [q] without interrupting the ongoing?
-    - [q] provide practical guidance?
     - [note] base + 动作残差 policy
 
 ARMADA
@@ -121,8 +120,6 @@ ARMADA
 Genie Centurion @智元 @25/05
 
 Data-Efficient Multitask DAgger
-- rating(2) 仿真实验数据匮乏，真机没什么实验;
-    - 但是 loss 这个想法还可以.
 - https://arxiv.org/pdf/2509.25466
 - @罗得岛州 布朗大学 @60 @Haotian Fu @cited 0
 - TN: 成功率较低的任务会获得更高的优先级分数 (kalman filter 成功率)
@@ -130,15 +127,14 @@ Data-Efficient Multitask DAgger
     - 其实就是加入这组 dagger 前后的 loss
 - bench: 居然用的是仿真 (MetaWorld(Mujoco) & ISAAC Lab)
 
-Diff-DAgger: @24/10 U Vir 弗吉尼亚 @275, @Sung-Wook Lee @cited 12
-- rating(2)
-- <Uncertainty Estimation with Diffusion Policy for Robotic Manipulation>
-- 推理阶段，用 loss 预测错误并且 ask for human help
+[ok] Diff-DAgger: @24/10 U Vir 弗吉尼亚 @275, @Sung-Wook Lee @cited 12
+- [re] 推理时用 diffusion loss 判定机器人不确定(OOD) 并请求帮助
+- 推理阶段，用 *loss 预测错误并且 ask for human help
     - LOSS: 给定 diffusion 时间步 t, LOSS = ||生成噪声 - 预测噪声||^2
-- 通过允许机器人高度不确定时向专家寻求帮助来解决这个问题
+    - DP 高损失值表示当前状态-动作对与训练分布显著不同
+    - 通过允许机器人高度不确定时向专家寻求帮助来解决这个问题
     - ref: Ensemble-DAgger, ThriftyDAgger
-    - Ensemble: 训练多个策略并使用动作方差作为不确定性度量。然而，这种方法在多模态策略中会失效，因为在给定状态下存在多个有效动作
-- DP 高损失值表示当前状态-动作对与训练分布显著不同
+        - Ensemble-DAgger: 训练多个策略并使用动作方差作为不确定性度量。然而，这种方法在多模态策略中会失效，因为在给定状态下存在多个有效动作
 
 ThriftyDAgger UCB
 - 训练 Q 函数估算当前策略下任务成功收敛的概率以界定风险状态

@@ -21,17 +21,20 @@ confidence: 2
 - 几何画板 25/9/22 https://www.geogebra.org/calculator
 - 文字转图片 25/12: https://www.lzltool.cn/text2img
 
-## AI-cli
-- kimi: Cheap 25/12
-- claudecode + GLM4.7: Cheap 25/12
-
 ## cli
 - [-] serie: Better git graph 25/10
 - `brew install translate-shell` `trans -s en -t zh-CN -I` 25/10
 - ghostty, iTerm2, konsole
 
+## cli.ai
+- kimi: Cheap 25/12
+- claudecode + GLM4.7: Cheap 25/12
+
 ## cli.disk
 - dua i `(dua-cil)`
+
+## os.mac
+- Alfred5 (for pre-M4)
 
 ## automize
 - wakatime 25/12 统计 Coding 时间
