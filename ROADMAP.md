@@ -14,7 +14,7 @@ confidence: 2
 - [ ] 285
 - [ ] rustlings & ziglings
 
-- [ ] 嵌入式
+- [ ] 嵌入式 (esp32 接随机传感器)
 - [ ] build little robot from scratch
 - [ ] unitree RL debug
 

@@ -8,6 +8,26 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+jianlan another: https://arxiv.org/abs/2512.24125v1
+
+COT planning
+
+看来 RDP 了
+
+赵行 TT quit
+
+董hao2 长聘
+
+自变量 企业
+
+游戏式采集
+
+implicit RDP 主要改进
+
+robotchallenge
+
+喇叭口
+
 ## 11/26
 Generalist: 如夹爪的量程设计和末端尖锐度,黄色更多是柔性材料，黑色是刚性材料
 - 机械臂是带力控 [q] 
@@ -64,10 +84,14 @@ $pi_(0.5)$ @25/04
     - "requires the right mixture of co-training tasks"
 
 $pi_(0.6)$ @25/06
-- rating(10)
 - blog: https://blog.csdn.net/v_JULY_v/article/details/154989166
-- 分布式价值函数 $V$: 任务进度打分
-    - input
+- [不同之处.stage-pretain]
+- VLA{VLM+FM}: img,lang,It(二值化优势指示符) => action(好/坏)
+- ValueModel: 预测成功还需要多少步
+- 然后特定任务few-shot SFT
+- [不同之处.stage-exp]
+- 即使rollout成功，也可以用 vm 判断是优势还是劣势.
+- vm 也会更新.
     
 ## VLA-RL
 In-Context @Jason Ma
@@ -107,15 +131,22 @@ UmiGEN: @Yan Huang, @Wenbo Ding
 
 
 ## DAgger
-Compliant Residual DAgger @mengda xu @yifan hou
+SOP 26/1/7 @jianlan luo
+- [site] post-training problem:
+    - shift, speed, degeneralize
+    - online, multirobot, mutlitask
+
+[crdagger] Compliant Residual DAgger @mengda xu @yifan hou
 - [re] 冻结 base，训的是 residual，residual 50hz输出 delta pose 和 target force (target force 使用 admittance controller 施加)
 - [idea] replay buffer 对 intervention data 的采样频率更高.
 - [abs]:
     - [q] admittance control? [a] 虚拟弹簧
     - [q] without interrupting the ongoing?
     - [note] base + 动作残差 policy
+- [q] '意图误解'？
+- [q] 什么时候 ask for help?
 
-ARMADA
+[todo] ARMADA
 
 Genie Centurion @智元 @25/05
 
@@ -138,6 +169,12 @@ Data-Efficient Multitask DAgger
 
 ThriftyDAgger UCB
 - 训练 Q 函数估算当前策略下任务成功收敛的概率以界定风险状态
+
+HGDAgger (human gated) 18/10 [自动驾驶]
+- 专家认为进入不安全状态，就完全控制(注意不录制混合控制)，引导回安全状态就交还控制权.
+- 计算一个多个 policy 输出的方差，作为不确定度，用最近的不确定度计算安全阈值，用于后续推理自主请求介入
+
+[todo]:
 
 5.  **《Soft DAgger: Sample-Efficient Imitation Learning for Control of Soft Robots》**
     -  **发布背景**：2023年发表于《Sensors》，是针对柔性机器人操作控制的开创性DAgger研究。柔性机器人因变形特性难以建模，传统控制方法依赖昂贵的探索技术或强化学习代理，实用性差。

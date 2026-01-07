@@ -11,7 +11,7 @@ tags: ["notes", "julyfun", "技术学习", "hrl"]
 - ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241108230928.webp)
 ## 损失设计
 
-- 由于 Q-learning 是这样的:
+- 由于 Q-learning 是这样的: (时序差分，只引入了一步随机性，bootstraping自举)
 - ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241108231138.webp)
 - 所以对于一个**批量的采样** ${(s_i, a_i, r_i, s_i^prime)}$，可以这样设计损失函数:
     - 注意下面损失函数里有 $Q$ 本身，无法方便求损失，所以后面设计了双网络（训练网络和目标网络）。这里 $w$ 是 MLP 权重。

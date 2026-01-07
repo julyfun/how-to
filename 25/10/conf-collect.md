@@ -8,10 +8,6 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-CoRL:
-- Conf: ~11/6
-- [papers]
-- DexUMI (2025 Best FL)
 
 IROS:
 - DDL: 1/5 - 3/2,
@@ -20,12 +16,18 @@ IROS:
 - Improved-3D-Diffusion-Policy (2025) @Yanjie Ze
 
 RSS:
-- DDL: 1/24
+- DDL: ~1/24
 - Rebuttal: 3/24
 - Accept: 4/10
 - Conf: 6/21
 - [papers]
 - UMI
+
+CoRL:
+- DDL: 
+- Conf: 26/9/27
+- [papers]
+- DexUMI (2025 Best FL)
 
 ## CV
 ICLR:
