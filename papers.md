@@ -8,26 +8,6 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-jianlan another: https://arxiv.org/abs/2512.24125v1
-
-COT planning?
-
-看来 RDP 了
-
-赵行 TT quit
-
-董hao2 长聘
-
-自变量 企业
-
-游戏式采集
-
-implicit RDP 主要改进
-
-robotchallenge
-
-喇叭口 paper
-
 ## 11/26
 Generalist: 如夹爪的量程设计和末端尖锐度,黄色更多是柔性材料，黑色是刚性材料
 - 机械臂是带力控 [q] 
@@ -148,9 +128,9 @@ SOP 26/1/7 @jianlan luo
 
 [todo] ARMADA
 
-Genie Centurion @智元 @25/05
+[todo] Genie Centurion @智元 25/5
 
-Data-Efficient Multitask DAgger
+Data-Efficient Multitask DAgger 25/9
 - https://arxiv.org/pdf/2509.25466
 - @罗得岛州 布朗大学 @60 @Haotian Fu @cited 0
 - TN: 成功率较低的任务会获得更高的优先级分数 (kalman filter 成功率)
