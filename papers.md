@@ -26,7 +26,7 @@ implicit RDP 主要改进
 
 robotchallenge
 
-喇叭口
+喇叭口 paper
 
 ## 11/26
 Generalist: 如夹爪的量程设计和末端尖锐度,黄色更多是柔性材料，黑色是刚性材料
