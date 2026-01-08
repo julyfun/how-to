@@ -63,3 +63,5 @@ PASSED (7/7)
 
 注意 Value 类型是一个指针. dfg.value(*self); 可以获取实际 ValueData. 然后可以 `match data.kind()`
 
+[q] 递归下降的时候为啥自动实现了优先级？e.g. `1 + 2 * 3 + 4`
+
