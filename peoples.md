@@ -134,5 +134,9 @@ articles:
 ## GenRobot
 
 ## 自变量
-- 创始人 王潜 @清华 @南加州
+- 创始人 王潜 @清华 @南加州(125) ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20260108_221017.png)
+- 王昊CTO @北大
+- [research]
+    - WALL-OSS
+- [product] 轮式双臂仿人形
 
