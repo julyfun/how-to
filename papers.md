@@ -10,7 +10,7 @@ confidence: 2
 
 jianlan another: https://arxiv.org/abs/2512.24125v1
 
-COT planning
+COT planning?
 
 看来 RDP 了
 
