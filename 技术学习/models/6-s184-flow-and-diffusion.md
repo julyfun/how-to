@@ -41,7 +41,7 @@ confidence: 2
 
 ## Lec4: Guided (conditional) DDM
 - https://github.com/eje24/iap-diffusion-labs/blob/main/solutions/lab_three_complete.ipynb
-- condition 是怎么加入 UNet: 自己看代码无需多言.
+- condition 是怎么加入 UNet: 下面代码里有，直接 Linear+SiLU+Linear 变成 (bs, c) 然后 (bs, c, 1, 1) 然后直接加到 x 中（广播）.
 - ![截屏2025-11-11 11.10.16.png|700](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/%E6%88%AA%E5%B1%8F2025-11-11%2011.10.16.webp)
 
 ```python
