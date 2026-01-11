@@ -39,6 +39,7 @@ articles:
     - <UmiGen>
 - haoqiang 范浩强 ![](https://pic3.zhimg.com/v2-cd63c55bf45f7a551f46098101ab8250_1440w.jpg)
     - 原力灵机 (范浩强、周而进、汪天才) Dexbotic?
+- 唐杰: 智谱创始人
 
 ## PKU
 - 苏浩 hao su
