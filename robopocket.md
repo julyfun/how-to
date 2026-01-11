@@ -1,5 +1,5 @@
 ---
-title: "Updates"
+title: "RoboPocket"
 date: 2025-01-11 02:41:38
 tags: ["robopocket"]
 author: "julyfun arch y9000p"
