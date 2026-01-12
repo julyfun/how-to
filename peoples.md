@@ -126,7 +126,7 @@ articles:
     - WALL-OSS
 - [product] 轮式双臂仿人形
 
-### 原力灵机 Dexmal @唐文斌@姚班
+### 原力灵机 Dexmal @唐文斌(姚班)
 - 工作:
     - 25/10 RoboChallenge
 
@@ -146,5 +146,5 @@ articles:
 ### 方舟无限
 - AC one 平台
 
-### GenRobot
+### GenRobot @陈建兴
 
