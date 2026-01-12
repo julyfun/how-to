@@ -102,7 +102,7 @@ articles:
 ## 西北大学 NwU
 - Ruohan Zhang @talk12/5 @38 students
     - https://ruohanzhang.com/
-
+@
 ## Our Lab
 - Yu wenye:
     - https://www.alphaxiv.org/abs/2510.02298
@@ -112,8 +112,8 @@ articles:
     - <AnyGrasp>
 
 # 企业
-## 清华系
-### 星海图 @苏州
+## 清华系: 星海图GALAXEA，自变量X2ROBOT，原力灵机Dexmal
+### 星海图 @huazhe @苏州
 - 产品: A1 arm, R1 人形, R1-lite
 - 许华哲: 清华大学交叉信息研究院任教(赵行 also)
     - 访谈: `https://www.sohu.com/a/877102944_161795` 25.3.29
@@ -126,14 +126,15 @@ articles:
     - WALL-OSS
 - [product] 轮式双臂仿人形
 
-
-### 原力灵机 Dexmal
+### 原力灵机 Dexmal @唐文斌@姚班
 - 工作:
     - 25/10 RoboChallenge
 
-### 银河通用 galbot
+## 北大系
+### 银河通用 galbot @王鹤
 - G1:  ![](https://static-web.stcn.com/upload/wechat/20251219/VakoTLRgLGLicQfBeyRYUse1ITjrl5nSSwHaD8qgFaZiat2I5l6OPrtGstbZYvWKv4kNRyhno59h2qoVfwHibQJsA.png)
 
+## 其他
 ### 松灵 Agilex
 
 ### 快手
