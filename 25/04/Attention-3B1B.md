@@ -1,6 +1,6 @@
 ---
 title: 注意力 Attention 3B1B
-date: 2025-04-27 21:22:27
+date: 2024-04-27 21:22:27
 tags: ["notes", "julyfun", "25", "04"]
 ---
 
