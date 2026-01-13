@@ -112,39 +112,43 @@ articles:
     - <AnyGrasp>
 
 # 企业
-## 清华系: 星海图GALAXEA，自变量X2ROBOT，原力灵机Dexmal
-### 星海图 @huazhe @苏州
+- 清华系: 星海图GALAXEA，自变量X2ROBOT，原力灵机Dexmal
+- 银河通用
+- 千寻，松灵，方舟无限
+- Dyna,
+
+## 星海图 @huazhe @苏州
 - 产品: A1 arm, R1 人形, R1-lite
 - 许华哲: 清华大学交叉信息研究院任教(赵行 also)
     - 访谈: `https://www.sohu.com/a/877102944_161795` 25.3.29
 - 高继扬、赵行、李天威: 自动驾驶公司从业.
 
-### 自变量
+## 自变量
 - 创始人 王潜 @清华 @南加州(125) ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20260108_221017.png)
 - 王昊CTO @北大
 - [research]
     - WALL-OSS
 - [product] 轮式双臂仿人形
 
-### 原力灵机 Dexmal @唐文斌(姚班)
+## 原力灵机 Dexmal @唐文斌(姚班)
 - 工作:
     - 25/10 RoboChallenge
 
-## 北大系
-### 银河通用 galbot @王鹤
+## [北大系] 银河通用 galbot @王鹤
 - G1:  ![](https://static-web.stcn.com/upload/wechat/20251219/VakoTLRgLGLicQfBeyRYUse1ITjrl5nSSwHaD8qgFaZiat2I5l6OPrtGstbZYvWKv4kNRyhno59h2qoVfwHibQJsA.png)
 
-## 其他
-### 松灵 Agilex
+## 千寻 Spirit AI
 
-### 快手
+## 松灵 Agilex
+
+## 快手
 - Pengfei Wan @Cited 4429
 
-### Dyna
+## Dyna
 - Jason MA 宾州大学
 
-### 方舟无限
+## 方舟无限
 - AC one 平台
 
-### GenRobot @陈建兴
+## GenRobot @陈建兴
 
