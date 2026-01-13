@@ -69,7 +69,8 @@ articles:
     - AnySkin
 
 ## HKU
-- 司马崇昊 @AI lab
+- 司马崇昊 chonghao @AI lab
+- 李弘扬 hongyang li
 
 ## UCB
 - [x] Pieter Abbeel @师从吴恩达
