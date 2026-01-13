@@ -69,11 +69,11 @@ articles:
     - AnySkin
 
 ## HKU
-- 司马崇昊 chonghao @AI lab
-- 李弘扬 hongyang li
+- 司马崇昊 chonghao @OpenDriveLab @AI lab
+- 李弘扬 hongyang li @OpenDriveLab
 
 ## UCB
-- [x] Pieter Abbeel @师从吴恩达
+- [x] Pieter Abbeel (师从吴恩达)
     - DDPM (通讯)
     - SAC - Soft actor critic
     - TRPO - Trust region policy optimization
@@ -83,7 +83,7 @@ articles:
 - Sergey Levine @师从Pieter @副教授 @Google Brain
     - PALM-E, RT1, RT2
     - @学生 /Chelsea Finn (@stanford)
-- Trevor Darrell @自动驾驶
+- Trevor Darrell (自动驾驶)
     - @学生 UCSD 王小龙, 清华叉院高阳和许华哲
 
 ## UCSD
@@ -118,7 +118,7 @@ articles:
 - 千寻，松灵，方舟无限
 - Dyna,
 
-## 星海图 @huazhe @苏州
+## 星海图 huazhe 苏州
 - 产品: A1 arm, R1 人形, R1-lite
 - 许华哲: 清华大学交叉信息研究院任教(赵行 also)
     - 访谈: `https://www.sohu.com/a/877102944_161795` 25.3.29
@@ -131,7 +131,7 @@ articles:
     - WALL-OSS
 - [product] 轮式双臂仿人形
 
-## 原力灵机 Dexmal @唐文斌(姚班)
+## 原力灵机 Dexmal 唐文斌(姚班)
 - 工作:
     - 25/10 RoboChallenge
 
