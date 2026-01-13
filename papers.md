@@ -140,7 +140,7 @@ Data-Efficient Multitask DAgger 25/9
 - @罗得岛州 布朗大学 @60 @Haotian Fu @cited 0
 - TN: 成功率较低的任务会获得更高的优先级分数 (kalman filter 成功率)
 - PG: 跟踪最近一次训练更新期间模仿损失的减少来衡量学习动量: PG = $max(0, L_(i, start) - L_(i, end))$
-    - 其实就是加入这组 dagger 前后的 loss
+    - 其实就是比较加入这组 dagger 前后的 loss
 - bench: 居然用的是仿真 (MetaWorld(Mujoco) & ISAAC Lab)
 
 [ok] Diff-DAgger: @24/10 U Vir 弗吉尼亚 @275, @Sung-Wook Lee @cited 12
