@@ -41,8 +41,8 @@ articles:
     - 原力灵机 (范浩强、周而进、汪天才) Dexbotic?
 - 唐杰: 智谱创始人 jie tang ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20260111_183540.png)
 
-## PKU
 - 苏浩 hao su
+## PKU
     - 外骨骼
 - 王鹤 he wang ![](https://n.sinaimg.cn/spider20241118/87/w1080h607/20241118/f53c-56d93fc25d2e5e93dcf5787d1763dc11.jpg)
     - 银河通用
