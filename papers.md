@@ -8,10 +8,10 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+
 ## 11/26
 Generalist: 如夹爪的量程设计和末端尖锐度,黄色更多是柔性材料，黑色是刚性材料
 - 机械臂是带力控 [q] 
-
 ## 11/25
 - AINA [ok]
 
@@ -37,6 +37,8 @@ RSS:
 [papers]
 - UMI
 
+## Deprecated for Zotero
+
 ## CV
 ICLR:
 - .
@@ -44,7 +46,6 @@ ICLR:
 - DuoAttention
 
 IEEE:
-
 
 ## VLA
 Stereo VLA @shengliang deng @he wang @25/12/26
@@ -94,9 +95,6 @@ Gen0 25/11/4 `https://generalistai.com/blog/nov-04-2025-GEN-0`
 - 似乎有一套自己的 inference 代码
 - 预训练技巧: 高 pred error 和反向 KL 适合 RL
 
-RoboMind 24/12
-RoboCoin 24/12
-
 ## Data Generation
 DemoGen: 24/10 @THU AI Lab @Zhengrong Xue @Shuying Deng @Huazhe Xu
 - RSS & CVPR
@@ -124,12 +122,6 @@ SOP 26/1/7 @jianlan luo
 - [idea] replay buffer 对 intervention data 的采样频率更高.
 - [abs]:
     - [q] admittance control? [a] 虚拟弹簧
-Compliant Residual DAgger @mengda xu @yifan hou
-- [abs]: [q] update policies with new data?
-    - [q] without interrupting the ongoing?
-    - [note] base + 动作残差 policy
-- [q] '意图误解'？
-- [q] 什么时候 ask for help?
 
 [todo] ARMADA
 

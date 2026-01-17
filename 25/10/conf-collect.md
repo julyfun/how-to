@@ -8,6 +8,8 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## Deprecated, see papers.md
+
 IROS:
 - DDL: 1/5 - 3/2,
 - Accept: 6/30
