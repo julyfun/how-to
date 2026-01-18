@@ -8,6 +8,27 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## Preview v0.2.3
+### Performance
+- BSON 写入速度提升 200 倍.
+
+### Upload
+- 上传队列新增 Rerun 按钮
+- Rerun 视频播放器添加进度条
+- 修复 UploadQueueView 中的手势拦截问题，现在可以正常滚动列表。
+
+### General
+- 重构到 Swift 6 语言版本
+
+## Preview v0.2.2
+### DAgger
+- 添加 vizNum 和 action horizon 滑动条，可分别调整可视化数量和动作预测时域。
+
+### Record
+- 录制数据格式 (.bson) 新增字段：
+  - `problems`: 记录录制过程中的问题和异常
+  - `extra.rawFeaturePoints`: 原始 AR 特征点数据，便于后续离线分析
+
 ## Preview v0.2.1
 ### DAgger
 - 新增容忍度滑动条。推荐在早期 Follow up 时提高容忍度，后期降低容忍度以精确复刻机器人轨迹.
