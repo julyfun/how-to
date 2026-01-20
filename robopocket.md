@@ -7,7 +7,7 @@ os: "Linux archfun 6.18.2-arch2-1 #1 SMP PREEMPT_DYNAMIC Thu, 18 Dec 2025 18:00:
 assume-you-know: [computer]
 confidence: 2
 ---
-## Preview v0.2.3
+## Preview v0.3
 
 ### Performance
 - BSON 写入速度提升 200 倍.
