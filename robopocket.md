@@ -7,6 +7,21 @@ os: "Linux archfun 6.18.2-arch2-1 #1 SMP PREEMPT_DYNAMIC Thu, 18 Dec 2025 18:00:
 assume-you-know: [computer]
 confidence: 2
 ---
+
+## 0.5.0-preview | Jan 21, 2026
+- 修复 iOS26 下横竖屏切换必然录制失败的问题。若丢失会复用上一帧深度图。
+- H264 -> H265
+- 
+
+## 0.4.0-preview | Jan 20, 2026
+- 支持直接在 Prepare 页面创建任务
+- 多机连接添加同步确认按钮，防止误连
+- 增加用户 ID 字段，不过当前不会存储到 metadata 中
+
+### Upload
+- 修复大端序 PNG 存储问题
+- 优化 CoScene 配置功能
+
 ## Preview v0.3
 
 ### Performance
