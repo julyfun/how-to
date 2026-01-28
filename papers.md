@@ -1,13 +1,12 @@
 ---
 title: "Papers"
 date: 2025-11-07 04:28:30
-tags: [""]
+tags: ["papers"]
 author: "julyfun-4070s-ubuntu2204"
 os: "Linux julyfun-4070s-ubuntu 6.8.0-84-generic #84~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Sep  9 14:29:36 UTC 2 x86_64 x86_64 x86_64 GNU/Linux"
 assume-you-know: [computer]
 confidence: 2
 ---
-
 
 ## 11/26
 Generalist: 如夹爪的量程设计和末端尖锐度,黄色更多是柔性材料，黑色是刚性材料
