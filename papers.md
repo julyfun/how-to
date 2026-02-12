@@ -8,6 +8,9 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## BaseModel
+- https://arxiv.org/abs/2602.04770v1 | Mingyang Deng, Kaiming He | 26/2/5
+
 ## 11/26
 Generalist: 如夹爪的量程设计和末端尖锐度,黄色更多是柔性材料，黑色是刚性材料
 - 机械臂是带力控 [q] 
@@ -35,6 +38,9 @@ RSS:
 - Conf: 6/21
 [papers]
 - UMI
+
+## 分类
+- Base Model
 
 ## Deprecated for Zotero
 
