@@ -12,6 +12,9 @@ rvm cleanup all
 ~/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/
 ```
 
+App:
+- DevCleaner for Xcode (from App Store)
+
 * docker: https://apple.stackexchange.com/questions/391377/what-is-the-purpose-of-docker-raw-file-on-mac-os-catalina 'Resources' -> 'Advanced' -> 'Disk image size'
 
 ## Show size
