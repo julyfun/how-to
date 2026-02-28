@@ -1,5 +1,5 @@
 ---
-title: clean wechat
+title: clean disk
 date: 2024-04-01 23:00:22
 tags: ["os", "macos", "disk"]
 ---
