@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## sentinels
+## sentinels (f10:45)
 
 ```zig
 //     const a: [4:0]u32       =  [4:0]u32{1, 2, 3, 4};
