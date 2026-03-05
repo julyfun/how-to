@@ -14,7 +14,7 @@ confidence: 2
 ---
 
 LN: 只要是特征就视为一个分布内，做归一化。
-- 图像 (b, c, h, w): 一个 sample 的 (c, h, w) 归一化
+- 图像 (b, c, h, w): 一个 sample 的 (c, h, w) 归一化，形状不变.
 - emb: (b, length, dimension)：一个 emb 内做归一化 (d, )
 
 BN:
