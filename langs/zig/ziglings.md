@@ -12,7 +12,7 @@ confidence: 2
 
 ```zig
 //     const a: [4:0]u32       =  [4:0]u32{1, 2, 3, 4};
-是 .array, 额外存储 0
+是 .array, 额外存储 0 和长度
 //     const b: [:0]const u32  = &[4:0]u32{1, 2, 3, 4};
 是 .slice，必须指向 0 结尾的 array
 //     const c: [*:0]const u32 = &[4:0]u32{1, 2, 3, 4};
