@@ -33,3 +33,17 @@ const my_typeinfo = @typeInfo(@TypeOf(my_seq));
         else => unreachable,
 ```
 
+## anonymouse_strcuts3
+- 如何遍历任何 struct 的 fields.
+```zig
+fn printTuple(tuple: anytype) void {
+    const fields = @typeInfo(@TypeOf(tuple)).@"struct".fields;
+    inline for (fields) |field| {
+        print("\"{s}\"({any}):{any} ", .{
+            field.name,
+            field.type,
+            @field(tuple, field.name)
+        });
+    }
+```
+
