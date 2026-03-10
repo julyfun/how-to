@@ -1,5 +1,5 @@
 ---
-title: "为什么 Swift 大型软件开发是一坨构式"
+title: "为什么 Swift 大型软件开发是一托构式"
 date: 2026-03-10 14:31:45
 tags: ["26", "03"]
 author: "Julyfun MacOS14.5 M1"
@@ -21,7 +21,7 @@ confidence: 2
 - ...很
 - ...
 - ...
-- 慢
+- 慢（比 rust 快）
 - Swift 是唯一一个嵌套达到一定层数就会把报错信息呈现为最外层几百行的 "Cannot resolve this block"（在这几百行报错中你需要自己找某个地方语法错误）的语言 / "The compiler is unable to type-check this expression in reasonable time"
 - lsp 响应时间在 1s ~ 10s 之间，是唯一一个 lsp 响应比 ai query 慢的语言。AI 常需要提醒自己“等等，这里的报错是 lsp 缓存过时”
 - 只能全局 import 是一种防开发者设计
@@ -29,6 +29,6 @@ confidence: 2
 - Cache 很大，而苹果的硬盘和金子一样贵
 - 编写宏需要单独开一个 package(why??)，并且只能在 AST 层操作
 - 序列化一坨构式
-- 互联网信息过时，Google 和 Gemini 能给你的方案可能过时麻烦又折腾
+- 互联网 swift 信息落后，Google 和 Gemini 能给你的方案可能过时麻烦又折腾
 - 操作 C 需要一层 OC 层，而 OC 是全世界最防人类的语言
 
