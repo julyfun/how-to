@@ -47,3 +47,15 @@ fn printTuple(tuple: anytype) void {
     }
 ```
 
+## memory_allocation
+```zig
+var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+defer arena.deinit();
+const allocator = arena.allocator();
+// 直接用切片引用这块儿分配
+const avg: []f64 = try allocator.alloc(f64, 5);
+// 然后当普通切片使用，例如:
+avg[2] = ...
+
+```
+
