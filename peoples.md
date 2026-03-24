@@ -135,11 +135,14 @@ articles:
 - 工作:
     - 25/10 RoboChallenge
 
-## [北大系] 银河通用 galbot @王鹤
+# 北大系
+
+## 银河通用 galbot @王鹤
 - G1: ![](https://static-web.stcn.com/upload/wechat/20251219/VakoTLRgLGLicQfBeyRYUse1ITjrl5nSSwHaD8qgFaZiat2I5l6OPrtGstbZYvWKv4kNRyhno59h2qoVfwHibQJsA.png)
 
 ## 北大系.BeingBeyond | 智在无界 | 卢宗青
 
+# 其他
 
 ## 千寻 Spirit AI
 
