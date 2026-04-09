@@ -8,13 +8,21 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 4/10
+1. uptick: 回升
+2. recap: v.n.回顾: let me recap on what we've decided so far; can you recap the points ...; To recap briefly
+
 ## 4/9
-1. grave 严重
-2. violation n.违反
-3. ceasefire n.停火
-4. 'deputy n.副（部长）
-5. accuses 指责
-6. massacre n.屠杀 / ˈmæsəkər /
-7. air strikes 空袭
-8. health ministry 卫生部
+1. grave : 严重
+2. violation : n.违反
+3. ceasefire : n.停火
+4. 'deputy : n.副（部长）/ ˈdepjuti /
+5. massacre : n.屠杀 / ˈmæsəkər /
+6. accuses : 指责
+7. air strikes : 空袭
+8. health ministry : 卫生部
+9. Beirut : 黎巴嫩首都 贝鲁特 bəˈriːt
+10. remain "in place" : 驻扎
+11. complies: 遵守（协议）
+12. Strait of Hormuz : 霍尔木兹海峡
 
