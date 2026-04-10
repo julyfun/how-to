@@ -55,5 +55,45 @@ for batch_idx, (data, _) in enumerate(train_loader):
 
 $epsilon.alt_"guided" = epsilon.alt_theta (x_t , t) - s dot.op sigma_t nabla_(x_t) log p_phi.alt (y | x_t , t)$
 
-其中 s 是 guidance strength（类似 scale）。
+ - (\epsilon_{\text{guided}})：引导后的噪声预测，用它来做反向采样更新。
+- (\epsilon_\theta(x_t,t))：扩散模型（参数为 (\theta)）在时间步 (t) 对当前噪声图 (x_t) 的原始噪声预测。
+- (x_t)：第 (t) 步的带噪图像（latent/像素都可，看模型定义）。
+- (t)：扩散时间步。
+- (s)：guidance strength / scale，引导强度超参数。
+- (\sigma_t)：与时间步 (t) 对应的噪声尺度（由噪声调度器决定）。
+- (\nabla_{x_t})：对 (x_t) 求梯度。
+- (\log p_\phi(y|x_t,t))：分类器（参数 (\phi)）在给定 (x_t,t) 时，对目标类别 (y) 的对数概率。
+- (p_\phi(y|x_t,t))：分类器输出的类别后验概率。
+- (y)：你希望生成结果符合的目标类别标签。
+- (\phi)：外部分类器参数。
+- (\theta)：扩散模型参数。
+
+```python
+# x_t: [B, C, H, W]
+# t:   [B] or scalar timestep
+# y:   [B] target class ids
+# s: guidance scale (float)
+# sigma_t: noise scale at timestep t (float or tensor broadcastable to x_t)
+
+x_t = x_t.detach().requires_grad_(True)
+
+# 扩散模型给原始噪声预测
+with torch.no_grad():
+    eps = unet(x_t, t)  # epsilon_theta(x_t, t)
+
+# 3) 外部分类器给类别分数（需要梯度）
+logits = classifier(x_t, t)              # [B, num_classes]
+log_probs = F.log_softmax(logits, dim=-1)
+# 每个样本目标类log p
+selected = log_probs[torch.arange(x_t.size(0), device=x_t.device), y]  
+obj = selected.sum()  # 标量，便于 autograd
+
+# 4) 求 grad = ∇_{x_t} log p(y|x_t,t)
+grad = torch.autograd.grad(obj, x_t, only_inputs=True)[0]
+eps_guided = eps - s * sigma_t * grad
+with torch.no_grad():
+    x_prev = ddpm_step(x_t.detach(), eps_guided.detach(), t)
+
+x_t = x_prev
+```
 
