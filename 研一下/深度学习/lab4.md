@@ -34,3 +34,12 @@ for batch_idx, (data, _) in enumerate(train_loader):
 > 让我试试. 生成了非常糟糕的结果
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/202604101048993.webp)
 
+### 💡 Discussion: GAN
+**Question 1: Why do GANs generate sharper images than VAEs?**
+> 
+
+**Question 2: What is "Mode Collapse"? (You might even observe it in your output grid)**
+>  
+
+依托
+
