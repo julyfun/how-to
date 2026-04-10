@@ -58,8 +58,8 @@ def clear() -> None:
     print("\033[2J\033[H", end="")
 
 
-def render_question(prompt: str, example: str, options: list[str]) -> None:
-    print(f"{CYAN}{BOLD}词汇练习{RESET}  (Ctrl+C 退出)")
+def render_question(prompt: str, example: str, options: list[str], correct: int) -> None:
+    print(f"{CYAN}{BOLD}词汇练习{RESET}  (Ctrl+C 退出)  累计答对: {GREEN}{correct}{RESET}")
     ex = example if example else "-"
     print(f"\n{BOLD}{prompt}{RESET}: {YELLOW}{ex}{RESET}\n")
     for idx, opt in enumerate(options, 1):
@@ -70,31 +70,35 @@ def make_round(v: Vocab, items: list[Vocab]) -> tuple[str, str, list[str], str]:
     zh_to_en = random.random() < 0.5
     if zh_to_en:
         prompt = v.translation
+        example = ""
         answer = v.word
         wrong_pool = [x.word for x in items if x.word != v.word]
     else:
         prompt = v.word
+        example = v.example
         answer = v.translation
         wrong_pool = [x.translation for x in items if x.translation != v.translation]
     options = random.sample(wrong_pool, 3) + [answer]
     random.shuffle(options)
-    return prompt, v.example, options, answer
+    return prompt, example, options, answer
 
 
 def quiz(db: set[Vocab]) -> None:
     items = list(db)
+    correct = 0
     clear()
     while True:
         v = random.choice(items)
         prompt, example, options, answer = make_round(v, items)
         ans = options.index(answer) + 1
-        render_question(prompt, example, options)
+        render_question(prompt, example, options, correct)
         pick = input("\n你的选择(1-4): ").strip()
         if pick not in {"1", "2", "3", "4"}:
             clear()
             print(f"{RED}请输入 1/2/3/4{RESET}\n")
             continue
         if int(pick) == ans:
+            correct += 1
             clear()
             print(f"{GREEN}{v.word}: {v.translation}: {v.example}{RESET}\n")
             continue

@@ -14,6 +14,13 @@ confidence: 2
 3. he heads to Pakistan: 他前往巴基斯坦
 4. Boarding Air Force Two, : 登上空军二号
 5. work with Iran: 与伊朗合作
+6. act in "good faith" : 有信义地行事 : he will work with Iran if they act in "good faith"
+7. won't be receptive: 不会接受: if they "try to play us" the US won't be receptive
+8. delegation: 代表团
+9. is yet to arrive in : 尚未到达
+10. checkpoints and paramilitaries: 检查点和准军事组织
+11. writes our correspondent: 本报记者报道
+12. take part in separate talks: 参与单独会谈
 
 ## 4/9
 1. grave : 严重
