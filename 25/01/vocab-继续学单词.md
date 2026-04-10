@@ -9,8 +9,11 @@ confidence: 2
 ---
 
 ## 4/10
-1. uptick: 回升
+1. uptick: n. 回升
 2. recap: v.n.回顾: let me recap on what we've decided so far; can you recap the points ...; To recap briefly
+3. he heads to Pakistan: 他前往巴基斯坦
+4. Boarding Air Force Two, : 登上空军二号
+5. work with Iran: 与伊朗合作
 
 ## 4/9
 1. grave : 严重
