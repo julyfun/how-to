@@ -36,10 +36,24 @@ for batch_idx, (data, _) in enumerate(train_loader):
 
 ### 💡 Discussion: GAN
 **Question 1: Why do GANs generate sharper images than VAEs?**
-> 
+> 因为对抗损失过度逼近高频细节
+> 而 VAE 用了 KL，如果高频细节过多，KL 损失就大
 
 **Question 2: What is "Mode Collapse"? (You might even observe it in your output grid)**
->  
+> 只学会了其中集中样式。因为判别器也不判多样性。
 
-依托
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/202604101101441.webp)
+
+### 💡 Discussion: Diffusion Models
+**Question 1: What exactly does `num_inference_steps` do?**
+> 调节生成单步走多少
+
+**Question 2: What is `guidance_scale` (Classifier-Free Guidance / CFG)?**
+> 就是对 prompt 的权重（放大条件信号）
+> Classifier-Free 的原理：每步做两个预测，uncond 和 prompt-conditioned，然后 diffusion 走的方向取个加权.
+> Use-classifer 方法：用分类器梯度引导
+
+$epsilon.alt_"guided" = epsilon.alt_theta (x_t , t) - s dot.op sigma_t nabla_(x_t) log p_phi.alt (y | x_t , t)$
+
+其中 s 是 guidance strength（类似 scale）。
 
