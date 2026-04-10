@@ -8,10 +8,13 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+六步走
 - data to
 - opt zero
-- get output
+- forward
 - loss
+- backward
+- opt step
 
 ```python
 for batch_idx, (data, _) in enumerate(train_loader):
@@ -22,3 +25,12 @@ for batch_idx, (data, _) in enumerate(train_loader):
     loss.backward()
     optimizer_vae.step()
 ```
+
+### 💡 Discussion: VAE
+**Question 1: Why do the generated digits from the VAE look somewhat blurry compared to real MNIST images?**
+> 特征在数字特征之间了
+
+**Question 2: What would happen if we remove the KL-divergence term from the loss?**
+> 让我试试. 生成了非常糟糕的结果
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/202604101048993.webp)
+
