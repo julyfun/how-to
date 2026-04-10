@@ -10,3 +10,6 @@ confidence: 2
 
 > HOG 是一种手动算梯度的传统特征提取方法。
 
+<span style="color:orange">**Questions:**</span> 
+ - How to understand the log from the logistic regression model?
+ - How to understand the t-SNE visulizations?
