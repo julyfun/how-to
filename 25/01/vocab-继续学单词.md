@@ -8,6 +8,19 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 4/13
+1. blockade: n.封锁
+2. US Central Command: US 中央司令部
+3. impede ships sailing: 阻挡船只通过
+4. barrel: （油）桶
+5. military vessels: 军舰
+6. diplomatic: 外交的
+7. ramifications: 影响
+8. the Pope: 教皇
+9. criticism levelled at him: 对他的批评
+10. foreign policy: 外交政策
+11. shifting goalposts" from the US
+
 ## 4/10
 1. uptick: n. 回升
 2. recap: v.n.回顾: let me recap on what we've decided so far; can you recap the points ...; To recap briefly
@@ -19,7 +32,7 @@ confidence: 2
 8. delegation: 代表团
 9. is yet to arrive in : 尚未到达
 10. checkpoints and paramilitaries: 检查点和准军事组织
-11. writes our correspondent: 本报记者报道
+11. correspondent: 记者
 12. take part in separate talks: 参与单独会谈
 
 ## 4/9
