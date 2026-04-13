@@ -19,7 +19,8 @@ confidence: 2
 8. the Pope: 教皇
 9. criticism levelled at him: 对他的批评
 10. foreign policy: 外交政策
-11. shifting goalposts" from the US
+11. goalposts: n.门柱; 谈判条件
+12. Persian: 波斯语
 
 ## 4/10
 1. uptick: n. 回升
