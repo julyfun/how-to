@@ -11,7 +11,8 @@ confidence: 2
 ## 4/15
 1. facility: n.设施
 2. pressure gauge: 压力表 / ˈɡeɪdʒɪz /
-3. 
+3. slight glasses: 液位观察窗
+4. 
 
 ## 4/13
 1. blockade: n.封锁
