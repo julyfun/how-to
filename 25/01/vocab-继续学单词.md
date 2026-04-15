@@ -8,6 +8,11 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 4/15
+1. facility: n.设施
+2. pressure gauge: 压力表 / ˈɡeɪdʒɪz /
+3. 
+
 ## 4/13
 1. blockade: n.封锁
 2. US Central Command: US 中央司令部
