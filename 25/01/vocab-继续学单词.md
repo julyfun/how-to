@@ -14,6 +14,10 @@ confidence: 2
 3. schematic: n.示意图a.概要的 /skəˈmadik/
 4. ergonomic: a.人体工程学的 / ˌɜːrɡəˈnɑːmɪk /: 耳go->人体工程
 5. excess: a.多余的，额外的 / ɪkˈses /
+6. dimension juggling and tensor contraction: ph.维度重排和张量收缩
+7. contract: n.合同v.收缩
+8. occasional: a.偶然的
+9. in one go: ph.一次性完成
 
 ## 4/16
 1. facility: n.设施
