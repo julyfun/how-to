@@ -18,6 +18,8 @@ confidence: 2
 7. contract: n.合同v.收缩
 8. occasional: a.偶然的
 9. in one go: ph.一次性完成
+10. battle-tested: a.久经考验的
+11. susceptible to bugs: ph.容易出现bug
 
 ## 4/16
 1. facility: n.设施
@@ -32,6 +34,9 @@ confidence: 2
 10. hallucinate: vt.使产生幻觉 / həˈluːsɪneɪt /
 11. lacks precision on plier pointing: ph.在指出钳子上缺乏准确度
 12. cornerstone: n.基石
+
+## 4/15
+1. clunky: a.笨拙
 
 ## 4/13
 1. blockade: n.封锁
@@ -74,4 +79,4 @@ confidence: 2
 10. remain "in place" : 驻扎
 11. complies: 遵守（协议）
 12. Strait of Hormuz : 霍尔木兹海峡
-
+clunky
