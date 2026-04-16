@@ -9,8 +9,9 @@ confidence: 2
 ---
 
 ## 4/17
-- sophisticated: a.精密的，老练的 / səˈfɪstɪkeɪtɪd /
-- occlusion: n.遮挡物 / əˈkluːʒn /
+1. sophisticated: a.精密的，老练的 / səˈfɪstɪkeɪtɪd /
+2. occlusion: n.遮挡物 / əˈkluːʒn /
+3. schematic: n.示意图a.概要的 /skəˈmadik/
 
 ## 4/16
 1. facility: n.设施
