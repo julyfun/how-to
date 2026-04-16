@@ -20,6 +20,7 @@ confidence: 2
 9. in one go: ph.一次性完成
 10. battle-tested: a.久经考验的
 11. susceptible to bugs: ph.易出现bug
+12. incorporate: v.混合
 
 ## 4/16
 1. facility: n.设施
@@ -40,6 +41,9 @@ confidence: 2
 2. mesh well with: ph.（匹配）与..很好地配合
 3. truncated normal: ph.截断正态分布
 4. which is purported to: ph.据称
+5. vanish: v.消失
+6. canonically: adv.按规范地
+7. divine(a.) benevolence 神的仁慈
 
 ## 4/13
 1. blockade: n.封锁
