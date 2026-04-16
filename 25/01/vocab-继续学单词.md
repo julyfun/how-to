@@ -43,7 +43,8 @@ confidence: 2
 4. which is purported to: ph.据称
 5. vanish: v.消失
 6. canonically: adv.按规范地
-7. divine(a.) benevolence 神的仁慈
+7. divine(a.) benevolence: ph.神的仁慈 / bəˈnevələns /
+8. attribute .. to: ph.把..归因于 əˈtrɪbjuːt
 
 ## 4/13
 1. blockade: n.封锁
