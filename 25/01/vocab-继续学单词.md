@@ -19,7 +19,7 @@ confidence: 2
 8. occasional: a.偶然的
 9. in one go: ph.一次性完成
 10. battle-tested: a.久经考验的
-11. susceptible to bugs: ph.容易出现bug
+11. susceptible to bugs: ph.易出现bug
 
 ## 4/16
 1. facility: n.设施
@@ -39,6 +39,7 @@ confidence: 2
 1. clunky: a.笨拙
 2. mesh well with: ph.（匹配）与..很好地配合
 3. truncated normal: ph.截断正态分布
+4. which is purported to: ph.据称
 
 ## 4/13
 1. blockade: n.封锁
@@ -81,4 +82,4 @@ confidence: 2
 10. remain "in place" : 驻扎
 11. complies: 遵守（协议）
 12. Strait of Hormuz : 霍尔木兹海峡
-clunky
+
