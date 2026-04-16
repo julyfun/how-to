@@ -8,11 +8,18 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## 4/15
+## 4/16
 1. facility: n.设施
 2. pressure gauge: 压力表 / ˈɡeɪdʒɪz /
 3. slight glasses: 液位观察窗
 4. instrument reading: 仪器读取
+5. pliers: 钳子 / ˈplaɪəz /
+6. gardening tool: 花园工具
+7. wheelbarrow: n.独轮手推车 / ˈwiːlbærəʊ /
+8. barrow: n.手推车
+9. drill: n.钻子v.钻孔
+10. hallucinate: vt.使产生幻觉 / həˈluːsɪneɪt /
+
 
 ## 4/13
 1. blockade: n.封锁
