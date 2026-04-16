@@ -37,6 +37,8 @@ confidence: 2
 
 ## 4/15
 1. clunky: a.笨拙
+2. mesh well with: ph.（匹配）与..很好地配合
+3. truncated normal: ph.截断正态分布
 
 ## 4/13
 1. blockade: n.封锁
