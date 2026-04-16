@@ -12,6 +12,8 @@ confidence: 2
 1. sophisticated: a.精密的，老练的 / səˈfɪstɪkeɪtɪd /
 2. occlusion: n.遮挡物 / əˈkluːʒn /
 3. schematic: n.示意图a.概要的 /skəˈmadik/
+4. ergonomic: a.人体工程学的 / ˌɜːrɡəˈnɑːmɪk /: 耳go->人体工程
+5. excess: a.多余的，额外的 / ɪkˈses /
 
 ## 4/16
 1. facility: n.设施
