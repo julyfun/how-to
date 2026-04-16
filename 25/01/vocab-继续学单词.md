@@ -9,53 +9,53 @@ confidence: 2
 ---
 
 ## 4/17
-- sophisticated: adj.精密的，老练的 / səˈfɪstɪkeɪtɪd /
+- sophisticated: a.精密的，老练的 / səˈfɪstɪkeɪtɪd /
 - occlusion: n.遮挡物 / əˈkluːʒn /
 
 ## 4/16
 1. facility: n.设施
-2. pressure gauge: 压力表 / ˈɡeɪdʒɪz /
-3. slight glasses: 液位观察窗
-4. instrument reading: 仪器读取
-5. pliers: 钳子 / ˈplaɪəz /
-6. gardening tool: 花园工具
+2. pressure gauge: ph.压力表 / ˈɡeɪdʒɪz /
+3. slight glasses: ph.液位观察窗
+4. instrument reading: ph.仪器读取
+5. pliers: n.钳子 / ˈplaɪəz /
+6. gardening tool: ph.花园工具
 7. wheelbarrow: n.独轮手推车 / ˈwiːlbærəʊ /
 8. barrow: n.手推车
 9. drill: n.钻子v.钻孔
 10. hallucinate: vt.使产生幻觉 / həˈluːsɪneɪt /
-11. lacks precision on plier pointing: 在指出钳子上缺乏准确度
+11. lacks precision on plier pointing: ph.在指出钳子上缺乏准确度
 12. cornerstone: n.基石
 
 ## 4/13
 1. blockade: n.封锁
 2. US Central Command: US 中央司令部
 3. impede ships sailing: 阻挡船只通过
-4. barrel: （油）桶
+4. barrel: n.（油）桶;枪管
 5. military vessels: 军舰
 6. diplomatic: 外交的
 7. ramifications: n.影响: These changes are bound to have widespread social ramifications.
 8. the Pope: 教皇
-9. criticism levelled at him: 对他的批评
-10. foreign policy: 外交政策
+9. criticism levelled at him: ph.对他的批评
+10. foreign policy: ph.外交政策
 11. goalposts: n.门柱; 谈判条件
 12. Persian: 波斯语
 
 ## 4/10
 1. uptick: n. 回升
 2. recap: v.n.回顾: let me recap on what we've decided so far; can you recap the points ...; To recap briefly
-3. he heads to Pakistan: 他前往巴基斯坦
-4. Boarding Air Force Two, : 登上空军二号
-5. work with Iran: 与伊朗合作
-6. act in "good faith" : 有信义地行事 : he will work with Iran if they act in "good faith"
-7. won't be receptive: 不会接受: if they "try to play us" the US won't be receptive
-8. delegation: 代表团
+3. he heads to Pakistan: ph.他前往巴基斯坦
+4. Boarding Air Force Two, : ph.登上空军二号
+5. work with Iran: ph.与伊朗合作
+6. act in "good faith" : ph.有信义地行事 : he will work with Iran if they act in "good faith"
+7. won't be receptive: ph.不会接受: if they "try to play us" the US won't be receptive
+8. delegation: n.代表团
 9. is yet to arrive in : ph.尚未到达
 10. checkpoints and paramilitaries: ph.检查点和准军事组织
 11. correspondent: n.记者
 12. take part in separate talks: ph.参与单独会谈
 
 ## 4/9
-1. grave : 严重
+1. grave : a.严重
 2. violation : n.违反
 3. ceasefire : n.停火
 4. 'deputy : n.副（部长）/ ˈdepjuti /
