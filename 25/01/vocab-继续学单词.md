@@ -8,6 +8,10 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 4/17
+- sophisticated: adj.精密的，老练的 / səˈfɪstɪkeɪtɪd /
+- occlusion: n.遮挡物 / əˈkluːʒn /
+
 ## 4/16
 1. facility: n.设施
 2. pressure gauge: 压力表 / ˈɡeɪdʒɪz /
@@ -19,7 +23,8 @@ confidence: 2
 8. barrow: n.手推车
 9. drill: n.钻子v.钻孔
 10. hallucinate: vt.使产生幻觉 / həˈluːsɪneɪt /
-
+11. lacks precision on plier pointing: 在指出钳子上缺乏准确度
+12. cornerstone: n.基石
 
 ## 4/13
 1. blockade: n.封锁
@@ -28,7 +33,7 @@ confidence: 2
 4. barrel: （油）桶
 5. military vessels: 军舰
 6. diplomatic: 外交的
-7. ramifications: 影响
+7. ramifications: n.影响: These changes are bound to have widespread social ramifications.
 8. the Pope: 教皇
 9. criticism levelled at him: 对他的批评
 10. foreign policy: 外交政策
@@ -44,10 +49,10 @@ confidence: 2
 6. act in "good faith" : 有信义地行事 : he will work with Iran if they act in "good faith"
 7. won't be receptive: 不会接受: if they "try to play us" the US won't be receptive
 8. delegation: 代表团
-9. is yet to arrive in : 尚未到达
-10. checkpoints and paramilitaries: 检查点和准军事组织
-11. correspondent: 记者
-12. take part in separate talks: 参与单独会谈
+9. is yet to arrive in : ph.尚未到达
+10. checkpoints and paramilitaries: ph.检查点和准军事组织
+11. correspondent: n.记者
+12. take part in separate talks: ph.参与单独会谈
 
 ## 4/9
 1. grave : 严重
