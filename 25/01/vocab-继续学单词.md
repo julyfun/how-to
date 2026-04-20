@@ -8,6 +8,11 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 4/20
+1. peel: v.去皮 : Will you peel the potatoes for me?
+2. complementary : a.补充的 : as a complementary grounding signal
+
+
 ## 4/17
 1. sophisticated: a.精密的，老练的 / səˈfɪstɪkeɪtɪd /
 2. occlusion: n.遮挡物 / əˈkluːʒn /
