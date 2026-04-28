@@ -61,7 +61,7 @@ def clear() -> None:
 def render_question(prompt: str, example: str, options: list[str], correct: int) -> None:
     print(f"{CYAN}{BOLD}词汇练习{RESET}  (Ctrl+C 退出)  累计答对: {GREEN}{correct}{RESET}")
     ex = example if example else "-"
-    print(f"\n{BOLD}{prompt}{RESET}: {YELLOW}{ex}{RESET}\n")
+    print(f"\n{BOLD}{prompt}{RESET}: {YELLOW}{ex}{RESET}\n\n")
     for idx, opt in enumerate(options, 1):
         print(f"  {idx}. {opt}")
 
