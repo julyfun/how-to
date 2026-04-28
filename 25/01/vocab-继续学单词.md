@@ -13,6 +13,7 @@ confidence: 2
 2. stateful: a.有状态的: AdamW is stateful
 3. annealing: n.退火: Cosine annealing
 4. destabilize: vt.使不稳定: which can destabilize training
+5. it would pay off to: ph.做..是值得的
 
 ## 4/20
 1. peel: v.去皮 : Will you peel the potatoes for me?
