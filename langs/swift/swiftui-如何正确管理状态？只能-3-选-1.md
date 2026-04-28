@@ -13,7 +13,7 @@ confidence: 2
     - 当且仅当状态本身与逻辑无关，仅负责显示。如文件名列表
 2. 只有 ObservableObject 持有状态，View 直接持有 ObservableObject 并访问其中的 @Published
     - 当且仅当某个 UI 状态是轻量后端逻辑的主动触发者。如页面切换管理者需要在切换页面的同时暂停 ARSession，想要将两者绑定管理
-3. actor 持有/引用真实状态，actor 引用一个 ObservableObject，ObservableObject 持有真实状态的拷贝，UI 引用该 ObservableObject 并访问其中的 @Published
+3. actor 持有真实状态，对 actor 注入一个 ObservableObject，ObservableObject 持有真实状态的拷贝，UI 引用该 ObservableObject 并访问其中的 @Published
     - 当且仅当某个 UI 状态是重量后端逻辑的主动触发者。如录制器的已开始、结束中、取消中，想要和真实的录制逻辑绑定管理，此时多个 await 会有严重代价
     - 或：某个 UI 状态是后端自发变化状态的映射。如网络管理器自发变化时需要 UI 显示已连接设备
 
@@ -74,6 +74,8 @@ actor Recorder {
     var state: String = "idle"
     let viewModel: RecorderViewModel
 
+    init(viewModel) { self.viewModel = viewModel } // 注入 viewModel
+
     func run() {
         await something.prepare() // 逻辑重
         await something.prepare()
@@ -81,6 +83,30 @@ actor Recorder {
         await self.viewModel.state = "running" // ui 状态和后端逻辑可以在一块儿管理
     }
 }
+
+struct RecorderView: View {
+    @ObservedObject var viewModel: RecorderViewModel 
+    let recorder: Recorder
+
+    init(recorder, viewModel) { // 注入
+        self.recorder = recorder
+        self.viewModel = viewModel
+    }
+
+    body {
+        await self.recorder.run()
+    }
+}
+
+class PageCoodinator: @ObservableObject {
+    let recorder: Recorder
+    let viewModel: RecorderViewModel
+    init() {
+        self.viewModel = RecorderViewModel()
+        self.recorder = Recorder(self.viewModel)
+    }
+}
+
 ```
 
 另外一个（自发状态变化）的例子：
@@ -94,27 +120,13 @@ actor Network {
     var connected: Int
     let viewModel: NetworkViewModel
 
-    init() { self.loop() }
+    init(viewModel) { self.viewModel = viewModel; self.loop() }
 
     private func loop() {
         if ("new device found") {
             self.connected += 1
             self.viewModel.connected += 1
         }
-    }
-}
-
-struct RecorderView: View {
-    @ObservedObject viewModel: RecorderViewModel 
-    let recorder: Recorder
-
-    init(recorder) { // 注入
-        self.recorder = recorder
-        self.viewModel = recorder.viewModel // 观察状态的拷贝
-    }
-
-    body {
-        await self.recorder.run()
     }
 }
 ```
