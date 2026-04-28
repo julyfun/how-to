@@ -8,10 +8,13 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 4/28
+1. in exchange for: ph.用于交换: AdamW uses additional memory in exchange for improved stability and convergence
+2. stateful: a.有状态的: AdamW is stateful
+
 ## 4/20
 1. peel: v.去皮 : Will you peel the potatoes for me?
 2. complementary : a.补充的 : as a complementary grounding signal
-
 
 ## 4/17
 1. sophisticated: a.精密的，老练的 / səˈfɪstɪkeɪtɪd /
