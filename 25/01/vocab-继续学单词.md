@@ -15,6 +15,7 @@ confidence: 2
 4. destabilize: vt.使不稳定: which can destabilize training
 5. it would pay off to: ph.做..是值得的
 6. flaw: n.缺点，瑕疵: this is a design flaw.
+7. delivers
 
 ## 4/20
 1. peel: v.去皮 : Will you peel the potatoes for me?
