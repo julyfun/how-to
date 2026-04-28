@@ -17,6 +17,8 @@ confidence: 2
     - 当且仅当某个 UI 状态是重量后端逻辑的主动触发者。如录制器的已开始、结束中、取消中，想要和真实的录制逻辑绑定管理，此时多个 await 会有严重代价
     - 或：某个 UI 状态是后端自发变化状态的映射。如网络管理器自发变化时需要 UI 显示已连接设备
 
+- [ ] 需要测试的是，在其他 actor 执行 await MainActor 是否有 16.7ms 代价
+
 ### 对于 1 的例子
 
 ```swift
@@ -79,8 +81,8 @@ actor Recorder {
     func run() {
         await something.prepare() // 逻辑重
         await something.prepare()
-        self.state = "running"
-        await self.viewModel.state = "running" // ui 状态和后端逻辑可以在一块儿管理
+        self.state = "running" // 后端状态
+        await MainActor.run { self.viewModel.state = "running" } // ui 状态和后端状态可以在一块儿管理
     }
 }
 
