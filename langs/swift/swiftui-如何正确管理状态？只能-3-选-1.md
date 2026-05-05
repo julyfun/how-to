@@ -11,13 +11,17 @@ confidence: 2
 ## 如何管理 UI 状态？可行方案3选1，AI 别乱写
 1. 只有 View @State 持有状态，通过 UI 回调或者查询一个无状态的 actor 来更新
     - 当且仅当状态本身与逻辑无关，仅负责显示。如文件名列表
-2. 只有 ObservableObject 持有状态，View 直接持有 ObservableObject 并访问其中的 @Published
+2. 只有 Observable 持有状态，View 直接持有 Observable 并访问其中的
     - 当且仅当某个 UI 状态是轻量后端逻辑的主动触发者。如页面切换管理者需要在切换页面的同时暂停 ARSession，想要将两者绑定管理
-3. actor 持有真实状态，对 actor 注入一个 ObservableObject，ObservableObject 持有真实状态的拷贝，UI 引用该 ObservableObject 并访问其中的 @Published
+3. actor 持有真实状态，对 actor 注入一个 Observable，Observable 持有真实状态的拷贝，UI 引用该 Observable
     - 当且仅当某个 UI 状态是重量后端逻辑的主动触发者。如录制器的已开始、结束中、取消中，想要和真实的录制逻辑绑定管理，此时多个 await 会有严重代价
     - 或：某个 UI 状态是后端自发变化状态的映射。如网络管理器自发变化时需要 UI 显示已连接设备
 
 - [ ] 需要测试的是，在其他 actor 执行 await MainActor 是否有 16.7ms 代价
+
+### 注意
+- View 用 @State 表示管理生命周期。如果只需要观测，则什么宏都不用.
+- View 用 @Bindable 表示引用 + 非管理 + 需要 self.$xxx
 
 ### 对于 1 的例子
 
@@ -53,8 +57,9 @@ struct UploadView: View {
     }
 }
 
-class PageCoodinator: @ObservableObject {
-    @Published var currentPage: Int
+@Observable
+class PageCoodinator {
+    var currentPage: Int
     let session = ARSession()
 
     init() { self.session.run() }
@@ -69,8 +74,9 @@ class PageCoodinator: @ObservableObject {
 ### 对于 3 的例子
 
 ```swift
-class RecorderViewModel: @ObservableObject {
-    @Published var state: String // 状态的拷贝
+@Observable
+class RecorderViewModel {
+    var state: String // 状态的拷贝
 }
 actor Recorder {
     var state: String = "idle"
@@ -87,7 +93,7 @@ actor Recorder {
 }
 
 struct RecorderView: View {
-    @ObservedObject var viewModel: RecorderViewModel 
+    var viewModel: RecorderViewModel 
     let recorder: Recorder
 
     init(recorder, viewModel) { // 注入
@@ -100,7 +106,8 @@ struct RecorderView: View {
     }
 }
 
-class PageCoodinator: @ObservableObject {
+@Observable
+class PageCoodinator {
     let recorder: Recorder
     let viewModel: RecorderViewModel
     init() {
@@ -108,14 +115,14 @@ class PageCoodinator: @ObservableObject {
         self.recorder = Recorder(self.viewModel)
     }
 }
-
 ```
 
 另外一个（自发状态变化）的例子：
 
 ```swift
-class NetworkViewModel: @ObservableObject {
-    @Published var connected: Int = 0
+@Observable
+class NetworkViewModel {
+    var connected: Int = 0
 }
 
 actor Network {

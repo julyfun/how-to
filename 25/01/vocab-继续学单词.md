@@ -8,6 +8,18 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 5/5
+1. prominent: a.显眼的，突出的: Here the window plays a prominent part in the design.
+
+## 5/3
+1. crypto: n.密码学: / ˈkrɪptoʊ / Enter Name for the crypto key
+
+
+## 4/30
+1. jewellery: n.珠宝: / ˈdʒuːəlri /
+2. postal cards: ph.明信片
+3. refer to: ph.提及
+
 ## 4/28
 1. in exchange for: ph.用于交换: AdamW uses additional memory in exchange for improved stability and convergence
 2. stateful: a.有状态的: AdamW is stateful
