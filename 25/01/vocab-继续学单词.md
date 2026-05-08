@@ -10,7 +10,7 @@ confidence: 2
 
 ## 5/8
 1. termed as : ph.被称为 : visual states, termed as Predictive Inverse Dynamics Models (PIDM).
-
+2. superior: a.更强的 : /suːˈpɪriər/ It demonstrates superior generalization for novel objects,
 
 ## 5/5
 1. prominent: a.显眼的，突出的: Here the window plays a prominent part in the design.
