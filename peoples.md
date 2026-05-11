@@ -82,9 +82,9 @@ articles:
     - @学生 吴翼 高阳(博士)
 - Sergey Levine @师从Pieter @副教授 @Google Brain
     - PALM-E, RT1, RT2
-    - @学生 /Chelsea Finn (@stanford)
+    - 学生有 Chelsea Finn (@stanford)
 - Trevor Darrell (自动驾驶)
-    - @学生 UCSD 王小龙, 清华叉院高阳和许华哲
+    - 学生有 UCSD 王小龙, 清华叉院高阳和许华哲
 
 ## UCSD
 - xiaolong wang | https://xiaolonw.github.io/
@@ -117,6 +117,8 @@ articles:
 - 银河通用
 - 千寻，松灵，方舟无限
 - Dyna,
+
+详情：
 
 ## 星海图 huazhe 苏州
 - 产品: A1 arm, R1 人形, R1-lite
@@ -158,3 +160,4 @@ articles:
 - AC one 平台
 
 ## GenRobot @陈建兴
+

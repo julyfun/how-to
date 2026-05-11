@@ -11,6 +11,7 @@ confidence: 2
 ## 5/11
 1. incurring substantial latency: ph.导致大量的延迟
 2. disentangle : vt.使解脱出 : We disentangle the role of video modeling during training
+3. three-fold: 三个方面
 
 ## 5/8
 1. termed as : ph.被称为 : visual states, termed as Predictive Inverse Dynamics Models (PIDM).
