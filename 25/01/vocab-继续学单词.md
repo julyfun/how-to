@@ -8,6 +8,9 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 5/12
+1. acronym: n.首字母缩略词: /ˈækrənɪm/
+
 ## 5/11
 1. incurring substantial latency: ph.导致大量的延迟
 2. disentangle : vt.使解脱出 : We disentangle the role of video modeling during training
