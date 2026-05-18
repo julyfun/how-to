@@ -10,6 +10,7 @@ confidence: 2
 
 ## 5/18
 1. radical: a.彻底的 : It was a radical departure from tradition.
+2. quadratic: a.二次的: / kwɑːˈdrætɪk /
 
 
 ## 5/14
