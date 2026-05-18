@@ -8,6 +8,9 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 5/14
+1. sampling scheme :
+
 ## 5/12
 1. acronym: n.首字母缩略词: /ˈækrənɪm/
 
