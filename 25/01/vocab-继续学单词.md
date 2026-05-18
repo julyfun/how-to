@@ -8,6 +8,10 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 5/18
+1. radical: a.彻底的 : It was a radical departure from tradition.
+
+
 ## 5/14
 1. sampling scheme :
 
