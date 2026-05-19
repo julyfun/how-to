@@ -16,6 +16,10 @@ confidence: 2
 5. Anatomy: n.解剖学，剖析 : / əˈnætəmi /
 6. warp: n.（织布中的）经纱，经线: / wɔːrp /
 7. wrap: v.包，裹，: ræp
+8. roofline: n.屋顶线
+9. overhead: n.开销
+10. arithmetic: a.算数的 : / əˈrɪθmətɪk /
+
 
 ## 5/18
 1. radical: a.彻底的 : It was a radical departure from tradition.
