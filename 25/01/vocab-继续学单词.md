@@ -8,6 +8,9 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 5/19
+1. Substantial credit: ph.大量的功劳
+
 ## 5/18
 1. radical: a.彻底的 : It was a radical departure from tradition.
 2. quadratic: a.二次的: / kwɑːˈdrætɪk /
