@@ -18,7 +18,9 @@ confidence: 2
 7. wrap: v.包，裹，: ræp
 8. roofline: n.屋顶线
 9. overhead: n.开销
-10. arithmetic: a.算数的 : / əˈrɪθmətɪk /
+10. a'rithmetic: a.算数的 : / əˈrɪθmətɪk /
+11. mantissa: n.小数部分 : / mænˈtɪsə /
+
 
 
 ## 5/18
