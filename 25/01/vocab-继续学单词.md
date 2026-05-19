@@ -20,17 +20,12 @@ confidence: 2
 9. overhead: n.开销
 10. a'rithmetic: a.算数的 : / əˈrɪθmətɪk /
 11. mantissa: n.小数部分 : / mænˈtɪsə /
-
-
+12. coa'lescing : n.合并 : / ˌkoʊəˈlesɪŋ /
 
 ## 5/18
 1. radical: a.彻底的 : It was a radical departure from tradition.
 2. quadratic: a.二次的: / kwɑːˈdrætɪk /
 3. Recurrent form: ph.回归形式 : Recurrent form of linear attention
-
-
-## 5/14
-1. sampling scheme :
 
 ## 5/12
 1. acronym: n.首字母缩略词: /ˈækrənɪm/
