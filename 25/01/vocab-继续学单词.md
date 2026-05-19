@@ -13,6 +13,7 @@ confidence: 2
 2. has tapped out: ph.已经枯竭
 3. insatiable: a.无法满足的 : .. How do we feed LLMs’ insatiable appetite for compute?
 4. transistor: a.晶体管
+5. Anatomy: n.解剖学，剖析 : / əˈnætəmi /
 
 ## 5/18
 1. radical: a.彻底的 : It was a radical departure from tradition.
