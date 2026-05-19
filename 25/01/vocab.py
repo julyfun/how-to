@@ -25,10 +25,11 @@ def die(msg: str) -> None:
     raise SystemExit(f"{RED}错误:{RESET} {msg}")
 
 
-def parse_db(path: Path) -> set[Vocab]:
+def parse_db(path: Path) -> list[Vocab]:
     if not path.exists():
         die(f"文件不存在: {path}")
-    db: set[Vocab] = set()
+    seen: set[Vocab] = set()
+    order: list[Vocab] = []
     text = path.read_text(encoding="utf-8")
     for i, raw in enumerate(text.splitlines(), 1):
         m = LINE_RE.match(raw)
@@ -46,12 +47,15 @@ def parse_db(path: Path) -> set[Vocab]:
             word, translation, example = parts
         if not word or not translation:
             die(f"第{i}行不符合规范: {raw}")
-        db.add(Vocab(word, translation, example))
-    if len(db) < 4:
+        v = Vocab(word, translation, example)
+        if v not in seen:
+            seen.add(v)
+            order.append(v)
+    if len(order) < 4:
         die("有效词条不足 4 条")
-    if len({x.translation for x in db}) < 4:
+    if len({x.translation for x in order}) < 4:
         die("translation 去重后不足 4 条")
-    return db
+    return order
 
 
 def clear() -> None:
@@ -66,8 +70,17 @@ def render_question(prompt: str, example: str, options: list[str], correct: int)
         print(f"  {idx}. {opt}")
 
 
-def make_round(v: Vocab, items: list[Vocab]) -> tuple[str, str, list[str], str]:
-    zh_to_en = random.random() < 0.5
+def pick_vocab(items: list[Vocab], zh_to_en: bool) -> Vocab:
+    """全中（中文题干）时：总量≥72 则文件顺序前 36 条与共余条目各占 50% 权重；否则均匀。"""
+    n = len(items)
+    if not zh_to_en or n < 72:
+        return random.choice(items)
+    rest = n - 36
+    weights = [50.0 / 36] * 36 + [50.0 / rest] * rest
+    return random.choices(items, weights=weights, k=1)[0]
+
+
+def make_round(v: Vocab, items: list[Vocab], zh_to_en: bool) -> tuple[str, str, list[str], str]:
     if zh_to_en:
         prompt = v.translation
         example = ""
@@ -83,20 +96,23 @@ def make_round(v: Vocab, items: list[Vocab]) -> tuple[str, str, list[str], str]:
     return prompt, example, options, answer
 
 
-def quiz(db: set[Vocab]) -> None:
-    items = list(db)
+def quiz(db: list[Vocab]) -> None:
+    items = db
     correct = 0
     clear()
     while True:
-        v = random.choice(items)
-        prompt, example, options, answer = make_round(v, items)
+        zh_to_en = random.random() < 0.5
+        v = pick_vocab(items, zh_to_en)
+        prompt, example, options, answer = make_round(v, items, zh_to_en)
         ans = options.index(answer) + 1
-        render_question(prompt, example, options, correct)
-        pick = input("\n你的选择(1-4): ").strip()
-        if pick not in {"1", "2", "3", "4"}:
-            clear()
-            print(f"{RED}请输入 1/2/3/4{RESET}\n")
-            continue
+        while True:
+            render_question(prompt, example, options, correct)
+            pick = input("\n你的选择(1-4): ").strip()
+            if pick not in {"1", "2", "3", "4"}:
+                clear()
+                print(f"{RED}请输入 1/2/3/4{RESET}\n")
+                continue
+            break
         if int(pick) == ans:
             correct += 1
             clear()
