@@ -14,6 +14,8 @@ confidence: 2
 3. insatiable: a.无法满足的 : .. How do we feed LLMs’ insatiable appetite for compute?
 4. transistor: a.晶体管
 5. Anatomy: n.解剖学，剖析 : / əˈnætəmi /
+6. warp: n.（织布中的）经纱，经线: / wɔːrp /
+7. wrap: v.包，裹，: ræp
 
 ## 5/18
 1. radical: a.彻底的 : It was a radical departure from tradition.
