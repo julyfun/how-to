@@ -8,6 +8,9 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 5/20
+1. borderline: n.边界 : crosses the borderline between fact and fiction
+
 ## 5/19
 1. Substantial credit: ph.大量的功劳
 2. has tapped out: ph.已经枯竭
