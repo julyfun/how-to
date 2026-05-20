@@ -65,7 +65,7 @@ x_out = torch.einsum('bnm,bnd->bmd', attn, x)   # [B, M, D]
 
 ```python
 # RT-2: 连续动作 → 词表尾部 K 个 token，同一 VLM 自回归 CE
-# V 是词表大小
+# V 是词表大小. 若 x 和 yaw 量化到同一档，会得到同一个 token id，这是设计如此，不是 bug，要靠序列位置区分语义
 act_ids = V - digitize(clip(a, a_min, a_max), K_bins)     # [B, A]
 seq = cat([vision_tok, text_tok, act_ids[:, :-1]], dim=1) # 都是离散 id
 h = VLM_Transformer(seq, images=img)
