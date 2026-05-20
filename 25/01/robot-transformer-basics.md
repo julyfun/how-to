@@ -107,9 +107,9 @@ loss = cross_entropy(
     logits[loss_mask].reshape(-1, V),
     seq_tgt[loss_mask].reshape(-1),
 )
-
 # 可选：把非动作 logits 在动作步 mask 掉，只允许预测 [action_token_begin+1 .. V-1]
 # logits[..., :action_token_begin+1] = -inf
+
 # ========== 推理：自回归生成固定 A 个动作 token ==========
 context = cat([vision_tok, text_tok], dim=1)
 act_pred_ids = []
