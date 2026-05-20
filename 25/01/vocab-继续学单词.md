@@ -15,7 +15,7 @@ confidence: 2
 4. literature :  : the rapidly growing literature on world models
 5. Progression 
 6. Complementary to :
-7. Causal  ::  读音
+7. Causal  ::  读音为
 8. conceptually :: conceptually frames the high-level VLM as a...
 9. realism
 10. plausible
