@@ -10,5 +10,10 @@ confidence: 2
 
 ## RT-2
 - https://hjfy.top/arxiv/2307.15818
+和 OpenVLA 同属一派，将 VLM 的最后 256 个 token id 分配给动作，直接将 x, y, z, yaw, pitch, roll, gripper 划分为 256 个离散桶，共享 token id 并通过位置区分语义。
 
+## World Model for Robot Learning: A Comprehensive Survey
+- https://hjfy.top/arxiv/2605.00080
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260520212623754.png)
 
