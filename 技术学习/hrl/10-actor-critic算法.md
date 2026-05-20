@@ -70,6 +70,8 @@ class ValueNet(torch.nn.Module):
         self.fc1 = torch.nn.Linear(state_dim, hidden_dim)
         self.fc2 = torch.nn.Linear(hidden_dim, 1)
 
+    # 输入状态 states: [batch_size, state_dim]
+    # 输出状态价值 V(s): [batch_size, 1]
     def forward(self, x):
         x = F.relu(self.fc1(x))
         return self.fc2(x)
