@@ -10,6 +10,17 @@ confidence: 2
 
 ## 5/20
 1. borderline: n.边界 : crosses the borderline between fact and fiction
+2. literature
+3. fragmented
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
 
 ## 5/19
 1. Substantial credit: ph.大量的功劳
@@ -146,4 +157,17 @@ confidence: 2
 10. remain "in place" : 驻扎
 11. complies: 遵守（协议）
 12. Strait of Hormuz : 霍尔木兹海峡
+
+<!-- 1. -->
+<!-- 2. -->
+<!-- 3. -->
+<!-- 4. -->
+<!-- 5. -->
+<!-- 6. -->
+<!-- 7. -->
+<!-- 8. -->
+<!-- 9. -->
+<!-- 10. -->
+<!-- 11. -->
+<!-- 12. -->
 
