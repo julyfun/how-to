@@ -92,19 +92,22 @@ def token_ids_to_cont(token_ids):
 # 例： [vision_tokens] + [text_tokens] + [action_tokens]
 # 动作在文本里常写成 "128 45 ..." 或直接喂 token_ids
 vision_tok = encode_image(img)             # [B, Nv]
-text_tok   = tokenize(instruction)         # [B, Nt]
+text_tok   = tokenize(instruction)         # [B, Nt]，这里是整数类型，Nt 是 seq_len
 act_tok    = cont_to_token_ids(a_cont)     # [B, A]  单步；或 [B, T*A] 多步展平
 # teacher forcing：预测下一个 token（含动作段）
 seq_in  = cat([vision_tok, text_tok, act_tok[:, :-1]], dim=1)   # 若单步 A 维，[:-1] 即前 A-1 维
 seq_tgt = cat([ignore,      ignore,     act_tok],        dim=1)   # 仅动作位置算 loss
+# RT-2 默认 embedding 要训练
 h = VLM_Transformer(seq_in, images=img)    # 或 cross-attn 把 vision 当 context
 logits = LM_Head(h)                        # [B, L, V]  与文本共用 head
+
 # 只在动作 token 位置算 CE（其余位置 mask=-100）
 loss_mask = (positions in action_span)
 loss = cross_entropy(
     logits[loss_mask].reshape(-1, V),
     seq_tgt[loss_mask].reshape(-1),
 )
+
 # 可选：把非动作 logits 在动作步 mask 掉，只允许预测 [action_token_begin+1 .. V-1]
 # logits[..., :action_token_begin+1] = -inf
 # ========== 推理：自回归生成固定 A 个动作 token ==========
