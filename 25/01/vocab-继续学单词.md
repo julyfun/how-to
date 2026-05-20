@@ -12,15 +12,15 @@ confidence: 2
 1. borderline: n.边界 : crosses the borderline between fact and fiction
 2. literature
 3. fragmented
-4. literature
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
+4. literature :  : the rapidly growing literature on world models
+5. Progression 
+6. Complementary to :
+7. Causal  ::  读音
+8. conceptually :: conceptually frames the high-level VLM as a...
+9. realism
+10. plausible
+11. Subgoal
+12. Novel
 
 ## 5/19
 1. Substantial credit: ph.大量的功劳
