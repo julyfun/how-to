@@ -69,6 +69,7 @@ act_ids = V - digitize(clip(a, a_min, a_max), K_bins)     # [B, A]
 seq = cat([vision_tok, text_tok, act_ids[:, :-1]], dim=1)
 h = VLM_Transformer(seq, images=img)
 loss = CE(LM_Head(h)[action_mask], act_ids)               # 仅动作位算 loss
+
 # infer: 自回归 A 步，logits 尾部子集 argmax → bin_centers 反量化
 context = cat([vision, text])
 for _ in range(A):
@@ -85,10 +86,11 @@ v = SigLIP(imgs)                                    # [B, Nv, D]
 t = PaliGemma.embed(prompt_with_discrete_state)     # state 在文本里
 prefix = cat([v, t])                                # 图文双向 (prefix-LM)
 x_t, t = noise * t + actions * (1-t)                # flow 插值
-suffix = Linear_in(x_t)                             # [B, Na, D]
+suffix = Linear_in(x_t)          # [B, Na, D]. 编码到 token-embedding-space. 代码中叫做 action_in_proj
 cond = MLP(sincos(t))                               # adaRMS 条件
-(h_pre, h_suf) = DualGemma([prefix, suffix], mask=prefix_lm, adarms=[None, cond])
+# Gemma 内跑 suffix 的那条路是 Action Expert （expert 1，Gemma-300M）
+(h_pre, h_suf) = DualGemma([prefix, suffix], mask=prefix_lm, adarms=[None, cond]) # 输出 hidden states
 loss = MSE(Linear_out(h_suf[:, -Na:]), noise - actions)
-# infer: cache prefix → Euler: x += dt * Linear_out(h_suf), t -= dt
+# infer: cache prefix → Euler: x += dt * Linear_out(h_suf), t -= dt # 解码回动作空间 (flow 的速度场)
 ```
 
