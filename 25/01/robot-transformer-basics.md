@@ -63,68 +63,32 @@ x_out = torch.einsum('bnm,bnd->bmd', attn, x)   # [B, M, D]
 
 ## RT-2 离散动作 token
 
-[todo]
-
-```
-# ========== 超参 ==========
-A = 7                    # 动作维数 (x,y,z, roll,pitch,yaw, gripper)；可选 +1 terminate
-K = 256                  # 每维 bin 数
-V = tokenizer.vocab_size # 原 VLM 词表大小，不扩表
-
-# 占用词表末尾 K 个「最少用」token（OpenVLA/RT-2 惯例）
-action_token_begin = V - (K + 1)   # +1 对齐 np.digitize 的 [1..K] 下标
-
-# 连续值 -> bin 下标 -> token id
-bins = linspace(a_min, a_max, K)           # K-1 个区间，K 个边界
-bin_centers = (bins[:-1] + bins[1:]) / 2
-def cont_to_token_ids(a_cont):             # a_cont: [B, A] 或 [B, T, A]
-    a_clip = clip(a_cont, a_min, a_max)
-    # digitize 得到 [1..K]；与 OpenVLA 一致
-    bin_idx = digitize(a_clip, bins)       # [B, (T,) A]
-    token_ids = V - bin_idx                # 映射到 vocab 尾部
-    return token_ids                       # 各维可重复同一 token_id，靠位置区分
-def token_ids_to_cont(token_ids):
-    bin_idx = V - token_ids
-    bin_idx = clip(bin_idx - 1, 0, K - 2)  # 落到 bin_centers 下标
-    return bin_centers[bin_idx]
-
-# ========== 训练：拼进同一条自回归序列 ==========
-# 例： [vision_tokens] + [text_tokens] + [action_tokens]
-# 动作在文本里常写成 "128 45 ..." 或直接喂 token_ids
-vision_tok = encode_image(img)             # [B, Nv]
-text_tok   = tokenize(instruction)         # [B, Nt]，这里是整数类型，Nt 是 seq_len
-act_tok    = cont_to_token_ids(a_cont)     # [B, A]  单步；或 [B, T*A] 多步展平
-# teacher forcing：预测下一个 token（含动作段）
-seq_in  = cat([vision_tok, text_tok, act_tok[:, :-1]], dim=1)   # 若单步 A 维，[:-1] 即前 A-1 维
-seq_tgt = cat([ignore,      ignore,     act_tok],        dim=1)   # 仅动作位置算 loss
-# RT-2 默认 embedding 要训练
-h = VLM_Transformer(seq_in, images=img)    # 或 cross-attn 把 vision 当 context
-logits = LM_Head(h)                        # [B, L, V]  与文本共用 head
-
-# 只在动作 token 位置算 CE（其余位置 mask=-100）
-loss_mask = (positions in action_span)
-loss = cross_entropy(
-    logits[loss_mask].reshape(-1, V),
-    seq_tgt[loss_mask].reshape(-1),
-)
-# 可选：把非动作 logits 在动作步 mask 掉，只允许预测 [action_token_begin+1 .. V-1]
-# logits[..., :action_token_begin+1] = -inf
-
-# ========== 推理：自回归生成固定 A 个动作 token ==========
-context = cat([vision_tok, text_tok], dim=1)
-act_pred_ids = []
-for i in range(A):
-    h = VLM_Transformer(context, images=img)
-    logits = LM_Head(h[:, -1:, :])       # 最后一个位置
-    # 限制在动作词表子集（尾部 K 个 id）
-    logits[..., :action_token_begin + 1] = -inf
-    next_id = argmax(logits, dim=-1)     # [B, 1]
-    act_pred_ids.append(next_id)
+```python
+# RT-2: 连续动作 → 词表尾部 K 个 token，同一 VLM 自回归 CE
+act_ids = V - digitize(clip(a, a_min, a_max), K_bins)     # [B, A]
+seq = cat([vision_tok, text_tok, act_ids[:, :-1]], dim=1)
+h = VLM_Transformer(seq, images=img)
+loss = CE(LM_Head(h)[action_mask], act_ids)               # 仅动作位算 loss
+# infer: 自回归 A 步，logits 尾部子集 argmax → bin_centers 反量化
+context = cat([vision, text])
+for _ in range(A):
+    next_id = argmax(LM_Head(VLM(context)[:, -1:])[:, :, V-K:], -1)
     context = cat([context, next_id], dim=1)
-act_pred_ids = stack(act_pred_ids, dim=1)  # [B, A]
-a_pred = token_ids_to_cont(act_pred_ids)   # [B, A] 连续控制量
+a = bin_centers[V - stack(context[:, -A:]) - 1]
+```
 
-核心就是：把每个动作维度量化成离散 bin，转成 token 序列，用语言建模同款 CE loss
-训练，再反量化回控制量。
+## pi0.5
+
+```python
+# π₀.₅: PaliGemma prefix + Action Expert suffix + flow matching
+v = SigLIP(imgs)                                    # [B, Nv, D]
+t = PaliGemma.embed(prompt_with_discrete_state)     # state 在文本里
+prefix = cat([v, t])                                # 图文双向 (prefix-LM)
+x_t, t = noise * t + actions * (1-t)                # flow 插值
+suffix = Linear_in(x_t)                             # [B, Na, D]
+cond = MLP(sincos(t))                               # adaRMS 条件
+(h_pre, h_suf) = DualGemma([prefix, suffix], mask=prefix_lm, adarms=[None, cond])
+loss = MSE(Linear_out(h_suf[:, -Na:]), noise - actions)
+# infer: cache prefix → Euler: x += dt * Linear_out(h_suf), t -= dt
 ```
 
