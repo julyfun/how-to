@@ -14,7 +14,7 @@ confidence: 2
 ## FiLM
 来自 RT1
 
-使用 txt token => MLP 的输出缩放 img token
+使用 MLP(txt token) 的输出缩放 img token（为 txt token 唯一用处）
 
 ```python
 # img: [B, C, H, W], txt_ids: [B, L]
@@ -65,8 +65,9 @@ x_out = torch.einsum('bnm,bnd->bmd', attn, x)   # [B, M, D]
 
 ```python
 # RT-2: 连续动作 → 词表尾部 K 个 token，同一 VLM 自回归 CE
+# V 是词表大小
 act_ids = V - digitize(clip(a, a_min, a_max), K_bins)     # [B, A]
-seq = cat([vision_tok, text_tok, act_ids[:, :-1]], dim=1)
+seq = cat([vision_tok, text_tok, act_ids[:, :-1]], dim=1) # 都是离散 id
 h = VLM_Transformer(seq, images=img)
 loss = CE(LM_Head(h)[action_mask], act_ids)               # 仅动作位算 loss
 
@@ -82,11 +83,12 @@ a = bin_centers[V - stack(context[:, -A:]) - 1]
 
 ```python
 # π₀.₅: PaliGemma prefix + Action Expert suffix + flow matching
-v = SigLIP(imgs)                                    # [B, Nv, D]
+v = SigLIP(imgs)                                    # [B, Nv, D=2048]. 已经是连续 embedding
 t = PaliGemma.embed(prompt_with_discrete_state)     # state 在文本里
 prefix = cat([v, t])                                # 图文双向 (prefix-LM)
 x_t, t = noise * t + actions * (1-t)                # flow 插值
-suffix = Linear_in(x_t)          # [B, Na, D]. 编码到 token-embedding-space. 代码中叫做 action_in_proj
+# [B, Na, D=1024]. 编码到 token-embedding-space（和上面 space 完全不同）. 代码中叫做 action_in_proj
+suffix = Linear_in(x_t)
 cond = MLP(sincos(t))                               # adaRMS 条件
 # Gemma 内跑 suffix 的那条路是 Action Expert （expert 1，Gemma-300M）
 (h_pre, h_suf) = DualGemma([prefix, suffix], mask=prefix_lm, adarms=[None, cond]) # 输出 hidden states
