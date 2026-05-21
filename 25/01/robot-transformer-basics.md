@@ -14,7 +14,7 @@ confidence: 2
 ## FiLM
 来自 RT1
 
-使用 txt token => MLP 的输出缩放 img token
+使用 MLP(txt token) 的输出缩放 img token（为 txt token 唯一用处）
 
 ```python
 # img: [B, C, H, W], txt_ids: [B, L]
@@ -63,28 +63,36 @@ x_out = torch.einsum('bnm,bnd->bmd', attn, x)   # [B, M, D]
 
 ## RT-2 离散动作 token
 
-[todo]
+```python
+# RT-2: 连续动作 → 词表尾部 K 个 token，同一 VLM 自回归 CE
+# V 是词表大小. 若 x 和 yaw 量化到同一档，会得到同一个 token id，这是设计如此，不是 bug，要靠序列位置区分语义
+act_ids = V - digitize(clip(a, a_min, a_max), K_bins)     # [B, A]
+seq = cat([vision_tok, text_tok, act_ids[:, :-1]], dim=1) # 都是离散 id
+h = VLM_Transformer(seq, images=img)
+loss = CE(LM_Head(h)[action_mask], act_ids)               # 仅动作位算 loss
 
+# infer: 自回归 A 步，logits 尾部子集 argmax → bin_centers 反量化
+context = cat([vision, text])
+for _ in range(A):
+    next_id = argmax(LM_Head(VLM(context)[:, -1:])[:, :, V-K:], -1)
+    context = cat([context, next_id], dim=1)
+a = bin_centers[V - stack(context[:, -A:]) - 1]
 ```
-# 连续动作 -> 离散token（训练前/数据管线）
-# a_cont: [B, T, A]  (A维连续控制量，如x,y,z,roll,pitch,yaw,gripper)
-bins = torch.linspace(low, high, K)                       # 每个维度K个bin
-a_idx = bucketize_per_dim(a_cont, bins)                   # [B, T, A] in [0..K-1]
-act_tok = a_idx + dim_offset[None, None, :]               # 映射到统一动作词表ID
 
-# 把动作token当“文本token”一样做自回归监督
-inp = torch.cat([vision_tok, text_tok, act_tok[:, :-1, :].reshape(B, -1)], dim=1)
-target = act_tok.reshape(B, -1)                           # 预测下一动作token
-h = VLM_Transformer(inp)
-logits = ActionLMHead(h[:, -target.size(1):, :])          # [B, T*A, V_act]
-loss = F.cross_entropy(logits.reshape(-1, V_act), target.reshape(-1))
+## pi0.5
 
-# 推理时 token -> 连续动作（解码）
-pred_idx = logits.argmax(-1).reshape(B, T, A) - dim_offset
-a_pred = dequantize(pred_idx, bins)                       # bin中心/边界还原为连
-续值
-
-核心就是：把每个动作维度量化成离散 bin，转成 token 序列，用语言建模同款 CE loss
-训练，再反量化回控制量。
+```python
+# π₀.₅: PaliGemma prefix + Action Expert suffix + flow matching
+v = SigLIP(imgs)                                    # [B, Nv, D=2048]. 已经是连续 embedding
+t = PaliGemma.embed(prompt_with_discrete_state)     # state 在文本里
+prefix = cat([v, t])                                # 图文双向 (prefix-LM)
+x_t, t = noise * t + actions * (1-t)                # flow 插值
+# [B, Na, D=1024]. 编码到 token-embedding-space（和上面 space 完全不同）. 代码中叫做 action_in_proj
+suffix = Linear_in(x_t)
+cond = MLP(sincos(t))                               # adaRMS 条件
+# Gemma 内跑 suffix 的那条路是 Action Expert （expert 1，Gemma-300M）
+(h_pre, h_suf) = DualGemma([prefix, suffix], mask=prefix_lm, adarms=[None, cond]) # 输出 hidden states
+loss = MSE(Linear_out(h_suf[:, -Na:]), noise - actions)
+# infer: cache prefix → Euler: x += dt * Linear_out(h_suf), t -= dt # 解码回动作空间 (flow 的速度场)
 ```
 

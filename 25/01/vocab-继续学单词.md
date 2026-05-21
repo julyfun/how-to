@@ -8,6 +8,39 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## 5/20
+1. borderline: n.边界 : crosses the borderline between fact and fiction
+2. literature
+3. fragmented
+4. literature :  : the rapidly growing literature on world models
+5. Progression 
+6. Complementary to :
+7. Causal  ::  读音为
+8. conceptually :: conceptually frames the high-level VLM as a...
+9. realism
+10. plausible
+11. Subgoal
+12. Novel
+
+## 5/19
+1. Substantial credit: ph.大量的功劳
+2. has tapped out: ph.已经枯竭
+3. insatiable: a.无法满足的 : .. How do we feed LLMs’ insatiable appetite for compute?
+4. transistor: a.晶体管
+5. Anatomy: n.解剖学，剖析 : / əˈnætəmi /
+6. warp: n.（织布中的）经纱，经线: / wɔːrp /
+7. wrap: v.包，裹，: ræp
+8. roofline: n.屋顶线
+9. overhead: n.开销
+10. a'rithmetic: a.算数的 : / əˈrɪθmətɪk /
+11. mantissa: n.小数部分 : / mænˈtɪsə /
+12. coa'lescing : n.合并 : / ˌkoʊəˈlesɪŋ /
+
+## 5/18
+1. radical: a.彻底的 : It was a radical departure from tradition.
+2. quadratic: a.二次的: / kwɑːˈdrætɪk /
+3. Recurrent form: ph.回归形式 : Recurrent form of linear attention
+
 ## 5/12
 1. acronym: n.首字母缩略词: /ˈækrənɪm/
 
@@ -124,4 +157,17 @@ confidence: 2
 10. remain "in place" : 驻扎
 11. complies: 遵守（协议）
 12. Strait of Hormuz : 霍尔木兹海峡
+
+<!-- 1. -->
+<!-- 2. -->
+<!-- 3. -->
+<!-- 4. -->
+<!-- 5. -->
+<!-- 6. -->
+<!-- 7. -->
+<!-- 8. -->
+<!-- 9. -->
+<!-- 10. -->
+<!-- 11. -->
+<!-- 12. -->
 
