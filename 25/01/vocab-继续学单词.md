@@ -9,18 +9,17 @@ confidence: 2
 ---
 
 ## 5/20
-1. borderline: n.边界 : crosses the borderline between fact and fiction
-2. literature
-3. fragmented
-4. literature :  : the rapidly growing literature on world models
-5. Progression 
-6. Complementary to :
-7. Causal  ::  读音为
-8. conceptually :: conceptually frames the high-level VLM as a...
-9. realism
-10. plausible
-11. Subgoal
-12. Novel
+1. borderline: n.边界 : / ˈbɔːrdərlaɪn / crosses the borderline between fact and fiction
+2. literature: n.文献，论文总称 : / ˈlɪtrətʃʊr / A review of the current literature shows a gap in the research.
+3. fragmented: a.成碎片的，断裂的 : / fræɡˈmentɪd / The market is highly fragmented with hundreds of small suppliers.
+4. Progression: n.进展，进程 : / prəˈɡreʃn / There is a natural progression from basic layouts to complex generation.
+5. Complementary to: ph.与...互补的 : / ˌkɑːmplɪˈmentri tuː / The two systems are complementary to each other.
+6. Causal: a.因果关系的 : / ˈkɔːzl / This study establishes a causal link between model scale and alignment.
+7. conceptually: adv.概念上地 : / kənˈseptʃuəli / conceptually frames the high-level VLM as a...
+8. realism: n.现实主义，逼真度 : / ˈriːəlɪzəm / The simulation achieves high visual realism through physics engines.
+9. plausible: a.似乎合理的，说得通的 : / ˈplɔːzəbl / The model generated a highly plausible video sequence.
+10. Subgoal: n.子目标 : / ˈsʌbɡoʊl / The agent breaks down the complex instruction into several subgoals.
+11. Novel: a.新颖的，新奇的 : / ˈnɑːvl / The paper introduces a novel approach to tensor contraction.
 
 ## 5/19
 1. Substantial credit: ph.大量的功劳
