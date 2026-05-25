@@ -10,8 +10,10 @@ confidence: 2
 ## 5/25
 1. cult
 2. forays
-3. corpus
-4. asymptoting
+3. corpus : n.语料库
+4. asymptoting : n.渐近线
+5. unscramble : n.整理;译出密码
+6. Monotonic
 
 ## 5/20
 1. borderline: n.边界 : / ˈbɔːrdərlaɪn / crosses the borderline between fact and fiction
