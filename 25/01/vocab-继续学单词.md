@@ -15,6 +15,7 @@ confidence: 2
 5. unscramble : n.整理;译出密码
 6. Monotonic
 7. intriguing
+8. arithmetic
 
 ## 5/20
 1. borderline: n.边界 : / ˈbɔːrdərlaɪn / crosses the borderline between fact and fiction
