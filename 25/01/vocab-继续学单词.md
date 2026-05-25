@@ -7,6 +7,11 @@ os: "Darwin floriandeMacBook-Air.local 25.2.0 Darwin Kernel Version 25.2.0: Tue 
 assume-you-know: [computer]
 confidence: 2
 ---
+## 5/25
+1. cult
+2. forays
+3. corpus
+4. asymptoting
 
 ## 5/20
 1. borderline: n.边界 : / ˈbɔːrdərlaɪn / crosses the borderline between fact and fiction
