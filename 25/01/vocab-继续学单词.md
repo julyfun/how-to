@@ -14,6 +14,7 @@ confidence: 2
 4. asymptoting : n.渐近线
 5. unscramble : n.整理;译出密码
 6. Monotonic
+7. intriguing
 
 ## 5/20
 1. borderline: n.边界 : / ˈbɔːrdərlaɪn / crosses the borderline between fact and fiction
