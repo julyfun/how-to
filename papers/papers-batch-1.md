@@ -24,6 +24,7 @@ TODO: 数据集这一块儿有空可以再看看.
 
 ## Lingbot-va
 - https://hjfy.top/arxiv/2601.21998
+- ?自回归扩散
 
 ## RTC
 ```python
