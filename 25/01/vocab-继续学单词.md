@@ -12,46 +12,46 @@ confidence: 2
 
 ## 5/27
 1. outage : n.断供期；设备停开期 : /ˈaʊtɪdʒ/ The power outage lasted for several hours.
-2. rationale : n.基本原理；原理的阐述 : /ˌræʃəˈnæl/ The paper explains the rationale behind the design.
-3. longevity : n.长寿；寿命 : /lɑːnˈdʒevəti/ Regular maintenance can improve the longevity of the machine.
+2. ratio'nale : n.基本原理；原理的阐述 : /ˌræʃəˈnæl/ The paper explains the rationale behind the design.
+3. lon'gevity : n.长寿；寿命 : /lɑːnˈdʒevəti/ Regular maintenance can improve the longevity of the machine.
 4. coursework : n.课程作业；修习 : /ˈkɔːrswɜːrk/ The final grade depends partly on coursework.
-5. maintenance : n.维护；维修；保持；生活费用 : /ˈmeɪntənəns/ The server needs routine maintenance.
-6. profitable : adj.有利可图的；赚钱的；有益的 : /ˈprɑːfɪtəbl/ The new product became profitable within a year.
+5. 'maintenance : n.维护；维修；保持；生活费用 : /ˈmeɪntənəns/ The server needs routine maintenance.
+6. 'profitable : adj.有利可图的；赚钱的；有益的 : /ˈprɑːfɪtəbl/ The new product became profitable within a year.
 7. manned : adj.载人的；有人驾驶的；有人操纵的 : /mænd/ The agency plans another manned mission to the station.
-8. dedicated : adj.专用的；专注的；献身的 v.奉献；把……用于 : /ˈdedɪkeɪtɪd/ The lab has a dedicated server for experiments.
-9. bypass : n.旁路；支路；分流术 v.绕过；避开 : /ˈbaɪpæs/ The driver took a bypass to avoid the traffic.
+8. 'dedicated : adj.专用的；专注的；献身的 v.奉献；把……用于 : /ˈdedɪkeɪtɪd/ The lab has a dedicated server for experiments.
+9. 'bypass : n.旁路；支路；分流术 v.绕过；避开 : /ˈbaɪpæs/ The driver took a bypass to avoid the traffic.
 10. gait : n.步法；步态 vt.训练步法 : /ɡeɪt/ The robot adjusted its gait on uneven ground.
-11. accelerometer : n.加速度计；加速器 : /əkˌseləˈrɑːmɪtər/ The phone uses an accelerometer to detect movement.
+11. accele'rometer : n.加速度计；加速器 : /əkˌseləˈrɑːmɪtər/ The phone uses an accelerometer to detect movement.
 
 ## 5/26
 1. timeliness : n.及时；时间性；好时机 : /ˈtaɪmlinəs/ The timeliness of the report helped the team respond quickly.
-2. receipt : n.收到；收据；收入 vt.收到 : /rɪˈsiːt/ Please keep the receipt in case you need a refund.
-3. penetrate : vt.渗透；穿透；洞察 vi.渗透；刺入；看透 : /ˈpenətreɪt/ The signal can penetrate thick walls.
+2. re'ceipt : n.收到；收据；收入 vt.收到 : /rɪˈsiːt/ Please keep the receipt in case you need a refund.
+3. penetrate : vt.穿透；洞察 vi.渗透；刺入；看透 : /ˈpenətreɪt/ The signal can penetrate thick walls.
 4. module : n.模块；组件；模数 : /ˈmɑːdjuːl/ Each module handles a separate part of the system.
 5. ampere : n.安培 : /ˈæmper/ The current was measured in amperes.
-6. endurance : n.忍耐力；耐久性；持续时间 : /ɪnˈdʊrəns/ Marathon training builds both speed and endurance.
-7. rigorous : adj.严格的；严密的；严酷的 : /ˈrɪɡərəs/ The experiment followed a rigorous testing process.
-8. amid : prep.在……过程中；四周是；在……气氛中 : /əˈmɪd/ The company grew amid strong competition.
-9. triaxial : adj.三轴的；三维的；空间的 : /traɪˈæksiəl/ The sensor records triaxial acceleration data.
+6. en'durance : n.忍耐力；耐久性；持续时间 : /ɪnˈdʊrəns/ Marathon training builds both speed and endurance.
+7. 'rigorous : adj.严格的；严密的；严酷的 : /ˈrɪɡərəs/ The experiment followed a rigorous testing process.
+8. a'mid : prep.在……过程中；四周是；在……气氛中 : /əˈmɪd/ The company grew amid strong competition.
+9. tri'axial : adj.三轴的；三维的；空间的 : /traɪˈæksiəl/ The sensor records triaxial acceleration data.
 10. raspberry : n.覆盆子；咂舌声 : /ˈræzberi/ She added fresh raspberry to the dessert.
-11. expertise : n.专门知识；专门技术；专家意见 : /ˌekspɜːrˈtiːz/ The project requires expertise in robotics.
+11. exper'tise : n.专门知识；专门技术；专家意见 : /ˌekspɜːrˈtiːz/ The project requires expertise in robotics.
 12. 'oriented : adj.以……为方向的；重视……的 v.使朝向；确定方位 : /ˈɔːrientɪd/ The course is oriented toward practical skills.
 
 ## 5/25
 1. cult : n.邪教；狂热崇拜；小众追捧 : /kʌlt/ The film gained a cult following after its release.
-2. forays : n.突袭；尝试；涉足 : /ˈfɔːreɪz/ The company made several forays into overseas markets.
-3. corpus : n.语料库；文集；主体 : /ˈkɔːrpəs/ The model was trained on a large text corpus.
-4. asymptoting : v.渐近；接近极限 : /ˈæsɪmptoʊtɪŋ/ The curve is asymptoting toward a stable value.
-5. unscramble : v.整理；译出密码；理清 : /ˌʌnˈskræmbl/ The program can unscramble the encoded message.
-6. monotonic : adj.单调的；单调递增或递减的 : /ˌmɑːnəˈtɑːnɪk/ The function is monotonic over this interval.
-7. intriguing : adj.有趣的；引人入胜的 : /ɪnˈtriːɡɪŋ/ The paper presents an intriguing idea for efficient training.
-8. arithmetic : n.算术 adj.算术的 : /əˈrɪθmətɪk/ Basic arithmetic is enough to check the result.
+2. 'forays : n.突袭；尝试；涉足 : /ˈfɔːreɪz/ The company made several forays into overseas markets.
+3. 'corpus : n.语料库；文集；主体 : /ˈkɔːrpəs/ The model was trained on a large text corpus.
+4. 'asymptoting : v.渐近；接近极限 : /ˈæsɪmptoʊtɪŋ/ The curve is asymptoting toward a stable value.
+5. un'scramble : v.整理；译出密码；理清 : /ˌʌnˈskræmbl/ The program can unscramble the encoded message.
+6. mono'tonic : adj.单调的；单调递增或递减的 : /ˌmɑːnəˈtɑːnɪk/ The function is monotonic over this interval.
+7. in'triguing : adj.有趣的；引人入胜的 : /ɪnˈtriːɡɪŋ/ The paper presents an intriguing idea for efficient training.
+8. a'rithmetic : n.算术 adj.算术的 : /əˈrɪθmətɪk/ Basic arithmetic is enough to check the result.
 
 ## 5/20
-1. borderline: n.边界 : / ˈbɔːrdərlaɪn / crosses the borderline between fact and fiction
+1. 'borderline: n.边界 : / ˈbɔːrdərlaɪn / crosses the borderline between fact and fiction
 2. literature: n.文献，论文总称 : / ˈlɪtrətʃʊr / A review of the current literature shows a gap in the research.
-3. fragmented: a.成碎片的，断裂的 : / fræɡˈmentɪd / The market is highly fragmented with hundreds of small suppliers.
-4. Progression: n.进展，进程 : / prəˈɡreʃn / There is a natural progression from basic layouts to complex generation.
+3. frag'mented: a.成碎片的，断裂的 : / fræɡˈmentɪd / The market is highly fragmented with hundreds of small suppliers.
+4. Pro'gression: n.进展，进程 : / prəˈɡreʃn / There is a natural progression from basic layouts to complex generation.
 5. Complementary to: ph.与...互补的 : / ˌkɑːmplɪˈmentri tuː / The two systems are complementary to each other.
 6. Causal: a.因果关系的 : / ˈkɔːzl / This study establishes a causal link between model scale and alignment.
 7. conceptually: adv.概念上地 : / kənˈseptʃuəli / conceptually frames the high-level VLM as a...
