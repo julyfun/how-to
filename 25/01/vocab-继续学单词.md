@@ -179,7 +179,7 @@ confidence: 2
 8. delegation: n.代表团
 9. is yet to arrive in : ph.尚未到达
 10. checkpoints and paramilitaries: ph.检查点和准军事组织
-11. correspondent: n.记者
+11. correspondent: n.记者 : 可以认识邦德的
 12. take part in separate talks: ph.参与单独会谈
 
 ## 4/9
@@ -193,7 +193,7 @@ confidence: 2
 8. health ministry : 卫生部
 9. Beirut : 黎巴嫩首都 贝鲁特 bəˈriːt
 10. remain "in place" : 驻扎
-11. complies: 遵守（协议）
+11. complies: 遵守（协议）:  com + play -> 过来玩就要遵守规则
 12. Strait of Hormuz : 霍尔木兹海峡
 
 <!-- 1. -->
