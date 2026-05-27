@@ -12,3 +12,6 @@ confidence: 2
 递归
 - ?Q-chunking
 
+## GreenVLA
+- https://hjfy.top/arxiv/2602.00919
+
