@@ -79,3 +79,31 @@ def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
     return A_tau                            # [H, M] 平滑衔接的新动作块
 ```
 
+## Pi0
+```mermaid
+flowchart LR
+    img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
+    txt["Text Tokens<br/>(B, max_token_len=48)"] --> tok["Gemma Token Embedding"]
+    siglip --> vis["Visual Tokens<br/>(B, 3*256=768, D=2048)"]
+    tok --> textemb["Text Embeddings<br/>(B, 48, D=2048)"]
+    vis --> prefix["Prefix Tokens<br/>(B, seq_len=816, D=2048)"]
+    textemb --> prefix
+    state["Robot State<br/>(B, action_dim=32)"] --> stateproj["state_proj"]
+    noisy["Noisy Actions x_t<br/>(B, horizon=50, action_dim=32)"] --> actproj["action_in_proj"]
+    time["Flow Time t<br/>(B,)"] --> timemlp["Time Embedding MLP"]
+    stateproj --> statetok["State Token<br/>(B, 1, D=1024)"]
+    actproj --> acttok["Action Tokens<br/>(B, 50, D=1024)"]
+    timemlp --> timetok["Time Tokens<br/>(B, 50, D=1024)"]
+    acttok --> mix["Action + Time Tokens<br/>(B, 50, D=1024)"]
+    timetok --> mix
+    statetok --> suffix["Suffix Tokens<br/>(B, seq_len=51, D=1024)"]
+    mix --> suffix
+    prefix --> pg["PaliGemma / Gemma 2B Expert"]
+    suffix --> ae["Action Expert / Gemma 300M"]
+    pg <--> shared["Shared Masked Self-Attn (qkv dim=256)"]
+    ae <--> shared
+    shared --> actout["action_out_proj"]
+    actout --> vt["Predicted v_t<br/>(B, 50, action_dim=32)"]
+    gt["Target u_t = noise - action<br/>(B, 50, action_dim=32)"] --> loss["Flow Matching Loss"]
+    vt --> loss
+```
