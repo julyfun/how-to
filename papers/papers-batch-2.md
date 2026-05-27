@@ -14,4 +14,5 @@ confidence: 2
 
 ## GreenVLA
 - https://hjfy.top/arxiv/2602.00919
+有很多训练 trick，包括5阶段课程学习、质量指标筛选（公开数据集质量表）. 然而，demo 没有什么新东西。
 
