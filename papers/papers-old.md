@@ -8,6 +8,45 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+```
+下面是一个优秀的 pi0.5 模型架构 chart，简洁且符合我的学习水平.
+模仿该 chart 绘制本仓库 flowchat. 到 read/infer.mmd 和 read/train.mmd
+- 注意带形状 (B, seq_len=968, D=2048 , 根据 readme 最主流配置). 
+- 若有 kv cache 也一并画出 (何时添加 kv cache，何时 attend kv cache)
+
+flowchart LR
+    img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
+    prompt["Task Prompt<br/>(string)"] --> format["Prompt Format<br/>Task: ..., State: ...;<br/>Action:"]
+    rawstate["Raw / Normalized Robot State<br/>(B, action_dim=32)"] --> binstate["Digitize State<br/>256 bins over [-1, 1]"]
+    binstate --> statestr["State String<br/>(e.g. '12 98 ...')"]
+    statestr --> format
+    format --> txt["Text + Discrete State Tokens<br/>(B, max_token_len=200)"]
+    txt --> tok["Gemma Token Embedding"]
+
+    siglip --> vis["Visual Tokens<br/>(B, 3*256=768, D=2048)"]
+    tok --> textemb["Text/State Embeddings<br/>(B, 200, D=2048)"]
+    vis --> prefix["Prefix Tokens<br/>(B, seq_len=968, D=2048)"]
+    textemb --> prefix
+
+    noisy["Noisy Actions x_t<br/>(B, horizon=50, action_dim=32)"] --> actproj["action_in_proj"]
+    time["Flow Time t<br/>(B,)"] --> timemlp["Time MLP for adaRMSNorm"]
+
+    actproj --> suffix["Suffix Action Tokens<br/>(B, seq_len=50, D=1024)"]
+    timemlp --> adarms["adaRMSNorm condition<br/>(B, D=1024)"]
+
+    prefix --> pg["PaliGemma / Gemma 2B Expert"]
+    suffix --> ae["Action Expert / Gemma 300M"]
+    adarms --> ae
+
+    pg <--> shared["Shared Masked Self-Attn<br/>(qkv head_dim=256)"]
+    ae <--> shared
+
+    shared --> actout["action_out_proj"]
+    actout --> vt["Predicted v_t<br/>(B, 50, action_dim=32)"]
+    gt["Target u_t = noise - action<br/>(B, 50, action_dim=32)"] --> loss["Flow Matching Loss"]
+    vt --> loss
+```
+
 ## BaseModel
 - https://arxiv.org/abs/2602.04770v1 | Mingyang Deng, Kaiming He | 26/2/5
 
