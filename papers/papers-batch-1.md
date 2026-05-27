@@ -25,14 +25,14 @@ TODO: 数据集这一块儿有空可以再看看.
 ## Lingbot-va
 - https://hjfy.top/arxiv/2601.21998
 - [ok] 自回归扩散
-    - [ok] 对统一序列施加因果注意力掩码，确保预测的视觉状态和动作命令均受先前状态的约
+    - [ok] "对统一序列施加因果注意力掩码，确保预测的视觉状态和动作命令均受先前状态的约束"
 
-```
+```python
 obs0 -> VAE -> z0
 
 infer #1 (frame_st_id=0):
   1) flow denoise video chunk [z0_anchor, z1_hat]   # 2帧，不是(z1,z2)两个未来
-     - 第0帧被 init_latent=z0 钉住
+     - 第0帧 init_latent=z0
      - 第1帧才是预测的未来 latent
   2) flow denoise action chunk [a_grp0(16步), a_grp1(16步)]  # 共32步
      - 条件：cache(空) + 刚预测的 video chunk
