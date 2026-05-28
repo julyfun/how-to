@@ -11,6 +11,8 @@ confidence: 2
 articles:
 - https://zhuanlan.zhihu.com/p/655943844
 
+- Jiangmiao Pang (庞江淼) | AI Lab | HOMIE
+
 ## SJTU
 - [x] 穆尧
     - AI 学院 助理教授
