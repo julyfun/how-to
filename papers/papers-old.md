@@ -47,6 +47,18 @@ flowchart LR
     vt --> loss
 ```
 
+```
+展示函数调用链. 每行一个函数。一个函数的子函数中的最后一个与父函数统计，其他缩进 + 1
+不重要子函数可省略。
+例如 void a() { b(); c(); } void b() { d(); e(); }
+打印为
+a()
+    b()
+        d()
+    e()
+c()
+```
+
 ## BaseModel
 - https://arxiv.org/abs/2602.04770v1 | Mingyang Deng, Kaiming He | 26/2/5
 
