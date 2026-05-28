@@ -85,6 +85,24 @@ flowchart LR
 - https://hjfy.top/arxiv/2512.10946
 
 ```python
+# train 不用随机采样 fast kv length
+# batch aligned around slow time S, with dense force covering slow history -> action horizon
+slow_obs = {
+    img:      img_slow[:, S-1:S+1],             # (B,2,3,360,640), slow history
+    tcp_pose: tcp_slow[:, S-1:S+1],             # (B,2,6)
+}
+fast_obs = wrench_fast[:, F0:F0+16]             # (B,16,6), 多个 fast steps，覆盖 slow history 到未来 action horizon
+a0 = action_aug[:, F0:F0+16]                    # (B,16,13), aug 的意思就是 6 tcp + 6 virtual target + 1 stiffness
+slow_kv = SlowEncoder(slow_obs)                 # (B,~100,768), slow cross-attn K/V
+fast_kv = FastGRU(fast_obs)                     # (B,16,768), causal fast K/V
+eps = randn_like(a0); k = randint(0,K,(B,))
+xk = add_noise(a0, eps, k)                      # (B,16,13), noisy action tokens / Q source
+pred = Transformer(xk, k, slow_kv, fast_kv)     # (B,16,13), causal: action i sees fast_obs <= i
+target = eps                                    # or v_target under v-prediction
+loss = mean((pred - target) ** 2)               # diffusion loss over B x 16 x 13
+```
+
+```python
 # slow #1: cache slow context once for one action chunk
 slow_obs_1 = {
     img:      img_slow[S-1:S+1],               # (B,2,3,360,640), slow history: 2 frames
