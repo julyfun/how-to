@@ -23,6 +23,13 @@ TODO: 数据集这一块儿有空可以再看看.
 - https://hjfy.top/arxiv/2603.16666
 可被视为该家族中的一个混合点：它采用具有共享注意力的 Transformer 混合体骨干网络 及耦合的视频与动作分支，但结论认为主要优势可能更多来自训练期间的视频协同训练，而非推理阶段 的显式未来想象。在这些变体中，视频分支越来越不再被视为需要忠实渲染的输出，而是被看作一种预 测性潜在过程，其隐状态用于指导动作生成.
 
+train-time 和 infer-time, noisy action 都只会 attend 第一帧视频的 kv.
+因此，train-time 联合训练多帧视频和动作生成的好处是逼着 video z_0 编码能够“从当前画面推导出未来变化”的信息。
+
+> video loss: 让 z0 表征更懂未来/动力学
+>
+> action loss: 让 action expert 学会从这个 z0 表征里采样动作
+
 ```mermaid
 flowchart LR
     video["Training Video<br/>(B, 3, T=33, H=224, W=448)"] --> vae["Wan VAE Encode"]
@@ -31,7 +38,7 @@ flowchart LR
     zv --> vpre["Video Expert pre_dit<br/>patchify + 3D RoPE"]
 
     prompt["Task Prompt / Cached Text<br/>(B, L=128, D=4096)"] --> ctx["Text Context"]
-    state["Robot State<br/>(B, T, D_state=8)"] --> prop["proprio_encoder<br/>as 1 state token"]
+    state["Robot State<br/>(B, T, D_state=8)"] --> prop["proprio_encoder(Linear)<br/>as 1 state token"]
     prop --> ctx
     ctx --> vpre
 
