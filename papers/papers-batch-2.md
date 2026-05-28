@@ -34,3 +34,7 @@ output = original_attention(x) + # 这里是纯 pi0 的
 ```
 
 ## Interleave-VLA: fcx
+
+```python
+INTERLEAVE-VLA
+```
