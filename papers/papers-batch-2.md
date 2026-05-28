@@ -82,3 +82,38 @@ flowchart LR
 ```
 
 ## Implicit RDP
+
+```python
+# slow #1: cache slow context once for one action chunk
+slow_obs_1 = {
+    img:      img_slow[S-1:S+1],               # (B,2,3,360,640), slow history: 2 frames
+    tcp_pose: tcp_slow[S-1:S+1],               # (B,2,6). S: slow 时间轴上的时间索引
+}
+slow_kv_1 = SlowEncoder(slow_obs_1)            # (B,~100,768)
+noise_1 = randn(B,16,13)                       # cached initial noise for this chunk
+# infer #1
+fast_obs = wrench_fast[F0:F_cur+1+l]           # 多个 fast steps，覆盖 slow history 到当前控制步
+fast_kv = FastGRU(fast_obs)                    # (B,L1,768) L1 就是 len(wrench_fast[F0:F_cur+1+l])
+x = DDIM(noise_1[:, :L1], slow_kv_1, fast_kv)  # (B,L1,13)
+execute(x[:, -1, :6])                          # execute tcp pose only. :6 是因为后面是 auxiliary.
+# infer #2
+fast_obs = wrench_fast[F0:F_cur+2+l]           # 多个 fast steps，覆盖 slow history 到当前控制步，并追加新 force
+fast_kv = FastGRU(fast_obs)                    # (B,L1+1,768)
+x = DDIM(noise_1[:, :L2], slow_kv_1, fast_kv)  # (B,L1+1,13)
+execute(x[:, -1, :6])
+# infer #3 ...
+# ...
+
+# slow #2: update slow context, start a new chunk
+slow_obs_2 = {
+    img:      img_slow[S:S+2],                 # next 2 slow frames
+    tcp_pose: tcp_slow[S:S+2],
+}
+slow_kv_2 = SlowEncoder(slow_obs_2)
+noise_2 = randn(B,16,13)
+# new chunk infer #1
+fast_obs = wrench_fast[F1:F_cur2+1+l]          # 多个 fast steps，覆盖新的 slow history 到当前控制步
+fast_kv = FastGRU(fast_obs)
+x = DDIM(noise_2[:, :L1], slow_kv_2, fast_kv)
+execute(x[:, -1, :6])
+```
