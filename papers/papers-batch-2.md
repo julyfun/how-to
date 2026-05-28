@@ -18,4 +18,8 @@ confidence: 2
 
 ## GuidedVLA
 
-## ControlNet
+关于 control net
+```python
+output = original_attention(x) +
+  linear(control_attention(x)) # 只不过这里 linear 初始化为 0 防止初始就让老模型乱掉
+```
