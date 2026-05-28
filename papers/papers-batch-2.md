@@ -9,7 +9,7 @@ confidence: 2
 ---
 
 ## ALOE:
-递归
+递归学习..
 - ?Q-chunking
 
 ## GreenVLA
@@ -17,10 +17,11 @@ confidence: 2
 有很多训练 trick，包括5阶段课程学习、质量指标筛选（公开数据集质量表）. 然而，demo 没有什么新东西。
 
 ## GuidedVLA
+一句话：给 pi0 action token 加手工设计的监督.
 - 让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y，然后 action tokens += y
-- 从 action tokens 学习新的 q, 从 concat(image tokens , action tokens) 学习新的 kv 用于:
-  - 计算 这里 qk 的 (ground truth 由其他 grounding 模型生成)
-  - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss 和 obj_mask_loss
+- 从 action tokens 学习新的 q 以及从 concat(image tokens, action tokens) 学习新的 kv 用于:
+  - 计算 这里 qk 的 attn score，监督这个 score 和 GT attn mask patchify (ground truth 由其他 grounding 模型生成)
+  - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss
   - 代码中被称为 control_qkv
 - 以上带门控
 
