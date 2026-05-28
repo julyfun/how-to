@@ -18,10 +18,11 @@ confidence: 2
 
 ## GuidedVLA: ybw
 一句话：给 pi0 action token 加手工设计的监督.
-- 让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y，然后 action tokens += y
+- 让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y1
 - 从 action tokens 学习新的 q 以及从 concat(image tokens, action tokens) 学习新的 kv 用于:
-  - 计算 这里 qk 的 attn score，监督这个 score 和 GT attn mask patchify (ground truth 由其他 grounding 模型生成)
-  - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss
+  - 计算 这里 qk 的 attn score，这个 score 和 GT attn mask patchify 得到 obj_loss (ground truth 由其他 grounding 模型生成)
+  - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss. 这里也会得到 y2 y3
+  - action tokens += linear(concat(y1, y2, y3))
   - (代码中被称为 control_qkv)
 - 以上带门控
 - 以上给 action expert 的指定层去做，代码默认 [9, 10, 11, 12]  (pi0 expert 一共 18 层)
