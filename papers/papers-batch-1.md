@@ -169,7 +169,7 @@ def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
     return A_tau                            # [H, M] 平滑衔接的新动作块
 ```
 
-## Pi0
+## Pi0.5 & Pi0
 ```mermaid
 flowchart LR
     img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
