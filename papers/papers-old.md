@@ -12,7 +12,6 @@ confidence: 2
 下面是一个优秀的 pi0.5 模型架构 chart，简洁且符合我的学习水平.
 模仿该 chart 绘制本仓库 flowchat. 到 read/infer.mmd 和 read/train.mmd
 - 注意带形状 (B, seq_len=968, D=2048 , 根据 readme 最主流配置). 
-- 若有 kv cache 也一并画出 (何时添加 kv cache，何时 attend kv cache)
 
 flowchart LR
     img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
