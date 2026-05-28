@@ -24,6 +24,7 @@ confidence: 2
   - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss
   - (代码中被称为 control_qkv)
 - 以上带门控
+- 以上给 action expert 的指定层去做，代码默认 [9, 10, 11, 12]  (pi0 expert 一共 18 层)
 
 关于 control net
 ```python
