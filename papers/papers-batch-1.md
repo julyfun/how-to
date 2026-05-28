@@ -198,6 +198,8 @@ flowchart LR
     vt --> loss
 ```
 
+下面是 pi0.5
+
 ```mermaid
 flowchart LR
     img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
