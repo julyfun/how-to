@@ -31,7 +31,7 @@ Threaded.unlockStderr()
 │   Io.operate()
 │   Threaded.operate()
 │   Threaded.fileWriteStreaming()
-│   posix.system.writev()
+│   posix.system.writev() # 这里调用 macos 平台函数
 mutexUnlock()
 ```
 
