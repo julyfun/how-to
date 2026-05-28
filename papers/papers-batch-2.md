@@ -84,7 +84,7 @@ flowchart LR
 ## Implicit RDP
 - https://hjfy.top/arxiv/2512.10946
 
-一句话：在一个 img 周期内构建高频的短期 wrench kv memory 并在 train-time 添加 virtual_target 和 stiffness auxiliary tasks，推理时仅需力传感器+位控且并且没有用 admittance control. 例如在插入书本等任务中，如果书本怼到墙壁能快速感知到并反应.
+一句话：在一个 img 周期内构建高频的短期 wrench kv memory 并在 train-time-only 加入 virtual_target 和 stiffness auxiliary tasks 来强制模型利用力信息，推理时仅需力传感器+位控且并且没有用 admittance control. 例如在插入书本等任务中，如果书本怼到墙壁能快速感知到并反应.
 
 ```python
 noisy_action[i] ---attend--> noise_action[<=i] & fast_kv[<=i] & slow_kv
