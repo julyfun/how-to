@@ -84,6 +84,8 @@ flowchart LR
 ## Implicit RDP
 - https://hjfy.top/arxiv/2512.10946
 
+一句话：高频力
+
 ```python
 # train 不用随机采样 fast kv length
 # batch aligned around slow time S, with dense force covering slow history -> action horizon
@@ -91,7 +93,7 @@ slow_obs = {
     img:      img_slow[:, S-1:S+1],             # (B,2,3,360,640), slow history
     tcp_pose: tcp_slow[:, S-1:S+1],             # (B,2,6)
 }
-fast_obs = wrench_fast[:, F0:F0+16]             # (B,16,6), 多个 fast steps，覆盖 slow history 到未来 action horizon
+fast_obs = wrench_fast[:, F0:F0+16]             # (B,16,6),
 a0 = action_aug[:, F0:F0+16]                    # (B,16,13), aug 的意思就是 6 tcp + 6 virtual target + 1 stiffness
 slow_kv = SlowEncoder(slow_obs)                 # (B,~100,768), slow cross-attn K/V
 fast_kv = FastGRU(fast_obs)                     # (B,16,768), causal fast K/V
@@ -102,36 +104,34 @@ target = eps                                    # or v_target under v-prediction
 loss = mean((pred - target) ** 2)               # diffusion loss over B x 16 x 13
 ```
 
+实际上不论是采数据还是 infer-time，原始数据的 img, tcp_pose 和 wrench 都是同步同频率 (e.g 10hz)，只是 img, tcp_pose 大部分被忽略了.
+
 ```python
-# slow #1: cache slow context once for one action chunk
-slow_obs_1 = {
-    img:      img_slow[S-1:S+1],               # (B,2,3,360,640), slow history: 2 frames
-    tcp_pose: tcp_slow[S-1:S+1],               # (B,2,6). S: slow 时间轴上的时间索引
-}
-slow_kv_1 = SlowEncoder(slow_obs_1)            # (B,~100,768)
-noise_1 = randn(B,16,13)                       # cached initial noise for this chunk
-# infer #1
-fast_obs = wrench_fast[F0:F_cur+1+l]           # 多个 fast steps，覆盖 slow history 到当前控制步
-fast_kv = FastGRU(fast_obs)                    # (B,L1,768) L1 就是 len(wrench_fast[F0:F_cur+1+l])
-x = DDIM(noise_1[:, :L1], slow_kv_1, fast_kv)  # (B,L1,13)
-execute(x[:, -1, :6])                          # execute tcp pose only. :6 是因为后面是 auxiliary.
-# infer #2
-fast_obs = wrench_fast[F0:F_cur+2+l]           # 多个 fast steps，覆盖 slow history 到当前控制步，并追加新 force
-fast_kv = FastGRU(fast_obs)                    # (B,L1+1,768)
-x = DDIM(noise_1[:, :L2], slow_kv_1, fast_kv)  # (B,L1+1,13)
+# slow #1: step_count % tcp_action_update_interval == 0, default update_interval=6
+obs = env.get_obs(obs_steps=2)                         # 同频同步帧: img/tcp_pose/wrench, each length=2
+slow_kv_1 = SlowEncoder(obs)                           # conceptually (B,102,768)
+noise_1 = randn(B,16,13)                               # cached noisy trajectory for this chunk
+# infer #1, step_count % 6 == 0
+N = latency_step + 0 + n_obs_steps                     # default 2 + 0 + 2 = 4
+ext_obs = env.get_obs(obs_steps=N)                     # recent N synchronized wrench frames
+fast_kv = FastGRU(ext_obs["right_robot_tcp_wrench"])   # (B,4,768)
+x = DDIM(noise_1[:, :N], slow_kv_1, fast_kv)           # (B,4,13)
+execute(x[:, -1, :6])                                  # only tcp pose; vt/stiff discarded
+# infer #2, same slow_kv/noise, step_count % 6 == 1
+N = latency_step + 1 + n_obs_steps                     # 5
+ext_obs = append_one_new_obs_and_keep_last_N(ext_obs)  # recent 5 synchronized wrench frames
+fast_kv = FastGRU(ext_obs["right_robot_tcp_wrench"])   # (B,5,768)
+x = DDIM(noise_1[:, :N], slow_kv_1, fast_kv)           # (B,5,13)
 execute(x[:, -1, :6])
 # infer #3 ...
-
-# slow #2: update slow context, start a new chunk
-slow_obs_2 = {
-    img:      img_slow[S:S+2],                 # next 2 slow frames
-    tcp_pose: tcp_slow[S:S+2],
-}
-slow_kv_2 = SlowEncoder(slow_obs_2)
-noise_2 = randn(B,16,13)
-# new chunk infer #1
-fast_obs = wrench_fast[F1:F_cur2+1+l]          # 多个 fast steps，覆盖新的 slow history 到当前控制步
-fast_kv = FastGRU(fast_obs)
-x = DDIM(noise_2[:, :L1], slow_kv_2, fast_kv)
+N = latency_step + 2 + n_obs_steps                     # 6
+fast_kv = FastGRU(recent_sync_wrench[:N])              # (B,6,768)
+x = DDIM(noise_1[:, :N], slow_kv_1, fast_kv)
 execute(x[:, -1, :6])
+# ...
+# next slow update when step_count % 6 == 0 again
+
+obs = env.get_obs(obs_steps=2)
+slow_kv_2 = SlowEncoder(obs)
+noise_2 = randn(B,16,13)
 ```
