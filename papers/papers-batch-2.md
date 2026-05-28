@@ -35,6 +35,48 @@ output = original_attention(x) + # 这里是纯 pi0 的
 
 ## Interleave-VLA: fcx
 
-```python
-INTERLEAVE-VLA
+```patch
+ # 输入包含当前观测图像、交错的图文指令及机器人状态
+ # 使用 <BOI>/<EOI> 特殊 Token 标识指令中的参考图像
+-instr_tokens = tokenizer.encode("把那个蓝色的带条纹的勺子放到盘子里") # 常规 VLA
++instr_tokens = tokenizer.encode(f"把 <BOI>{crop_img}<EOI> 放到盘子里") # 本方法，操作者在GUI手动框选目标
+ obs_tokens = visual_encoder(current_observation)
+ # 将观测、交错指令和本体感受状态拼接为统一序列
+ input_seq = concat(obs_tokens, instr_tokens, robot_state)
+ # VLA 模型直接生成连续动作序列
+ actions = VLA_Model.predict(input_seq)
+```
+
+```mermaid
+flowchart LR
+    img["Observation Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
+    instr_img["Instruction Images (Crops/Web/Sketch)<br/>(B, n_imgs, 224, 224, 3)"]:::highlight --> siglip
+    txt["Interleaved Tokens (Text + BOI/EOI)<br/>(B, max_len=N)"]:::highlight --> tok["Gemma Tokenizer + Special Tokens"]:::highlight
+    siglip --> obs_vis["Observation Tokens<br/>(B, 3*256=768, D=2048)"]
+    siglip --> instr_vis["Instruction Visual Tokens<br/>(B, n*256, D=2048)"]:::highlight
+    tok --> textemb["Text Embeddings<br/>(B, N, D=2048)"]
+    instr_vis --> inter_instr["Interleaved Instruction Embeddings<br/>(Text Tokens & Visual Tokens Mix)"]:::highlight
+    textemb --> inter_instr
+    obs_vis --> prefix["Prefix Tokens (Obs + Interleaved Instr)<br/>(B, seq_len, D=2048)"]:::highlight
+    inter_instr --> prefix
+    state["Robot State<br/>(B, action_dim=32)"] --> stateproj["state_proj"]
+    noisy["Noisy Actions x_t<br/>(B, horizon=50, action_dim=32)"] --> actproj["action_in_proj"]
+    time["Flow Time t<br/>(B,)"] --> timemlp["Time Embedding MLP"]
+    stateproj --> statetok["State Token<br/>(B, 1, D=1024)"]
+    actproj --> acttok["Action Tokens<br/>(B, 50, D=1024)"]
+    timemlp --> timetok["Time Tokens<br/>(B, 50, D=1024)"]
+    acttok --> mix["Action + Time Tokens<br/>(B, 50, D=1024)"]
+    timetok --> mix
+    statetok --> suffix["Suffix Tokens<br/>(B, seq_len=51, D=1024)"]
+    mix --> suffix
+    prefix --> pg["PaliGemma / Gemma 2B Expert"]
+    suffix --> ae["Action Expert / Gemma 300M"]
+    pg <--> shared["Shared Masked Self-Attn (qkv dim=256)"]
+    ae <--> shared
+    shared --> actout["action_out_proj"]
+    actout --> vt["Predicted v_t<br/>(B, 50, action_dim=32)"]
+    gt["Target u_t = noise - action<br/>(B, 50, action_dim=32)"] --> loss["Flow Matching Loss"]
+    vt --> loss
+
+    classDef highlight fill:#ffff00,stroke:#333,stroke-width:2px;
 ```
