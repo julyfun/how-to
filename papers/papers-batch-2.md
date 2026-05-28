@@ -16,7 +16,7 @@ confidence: 2
 - https://hjfy.top/arxiv/2602.00919
 有很多训练 trick，包括5阶段课程学习、质量指标筛选（公开数据集质量表）. 然而，demo 没有什么新东西。
 
-## GuidedVLA
+## GuidedVLA: ybw
 一句话：给 pi0 action token 加手工设计的监督.
 - 让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y，然后 action tokens += y
 - 从 action tokens 学习新的 q 以及从 concat(image tokens, action tokens) 学习新的 kv 用于:
@@ -30,3 +30,5 @@ confidence: 2
 output = original_attention(x) + # 这里是纯 pi0 的
   linear(control_attention(x)) # 只不过这里 linear 初始化为 0 防止初始就让老模型乱掉
 ```
+
+## Interleave-VLA: fcx
