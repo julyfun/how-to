@@ -169,7 +169,7 @@ def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
     return A_tau                            # [H, M] 平滑衔接的新动作块
 ```
 
-## Pi0.5 & Pi0
+## Pi0.6 & Pi0.5 & Pi0
 ```mermaid
 flowchart LR
     img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
@@ -232,4 +232,62 @@ flowchart LR
     actout --> vt["Predicted v_t<br/>(B, 50, action_dim=32)"]
     gt["Target u_t = noise - action<br/>(B, 50, action_dim=32)"] --> loss["Flow Matching Loss"]
     vt --> loss
+```
+
+pi0.6
+```mermaid
+flowchart LR
+    img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["Image Encoder<br/>SigLIP 400M"]
+    txt["Text + Discrete State Tokens<br/>(B, max_token_len=200)"] --> tok["Gemma Token Embedding"]
+
+    siglip --> vis["Visual Tokens<br/>(B, n_cam*256, D_vlm)"]
+    tok --> textemb["Text/State Embeddings<br/>(B, 200, D_vlm)"]
+    vis --> prefix["Prefix Tokens<br/>(image + text + state + metadata)"]
+    textemb --> prefix
+
+    noisy["Noisy Actions a_eta<br/>(B, horizon=50, action_dim=32)"] --> actproj["action_in_proj"]
+    time["Flow Time eta<br/>(B,)"] --> timemlp["Time MLP for adaRMSNorm"]
+
+    actproj --> suffix["Suffix Action Tokens<br/>(B, seq_len=50, D_ae)"]
+    timemlp --> adarms["adaRMSNorm condition<br/>(B, D_ae)"]
+
+    prefix --> pg["pi*0.6 VLA Backbone<br/>Gemma 3 4B"]
+    suffix --> ae["Action Expert<br/>860M"]
+    adarms --> ae
+
+    pg <--> shared["Shared Masked Self-Attn<br/>(qkv head_dim=256)"]
+    ae <--> shared
+
+    shared --> actout["action_out_proj"]
+    actout --> vt["Predicted Flow f_theta<br/>(B, 50, action_dim=32)"]
+    gt["GT Action Chunk a<br/>(B, 50, action_dim=32)"] --> ftarget["Target omega - a<br/>(B, 50, action_dim=32)"]
+    noise["Noise omega ~ N(0,I)<br/>(B, 50, action_dim=32)"] --> noisy
+    noise --> ftarget
+    ftarget --> floss["Flow Matching Loss<br/>alpha_eta * ||f_theta - (omega - a)||^2"]
+    vt --> floss
+
+    img --> vfsiglip["Value Image Encoder<br/>SigLIP 400M"]
+    txt --> vftok["Value Text Embedding"]
+    vfsiglip --> vfprefix["Value Prefix Tokens"]
+    vftok --> vfprefix
+    vfprefix --> vf["Value Function<br/>Gemma 270M + value head"]
+    vf --> vdist["Value Distribution<br/>p_phi(V | o_t, l), 201 bins"]
+    returns["MC Return R_t<br/>from success/failure episode reward"] --> vloss["Value CE Loss<br/>CE(p_phi, discretized R_t)"]
+    vdist --> vloss
+    vdist --> vscalar["Scalar Value V(o)<br/>E over value bins"]
+    vscalar --> adv["Advantage A(o,a)<br/>r_t:t+N + V(o_t+N) - V(o_t)"]
+    adv --> bin["Binarize<br/>I_t = 1[A > epsilon_l]"]
+    bin --> advtxt["Advantage Text Token<br/>'positive' / 'negative'"]
+    advtxt --> tok
+
+    pg --> subtask["Subtask Text Tokens<br/>(e.g. 'tamp the coffee')"]
+    pg --> fastout["FAST Discrete Action Tokens<br/>a^l_t:t+H"]
+    gt --> fasttok["FAST Tokenizer"]
+    fasttok --> fastgt["GT FAST Action Tokens"]
+    subtask --> tokce["Next-token CE/NLL<br/>subtask + FAST action tokens"]
+    fastout --> tokce
+    fastgt --> tokce
+
+    classDef pi06 fill:#fff2b3,stroke:#d6a600,stroke-width:2px,color:#111;
+    class pg,ae,vfsiglip,vftok,vfprefix,vf,vdist,vscalar,adv,bin,advtxt,fastout,fasttok,fastgt,tokce pi06;
 ```
