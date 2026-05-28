@@ -103,7 +103,6 @@ fast_kv = FastGRU(fast_obs)                    # (B,L1+1,768)
 x = DDIM(noise_1[:, :L2], slow_kv_1, fast_kv)  # (B,L1+1,13)
 execute(x[:, -1, :6])
 # infer #3 ...
-# ...
 
 # slow #2: update slow context, start a new chunk
 slow_obs_2 = {
