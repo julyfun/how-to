@@ -12,6 +12,8 @@ articles:
 - https://zhuanlan.zhihu.com/p/655943844
 
 - Jiangmiao Pang (庞江淼) | AI Lab | HOMIE
+- ? bolei zhou
+- ? xiaosong jia
 
 ## SJTU
 - [x] 穆尧
