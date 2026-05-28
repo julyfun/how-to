@@ -80,7 +80,7 @@ articles:
     - 华人学生张天浩，段岩，陈曦: 独角兽公司 Covariant
     - @学生 John Schulman
     - @学生 吴翼 高阳(博士)
-- Sergey Levine @师从Pieter @副教授 @Google Brain
+- [x] Sergey Levine @师从Pieter @副教授 @Google Brain
     - PALM-E, RT1, RT2
     - 学生有 Chelsea Finn (@stanford)
 - Trevor Darrell (自动驾驶)
