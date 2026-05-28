@@ -14,6 +14,7 @@ articles:
 - Jiangmiao Pang (庞江淼) | AI Lab | HOMIE
 - ? bolei zhou
 - ? xiaosong jia
+- ? hongyang li HKU 那个是吧.
 
 ## SJTU
 - [x] 穆尧

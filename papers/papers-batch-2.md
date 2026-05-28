@@ -80,3 +80,5 @@ flowchart LR
 
     classDef highlight fill:#ffff00,stroke:#333,stroke-width:2px;
 ```
+
+## Implicit RDP
