@@ -82,6 +82,7 @@ flowchart LR
 ```
 
 ## Implicit RDP
+- https://hjfy.top/arxiv/2512.10946
 
 ```python
 # slow #1: cache slow context once for one action chunk
