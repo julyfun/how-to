@@ -14,6 +14,7 @@ confidence: 2
 
 ## GreenVLA
 - https://hjfy.top/arxiv/2602.00919
+
 有很多训练 trick，包括5阶段课程学习、质量指标筛选（公开数据集质量表）. 然而，demo 没有什么新东西。
 
 ## GuidedVLA: ybw
@@ -143,5 +144,7 @@ noise_2 = randn(B,16,13)
 
 ## Adaptive Compliance Policy
 - https://arxiv.org/pdf/2410.09309
+
+预测 virtual target 和 stiffness 从而在纯位控机器人上使用 admittance control
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260529002858206.png)
