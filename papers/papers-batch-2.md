@@ -84,10 +84,15 @@ flowchart LR
 ## Implicit RDP
 - https://hjfy.top/arxiv/2512.10946
 
-一句话：高频力
+一句话：在一个 img 周期内构建高频的短期 wrench kv memory 并在 train-time 添加 virtual_target 和 stiffness auxiliary tasks.
 
 ```python
-# train 不用随机采样 fast kv length
+noisy_action[i] ---attend--> noise_action[<=i] & fast_kv[<=i] & slow_kv
+fast_kv[i] 内部为 GRU，slow_kv 内部为 obs_encoder
+```
+
+```python
+# Train: 不用随机采样 fast kv length
 # batch aligned around slow time S, with dense force covering slow history -> action horizon
 slow_obs = {
     img:      img_slow[:, S-1:S+1],             # (B,2,3,360,640), slow history
@@ -107,7 +112,7 @@ loss = mean((pred - target) ** 2)               # diffusion loss over B x 16 x 1
 实际上不论是采数据还是 infer-time，原始数据的 img, tcp_pose 和 wrench 都是同步同频率 (e.g 10hz)，只是 img, tcp_pose 大部分被忽略了.
 
 ```python
-# slow #1: step_count % tcp_action_update_interval == 0, default update_interval=6
+# Infer: slow #1: step_count % tcp_action_update_interval == 0, default update_interval=6
 obs = env.get_obs(obs_steps=2)                         # 同频同步帧: img/tcp_pose/wrench, each length=2
 slow_kv_1 = SlowEncoder(obs)                           # conceptually (B,102,768)
 noise_1 = randn(B,16,13)                               # cached noisy trajectory for this chunk
