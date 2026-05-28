@@ -102,6 +102,51 @@ compute_kv_cache #2:
   追加新的 real_z / real_a
 ```
 
+```mermaid
+flowchart LR
+    data["LeRobot + Latent Dataset<br/>videos already encoded by Wan VAE<br/>actions + action_config + text_emb"] --> video["Video Latents<br/>(B, C=48, F=2, H=24, W=20)"]
+    data --> action["Normalized Actions<br/>(B, action_dim=30, F=2, action_per_frame=16, 1)"]
+    data --> text["Action Text Embeddings<br/>(B, 512, text_dim=4096)"]
+
+    video --> vnoise["Add Flow Noise<br/>sample t per frame"]
+    vnoise --> noisyv["Noisy Video x_t<br/>(B,48,2,24,20)"]
+    vnoise --> vtarget["Video Target u_t<br/>(B,48,2,24,20)"]
+    video --> vcond["Clean / Noisy History Video<br/>(B,48,2,24,20)"]
+
+    action --> anoise["Add Flow Noise<br/>sample action t per frame"]
+    anoise --> noisya["Noisy Actions a_t<br/>(B,30,2,16,1)"]
+    anoise --> atarget["Action Target u_t<br/>(B,30,2,16,1)"]
+    action --> acond["Clean Action History<br/>(B,30,2,16,1)"]
+
+    noisyv --> vtok["Video Patch Embed<br/>(B, seq_len=240, D=3072)"]
+    vcond --> cvtok["Cond Video Tokens<br/>(B, 240, D=3072)"]
+    noisya --> atok["Action Embedder<br/>(B, seq_len=32, D=3072)"]
+    acond --> catok["Cond Action Tokens<br/>(B, 32, D=3072)"]
+    text --> textproj["Text Projection<br/>(B,512,D=3072)"]
+
+    vtok --> seq["Training Sequence<br/>[noisy video, cond video,<br/> noisy action, cond action]<br/>(B, seq_len=544, D=3072)"]
+    cvtok --> seq
+    atok --> seq
+    catok --> seq
+
+    seq --> mask["Flex Causal Mask<br/>teacher forcing over video/action history"]
+    seq --> model["WanTransformer3DModel<br/>30 blocks, self-attn + text cross-attn"]
+    textproj --> model
+    mask --> model
+
+    model --> vpred["Video Prediction<br/>(B,48,2,24,20)"]
+    model --> apred["Action Prediction<br/>(B,30,2,16,1)"]
+
+    vpred --> vloss["Video Flow Loss<br/>MSE(pred, target)"]
+    vtarget --> vloss
+    apred --> aloss["Action Flow Loss<br/>masked MSE(pred, target)"]
+    atarget --> aloss
+
+    vloss --> loss["Total Loss<br/>video_loss + action_loss"]
+    aloss --> loss
+    loss --> opt["Backward + AdamW<br/>save transformer checkpoint"]
+```
+
 ## RTC
 ```python
 # H: (Prediction Horizon), M: 动作维度 (Action Dim), O: 观测维度
