@@ -18,7 +18,9 @@ confidence: 2
 
 ## GuidedVLA
 - 让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y，然后 action tokens += y
-- 从 action tokens 学习新的 qkv 用于产生 pred_obj_mask(ground truth 由其他 grounding 模型生成) 和 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss 和 obj_mask_loss
+- 从 action tokens 学习新的 q, 从 concat(image tokens , action tokens) 学习新的 kv 用于:
+  - 计算 这里 qk 的 (ground truth 由其他 grounding 模型生成)
+  - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss 和 obj_mask_loss
   - 代码中被称为 control_qkv
 - 以上带门控
 
