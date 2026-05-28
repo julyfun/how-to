@@ -22,7 +22,7 @@ confidence: 2
 - 从 action tokens 学习新的 q 以及从 concat(image tokens, action tokens) 学习新的 kv 用于:
   - 计算 这里 qk 的 attn score，监督这个 score 和 GT attn mask patchify (ground truth 由其他 grounding 模型生成)
   - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss
-  - 代码中被称为 control_qkv
+  - (代码中被称为 control_qkv)
 - 以上带门控
 
 关于 control net
