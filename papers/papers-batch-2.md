@@ -17,7 +17,7 @@ confidence: 2
 有很多训练 trick，包括5阶段课程学习、质量指标筛选（公开数据集质量表）. 然而，demo 没有什么新东西。
 
 ## GuidedVLA: ybw
-一句话：给 pi0 action token 加手工设计的监督.
+一句话：给 pi0 action token 加手工设计的 auxiliary tasks.
 - 让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y1
 - 从 action tokens 学习新的 q 以及从 concat(image tokens, action tokens) 学习新的 kv 用于:
   - 计算 这里 qk 的 attn score，这个 score 和 GT attn mask patchify 得到 obj_loss (ground truth 由其他 grounding 模型生成)
