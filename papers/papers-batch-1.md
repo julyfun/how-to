@@ -198,6 +198,31 @@ flowchart LR
     vt --> loss
 ```
 
+一个 layer:
+
+```python
+obs = norm_obs(obs0) # (B, Lo, 2048)
+act = norm_act(act0) # (B, La, 1024)
+q_obs = Wq_obs(obs).view(B, Lo, 8, 256).transpose(1, 2)   # (B, 8, Lo, 256)
+k_obs = Wk_obs(obs).view(B, Lo, 1, 256).transpose(1, 2)   # (B, 1, Lo, 256)
+v_obs = Wv_obs(obs).view(B, Lo, 1, 256).transpose(1, 2)   # (B, 1, Lo, 256)
+q_act = Wq_act(act).view(B, La, 8, 256).transpose(1, 2)   # (B, 8, La, 256)
+k_act = Wk_act(act).view(B, La, 1, 256).transpose(1, 2)   # (B, 1, La, 256)
+v_act = Wv_act(act).view(B, La, 1, 256).transpose(1, 2)   # (B, 1, La, 256), Wv_act(act) is (B, La, 256)
+
+q = cat([q_obs, q_act], dim=2)                            # (B, 8, Lo+La, 256)
+k = repeat_kv(cat([k_obs, k_act], dim=2), n_rep=8)        # (B, 8, Lo+La, 256)
+v = repeat_kv(cat([v_obs, v_act], dim=2), n_rep=8)        # (B, 8, Lo+La, 256)
+
+y = softmax(q @ k.transpose(-2, -1)) @ v                  # (B, 8, Lo+La, 256)
+y = y.transpose(1, 2).reshape(B, Lo+La, 2048)             # (B, Lo+La, 2048)
+
+obs_y = Wo_obs(y[:, :Lo])                                 # (B, Lo, 2048)
+act_y = Wo_act(y[:, Lo:])                                 # (B, La, 1024)
+obs1 = gated_residual(obs0, obs_y)                              # (B, Lo, 2048)
+act1 = gated_residual(act0, act_y)                              # (B, La, 1024)
+```
+
 下面是 pi0.5
 
 ```mermaid
