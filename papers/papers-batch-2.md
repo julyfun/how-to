@@ -156,7 +156,7 @@ noise_2 = randn(B,16,13)
 
 全程冻结 VLM 和 SAM 并直接在 pixel level 绘制锚点. 并且让 VLA 中的 VLM 对齐外部的 VLM.
 
-## Do World... ?
+## Do World... ? (16)
 - ?teacher–student training framework
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
@@ -164,3 +164,6 @@ noise_2 = randn(B,16,13)
 ## WorldVLA
 
 ## VLA-JEPA
+- https://hjfy.top/arxiv/2602.10098
+
+关于 latent-action pretraining drifting 的问题值得看看.
