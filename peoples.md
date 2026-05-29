@@ -15,6 +15,7 @@ articles:
 - ? bolei zhou
 - ? xiaosong jia
 - ? hongyang li HKU 那个是吧.
+- Hengshuang Zhao | HKU | https://i.cs.hku.hk/~hszhao/
 
 ## SJTU
 - [x] 穆尧
