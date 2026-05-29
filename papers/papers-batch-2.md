@@ -148,3 +148,7 @@ noise_2 = randn(B,16,13)
 预测 virtual target 和 stiffness 从而在纯位控机器人上使用 admittance control
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260529002858206.png)
+
+## VP-VLA: Zixuan wang 港科大
+
+全程冻结 VLM 并生成
