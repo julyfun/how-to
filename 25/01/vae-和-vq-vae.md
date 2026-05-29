@@ -12,7 +12,7 @@ confidence: 2
 # VAE 伪代码
 1  x = input_image
 2  mu, logvar = Encoder(x)
-3  z = mu + exp(0.5 * logvar) * noise
+3  z = mu + exp(0.5 * logvar) * eps # eps ~ N(0, I)
 4  x_hat = Decoder(z)
 
 5  loss_recon = reconstruction_loss(x_hat, x)

@@ -87,6 +87,9 @@ flowchart LR
 
 一句话：在一个 img 周期内构建高频的短期 wrench kv memory 并在 train-time-only 加入 virtual_target 和 stiffness auxiliary tasks 来强制模型利用力信息，推理时仅需力传感器+位控且并且没有用 admittance control. 例如在插入书本等任务中，如果书本怼到墙壁能快速感知到并反应.
 
+力 reactive + 位控比较适合上述书本插缝的情形，但并不适合套手机壳；后者更需要力控，但力控对于到达目标点的反应却更慢。两者之间存在 tradeoff. 从一个角度考虑，
+人手没有编码器实际上不能做位控，机械臂擅长做位控任务，但前者却能实现一系列灵巧操作，到底是怎么控制的？
+
 ```python
 noisy_action[i] ---attend--> noise_action[<=i] & fast_kv[<=i] & slow_kv
 fast_kv[i] 内部为 GRU，slow_kv 内部为 obs_encoder
@@ -153,8 +156,8 @@ noise_2 = randn(B,16,13)
 
 全程冻结 VLM 和 SAM 并直接在 pixel level 绘制锚点. 并且让 VLA 中的 VLM 对齐外部的 VLM.
 
-## Do World?
-- teacher–student training framework
+## Do World... ?
+- ?teacher–student training framework
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
