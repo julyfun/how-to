@@ -151,4 +151,4 @@ noise_2 = randn(B,16,13)
 
 ## VP-VLA: Zixuan wang 港科大
 
-全程冻结 VLM 并生成
+全程冻结 VLM 和 SAM 并直接在 pixel level 绘制锚点. 并且让 VLA 中的 VLM 对齐外部的 VLM.
