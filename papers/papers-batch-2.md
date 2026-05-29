@@ -153,6 +153,9 @@ noise_2 = randn(B,16,13)
 
 全程冻结 VLM 和 SAM 并直接在 pixel level 绘制锚点. 并且让 VLA 中的 VLM 对齐外部的 VLM.
 
+## Do World?
+- teacher–student training framework
+
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
 ## WorldVLA
