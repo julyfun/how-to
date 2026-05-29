@@ -8,16 +8,16 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## ALOE:
+## ALOE (9)
 递归学习..
 - ?Q-chunking
 
-## GreenVLA
+## GreenVLA (10)
 - https://hjfy.top/arxiv/2602.00919
 
 有很多训练 trick，包括5阶段课程学习、质量指标筛选（公开数据集质量表）. 然而，demo 没有什么新东西。
 
-## GuidedVLA: ybw
+## GuidedVLA: ybw (11)
 一句话：给 pi0 action token 加手工设计的 auxiliary tasks.
 - 让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y1
 - 从 action tokens 学习新的 q 以及从 concat(image tokens, action tokens) 学习新的 kv 用于:
@@ -34,7 +34,7 @@ output = original_attention(x) + # 这里是纯 pi0 的
   linear(control_attention(x)) # 只不过这里 linear 初始化为 0 防止初始就让老模型乱掉
 ```
 
-## Interleave-VLA: fcx
+## Interleave-VLA: fcx (12)
 
 ```patch
  # 输入包含当前观测图像、交错的图文指令及机器人状态
@@ -82,7 +82,7 @@ flowchart LR
     classDef highlight fill:#ffff00,stroke:#333,stroke-width:2px;
 ```
 
-## Implicit RDP
+## Implicit RDP (13)
 - https://hjfy.top/arxiv/2512.10946
 
 一句话：在一个 img 周期内构建高频的短期 wrench kv memory 并在 train-time-only 加入 virtual_target 和 stiffness auxiliary tasks 来强制模型利用力信息，推理时仅需力传感器+位控且并且没有用 admittance control. 例如在插入书本等任务中，如果书本怼到墙壁能快速感知到并反应.
@@ -142,13 +142,17 @@ slow_kv_2 = SlowEncoder(obs)
 noise_2 = randn(B,16,13)
 ```
 
-## Adaptive Compliance Policy
+## Adaptive Compliance Policy (14)
 - https://arxiv.org/pdf/2410.09309
 
 预测 virtual target 和 stiffness 从而在纯位控机器人上使用 admittance control
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260529002858206.png)
 
-## VP-VLA: Zixuan wang 港科大
+## VP-VLA: Zixuan wang 港科大 (15)
 
 全程冻结 VLM 和 SAM 并直接在 pixel level 绘制锚点. 并且让 VLA 中的 VLM 对齐外部的 VLM.
+
+## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
+
+## WorldVLA

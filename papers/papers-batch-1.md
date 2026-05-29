@@ -8,18 +8,18 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## RT-2
+## RT-2 (1)
 - https://hjfy.top/arxiv/2307.15818
 和 OpenVLA 同属一派，将 VLM 的最后 256 个 token id 分配给动作，直接将 x, y, z, yaw, pitch, roll, gripper 划分为 256 个离散桶，七个动作维度共享 token id 并通过位置区分语义，直接拼接丢给 VLM 输出隐状态，一个 head 解码出 id 再映射回动作空间. 缺点是离散化和自回归导致的精度不够.
 
 TODO: 数据集这一块儿有空可以再看看.
 
-## World Model for Robot Learning: A Comprehensive Survey
+## World Model for Robot Learning: A Comprehensive Survey (2)
 - https://hjfy.top/arxiv/2605.00080
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260520212623754.png)
 
-## Fast-WAM (Yuanet al., 2026)
+## Fast-WAM (Yuanet al., 2026) (3)
 - https://hjfy.top/arxiv/2603.16666
 可被视为该家族中的一个混合点：它采用具有共享注意力的 Transformer 混合体骨干网络 及耦合的视频与动作分支，但结论认为主要优势可能更多来自训练期间的视频协同训练，而非推理阶段 的显式未来想象。在这些变体中，视频分支越来越不再被视为需要忠实渲染的输出，而是被看作一种预 测性潜在过程，其隐状态用于指导动作生成.
 
@@ -67,7 +67,7 @@ flowchart LR
     aloss --> total
 ```
 
-## Lingbot-va
+## Lingbot-va (4)
 - https://hjfy.top/arxiv/2601.21998
 - [ok] 自回归扩散
     - [ok] "对统一序列施加因果注意力掩码，确保预测的视觉状态和动作命令均受先前状态的约束"
@@ -147,7 +147,7 @@ flowchart LR
     loss --> opt["Backward + AdamW<br/>save transformer checkpoint"]
 ```
 
-## RTC
+## RTC (5)
 ```python
 # H: (Prediction Horizon), M: 动作维度 (Action Dim), O: 观测维度
 def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
@@ -169,7 +169,7 @@ def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
     return A_tau                            # [H, M] 平滑衔接的新动作块
 ```
 
-## Pi0.6 & Pi0.5 & Pi0
+## Pi0.6 & Pi0.5 & Pi0 (6,7,8)
 ```mermaid
 flowchart LR
     img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
