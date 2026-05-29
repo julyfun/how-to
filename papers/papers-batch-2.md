@@ -159,3 +159,5 @@ noise_2 = randn(B,16,13)
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
 ## WorldVLA
+
+## VLA-JEPA
