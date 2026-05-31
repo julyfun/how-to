@@ -8,41 +8,35 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-articles:
-- https://zhuanlan.zhihu.com/p/655943844
-
-- Jiangmiao Pang (庞江淼) | AI Lab | HOMIE
-- ? bolei zhou
-- ? xiaosong jia
-- ? hongyang li HKU 那个是吧.
-- Hengshuang Zhao | HKU | https://i.cs.hku.hk/~hszhao/
-
 ```mermaid
 flowchart LR
-    jiangmiao_pang[庞江淼 | HOMIE]
-    fcx[fcx | Interleave VLA]
-    bolei_zhou[周博磊 | CV,自驾]
-    C[C]
-    D[D]
-
     subgraph AI Lab
-        jiangmiao_pang
-        D
+        jiangmiao_pang[庞江淼 | HOMIE]
     end
 
     subgraph UCLA 加州洛杉矶
-        bolei_zhou
+        bolei_zhou[周博磊 | CV,自驾]
     end
 
     subgraph 复旦
+        xiaosong_jia[贾萧松<br>| GuidedVLA]
     end
 
-    fcx -->|"跟着做"| bolei_zhou
+    subgraph HKU
+        hongyang_li[李洪阳 | 自驾]
+        hengshuang_zhao[Hengshuang Zhao | 自驾 <br> 机器人领域有DreamAvoid]
+    end
+
+    fcx[fcx | InterleaveVLA] -->|"跟着做"| bolei_zhou
 ```
 
 ---
 
 [archive]
+
+articles:
+- https://zhuanlan.zhihu.com/p/655943844
+
 
 ## SJTU
 - [x] 穆尧
