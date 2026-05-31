@@ -35,7 +35,7 @@ kimi:
      return torch.cumsum(dt * x.unsqueeze(-1) * A, dim=1).sum(-1) + D * x
 
 florian✨ 解释
-Mamba = SSM + 门控 + 硬件友好扫描
+Mamba = SSM(状态空间模型，也是一种时序建模，借鉴控制论) + 门控 + 硬件友好扫描
 
  1 x_proj
    把输入劈两半：一路做SSM，一路做门控（像Transformer的GLU）
