@@ -74,6 +74,19 @@ flowchart LR
     subgraph 原力灵机 Dexmal
         wenbin_tang[唐文斌 @姚班]
     end
+    subgraph 星海图 galaxea-ai 苏州
+        subgraph 产品: A1 机械臂,<br>R1 人型
+        end
+        hang_zhao[赵行 @清华叉院]
+        huazhe_xu.1[许华哲（已离开）]
+    end
+    subgraph 破壳机器人 ShellAI
+        subgraph 赛道: C端家用
+        end
+        subgraph 模型: WALL-E
+        end
+        huazhe_xu[许华哲 @清华叉院]
+    end
 
     subgraph 银河通用 galbot
         he_wang[王鹤 @北大]
