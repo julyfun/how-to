@@ -17,6 +17,25 @@ articles:
 - ? hongyang li HKU 那个是吧.
 - Hengshuang Zhao | HKU | https://i.cs.hku.hk/~hszhao/
 
+```mermaid
+flowchart LR
+    A[A]
+    B[B]
+    C[C]
+    D[D]
+
+    A -->|"师从"| B
+
+    subgraph 分组
+        C
+        D
+    end
+```
+
+---
+
+[archive]
+
 ## SJTU
 - [x] 穆尧
     - AI 学院 助理教授
