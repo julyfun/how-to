@@ -75,7 +75,7 @@ flowchart LR
         wenbin_tang[唐文斌 @姚班<br>范浩强、周而进、汪天才]
     end
     subgraph 星海图 galaxea-ai 苏州
-        subgraph 产品 A1 机械臂,<br>R1 人型
+        subgraph 产品: A1 机械臂 : R1 人型
         end
         hang_zhao[赵行 @清华叉院]
         huazhe_xu.1[许华哲（已离开）]
