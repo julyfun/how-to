@@ -19,17 +19,25 @@ articles:
 
 ```mermaid
 flowchart LR
-    A[A]
-    B[B]
+    jiangmiao_pang[庞江淼 | HOMIE]
+    fcx[fcx | Interleave VLA]
+    bolei_zhou[周博磊 | CV,自驾]
     C[C]
     D[D]
 
-    A -->|"师从"| B
-
-    subgraph 分组
-        C
+    subgraph AI Lab
+        jiangmiao_pang
         D
     end
+
+    subgraph UCLA 加州洛杉矶
+        bolei_zhou
+    end
+
+    subgraph 复旦
+    end
+
+    fcx -->|"跟着做"| bolei_zhou
 ```
 
 ---
