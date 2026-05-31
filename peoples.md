@@ -61,6 +61,41 @@ flowchart LR
 
 ```mermaid
 flowchart LR
+    subgraph 自变量 X2ROBOT
+        qian_wang[王潜 @清华]
+        hao_wang[王昊 CTO @北大]
+        subgraph 工作
+            WALL_OSS
+        end
+        subgraph 产品
+            x2_a[轮式仿人型双臂]
+        end
+    end
+    subgraph 原力灵机 Dexmal
+        wenbin_tang[唐文斌 @姚班]
+    end
+
+    subgraph 银河通用 galbot
+        he_wang[王鹤 @北大]
+        subgraph 产品
+            galbot_G1[G1]
+        end
+    end
+
+    subgraph 千寻
+    end
+
+    subgraph 松灵
+    end
+    subgraph Dyna
+    end
+    subgraph 魔法原子
+    end
+    subgraph 方舟无限
+    end
+    subgraph GenRobot
+        jianxing_chen[陈建兴]
+    end
 ```
 
 ---
