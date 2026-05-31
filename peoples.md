@@ -22,8 +22,8 @@ flowchart LR
     end
 
     subgraph UCSD
-        xiaolong_wang
-        hao_su[苏昊 | ImageNet, ManiSkill]
+        xiaolong_wang[王小龙]
+        hao_su[苏浩 | ImageNet, ManiSkill]
     end
 
     subgraph MIT
@@ -31,7 +31,7 @@ flowchart LR
     end
 
     subgraph Stanford
-        shurang_song
+        shurang_song[宋舒然]
         mengda_xu[Mengda Xu | DexUMI]
     end
 
@@ -82,12 +82,17 @@ flowchart LR
         end
     end
 
+    subgraph BeingBeyond 智在无界
+        zongqing_lu[卢宗青 @北大]
+    end
+
     subgraph 千寻
     end
 
     subgraph 松灵
     end
     subgraph Dyna
+        jason_ma
     end
     subgraph 魔法原子
     end
