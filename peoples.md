@@ -13,7 +13,7 @@ flowchart LR
     subgraph UCB
         pieter --> wuenda[吴恩达]
         sergey_levine --> pieter
-        trevor_darrrel[Trevor Darrrel<br>| 自动驾驶]
+        trevor_darrrel[Trevor Darrrel<br> : 自动驾驶]
     end
 
     subgraph 清华
@@ -23,35 +23,35 @@ flowchart LR
 
     subgraph UCSD
         xiaolong_wang[王小龙]
-        hao_su[苏浩 | ImageNet, ManiSkill]
+        hao_su[苏浩 : ImageNet, ManiSkill]
     end
 
     subgraph MIT
-        song_han[韩松 | EgoVLA]
+        song_han[韩松 : EgoVLA]
     end
 
     subgraph Stanford
         shurang_song[宋舒然]
-        mengda_xu[Mengda Xu | DexUMI]
+        mengda_xu[Mengda Xu : DexUMI]
     end
 
-    fcx[fcx | InterleaveVLA] -->|"跟着做"| bolei_zhou
+    fcx[fcx : InterleaveVLA] -->|"跟着做"| bolei_zhou
     subgraph UCLA 加州洛杉矶
-        bolei_zhou[周博磊 | CV,自驾]
+        bolei_zhou[周博磊 : CV,自驾]
     end
 
     subgraph 复旦
-        xiaosong_jia[贾萧松<br>| GuidedVLA]
+        xiaosong_jia[贾萧松<br>: GuidedVLA]
     end
 
     subgraph HKU
-        hongyang_li[李洪阳 | 自驾]
-        hengshuang_zhao[Hengshuang Zhao | 自驾 <br> 机器人领域有DreamAvoid]
+        hongyang_li[李洪阳 : 自驾]
+        hengshuang_zhao[Hengshuang Zhao : 自驾 <br> 机器人领域有DreamAvoid]
         chonghao[司马崇昊]
     end
 
     subgraph AI Lab
-        jiangmiao_pang[庞江淼 | HOMIE]
+        jiangmiao_pang[庞江淼 : HOMIE]
     end
 
     subgraph MVIG
@@ -72,10 +72,10 @@ flowchart LR
         end
     end
     subgraph 原力灵机 Dexmal
-        wenbin_tang[唐文斌 @姚班]
+        wenbin_tang[唐文斌 @姚班<br>范浩强、周而进、汪天才]
     end
     subgraph 星海图 galaxea-ai 苏州
-        subgraph 产品: A1 机械臂,<br>R1 人型
+        subgraph 产品 A1 机械臂,<br>R1 人型
         end
         hang_zhao[赵行 @清华叉院]
         huazhe_xu.1[许华哲（已离开）]
@@ -111,7 +111,7 @@ flowchart LR
     end
     subgraph 方舟无限
     end
-    subgraph GenRobot
+    subgraph 简智 GenRobot
         jianxing_chen[陈建兴]
     end
 ```
@@ -273,4 +273,3 @@ articles:
 - AC one 平台
 
 ## GenRobot @陈建兴
-
