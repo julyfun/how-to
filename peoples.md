@@ -10,10 +10,32 @@ confidence: 2
 
 ```mermaid
 flowchart LR
-    subgraph AI Lab
-        jiangmiao_pang[庞江淼 | HOMIE]
+    subgraph UCB
+        pieter --> wuenda[吴恩达]
+        sergey_levine --> pieter
+        trevor_darrrel[Trevor Darrrel<br>| 自动驾驶]
     end
 
+    subgraph 清华
+        yang_gao[高阳] --> pieter
+        huazhe[许华哲] --> trevor_darrrel
+    end
+
+    subgraph UCSD
+        xiaolong_wang
+        hao_su[苏昊 | ImageNet, ManiSkill]
+    end
+
+    subgraph MIT
+        song_han[韩松 | EgoVLA]
+    end
+
+    subgraph Stanford
+        shurang_song
+        mengda_xu[Mengda Xu | DexUMI]
+    end
+
+    fcx[fcx | InterleaveVLA] -->|"跟着做"| bolei_zhou
     subgraph UCLA 加州洛杉矶
         bolei_zhou[周博磊 | CV,自驾]
     end
@@ -25,9 +47,20 @@ flowchart LR
     subgraph HKU
         hongyang_li[李洪阳 | 自驾]
         hengshuang_zhao[Hengshuang Zhao | 自驾 <br> 机器人领域有DreamAvoid]
+        chonghao[司马崇昊]
     end
 
-    fcx[fcx | InterleaveVLA] -->|"跟着做"| bolei_zhou
+    subgraph AI Lab
+        jiangmiao_pang[庞江淼 | HOMIE]
+    end
+
+    subgraph MVIG
+        zhuochen_miao
+    end
+```
+
+```mermaid
+flowchart LR
 ```
 
 ---
