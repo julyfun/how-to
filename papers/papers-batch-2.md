@@ -159,24 +159,34 @@ noise_2 = randn(B,16,13)
 ## Do World... ? (16)
 - ?teacher–student training framework
 
-## BORA
+## BORA (17)
+
+demo 很一般，仅限慢速 pick and place 以及食指大拇指的简单捏握.
+
 ### Offline RL
 ```mermaid
 flowchart TD
     obs --> vlm[[vlm]] --> z
     z --> value_net[[value_net]] --> V["V[] 数组"] --> v_loss["loss_v =<br>expectile_loss(Q.detach(), V)"]
     z --> policy[[consistent_policy]] --> A["A[] 数组"] --> Q[[Q_net]] --> q_loss["loss_q =<br>bellmen_residual(Q, reward, V_next)"]
-    policy --> v[[1~3次去噪]] --> policy
+    policy --> v[[1~3次去噪]] -->policy
     A --> loss_act["loss_act =<br>-ppo_clip(A, advantage(Q, V))<br> + λ_bc * bc_loss(A, A_demo)"]
 ```
 ### Online RL
 ```mermaid
 flowchart TD
     obs --> vlm[[❄️vlm]] --> z
-    z --> policy[[❄️consistent_policy]] --> A_base --> Q[[Q_net]] --> loss
-    z --> residual[[🔥residual_policy]] --> A_res --> A["A = A_base + λ A_res"]
-    A_base --> A
+    z --> policy[[❄️consistent_policy]] --> A_base --> Q1[[❄️Q_net]] --> Q_base --> loss
+    z --> residual[[🔥residual_policy]] --> A_res --> A_final["A = A_base + λ A_res"] --> Q2[["❄️Q_net (同一个)"]] --> Q_final --> loss
+    policy --> v[[1~3次去噪]] -->policy
+    A_base --> A_final
+    loss["loss =<br>hinge(Q_base + δ - Q_final) - Q_final<br>"]
 ```
+
+递归
+- Q-chunking 就是本文使用的给 action_chunk 的每个位置打分.
+- implicit Q learning ?:
+  - 非 implicit 更新 Q: ``
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
