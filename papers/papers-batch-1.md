@@ -76,26 +76,30 @@ flowchart TD
 obs0 -> VAE -> z0
 
 infer #1 (frame_st_id=0):
-  1) flow denoise video chunk [z0_anchor, z1_hat]   # 2帧，不是(z1,z2)两个未来
+  1) flow denoise video chunk [z0_anchor, z1_hat]   # 2帧
      - 第0帧 init_latent=z0
      - 第1帧才是预测的未来 latent
-  2) flow denoise action chunk [a_grp0(16步), a_grp1(16步)]  # 共32步
+  2) flow denoise action chunk [a_grp0(16步), a_grp1(16步)]  # 1 chunk = 2 group(对齐 2 video frame) = 32 steps
      - 条件：cache(空) + 刚预测的 video chunk
+
 execute #1（第一轮特殊）:
   start_idx=1 -> 跳过 a_grp0，只执行 a_grp1 的 16 步
   每 4 步收一次 obs -> key_frame_list（约 4 个真实 obs）
+
 compute_kv_cache #1:
   clear_pred_cache()          # 删掉 z_hat、a_hat，不是“替换某几帧”
   real_z = VAE(key_frame_list)
   若 frame_st_id==0: cat(init_latent=z0, real_z)
   real_a = preprocess(executed action chunk)
   写入 cache（is_pred=False）
-
+---
 infer #2:
   预测下一个 chunk [z2_hat, z3_hat] + [a_grp2, a_grp3]
   条件：cache 里的 real history
+
 execute #2 起:
   start_idx=0 -> 执行完整 32 步
+
   每 4 步收 obs -> key_frame_list（约 8 个）
 compute_kv_cache #2:
   再次 clear_pred_cache()
@@ -104,39 +108,34 @@ compute_kv_cache #2:
 
 ```mermaid
 flowchart TD
-    vraw["Training Video / Obs"] --> vae[["❄️Wan VAE Encode<br/>离线或外部预编码"]]
-    vae --> vdata["Video Latents z<br/>(B, 48, F, H, W)"]
-    vdata --> vnoise["Add Flow Noise<br/>sample t_v, eps_v"]
-    vdata --> vcond["Video Cond Latents<br/>clean 或 noisy history"]
-    vnoise --> vemb[["patch_embedding_mlp<br/>Video input embed"]]
-    vcond --> vcemb[["patch_embedding_mlp<br/>Video cond embed"]]
-    prompt["Cached Text Emb<br/>模块外缓存/数据集读取"] --> textproj[["text_embedder"]]
-    vemb --> blocks[["Shared WanTransformerBlock x30<br/>masked self-attn + text cross-attn"]]
-    vcemb --> blocks
-    textproj --> blocks
-    blocks --> vhead[["norm_out + proj_out"]]
-    vhead --> vpred["Predicted video velocity"]
-    vnoise --> vtgt["Target video velocity<br/>z - eps"]
-    vpred --> vloss["Video FM Loss"]
-    vtgt --> vloss
+    cache["模块外 KV Cache<br/>来自 compute_kv_cache #1<br/>real history only: z/a KV<br/>capacity per block: [B_eff=2, 9792, 24, 128]<br/>这里 eff=2 是 CFG 用的"] -.-> attn
+    noise_z["sample video noise<br/>latents: [1, 48, 2, 24, 20]<br/>表示 [z2_hat, z3_hat]"] --> prep["CFG repeat + grid/timestep<br/>[B_eff=2, 48, 2, 24, 20]"]
+    prep --> vemb[["patch_embedding_mlp<br/>192 -> 3072"]]
+    vemb --> vt["video tokens<br/>seq_len = 2 * 12 * 10 = 240<br/>[B_eff=2, 240, 3072]"]
+    prompt["cached prompt_embeds<br/>[B_eff=2, 512, 4096]"] --> textproj[["text_embedder<br/>4096 -> 3072"]]
+    textproj --> txt["text tokens<br/>[B_eff=2, 512, 3072]"]
+    vt --> attn[["Shared WanTransformerBlock x30<br/>self-attn 读模块外 KV Cache<br/>cross-attn 读 text tokens"]]
+    txt --> attn
+    attn --> vhead[["norm_out + proj_out"]]
+    vhead --> vvel["video velocity<br/>tokens [B_eff=2, 240, 192]<br/>unpatch -> [B_eff=2, 48, 2, 24, 20]"]
+    vvel --> sched["Flow scheduler step<br/>更新 [z2_hat, z3_hat]"]
+    sched --> predcache["最后一步 update_cache=1<br/>把 predicted video KV 写入 cache<br/>is_pred=True"]
 ```
 
 ```mermaid
 flowchart TD
-    act["GT Actions a<br/>(B, A, F, action_per_frame, 1)"] --> anoise["Add Flow Noise<br/>sample t_a, eps_a"]
-    act --> acond["Action Cond<br/>clean action history"]
-    anoise --> aemb[["action_embedder<br/>Linear(A -> inner_dim)"]]
-    acond --> acemb[["action_embedder<br/>Action cond embed"]]
-    prompt["Cached Text Emb<br/>模块外缓存/数据集读取"] --> textproj[["text_embedder"]]
-    vcond["Video cond / predicted video chunk<br/>当前 chunk video 在 action 前"] --> blocks
-    aemb --> blocks[["Shared WanTransformerBlock x30<br/>masked self-attn + text cross-attn"]]
-    acemb --> blocks
-    textproj --> blocks
-    blocks --> ahead[["norm_out + action_proj_out"]]
-    ahead --> apred["Predicted action velocity"]
-    anoise --> atgt["Target action velocity<br/>a - eps"]
-    apred --> aloss["Action FM Loss<br/>乘 actions_mask"]
-    atgt --> aloss
+    cache["模块外 KV Cache<br/>real history + 刚写入的 predicted video chunk KV<br/>z/a history + [z2_hat,z3_hat]"] -.-> attn
+    noise_a["sample action noise<br/>actions: [1, 30, 2, 16, 1]<br/>表示 [a_grp2, a_grp3]"] --> prep["CFG repeat + grid/timestep<br/>[B_eff=2, 30, 2, 16, 1]"]
+    prep --> aemb[["action_embedder<br/>30 -> 3072"]]
+    aemb --> at["action tokens<br/>seq_len = 2 * 16 = 32<br/>[B_eff=2, 32, 3072]"]
+    prompt["cached prompt_embeds<br/>[B_eff=2, 512, 4096]"] --> textproj[["text_embedder<br/>4096 -> 3072"]]
+    textproj --> txt["text tokens<br/>[B_eff=2, 512, 3072]"]
+    at --> attn[["Shared WanTransformerBlock x30<br/>self-attn 读模块外 KV Cache<br/>cross-attn 读 text tokens"]]
+    txt --> attn
+    attn --> ahead[["norm_out + action_proj_out"]]
+    ahead --> avel["action velocity<br/>[B_eff=2, 32, 30]<br/>reshape -> [B_eff=2, 30, 2, 16, 1]"]
+    avel --> sched["Flow scheduler step<br/>更新 [a_grp2, a_grp3]"]
+    sched --> predcache["最后一步 update_cache=1<br/>把 predicted action KV 写入 cache<br/>is_pred=True"]
 ```
 
 ## RTC (5)
