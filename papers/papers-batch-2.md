@@ -219,6 +219,8 @@ flowchart TD
 
 ## cosmos-policy
 
+## Forcy policy
+
 ## VLA-JEPA
 - https://hjfy.top/arxiv/2602.10098
 
