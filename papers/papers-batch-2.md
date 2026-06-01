@@ -160,8 +160,13 @@ noise_2 = randn(B,16,13)
 - ?teacher–student training framework
 
 ## BORA
+### Offline RL
 ```mermaid
 flowchart TD
+    obs --> vlm[[vlm]]
+    vlm --> z
+    z --> value_net[[value_net]] --> V["V[] 数组"]
+    z --> policy[[policy]] --> A --> Q[[Q_net]] --> q_loss["bellmen_residual"]
 ```
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
