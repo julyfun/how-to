@@ -81,3 +81,5 @@ class ValueNet(torch.nn.Module):
 ```
 
 - 效果：抖动比基于蒙特卡洛的 REINFORCE 收敛更快，且非常稳定.
+
+## BORA: zhongxi_chen
