@@ -49,7 +49,7 @@ output = original_attention(x) + # 这里是纯 pi0 的
 ```
 
 ```mermaid
-flowchart LR
+flowchart TD
     img["Observation Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
     instr_img["Instruction Images (Crops/Web/Sketch)<br/>(B, n_imgs, 224, 224, 3)"]:::highlight --> siglip
     txt["Interleaved Tokens (Text + BOI/EOI)<br/>(B, max_len=N)"]:::highlight --> tok["Gemma Tokenizer + Special Tokens"]:::highlight
@@ -158,6 +158,11 @@ noise_2 = randn(B,16,13)
 
 ## Do World... ? (16)
 - ?teacher–student training framework
+
+## BORA
+```mermaid
+flowchart TD
+```
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 

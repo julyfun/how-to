@@ -23,7 +23,7 @@ TODO: 数据集这一块儿有空可以再看看.
 - https://hjfy.top/arxiv/2603.16666
 可被视为该家族中的一个混合点：它采用具有共享注意力的 Transformer 混合体骨干网络 及耦合的视频与动作分支，但结论认为主要优势可能更多来自训练期间的视频协同训练，而非推理阶段 的显式未来想象。在这些变体中，视频分支越来越不再被视为需要忠实渲染的输出，而是被看作一种预 测性潜在过程，其隐状态用于指导动作生成.
 
-train-time 和 infer-time, noisy action 都只会 attend 第一帧视频的 kv.
+不论在 train-time 还是 infer-time, noisy action 都只会 attend 第一帧视频的 kv.
 因此，train-time 联合训练多帧视频和动作生成的好处是逼着 video z_0 编码能够“从当前画面推导出未来变化”的信息。
 
 > video loss: 让 z0 表征更懂未来/动力学
@@ -31,7 +31,7 @@ train-time 和 infer-time, noisy action 都只会 attend 第一帧视频的 kv.
 > action loss: 让 action expert 学会从这个 z0 表征里采样动作
 
 ```mermaid
-flowchart LR
+flowchart TD
     video["Training Video<br/>(B, 3, T=33, H=224, W=448)"] --> vae["Wan VAE Encode"]
     vae --> z0["Video Latents z_0<br/>(B, 48, T_lat=9, 28, 56)"]
     z0 --> zv["Add Flow Noise<br/>sample t_v, eps_v"]
@@ -103,7 +103,7 @@ compute_kv_cache #2:
 ```
 
 ```mermaid
-flowchart LR
+flowchart TD
     data["LeRobot + Latent Dataset<br/>videos already encoded by Wan VAE<br/>actions + action_config + text_emb"] --> video["Video Latents<br/>(B, C=48, F=2, H=24, W=20)"]
     data --> action["Normalized Actions<br/>(B, action_dim=30, F=2, action_per_frame=16, 1)"]
     data --> text["Action Text Embeddings<br/>(B, 512, text_dim=4096)"]
@@ -171,7 +171,7 @@ def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
 
 ## Pi0.6 & Pi0.5 & Pi0 (6,7,8)
 ```mermaid
-flowchart LR
+flowchart TD
     img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
     txt["Text Tokens<br/>(B, max_token_len=48)"] --> tok["Gemma Token Embedding"]
     siglip --> vis["Visual Tokens<br/>(B, 3*256=768, D=2048)"]
@@ -226,7 +226,7 @@ act1 = gated_residual(act0, act_y)                              # (B, La, 1024)
 下面是 pi0.5
 
 ```mermaid
-flowchart LR
+flowchart TD
     img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
     prompt["Task Prompt<br/>(string)"] --> format["Prompt Format<br/>Task: ..., State: ...;<br/>Action:"]
     rawstate["Raw / Normalized Robot State<br/>(B, action_dim=32)"] --> binstate["Digitize State<br/>256 bins over [-1, 1]"]
@@ -261,7 +261,7 @@ flowchart LR
 
 pi0.6
 ```mermaid
-flowchart LR
+flowchart TD
     img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["Image Encoder<br/>SigLIP 400M"]
     txt["Text + Discrete State Tokens<br/>(B, max_token_len=200)"] --> tok["Gemma Token Embedding"]
 
