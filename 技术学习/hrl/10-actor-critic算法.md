@@ -5,9 +5,8 @@ tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
 see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
 
-- 上一章用 $G_t$ 代替 $Q^pi (s, a)$，现在用时序差分残差公式代替之.
-    - 因为 $Q = r + gamma V$.
-    - 所以训练一个 $V$ 网路就行
+- 上一章用 $G_t$ 代替 $Q^pi (s, a)$，现在用时序差分残差公式(当前动作带来的额外奖励期望)代替之.
+    - 因为 $Q = r + gamma V$, 所以训练一个 $V$ 网路就行
 
 - 训练一个价值网络 V:
     - Input : 可微状态 $s$
@@ -46,7 +45,7 @@ class ActorCritic:
         td_delta = td_target - self.critic(states)
         log_probs = torch.log(self.actor(states).gather(1, actions))
         actor_loss = torch.mean(-log_probs * td_delta.detach())
-        # 均方误差损失函数，这里直接 detach() 来实现类似 Double DQN 的效果... （不演了是吧）
+        # 均方误差损失函数，这里直接 detach() 来实现类似 Double DQN 的效果
         critic_loss = torch.mean(
             F.mse_loss(self.critic(states), td_target.detach()))
         self.actor_optimizer.zero_grad()
