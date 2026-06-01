@@ -180,7 +180,7 @@ flowchart TD
     z --> residual[[🔥residual_policy]] --> A_res --> A_final["A = A_base + λ A_res"] --> Q2[["❄️Q_net (同一个)"]] --> Q_final --> loss
     policy --> v[[1~3次去噪]] -->policy
     A_base --> A_final
-    loss["loss =<br>hinge(Q_base + δ - Q_final) - Q_final<br>"]
+    target["target =<br>hinge(Q_base + δ - Q_final) - Q_final<br>"]
 ```
 
 递归
@@ -191,6 +191,12 @@ flowchart TD
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
 ## WorldVLA
+
+## SimpleVLA
+
+## Wall-WM
+
+## cosmos-policy
 
 ## VLA-JEPA
 - https://hjfy.top/arxiv/2602.10098
