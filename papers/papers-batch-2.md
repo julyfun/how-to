@@ -163,10 +163,19 @@ noise_2 = randn(B,16,13)
 ### Offline RL
 ```mermaid
 flowchart TD
-    obs --> vlm[[vlm]]
-    vlm --> z
-    z --> value_net[[value_net]] --> V["V[] 数组"]
-    z --> policy[[policy]] --> A --> Q[[Q_net]] --> q_loss["bellmen_residual"]
+    obs --> vlm[[vlm]] --> z
+    z --> value_net[[value_net]] --> V["V[] 数组"] --> v_loss["loss_v =<br>expectile_loss(Q.detach(), V)"]
+    z --> policy[[consistent_policy]] --> A["A[] 数组"] --> Q[[Q_net]] --> q_loss["loss_q =<br>bellmen_residual(Q, reward, V_next)"]
+    policy --> v[[1~3次去噪]] --> policy
+    A --> loss_act["loss_act =<br>-ppo_clip(A, advantage(Q, V))<br> + λ_bc * bc_loss(A, A_demo)"]
+```
+### Online RL
+```mermaid
+flowchart TD
+    obs --> vlm[[❄️vlm]] --> z
+    z --> policy[[❄️consistent_policy]] --> A_base --> Q[[Q_net]] --> loss
+    z --> residual[[🔥residual_policy]] --> A_res --> A["A = A_base + λ A_res"]
+    A_base --> A
 ```
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
