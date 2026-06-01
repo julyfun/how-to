@@ -32,39 +32,41 @@ TODO: 数据集这一块儿有空可以再看看.
 
 ```mermaid
 flowchart TD
-    video["Training Video<br/>(B, 3, T=33, H=224, W=448)"] --> vae["Wan VAE Encode"]
-    vae --> z0["Video Latents z_0<br/>(B, 48, T_lat=9, 28, 56)"]
-    z0 --> zv["Add Flow Noise<br/>sample t_v, eps_v"]
-    zv --> vpre["Video Expert pre_dit<br/>patchify + 3D RoPE"]
-
-    prompt["Task Prompt / Cached Text<br/>(B, L=128, D=4096)"] --> ctx["Text Context"]
-    state["Robot State<br/>(B, T, D_state=8)"] --> prop["proprio_encoder(Linear)<br/>as 1 state token"]
-    prop --> ctx
-    ctx --> vpre
-
-    action["GT Actions a_0<br/>(B, T_act=32, A=7)"] --> za["Add Flow Noise<br/>sample t_a, eps_a"]
-    za --> apre["Action Expert pre_dit<br/>Linear(A -> 1024) + 1D RoPE"]
-    ctx --> apre
-
-    vpre --> vt["Video Tokens<br/>(B, S_v=3528, D_v=3072)"]
-    apre --> at["Action Tokens<br/>(B, 32, D_a=1024)"]
-    vt --> mot["MoT Mixed Transformer<br/>30 layers shared masked self-attn"]
-    at --> mot
-    mask["Mask<br/>video->video causal<br/>action->first-frame video + action"] --> mot
-
-    mot --> vpost["Video post_dit<br/>unpatchify"]
-    mot --> apost["Action post_dit<br/>Linear(1024 -> A)"]
-    vpost --> pv["Predicted video velocity<br/>(B, 48, T_lat', 28, 56)"]
-    apost --> pa["Predicted action velocity<br/>(B, 32, 7)"]
-
-    zv --> vtgt["Target video velocity"]
-    za --> atgt["Target action velocity"]
-    pv --> vloss["Video FM Loss"]
+    vraw["Training Video / Obs"] --> vae[["❄️Wan VAE Encode<br/>离线或外部预编码"]]
+    vae --> vdata["Video Latents z<br/>(B, 48, F, H, W)"]
+    vdata --> vnoise["Add Flow Noise<br/>sample t_v, eps_v"]
+    vdata --> vcond["Video Cond Latents<br/>clean 或 noisy history"]
+    vnoise --> vemb[["patch_embedding_mlp<br/>Video input embed"]]
+    vcond --> vcemb[["patch_embedding_mlp<br/>Video cond embed"]]
+    prompt["Cached Text Emb<br/>模块外缓存/数据集读取"] --> textproj[["text_embedder"]]
+    kv["模块外 KV Cache<br/>由 compute_kv_cache 写入<br/>只在 inference 使用，training 不用"] -.-> blocks
+    vemb --> blocks[["Shared WanTransformerBlock x30<br/>masked self-attn + text cross-attn"]]
+    vcemb --> blocks
+    textproj --> blocks
+    blocks --> vhead[["norm_out + proj_out"]]
+    vhead --> vpred["Predicted video velocity"]
+    vnoise --> vtgt["Target video velocity<br/>z - eps"]
+    vpred --> vloss["Video FM Loss"]
     vtgt --> vloss
-    pa --> aloss["Action FM Loss"]
+```
+
+```mermaid
+flowchart TD
+    act["GT Actions a<br/>(B, A, F, action_per_frame, 1)"] --> anoise["Add Flow Noise<br/>sample t_a, eps_a"]
+    act --> acond["Action Cond<br/>clean action history"]
+    anoise --> aemb[["action_embedder<br/>Linear(A -> inner_dim)"]]
+    acond --> acemb[["action_embedder<br/>Action cond embed"]]
+    prompt["Cached Text Emb<br/>模块外缓存/数据集读取"] --> textproj[["text_embedder"]]
+    vcond["Video cond / predicted video chunk<br/>当前 chunk video 在 action 前"] --> blocks
+    kv["模块外 KV Cache<br/>由 compute_kv_cache 写入<br/>只在 inference 使用，training 不用"] -.-> blocks
+    aemb --> blocks[["Shared WanTransformerBlock x30<br/>masked self-attn + text cross-attn"]]
+    acemb --> blocks
+    textproj --> blocks
+    blocks --> ahead[["norm_out + action_proj_out"]]
+    ahead --> apred["Predicted action velocity"]
+    anoise --> atgt["Target action velocity<br/>a - eps"]
+    apred --> aloss["Action FM Loss<br/>乘 actions_mask"]
     atgt --> aloss
-    vloss --> total["Total Loss<br/>lambda_v * L_video + lambda_a * L_action"]
-    aloss --> total
 ```
 
 ## Lingbot-va (4)
