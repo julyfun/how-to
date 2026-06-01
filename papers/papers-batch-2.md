@@ -172,6 +172,18 @@ flowchart TD
     policy --> v[[1~3次去噪]] -->policy
     A --> loss_act["loss_act =<br>-ppo_clip(A, advantage(Q, V))<br> + λ_bc * bc_loss(A, A_demo)"]
 ```
+- expectile_loss:
+  ```python
+  diff = Q.detach() - V
+  weight = torch.where(diff > 0, tau, 1 - tau)
+  loss_v = torch.mean(weight * (diff**2))
+  ```
+- bellman_residual:
+  ```python
+  y_t = reward + gamma * (1 - done) * V_next
+  loss_q = torch.mean((Q - y_t.detach())**2)
+  ```
+
 ### Online RL
 ```mermaid
 flowchart TD
@@ -186,8 +198,8 @@ flowchart TD
 递归
 - Q-chunking 就是本文使用的给 action_chunk 的每个位置打分.
 - implicit Q learning ?:
-  - 非 implicit 更新 Q: `target = reward + gamma * max(Q_target(s_next, policy(s_next)))`. 如果 policy 输出 OOD 的动作，Q 的评分可能虚高，policy 被诱导去选择这些幻觉动作，导致整个评价体系崩溃.
-  - implicit 更新 Q:
+  - 非 implicit 更新 Q_net: `target = reward + gamma * max(Q_target(s_next, policy(s_next)))`. 如果 policy 输出 OOD 的动作，Q 的评分可能虚高，policy 被诱导去选择这些幻觉动作，导致整个评价体系崩溃.
+  - implicit 更新 Q_net:
     ```python
     diff = Q.detach() - V
     weight = where(diff > 0, τ, 1 - τ) # 当 Q > V 时权重为 τ=0.7，当 Q < V 时权重为 1-τ
@@ -195,7 +207,7 @@ flowchart TD
     loss_V = mean(m_t_i * weight * (diff**2))
     target = reward + gamma * V(s_next)
     ```
-    不需要更新
+  - 本文没有直接使用 IQL 而是使用了 IQL-style expectile.
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 

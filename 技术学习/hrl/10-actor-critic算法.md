@@ -18,6 +18,9 @@ see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
              - 采样数据为 $(s_i, a_i, r_i, s_i^prime)$.
              - 注意采样的 $a$ 并不影响 $V$ 梯度下降，乱采样也能训练出正确的 $V$ 网络
 
+其他：
+- 这种方法在数学上要求 on-policy，如果产生的动作概率和实际执行的 action 不是来自一个 net，那么梯度计算是错误的，除非补上 $pi(a) / pi(b)$ 项.
+
 (原文已经写的很像回忆提纲了)
 
 先来看 Actor + Critic 包装器的 update
