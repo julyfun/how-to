@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## ALOE (9)
+## ALOE (9): 智元 rushuai yang
 递归学习..
 - ?Q-chunking
 
@@ -172,7 +172,7 @@ flowchart TD
     policy --> v[[1~3次去噪]] -->policy
     A --> loss_act["loss_act =<br>-ppo_clip(A, advantage(Q, V))<br> + λ_bc * bc_loss(A, A_demo)"]
 ```
-- expectile_loss:
+- expectile_loss: [todo]
   ```python
   diff = Q.detach() - V
   weight = torch.where(diff > 0, tau, 1 - tau)

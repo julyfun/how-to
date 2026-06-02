@@ -11,7 +11,7 @@ confidence: 2
 ```
 下面是一个优秀的 pi0.5 模型架构 chart，简洁且符合我的学习水平.
 模仿该 chart 绘制本仓库 flowchat. 到 read/infer.mmd 和 read/train.mmd
-- 注意带形状 (B, seq_len=968, D=2048 , 根据 readme 最主流配置). 
+- 注意带形状 (B, seq_len=968, D=2048 , 根据 readme 最主流配置).
 
 flowchart LR
     img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["PaliGemma Image Encoder(SigLIP)"]
@@ -64,7 +64,7 @@ g 的最后一个子函数
 
 ## 11/26
 Generalist: 如夹爪的量程设计和末端尖锐度,黄色更多是柔性材料，黑色是刚性材料
-- 机械臂是带力控 [q] 
+- 机械臂是带力控 [q]
 ## 11/25
 - AINA [ok]
 
@@ -78,7 +78,7 @@ CoRL: (conf on robot learning)
 IROS:
 - DDL: 1/5 - 3/2,
 - Accept: 6/30
-- Conf: 
+- Conf:
 [papers]
 - Improved-3D-Diffusion-Policy (2025) @Yanjie Ze
 
@@ -129,7 +129,7 @@ $pi_(0.6)$ @25/06
 - [不同之处.stage-exp]
 - 即使rollout成功，也可以用 vm 判断是优势还是劣势.
 - vm 也会更新.
-    
+
 ## VLA-RL
 In-Context @Jason Ma
 - https://www.alphaxiv.org/abs/2411.04549
@@ -186,10 +186,6 @@ Compliant Residual DAgger @mengda xu @yifan hou
 - [abs]:
     - [q] admittance control? [a] 虚拟弹簧
 
-[todo] ARMADA
-
-[todo] Genie Centurion @智元 25/5
-
 Data-Efficient Multitask DAgger 25/9
 - https://arxiv.org/pdf/2509.25466
 - @罗得岛州 布朗大学 @60 @Haotian Fu @cited 0
@@ -213,8 +209,6 @@ ThriftyDAgger UCB
 HGDAgger (human gated) 18/10 [自动驾驶]
 - 专家认为进入不安全状态，就完全控制(注意不录制混合控制)，引导回安全状态就交还控制权.
 - 计算一个多个 policy 输出的方差，作为不确定度，用最近的不确定度计算安全阈值，用于后续推理自主请求介入
-
-[todo]:
 
 5.  **《Soft DAgger: Sample-Efficient Imitation Learning for Control of Soft Robots》**
     -  **发布背景**：2023年发表于《Sensors》，是针对柔性机器人操作控制的开创性DAgger研究。柔性机器人因变形特性难以建模，传统控制方法依赖昂贵的探索技术或强化学习代理，实用性差。
