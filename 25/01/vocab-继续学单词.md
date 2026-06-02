@@ -10,6 +10,8 @@ confidence: 2
 
 规则 : 每天 1-12 个单词，每行为 `<序号>. <单词> : <词性>.<释义> : <音标> 例句` 刚好两个冒号. 部分老单词可能不符合，不用管.
 
+induced by the
+
 ## 5/27
 1. outage : n.断供期；设备停开期 : /ˈaʊtɪdʒ/ The power outage lasted for several hours.
 2. ratio'nale : n.基本原理；原理的阐述 : /ˌræʃəˈnæl/ The paper explains the rationale behind the design.
