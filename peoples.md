@@ -28,11 +28,12 @@ flowchart LR
 
     subgraph MIT
         song_han[韩松 : EgoVLA]
+        haoshu_fang[Haoshu Fang:<br>DEXOP-通过连杆传到的 dexumi]
     end
 
     subgraph Stanford
         shurang_song[宋舒然]
-        mengda_xu[Mengda Xu : DexUMI]
+        mengda_xu[Mengda Xu:<br>DexUMI-穿戴式UMI手套，可带tactile]
     end
 
     subgraph Columbia

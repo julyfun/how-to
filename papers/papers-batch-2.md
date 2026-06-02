@@ -215,7 +215,7 @@ flowchart TD
 
 ## 一些概念
 - stiffness: F = K * (x_des - x) + D * (v_des - v)，这里的 stiffness 就是 K. K 越大，同样的位置误差会产生越大的修正力/力矩.
-- 力位混合控制：选择一些轴力控，一些轴位控.
+- 力位混合控制：选择一些轴力控，一些轴位控. 如 X, Y 走位，Z 保持 10N 下压力. 力控目标通常是末端[Fx, Fy, Fz, Mx, My, Mz] 扭矩（例如 Mz 可以理解为绕 z 轴转，拧螺丝），控制器内部通过雅可比矩阵 `tau = J^T * wrench` 转换为各关节扭矩.
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
