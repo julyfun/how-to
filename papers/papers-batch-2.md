@@ -214,6 +214,7 @@ flowchart TD
   - 本文没有直接使用 IQL 而是使用了 IQL-style expectile.
 
 ## 一些概念
+- stiffness: F = K * (x_des - x) + D * (v_des - v)，这里的 stiffness 就是 K. K 越大，同样的位置误差会产生越大的修正力/力矩.
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
