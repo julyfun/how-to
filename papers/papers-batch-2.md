@@ -201,7 +201,7 @@ flowchart TD
 
 递归
 - Q-chunking 就是本文使用的给 action_chunk 的每个位置打分.
-- implicit Q learning ?:
+- implicit Q learning ? 就是:
   - 非 implicit 更新 Q_net: `target = reward + gamma * max(Q_target(s_next, policy(s_next)))`. 如果 policy 输出 OOD 的动作，Q 的评分可能虚高，policy 被诱导去选择这些幻觉动作，导致整个评价体系崩溃.
   - implicit 更新 Q_net:
     ```python
@@ -215,6 +215,7 @@ flowchart TD
 
 ## 一些概念
 - stiffness: F = K * (x_des - x) + D * (v_des - v)，这里的 stiffness 就是 K. K 越大，同样的位置误差会产生越大的修正力/力矩.
+- 力位混合控制：选择一些轴力控，一些轴位控.
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
