@@ -5,25 +5,23 @@ tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
 see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
 
-- 上一章用 $G_t$ 代替 $Q^pi (s, a)$，现在用时序差分残差公式(当前动作带来的额外奖励期望)代替之.
-    - 因为 $Q = r + gamma V$, 所以训练一个 $V$ 网路就行
+上一章用 $G_t$ 代替 $Q^pi (s, a)$，现在用时序差分残差公式(当前动作带来的额外奖励期望)代替之.
+- 因为 $Q = r + gamma V$, 所以训练一个 $V$ 网路就行
 
-- 训练一个价值网络 V:
-    - Input : 可微状态 $s$
-    - Output : $V(s)$
-    - Loss: $$1 / 2 (r + gamma V_omega (s_(t + 1)) - V_omega (s_t))^2$$
-         - 其中 $r + gamma V_omega (s_(t + 1))$ 不参与梯度计算. 代码中使用 `detach()` 直接实现，不用双网络.
-         - 和 DQN 一样训练数据来源于采样池.
-         - 训练过程和 Actor 的关系？Actor 产生了采样池，Actor 变强后采样分布会变化
-             - 采样数据为 $(s_i, a_i, r_i, s_i^prime)$.
-             - 注意采样的 $a$ 并不影响 $V$ 梯度下降，乱采样也能训练出正确的 $V$ 网络
+训练一个价值网络 V:
+- Input : 可微状态 $s$
+- Output : $V(s)$
+- Loss: $$1 / 2 (r + gamma V_omega (s_(t + 1)) - V_omega (s_t))^2$$
+    - 其中 $r + gamma V_omega (s_(t + 1))$ 不参与梯度计算. 代码中使用 `detach()` 直接实现，不用双网络.
+    - 和 DQN 一样训练数据来源于采样池.
+    - 训练过程和 Actor 的关系？Actor 产生了采样池，Actor 变强后采样分布会变化
+        - 采样数据为 $(s_i, a_i, r_i, s_i^prime)$.
+        - 注意采样的 $a$ 并不影响 $V$ 梯度下降，乱采样也能训练出正确的 $V$ 网络
 
 其他：
 - 这种方法在数学上要求 on-policy，如果产生的动作概率和实际执行的 action 不是来自一个 net，那么梯度计算是错误的，除非补上 $pi(a) / pi(b)$ 项.
-
-(原文已经写的很像回忆提纲了)
-
-先来看 Actor + Critic 包装器的 update
+- 以下代码也是 on-policy 的
+- 原文已经很简短了，可以看原文
 
 ```python
 class ActorCritic:
