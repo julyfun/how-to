@@ -11,7 +11,9 @@ confidence: 2
 ## ALOE (9): 智元 Rushuai Yang | Maoqing Yao
 - https://arxiv.org/pdf/2602.22088
 
-一句话：bc 预热后在 rollout 过程中训练一个 Q_net(critic) 支持干预，并从replay-buffer(原始数据、干预和历史rollout轨迹) 中采样一个带奖励的转移 `(s, a_chunk, r_chunk, s_next)`，自举部分则使用 `Q_net(current_policy(s_next))` （这部分看出是 off-policy 的，估计奖励 Q_pess 的同时更新 Q_net），随后 Q_net 评估 current_policy 在 `s` 处的多次采样平均表现. 如果 `a_chunk` 价值比 `s` 高 demo 装手机还不错
+一句话：bc 预热后在 rollout 过程中训练一个 Q_net(critic) 支持干预，并从replay-buffer（原始数据、人类干预和历史rollout轨迹）中采样一个带奖励的转移 `(s, a_chunk, r_chunk, s_next)`，自举部分则使用 `Q_net(current_policy(s_next))`，估计悲观奖励 Q_pess 的同时更新 Q_net，随后 Q_net 评估 current_policy 在 `s` 处的多次采样平均表现. 如果 `a_chunk` 价值比 `s` 高则给 `a_chunk` 整个高权重. demo 装手机还不错.
+- 实际上使用多个 Q_net 取 min 来进行悲观估计.
+- Q_net 这部分看出是 off-policy 的，因为这里 `r` 来自 replay_buffer 而 `a_next = current_policy(s_next)` 则来自 current_policy. 这是 off-policy 多种形式中的一种.
 
 ## GreenVLA (10)
 - https://hjfy.top/arxiv/2602.00919
@@ -210,6 +212,8 @@ flowchart TD
     target = reward + gamma * V(s_next)
     ```
   - 本文没有直接使用 IQL 而是使用了 IQL-style expectile.
+
+## 一些概念
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 

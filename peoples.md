@@ -35,6 +35,10 @@ flowchart LR
         mengda_xu[Mengda Xu : DexUMI]
     end
 
+    subgraph Columbia
+        yunzhu_li[Yunzhu Li]
+    end
+
     fcx[fcx : InterleaveVLA] -->|"跟着做"| bolei_zhou
     subgraph UCLA 加州洛杉矶
         bolei_zhou[周博磊 : CV,自驾]
