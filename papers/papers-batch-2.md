@@ -229,6 +229,10 @@ flowchart TD
 
 ## Forcy policy
 
+## Latent Policy Barrier: Time to reproduce
+
+## LIFT
+
 ## VLA-JEPA
 - https://hjfy.top/arxiv/2602.10098
 
