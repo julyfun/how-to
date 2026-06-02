@@ -106,6 +106,7 @@ compute_kv_cache #2:
   追加新的 real_z / real_a
 ```
 
+### Denoise video
 ```mermaid
 flowchart TD
     cache["模块外 KV Cache<br/>来自 compute_kv_cache #1<br/>real history only: z/a KV<br/>capacity per block: [B_eff=2, 9792, 24, 128]<br/>这里 eff=2 是 CFG 用的"] -.-> attn
@@ -122,6 +123,7 @@ flowchart TD
     sched --> predcache["最后一步 update_cache=1<br/>把 predicted video KV 写入 cache<br/>is_pred=True"]
 ```
 
+### Denoise action
 ```mermaid
 flowchart TD
     cache["模块外 KV Cache<br/>real history + 刚写入的 predicted video chunk KV<br/>z/a history + [z2_hat,z3_hat]"] -.-> attn
