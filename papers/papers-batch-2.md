@@ -9,8 +9,7 @@ confidence: 2
 ---
 
 ## ALOE (9): 智元 rushuai yang
-递归学习..
-- ?Q-chunking
+- demo 装手机还不错
 
 ## GreenVLA (10)
 - https://hjfy.top/arxiv/2602.00919
