@@ -230,6 +230,7 @@ flowchart TD
 ## Forcy policy
 
 ## Latent Policy Barrier: Time to reproduce
+- https://arxiv.org/abs/2508.05941
 
 ## LIFT
 
