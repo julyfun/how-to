@@ -160,6 +160,7 @@ noise_2 = randn(B,16,13)
 
 ## BORA (17)
 
+本文在离线训练 Q net, V net(仅用于辅助训练 Q_net) 的同时更新 vlm encoder，并在在线阶段冻结 Q，只额外训练一个 MLP 级别的 residual policy.
 demo 很一般，仅限慢速 pick and place 以及食指大拇指的简单捏握.
 
 ### Offline RL
@@ -187,8 +188,8 @@ flowchart TD
 ```mermaid
 flowchart TD
     obs --> vlm[[❄️vlm]] --> z
-    z --> policy[[❄️consistent_policy]] --> A_base --> Q1[[❄️Q_net]] --> Q_base --> loss
-    z --> residual[[🔥residual_policy]] --> A_res --> A_final["A = A_base + λ A_res"] --> Q2[["❄️Q_net (同一个)"]] --> Q_final --> loss
+    z --> policy[[❄️consistent_policy]] --> A_base --> Q1[[❄️Q_net]] --> Q_base --> target
+    z --> residual[[🔥residual_policy]] --> A_res --> A_final["A = A_base + λ A_res"] --> Q2[["❄️Q_net (同一个)"]] --> Q_final --> target
     policy --> v[[1~3次去噪]] -->policy
     A_base --> A_final
     target["target =<br>hinge(Q_base + δ - Q_final) - Q_final<br>"]
