@@ -14,3 +14,5 @@ confidence: 2
 这不是.. 而是...
 ```
 
+不要使用 `word_a / word_b`，这里的 `/` 是 and 还是 or 说清楚。
+
