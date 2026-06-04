@@ -240,3 +240,5 @@ flowchart TD
 关于 latent-action pretraining drifting 的问题值得看看.
 
 ## End-to-end training of deep visuomotor policies 四大神仙
+
+https://yipko.com/posts/work/pi0.7/
