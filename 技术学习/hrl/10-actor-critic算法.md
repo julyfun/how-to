@@ -21,6 +21,8 @@ actor_loss.backward(); critic_loss.backward()
 actor_optim.step(); critic_optim.step()
 ```
 
+如果是连续动作，则需要一个 `pi_theta` 来求概率密度函数，并不容易。
+
 ## Off-policy Actor-Critic
 
 ```python
@@ -37,4 +39,4 @@ actor_loss.backward(); critic_loss.backward()
 actor_optim.step(); critic_optim.step()
 ```
 
-如果 off-policy 沿用上面 on-policy 的 advantage-based，则必须使用 importance sampling，而现代方法多使用 Q critic 绕开这个步骤.
+如果 off-policy 沿用上面 on-policy 的 advantage-based，则采样的 a 的分布不再满足推导式 $nabla_theta J(theta)$ 的要求，梯度有偏，训练崩溃，从而必须使用 importance sampling，而现代方法多使用 Q critic 绕开这个步骤.
