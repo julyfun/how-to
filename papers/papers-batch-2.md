@@ -191,9 +191,9 @@ flowchart TD
 ### Online RL
 ```mermaid
 flowchart TD
-    obs --> vlm[[❄️vlm]] --> z
-    z --> policy[[❄️consistent_policy]] --> A_base --> Q1[[❄️Q_net]] --> Q_base --> target
-    z --> residual[[🔥residual_policy]] --> A_res --> A_final["A = A_base + λ A_res"] --> Q2[["❄️Q_net (同一个)"]] --> Q_final --> target
+    obs --> vlm[[🧊vlm]] --> z
+    z --> policy[[🧊consistent_policy]] --> A_base --> Q1[[🧊Q_net]] --> Q_base --> target
+    z --> residual[[🔥residual_policy]] --> A_res --> A_final["A = A_base + λ A_res"] --> Q2[["🧊Q_net (同一个)"]] --> Q_final --> target
     policy --> v[[1~3次去噪]] -->policy
     A_base --> A_final
     target["target =<br>hinge(Q_base + δ - Q_final) - Q_final<br>"]
@@ -217,6 +217,11 @@ flowchart TD
 - stiffness: F = K * (x_des - x) + D * (v_des - v)，这里的 stiffness 就是 K. K 越大，同样的位置误差会产生越大的修正力/力矩.
 - 力位混合控制：选择一些轴力控，一些轴位控. 如 X, Y 走位，Z 保持 10N 下压力. 力控目标通常是末端[Fx, Fy, Fz, Mx, My, Mz] 扭矩（例如 Mz 可以理解为绕 z 轴转，拧螺丝），控制器内部通过雅可比矩阵 `tau = J^T * wrench` 转换为各关节扭矩.
 
+## Latent Policy Barrier (18)
+- https://arxiv.org/abs/2508.05941
+
+一句话
+
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
 ## WorldVLA
@@ -229,9 +234,6 @@ flowchart TD
 
 ## Forcy policy
 
-## Latent Policy Barrier: Time to reproduce
-- https://arxiv.org/abs/2508.05941
-
 ## LIFT
 
 ## VLA-JEPA
@@ -242,3 +244,5 @@ flowchart TD
 ## End-to-end training of deep visuomotor policies 四大神仙
 
 https://yipko.com/posts/work/pi0.7/
+
+- offline: Conservative q-learning for offline reinforcement learning. 惩罚 OOD 动作
