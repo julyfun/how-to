@@ -7,6 +7,8 @@ see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
 
 ## On-policy Actor-Critic
 
+训练 critic 来估计后续收益.
+
 ```python
 states, actions, rewards, next_states, dones = rollout(pi_theta)
 td_target = rewards + gamma * V_phi(next_states) * (1 - dones)
@@ -24,6 +26,8 @@ actor_optim.step(); critic_optim.step()
 如果是连续动作，则需要一个 `pi_theta` 来求概率密度函数，并不容易。
 
 ## Off-policy Actor-Critic
+
+在 replay buffer 中采样 s, a
 
 ```python
 replay_buffer.add(s, a, r, s2, done)          # 数据可能来自旧 policy
