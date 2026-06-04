@@ -220,7 +220,9 @@ flowchart TD
 ## Latent Policy Barrier (18)
 - https://arxiv.org/abs/2508.05941
 
-一句话
+一句话: 在 diffusion 过程中加入 guidance 项使得下一时刻的潜在观测与最近专家潜在观测的距离尽量小.
+
+具体而言，下一时刻的潜在观测是通过训练的动力学模型 `d(z_t, a_(t, chunk)) -> z_(t + tp)` 得到的，该模型的训练数据来自专家轨迹 + 早期 ckpt 的 rollout 轨迹。而 guidance 要求 `d` 的参与，而前几个去噪步
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
