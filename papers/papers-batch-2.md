@@ -24,10 +24,10 @@ confidence: 2
 一句话：给 pi0 action token 加手工设计的 auxiliary tasks.
 - 让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y1
 - 从 action tokens 学习新的 q 以及从 concat(image tokens, action tokens) 学习新的 kv 用于:
-  - 计算 这里 qk 的 attn score，这个 score 和 GT attn mask patchify 得到 obj_loss (ground truth 由其他 grounding 模型生成)
-  - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss. 这里也会得到 y2 y3
-  - action tokens += linear(concat(y1, y2, y3))
-  - (代码中被称为 control_qkv)
+    - 计算 这里 qk 的 attn score，这个 score 和 GT attn mask patchify 得到 obj_loss (ground truth 由其他 grounding 模型生成)
+    - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss. 这里也会得到 y2 y3
+    - action tokens += linear(concat(y1, y2, y3))
+    - (代码中被称为 control_qkv)
 - 以上带门控
 - 以上给 action expert 的指定层去做，代码默认 [9, 10, 11, 12]  (pi0 expert 一共 18 层)
 
@@ -202,16 +202,16 @@ flowchart TD
 递归
 - Q-chunking 就是本文使用的给 action_chunk 的每个位置打分.
 - implicit Q learning ? 就是:
-  - 非 implicit 更新 Q_net: `target = reward + gamma * max(Q_target(s_next, policy(s_next)))`. 如果 policy 输出 OOD 的动作，Q 的评分可能虚高，policy 被诱导去选择这些幻觉动作，导致整个评价体系崩溃.
-  - implicit 更新 Q_net:
-    ```python
-    diff = Q.detach() - V
-    weight = where(diff > 0, τ, 1 - τ) # 当 Q > V 时权重为 τ=0.7，当 Q < V 时权重为 1-τ
-    # m_t_i 为有效步掩码（处理提前终止的情况）
-    loss_V = mean(m_t_i * weight * (diff**2))
-    target = reward + gamma * V(s_next)
-    ```
-  - 本文没有直接使用 IQL 而是使用了 IQL-style expectile.
+    - 非 implicit 更新 Q_net: `target = reward + gamma * max(Q_target(s_next, policy(s_next)))`. 如果 policy 输出 OOD 的动作，Q 的评分可能虚高，policy 被诱导去选择这些幻觉动作，导致整个评价体系崩溃.
+    - implicit 更新 Q_net:
+      ```python
+      diff = Q.detach() - V
+      weight = where(diff > 0, τ, 1 - τ) # 当 Q > V 时权重为 τ=0.7，当 Q < V 时权重为 1-τ
+      # m_t_i 为有效步掩码（处理提前终止的情况）
+      loss_V = mean(m_t_i * weight * (diff**2))
+      target = reward + gamma * V(s_next)
+      ```
+    - 本文没有直接使用 IQL 而是使用了 IQL-style expectile.
 
 ## 一些概念
 - stiffness: F = K * (x_des - x) + D * (v_des - v)，这里的 stiffness 就是 K. K 越大，同样的位置误差会产生越大的修正力/力矩.
