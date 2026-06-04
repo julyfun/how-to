@@ -27,7 +27,9 @@ actor_optim.step(); critic_optim.step()
 
 ## Off-policy Actor-Critic
 
-在 replay buffer 中采样 s, a
+在 replay buffer 中采样 (s, a)。然而，采样后不可再沿用上面 on-policy 的 advantage-based.
+1. critic 的 loss 是错误的. 比如，采样得到的 (s, a) 都特别笨，导致奖励 r(s, a) 都很糟糕，而 critic 却拟合了这些.
+2. actor 的梯度也是错误的，具体原因要看 actor 的梯度公式推导. 从而必须使用 importance sampling，而现代方法多使用 Q critic 绕开这个步骤. actor 的优化目标直接改为使得 Q(s, actor(s)) 最大化.
 
 ```python
 replay_buffer.add(s, a, r, s2, done)          # 数据可能来自旧 policy
@@ -42,5 +44,3 @@ critic_optim.zero_grad()
 actor_loss.backward(); critic_loss.backward()
 actor_optim.step(); critic_optim.step()
 ```
-
-如果 off-policy 沿用上面 on-policy 的 advantage-based，则采样的 a 的分布不再满足推导式 $nabla_theta J(theta)$ 的要求，梯度有偏，训练崩溃，从而必须使用 importance sampling，而现代方法多使用 Q critic 绕开这个步骤.
