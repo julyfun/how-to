@@ -13,7 +13,7 @@ td_target = rewards + gamma * V_phi(next_states) * (1 - dones)
 td_delta  = td_target - V_phi(states) # 这里减去 V_phi 只是为了降低方差（不改变期望）
 log_probs = log(pi_theta(states)[actions])
 actor_loss  = mean(-log_probs * detach(td_delta))
-# 这里 td_target 其实在拟合更新前的 actor value，不过问题不大
+# 这里 critic 其实在拟合更新前的 actor value，不过问题不大
 critic_loss = mse(V_phi(states), detach(td_target))
 actor_optim.zero_grad()
 critic_optim.zero_grad()
