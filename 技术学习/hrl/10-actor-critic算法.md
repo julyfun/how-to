@@ -5,6 +5,10 @@ tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
 see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
 
+普通 Policy Gradient 通常使用蒙特卡洛求一整条轨迹的 `G_t`，方差大且要求完整轨迹.
+
+引入 critic 可以用 TD 估计优势，边采样边更新而且方差更低，但会因为 critic 的网络参数引入一点 bias.
+
 ## On-policy Actor-Critic
 
 训练 critic 来估计后续收益.
@@ -30,13 +34,14 @@ actor_optim.step(); critic_optim.step()
 
 在 replay buffer 中采样 (s, a)。然而，采样后不可再沿用上面 on-policy 的 advantage-based.
 1. critic 的 loss 是错误的. 比如，采样得到的 (s, a) 都特别笨，导致奖励 r(s, a) 都很糟糕，而 critic 却拟合了这些.
-2. actor 的梯度也是错误的，具体原因要看 actor 的梯度公式推导. 从而必须使用 importance sampling，而现代方法多使用 Q critic 绕开这个步骤. actor 的优化目标直接改为使得 Q(s, actor(s)) 最大化，如下（以下不是 DDPG，DDPG 基于 DQN）:
+2. actor 的梯度也是错误的，具体原因要看 actor 的梯度公式推导. 从而必须使用 importance sampling，当然我们也可以使用 Q critic 绕开这个步骤. actor 的优化目标直接改为使得 Q(s, actor(s)) 最大化，如下（以下不是 DDPG，DDPG 基于 DQN）:
 
 ```python
 replay_buffer.add(s, a, r, s2, done)          # 数据可能来自旧 policy
 states, actions, rewards, next_states, dones = replay.sample()
 next_actions = pi_theta(next_states)           # 当前 actor 给下一动作
 td_target = rewards + gamma * Q_phi(next_states, next_actions) * (1-dones)
+
 critic_loss = mse(Q_phi(states, actions), detach(td_target))
 freeze(Q_phi)
 actor_loss  = -mean(Q_phi(states, pi_theta(states)))
