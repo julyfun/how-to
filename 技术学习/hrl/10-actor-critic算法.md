@@ -15,7 +15,8 @@ td_target = rewards + gamma * V_phi(next_states) * (1 - dones)
 td_delta  = td_target - V_phi(states) # 这里减去 V_phi 只是为了降低方差（不改变期望）。这就是优势函数 A.
 log_probs = log(pi_theta(states)[actions]) # 这里 action 必须是离散的.
 actor_loss  = mean(-log_probs * detach(td_delta))
-# 这里 critic 其实拟合的 td_target 和 states 都来自更新前的 actor，不过问题不大
+# critic 数学上含义是 V(s) = E_(pi_theta) (G_t | S_t = s),
+# 但这里 critic 其实拟合的 td_target 来自更新前的 pi_theta，怎么回事？问题不大.
 critic_loss = mse(V_phi(states), detach(td_target))
 actor_optim.zero_grad()
 critic_optim.zero_grad()
