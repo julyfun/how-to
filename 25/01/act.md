@@ -58,8 +58,9 @@ where latent: (b, 512)
 
 ## 其他
 - is_pad 是什么：考虑到有些采样动作长度不足 chunk_size，其对应位置 is_pad 为 true 且 input 由复制产生且不会被注意（已验证）
-- query_embed 是什么：形状是 [50, 8, 512], 是固定长度 (`num_queries`) 的学习参数，代表 `num_queries`个“查询槽位”，每个槽位询问一个动作。
+- decoder_pos_embed 是什么：形状是 [50, 8, 512], 是固定长度 (`num_queries`) 的学习参数，代表 `num_queries`个“查询槽位”，每个槽位询问一个动作。
 
+## Train
 ```mermaid
 flowchart TD
     qpos(["qpos<br/>(B=8, state_dim=14)"]) --> qemb[["qpos Embedding / proj<br/>14 -> D=512"]]
@@ -86,7 +87,7 @@ flowchart TD
     pos --> src
 
     src --> venc[["Transformer Encoder<br/>vision + state + latent"]]
-    query[["query_embed<br/>num_queries=50, D=512"]] --> tgt(["Decoder tgt zeros<br/>(50, B=8, D=512)"])
+    query[["decoder_pos_embed<br/>num_queries=50, D=512"]] --> tgt(["Decoder tgt zeros<br/>(50, B=8, D=512)"])
     tgt --> dec[["Transformer Decoder<br/>cross-attn to memory"]]
     query --> dec
     venc --> mem(["memory<br/>(902, B=8, D=512)"])
@@ -108,6 +109,7 @@ flowchart TD
     padloss --> total
 ```
 
+## Infer
 ```mermaid
 flowchart TD
     qpos(["qpos<br/>(B=8, state_dim=14)"]) --> stateproj[["input_proj_robot_state<br/>14 -> 512"]]
@@ -126,7 +128,7 @@ flowchart TD
     src --> enc[["Transformer Encoder<br/>vision + state"]]
     enc --> mem(["memory<br/>(902, B=8, D=512)"])
 
-    query[["query_embed<br/>num_queries=50, D=512"]] --> tgt(["Decoder tgt zeros<br/>(50, B=8, D=512)"])
+    query[["decoder_pos_embed<br/>num_queries=50, D=512"]] --> tgt(["Decoder tgt zeros<br/>(50, B=8, D=512)"])
     tgt --> dec[["Transformer Decoder<br/>cross-attn to memory"]]
     query --> dec
     mem --> dec
@@ -137,4 +139,32 @@ flowchart TD
     ahead --> ahat(["Pred Action Chunk<br/>(B=8, horizon=50, action_dim=14)"])
     phead --> phat(["Pred is_pad<br/>(B=8, 50, 1)"])
     ahat --> exec["Execute / temporal aggregation<br/>next action(s)"]
+```
+
+## 其中 decoder QKV
+```mermaid
+flowchart TD
+    tgt(["Decoder tgt zeros<br/>(T=50, B=8, D=512)"]) --> dec[["Transformer DecoderLayer"]]
+    query[["decoder_pos_embed<br/>(T=50, 1, D=512)"]] --> selfqk["add decoder_pos_embed"]
+    tgt --> selfqk
+    selfqk --> selfq(["Self-attn Q/K<br/>(50, B=8, 512)"])
+    tgt --> selfv(["Self-attn V<br/>(50, B=8, 512)"])
+    selfq --> selfattn[["self_attn"]]
+    selfv --> selfattn
+    selfattn --> x1(["Decoder hidden<br/>(50, B=8, 512)"])
+
+    x1 --> crossqadd["add decoder_pos_embed"]
+    query --> crossqadd
+    crossqadd --> crossq(["Cross-attn Q<br/>(50, B=8, 512)"])
+
+    mem(["memory<br/>encoder_out<br/>(S=902, B=8, D=512)"]) --> crosskadd["add pos"]
+    pos(["pos<br/>encoder_pos_embed<br/>(S=902, B=8, D=512)"]) --> crosskadd
+    crosskadd --> crossk(["Cross-attn K<br/>(902, B=8, 512)"])
+    mem --> crossv(["Cross-attn V<br/>(902, B=8, 512)"])
+
+    crossq --> crossattn[["multihead_attn<br/>cross-attn"]]
+    crossk --> crossattn
+    crossv --> crossattn
+    crossattn --> ff[["MLP<br/>512 -> feedforward -> 512"]]
+    ff --> out(["decoder_out<br/>(50, B=8, D=512)"])
 ```
