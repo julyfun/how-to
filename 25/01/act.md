@@ -47,8 +47,8 @@ model = DETRVAE(
 │ encoder │ │         │ │Transf.│             │
 │         │ │         │ │encoder│             │
 └───▲─────┘ latent    │ │       │             │
-    │   (sample during│ └▲──▲─▲─┘             │
-    │    inference)   │  │  │ │               │
+    │       │         │ └▲──▲─▲─┘             │
+    │       │         │  │  │ │               │
   inputs    └─────────┼──┘  │ image emb.(use resnet backbone)
     │                 │   qpos emb.(No action emb.)
 action&qpos emb.      └───────────────────────┘
@@ -144,8 +144,8 @@ flowchart TD
 ## 其中 decoder QKV
 ```mermaid
 flowchart TD
-    tgt(["Decoder tgt zeros<br/>(T=50, B=8, D=512)"]) --> dec[["Transformer DecoderLayer"]]
-    query[["decoder_pos_embed<br/>(T=50, 1, D=512)"]] --> selfqk["add decoder_pos_embed"]
+    tgt(["Decoder tgt zeros<br/>(T=50, B=8, D=512)"])
+    query[["query_embed<br/>decoder_pos_embed<br/>(T=50, 1, D=512)"]] --> selfqk["+"]
     tgt --> selfqk
     selfqk --> selfq(["Self-attn Q/K<br/>(50, B=8, 512)"])
     tgt --> selfv(["Self-attn V<br/>(50, B=8, 512)"])
@@ -153,12 +153,12 @@ flowchart TD
     selfv --> selfattn
     selfattn --> x1(["Decoder hidden<br/>(50, B=8, 512)"])
 
-    x1 --> crossqadd["add decoder_pos_embed"]
+    x1 --> crossqadd["+"]
     query --> crossqadd
     crossqadd --> crossq(["Cross-attn Q<br/>(50, B=8, 512)"])
 
-    mem(["memory<br/>encoder_out<br/>(S=902, B=8, D=512)"]) --> crosskadd["add pos"]
-    pos(["pos<br/>encoder_pos_embed<br/>(S=902, B=8, D=512)"]) --> crosskadd
+    mem(["memory<br/>(encoder_out)<br/>(S=902, B=8, D=512)"]) --> crosskadd["+"]
+    pos(["encoder_pos_embed<br/>(S=902, B=8, D=512)"]) --> crosskadd
     crosskadd --> crossk(["Cross-attn K<br/>(902, B=8, 512)"])
     mem --> crossv(["Cross-attn V<br/>(902, B=8, 512)"])
 
