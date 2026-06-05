@@ -77,7 +77,7 @@ action_embed.shape
 torch.Size([8, 50, 512])
 ```
 
-- Transf:
+- 图中 Transf:
 ```python
 features[0].shape
 torch.Size([8, 512, 15, 20]) # 图像原尺寸 480*640，这边15x20就是resnet下采样
