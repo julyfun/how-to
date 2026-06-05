@@ -191,7 +191,12 @@ flowchart TD
     vt --> loss
 ```
 
-一个 layer:
+流程图要点：
+- 可训练模型用 `node[[]]`，其他数据用 `node[]`
+- 文字简洁，用 `<br>` 换行，数据带上形状以及最默认配置的具体数值, e.g. (B, seq_len=50, D=1024)
+-
+
+其中一个 layer:
 
 ```python
 obs = norm_obs(obs0) # (B, Lo, 2048)
