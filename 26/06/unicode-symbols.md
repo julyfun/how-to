@@ -9,16 +9,16 @@ confidence: 2
 ---
 
 ```
-α, alpha
-β, beta
-Γ γ, gamma
-Δ δ, delta
-ε, epsilon
-Θ θ, theta
-Π π, Pi
-τ, tau
-Φ φ, phi
-μ, mu
-Ω ω, Omega
+α | alpha
+β | beta
+Γ γ | gamma
+Δ δ | delta
+ε | epsilon
+Θ θ | theta
+Π π | Pi
+τ | tau
+Φ φ | phi
+μ | mu
+Ω ω | Omega
 ```
 
