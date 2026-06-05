@@ -3,8 +3,7 @@ title: 6-Dyna-Q-算法
 date: 2024-11-08 22:28:28
 tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
-- 在 Q-learning 之上自己再学个超级简单的环境，每次 Q-learning 完之后再根据这个环境去随机更新 $N$ 个.
-    - 十分朴素的想法。
+- 在 Q-learning 之上自己再学个简单的环境模型 `M: (s, a) -> (r, s') 在样例中不是概率模型而是单纯记录出现过的转移`，每次 Q-learning 完之后再根据这个环境模型更新 $N$ 次.
 
 ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241108222049.webp)
 
@@ -20,7 +19,7 @@ class DynaQ:
         self.q_learning(s0, a0, r, s1)
         self.model[(s0, a0)] = r, s1  # 将数据添加到模型中
         for _ in range(self.n_planning):  # Q-planning循环
-            # 随机选择曾经遇到过的状态动作对
+            # 随机选择曾经遇到过的状态动作对. 这不等于 replay buffer 吗.
             (s, a), (r, s_) = random.choice(list(self.model.items()))
             self.q_learning(s, a, r, s_)
 ```
