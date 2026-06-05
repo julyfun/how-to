@@ -32,15 +32,15 @@ actor_optim.step(); critic_optim.step()
 
 ## Off-policy Actor-Critic
 
-在 replay buffer 中采样 (s, a)。然而，采样后不可再沿用上面 on-policy 的 advantage-based.
+考虑在 replay buffer 中采样 (s, a)。然而，采样后不可再沿用上面 on-policy 的 advantage-based.
 1. critic 的 loss 是错误的. 比如，采样得到的 (s, a) 都特别笨，导致奖励 r(s, a) 都很糟糕，而 critic 却拟合了这些.
 2. actor 的梯度也是错误的，具体原因要看 actor 的梯度公式推导. 从而必须使用 importance sampling（如 PPO），当然我们也可以使用 Q critic 绕开这个步骤. actor 的优化目标直接改为使得 Q(s, actor(s)) 最大化，如下:
 - 以下方法拆分 target network 和 online network 就是 DDPG 了.
 - 以下方法的 actor 直接输出最优解而不是概率，因而适用于连续动作.
 
 ```python
-replay_buffer.add(s, a, r, s2, done)          # 数据可能来自旧 policy
-states, actions, rewards, next_states, dones = replay.sample()
+replay_buffer.add(s, a, r, s2, done)
+states, actions, rewards, next_states, dones = replay.sample() # 数据可能来自旧 policy
 next_actions = pi_theta(next_states)           # 当前 actor 给下一动作
 td_target = rewards + gamma * Q_phi(next_states, next_actions) * (1-dones)
 
