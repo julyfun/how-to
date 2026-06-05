@@ -4,7 +4,7 @@ date: 2024-11-08 22:28:28
 tags: ["notes", "julyfun", "技术学习", "hrl"]
 ---
 - 在 Q-learning 之上自己再学个超级简单的环境，每次 Q-learning 完之后再根据这个环境去随机更新 $N$ 个.
-    - 什么超绝朴素想法。
+    - 十分朴素的想法。
 
 ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241108222049.webp)
 
