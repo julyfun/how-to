@@ -8,7 +8,6 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-(RoboTwin 2.0 03a1a55 & lerobot)
 ```python
 [class ACTPolicy(nn.Module).__call__(self, qpos, image, actions=None, is_pad=None)]
 - qpos: 8, 14
@@ -16,23 +15,11 @@ confidence: 2
 - actions: 8, 125, 14 # wtf is 125?
 ```
 
-## 这里整个 act 类型叫做 DETRVAE:
-```python
-model = DETRVAE(
-    backbones,
-    transformer,
-    encoder,
-    state_dim=state_dim,
-    num_queries=args.chunk_size,
-    camera_names=args.camera_names,
-)
-```
-
 ## General
 
 ```
                        Transformer
-                       推理时不适用 VAE.
+                       推理时不使用 VAE.
                        (acts as VAE decoder
                         during training)
                       ┌───────────────────────┐
