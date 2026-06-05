@@ -20,7 +20,7 @@ td_delta  = td_target - V_phi(states) # 这里减去 V_phi 只是为了降低方
 log_probs = log(pi_theta(states)[actions]) # 这里 action 必须是离散的.
 actor_loss  = mean(-log_probs * detach(td_delta))
 # critic 数学上含义是 V(s) = E_(pi_theta) (G_t | S_t = s),
-# 但这里 critic 其实拟合的 td_target 来自更新前的 pi_theta，怎么回事？问题不大.
+# 但这里 critic 其实拟合的 td_target 来自更新前的 pi_theta，怎么回事？285 表示问题不大.
 critic_loss = mse(V_phi(states), detach(td_target))
 actor_optim.zero_grad()
 critic_optim.zero_grad()
@@ -34,7 +34,7 @@ actor_optim.step(); critic_optim.step()
 
 在 replay buffer 中采样 (s, a)。然而，采样后不可再沿用上面 on-policy 的 advantage-based.
 1. critic 的 loss 是错误的. 比如，采样得到的 (s, a) 都特别笨，导致奖励 r(s, a) 都很糟糕，而 critic 却拟合了这些.
-2. actor 的梯度也是错误的，具体原因要看 actor 的梯度公式推导. 从而必须使用 importance sampling，当然我们也可以使用 Q critic 绕开这个步骤. actor 的优化目标直接改为使得 Q(s, actor(s)) 最大化，如下:
+2. actor 的梯度也是错误的，具体原因要看 actor 的梯度公式推导. 从而必须使用 importance sampling（如 PPO），当然我们也可以使用 Q critic 绕开这个步骤. actor 的优化目标直接改为使得 Q(s, actor(s)) 最大化，如下:
 - 以下方法拆分 target network 和 online network 就是 DDPG 了.
 - 以下方法的 actor 直接输出最优解而不是概率，因而适用于连续动作.
 
