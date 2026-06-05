@@ -35,7 +35,7 @@ model = DETRVAE(
 
 ```
                        Transformer
-                       Used alone for inference # 推理时仅使用 Transformer
+                       推理时不适用 VAE.
                        (acts as VAE decoder
                         during training)
                       ┌───────────────────────┐
@@ -217,3 +217,51 @@ torch.Size([50, 8, 512])
 ## 杂项
 is_pad?
 - 应该就是考虑到有些采样动作长度不足 chunk_size，其对应位置 is_pad 为 true 且 input 由复制产生且不会被注意（已验证）
+
+```mermaid
+flowchart TD
+    qpos(["qpos<br/>(B=8, state_dim=14)"]) --> qemb[["qpos Embedding / proj<br/>14 -> D=512"]]
+    action["GT Actions<br/>(B=8, chunk_size=50, action_dim=14)"] --> aemb[["action Embedding<br/>14 -> D=512"]]
+    cls["CLS token<br/>(B=8, 1, D=512)"] --> encin["VAE tokens<br/>(seq_len=52, B=8, D=512)"]
+    qemb --> encin
+    aemb --> encin
+    encin --> vae[["VAE Transformer Encoder<br/>ACTEncoder"]]
+    vae --> dist[["latent proj MLP<br/>mu, logvar"]]
+    dist --> z["sample latent z<br/>(B=8, latent_dim=512)"]
+    dist --> kl["KL Loss"]
+
+    img["Images<br/>(B=8, n_cam=3, C=3, H=480, W=640)"] --> norm["Image Normalize<br/>ImageNet mean/std"]
+    norm --> backbone[["ResNet Backbone<br/>feature D=512"]]
+    backbone --> feat["Image Features<br/>(B=8, D=512, H=15, W=60)<br/>900 tokens"]
+    feat --> pos["2D pos Embedding<br/>(900, B=8, D=512)"]
+
+    z --> zproj[["latent_input_proj<br/>512 -> 512"]]
+    qpos --> stateproj[["input_proj_robot_state<br/>14 -> 512"]]
+    zproj --> addtok["Extra Tokens<br/>(2, B=8, D=512)<br/>latent + qpos"]
+    stateproj --> addtok
+    feat --> src["Encoder src<br/>(seq_len=902, B=8, D=512)"]
+    addtok --> src
+    pos --> src
+
+    src --> venc[["Transformer Encoder<br/>vision + state + latent"]]
+    query[["query_embed<br/>num_queries=50, D=512"]] --> tgt["Decoder tgt zeros<br/>(50, B=8, D=512)"]
+    tgt --> dec[["Transformer Decoder<br/>cross-attn to memory"]]
+    query --> dec
+    venc --> mem["memory<br/>(902, B=8, D=512)"]
+    mem --> dec
+    dec --> hs["Action Tokens<br/>(B=8, 50, D=512)"]
+
+    hs --> ahead[["action_head / proj<br/>512 -> 14"]]
+    hs --> phead[["is_pad_head / proj<br/>512 -> 1"]]
+    ahead --> ahat["Pred Actions<br/>(B=8, 50, 14)"]
+    phead --> phat["Pred is_pad<br/>(B=8, 50, 1)"]
+
+    action --> recon["Masked L1 Loss"]
+    ispad["is_pad mask<br/>(B=8, 50)"] --> recon
+    ahat --> recon
+    phat --> padloss["Pad / auxiliary loss"]
+    ispad --> padloss
+    recon --> total["Total Loss<br/>L1 + kl_weight * KL"]
+    kl --> total
+    padloss --> total
+```

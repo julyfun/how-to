@@ -13,7 +13,7 @@ confidence: 2
 | ----------------- | ------- | ------------------------ |
 | `A[text]`         | 矩形      | 普通步骤                     |
 | `A(round)`        | 圆角矩形    | 一般 process               |
-| `A([stadium])`    | 体育场形    | 起止/特殊状态                  |
+| `A([stadium])`    | capsule 形    | 起止/特殊状态                  |
 | `A[[subroutine]]` | 双边矩形    | 子过程、模块（你那个 `vlm[[vlm]]`） |
 | `A[(db)]`         | 圆柱      | 数据库                      |
 | `A((circle))`     | 圆形      | connector / state        |
