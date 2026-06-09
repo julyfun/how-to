@@ -227,6 +227,8 @@ flowchart TD
 ## cosmos-policy
 - https://hjfy.top/arxiv/2601.16163
 
+一句话：使用 video model 直接
+
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
 ## WorldVLA
