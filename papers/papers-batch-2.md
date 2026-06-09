@@ -242,6 +242,10 @@ flowchart TD
 ## VLA-JEPA
 - https://hjfy.top/arxiv/2602.10098
 
+## dit4dit yy硕推荐
+
+## Latent Policy Steering 光流
+
 关于 latent-action pretraining drifting 的问题值得看看.
 
 ## End-to-end training of deep visuomotor policies 四大神仙
