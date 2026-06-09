@@ -238,6 +238,7 @@ flowchart TD
 ## SimpleVLA
 
 ## Wall-WM
+- https://arxiv.org/abs/2606.01955
 
 ## Forcy policy
 
