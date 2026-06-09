@@ -224,7 +224,7 @@ flowchart TD
 
 具体而言，下一时刻的潜在观测是通过训练的动力学模型 `d(z_t, a_(t, chunk)) -> z_(t + tp)` 得到的，该模型的训练数据来自专家轨迹 + 早期 ckpt 的 rollout 轨迹，在 infer-time 冻结。而 guidance 要求 `d` 的参与，而前几个去噪步让 `d` 难以预测，因此文章在 100 步去噪的最后 10 步才执行 guidance.
 
-## cosmos-policy
+## cosmos-policy (19)
 - https://hjfy.top/arxiv/2601.16163
 
 一句话：使用 video model 直接预测 proprio token, action token 和 value token，这三者是 minmax 然后直接被广播到 CxHxW 的 image token 形状, 还支持预测 `V(s)` 从而实现从 rollout 数据中学习以及 model-based planning (1 action -> 3 states -> 15 Q(s, a)). demo: picknplace, 叠衣服, 拉拉链.
@@ -253,9 +253,11 @@ flowchart TD
 
 ## Latent Policy Steering 光流
 
-关于 latent-action pretraining drifting 的问题值得看看.
+## LAPA
 
 ## End-to-end training of deep visuomotor policies 四大神仙
+
+关于 latent-action pretraining drifting 的问题值得看看.
 
 https://yipko.com/posts/work/pi0.7/
 
