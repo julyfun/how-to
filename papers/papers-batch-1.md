@@ -30,6 +30,8 @@ TODO: 数据集这一块儿有空可以再看看.
 >
 > action loss: 让 action expert 学会从这个 z0 表征里采样动作
 
+所谓双 DiT，其实就是 MoT，即 video DiT 和 action DiT 在每个 transformer layer 通过 self-attention 双向注意.
+
 ```mermaid
 flowchart TD
     video["Training Video<br/>(B, 3, T=33, H=224, W=448)"] --> vae["Wan VAE Encode"]
