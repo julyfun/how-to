@@ -229,6 +229,8 @@ flowchart TD
 
 一句话：使用 video model 直接预测 proprio token, action token 和 value token，这三者是 minmax 然后直接被广播到 CxHxW 的 image token 形状, 还支持预测 `V(s)` 从而实现从 rollout 数据中学习以及 model-based planning (1 action -> 3 states -> 15 Q(s, a)). demo: picknplace, 叠衣服, 拉拉链.
 
+注意下图中，设 action chunk len = K，状态 s 所在时间为 t，则 s' 所在时间是 t + K (即这一整个 action chunk 执行完毕以后). 一个 action chunk `(chunk_size, action_dim)` 对应一个 latent frame.
+
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260609095214986.png)
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
