@@ -224,6 +224,8 @@ flowchart TD
 
 具体而言，下一时刻的潜在观测是通过训练的动力学模型 `d(z_t, a_(t, chunk)) -> z_(t + tp)` 得到的，该模型的训练数据来自专家轨迹 + 早期 ckpt 的 rollout 轨迹，在 infer-time 冻结。而 guidance 要求 `d` 的参与，而前几个去噪步让 `d` 难以预测，因此文章在 100 步去噪的最后 10 步才执行 guidance.
 
+## cosmos-policy
+
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
 ## WorldVLA
@@ -231,8 +233,6 @@ flowchart TD
 ## SimpleVLA
 
 ## Wall-WM
-
-## cosmos-policy
 
 ## Forcy policy
 
