@@ -18,7 +18,9 @@ demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260611232213721.png)
 
 ## EgoScale (22)
-- ⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.16710 | https://research.nvidia.com/labs/gear/egoscale/ | NVIDIA | Ruijie Zhang + Linxin Fan
+- ⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.16710 : https://www.alphaxiv.org/abs/2602.16710 | https://research.nvidia.com/labs/gear/egoscale/ | NVIDIA | Ruijie Zhang + Linxin Fan
+
+这个 demo 比较精彩，用 sharpa hand 实现了使用电动螺丝刀、试管吸液和双指拧瓶盖.
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
@@ -29,6 +31,7 @@ demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录
 ## Forcy policy
 
 ## LIFT
+- yi wang
 
 ## VLA-JEPA
 - https://hjfy.top/arxiv/2602.10098
