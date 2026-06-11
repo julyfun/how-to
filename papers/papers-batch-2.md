@@ -236,7 +236,8 @@ action token 和 value token，这三者是 minmax 然后直接被广播到 CxHx
 ## Wall-WM (20)
 - https://arxiv.org/abs/2606.01955
 
-wall-wm 用 event-chunk 替代了 time-chunk，并且提出了一种 infer-time 并行解码方式。文章非常长，解释了很多架构设计细节。然而，demo 只展示了泛化的 picknplace.
+wall-wm 用 event-chunk 替代了 time-chunk，并且提出了一种 infer-time 分层加速解码方式。文章非常长，解释了很多架构设计细节。然而，demo 只展示了泛化的 picknplace. 一些设计细节包括：
+- 多相机 attn mask 做了几何约束.
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
