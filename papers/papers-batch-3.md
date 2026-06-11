@@ -8,6 +8,9 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## DreamZero: agibot + NVIDIA | Seonghyeon Ye + Joel Jang
+- https://hjfy.top/arxiv/2602.15922
+
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
 ## WorldVLA
