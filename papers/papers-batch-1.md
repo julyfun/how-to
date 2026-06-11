@@ -72,43 +72,45 @@ flowchart TD
 ## Lingbot-va (4)
 - https://hjfy.top/arxiv/2601.21998
 
-lingbot-va 的自回归扩散方法为：diffusion
+lingbot-va 的自回归扩散方法为：diffusion 后对 clean token 计算 kv 存入 kv cache，此后 diffusion 将会 attend 之前的 kv. 而 diffusion 顺序为 video 2 帧 -> action 2x16 帧 -> video 2 帧 -> action 2x16 帧...
 
 ```python
 obs0 -> VAE -> z0
 
 infer #1 (frame_st_id=0):
-  1) flow denoise video chunk [z0_anchor, z1_hat]   # 2帧
-     - 第0帧 init_latent=z0
-     - 第1帧才是预测的未来 latent
-  2) flow denoise action chunk [a_grp0(16步), a_grp1(16步)]  # 1 chunk = 2 group(对齐 2 video frame) = 32 steps
-     - 条件：cache(空) + 刚预测的 video chunk
+1) flow denoise video chunk [z0_anchor, z1_hat]   # 2帧
+   - 第0帧 init_latent=z0
+   - 第1帧才是预测的未来 latent
+2) flow denoise action chunk [a_grp0(16步), a_grp1(16步)]  # 1 chunk = 2 group(对齐 2 video frame) = 32 steps
+   - 条件：cache(空) + 刚预测的 video chunk
 
 execute #1（第一轮特殊）:
-  start_idx=1 -> 跳过 a_grp0，只执行 a_grp1 的 16 步
-  每 4 步收一次 obs -> key_frame_list（约 4 个真实 obs）
+    start_idx=1 -> 跳过 a_grp0，只执行 a_grp1 的 16 步
+    每 4 步收一次 obs -> key_frame_list（约 4 个真实 obs）
 
 compute_kv_cache #1:
-  clear_pred_cache()          # 删掉 z_hat、a_hat，不是“替换某几帧”
-  real_z = VAE(key_frame_list)
-  若 frame_st_id==0: cat(init_latent=z0, real_z)
-  real_a = preprocess(executed action chunk)
-  写入 cache（is_pred=False）
+    clear_pred_cache()          # 删掉 z_hat、a_hat，不是“替换某几帧”
+    real_z = VAE(key_frame_list)
+    若 frame_st_id==0: cat(init_latent=z0, real_z)
+    real_a = preprocess(executed action chunk)
+    写入 cache（is_pred=False）
+
 ---
+
 infer #2:
-  预测下一个 chunk [z2_hat, z3_hat] + [a_grp2, a_grp3]
-  条件：cache 里的 real history
+    预测下一个 chunk [z2_hat, z3_hat] + [a_grp2, a_grp3]
+    条件：cache 里的 real history
 
 execute #2 起:
-  start_idx=0 -> 执行完整 32 步
+    start_idx=0 -> 执行完整 32 步
+    每 4 步收 obs -> key_frame_list（约 8 个）
 
-  每 4 步收 obs -> key_frame_list（约 8 个）
 compute_kv_cache #2:
-  再次 clear_pred_cache()
-  追加新的 real_z / real_a
+    再次 clear_pred_cache()
+    追加新的 real_z / real_a
 ```
 
-### Denoise video
+### Infer-time denoise video
 ```mermaid
 flowchart TD
     cache["模块外 KV Cache<br/>来自 compute_kv_cache #1<br/>real history only: z/a KV<br/>capacity per block: [B_eff=2, 9792, 24, 128]<br/>这里 eff=2 是 CFG 用的"] -.-> attn
