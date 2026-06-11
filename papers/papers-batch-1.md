@@ -224,7 +224,8 @@ obs1 = gated_residual(obs0, obs_y)                              # (B, Lo, 2048)
 act1 = gated_residual(act0, act_y)                              # (B, La, 1024)
 ```
 
-下面是 pi0.5
+下面是 pi0.5. 一句话：对 state 进行 bin 离散并以文本丢进 VLM。flow step 使用 adaRMSNorm.
+- 在 pi0 中，state 是 linear 进 action expert，flow step 则 MLP 直接加到 action tokens 上.
 
 ```mermaid
 flowchart TD
