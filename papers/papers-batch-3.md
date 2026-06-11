@@ -8,10 +8,17 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## DreamZero: agibot + NVIDIA | Seonghyeon Ye + Joel Jang
-- https://hjfy.top/arxiv/2602.15922
+## DreamZero (21)
+- https://hjfy.top/arxiv/2602.15922 | agibot + NVIDIA | Seonghyeon Ye + Joel Jang
+
+与 cosmos policy 稍有不同, video backbone (Wan2.1，冻结) 用作编码器而单一 DiT（可学习）从 noise 中解码出 flow v. DiT 利用 kv cache 实现了历史观测.
+
+附录中有 train-infer 的 attn mask 设计等不错的资料.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260611232213721.png)
+
+## EgoScale (22)
+- ⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.16710 | NVIDIA | Ruijie Zhang + Linxin Fan
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
