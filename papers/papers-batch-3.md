@@ -24,6 +24,9 @@ demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录
 
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
+## Motus: A Unified Latent Action World Model
+- tri-mot (VLM 用于理解指令 + video gen model + action expert)
+
 ## WorldVLA
 
 ## SimpleVLA
