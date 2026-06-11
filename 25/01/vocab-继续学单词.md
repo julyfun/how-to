@@ -8,9 +8,21 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-规则 : 每天 1-12 个单词，每行为 `<序号>. <单词> : <词性>.<释义> : <音标> 例句` 刚好两个冒号. 部分老单词可能不符合，不用管.
+浏览下面单词列表，在 @vocab-继续学单词.md 最近一个日期前面添加今日日期和列表中最新的 1-12 个单词，以前出现在 md 的单词不可添加. 规则 : 每行为 `<序号>. <单词(多音节用'标记重音)> : <词性>.<释义> : <音标> 例句` 刚好两个冒号. 部分老单词可能不符合，不用管.
 
-induced by the
+## 6/11
+1. harness : n.马具；背带；挽具；日常工作 v.治理，利用；驾驭 : /ˈhɑːrnɪs/ The new system will harness solar energy efficiently.
+2. proximal : adj.近端的；近源的；（牙齿）近侧的 : /ˈprɑːksɪməl/ The nerve damage occurred in the proximal segment of the limb.
+3. notional : adj.概念上的；抽象的；想象的 : /ˈnoʊʃənl/ The budget is based on notional figures rather than real costs.
+4. adver'sarial : adj.对抗的；对手的，敌手的 : /ˌædvərˈseriəl/ The two teams adopted an adversarial stance during negotiations.
+5. iso'lation : n.隔离；孤立；绝缘 : /ˌaɪsəˈleɪʃn/ The patient was kept in isolation to prevent infection.
+6. denote : vt.表示，指示 : /dɪˈnoʊt/ A red flag is used to denote danger ahead.
+7. 'semaphore : n.信号标，旗语；臂板信号装置 v.打旗语，发信号 : /ˈseməfɔːr/ The sailor used semaphore to send a message to the ship.
+8. gutter : n.排水沟；槽；贫民区 vi.流；形成沟 vt.弄熄 adj.粗俗的 : /ˈɡʌtər/ Leaves blocked the gutter after the storm.
+9. in'herently : adv.内在地；固有地；天性地 : /ɪnˈhɪrəntli/ The process is inherently risky without proper safeguards.
+10. hie'rarchical : adj.分层的；等级体系的 : /ˌhaɪəˈrɑːrkɪkl/ The company has a strict hierarchical structure.
+11. torque : n.转矩；扭矩 v.施加转矩 : /tɔːrk/ The engine produces high torque at low speed.
+12. wrench : n.扳手；扭伤；痛苦 vt.扭伤；猛扭；曲解 : /rentʃ/ He used a wrench to tighten the bolt.
 
 ## 5/27
 1. outage : n.断供期；设备停开期 : /ˈaʊtɪdʒ/ The power outage lasted for several hours.
