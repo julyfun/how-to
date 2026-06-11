@@ -8,8 +8,6 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## TinyVLA
-
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
 ## WorldVLA

@@ -240,3 +240,31 @@ wall-wm train-time 用 event-chunk 替代了 time-chunk，并且提出了一种 
 - 多相机 attn mask 做了几何约束.
 - 每 transformer layer 都有 action token 到 state token 的单独 crossattn，不会因为 pi 那样完全 self attn 稀释注意力到 video token.
 - 用 vlm 决定事件对应的 event-chunk 长度 n，然后对 `(n + 1) * K_p`(每个 video latent 对应 K_p 个 action token) 个带位置编码的噪声去噪.
+
+```mermaid
+flowchart TD
+    cap(["事件描述 ℓ_i<br>(event 模式, 变长)"]) --> t5[["T5 文本编码"]]
+    instr(["全局指令 + 历史<br>(unified 模式)"]) --> qwen[["Qwen3.5-9B VLM 🧊"]]
+    qwen --> stair[["🟢创新: Staircase 解码器<br>中间层后并行一次性出<br>几个思考向量, 不逐字生成"]]
+    t5 --> cond(["文本条件 c_ℓ"])
+    stair --> cond
+
+    %% ---------- 视频塔 ----------
+    v0(["当前多视角观测 V0<br>(B, n_cam=3, H, W, 3)"]) --> vdit
+    cond --> vdit
+    vdit[["🟢创新: 多视角 Video DiT 🧊<br>跨相机注意力 + Camera RoPE<br>+ Sight-Cone 只看共视区域<br>(动作训练阶段冻结)"]]
+    vdit --> vfeat(["逐层视频特征 h^v"])
+    vdit --> vloss["视频 Flow-Matching Loss"]
+
+    %% ---------- 动作塔 ----------
+    state(["机器人状态 s"]) --> ea
+    nact(["噪声动作 a_t<br>(B, K_p·(1+n) 变长, act_dim)"]) --> ea[["MLP 编码 E_a"]]
+    ea --> adit[["动作 DiT (与视频塔同深度)"]]
+    cond --> adit
+
+    vfeat -. "🟢创新: 单向耦合<br>每层 q=动作 / k,v=视频特征" .-> adit
+    state -. "🟢创新: 每层专门 cross-attn 读状态<br>不被海量视频 token 淹没" .-> adit
+
+    adit --> vt(["预测 v_t<br>(B, K_p·(1+n), act_dim)"])
+    vt --> aloss["动作 Flow-Matching Loss"]
+```
