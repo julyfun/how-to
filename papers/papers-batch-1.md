@@ -72,7 +72,7 @@ flowchart TD
 ## Lingbot-va (4)
 - https://hjfy.top/arxiv/2601.21998
 
-lingbot-va 的自回归扩散方法为：diffusion 后对 clean token 计算 kv 存入 kv cache，此后 diffusion 将会 attend 之前的 kv. 而 diffusion 顺序为 video 2 帧 -> action 2x16 帧 -> video 2 帧 -> action 2x16 帧...
+lingbot-va 的自回归扩散方法为：diffusion 后对 clean token 计算 kv 存入 kv cache，此后 diffusion 将会 attend 之前的 kv. 而 diffusion 顺序为 video 2 帧 -> action 2x16 帧（这部分相当于 IDM） -> video 2 帧 -> action 2x16 帧...
 
 ```python
 obs0 -> VAE -> z0
