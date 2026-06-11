@@ -19,14 +19,14 @@ confidence: 2
 - `ctrl-d`: 向下移动半页 🔥
 - `ctrl-u`: 向上移动半页 🔥
 - `gg`: 文件开头
-- `G`: 文件结尾 🔥
+- `G`: 文件结尾
 - `ggyG, ggvG, ggdG`: 复制全文，选中全文，删除全文
 - `100gg`: 跳转到第 100 行（根据报错信息快速定位很好用）
 - `/` 后输入单词片段：用于跳转，`n` 跳转到下一个，`N` 跳转到上一个 🔥
 - `*`: 跳转到下一个与光标处相同的单词 🔥
 - `#`: 跳转到上一个与光标处相同的单词 🔥
 - `%`: 跳转到与光标匹配的括号 🔥
-- `f` + 字母: 跳转本行下一个该字母 🔥
+- `f` + 字母: 跳转本行下一个该字母
 - `t` + 字母: 跳转本行下一个该字母前一位
 
 ## 基本编辑
@@ -55,8 +55,12 @@ confidence: 2
 - `yiw`：复制当前单词
 - `di"`, `di(`, `di{`：删除所在引号/括号/大括号内的部分 🔥
 - `da"`, `da(`, `da{`：同上并删除括号 🔥
-- `ci"`, `ci(`, `ci{`：同上并开始编辑 🔥
-- `ct"`：删除到引号之前并编辑 🔥
+- `dt"`, `dt(`, `dt{`：删除到下一个引号/括号/大括号
+- `ci"`, `ci(`, `ci{` ...：同上并开始编辑 🔥
+- 总之就是 `<edit><range><symbol>`
+    - 其中 `<edit>` 可以是 `d 删除` | `c 删除并编辑` | `y 复制`
+    - 其中 `<range>` 可以是 `i: <symbol> 内` | `a: 含 <symbol>` | `t: 直到 <symbol>（不含）` | `f: 直到 <symbol>`
+    - 其中 `<symbol>` 可以是 ```" ' ` ( [ {```
 - `V` 并用光标选择多行 + `y` 复制，或 + `d` 删除，或 + `x` 剪切：🔥🔥🔥
 - `ctrl-v` 选中多行，`I` 插入多行光标，编辑完成后 `Esc` 可多行插入
 
@@ -67,3 +71,34 @@ confidence: 2
 - `:map ; 5j` + 回车，并使用 `;` 快读移动光标
 - `:map , 5` + 回车，并使用 `,` 快速移动光标
 - `:%s/AAA/BBB/g/` + 回车，全文替换 AAA 为 BBB（不如 vscode 替换，但在 vim 软件内较好用）
+
+```vimscript
+" [总是使用系统粘贴板]
+set clipboard=unnamedplus
+
+" [删除而不是剪切]
+nnoremap d "_d
+nnoremap D "_D
+nnoremap c "_c
+nnoremap C "_C
+nnoremap x "_x
+
+vnoremap d "_d
+vnoremap c "_c
+vnoremap < <gv
+vnoremap > >gv
+
+" [smaller undo step]
+inoremap <Space> <Space><C-g>u
+inoremap <Tab> <Tab><C-g>u
+inoremap <CR> <CR><C-g>u
+
+" [move lines]
+vnoremap J :m'>+<CR>gv
+vnoremap K :m'<-2<CR>gv
+
+:noremap j gj
+:noremap k gk
+:noremap ; 5gj
+:noremap , 5gk
+```
