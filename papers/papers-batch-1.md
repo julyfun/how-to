@@ -71,8 +71,8 @@ flowchart TD
 
 ## Lingbot-va (4)
 - https://hjfy.top/arxiv/2601.21998
-- [ok] 自回归扩散
-    - [ok] "对统一序列施加因果注意力掩码，确保预测的视觉状态和动作命令均受先前状态的约束"
+
+lingbot-va 的自回归扩散方法为：diffusion
 
 ```python
 obs0 -> VAE -> z0
