@@ -8,12 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-```python
-[class ACTPolicy(nn.Module).__call__(self, qpos, image, actions=None, is_pad=None)]
-- qpos: 8, 14
-- image: 8, 3, 3, 480, 640 # the first 3 means camera num
-- actions: 8, 125, 14 # wtf is 125?
-```
+一句话：state 和 image 通过 transformer encoder 作为 kv memory 提供给 decoder hidden（初始值为 0，带可学习位置编码），decoder hidden 通过 cross-attn memory 生成最终 action. act 还引入了 vae 来自监督重建 GT-action，原文声称是为了建模人类数据的 mutli-modality 防止输出平均.
 
 ## General
 
