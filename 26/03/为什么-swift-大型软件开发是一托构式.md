@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-1. Swift 拥有不严格的竞态检查，data race 有 99.95% 的抛出 runtime 警告和 0.05% 的概率 crash，数据流复杂的异步项目容易导致开发期找不出 bug，上线了一个劲崩溃。backtrace 难以开启，你只知道有警告却不知道是项目里哪行代码引起的
+1. Swift 拥有不严格的竞态检查，缺乏 fail-fast，data race 有 99.95% 的抛出 runtime 警告和 0.05% 的概率 crash，容易导致数据流复杂的异步项目开发期找不出 bug，上线了一个劲出问题。backtrace 难以开启，只知道有警告却不知道是项目里哪行代码引起的
 2. 200+ 关键字，海量酸爽隐式语言特性，比如 @ObservedObject 嵌套了也没有任何报错和警告，在某一天你会发现嵌套似乎影响了 UI 更新，然后在某个博客里读到不可嵌套。在注释和官方文档里都没有提这些语言特性
 3. 官方文档采用极简主义，比其他语言 std 注释还短，论坛开发者全靠自行摸黑，苹果工程师的回答敷衍了事，苹果开发者的反馈渠道 ¥688 年度 VIP 才可开启，入口也藏的很深，然而只提供行政支持（这也叫开发者反馈？）技术上基本不可能有回复.
 4. 不充 688 VIP 编译到手机十分容易触发 "Your Development Team Has Reached Maximum Registered iPhone Devices"。即使 VIP 也有 bug 会触发此信息.
@@ -25,7 +25,7 @@ confidence: 2
 15. Cache 很大，而苹果的硬盘和金子一样贵
 16. 编写宏需要单独开一个 package，并且只能在 AST 层操作
 17. 序列化一托构式
-18. 互联网 swift 信息落后，Google 和 coding agent 能给你的方案可能过时麻烦又折腾
+18. 互联网 swift 信息落后，Google 和 coding agent 能给出的方案可能过时麻烦又折腾
 19. 操作 C 需要一层 OC 层，而 OC 是全世界最防人类的语言
 20. 新旧异步编程模式具有海量副作用，而没有权威 tutorial.
 21. Swift 也有一些优秀设计，比如 actor，使用 swift 6 的一个子集能写出比较优雅的代码，然而其历史包袱和苹果控制的工具链生态导致它的总体开发体验糟糕，甚至不如 C++.
