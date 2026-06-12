@@ -20,7 +20,11 @@ demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录
 ## EgoScale (22)
 - ⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.16710 : https://www.alphaxiv.org/abs/2602.16710 | https://research.nvidia.com/labs/gear/egoscale/ | NVIDIA | Ruijie Zhang + Linxin Fan
 
-TODO 这个 demo 比较精彩，用 sharpa hand 实现了使用电动螺丝刀、试管吸液和双指拧瓶盖.
+20000 小时数据灵巧手操作预训练，mid-training 和 post-training 实践。预训练：解冻所有模块，包括 VLM(GROOT N1)，vision encoder，DiT 动作专家，MLP
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260612225719448.png)
+
+这个 demo 比较精彩，用 sharpa hand 实现了使用电动螺丝刀、试管吸液和双指拧瓶盖.
 
 ## LIFT: yi wang (23)
 
