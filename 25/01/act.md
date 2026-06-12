@@ -10,6 +10,8 @@ confidence: 2
 
 一句话：state 和 image 通过 transformer encoder 作为 kv memory 提供给 decoder hidden（初始值为 0，带可学习位置编码），decoder hidden 通过 cross-attn memory 生成最终 action. act 还引入了 vae 来自监督重建 GT-action，原文声称是为了建模人类数据的 mutli-modality 防止输出平均.
 
+这里的 vae-encoder 是一个 BERT 风格的 transformer encoder. 输入为 `[[cls], [joint state], [action seq]]`，经过四层 self-attn 最终只取 [cls] 并 Linear 得到 z. 而 policy transformer encoder 则没有 [cls].
+
 ## General
 
 ```
