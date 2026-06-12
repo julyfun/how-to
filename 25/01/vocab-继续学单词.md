@@ -8,7 +8,20 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-浏览下面单词列表，在 @vocab-继续学单词.md 最近一个日期前面添加今日日期和列表中最新的 1-12 个单词，以前出现在 md 的单词不可添加. 规则 : 每行为 `<序号>. <单词(多音节用'标记重音)> : <词性>.<释义> : <音标> 例句` 刚好两个冒号. 部分老单词可能不符合，不用管.
+浏览此单词列表，在 @vocab-继续学单词.md 最近一个日期前面添加今日日期和列表中最新的 1-12 个单词，以前出现在 md 的单词不可添加. 规则 : 每行为 `<序号>. <单词(多音节用'标记重音)> : <词性>.<释义(选取主要的不要太长，用英文逗号分隔)> : <音标> <牛津3000词例句>` 刚好两个冒号. 部分老单词可能不符合，不用管.
+
+## 6/12
+1. 'bearing : n.轴承,举止,方位 : /ˈberɪŋ/ The motor stopped when a bearing broke.
+2. va'nilla : a.普通的 : /vəˈnɪlə/ The method is plain, vanilla parsing.
+3. e'lude : vt.避开,使想不起,使不理解 : /iˈluːd/ The answer to the problem still eludes me.
+4. stance : n.立场,姿态 : /stæns/ What is your stance on this issue?
+5. aux'iliary : adj.辅助的,备用的 n.助动词,辅助者 : /ɔːɡˈzɪliəri/ The hospital has auxiliary power.
+6. inter'leave : v.交错,插入 : /ˌɪntərˈliːv/ The book interleaves fact and story.
+7. 'cosmos : n.宇宙,秩序 : /ˈkɑːzməs/ Stars fill the cosmos.
+8. chill : n.寒冷,寒意 adj.寒冷的 v.冷藏,变冷 : /tʃɪl/ There was a chill in the air.
+9. 'sentiment : n.情绪,观点 : /ˈsentɪmənt/ There is strong sentiment against the plan.
+10. 'meager : adj.贫乏的,少量的 : /ˈmiːɡər/ They lived on a meager income.
+11. 'dummy : n.模型,仿制品,蠢货 adj.假的 : /ˈdʌmi/ The test used a dummy body.
 
 ## 6/11
 1. harness : n.马具；背带；挽具；日常工作 v.治理，利用；驾驭 : /ˈhɑːrnɪs/ The new system will harness solar energy efficiently.
@@ -209,17 +222,4 @@ confidence: 2
 10. remain "in place" : 驻扎
 11. complies: 遵守（协议）:  com + play -> 过来玩就要遵守规则
 12. Strait of Hormuz : 霍尔木兹海峡
-
-<!-- 1. -->
-<!-- 2. -->
-<!-- 3. -->
-<!-- 4. -->
-<!-- 5. -->
-<!-- 6. -->
-<!-- 7. -->
-<!-- 8. -->
-<!-- 9. -->
-<!-- 10. -->
-<!-- 11. -->
-<!-- 12. -->
 
