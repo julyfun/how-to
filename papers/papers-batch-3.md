@@ -22,6 +22,8 @@ demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录
 
 这个 demo 比较精彩，用 sharpa hand 实现了使用电动螺丝刀、试管吸液和双指拧瓶盖.
 
+## LIFT: yi wang (23)
+
 ## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
 ## Motus: A Unified Latent Action World Model
@@ -32,9 +34,6 @@ demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录
 ## SimpleVLA
 
 ## Forcy policy
-
-## LIFT
-- yi wang
 
 ## VLA-JEPA
 - https://hjfy.top/arxiv/2602.10098
