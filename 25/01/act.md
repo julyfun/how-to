@@ -128,11 +128,11 @@ flowchart TD
 ```mermaid
 flowchart TD
     tgt(["Decoder tgt zeros<br>(全 0 tensor)<br>(T=50, B=8, D=512)"])
-    query[["query_embed<br/>decoder_pos_embed<br/>(T=50, 1, D=512)"]] --> selfqk["+"]
+    query[["decoder_pos_embed<br>表明 query 位置.<br>是 learnable embedding.<br>(T=50, 1, D=512)"]] --> selfqk["+"]
     tgt --> selfqk
     selfqk --> selfq(["Self-attn Q/K<br/>(50, B=8, 512)"])
     tgt --> selfv(["Self-attn V<br/>(50, B=8, 512)"])
-    selfq --> selfattn[["self_attn"]]
+    selfq --> selfattn[["self_attn<br>WTF??这不是全 0 吗"]]
     selfv --> selfattn
     selfattn --> x1(["Decoder hidden<br/>(50, B=8, 512)"])
 
@@ -145,7 +145,7 @@ flowchart TD
     crosskadd --> crossk(["Cross-attn K<br/>(902, B=8, 512)"])
     mem --> crossv(["Cross-attn V<br/>(902, B=8, 512)"])
 
-    crossq --> crossattn[["cross-attn"]]
+    crossq --> crossattn[["cross-attn<br>memory不变<br>每层 self-attn + cross memory + FFN"]]
     crossk --> crossattn
     crossv --> crossattn
     crossattn --> ff[["MLP<br/>512 -> feedforward -> 512"]]
