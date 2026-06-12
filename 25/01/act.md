@@ -70,10 +70,8 @@ flowchart TD
     stateproj --> addtok
     feat --> src(["Encoder src<br/>(seq_len=902, B=8, D=512)"])
     addtok --> src
-    encpos(["encoder_pos_embed<br/>separate from src"])
 
     src --> venc[["Transformer Encoder<br/>vision + state + latent"]]
-    encpos --> venc
     query[["decoder_pos_embed<br/>num_queries=50, D=512"]] --> tgt(["Decoder tgt zeros<br/>(50, B=8, D=512)"])
     tgt --> dec[["Transformer Decoder<br/>cross-attn to memory"]]
     query --> dec
@@ -110,9 +108,7 @@ flowchart TD
 
     feat --> src(["Encoder src<br/>(seq_len=902, B=8, D=512)"])
     addtok --> src
-    encpos(["encoder_pos_embed<br/>separate from src"])
-    src --> enc[["Transformer Encoder<br/>vision + state"]]
-    encpos --> enc
+    src --> enc[["Transformer Encoder<br>多层 selfattn + FFN"]]
     enc --> mem(["memory<br/>(902, B=8, D=512)"])
 
     query[["decoder_pos_embed<br/>num_queries=50, D=512"]] --> tgt(["Decoder tgt zeros<br/>(50, B=8, D=512)"])
@@ -131,7 +127,7 @@ flowchart TD
 ## 其中 decoder QKV
 ```mermaid
 flowchart TD
-    tgt(["Decoder tgt zeros<br/>(T=50, B=8, D=512)"])
+    tgt(["Decoder tgt zeros<br>(全 0 tensor)<br>(T=50, B=8, D=512)"])
     query[["query_embed<br/>decoder_pos_embed<br/>(T=50, 1, D=512)"]] --> selfqk["+"]
     tgt --> selfqk
     selfqk --> selfq(["Self-attn Q/K<br/>(50, B=8, 512)"])
@@ -145,11 +141,11 @@ flowchart TD
     crossqadd --> crossq(["Cross-attn Q<br/>(50, B=8, 512)"])
 
     mem(["memory<br/>(encoder_out)<br/>(S=902, B=8, D=512)"]) --> crosskadd["+"]
-    pos(["encoder_pos_embed<br/>(S=902, B=8, D=512)"]) --> crosskadd
+    pos(["encoder_pos_embed<br>2D Sine<br>(S=902, B=8, D=512)"]) --> crosskadd
     crosskadd --> crossk(["Cross-attn K<br/>(902, B=8, 512)"])
     mem --> crossv(["Cross-attn V<br/>(902, B=8, 512)"])
 
-    crossq --> crossattn[["multihead_attn<br/>cross-attn"]]
+    crossq --> crossattn[["cross-attn"]]
     crossk --> crossattn
     crossv --> crossattn
     crossattn --> ff[["MLP<br/>512 -> feedforward -> 512"]]
