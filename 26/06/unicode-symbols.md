@@ -1,5 +1,5 @@
 ---
-title: "unicode symbols"
+title: "unicode symbols for copying"
 date: 2026-06-05 09:23:18
 tags: ["26", "06"]
 author: "julyfun.m5air"
