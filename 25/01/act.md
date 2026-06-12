@@ -63,7 +63,6 @@ flowchart TD
     img(["Images<br/>(B=8, n_cam=3, C=3, H=480, W=640)"]) --> norm["Image Normalize<br/>ImageNet mean/std"]
     norm --> backbone[["ResNet Backbone<br/>feature D=512"]]
     backbone --> feat(["Image Features<br/>(B=8, D=512, H=15, W=60)<br/>900 tokens"])
-    feat --> pos["2D sine pos<br/>(900, B=8, D=512)"]
 
     z --> zproj[["latent_input_proj<br/>512 -> 512"]]
     qpos --> stateproj[["input_proj_robot_state<br/>14 -> 512"]]
@@ -71,9 +70,10 @@ flowchart TD
     stateproj --> addtok
     feat --> src(["Encoder src<br/>(seq_len=902, B=8, D=512)"])
     addtok --> src
-    pos --> src
+    encpos(["encoder_pos_embed<br/>separate from src"])
 
     src --> venc[["Transformer Encoder<br/>vision + state + latent"]]
+    encpos --> venc
     query[["decoder_pos_embed<br/>num_queries=50, D=512"]] --> tgt(["Decoder tgt zeros<br/>(50, B=8, D=512)"])
     tgt --> dec[["Transformer Decoder<br/>cross-attn to memory"]]
     query --> dec
@@ -103,7 +103,6 @@ flowchart TD
     img(["Images<br/>(B=8, n_cam=3, C=3, H=480, W=640)"]) --> norm["Image Normalize<br/>ImageNet mean/std"]
     norm --> backbone[["ResNet Backbone<br/>feature D=512"]]
     backbone --> feat(["Image Features<br/>(B=8, D=512, H=15, W=60)<br/>900 tokens"])
-    feat --> pos["2D sine pos<br/>(900, B=8, D=512)"]
 
     zero(["zero latent<br/>(B=8, latent_dim=512)"]) --> zproj[["latent_input_proj<br/>512 -> 512"]]
     zproj --> addtok(["Extra Tokens<br/>(2, B=8, D=512)<br/>latent + qpos"])
@@ -111,8 +110,9 @@ flowchart TD
 
     feat --> src(["Encoder src<br/>(seq_len=902, B=8, D=512)"])
     addtok --> src
-    pos --> src
+    encpos(["encoder_pos_embed<br/>separate from src"])
     src --> enc[["Transformer Encoder<br/>vision + state"]]
+    encpos --> enc
     enc --> mem(["memory<br/>(902, B=8, D=512)"])
 
     query[["decoder_pos_embed<br/>num_queries=50, D=512"]] --> tgt(["Decoder tgt zeros<br/>(50, B=8, D=512)"])
