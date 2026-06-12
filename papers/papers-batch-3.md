@@ -20,7 +20,10 @@ demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录
 ## EgoScale (22)
 - ⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.16710 : https://www.alphaxiv.org/abs/2602.16710 | https://research.nvidia.com/labs/gear/egoscale/ | NVIDIA | Ruijie Zhang + Linxin Fan
 
-20000 小时数据灵巧手操作预训练，mid-training 和 post-training 实践。预训练：解冻所有模块，包括 VLM(GROOT N1)，vision encoder，DiT 动作专家，MLP
+20000 小时数据灵巧手操作预训练，mid-training 和 post-training 实践。
+- 预训练：解冻所有模块，包括 VLM(GROOT N1)，vision encoder，DiT 动作专家等，纯 RGB 数据用现成工具解算手部姿态和手腕轨迹，其中有 829 小时 vision pro 准确手腕+手部数据.
+- mid-training: 对同样的任务同时采集 30 条人类轨迹和 5 条机器人轨迹（50h人类 + 4h机器人，都使用 vive tracker + manus 手套）
+- post-training: 特定任务的机器人数据. 如果进行了 mid-trainig 则冻结视觉编码器，否则不冻结.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260612225719448.png)
 
