@@ -10,7 +10,7 @@ confidence: 2
 
 1. 官方文档采用极简主义，比其他语言 std 注释还短，靠论坛开发者自行摸黑，苹果工程师的回答敷衍了事，苹果开发者的反馈渠道 ¥688 年度 VIP 才可开启，入口也藏的很深，然而其 code-level support 只提供行政支持，技术上基本不可能有回复.
 2. Swift 5 和 6 的早期版本拥有不严格的竞态检查，缺乏 fail-fast，e.g. data race 有 99.95% 的抛出 runtime 警告和 0.05% 的概率 crash，容易导致数据流复杂的异步项目开发期找不出 bug，上线猛出问题。backtrace 难以开启，只抛出警告却不知道是项目里哪行代码引起的
-3. 200+ 关键字 + 过度使用的宏，海量酸爽隐式语言特性，e.g. @ObservedObject 嵌套了也没有任何警告，在某一天你会发现嵌套似乎影响了 UI 更新，然后在某个博客里读到不可嵌套。在注释和官方文档里都没有提这些语言特性 https://github.com/swiftlang/swift-syntax/blob/main/Sources/SwiftSyntax/generated/Keyword.swift
+3. 200+ 关键字和过度使用的宏，海量酸爽隐式语言特性，e.g. @ObservedObject 嵌套了也没有任何警告，在某一天你会发现嵌套似乎影响了 UI 更新，然后在某个博客里读到不可嵌套。在注释和官方文档里都没有提这些语言特性 https://github.com/swiftlang/swift-syntax/blob/main/Sources/SwiftSyntax/generated/Keyword.swift
 4. 不充 688 VIP 编译到手机十分容易触发 "Your Development Team Has Reached Maximum Registered iPhone Devices"。即使 VIP 也有 bug 会触发此信息.
 5. 内置框架很糟糕，e.g. 多点通信 MCSession 会随机断连而没有打上 deprecated 标记，论坛开发者嗷嗷叫苦
 6. Xcode 具有一系列防开发者设计：编译时每隔 2s 才更新一次编译信息，使用不是二进制也不像文本的 xcodeproj 格式管理项目（防 git 设计），它的 debug 窗口每隔 0.3s 才刷新一次
