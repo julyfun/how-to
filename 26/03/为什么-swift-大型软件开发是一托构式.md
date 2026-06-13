@@ -21,7 +21,7 @@ confidence: 2
 11. lsp 响应时间在 1s ~ 10s 之间，是唯一一个 lsp 响应比 ai query 慢的语言。AI 常需要提醒自己“等等，这里的报错是 lsp 缓存过时导致的”
 12. xcode 的 swift 项目默认不提供与 ide 解耦的语言支持，尽管 sourcekit-lsp 本身设计解耦，但需要一个为爱发电的三方 build-system bridge，有效防止了我带的新人开箱即用
 13. 只能 import all symbols 是一种防开发者设计
-14. swift 十分鼓励隐式控制流，e.g. getter-setter, property wrappers, computer property, swiftui DSL, optional chaining, 混合 exception 和没有错误传播符的 Result，而官方包仍以 exception 占绝大多数，尽管 rust 的 unwrap() 已经令人  你的新人用 GPT5.5 / Opus4.8 写 Swift 最终仍会写出海量构式，构造史山的能力显著强于
+14. swift 十分鼓励隐式控制流，e.g. getter-setter, property wrappers, computer property, swiftui DSL, optional chaining, 混合 exception 和没有错误传播符的 Result，而官方包仍广泛使用 exception，尽管 rust 的 unwrap() 已经让人畏惧，而 swift 用 `Type!` 和 `variable!` 轻松 panic，你的新人用 GPT5.5 / Opus4.8 写 Swift 最终仍会写出海量构式，构造史山的能力显著强于其他语言
 15. Cache 很大，而苹果的硬盘很贵
 16. 编写宏需要单独开一个 package，并且只能在 AST 层操作
 17. 序列化一托构式，e.g. enc-dec 的默认值支持需要大量样版代码，序列化规则独树一帜
