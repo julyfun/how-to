@@ -8,8 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-六步走
-- data to
+5 步走 [pytorch]
 - opt zero
 - forward
 - loss
@@ -85,7 +84,7 @@ with torch.no_grad():
 logits = classifier(x_t, t)              # [B, num_classes]
 log_probs = F.log_softmax(logits, dim=-1)
 # 每个样本目标类log p
-selected = log_probs[torch.arange(x_t.size(0), device=x_t.device), y]  
+selected = log_probs[torch.arange(x_t.size(0), device=x_t.device), y]
 obj = selected.sum()  # 标量，便于 autograd
 
 # 4) 求 grad = ∇_{x_t} log p(y|x_t,t)
