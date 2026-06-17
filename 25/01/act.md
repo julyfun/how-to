@@ -57,29 +57,11 @@ flowchart TD
     dist --> z(["sample latent z<br/>(B=8, latent_dim=512)"])
     dist --> kl["KL Loss"]
 
-    img(["Images<br/>(B=8, n_cam=3, C=3, H=480, W=640)"]) --> norm["Image Normalize<br/>ImageNet mean/std"]
-    norm --> backbone[["ResNet Backbone<br/>feature D=512"]]
-    backbone --> feat(["Image Features<br/>(B=8, D=512, H=15, W=60)<br/>900 tokens"])
-
-    z --> zproj[["latent_input_proj<br/>512 -> 512"]]
-    qpos --> stateproj[["input_proj_robot_state<br/>14 -> 512"]]
-    zproj --> addtok(["Extra Tokens<br/>(2, B=8, D=512)<br/>latent + qpos"])
-    stateproj --> addtok
-    feat --> src(["Encoder src<br/>(seq_len=902, B=8, D=512)"])
-    addtok --> src
-
-    src --> venc[["Transformer Encoder<br/>vision + state + latent"]]
-    query[["decoder_pos_embed<br/>num_queries=50, D=512"]] --> tgt(["Decoder tgt zeros<br/>(50, B=8, D=512)"])
-    tgt --> dec[["Transformer Decoder<br/>cross-attn to memory"]]
-    query --> dec
-    venc --> mem(["memory<br/>(902, B=8, D=512)"])
-    mem --> dec
-    dec --> hs(["Action Tokens<br/>(B=8, 50, D=512)"])
-
-    hs --> ahead[["action_head / proj<br/>512 -> 14"]]
-    hs --> phead[["is_pad_head / proj<br/>512 -> 1"]]
-    ahead --> ahat(["Pred Actions<br/>(B=8, 50, 14)"])
-    phead --> phat(["Pred is_pad<br/>(B=8, 50, 1)"])
+    img(["Images<br/>(B=8, n_cam=3, C=3, H=480, W=640)"]) --> infer[["See Infer flowchart<br/>policy network as black box"]]
+    qpos --> infer
+    z --> infer
+    infer --> ahat(["Pred Actions<br/>(B=8, 50, 14)"])
+    infer --> phat(["Pred is_pad<br/>(B=8, 50, 1)"])
 
     action --> recon["Masked L1 Loss"]
     ispad(["is_pad mask<br/>(B=8, 50)"]) --> recon
