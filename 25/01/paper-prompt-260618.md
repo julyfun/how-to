@@ -70,7 +70,9 @@ confidence: 2
 
 不要引用论文自己的营销词来当评价。比如论文说 `physical red teaming`，你可以改成：`它主要测试物理扰动下策略是否失效。`
 
-不要用“不是 A，是 B”，直接说 "是 B"。例：不要写 `WorldArena 2.0 不是方法论文，是 benchmark 扩展工作`，写 `WorldArena 2.0 是一个 benchmark。`。不要使用“是 xxx，而不是 xxx”，直接说 ”是 xxx“.
+不要用“不是 A，是 B”，直接说 "是 B"。例：不要写 `WorldArena 2.0 不是方法论文，是 benchmark 扩展工作`，写 `WorldArena 2.0 是一个 benchmark。`。
+
+不要使用“是 A，而不是 B”，直接说 ”是 A“.
 
 避免抽象空话：
 
