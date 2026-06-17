@@ -17,7 +17,7 @@ demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录
 
 ```mermaid
 flowchart TD
-    nxt_video --> noisy_video --> wan2.1-emb1 --> q --> dit
+    nxt_video --> noisy_video -->|wan2.1| emb1 --> q --> dit
     nxt_action --> noisy_action --> emb2--> q
     pre_video --> emb3 --> kv --> dit
     state --> emb4 --> kv
@@ -46,8 +46,14 @@ flowchart TD
 ## VLA-JEPA (24)
 - https://hjfy.top/arxiv/2602.10098 | Jingwen Sun, Zhibo Chen, 中科大
 
+本质 ACT-like 然后加上 WM 和 latent action query 来利用 human video 进行 pretrain. （非具体动作，仅表征动力学）
+- V-JEPA 全程冻结.
+- 这里 WM 是从零开始训练的 transformer，注意预测的是 V-JEPA 空间的潜在状态.
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/c533a30cfdbf0bb35eb5af6eea633b79.jpg)
+
 ## Motus: A Unified Latent Action World Model
-- tri-mot (VLM 用于理解指令 + video gen model + action expert)
+- tri-MoT (VLM 用于理解指令 + video gen model + action expert)
 
 ## WorldVLA
 
