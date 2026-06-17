@@ -49,6 +49,7 @@ flowchart TD
 本质 ACT-like 然后加上 WM 和 latent action query 来利用 human video 进行 pretrain. （非具体动作，仅表征动力学）
 - V-JEPA 全程冻结.
 - 这里 WM 是从零开始训练的 transformer，注意预测的是 V-JEPA 空间的潜在状态.
+- 下图中 latent-action 之前的就是一个 ACT-like.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/c533a30cfdbf0bb35eb5af6eea633b79.jpg)
 
