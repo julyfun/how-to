@@ -33,8 +33,6 @@ demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录
 
 将预训练的 pi0.5 的 action expert 复制一份参数作为 learnable force expert，提供 1 秒的 force kv history. 通过 teleop online dagger 训练 force expert. LIFT 并非为了 contact-rich 场景设计，而是证明后训练阶段才引入 force 仍然是有价值的。不过 multi-task 能力还未开发（pi0.5 本身在这些任务上也不怎么 multitask）.
 
-## Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
-
 ## Motus: A Unified Latent Action World Model
 - tri-mot (VLM 用于理解指令 + video gen model + action expert)
 
