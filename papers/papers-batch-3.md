@@ -43,7 +43,7 @@ demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录
 ## Forcy policy
 
 ## VLA-JEPA
-- https://hjfy.top/arxiv/2602.10098
+- https://hjfy.top/arxiv/2602.10098 | Jingwen Sun 中科大, Zhibo Chen
 
 ## dit4dit yy硕推荐
 
