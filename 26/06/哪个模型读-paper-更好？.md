@@ -123,7 +123,7 @@ Policy，可能限制了复杂任务的上限。这里我对它如何处理 AR
 
 ---
 
-[Grok] Cewu Lu 组的 RoboPocket 用手机 AR 实现无机器人 DAgger
+[Grok Build 0.1] Cewu Lu 组的 RoboPocket 用手机 AR 实现无机器人 DAgger
 式即时策略迭代
 
 来自 SJTU。RoboPocket 扩展 UMI 类的 handheld
