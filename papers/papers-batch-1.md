@@ -169,6 +169,7 @@ def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
 ## Pi0.6 & Pi0.5 & Pi0 (6,7,8)
 
 Pi0 除了以下设计，还引入了 zero-padding 进行跨本体混合训练，即状态和动作向量长度设定为数据集中最大自由度，不足补 0. 模型只能通过输入的本体感知 $q_t$ 和语言指令来识别当前的硬件构型. Pi0 并不能 zero-shot，但预训练能够帮助后训练的性能提升.
+- Pi0 分离 actor 和 VLM，是为了避免后训练中对 VLM 能力的灾难性破坏.
 
 ```mermaid
 flowchart TD
