@@ -232,7 +232,7 @@ act1 = gated_residual(act0, act_y)                              # (B, La, 1024)
 下面是 pi0.5. 一句话：对 state 进行 bin 离散并以文本丢进 VLM，预训练则对 action 使用 FAST 分词器离散从而在不启用 action expert 的情况下进行 LLM-like NTP 预测并使用交叉熵 loss。
 - flow step 使用 adaRMSNorm.
 - 在 pi0 中，state 是 linear 进 action expert，flow step 则 MLP 直接加到 action tokens 上.
-- FAST 就是先将整个 action chunk 先 encode 为 latent 然后 vector quantize.
+- FAST 就是先将整个 action chunk (? 确定不是单步 action 么) 先 encode 为 latent 然后 vector quantize.
 
 ```mermaid
 flowchart TD
