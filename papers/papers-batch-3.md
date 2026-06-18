@@ -53,27 +53,13 @@ flowchart TD
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/c533a30cfdbf0bb35eb5af6eea633b79.jpg)
 
-## Motus: A Unified Latent Action World Model
-- tri-MoT (VLM 用于理解指令 + video gen model + action expert)
-
-## WorldVLA
-
-## SimpleVLA
-
-## Forcy policy
-
-## dit4dit yy硕推荐
-
-## Latent Policy Steering 光流
-
-## LAPA: 早期提出 FDM 和 IDM 模型
-
-## End-to-end training of deep visuomotor policies 四大神仙
-
-## UniVLA: 提出了一种两阶段的训练来更好地提取 Latent Action
-
-关于 latent-action pretraining drifting 的问题值得看看.
+## 名词补充 (25)
+1. RVQ: residual VQ. 是一种简单的将 1 个连续变量离散化为多个 token 的方式. 被 RDT2 使用，声称比 FAST 等方法节约 2/3 的 token.
+```python
+r = z
+for j in range(m):
+    k_j = argmin_k ||r - e_j[k]||^2 # 在第 j 层代码本中寻找最接近残差的项索引
+    r = r - e_j[k_j] # 下一层量化继续量化残差
+```
 
 https://yipko.com/posts/work/pi0.7/
-
-- offline: Conservative q-learning for offline reinforcement learning. 惩罚 OOD 动作
