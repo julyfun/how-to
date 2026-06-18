@@ -41,12 +41,12 @@ flowchart TD
 
 ## LIFT: yi wang (23)
 
-将预训练的 pi0.5 的 action expert 复制一份参数作为 learnable force expert，提供 1 秒的 force kv history. 通过 teleop online dagger 训练 force expert. LIFT 并非为了 contact-rich 场景设计，而是证明后训练阶段才引入 force 仍然是有价值的。不过 multi-task 能力还未开发（pi0.5 本身在这些任务上也不怎么 multitask）.
+将预训练的 pi0.5 的 action expert 复制一份参数作为 learnable force expert，提供 1 秒的 force kv history. 通过 teleop online dagger 训练 force expert. LIFT 并非为了 contact-rich 场景设计，而是证明后训练阶段才引入 force 仍然是有价值的。不过 multi-task 能力还未开发（pi0.5 本身在这些任务上也不怎么 multitask）. 训练时输出 cmd 还是 state 也值得仔细思考，可从人类采集 & replay & rollout 角度考虑。
 
 ## VLA-JEPA (24)
 - https://hjfy.top/arxiv/2602.10098 | Jingwen Sun, Zhibo Chen, 中科大
 
-本质 ACT-like 然后加上 WM 和 latent action query 来利用 human video 进行 pretrain. （非具体动作，仅表征动力学）
+本质 ACT-like(no MOT) 然后加上 WM 和 latent action query 来利用 human video 进行 pretrain. （非具体动作，仅表征动力学）
 - V-JEPA 全程冻结.
 - 这里 WM 是从零开始训练的 transformer，注意预测的是 V-JEPA 空间的潜在状态.
 - 下图中 latent-action 之前的就是一个 ACT-like.
