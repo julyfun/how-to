@@ -28,13 +28,13 @@ actor_loss.backward(); critic_loss.backward()
 actor_optim.step(); critic_optim.step()
 ```
 
-如果是连续动作 on-policy，则需要一个 `pi_theta` 来求概率密度函数，并不容易。
+如果是连续动作 on-policy，则可使用 mean_net 和 logstd 参数，比如 285 Hw2 就是这么做的.
 
 ## Off-policy Actor-Critic
 
 考虑在 replay buffer 中采样 (s, a)。然而，采样后不可再沿用上面 on-policy 的 advantage-based.
 1. critic 的 loss 是错误的. 比如，采样得到的 (s, a) 都特别笨，导致奖励 r(s, a) 都很糟糕，而 critic 却拟合了这些.
-2. actor 的梯度也是错误的，具体原因要看 actor 的梯度公式推导. 从而必须使用 importance sampling（如 PPO），当然我们也可以使用 Q critic 绕开这个步骤. actor 的优化目标直接改为使得 Q(s, actor(s)) 最大化，如下:
+2. actor 的梯度也是错误的，具体原因要看 actor 的梯度公式推导. 从而必须使用 importance sampling（如 PPO），当然我们也可以使用 critic 绕开这个步骤. actor 的优化目标直接改为使得 Q(s, actor(s)) 最大化，如下:
 - 以下方法拆分 target network 和 online network 就是 DDPG 了.
 - 以下方法的 actor 直接输出最优解而不是概率，因而适用于连续动作.
 
