@@ -168,7 +168,7 @@ def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
 
 ## Pi0.6 & Pi0.5 & Pi0 (6,7,8)
 
-Pi0 除了以下设计，还
+Pi0 除了以下设计，还引入了 zero-padding 进行跨本体混合训练，即状态和动作向量长度设定为数据集中最大自由度，不足补 0. 模型只能通过输入的本体感知 $q_t$ 和语言指令来识别当前的硬件构型. Pi0 并不能 zero-shot，但预训练能够帮助后训练的性能提升.
 
 ```mermaid
 flowchart TD
@@ -229,8 +229,10 @@ obs1 = gated_residual(obs0, obs_y)                              # (B, Lo, 2048)
 act1 = gated_residual(act0, act_y)                              # (B, La, 1024)
 ```
 
-下面是 pi0.5. 一句话：对 state 进行 bin 离散并以文本丢进 VLM。flow step 使用 adaRMSNorm.
+下面是 pi0.5. 一句话：对 state 进行 bin 离散并以文本丢进 VLM，预训练则对 action 使用 FAST 分词器离散从而在不启用 action expert 的情况下进行 LLM-like NTP 预测并使用交叉熵 loss。
+- flow step 使用 adaRMSNorm.
 - 在 pi0 中，state 是 linear 进 action expert，flow step 则 MLP 直接加到 action tokens 上.
+- FAST 就是先将整个 action chunk 先 encode 为 latent 然后 vector quantize.
 
 ```mermaid
 flowchart TD
