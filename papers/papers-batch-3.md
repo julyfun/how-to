@@ -54,7 +54,7 @@ flowchart TD
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/c533a30cfdbf0bb35eb5af6eea633b79.jpg)
 
 ## 名词补充 (25)
-1. RVQ: residual VQ. 是一种简单的将 1 个连续变量离散化为多个 token 的方式. 被 RDT2 使用，声称比 FAST 等方法节约 2/3 的 token.
+1. `RVQ`: residual VQ. 是一种简单的将 1 个连续变量离散化为多个 token 的方式. 被 RDT2 使用，声称比 FAST 等方法节约 2/3 的 token. RDT2 在 stage1 直接没有 flow matching 而是直接 NTP 出 action token 来 cross entropy loss，并认为这样能更好利用 VLM 已有的离散概率知识.
 ```python
 r = z
 for j in range(m):
@@ -62,4 +62,8 @@ for j in range(m):
     r = r - e_j[k_j] # 下一层量化继续量化残差
 ```
 
+TODO:
+
 https://yipko.com/posts/work/pi0.7/
+
+## https://qwen.ai/blog?id=qwen-robotsuite
