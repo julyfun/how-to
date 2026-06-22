@@ -63,7 +63,7 @@ for j in range(m):
 ```
 
 ## OneTwoVLA (26)
-- 清华 Fanqi Lin, Yang Gao | https://arxiv.org/pdf/2505.11917 | https://one-two-vla.github.io
+- 清华 Fanqi Lin, Yang Gao | https://one-two-vla.github.io | https://hjfy.top/arxiv/2505.11917 | https://www.alphaxiv.org/abs/2505.11917
 
 TODO:
 

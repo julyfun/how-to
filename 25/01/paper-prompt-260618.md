@@ -28,9 +28,10 @@ confidence: 2
 按下面格式输出：
 
 ```text
-[模型名称] 一句话总结，逗号最多一个
+## 论文标题
+[模型名称] 一句话总结，逗号最多一个 | <项目网站（如能搜到）> | https://hjfy.top/arxiv/<arxiv_id e.g. 2505.11917>  | https://www.alphaxiv.org/abs/<arxiv_id> | <github 代码连接（如能搜到）>
 
-来自 <主要机构>。正文第一段 2-4 句，先说这篇 paper 是什么类型，核心做法是什么，和我熟悉的哪条线最接近。可以写设计取舍，但要说清楚是把什么能力换成什么代价。
+正文第一段 2-4 句，先说这篇 paper 是什么类型，核心做法是什么，和我熟悉的哪条线最接近。可以写设计取舍，但要说清楚是把什么能力换成什么代价。
 
 第二段可选，2-4 句。用于指出缺陷、说明实验或部署风险、说出我需要精读的点。如果你不确定某个方法或术语，必须在第二段末尾明说：`这里我对 <术语/模块> 还不确定，需要你精读确认。`
 ```
@@ -102,23 +103,23 @@ confidence: 2
 ## 示例风格
 
 ```text
-[GPT5.5] Cosmos Policy 直接把 Cosmos 后训成同时预测视频、动作和值的策略模型
+[GPT5.5, Nvidia] Cosmos Policy 直接把 Cosmos 后训成同时预测视频、动作和值的策略模型 | ...
 
-来自 NVIDIA。Cosmos Policy 使用 Cosmos 作为预训练模型，然后让它同时预测 frame、value 和 action。做法很直接，关键假设是 Cosmos 的视频表征可以承载动作建模，这个假设未必成立，但作为一篇把 WM-VLA 路线推到简单极限的工作有参考价值。可以用来反推哪些精心设计的模块真的必要。
+Cosmos Policy 使用 Cosmos 作为预训练模型，然后让它同时预测 frame、value 和 action。做法很直接，关键假设是 Cosmos 的视频表征可以承载动作建模，这个假设未必成立，但作为一篇把 WM-VLA 路线推到简单极限的工作有参考价值。可以用来反推哪些精心设计的模块真的必要。
 ```
 
 ```text
-[GPT5.5] LingBot-VA 用交替生成视频和动作的方式做 causal WM-VLA
+[GPT5.5] LingBot-VA 用交替生成视频和动作的方式做 causal WM-VLA | ...
 
-来自 <主要机构>。LingBot-VA 的核心是让 video frame 和 action 在 MoT 中交替自回归，显式保持 causal 依赖。这个设计比单纯把视频预测当辅助 loss 更清楚，因为未来视觉确实进入了后续动作生成，并且 KV cache 可以缓解长时序漂移。
+LingBot-VA 的核心是让 video frame 和 action 在 MoT 中交替自回归，显式保持 causal 依赖。这个设计比单纯把视频预测当辅助 loss 更清楚，因为未来视觉确实进入了后续动作生成，并且 KV cache 可以缓解长时序漂移。
 
 由于我不太确定，你需要到论文或者开源代码中看它在真实长程任务里是否真的不需要额外 memory，以及视频预测错误是否会传染到后续动作。
 ```
 
 ```text
-[Opus 4.8] VLA-JEPA 在 ACT-like VLA 外接 latent world model，用人类视频做预训练
+[Opus 4.8] VLA-JEPA 在 ACT-like VLA 外接 latent world model，用人类视频做预训练 | ...
 
-来自 <主要机构>。VLA-JEPA 的架构还是 ACT-like（即无 MoT），只是在外面接了一个 JEPA 风格的 latent world model，用人类视频学习未来表征，再用机器人数据后训练动作预测。整体思路比较合理，价值在于利用 human video。
+VLA-JEPA 的架构还是 ACT-like（即无 MoT），只是在外面接了一个 JEPA 风格的 latent world model，用人类视频学习未来表征，再用机器人数据后训练动作预测。整体思路比较合理，价值在于利用 human video。
 
 问题是 latent world model 是否真的改善控制，应当跟只做人类视频预训练、只做机器人后训练的方法做 ablation，但论文中没有做。
 ```
