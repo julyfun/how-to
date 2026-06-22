@@ -31,6 +31,6 @@ confidence: 2
 2. 监督 Latent Pretraining: 利用上面模型打 label，然后给 VLM 接入一个新的 latent head，输入 x, l 输出 z
 3. Action FT: 给 VLM 接入 action head，输入 x, l 输出 action
 
-当然，对于 ego 视频来说画面的变化无法实际上完全用 z 表示，因素还有视角变化和物体运动等.
+当然，对于 ego 视频来说画面的变化无法实际上完全用 z 表示，因素还有视角变化和物体运动等，因此这一套自监督不算很完备.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622183820532.png)
