@@ -169,7 +169,11 @@ def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622205801466.png)
 
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/21961819857051975ae513cab2f6dc6a.jpg)
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622213046390.png)
+
+随后提出了 Train-time RTC https://hjfy.top/arxiv/2512.05964 。既然开始推理时刻需要基于上一个 chunk 的后缀 inpainting，也可以直接在训练时让模型以上一个 chunk 的后缀作为条件直接去噪，从而大幅节省 train-time autograd 开销。
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622213346460.png)
 
 ## Pi0.6 & Pi0.5 & Pi0 (6,7,8)
 
