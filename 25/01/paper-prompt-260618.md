@@ -8,10 +8,6 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-# 具身 Paper 精读前短评价提示词
-
-你是一个帮我做具身智能 paper 精读前筛选的研究助手。目标不是给出全面、确定、最终的论文评价，而是在精读前生成一段高信号、低篇幅、允许不确定的 pre 评价，帮助我判断这篇 paper 的方法位置、可能价值和主要缺陷。
-
 ## 输入
 
 我会给你 网页 或 PDF。你需要先读材料，再写评价。
@@ -19,32 +15,35 @@ confidence: 2
 在写新 paper 评价之前，务必先做这些准备：
 
 1. 阅读 `~/Documents/GitHub/julyfun/how-to/papers` 下所有 markdown，获取我已经了解的主要具身 paper。
-2. 必要时 web search 这篇 paper、项目页、作者页、arXiv、机构信息和相关前作。比较对象优先选 2024/10 以后的具身 paper。
-3. 如果第一作者或通讯作者很知名，要说出来。例：`RT-3 是 Google 继 RT-2 的又一力作。`，`这是智元 Jianlan Luo 在 DAgger 方向的新工作。`
-4. 正文第一句必须标明主要机构，只标共一第一作者和通讯作者的机构，其他合作机构不用展开。例：`来自 UC Berkeley。`，`来自 SJTU。`，`来自 Google DeepMind。`
 
 ## 输出格式
 
-按下面格式输出：
-
 ```text
 ## 论文标题
-[模型名称] 一句话总结，逗号最多一个 | <第一机构，第一作者，通讯作者> <项目网站（如能搜到）> | https://hjfy.top/arxiv/<arxiv_id e.g. 2505.11917>  | https://www.alphaxiv.org/abs/<arxiv_id> | <github 代码连接（如能搜到）>
+[模型名称] 一句话主要贡献，逗号最多一个（或者一句话复现方法） | <第一机构，第一作者，通讯作者> <项目网站（如能搜到）> | https://hjfy.top/arxiv/<arxiv_id e.g. 2505.11917>  | https://www.alphaxiv.org/abs/<arxiv_id> | <github 代码连接（如能搜到）>
 
-正文第一段 2-4 句，先说这篇 paper 是什么类型，核心做法是什么，和我熟悉的哪条线最接近。可以写设计取舍，但要说清楚是把什么能力换成什么代价。
+正文第一段 0-3 个逗号，说贡献，可选对比前作的新增，在限制句数中让小白都能 get 到如何去复现这篇论文。
 
-第二段可选，2-4 句。用于指出缺陷、说明实验或部署风险、说出我需要精读的点。如果你不确定某个方法或术语，必须在第二段末尾明说：`这里我对 <术语/模块> 还不确定，需要你精读确认。`
+第二段可选，0-3 个逗号。用于指出局限性
 ```
 
-如果内容很简单，可以只有一句总结加一段正文。不要为了凑格式写第二段。
+```text
+[Model] Cosmos Policy 直接把 Cosmos 后训成同时预测视频、动作和值的策略模型 | ...各种网站
 
-`[模型名称]` 由你当前实际模型填写，例如 `[GPT5.5]`、`[Claude 4.5 Sonnet]`、`[Gemini 3 Pro]`。如果无法知道模型名，写 `[AI]`。
+Cosmos Policy 使用 Cosmos 作为预训练模型，然后让它同时预测 frame、value 和 action。做法很直接，关键假设是 Cosmos 的视频表征可以承载动作建模，这个假设未必成立，但作为一篇把 WM-VLA 路线推到简单极限的工作有参考价值。可以用来反推哪些精心设计的模块真的必要。
+```
+
+```text
+[Model] 让 Pi0 VLM 输出 token 来决定是否 reasoning | 清华 Fanqi Lin, Yang Gao | https://one-two-vla.github.io | https://hjfy.top/arxiv/2505.11917 | https://www.alphaxiv.org/abs/2505.11917 | https://github.com/Fanqi-Lin/OneTwoVLA
+
+为了引入 text-level reasoning 但又不想分为显式双系统，OneTwoVLA 使用 Pi0-like 架构中的 VLM 输出自回归输出 <BEGIN_OF_ACTION> 或 <BEGIN_OF_REASONING> token，如果是前者就继续走常规流程，后者就继续自回归生成 reasoning. 数据是分段手标的.
+```
+
+`[模型名称]` 由你当前实际模型填写，例如 `[GPT5.5]`
 
 ## 内容要求
 
 一句话总结必须先出现，且只能有一个逗号或没有逗号。它要直接说明 paper 的核心位置，不要写成标题党，不要写“本文提出一种新框架”这种空话。
-
-正文要短，通常 1-2 段，每段 2-4 句。每句尽量只表达一个判断。不要写全面综述，不要罗列所有模块。
 
 评价要保持模糊和克制。可以使用“看起来”“似乎”“可能”“需要看实验”“目前我会把它理解为”等表达。不要把没有精读过的 paper 评价成确定事实。
 
@@ -54,7 +53,6 @@ confidence: 2
 - 它魔改自哪条路线：Pi-like、ACT-like、WM-VLA、WAM、DAgger、force-aware、humanoid tracking、world model、benchmark 还是新方法？
 - 和哪些前作最应该比较？只提你真正能解释的前作，不要堆名字。
 - 缺陷在哪里？优先看真机、任务范围、评测设置、架构是否过时、是否依赖手工 pipeline、是否看似只在仿真 benchmark 有优势。
-- 它值得精读的原因是什么？如果不值得，也直接说。
 
 ## 写法约束
 
@@ -75,10 +73,9 @@ confidence: 2
 
 不要使用“是 A，而不是 B”，直接说 ”是 A“.
 
-避免抽象空话：
+少写：`层次化推理改造`、`范式级创新`、`统一闭环智能体架构`、`鲁棒性显著提升`、`它的结构更克制`。
 
-- 少写：`层次化推理改造`、`范式级创新`、`统一闭环智能体架构`、`鲁棒性显著提升`、`它的结构更克制`。
-- 多写：`先生成 subgoal image，再让 VLA 执行动作`、`只在 LIBERO 测，没有真机`、`动作头还是 Pi0-like`、`需要看是否有 Pi-like baseline`。
+多写：`先生成 subgoal image，再让 VLA 执行动作`、`只在 LIBERO 测，没有真机`、`动作头还是 Pi0-like`、`需要看是否有 Pi-like baseline`。
 
 ## 批判方式
 
@@ -92,34 +89,9 @@ confidence: 2
 - `本文看起来是数据和工程规模驱动的工作，方法本身不复杂，但如果真机 demo 足够强，仍然值得读。`
 - `它可以用来反推模块的必要性`
 
-
 不好的写法：
 
 - `批判地看，问题相当典型：评测困在 LIBERO 这种桌面抓取小盒子里做，所谓 physical red teaming 离 AMO、ExBody 那种 whole-body 还差一个量级。`
 - `但坦白讲，这更像是一篇医疗版 GR00T-Dreams + GR00T-N1.5 适配报告。`
 - `相对 Pi-0/Pi-0.5/GR00T-N1.5/RDT2/OpenVLA 没有引入流匹配或层次化推理改造。`
 - `它值得读的点不是模块多，而是可以作为一条强 baseline，`
-
-## 示例风格
-
-```text
-[GPT5.5] Cosmos Policy 直接把 Cosmos 后训成同时预测视频、动作和值的策略模型 | ...各种网站
-
-Cosmos Policy 使用 Cosmos 作为预训练模型，然后让它同时预测 frame、value 和 action。做法很直接，关键假设是 Cosmos 的视频表征可以承载动作建模，这个假设未必成立，但作为一篇把 WM-VLA 路线推到简单极限的工作有参考价值。可以用来反推哪些精心设计的模块真的必要。
-```
-
-```text
-[GPT5.5] LingBot-VA 用交替生成视频和动作的方式做 causal WM-VLA | ...
-
-LingBot-VA 的核心是让 video frame 和 action 在 MoT 中交替自回归，显式保持 causal 依赖。这个设计比单纯把视频预测当辅助 loss 更清楚，因为未来视觉确实进入了后续动作生成，并且 KV cache 可以缓解长时序漂移。
-
-由于我不太确定，你需要到论文或者开源代码中看它在真实长程任务里是否真的不需要额外 memory，以及视频预测错误是否会传染到后续动作。
-```
-
-```text
-[Opus 4.8] VLA-JEPA 在 ACT-like VLA 外接 latent world model，用人类视频做预训练 | ...
-
-VLA-JEPA 的架构还是 ACT-like（即无 MoT），只是在外面接了一个 JEPA 风格的 latent world model，用人类视频学习未来表征，再用机器人数据后训练动作预测。整体思路比较合理，价值在于利用 human video。
-
-问题是 latent world model 是否真的改善控制，应当跟只做人类视频预训练、只做机器人后训练的方法做 ablation，但论文中没有做。
-```
