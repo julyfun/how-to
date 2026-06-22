@@ -145,7 +145,7 @@ flowchart TD
 ```
 
 ## RTC (5)
-from sergey.
+from sergey. 直接魔改原有 action expert FM 过程：
 
 ```python
 # H: (Prediction Horizon), M: 动作维度 (Action Dim), O: 观测维度
