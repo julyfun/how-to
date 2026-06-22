@@ -148,26 +148,28 @@ flowchart TD
 from sergey. 直接魔改原有 action expert FM 过程：
 
 ```python
-# H: (Prediction Horizon), M: 动作维度 (Action Dim), O: 观测维度
+# 符号：H: (Prediction Horizon), M: 动作维度 (Action Dim), O: 观测维度
 def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
-    # o_t: 观测 [O], A_prev: 旧动作块的残余部分 [H, M] (已 pad0 至H长度)
-    # d: 推理延迟 s: 执行步长 n: 迭代步数 beta: 引导项裁剪值
+    """
+    变量：o_t: 观测 [O], A_prev: 旧动作块的残余部分 [H, M] (已 pad0 至H长度)
+    d: 推理延迟 s: 执行步长 n: 迭代步数 beta: 引导项裁剪值
+    """
 
-    A_tau = torch.randn((H, M))             # [H, M] 采样初始噪声
-    W = compute_soft_mask(d, s, H)          # [H, 1] 软掩码权重，1 ~ 0递减
-    for tau in np.linspace(0, 1, n):        # n 步流匹配迭代
-        v = v_net(A_tau, o_t, tau)          # [H, M] 当前速度场预测
-        # A_hat_1: [H, M] 预估当前步如果去噪完成后的最终动作轨迹
-        A_hat_1 = A_tau + (1 - tau) * v
-        # 计算带权重的 Inpainting 误差
-        loss = 0.5 * (W * (A_prev - A_hat_1)**2).sum()  # 标量 Scalar
-        # g: [H, M] 获取修正梯度，指引 A_tau 向 A_prev 靠拢
-        g = torch.autograd.grad(loss, A_tau)[0]
+    A_tau = torch.randn((H, M)) # [H, M] 采样初始噪声
+    W = compute_soft_mask(d, s, H) # [H, 1] 软掩码权重，1 ~ 0递减
+    for tau in np.linspace(0, 1, n):
+        v = v_net(A_tau, o_t, tau) # [H, M] 当前速度场预测
+        A_hat_1 = A_tau + (1 - tau) * v # [H, M] 无 guidance 情况下的最终动作
+        loss = 0.5 * (W * (A_prev - A_hat_1)**2).sum() # 标量
+        g = torch.autograd.grad(loss, A_tau)[0] # [H, M] 获取修正梯度，指引 A_tau 向 A_prev 靠拢
         scale = min(beta, get_weight_scale(tau)) # get_weight_scale 是一个随 tau 递减的权重
-        # A_tau: [H, M] 结合原始预测与裁剪后的引导项进行更新
-        A_tau += (1/n) * (v + scale * g)
-    return A_tau                            # [H, M] 平滑衔接的新动作块
+        A_tau += (1/n) * (v + scale * g) # [H, M] 结合原始预测与裁剪后的引导项进行更新
+    return A_tau
 ```
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622205801466.png)
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/21961819857051975ae513cab2f6dc6a.jpg)
 
 ## Pi0.6 & Pi0.5 & Pi0 (6,7,8)
 
