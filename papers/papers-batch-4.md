@@ -33,3 +33,8 @@ confidence: 2
 当然，对于 ego 视频来说画面的变化无法实际上完全用 z 表示，因素还有视角变化和物体运动等，因此这一套自监督不算很完备.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622183820532.png)
+
+## DreamVLA (30)
+⭐️⭐️ 上交 wenyao zhang, EIT Xin Jin |  https://hjfy.top/arxiv/2507.04447
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622195900612.png)
