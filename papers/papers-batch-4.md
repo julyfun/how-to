@@ -37,4 +37,6 @@ confidence: 2
 ## DreamVLA (30)
 ⭐️⭐️ 上交 wenyao zhang, EIT Xin Jin |  https://hjfy.top/arxiv/2507.04447
 
+相比普通 WM，本文预测的不是 video latent 而是自定义的 world latent，train-time tasks 包括未来的动态区域、深度、DINO-V2 emb 等. infer-time 使用此 world latent 作为 action query 的 kv.
+
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622195900612.png)
