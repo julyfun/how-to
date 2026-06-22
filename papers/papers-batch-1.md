@@ -328,3 +328,10 @@ flowchart TD
     classDef pi06 fill:#fff2b3,stroke:#d6a600,stroke-width:2px,color:#111;
     class pg,ae,vfsiglip,vftok,vfprefix,vf,vdist,vscalar,adv,bin,advtxt,fastout,fasttok,fastgt,tokce pi06;
 ```
+
+## 总结
+
+VLA 架构的大方向:
+1. [VLM] -> embedding -> [MLP(i.e. action head)] -> action
+2. [VLM] -> embedding -> kv -> [Decoder transformer, attended by learnable q pos embedding] -> [action head] -> action (ACT-like)
+3. [VLM] -> MoT <-> [action expert] -> [action head] -> action (Pi-like)
