@@ -24,9 +24,13 @@ confidence: 2
 ## LAPA (29)
 ⭐️⭐️⭐️ https://hjfy.top/arxiv/2410.11758
 
-原始的 IDM 和 FDM 模型。
+自监督在相邻帧训练 IDM -> latent_token -> FDM 模型，作为 VLM 的 pretraining label.
 
-散步训练
-1. 无监督利用互联网视频训练一个 encoder: (x1, x2) -> z（VQ 离散化）和 decoder: (x1, z) -> x2
+3 步训练:
+1. 自监督利用互联网视频训练一个 encoder: (x1, x2) -> z（VQ 离散化）和 decoder: (x1, z) -> x2，这类似于 IDM 和 FDM. 这里 x1 和 x2 相差 T 帧.
+2. 监督 Latent Pretraining: 利用上面模型打 label，然后给 VLM 接入一个新的 latent head，输入 x, l 输出 z
+3. Action FT: 给 VLM 接入 action head，输入 x, l 输出 action
+
+当然，对于 ego 视频来说画面的变化无法实际上完全用 z 表示，因素还有视角变化和物体运动等.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622183820532.png)
