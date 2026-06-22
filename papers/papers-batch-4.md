@@ -21,4 +21,6 @@ confidence: 2
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622151337338.png)
 
-## LAPA ()
+## LAPA (29)
+⭐️⭐️⭐️ https://hjfy.top/arxiv/2410.11758
+
