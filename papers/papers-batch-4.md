@@ -24,3 +24,9 @@ confidence: 2
 ## LAPA (29)
 ⭐️⭐️⭐️ https://hjfy.top/arxiv/2410.11758
 
+原始的 IDM 和 FDM 模型。
+
+散步训练
+1. 无监督利用互联网视频训练一个 encoder: (x1, x2) -> z（VQ 离散化）和 decoder: (x1, z) -> x2
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622183820532.png)
