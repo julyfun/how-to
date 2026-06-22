@@ -145,11 +145,14 @@ flowchart TD
 ```
 
 ## RTC (5)
+from sergey.
+
 ```python
 # H: (Prediction Horizon), M: 动作维度 (Action Dim), O: 观测维度
 def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
     # o_t: 观测 [O], A_prev: 旧动作块的残余部分 [H, M] (已 pad0 至H长度)
     # d: 推理延迟 s: 执行步长 n: 迭代步数 beta: 引导项裁剪值
+
     A_tau = torch.randn((H, M))             # [H, M] 采样初始噪声
     W = compute_soft_mask(d, s, H)          # [H, 1] 软掩码权重，1 ~ 0递减
     for tau in np.linspace(0, 1, n):        # n 步流匹配迭代
