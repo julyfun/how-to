@@ -29,7 +29,7 @@ confidence: 2
 
 ```text
 ## 论文标题
-[模型名称] 一句话总结，逗号最多一个 | <项目网站（如能搜到）> | https://hjfy.top/arxiv/<arxiv_id e.g. 2505.11917>  | https://www.alphaxiv.org/abs/<arxiv_id> | <github 代码连接（如能搜到）>
+[模型名称] 一句话总结，逗号最多一个 | <第一机构，第一作者，通讯作者> <项目网站（如能搜到）> | https://hjfy.top/arxiv/<arxiv_id e.g. 2505.11917>  | https://www.alphaxiv.org/abs/<arxiv_id> | <github 代码连接（如能搜到）>
 
 正文第一段 2-4 句，先说这篇 paper 是什么类型，核心做法是什么，和我熟悉的哪条线最接近。可以写设计取舍，但要说清楚是把什么能力换成什么代价。
 
@@ -48,11 +48,11 @@ confidence: 2
 
 评价要保持模糊和克制。可以使用“看起来”“似乎”“可能”“需要看实验”“目前我会把它理解为”等表达。不要把没有精读过的 paper 评价成确定事实。
 
-如果论文在以下方面信号明天，则可以回答这些问题，但不必全部覆盖：
+如果论文在以下方面信号明显，则可以回答这些问题，但不必全部覆盖：
 
 - 这是一篇方法、benchmark、dataset、infra、survey、deployment report，还是系统整合？
 - 它魔改自哪条路线：Pi-like、ACT-like、WM-VLA、WAM、DAgger、force-aware、humanoid tracking、world model、benchmark 还是新方法？
-- 和哪些前作最应该比较？只提你真正能解释一句的前作，不要堆名字。
+- 和哪些前作最应该比较？只提你真正能解释的前作，不要堆名字。
 - 缺陷在哪里？优先看真机、任务范围、评测设置、架构是否过时、是否依赖手工 pipeline、是否看似只在仿真 benchmark 有优势。
 - 它值得精读的原因是什么？如果不值得，也直接说。
 
@@ -78,7 +78,7 @@ confidence: 2
 避免抽象空话：
 
 - 少写：`层次化推理改造`、`范式级创新`、`统一闭环智能体架构`、`鲁棒性显著提升`、`它的结构更克制`。
-- 多写：`先生成 subgoal image，再让 VLA 执行动作`、`只在 LIBERO 测，没有真机`、`动作头还是 ACT-like`、`需要看是否有 Pi-like baseline`。
+- 多写：`先生成 subgoal image，再让 VLA 执行动作`、`只在 LIBERO 测，没有真机`、`动作头还是 Pi0-like`、`需要看是否有 Pi-like baseline`。
 
 ## 批判方式
 
@@ -103,7 +103,7 @@ confidence: 2
 ## 示例风格
 
 ```text
-[GPT5.5, Nvidia] Cosmos Policy 直接把 Cosmos 后训成同时预测视频、动作和值的策略模型 | ...
+[GPT5.5] Cosmos Policy 直接把 Cosmos 后训成同时预测视频、动作和值的策略模型 | ...各种网站
 
 Cosmos Policy 使用 Cosmos 作为预训练模型，然后让它同时预测 frame、value 和 action。做法很直接，关键假设是 Cosmos 的视频表征可以承载动作建模，这个假设未必成立，但作为一篇把 WM-VLA 路线推到简单极限的工作有参考价值。可以用来反推哪些精心设计的模块真的必要。
 ```
@@ -123,4 +123,3 @@ VLA-JEPA 的架构还是 ACT-like（即无 MoT），只是在外面接了一个 
 
 问题是 latent world model 是否真的改善控制，应当跟只做人类视频预训练、只做机器人后训练的方法做 ablation，但论文中没有做。
 ```
-
