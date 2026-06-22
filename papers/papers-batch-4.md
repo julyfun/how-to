@@ -40,3 +40,19 @@ confidence: 2
 相比普通 WM，本文预测的不是 video latent 而是自定义的 world latent，train-time tasks 包括未来的动态区域、深度、DINO-V2 emb 等. infer-time 使用此 world latent 作为 action query 的 kv.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622195900612.png)
+
+## MemoryWAM: Efficient World Action Modeling with Persistent Memory
+[Gemini 3.1 Pro] 结合近期帧、锚点帧和 gist tokens 来实现高效的持久记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> |
+https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
+
+MemoryWAM 采用混合记忆机制，保留滑动窗口的近期帧、事件边界的锚点帧和压缩长历史的 gist tokens。做法很直接，关键在于用少量的 gist tokens
+压缩长程历史以降低推理时的显存和延迟。可以用来参考如何设计长程世界模型的记忆机制。
+MemoryWAM 继承了视频扩散模型的局限性，在语义理解和推理能力上仍有不足。
+
+## Generating Robot Hands from Human Demonstrations
+[Gemini 3.1 Pro] 利用人类手指运动轨迹，通过逆运动学直接优化并生成机器手硬件设计 | <加州大学圣地亚哥分校，Sha Yi，Xiaolong Wang>
+<https://yswhynot.github.io/generating-robot-hands/> | https://hjfy.top/arxiv/2606.20549 | https://www.alphaxiv.org/abs/2606.20549
+
+本文将逆运动学作为固定策略，联合优化机器手硬件参数和关节轨迹以拟合人类手指的运动轨迹。为了加速搜索，本文训练了一个 RL actor
+来输出硬件设计和关节初始值，随后再用梯度下降进行微调。可以用来参考如何将人类运动数据用于机器人的形态协同设计。
+本文目前只优化拇指和食指的指尖位置，没有考虑全手接触和受力情况，且 3D 打印的结构在承受高负载时容易损坏。

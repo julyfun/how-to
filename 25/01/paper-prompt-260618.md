@@ -12,7 +12,7 @@ confidence: 2
 
 ```text
 ## 论文标题
-[模型名称] 一句话主要贡献，逗号最多一个（或者一句话复现方法） | <第一机构，第一作者，通讯作者> <项目网站（如能搜到）> | https://hjfy.top/arxiv/<arxiv_id e.g. 2505.11917>  | https://www.alphaxiv.org/abs/<arxiv_id> | <github 代码连接（如能搜到）>
+[LLM 模型] 一句话主要贡献，逗号最多一个（或者一句话复现方法） | <第一机构，第一作者，通讯作者> <项目网站（如能搜到）> | https://hjfy.top/arxiv/<arxiv_id e.g. 2505.11917>  | https://www.alphaxiv.org/abs/<arxiv_id> | <github 代码连接（如能搜到）>
 
 正文第一段 0-3 个逗号，说贡献，可选对比前作的新增，在限制句数中让小白都能 get 到如何去复现这篇论文。
 
@@ -22,13 +22,13 @@ confidence: 2
 示例：
 
 ```text
-[Model] Cosmos Policy 直接把 Cosmos 后训成同时预测视频、动作和值的策略模型 | ...各种网站
+[GPT5.5] Cosmos Policy 直接把 Cosmos 后训成同时预测视频、动作和值的策略模型 | ...各种网站
 
 Cosmos Policy 使用 Cosmos 作为预训练模型，然后让它同时预测 frame、value 和 action。做法很直接，关键假设是 Cosmos 的视频表征可以承载动作建模，这个假设未必成立，但作为一篇把 WM-VLA 路线推到简单极限的工作有参考价值。可以用来反推哪些精心设计的模块真的必要。
 ```
 
 ```text
-[Model] 让 Pi0 VLM 输出 token 来决定是否 reasoning | 清华 Fanqi Lin, Yang Gao | https://one-two-vla.github.io | https://hjfy.top/arxiv/2505.11917 | https://www.alphaxiv.org/abs/2505.11917 | https://github.com/Fanqi-Lin/OneTwoVLA
+[Gemini 3.1 Pro] 让 Pi0 VLM 输出 token 来决定是否 reasoning | 清华 Fanqi Lin, Yang Gao | https://one-two-vla.github.io | https://hjfy.top/arxiv/2505.11917 | https://www.alphaxiv.org/abs/2505.11917 | https://github.com/Fanqi-Lin/OneTwoVLA
 
 为了引入 text-level reasoning 但又不想分为显式双系统，OneTwoVLA 使用 Pi0-like 架构中的 VLM 输出自回归输出 <BEGIN_OF_ACTION> 或 <BEGIN_OF_REASONING> token，如果是前者就继续走常规流程，后者就继续自回归生成 reasoning. 数据是分段手标的.
 ```
