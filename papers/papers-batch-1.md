@@ -168,7 +168,7 @@ def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
 
 ## Pi0.6 & Pi0.5 & Pi0 (6,7,8)
 
-Pi0 除了以下设计，还引入了 zero-padding 进行跨本体混合训练，即状态和动作向量长度设定为数据集中最大自由度，不足补 0. 模型只能通过输入的本体感知 $q_t$ 和语言指令来识别当前的硬件构型. Pi0 并不能 zero-shot，但预训练能够帮助后训练的性能提升. 其他博主的一些理解：
+Pi0 除了以下设计，还引入了 zero-padding 进行跨本体混合训练，即状态和动作向量长度设定为数据集中最大自由度，不足补 0. 模型只能通过输入的本体感知 $q_t$（例如 is_pad 信息？）和语言指令来识别当前的硬件构型. Pi0 并不能 zero-shot，但预训练能够帮助后训练的性能提升. 其他博主的一些理解：
 > Pi0 分离 actor 和 VLM，是为了避免后训练中对 VLM 能力的灾难性破坏.
 >
 > Pi0 一次性引入了多个在后续被广泛使用的 Setting，当然，这些内容一开始的出处在这里不作考证，包括使用 MoT 进行 LLM 以及 Actor 的交互（见 Bagel ↗︎），使用 Flow Matching Loss 训练 Actor 以及使用 zero-padding 来进行跨本地的混合训练。
@@ -232,7 +232,7 @@ obs1 = gated_residual(obs0, obs_y)                              # (B, Lo, 2048)
 act1 = gated_residual(act0, act_y)                              # (B, La, 1024)
 ```
 
-下面是 pi0.5. 一句话：对 state 进行 bin 离散并以文本丢进 VLM，预训练则对 action 使用 FAST 分词器离散从而在不启用 action expert 的情况下进行 LLM-like NTP 预测并使用交叉熵 loss，目的是大幅加快训练，而 infer-time 用 flow matching 反而更快。然而，对于跨本体 state 似乎没有做特殊处理，而都是归一化。架构细节包括:
+下面是 pi0.5. 一句话：对 state 进行 bin 离散并以文本丢进 VLM，预训练则对 action 使用 FAST 分词器离散从而在不启用 action expert 的情况下进行 LLM-like NTP 预测并使用交叉熵 loss，目的是大幅加快训练，而 infer-time 用 flow matching 反而更快。然而，对于跨本体 state 似乎没有做特殊处理，而都是归一化，可能要通过语言指令来识别本体。架构细节包括:
 - flow step 使用 adaRMSNorm.
 - 在 pi0 中，state 是 linear 进 action expert，flow step 则 MLP 直接加到 action tokens 上.
 - FAST tokenizer 就是先将整个 action chunk (原文说了是 compressing the action chunks) 先 encode 为 8 个 latent 然后 vector quantize 就完事. 最终将 50x19 action 转为 8 个 token.
