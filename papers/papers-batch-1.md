@@ -171,7 +171,7 @@ def rtc_inference(v_net, o_t, A_prev, d, s, n=5, beta=5):
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622213046390.png)
 
-随后提出了 Train-time RTC https://hjfy.top/arxiv/2512.05964 。既然开始推理时刻需要基于上一个 chunk 的后缀 inpainting，也可以直接在训练时让模型以上一个 chunk 的后缀作为条件直接去噪，从而大幅节省 train-time autograd 开销。
+随后提出了 Train-time RTC https://hjfy.top/arxiv/2512.05964 。既然开始推理时刻需要基于上一个 chunk 的后缀进行 autograd inpainting，干脆直接在训练时让模型以上一个 chunk 的后缀（直接用 clean GT action）作为条件直接去噪，从而大幅节省 infer-time autograd 开销。由于不知道 infer-time 的真实 delay，训练时采用 randomly sampled delay.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622213346460.png)
 
