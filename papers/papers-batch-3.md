@@ -30,10 +30,10 @@ flowchart TD
 ## EgoScale (22)
 - ⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.16710 : https://www.alphaxiv.org/abs/2602.16710 | https://research.nvidia.com/labs/gear/egoscale/ | NVIDIA | Ruijie Zhang + Linxin Fan
 
-20000 小时数据灵巧手操作预训练，mid-training 和 post-training 实践。模型架构本质是 ACT-like，即 obs 和 lang 用 vlm 单独编码后作为 kv，而 dit 只用 action 来 query，没有 MoT.
-- 预训练：解冻所有模块，包括 VLM(GROOT N1)，vision encoder，DiT 动作专家等，纯 RGB 数据用现成工具解算手部姿态和手腕轨迹，其中有 829 小时 vision pro 准确手腕+手部数据.
-- mid-training: 对同样的任务同时采集 30 条人类轨迹和 5 条机器人轨迹（50h人类 + 4h机器人，都使用 vive tracker + manus 手套）
-- post-training: 特定任务的机器人数据. 如果进行了 mid-trainig 则冻结视觉编码器，否则不冻结.
+20000 小时数据灵巧手操作预训练，mid-training 和 post-training 实践。模型架构本质是 ACT-like，即 obs 和 lang 用 vlm 单独编码后作为 kv，而 dit 只用 action 来 query，没有 MoT. 三个阶段的训练为：
+1. 预训练：解冻所有模块，包括 VLM(GROOT N1)，vision encoder，DiT 动作专家等，纯 RGB 数据用现成工具解算手部姿态和手腕轨迹，其中有 829 小时 vision pro 准确手腕+手部数据.
+2. mid-training: 对同样的任务同时采集 30 条人类轨迹和 5 条机器人轨迹（50h人类 + 4h机器人，都使用 vive tracker + manus 手套）
+3. post-training: 特定任务的机器人数据. 如果进行了 mid-trainig 则冻结视觉编码器，否则不冻结.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260612225719448.png)
 
@@ -44,12 +44,11 @@ flowchart TD
 将预训练的 pi0.5 的 action expert 复制一份参数作为 learnable force expert，提供 1 秒的 force kv history. 通过 teleop online dagger 训练 force expert. LIFT 并非为了 contact-rich 场景设计，而是证明后训练阶段才引入 force 仍然是有价值的。不过 multi-task 能力还未开发（pi0.5 本身在这些任务上也不怎么 multitask）. 训练时输出 cmd 还是 state 也值得仔细思考，可从人类采集 & replay & rollout 角度考虑。
 
 ## VLA-JEPA (24)
-- ⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.10098 | Jingwen Sun, Zhibo Chen, 中科大
+⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.10098 | Jingwen Sun, Zhibo Chen, 中科大
 
-本质 ACT-like(no MOT) 然后加上 WM 和 latent action query 来利用 human video 进行 pretrain. （非具体动作，仅表征动力学）
-- V-JEPA 全程冻结.
-- 这里 WM 是从零开始训练的 transformer，注意预测的是 V-JEPA 空间的潜在状态.
-- 下图中 latent-action 之前的就是一个 ACT-like.
+在 ACT-like(no MOT) 基础上加上 WM 和 latent action query 来利用 human video 进行 pretrain. （非具体动作，仅表征动力学）
+
+下图中，V-JEPA 全程冻结，WM 是从零开始训练的 transformer，注意预测的是 V-JEPA 空间的潜在状态，而 latent-action 之前的就是一个 ACT-like.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/c533a30cfdbf0bb35eb5af6eea633b79.jpg)
 
@@ -63,7 +62,9 @@ for j in range(m):
 ```
 
 ## OneTwoVLA (26)
-- 清华 Fanqi Lin, Yang Gao | https://one-two-vla.github.io | https://hjfy.top/arxiv/2505.11917 | https://www.alphaxiv.org/abs/2505.11917 | https://github.com/Fanqi-Lin/OneTwoVLA
+⭐️⭐️ 清华 Fanqi Lin, Yang Gao | https://one-two-vla.github.io | https://hjfy.top/arxiv/2505.11917 | https://www.alphaxiv.org/abs/2505.11917 | https://github.com/Fanqi-Lin/OneTwoVLA
+
+为了引入 text-level reasoning 但又不想分为显式双系统，OneTwoVLA 使用 Pi0-like 架构中的 VLM 输出自回归输出 <BEGIN_OF_ACTION> 或 <BEGIN_OF_REASONING> token，如果是前者就继续走常规流程，后者就继续自回归生成 reasoning. 数据是分段手标的.
 
 TODO:
 
