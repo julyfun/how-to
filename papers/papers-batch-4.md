@@ -9,9 +9,9 @@ confidence: 2
 ---
 
 ## InSpire (27)
-⭐️ 同济 Ji Zhang, Jingkuan Song | https://koorye.github.io/Inspire/
+⭐️⭐️ 同济 Ji Zhang, Jingkuan Song | https://koorye.github.io/Inspire/
 
-直接对 VLM 输入“物体在哪里” 作为 aux task 并且也会把输出结果直接再次输入 VLM.
+在 Pi0 基础上直接对 VLM 输入“物体在哪里” 作为 aux task 并且也会把输出结果直接再次输入 VLM.
 
 ## MEM (28)
 
