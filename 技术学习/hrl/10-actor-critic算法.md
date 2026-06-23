@@ -11,7 +11,7 @@ see: https://hrl.boyuai.com/chapter/2/actor-critic%E7%AE%97%E6%B3%95
 
 ## On-policy Actor-Critic
 
-训练 critic 来估计后续收益.
+训练 critic 来估计后续收益. 下面确实是 Time-delta advantage.
 
 ```python
 states, actions, rewards, next_states, dones = rollout(pi_theta)
