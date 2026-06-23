@@ -1,12 +1,9 @@
 ---
-title: "unicode symbols for copying"
-date: 2026-06-05 09:23:18
-tags: ["26", "06"]
-author: "julyfun.m5air"
-os: "Darwin julyfundeMacBook-Air.local 25.3.0 Darwin Kernel Version 25.3.0: Wed Jan 28 20:56:42 PST 2026; root:xnu-12377.91.3~2/RELEASE_ARM64_T8142 arm64"
-assume-you-know: [computer]
-confidence: 2
+title: 希腊字母 unicode-symbols
+date: 2024-11-11 17:19:16
+tags: ["notes", "julyfun", "数学基础", "符号与字母表"]
 ---
+![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241111171152.webp)
 
 ```
 Α α a:lf 角度；系数
