@@ -41,6 +41,11 @@ confidence: 2
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622195900612.png)
 
+## Lingbot-VLA (31)
+⭐️⭐️ https://hjfy.top/arxiv/2601.18692
+
+在 pi0 基础上使用了 FSDP 和 FlexAttention 提升吞吐量.
+
 ## MemoryWAM: Efficient World Action Modeling with Persistent Memory
 [Gemini 3.1 Pro] 结合近期帧、锚点帧和 gist tokens 来实现高效的持久记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> |
 https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
