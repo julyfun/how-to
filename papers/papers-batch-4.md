@@ -47,25 +47,26 @@ confidence: 2
 在 pi0 基础上使用了 FSDP 和 FlexAttention 提升吞吐量，增加了 learnable depth query -> [VLM (attend to image token)] -> [a new proj] -> depth token 的监督，并增大数据到 20000h.
 
 ## MemoryWAM: Efficient World Action Modeling with Persistent Memory
-[Gemini 3.1 Pro] 结合近期帧、锚点帧和 gist tokens 来实现高效的持久记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> |
-https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
+[Gemini 3.1 Pro] 结合近期帧、锚点帧和 gist tokens 来实现高效的持久记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> |https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
+|-|-|-|-|-|
 
 MemoryWAM 采用混合记忆机制，保留滑动窗口的近期帧、事件边界的锚点帧和压缩长历史的 gist tokens。做法很直接，关键在于用少量的 gist tokens
 压缩长程历史以降低推理时的显存和延迟。可以用来参考如何设计长程世界模型的记忆机制。
 MemoryWAM 继承了视频扩散模型的局限性，在语义理解和推理能力上仍有不足。
 
 ## Generating Robot Hands from Human Demonstrations
-[Gemini 3.1 Pro] 利用人类手指运动轨迹，通过逆运动学直接优化并生成机器手硬件设计 | <加州大学圣地亚哥分校，Sha Yi，Xiaolong Wang>
-<https://yswhynot.github.io/generating-robot-hands/> | https://hjfy.top/arxiv/2606.20549 | https://www.alphaxiv.org/abs/2606.20549
+[Gemini 3.1 Pro] 利用人类手指运动轨迹，通过逆运动学直接优化并生成机器手硬件设计 | <加州大学圣地亚哥分校，Sha Yi，Xiaolong Wang> | <https://yswhynot.github.io/generating-robot-hands/> | https://hjfy.top/arxiv/2606.20549 | https://www.alphaxiv.org/abs/2606.20549
+|-|-|-|-|-|
 
 本文将逆运动学作为固定策略，联合优化机器手硬件参数和关节轨迹以拟合人类手指的运动轨迹。为了加速搜索，本文训练了一个 RL actor
 来输出硬件设计和关节初始值，随后再用梯度下降进行微调。可以用来参考如何将人类运动数据用于机器人的形态协同设计。
 本文目前只优化拇指和食指的指尖位置，没有考虑全手接触和受力情况，且 3D 打印的结构在承受高负载时容易损坏。
 
-## RLInf
-[Claude Opus 4.8] RLinf 是清华开源的分布式 RL 训练框架，对 LLM 推理 RL 和 embodied RL 训练相对现有框架加速 1.07-2.43× | 清华 Chao Yu, Yu Wang | https://rlinf.readthedocs.io |
-https://hjfy.top/arxiv/2509.15965 | https://www.alphaxiv.org/abs/2509.15965 | https://github.com/RLinf/RLinf
+## RLinf: Flexible and Efficient Large-scale Reinforcement Learning via Macro-to-Micro Flow Transformation
+[Gemini 3.1 Pro] 提出 M2Flow 范式解耦逻辑工作流与物理调度，构建高灵活度的大规模强化学习并行训练系统 | 清华大学, Chao Yu, Yu Wang | https://hjfy.top/arxiv/2509.15965 | https://www.alphaxiv.org/abs/2509.15965 | https://github.com/RLinf/RLinf
+|-|-|-|-|-|
 
-RLinf 提出 M2Flow 抽象,把 RL 工作流在时间和空间维度自动拆成 micro flow 再重组为执行计划，关键机制是 worker 的 adaptive communication、context switching、elastic pipelining 和
-profiling-guided 调度器。论文同时跑 LLM 数学推理 RL 和 embodied RL (含 Pi0.5、OpenVLA、GR00T 等 VLA),报告端到端吞吐相对 VeRL 等框架最高 2.43× 加速,embodied 仿真侧另有 25×
-加速来自 BEHAVIOR simulator 优化。
+RLinf 允许开发者直接用代码定义大模型强化学习组件交互，随后系统会自动分析性能并搜索出最优的时空流水线配置。它在底层原生支持自动上下文切换和自适应通信机制，复现时可以直接运
+行官方开源框架来训练模型。
+
+系统采用的动态规划调度强依赖基于多项式外推的预先性能剖析，这种预估方式在极端动态长尾负载下可能产生时间计算误差，进而降低自动分配流水线的实际并行效率。
