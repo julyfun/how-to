@@ -44,7 +44,7 @@ confidence: 2
 ## Lingbot-VLA (31)
 ⭐️⭐️ https://hjfy.top/arxiv/2601.18692
 
-在 pi0 基础上使用了 FSDP 和 FlexAttention 提升吞吐量.
+在 pi0 基础上使用了 FSDP 和 FlexAttention 提升吞吐量，增加了 learnable depth query -> [VLM (attend to image token)] -> [a new proj] -> depth token 的监督，并增大数据到 20000h.
 
 ## MemoryWAM: Efficient World Action Modeling with Persistent Memory
 [Gemini 3.1 Pro] 结合近期帧、锚点帧和 gist tokens 来实现高效的持久记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> |
