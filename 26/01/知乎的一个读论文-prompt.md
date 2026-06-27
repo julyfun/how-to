@@ -1,5 +1,5 @@
 ---
-title: "读论文 prompt"
+title: "知乎的一个读论文 prompt"
 date: 2026-01-11 18:18:00
 tags: ["26", "01"]
 author: "julyfun arch y9000p"
