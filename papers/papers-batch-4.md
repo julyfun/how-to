@@ -47,7 +47,7 @@ confidence: 2
 在 pi0 基础上使用了 FSDP 和 FlexAttention 提升吞吐量，增加了 learnable depth query -> [VLM (attend to image token)] -> [a new proj] -> depth token 的监督，并增大数据到 20000h.
 
 ## MemoryWAM: Efficient World Action Modeling with Persistent Memory
-[Gemini 3.1 Pro] 结合近期帧、锚点帧和 gist tokens 来实现高效的持久记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> |https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
+[Gemini 3.1 Pro] 结合近期帧、锚点帧和 gist tokens 来实现高效的持久记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> | https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
 |-|-|-|-|-|
 
 MemoryWAM 采用混合记忆机制，保留滑动窗口的近期帧、事件边界的锚点帧和压缩长历史的 gist tokens。做法很直接，关键在于用少量的 gist tokens
