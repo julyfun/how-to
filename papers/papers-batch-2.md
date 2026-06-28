@@ -165,7 +165,8 @@ noise_2 = randn(B,16,13)
 ## BORA: czx (17)
 
 本文在离线训练 Q net, V net(仅用于辅助训练 Q_net) 的同时更新 vlm encoder，并在在线阶段冻结 Q，只额外训练一个 MLP 级别的 residual policy.
-demo 很一般，仅限慢速 pick and place 以及食指大拇指的简单捏握.
+
+demo 仅限慢速 pick and place 以及食指大拇指的简单捏握.
 
 ### Offline RL
 ```mermaid
