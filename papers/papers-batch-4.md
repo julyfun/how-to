@@ -46,6 +46,16 @@ confidence: 2
 
 在 pi0 基础上使用了 FSDP 和 FlexAttention 提升吞吐量，增加了 learnable depth query -> [VLM (attend to image token)] -> [a new proj] -> depth token 的监督，并增大数据到 20000h.
 
+## MemoryWAM: Efficient World Action Modeling with Persistent Memory
+⭐️⭐️⭐️ 结合近期帧、起始帧和 gist tokens 来压缩长期记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> | https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
+|-|-|-|-|-|
+
+所有帧共享 8 个 learnable gist query embedding，这样就可以每帧留下 8 个 gist token.（完整视觉 token 是 120 个）.
+
+MemoryWAM 采用混合记忆机制，保留滑动窗口的近期帧、起始帧和压缩长历史的 gist tokens。做法很直接，关键在于用少量的 gist tokens
+压缩长程历史以降低推理时的显存和延迟。可以用来参考如何设计长程世界模型的记忆机制。
+MemoryWAM 继承了视频扩散模型的局限性，在语义理解和推理能力上仍有不足。
+
 ## GEN-1: Scaling Embodied Foundation Models to Mastery
 [Gemini 3.1 Pro] GEN-1 进一步扩展了无机器人数据预训练的具身模型，在简单物理任务上实现了 99% 成功率和 3 倍执行速度。 | Generalist AI, Generalist Team https://generalistai.com/blog/gen-1 | - | - | -
 |-|-|-|-|-|
@@ -53,14 +63,6 @@ confidence: 2
 GEN-1 完全使用人类穿戴设备数据进行大规模预训练，并引入了 Harmonic Reasoning 推理技术。它在部署时仅需 1 小时机器人数据进行微调，即可在折叠盒子等简单任务上达到 99% 成功率和 3 倍执行速度。这证明了无机器人数据预训练结合少量微调的路线是可行的。
 
 它目前仅在简单任务上展示了高成功率。模型涌现的即兴恢复能力有时会导致不符合预期的物理动作，这表明具身模型也需要研发对齐方法。
-
-## MemoryWAM: Efficient World Action Modeling with Persistent Memory
-[Gemini 3.1 Pro] 结合近期帧、锚点帧和 gist tokens 来实现高效的持久记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> | https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
-|-|-|-|-|-|
-
-MemoryWAM 采用混合记忆机制，保留滑动窗口的近期帧、事件边界的锚点帧和压缩长历史的 gist tokens。做法很直接，关键在于用少量的 gist tokens
-压缩长程历史以降低推理时的显存和延迟。可以用来参考如何设计长程世界模型的记忆机制。
-MemoryWAM 继承了视频扩散模型的局限性，在语义理解和推理能力上仍有不足。
 
 ## Generating Robot Hands from Human Demonstrations
 [Gemini 3.1 Pro] 利用人类手指运动轨迹，通过逆运动学直接优化并生成机器手硬件设计 | <加州大学圣地亚哥分校，Sha Yi，Xiaolong Wang> | <https://yswhynot.github.io/generating-robot-hands/> | https://hjfy.top/arxiv/2606.20549 | https://www.alphaxiv.org/abs/2606.20549
