@@ -201,14 +201,14 @@ flowchart TD
 
 递归
 - Q-chunking 就是本文使用的给 action_chunk 的每个位置打分.
-- implicit Q learning ? 就是:
+- implicit Q learning 就是:
     - 非 implicit 更新 Q_net: `target = reward + gamma * max(Q_target(s_next, policy(s_next)))`. 如果 policy 输出 OOD 的动作，Q 的评分可能虚高，policy 被诱导去选择这些幻觉动作，导致整个评价体系崩溃.
     - implicit 更新 Q_net:
       ```python
       diff = Q.detach() - V
       weight = where(diff > 0, τ, 1 - τ) # 当 Q > V 时权重为 τ=0.7，当 Q < V 时权重为 1-τ
-      # m_t_i 为有效步掩码（处理提前终止的情况）
-      loss_V = mean(m_t_i * weight * (diff**2))
+      # 实际这里还需要 * (1 - dones)
+      loss_V = mean(weight * (diff**2))
       target = reward + gamma * V(s_next)
       ```
     - 本文没有直接使用 IQL 而是使用了 IQL-style expectile.
