@@ -1,0 +1,17 @@
+---
+title: "Build zed on macos"
+date: 2026-06-28 17:00:21
+tags: ["26", "06"]
+author: "julyfun.m5air"
+os: "Darwin julyfundeMacBook-Air.local 25.3.0 Darwin Kernel Version 25.3.0: Wed Jan 28 20:56:42 PST 2026; root:xnu-12377.91.3~2/RELEASE_ARM64_T8142 arm64"
+assume-you-know: [computer]
+confidence: 2
+---
+
+我打算修复 Cmd-P 的一个性能问题. 直接 cargo run. 报错修复:
+
+```bash
+brew install cmake
+xcodebuild -downloadComponent MetalToolchain
+```
+
