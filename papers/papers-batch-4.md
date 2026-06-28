@@ -50,11 +50,13 @@ confidence: 2
 ⭐️⭐️⭐️ 结合近期帧、起始帧和 gist tokens 来压缩长期记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> | https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
 |-|-|-|-|-|
 
-所有帧共享 8 个 learnable gist query embedding，这样就可以每帧留下 8 个 gist token.（完整视觉 token 是 120 个）.
+1. 所有帧共享 8 个 learnable gist query embedding，这样就可以每帧留下 8 个 gist embed 和对应 kv cache.（完整视觉 token 是 120 个）.
+2. 滑动窗口完整视觉 token
+3. 起始帧完整视觉 token
 
-MemoryWAM 采用混合记忆机制，保留滑动窗口的近期帧、起始帧和压缩长历史的 gist tokens。做法很直接，关键在于用少量的 gist tokens
-压缩长程历史以降低推理时的显存和延迟。可以用来参考如何设计长程世界模型的记忆机制。
-MemoryWAM 继承了视频扩散模型的局限性，在语义理解和推理能力上仍有不足。
+其他结构则是 Pi0-like Video DiT + action expert DiT.
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260628223306877.png)
 
 ## GEN-1: Scaling Embodied Foundation Models to Mastery
 [Gemini 3.1 Pro] GEN-1 进一步扩展了无机器人数据预训练的具身模型，在简单物理任务上实现了 99% 成功率和 3 倍执行速度。 | Generalist AI, Generalist Team https://generalistai.com/blog/gen-1 | - | - | -
