@@ -51,6 +51,7 @@ confidence: 2
 |-|-|-|-|-|
 
 GEN-1 完全使用人类穿戴设备数据进行大规模预训练，并引入了 Harmonic Reasoning 推理技术。它在部署时仅需 1 小时机器人数据进行微调，即可在折叠盒子等简单任务上达到 99% 成功率和 3 倍执行速度。这证明了无机器人数据预训练结合少量微调的路线是可行的。
+
 它目前仅在简单任务上展示了高成功率。模型涌现的即兴恢复能力有时会导致不符合预期的物理动作，这表明具身模型也需要研发对齐方法。
 
 ## MemoryWAM: Efficient World Action Modeling with Persistent Memory

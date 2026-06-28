@@ -15,3 +15,5 @@ brew install cmake
 xcodebuild -downloadComponent MetalToolchain
 ```
 
+ok 了. 编译产物 40G.
+
