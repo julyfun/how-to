@@ -49,7 +49,7 @@ confidence: 2
 ## MemoryWAM: Efficient World Action Modeling with Persistent Memory (32)
 ⭐️⭐️⭐️ 用近期帧、起始帧和 gist tokens 来压缩长期记忆 [香港中文大学，Sizhe Yang，Huazhe Xu]
 
-<https://yangsizhe.github.io/MemoryWAM/> | https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
+| <https://yangsizhe.github.io/MemoryWAM/> | https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM> |
 |-|-|-|-|
 
 1. 所有帧共享 8 个 learnable gist query embedding，这样就可以每帧留下 8 个 gist embed 和对应 kv cache.（完整视觉 token 是 120 个）.
@@ -59,6 +59,11 @@ confidence: 2
 其他结构则是 Pi-like Video DiT + action expert DiT.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260628223306877.png)
+
+## DiT4DiT (33)
+⭐️⭐️ .. [YY 硕]
+| https://hjfy.top/arxiv/2603.10448 |
+|-|
 
 ## GEN-1: Scaling Embodied Foundation Models to Mastery
 [Gemini 3.1 Pro] GEN-1 进一步扩展了无机器人数据预训练的具身模型，在简单物理任务上实现了 99% 成功率和 3 倍执行速度。 | Generalist AI, Generalist Team https://generalistai.com/blog/gen-1 | - | - | -
