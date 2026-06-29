@@ -22,18 +22,30 @@ confidence: 2
 第二段可选，0-3 个逗号。用于指出局限性
 ```
 
-示例：
+正文示例：
+```
+1. 所有帧共享 8 个 learnable gist query embedding，这样就可以每帧留下 8 个 gist embed 和对应 kv cache.（完整视觉 token 是 120 个）.
+2. 滑动窗口完整视觉 token
+3. 起始帧完整视觉 token
 
-```text
-[GPT5.5] Cosmos Policy 直接把 Cosmos 后训成同时预测视频、动作和值的策略模型 | ...各种网站
+其他结构则是 Pi-like Video DiT + action expert DiT.
+```
 
+```
 Cosmos Policy 使用 Cosmos 作为预训练模型，然后让它同时预测 frame、value 和 action。做法很直接，关键假设是 Cosmos 的视频表征可以承载动作建模，这个假设未必成立，但作为一篇把 WM-VLA 路线推到简单极限的工作有参考价值。可以用来反推哪些精心设计的模块真的必要。
 ```
 
-```text
-[Gemini 3.1 Pro] 让 Pi0 VLM 输出 token 来决定是否 reasoning | 清华 Fanqi Lin, Yang Gao | https://one-two-vla.github.io | https://hjfy.top/arxiv/2505.11917 | https://www.alphaxiv.org/abs/2505.11917 | https://github.com/Fanqi-Lin/OneTwoVLA
-
+```
 为了引入 text-level reasoning 但又不想分为显式双系统，OneTwoVLA 使用 Pi0-like 架构中的 VLM 输出自回归输出 <BEGIN_OF_ACTION> 或 <BEGIN_OF_REASONING> token，如果是前者就继续走常规流程，后者就继续自回归生成 reasoning. 数据是分段手标的.
+```
+
+一句话总结示例:
+```
+Cosmos Policy 直接把 Cosmos 后训成同时预测视频、动作和值的策略模型
+```
+
+```
+让 Pi0 VLM 输出 token 来决定是否 reasoning
 ```
 
 `[LLM 模型]` 由你当前实际模型填写，例如 `[GPT5.5]`
