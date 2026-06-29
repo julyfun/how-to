@@ -46,15 +46,17 @@ confidence: 2
 
 在 pi0 基础上使用了 FSDP 和 FlexAttention 提升吞吐量，增加了 learnable depth query -> [VLM (attend to image token)] -> [a new proj] -> depth token 的监督，并增大数据到 20000h.
 
-## MemoryWAM: Efficient World Action Modeling with Persistent Memory
-⭐️⭐️⭐️ 结合近期帧、起始帧和 gist tokens 来压缩长期记忆 | <香港中文大学，Sizhe Yang，Huazhe Xu> <https://yangsizhe.github.io/MemoryWAM/> | https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
-|-|-|-|-|-|
+## MemoryWAM: Efficient World Action Modeling with Persistent Memory (32)
+⭐️⭐️⭐️ 结合近期帧、起始帧和 gist tokens 来压缩长期记忆 [香港中文大学，Sizhe Yang，Huazhe Xu]
+
+<https://yangsizhe.github.io/MemoryWAM/> | https://hjfy.top/arxiv/2606.20562 | https://www.alphaxiv.org/abs/2606.20562 | <https://github.com/yangsizhe/MemoryWAM>
+|-|-|-|-|
 
 1. 所有帧共享 8 个 learnable gist query embedding，这样就可以每帧留下 8 个 gist embed 和对应 kv cache.（完整视觉 token 是 120 个）.
 2. 滑动窗口完整视觉 token
 3. 起始帧完整视觉 token
 
-其他结构则是 Pi0-like Video DiT + action expert DiT.
+其他结构则是 Pi-like Video DiT + action expert DiT.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260628223306877.png)
 
