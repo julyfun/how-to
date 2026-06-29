@@ -67,7 +67,9 @@ confidence: 2
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260629144114755.png)
 
-一种正常的 Joint WAM. demo 是全身控制而论文中并没有提及，实际上代码中直接封装了 Nvidia GR00T-WholeBodyControl
+一种正常的 Joint WAM. demo 的全身控制在论文中并没有提及，实际上代码中直接封装了 Nvidia GR00T-WholeBodyControl 并且让 model 直接输出 29 dof，数据则通过 Pico 4 直接采集，通过摇杆控制左右上下运动.
+
+GR00T WBC 对于上身指令
 
 ## GEN-1: Scaling Embodied Foundation Models to Mastery
 [Gemini 3.1 Pro] GEN-1 进一步扩展了无机器人数据预训练的具身模型，在简单物理任务上实现了 99% 成功率和 3 倍执行速度。 | Generalist AI, Generalist Team https://generalistai.com/blog/gen-1 | - | - | -
