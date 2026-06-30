@@ -71,14 +71,6 @@ confidence: 2
 
 GR00T WBC 对于上身指令直接发给电机，下身指令则提取意图后接入 RL MLP.
 
-## GEN-1: Scaling Embodied Foundation Models to Mastery
-[Gemini 3.1 Pro] GEN-1 进一步扩展了无机器人数据预训练的具身模型，在简单物理任务上实现了 99% 成功率和 3 倍执行速度。 | Generalist AI, Generalist Team https://generalistai.com/blog/gen-1 | - | - | -
-|-|-|-|-|-|
-
-GEN-1 完全使用人类穿戴设备数据进行大规模预训练，并引入了 Harmonic Reasoning 推理技术。它在部署时仅需 1 小时机器人数据进行微调，即可在折叠盒子等简单任务上达到 99% 成功率和 3 倍执行速度。这证明了无机器人数据预训练结合少量微调的路线是可行的。
-
-它目前仅在简单任务上展示了高成功率。模型涌现的即兴恢复能力有时会导致不符合预期的物理动作，这表明具身模型也需要研发对齐方法。
-
 ## Generating Robot Hands from Human Demonstrations
 [Gemini 3.1 Pro] 利用人类手指运动轨迹，通过逆运动学直接优化并生成机器手硬件设计 | <加州大学圣地亚哥分校，Sha Yi，Xiaolong Wang> | <https://yswhynot.github.io/generating-robot-hands/> | https://hjfy.top/arxiv/2606.20549 | https://www.alphaxiv.org/abs/2606.20549
 |-|-|-|-|-|
