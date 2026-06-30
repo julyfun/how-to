@@ -159,8 +159,15 @@ noise_2 = randn(B,16,13)
 
 全程冻结 VLM 和 SAM 并直接在 pixel level 绘制锚点. 并且让 VLA 中的 VLM 对齐外部的 VLM.
 
-## Do World... ? (16)
-- ?teacher–student training framework
+## Do World Action Models Generalize Better than VLAs? A Robustness Study (16)
+[Gemini 3.1 Pro] 本文系统评估了世界动作模型和视觉语言动作模型在不同扰动下的鲁棒性差异。[<Huawei Technologies, Zhanguang Zhang, Zhanguang Zhang 和
+Yingxue Zhang>]
+| | https://hjfy.top/arxiv/2603.22078 | https://www.alphaxiv.org/abs/2603.22078 | |
+|-|-|-|-|
+
+本文在 LIBERO-Plus 和 RoboTwin 2.0-Plus 基准上评测了多款 VLA 和 WAM，发现 WAM 凭借视频预训练的时空先验对视觉和语言扰动展现出更强的鲁棒性，而 VLA 通常需要海量多样化数据才能达到类似效果。
+
+尽管 WAM 鲁棒性强且预训练更简单，但其推理延迟远高于 VLA，这限制了其在真实系统中的部署。
 
 ## BORA: czx (17)
 
