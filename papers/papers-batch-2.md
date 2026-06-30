@@ -160,8 +160,9 @@ noise_2 = randn(B,16,13)
 全程冻结 VLM 和 SAM 并直接在 pixel level 绘制锚点. 并且让 VLA 中的 VLM 对齐外部的 VLM.
 
 ## Do World Action Models Generalize Better than VLAs? A Robustness Study (16)
-[Gemini 3.1 Pro] 本文系统评估了世界动作模型和视觉语言动作模型在不同扰动下的鲁棒性差异。[<Huawei Technologies, Zhanguang Zhang, Zhanguang Zhang 和
+在 VLA [<Huawei Technologies, Zhanguang Zhang, Zhanguang Zhang 和
 Yingxue Zhang>]
+
 | | https://hjfy.top/arxiv/2603.22078 | https://www.alphaxiv.org/abs/2603.22078 | |
 |-|-|-|-|
 
