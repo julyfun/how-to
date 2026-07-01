@@ -33,7 +33,7 @@ const my_typeinfo = @typeInfo(@TypeOf(my_seq));
         else => unreachable,
 ```
 
-## anonymouse_strcuts3
+## anonymouse_structs3
 - 如何遍历任何 struct 的 fields.
 ```zig
 fn printTuple(tuple: anytype) void {
@@ -57,5 +57,10 @@ const avg: []f64 = try allocator.alloc(f64, 5);
 // 然后当普通切片使用，例如:
 avg[2] = ...
 
+```
+
+## std.Io
+
+```zig
 ```
 
