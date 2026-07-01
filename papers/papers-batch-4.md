@@ -44,7 +44,7 @@ confidence: 2
 ## Lingbot-VLA (31)
 ⭐️⭐️ https://hjfy.top/arxiv/2601.18692
 
-在 pi0 基础上使用了 FSDP 和 FlexAttention 提升吞吐量，增加了 learnable depth query -> [VLM (attend to image token)] -> [a new proj] -> depth token 的监督，并增大数据到 20000h.
+在 pi0 基础上使用了 FSDP 和 FlexAttention 提升吞吐量，增加了一条 `learnable depth query -> [VLM (attend to image token)] -> [a new proj] -> depth token` 的监督，并增大数据到 20000h.
 
 ## MemoryWAM: Efficient World Action Modeling with Persistent Memory (32)
 ⭐️⭐️⭐️ 用近期帧、起始帧和 gist tokens 来压缩长期记忆 [香港中文大学，Sizhe Yang，Huazhe Xu]
@@ -70,6 +70,21 @@ confidence: 2
 一种正常的 Joint WAM. demo 的全身控制在论文中并没有提及，实际上代码中直接封装了 Nvidia GR00T-WholeBodyControl 并且让 model 直接输出 29 dof，数据则通过 Pico 4 直接采集，通过摇杆控制左右上下运动.
 
 GR00T WBC 对于上身指令直接发给电机，下身指令则提取意图后接入 RL MLP.
+
+## π₀.₇: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities (34)
+⭐️⭐️⭐️ 添加 subgoal image, memory 和 quality tag. [Physical Intelligence，Bo Ai]
+
+| https://pi.website/pi07 | https://hjfy.top/arxiv/2604.15483 | https://www.alphaxiv.org/abs/2604.15483 | https://github.com/Physical-Intelligence/openpi |
+|-|-|-|-|
+
+给 VLM 的输入添加了:
+1. MEM-style memory.
+2. 由 BAGEL WM 在 subtask 切换或者超过 4 秒后生成 subgoal image，经过 image encoder 送给 VLM.
+3. quality, mistake 等标签类似于 pi0.6，在 infer-time 设定 quality=5 直接拼接到 text prompt 中，提供利用失败轨迹的方法.
+
+**MEM-style:**
+- 长期记忆用 text.
+- 短期记忆用 video encoder，输入 [B, K=历史帧数, N=patch数量, D]，每帧 causal temperol 注意之前的帧，最后保留当前帧 [B, N, D].
 
 ## Generating Robot Hands from Human Demonstrations
 [Gemini 3.1 Pro] 利用人类手指运动轨迹，通过逆运动学直接优化并生成机器手硬件设计 | <加州大学圣地亚哥分校，Sha Yi，Xiaolong Wang> | <https://yswhynot.github.io/generating-robot-hands/> | https://hjfy.top/arxiv/2606.20549 | https://www.alphaxiv.org/abs/2606.20549

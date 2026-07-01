@@ -14,7 +14,7 @@ confidence: 2
 ## 论文标题
 [LLM 模型] 一句话主要贡献，逗号最多一个（或者一句话复现方法）[<主要机构，第一作者，通讯作者>]
 <空行>
-| <项目网站（如能搜到）> | https://hjfy.top/arxiv/<arxiv-id e.g. 2505.11917>  | https://www.alphaxiv.org/abs/<arxiv-id> | <github 代码连接（如能搜到）> |
+| 🦾 <项目网站（如能搜到）> | 📃 https://hjfy.top/arxiv/<arxiv-id e.g. 2505.11917>  | ✨ https://www.alphaxiv.org/abs/<arxiv-id> | 💻 <github 代码连接（如能搜到，通常在项目网站中有，如果说 TBA 就写 TBA）> |
 |-|-|-|-|
 <空行>
 正文第一段 0-3 个逗号，说贡献，可选对比前作的新增，在限制句数中让小白都能 get 到如何去复现这篇论文。
