@@ -83,7 +83,10 @@ confidence: 2
 - `ds"`: delete surrounding `"`
 
 ## 命令
-- `:%s/AAA/BBB/g/` + 回车，全文替换 AAA 为 BBB（不如 vscode 替换，但在 vim 软件内较好用）
+- `:%s/AAA/BBB/g`: 全文替换 AAA 为 BBB（不如 vscode cmd-d，但在 vim 软件内较好用）
+- `:%s/AAA/BBB/gc`: 同上但逐个 confirm
+- `:ctrl-f`: 编辑和选择历史命令行。回车确认
 
 ## 原始 vim 补丁
 - `"_d`: 替换 d，可以防止覆盖剪切板.
+
