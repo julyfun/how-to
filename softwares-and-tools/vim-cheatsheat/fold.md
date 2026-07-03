@@ -8,10 +8,23 @@ assume-you-know: [computer]
 confidence: 4
 ---
 
-- zo: unfold current
-- zO: unfold recursive
-- zR: unfold all
-- zc: fold
-- zC: fold recursive
+- zc: fold subscope
+- zo: unfold subscope
+
+- zC: fold current scope
+- zO: unfold current scope
+
 - zM: fold all
+- zR: unfold all
+
+```zig
+//  This is current scope.
+//  │       Cursor here.
+//  ↓       │    This is subscope.
+    { //    ↓    ↓
+        comptime {
+
+        }
+    }
+```
 
