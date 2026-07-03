@@ -12,7 +12,7 @@ confidence: 2
 
 ```markdown
 ## 论文标题
-[LLM 模型] 一句话主要贡献，逗号最多一个（或者一句话复现方法）[<主要机构，第一作者，通讯作者>]
+[LLM 模型] 一句话主要贡献，逗号最多一个（或者一句话复现方法）[<第一作者的第一机构 & 第一作者 & 通讯作者>]
 <空行>
 | 🦾 <项目网站（如能搜到）> | 📃 https://hjfy.top/arxiv/<arxiv-id e.g. 2505.11917>  | ✨ https://www.alphaxiv.org/abs/<arxiv-id> | 💻 <github 代码连接（如能搜到，通常在项目网站中有，如果说 TBA 就写 TBA）> |
 |-|-|-|-|
@@ -22,7 +22,7 @@ confidence: 2
 第二段可选，0-3 个逗号。用于指出局限性
 ```
 
-正文示例：
+正文示例 1：
 ```
 1. 所有帧共享 8 个 learnable gist query embedding，这样就可以每帧留下 8 个 gist embed 和对应 kv cache.（完整视觉 token 是 120 个）.
 2. 滑动窗口完整视觉 token
@@ -31,10 +31,12 @@ confidence: 2
 其他结构则是 Pi-like Video DiT + action expert DiT.
 ```
 
+正文示例 2：
 ```
 Cosmos Policy 使用 Cosmos 作为预训练模型，然后让它同时预测 frame、value 和 action。做法很直接，关键假设是 Cosmos 的视频表征可以承载动作建模，这个假设未必成立，但作为一篇把 WM-VLA 路线推到简单极限的工作有参考价值。可以用来反推哪些精心设计的模块真的必要。
 ```
 
+正文示例 3：
 ```
 为了引入 text-level reasoning 但又不想分为显式双系统，OneTwoVLA 使用 Pi0-like 架构中的 VLM 输出自回归输出 <BEGIN_OF_ACTION> 或 <BEGIN_OF_REASONING> token，如果是前者就继续走常规流程，后者就继续自回归生成 reasoning. 数据是分段手标的.
 ```
