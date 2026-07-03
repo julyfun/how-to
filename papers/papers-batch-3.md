@@ -46,7 +46,7 @@ flowchart TD
 ## VLA-JEPA (24)
 ⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.10098 | Jingwen Sun, Zhibo Chen, 中科大
 
-在 ACT-like 基础上加上 WM 和 latent action query 来利用 human video 进行 pretrain. （非具体动作，仅表征动力学）
+在 ACT-like 基础上加上 WM 和 latent action query 来利用 human video 进行 pretrain. （非具体动作，仅表征动力学）所谓的
 
 下图中，V-JEPA 全程冻结，WM 是从零开始训练的 transformer，注意预测的是 V-JEPA 空间的潜在状态，而 latent-action 之前的就是一个 ACT-like.
 
