@@ -48,7 +48,7 @@ flowchart TD
 
 在 ACT-like 基础上加上 WM 和 latent action query 来利用 human video 进行 pretrain. （非具体动作，仅表征动力学）所谓的
 
-下图中，V-JEPA 全程冻结，WM 是从零开始训练的 transformer，注意预测的是 V-JEPA 空间的潜在状态，而 latent-action 之前的就是一个 ACT-like. 所谓 JEPA (joint-embedding) 风格就是世界模型预测未来状态的隐空间表示.
+下图中，V-JEPA 全程冻结，WM 是从零开始训练的 transformer，注意预测的是 V-JEPA 空间的潜在状态，而 latent-action 之前的就是一个 ACT-like. 所谓 JEPA (joint-embedding) 风格就是世界模型预测未来状态的隐空间表示，而不是 video generation based.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/c533a30cfdbf0bb35eb5af6eea633b79.jpg)
 

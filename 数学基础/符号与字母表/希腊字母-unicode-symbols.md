@@ -6,14 +6,14 @@ tags: ["notes", "julyfun", "数学基础", "符号与字母表"]
 ![image.png](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20241111171152.webp)
 
 ```
-Α α a:lf 角度；系数
-Β β bet 磁通系数；角度；系数
-Γ γ ga:m 电导系数（小写）
-Δ δ delt 变动；密度；屈光度
+Α α alpha 角度；系数
+Β β beta 磁通系数；角度；系数
+Γ γ gamma 电导系数（小写）
+Δ δ delta 变动；密度；屈光度
 Ε ε epsilon 对数之基数
 Ζ ζ zat 系数；方位角；阻抗；相对粘度；原子序数
 Η η eit 磁滞系数；效率（小写）
-Θ θ θit 温度；相位角
+Θ θ theta 温度；相位角
 Ι ι aiot 微小，一点儿
 Κ κ kap 介质常数
 Λ λ lambda 波长（小写）；体积

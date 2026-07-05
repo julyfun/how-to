@@ -224,12 +224,12 @@ flowchart TD
 - stiffness: F = K * (x_des - x) + D * (v_des - v)，这里的 stiffness 就是 K. K 越大，同样的位置误差会产生越大的修正力/力矩.
 - 力位混合控制：选择一些轴力控，一些轴位控. 如 X, Y 走位，Z 保持 10N 下压力. 力控目标通常是末端[Fx, Fy, Fz, Mx, My, Mz] 扭矩（例如 Mz 可以理解为绕 z 轴转，拧螺丝），控制器内部通过雅可比矩阵 `tau = J^T * wrench` 转换为各关节扭矩.
 
-## Latent Policy Barrier (18)
+## Latent Policy Barrier (18) LPB
 - https://arxiv.org/abs/2508.05941
 
-一句话: 在 diffusion 过程中加入 guidance 项使得下一时刻的潜在观测与最近专家潜在观测的距离尽量小.
+一句话: 在 diffusion 过程中对 action 加入 guidance 项使得*下一时刻的潜在观测*与最近专家潜在观测的距离尽量小.
 
-具体而言，下一时刻的潜在观测是通过训练的动力学模型 `d(z_t, a_(t, chunk)) -> z_(t + tp)` 得到的，该模型的训练数据来自专家轨迹 + 早期 ckpt 的 rollout 轨迹，在 infer-time 冻结。而 guidance 要求 `d` 的参与，而前几个去噪步让 `d` 难以预测，因此文章在 100 步去噪的最后 10 步才执行 guidance.
+具体而言，*下一时刻的潜在观测*是通过训练的动力学模型 `d(z_t, a_(t, chunk)) -> z_(t + tp)` 得到的，该模型的训练数据来自专家轨迹 + 早期 ckpt 的 rollout 轨迹，在 infer-time 冻结。而 guidance 要求 `d` 的参与，而前几个去噪步让 `d` 难以预测，因此文章在 100 步去噪的最后 10 步才执行 guidance.
 
 ## cosmos-policy (19)
 - https://hjfy.top/arxiv/2601.16163
