@@ -23,7 +23,7 @@ recap: diffusion policy 使用 obs_encoder(obs) 获得 global_cond 并直接 FiL
 3. For algo, we.. For data we identify that .. is the primer driver **and introduce iPhUMI**.
 
 ## SOE: Sample-Efficient Robot Policy Self-Improvement via On-Manifold Exploration (36)
-⭐️⭐️⭐️ 在更低维度的 observation latent 上随机扰动来探索 | 👤 上海交通大学, Yang Jin, Chuan Wen、Cewu Lu |
+⭐️⭐️⭐️ 在更低维度的 observation latent 上随机扰动来让 Policy 探索 | 👤 上海交通大学, Yang Jin, Chuan Wen、Cewu Lu |
 [🦾](https://ericjin2002.github.io/SOE) | [📃 2509.19292](https://hjfy.top/arxiv/2509.19292) | [✨](https://www.alphaxiv.org/abs/2509.19292) | - |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260705172947006.png)
@@ -32,3 +32,13 @@ recap: diffusion policy 使用 obs_encoder(obs) 获得 global_cond 并直接 FiL
 
 1. latent 编解码的训练目标为 `max_θ I(A; Z) - β I(Z; O)`（互信息在代码中通过 KL 散度实现）.
 2. RFT 探索很简单，就是生成多条候选轨迹，通过执行结果或人工筛选保留加入数据集，本质上是纯 IL.
+
+## FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation
+[Gemini 3.1 Pro] FTP-1 将异构触觉信号统一编码并交由独立的触觉专家处理，首次实现了跨传感器泛化的通用触觉基座策略 | 👤 Tsinghua University, Chengbo
+Yuan, Yang Gao | [🦾](https://ftp1-policy.github.io/) | [📃 2606.13102](https://hjfy.top/arxiv/2606.13102) |
+[✨](https://www.alphaxiv.org/abs/2606.13102) | [💻](-) |
+
+FTP-1 基于 Pi0.5 架构将多模态触觉信号按功能区编码为统一的形态感知 token，这些 token 会直接交由独立的触觉专家处理。负责输出动作的流匹配专家通过交叉注
+意力融合这些触觉特征，大规模预训练后不仅在接触丰富任务中表现更优，甚至能直接泛化到未见过的触觉硬件。
+
+FTP-1 当前主要受限于触觉数据规模，且面临新机器人的动作空间适配成本较高的问题，同时触觉 token 化仍依赖于人工设计的功能区映射规则。
