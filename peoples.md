@@ -11,14 +11,13 @@ confidence: 2
 ```mermaid
 flowchart LR
     subgraph UCB
-        wuenda[吴恩达] --> pieter
-        sergey_levine --> pieter
+        wuenda[吴恩达] --> pieter --> sergey_levine
         trevor_darrrel[Trevor Darrrel<br> : 自动驾驶]
     end
 
     subgraph 清华
-        yang_gao[高阳] --> pieter
-        huazhe[许华哲] --> trevor_darrrel
+        pieter --> yang_gao[高阳]
+        trevor_darrrel --> huazhe[许华哲]
     end
 
     subgraph UCSD
@@ -40,7 +39,7 @@ flowchart LR
         yunzhu_li[Yunzhu Li<br>早期做过仿真、手套，现在啥都做]
     end
 
-    fcx[fcx : InterleaveVLA] -->|"跟着做"| bolei_zhou
+    bolei_zhou --> fcx[fcx : InterleaveVLA]
     subgraph UCLA 加州洛杉矶
         bolei_zhou[周博磊 : CV,自驾]
     end
