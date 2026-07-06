@@ -34,14 +34,15 @@ Recap: 众所周知，diffusion policy 使用 obs_encoder(obs) 获得 global_con
 2. RFT 探索很简单，就是生成多条候选轨迹，通过执行结果或人工筛选保留加入数据集，本质上是纯 IL.
 
 ## FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation
-⭐️⭐️⭐️⭐️ 将独立 tactile expert 加入 MoT 并提出异构触觉 sensor | 👤 Tsinghua University, Chengbo
+⭐️⭐️⭐️⭐️ 将独立 tactile expert 加入 MoT 并提出一种异构触觉 sensor 的统一编码 | 👤 Tsinghua University, Chengbo
 Yuan, Yang Gao | [🦾](https://ftp1-policy.github.io/) | [📃 2606.13102](https://hjfy.top/arxiv/2606.13102) |
 [✨](https://www.alphaxiv.org/abs/2606.13102) | [💻](-) |
 
-FTP-1 基于 Pi0.5 架构将多模态触觉信号按功能区编码为统一的形态感知 token，这些 token 会直接交由独立的触觉专家处理。负责输出动作的流匹配专家通过交叉注
-意力融合这些触觉特征，大规模预训练后不仅在接触丰富任务中表现更优，甚至能直接泛化到未见过的触觉硬件。
+将各种 tactile sensor 统一投影并输入从零训练的 300M transformer，MoT 中仅需让 action expert 去 attend tactile expert.
 
-FTP-1 当前主要受限于触觉数据规模，且面临新机器人的动作空间适配成本较高的问题，同时触觉 token 化仍依赖于人工设计的功能区映射规则。
+一些有趣结论 1) 实验发现，pi0.5 比一些基础 tactile 模型表现更优，怀疑是 tactile 信号损害了 action 和 VLM. 2) FTP 动作比 baseline 更平滑. 3) 据说跨传感器时涌现了减速 (slows down the insertion motion based on tactile feedback).
+
+### 附：统一投影方式
 
 **图像型 (如 GelSight)**
 - Tactile Image -> [Sensor-specific ViT] -> feature maps -> [Shared T3 Transformer] -> CLS token -> [LayerNorm] -> [MLP] -> Tactile Token
