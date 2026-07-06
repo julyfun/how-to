@@ -210,12 +210,6 @@ flowchart TD
     vt --> loss
 ```
 
-绘制 flowchart 要点：
-- 可训练模型用 `node[[]]`，数据用 `node([])`，非可学习模块 `node[]`. train-time 如有冻结模块用🧊标识. 如果是 +/concat 等操作符直接写 +/concat 等.
-- 文字简洁，用 `<br>` 换行，数据带上形状以及项目最默认配置的具体数值, e.g. (B=8, seq_len=50, D=1024)
-- 非 fully attention 可标出谁提供 q/k/v，对于 q 可标出其 attend 目标，简述. fully attention 省略之.
-- 画出重要模块，如 Embedding, RoPE, expert, FM, proj, MLP, loss，省略 layer norm 等不重要模块.
-
 其中一个 layer 的伪代码:
 
 ```python
