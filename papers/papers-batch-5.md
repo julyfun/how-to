@@ -69,7 +69,7 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260706144219330.png)
 
-手用的是 Inspire tactile hand. 下半身用独立 RL 控制器.
+使用 ACT 变体输出全身动作，其中下半身交由独立 RL 控制器. 手用的是 Inspire tactile hand.
 
 ## ---
 
