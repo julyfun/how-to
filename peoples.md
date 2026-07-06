@@ -11,7 +11,7 @@ confidence: 2
 ```mermaid
 flowchart LR
     subgraph UCB
-        pieter --> wuenda[吴恩达]
+        wuenda[吴恩达] --> pieter
         sergey_levine --> pieter
         trevor_darrrel[Trevor Darrrel<br> : 自动驾驶]
     end
@@ -124,7 +124,7 @@ flowchart LR
 articles:
 - https://zhuanlan.zhihu.com/p/655943844
 
-archive: 0cdea62fe9eb778ef183587c52e3e89ae4d7514b
+archive commit: 0cdea62fe9eb778ef183587c52e3e89ae4d7514b
 
 博客：
 - 在我们组里工作过的 selen: https://selen-suyue.github.io/biosite/archives/
