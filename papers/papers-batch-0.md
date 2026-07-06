@@ -8,6 +8,8 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+合并图片：https://small.im/zh-hans/merge-images
+
 ## Video Language Planning
 [Gemini 3.1 Pro] 提出结合 VLM 和文本到视频模型进行树搜索的 VLP 算法来实现长视距机器人视觉动作规划 | MIT，Yilun Du，Yilun Du
 https://video-language-planning.github.io/ | https://hjfy.top/arxiv/2310.10625 | https://www.alphaxiv.org/abs/2310.10625 |
