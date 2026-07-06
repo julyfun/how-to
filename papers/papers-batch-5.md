@@ -69,7 +69,7 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260706144219330.png)
 
-用的是 Inspire tactile hand.
+手用的是 Inspire tactile hand. 下半身用独立 RL 控制器.
 
 ## ---
 
