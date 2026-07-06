@@ -33,7 +33,7 @@ Recap: 众所周知，diffusion policy 使用 obs_encoder(obs) 获得 global_con
 1. latent 编解码的训练目标为 `max_θ I(A; Z) - β I(Z; O)`（互信息在代码中通过 KL 散度实现）.
 2. RFT 探索很简单，就是生成多条候选轨迹，通过执行结果或人工筛选保留加入数据集，本质上是纯 IL.
 
-## FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation
+## FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation (37)
 ⭐️⭐️⭐️⭐️ 将独立 tactile expert 加入 MoT 并提出一种异构触觉 sensor 的统一编码 | 👤 Tsinghua University, Chengbo
 Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](https://hjfy.top/arxiv/2606.13102) | [✨](https://www.alphaxiv.org/abs/2606.13102) | [📂](-) |
 
@@ -57,12 +57,12 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 **+ embedding**
 - Tactile Tokens -> [+ Shared Functional Area Embedding] -> MTTS Tokens -> [Tactile Expert]
 
-## VGGT: Visual Geometry Grounded Transformer
-⭐️⭐️⭐️⭐️⭐️ 简单而正确的3D重建方式 | 👤 牛津大学&Meta, Jianyuan Wang, David Novotny | [🌐](https://vgg-t.github.io/) | [📃2503.11651](https://hjfy.top/arxiv/2503.11651) |[✨](https://www.alphaxiv.org/abs/2503.11651) |[📂](https://github.com/facebookresearch/vggt) |
+## VGGT: Visual Geometry Grounded Transformer (38)
+⭐️⭐️⭐️⭐️⭐️ 简单有效的3D重建方式 | 👤 牛津大学&Meta, Jianyuan Wang, David Novotny | [🌐](https://vgg-t.github.io/) | [📃2503.11651](https://hjfy.top/arxiv/2503.11651) |[✨](https://www.alphaxiv.org/abs/2503.11651) |[📂](https://github.com/facebookresearch/vggt) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260706133033266.png)
 
-
+对N张图或1张图提取 DINO feature 每图 (b, len, dim), concat 所有图 feature (b, len*N, dim)，然后交叉进行单图 attn 和所有图 attn. 然后接输出头直接预测相机参数、深度、点图和追踪. 主要用开源数据集，由于12亿参数+监督强劲，效果非常好.
 
 ## UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos
 [Gemini 3.1 Pro] UniDex 将人类视频重定向为机器人轨迹并提出统一动作空间 FAAS，训练出支持多种灵巧手的 3D VLA 模型。FTP 使用之. | 👤 清华大学, Gu Zhang, Huazhe Xu | [🌐](https://unidex-ai.github.io/) | [📃 2603.22264](https://hjfy.top/arxiv/2603.22264) | [✨](https://www.alphaxiv.org/abs/2603.22264) | [📂](https://github.com/unidex-ai/UniDex) |
@@ -87,3 +87,8 @@ T3 首先聚合了包含 13 种传感器和 11 个任务的大规模触觉数据
 HTD 首先使用基于强化学习的下半身控制器作为全身执行的稳定性基础，接着利用基于 VR 的全身遥操作收集包含多视角视觉、本体感觉和触觉的演示数据，最后通过行为克隆和触觉“做梦”辅助目标（预测未来手部关节力和由 EMA 目标编码器监督的未来触觉隐变量）进行单阶段训练。
 
 当前方法在预测触觉隐变量时，如果遇到不可预测的突发接触变化，开环预测的隐变量会与真实值产生偏差。
+
+## YUBI: Yielding Universal Bidigital Interface for Bimanual Dexterous Manipulation at Scale
+[Gemini 3.1 Pro] YUBI 设计了贴合手指的轻量化夹爪结合 Quest 追踪，采集了超大规模双臂数据集并训练了跨本体部署策略。 | 👤 AIRoA, Takehiko Ohkawa, Kei Ota | [🦾](https://yubi.airoa.io/) | [📃 2606.10244](https://hjfy.top/arxiv/2606.10244) | [✨](https://www.alphaxiv.org/abs/2606.10244) | [💻](-) |
+
+YUBI 设计了一种贴合人类手指运动的轻量化数据采集夹爪，它使用 Quest 3S 提供 6DoF 追踪，相比 UMI 收集了超过 8000 小时的大规模双臂数据集，并基于这些数据训练了基于 π0.5 的多任务策略，只需给不同机械臂安装 YUBI 夹爪就能直接实现跨本体部署。
