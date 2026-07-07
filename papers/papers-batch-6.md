@@ -8,11 +8,6 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## FTP-1: A Generalist Foundation Tactile Policy Across Tactile Sensors for Contact-Rich Manipulation
-[Gemini 3.1 Pro] 将不同触觉传感输入映射为统一形貌感知 token 后由共享触觉 Transformer 专家统一处理 | 👤 Tsinghua University, Chengbo Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io) | [📃 2606.13102](https://hjfy.top/arxiv/2606.13102) | [✨](https://www.alphaxiv.org/abs/2606.13102) | [📂](https://ftp1-policy.github.io) |
-
-提出了支持多种触觉输入的跨传感器策略 FTP-1。具体用异构编码器处理图像或阵列等触觉信号，将它们投影为带形态信息的 token，最后由共享的触觉 Transformer 专家进行建模。
-
 ## SARM2: Multi-Task Stage Aware Reward Modeling for Self Improving Robotic Manipulation
 [Gemini 3.1 Pro] 结合基于动作原语的阶段估计器和多门控混合专家价值头来提供密集多任务奖励 | 👤 Stanford University, Qianzhong Chen, Mac Schwager | [🌐](https://qianzhong-chen.github.io/sarm2.github.io/) | [📃 2606.10305](https://hjfy.top/arxiv/2606.10305) | [✨](https://www.alphaxiv.org/abs/2606.10305) | [📂](https://qianzhong-chen.github.io/sarm2.github.io/) |
 
