@@ -21,7 +21,7 @@ confidence: 2
          B, S, H = x.shape
          x = x.view(-1, H)
 
-         gates = softmax(self.gate(x), dim=-1)
+         gates = softmax(self.gate(x), dim=-1) # 权重 (B, num_experts)
          probs, indices = topk(gates, self.top_k, dim=-1)
          probs = probs / probs.sum(dim=-1, keepdim=True)
 
