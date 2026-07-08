@@ -16,10 +16,12 @@
 
 == action pose 如何处理？
 === 方法 I
-对于 absolute pose 直接右乘 $"diag"(1, -1, 1, 1)$
+对于 absolute pose 直接右乘 $M_y = "diag"(1, -1, 1, 1)$ 注意到 $M_y = M_y^(-1)$
+
+证明: 设原始数据集中的两个动作 $a_t, a_0$，$T_(a_t -> a_0)$ 为 relative pose. 镜像得到 $a_t^', a_0^'$，
 
 === 方法 II
-先转换为 chunk relative pose，然后对每个 relative pose T 计算 $"diag" T "diag"$
+先转换为 chunk relative pose，然后对每个 relative pose T 计算 $M_y T M_y$
 
 == 附：矩阵乘法记忆
 
