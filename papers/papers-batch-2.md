@@ -244,14 +244,14 @@ flowchart TD
 - https://arxiv.org/abs/2606.01955
 
 wall-wm train-time 用 event-chunk 替代了 time-chunk，并且提出了一种 infer-time 分层加速解码方式，基模是 Wan2.1-1.3B。自变量这个文章写得非常长，解释了很多架构设计细节。然而，demo 只展示了泛化的 picknplace. 一些技巧包括：
-1. 几何约束: 多相机 attn mask 做了几何约束. 为每个相机学习 RoPE. 没有单独消融实验.
+1. 几何约束: 多相机 attn mask 做了几何约束，并为每个相机学习一个 RoPE. 没有单独消融实验.
 2. state token: 每 transformer layer 都有从 action token 到 state token 的单独 crossattn，不会因为 pi 那样完全 self attn 稀释注意力到 video token. 没有消融实验.
-3. 变长解码：用 vlm 决定事件对应的 event-chunk 长度 n，然后对 `(n + 1) * K_p`(每个 video latent 解码 K_p 个 action token，当前观测帧也是一个 video latent) 个带位置编码的噪声去噪. 消融实验的 baseline 去掉了变长解码和几何约束.
+3. 变长解码：用 vlm 决定事件对应的 event-chunk 长度 n，然后对 `(n + 1) * K_p`(每个 video latent 解码 K_p 个 action token，当前观测帧也是一个 video latent) 个带位置编码的噪声去噪. 消融实验的 baseline 去掉了变长解码和几何约束，并发现本方法在平均任务进度得分上领先.
 
 ```mermaid
 flowchart TD
     cap(["事件描述 ℓ_i<br>(event 模式, 变长)"]) --> t5[["T5 文本编码"]]
-    instr(["全局指令 + 历史<br>(unified 模式)"]) --> qwen[["Qwen3.5-9B VLM 🧊"]]
+    instr(["全局指令 + 历史<br>(仅 unified 模式下)"]) --> qwen[["Qwen3.5-9B VLM 🧊"]]
     qwen --> stair[["🟢创新: Staircase 解码器<br>中间层后并行一次性出<br>几个思考向量, 不逐字生成"]]
     t5 --> cond(["文本条件 c_ℓ"])
     stair --> cond
