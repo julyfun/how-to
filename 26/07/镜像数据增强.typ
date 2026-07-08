@@ -16,19 +16,9 @@
 
 == Action pose 如何处理？
 === 方法 I
-对于 absolute pose 直接右乘 $M_y = "diag"(1, -1, 1, 1)$. （不唯一）。然后以此计算 new relative action.
-
-证明：设右乘结果为 $T_(a_i^Delta)$.
-
-$
-underbrace(T_(a_t^Delta -> a_0^Delta), "new relative action")&= T_(a_0^Delta -> w)^(-1) T_(a_t^Delta -> w) \
-&= (T_(a_0 -> w) M_y)^(-1) T_(a_t -> w) M_y
-$
-
-=== 方法 II
 先转换为 chunk relative action，然后对每个 relative action T 计算 $M_y T M_y$.
 
-证明: 设原始数据集中某 TCP 的两个动作 $a_t, a_0$，$T_(a_t -> a_0)$ 为 relative action. 直接取镜像得到 $a_t^', a_0^'$，这两个动作为左手坐标系，并且有 $T_(a_t^' -> a_0^') = T_(a_t -> a_0)$. 考虑对 $a_t^', a_0^'$ 取 y 轴相反的坐标系 $a_t^Delta, a_0^Delta$，则两者之间的变换正是我们想要的镜像 relative action.
+证明: 设原始数据集中某 TCP 的两个动作 $a_t, a_0$，$T_(a_t -> a_0)$ 为 relative action. 直接取镜像得到 $a_t^', a_0^'$，这两个动作为左手坐标系，并且有 $T_(a_t^' -> a_0^') = T_(a_t -> a_0)$. 考虑对 $a_t^', a_0^'$ 取 y 轴相反的坐标系 $a_t^Delta, a_0^Delta$，则两者之间的变换正是我们想要的镜像 relative action. 我们对其化简：
 
 $
 T_(a_t^Delta -> a_0^Delta) &= T_(a_0^Delta -> w)^(-1) T_(a_t^Delta -> w)\
@@ -38,11 +28,16 @@ T_(a_t^Delta -> a_0^Delta) &= T_(a_0^Delta -> w)^(-1) T_(a_t^Delta -> w)\
 &= M_y underbrace(T_(a_t -> a_0), "relative action") M_y
 $
 
+=== 方法 II
+对于 absolute pose 直接右乘 $M_y = "diag"(1, -1, 1, 1)$. （不唯一）。然后以此计算 new relative action，结果就会和上面最后一行一样.
+
 == 图像如何处理？
 
-直接左右反转. 原理类似上方，即左右相机的不对称性来自于强行保持右手手性而反转了相机的 x 轴（左右轴），因此只需要反转图像的左右轴. p.s. 如果我们不强求手性一致，则相机平面取镜像且环境取镜像，则 observation image 不会变化.
+直接左右反转. 原理类似上方，即左右相机的不对称性来自于强行保持右手手性而反转了相机的 x 轴（左右轴），因此只需要反转图像的左右轴. p.s. 如果我们不强求手性一致，则相机平面取镜像且环境取镜像，则 observation image 不会变化. 头部相机一样.
 
-== 重投影可视化如何处理？
+== 在头部相机可视化重投影动作如何处理？
+
+头部图像左右反转后，重投影需要让 absolute pose 新像素坐标系的 x 反转(x 右 y 下) ，也即在新相机坐标系下 x 反转（x 右 y 下 z 光轴前）.
 
 == 3D 可视化如何处理？
 
