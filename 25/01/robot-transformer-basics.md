@@ -14,7 +14,7 @@ confidence: 2
 ## FiLM
 来自 RT1
 
-使用 MLP(txt token) 的输出缩放 img token（为 txt token 唯一用处）
+使用 `MLP(txt token)` 的输出来缩放 img token（此为 txt token 唯一用处）
 
 ```python
 # img: [B, C, H, W], txt_ids: [B, L]
@@ -95,4 +95,3 @@ cond = MLP(sincos(t))                               # adaRMS 条件
 loss = MSE(Linear_out(h_suf[:, -Na:]), noise - actions)
 # infer: cache prefix → Euler: x += dt * Linear_out(h_suf), t -= dt # 解码回动作空间 (flow 的速度场)
 ```
-
