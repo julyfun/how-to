@@ -150,7 +150,7 @@ flowchart TD
 - https://arxiv.org/abs/2506.07339 | Kevin Black, Sergey
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260708231015147.png)
 
-考虑上面图的问题：前后两个 chunk 重合处不能完美一致，所以 naive async 几乎必然会抖动. 直接魔改原有 action expert FM 过程：
+考虑上面图的问题：前后两个 chunk 重合处不能完美一致，所以 naive async 几乎必然会抖动. 从图中 a11 开始插值（平滑地增加权重）是一个可行方案，但是这会导致插值段之后和之前缺乏关联. RTC 同样从 a11 开始使用平滑权重，只不过直接 guidance 原本的 action expert FM 过程：
 
 ```python
 # 符号：H: (Prediction Horizon), M: 动作维度 (Action Dim), O: 观测维度
