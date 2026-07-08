@@ -91,6 +91,24 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 
 实验表明这种异步执行架构在维持高成功率的同时能大幅提升控制频率。
 
+## AHA-WAM: Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing
+[Gemini 3.1 Pro] AHA-WAM 将世界动作模型拆分为低频长时 Video DiT
+和高频动作 Action DiT，二者通过观测引导的上下文路由异步协同。 | 👤
+上海交通大学, Jisong Cai, Yao Mu |
+[🌐](https://serene-sivy.github.io/aha-wam/) | [📃
+2606.09811](https://hjfy.top/arxiv/2606.09811) |
+[✨](https://www.alphaxiv.org/abs/2606.09811) |
+[📂](https://github.com/serene-sivy/AHA-WAM) |
+
+方法包含两个解耦的扩散 Transformer，低频 Video DiT 充当维护历史观测 KV
+memory 的规划器，高频 Action DiT 通过层级交叉注意力查询规划器特征以预测
+action chunk。为了让旧特征适配新观测，模型通过最新视觉观测生成 routing
+queries 对缓存特征进行注意力池化，从而在不重跑视频 DiT
+的情况下实现高频动作闭环。
+作者还利用 ODE 蒸馏将 Action DiT 降噪压缩至两步推出了 Flash
+版本，文章坦言局限性在于两者的运行频率以及预测步长等时间超参数均需要根
+据任务手动调节。
+
 ## ---
 
 ## UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos

@@ -72,6 +72,8 @@ flowchart TD
 ## Lingbot-va (4)
 - https://hjfy.top/arxiv/2601.21998
 
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260708155628642.png)
+
 lingbot-va 的自回归扩散方法为：diffusion 后对 clean token 计算 kv 存入 kv cache，此后 diffusion 将会 attend 之前的 kv. 而 diffusion 顺序为 video 2 帧 -> action 2x16 帧（这部分相当于 IDM） -> video 2 帧 -> action 2x16 帧...
 
 ```python
@@ -102,12 +104,12 @@ infer #2:
     条件：cache 里的 real history
 
 execute #2 起:
-    start_idx=0 -> 执行完整 32 步
+    start_idx=0 -> 执行所有 32 步 action
     每 4 步收 obs -> key_frame_list（约 8 个）
 
 compute_kv_cache #2:
     再次 clear_pred_cache()
-    追加新的 real_z / real_a
+    追加新的 real_z / real_a(real_a != pred_a)
 ```
 
 ### Infer-time denoise video
