@@ -19,4 +19,8 @@
 对于 absolute pose 直接右乘 $"diag"(1, -1, 1, 1)$
 
 === 方法 II
-先转换为 chunk relative pose，然后对每个 relative pose T 计算 $"diag"$
+先转换为 chunk relative pose，然后对每个 relative pose T 计算 $"diag" T "diag"$
+
+== 附：矩阵乘法记忆
+
++ 左行右列 （$"diag" dot T$ 是对 T 的整行生效，$T dot "diag"$ 是对 T 的整列生效. $A T$ 则可以视 A 一行中的每个元素是 T 每个行向量的系数）
