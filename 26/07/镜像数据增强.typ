@@ -12,16 +12,20 @@
 + 左右手需要转换为 TCP pose，头部 pose 需要转为为相机 pose. （Vive tracker 原始数据可能是 tracker pose，因此需要转换）
 
 == 目标
-将采集数据增强为镜像数据, s.t. 镜像数据等价于原始采集环境中把环境按照机器人的中轴平面镜像设置，动作也镜像，但坐标系不镜像，采集得到的数据（包括输入的 image 正确，以及产生的 GT *relative* action 正确）
+将采集数据增强为镜像数据, s.t. 镜像数据等价于原始采集环境中把环境按照机器人的中轴平面镜像设置，动作也取镜像，但坐标系不取镜像，采集得到的数据（包括输入的 image 正确，以及产生的 GT *relative* action 正确）
 
-== action pose 如何处理？
+== Action pose 如何处理？
 === 方法 I
 对于 absolute pose 直接右乘 $M_y = "diag"(1, -1, 1, 1)$.
 
-证明: 设原始数据集中某 TCP 的两个动作 $a_t, a_0$，$T_(a_t -> a_0)$ 为 relative pose. 直接镜像得到 $a_t^', a_0^'$，此时
-
 === 方法 II
-先转换为 chunk relative pose，然后对每个 relative pose T 计算 $M_y T M_y$
+先转换为 chunk relative action，然后对每个 relative action T 计算 $M_y T M_y$.
+
+证明: 设原始数据集中某 TCP 的两个动作 $a_t, a_0$，$T_(a_t -> a_0)$ 为 relative action. 直接取镜像得到 $a_t^', a_0^'$，这两个动作为左手坐标系，并且有 $T_(a_t^' -> a_0^') = T_(a_t -> a_0)$. 考虑对 $a_t^', a_0^'$ 取 y 轴相反的坐标系 $a_t^Delta, a_0^Delta$，则两者之间的变换正是我们想要的镜像 relative action.
+
+== 图像如何处理？
+
+直接左右反转. 原理类似上方，即左右相机的不对称性来自于强行保持右手手性而反转了相机的 x 轴（左右轴），因此只需要反转图像的左右轴. p.s. 如果我们不强求手性一致，则相机平面取镜像且环境取镜像，则 observation image 不会变化.
 
 == 重投影可视化如何处理？
 
