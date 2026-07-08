@@ -244,9 +244,9 @@ flowchart TD
 - https://arxiv.org/abs/2606.01955
 
 wall-wm train-time 用 event-chunk 替代了 time-chunk，并且提出了一种 infer-time 分层加速解码方式。自变量这个文章写得非常长，解释了很多架构设计细节。然而，demo 只展示了泛化的 picknplace. 一些设计细节包括：
-- 多相机 attn mask 做了几何约束.
-- 每 transformer layer 都有 action token 到 state token 的单独 crossattn，不会因为 pi 那样完全 self attn 稀释注意力到 video token.
-- 用 vlm 决定事件对应的 event-chunk 长度 n，然后对 `(n + 1) * K_p`(每个 video latent 对应 K_p 个 action token) 个带位置编码的噪声去噪.
+1. 多相机 attn mask 做了几何约束.
+2. 每 transformer layer 都有 action token 到 state token 的单独 crossattn，不会因为 pi 那样完全 self attn 稀释注意力到 video token.
+3. 用 vlm 决定事件对应的 event-chunk 长度 n，然后对 `(n + 1) * K_p`(每个 video latent 对应 K_p 个 action token) 个带位置编码的噪声去噪.
 
 ```mermaid
 flowchart TD
