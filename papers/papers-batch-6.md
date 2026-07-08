@@ -8,6 +8,8 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+to read:
+
 ## SARM2: Multi-Task Stage Aware Reward Modeling for Self Improving Robotic Manipulation
 [Gemini 3.1 Pro] 结合基于动作原语的阶段估计器和多门控混合专家价值头来提供密集多任务奖励 | 👤 Stanford University, Qianzhong Chen, Mac Schwager | [🌐](https://qianzhong-chen.github.io/sarm2.github.io/) | [📃 2606.10305](https://hjfy.top/arxiv/2606.10305) | [✨](https://www.alphaxiv.org/abs/2606.10305) | [📂](https://qianzhong-chen.github.io/sarm2.github.io/) |
 

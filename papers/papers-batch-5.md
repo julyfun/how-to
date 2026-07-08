@@ -84,6 +84,13 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 2. 固定 H，`predictor(i, i + H).expected_index() - H / episode_len`
 3. training-time action diffusion 过程中 `predicted_noise = model(noisy_action, state, condition, t)`，其中 condition 以 20% 概率丢弃为 null_token 以训练无条件分布. inference-time diffusion 过程中 `eps_uncond = model(action, state, null_token, t), eps_cond = model(action, state, target_condition, t), eps_guided = 加权，不用 autograd.`
 
+## AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing
+[Gemini 3.1 Pro] 使用双 DiT 架构将低频视频预测和高频动作执行解耦并通过观测引导上下文路由复用长期视频特征 | 👤 Shanghai Jiao Tong University, Jisong Cai, Yao Mu | [🌐](https://serene-sivy.github.io/aha-wam/) | [📃 2606.09811](https://hjfy.top/arxiv/2606.09811) | [✨](https://www.alphaxiv.org/abs/2606.09811) | - |
+
+提出了异步水平自适应的世界动作模型 AHA-WAM。该方法使用双 DiT 架构将视频模型作为低频世界规划器，维持历史观测的滚动键值记忆以提供长期场景特征。同时高频动作专家通过逐层联合注意力查询这些特征，结合水平自适应训练和观测引导路由机制即可在不重复运行视频模型的情况下完成闭环控制。
+
+实验表明这种异步执行架构在维持高成功率的同时能大幅提升控制频率。
+
 ## ---
 
 ## UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos
