@@ -22,9 +22,9 @@ confidence: 2
 
 ## GuidedVLA: ybw (11)
 一句话：给 pi0 action token 的  加手工设计的 auxiliary tasks.
-- 在 mot 的 action expert 的 [9, 10, 11, 12] 层 block 中，让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y1
+- 在 mot 的 action expert 的 [9, 10, 11, 12] 层 block 中，让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y1，由 depth anything 监督.
 - 新的一条路径：`action tokens -> q; concat(image tokens, action tokens) -> kv` 用于:
-    - 计算 这里 qk 的 attn score，这个 score 和 GT attn mask patchify 得到 obj_loss (ground truth 由其他 grounding 模型生成)
+    - 计算 这里 qk 的 attn score，这个 score 和 GT attn mask patchified 得到 obj_loss (GT 由其他 grounding 模型生成)
     - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss. 除了 loss 还会得到 y2 y3.
     - action tokens += linear(concat(y1, y2, y3))
     - 上述 qkv 在代码中被称为 control_qkv [1]. y1 y2 y3 带门控.
