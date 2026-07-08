@@ -243,10 +243,29 @@ act1 = gated_residual(act0, act_y)                              # (B, La, 1024)
 下面是 pi0.5. 一句话：对 state 进行 bin 离散并以文本丢进 VLM，预训练则对 action 使用 FAST[1] 分词器离散从而在不启用 action expert 的情况下进行 LLM-like NTP 预测并使用交叉熵 loss. 目的是大幅加快训练，而 infer-time 用 flow matching 反而更快。然而，对于跨本体 state 似乎没有做特殊处理，而都是归一化，可能需要通过语言指令来识别本体。
 
 架构新技巧:
-- pi0.5 flow time t 使用 adaRMSNorm 用作 action flow condition. (pi0 是 MLP 直接为 token , concat action token)
+- pi0.5 flow time t 使用 adaRMSNorm[2] 用作 action flow condition. (pi0 是 MLP 直接为 token , concat action token)
 - pi0.5 将 state 离散化为 task prompt（在 pi0 中，state 是过 linear 进 action expert）
 
 1. FAST tokenizer 就是先将整个 action chunk (原文说了是 compressing the action chunks) 先 encode 为 8 个 latent 然后 vector quantize 就完事. 最终将 50x19 action 转为 8 个 token.
+2. adarmsnorm:
+   ```python
+   # 1. 提取时间步 t 的正弦位置编码
+   # t: (b,)
+   # time_emb: (b, emb=2048)
+   time_emb = SinusoidalEmbedding(t, dim=2048)
+   # 2. 通过两层带 Swish 激活的 MLP 投影得到条件向量
+   # adarms_cond: (b, emb=2048)
+   adarms_cond = Swish(Linear(Swish(Linear(time_emb))))
+   # --- 以下发生在 Action Expert (Gemma-300m) 的每一层 Transformer Block 中 ---
+   # 3. 在 Action Expert 的每一层，将条件向量映射为缩放 (scale) 和平移 (shift) 参数
+   # scale, shift 形状均为 (b, emb=2048)
+   # 注意：由于 action_tokens 形状是 (b, ah=50, emb=2048)，这里会将 scale/shift 广播 (broadcast) 到序列长度维度
+   scale, shift = Linear(adarms_cond, out_features=2048 * 2).chunk(2, dim=-1)
+   # 4. 对隐藏层 x 应用 RMSNorm 后，注入时间信息
+   # x: (b, ah=50, emb=2048)
+   # x_out: (b, ah=50, emb=2048)
+   x_out = RMSNorm(x) * (1 + scale.unsqueeze(1)) + shift.unsqueeze(1)
+   ```
 
 ```mermaid
 flowchart TD
