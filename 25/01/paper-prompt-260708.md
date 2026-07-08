@@ -13,9 +13,10 @@ confidence: 2
 请你简洁地给出代码复现视角的有序步骤.例 1：
 1. 拿出 pi0 代码.
 2. 对 pi0 action expert 的中间层加 depth auxiliary task.
+3. 同时输出
 
 例 2:
-
+1. 拿出 diffusion policy 代码
 
 如果本文是在基础模型上的增量工作，请指出以便快速理解方法.
 
