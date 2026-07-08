@@ -109,6 +109,13 @@ queries 对缓存特征进行注意力池化，从而在不重跑视频 DiT
 版本，文章坦言局限性在于两者的运行频率以及预测步长等时间超参数均需要根
 据任务手动调节。
 
+## Motus: A Unified Latent Action World Model
+[Gemini 3.1 Pro] 引入 Mixture-of-Transformer 架构集成三大专家，并用光流提取隐式动作进行大规模预训练 | 👤 清华大学, Hongzhe Bi, Jun Zhu | [🌐](https://motus-robotics.github.io/motus) | [📃 2512.13030](https://hjfy.top/arxiv/2512.13030) | [✨](https://www.alphaxiv.org/abs/2512.13030) | [📂](https://github.com/thu-ml/Motus) |
+
+Motus 采用 Mixture-of-Transformer 架构集成理解、视频生成和动作三个专家，并使用 UniDiffuser 风格的调度器灵活切换世界模型和 VLA
+等模式。为了利用大规模异构数据，文章通过光流提取像素级隐式动作，并设计了包含基础模型、隐式动作联合预训练和目标机器人微调的三阶段训练流程。
+文章证明了将视频生成和动作预测统一在一个模型中，能显著提升下游真实机器人任务的表现。
+
 ## ---
 
 ## UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos
