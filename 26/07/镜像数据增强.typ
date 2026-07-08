@@ -1,5 +1,5 @@
 == 采集原始数据
-+ 左右手 absolute pose (e.g. 在 vive tracker 世界坐标系或 ARKit 初始坐标系)
++ 左右手 absolute pose (e.g. 在 vive tracker 世界坐标系或 ARKit 初始坐标系. 动作 $a_i$ 的原始数据记为 $T_(a_i->w)$).
 + 左右手相机图像.
 + 头部 absolute pose
 + 头部相机图像
@@ -22,6 +22,14 @@
 先转换为 chunk relative action，然后对每个 relative action T 计算 $M_y T M_y$.
 
 证明: 设原始数据集中某 TCP 的两个动作 $a_t, a_0$，$T_(a_t -> a_0)$ 为 relative action. 直接取镜像得到 $a_t^', a_0^'$，这两个动作为左手坐标系，并且有 $T_(a_t^' -> a_0^') = T_(a_t -> a_0)$. 考虑对 $a_t^', a_0^'$ 取 y 轴相反的坐标系 $a_t^Delta, a_0^Delta$，则两者之间的变换正是我们想要的镜像 relative action.
+
+$
+T_(a_t^Delta -> a_0^Delta) &= T_(a_0^Delta -> w)^(-1) T_(a_t^Delta -> w)\
+&= (T_(a_0^' -> w) dot M_y)^(-1) (T_(a_t^' -> w) dot M_y) \
+&= M_y^(-1) T_(a_0^' -> w)^(-1) T_(a_t^' -> w) M_y \
+&= M_y^(-1) T_(a_t^' -> a_0^') M_y \
+&= M_y^(-1) underbrace(T_(a_t -> a_0), "relative action") M_y
+$
 
 == 图像如何处理？
 
