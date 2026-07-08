@@ -16,7 +16,14 @@
 
 == Action pose 如何处理？
 === 方法 I
-对于 absolute pose 直接右乘 $M_y = "diag"(1, -1, 1, 1)$.
+对于 absolute pose 直接右乘 $M_y = "diag"(1, -1, 1, 1)$. （不唯一）。然后以此计算 new relative action.
+
+证明：设右乘结果为 $T_(a_i^Delta)$.
+
+$
+underbrace(T_(a_t^Delta -> a_0^Delta), "new relative action")&= T_(a_0^Delta -> w)^(-1) T_(a_t^Delta -> w) \
+&= (T_(a_0 -> w) M_y)^(-1) T_(a_t -> w) M_y
+$
 
 === 方法 II
 先转换为 chunk relative action，然后对每个 relative action T 计算 $M_y T M_y$.
@@ -28,7 +35,7 @@ T_(a_t^Delta -> a_0^Delta) &= T_(a_0^Delta -> w)^(-1) T_(a_t^Delta -> w)\
 &= (T_(a_0^' -> w) dot M_y)^(-1) (T_(a_t^' -> w) dot M_y) \
 &= M_y^(-1) T_(a_0^' -> w)^(-1) T_(a_t^' -> w) M_y \
 &= M_y^(-1) T_(a_t^' -> a_0^') M_y \
-&= M_y^(-1) underbrace(T_(a_t -> a_0), "relative action") M_y
+&= M_y underbrace(T_(a_t -> a_0), "relative action") M_y
 $
 
 == 图像如何处理？
