@@ -81,7 +81,7 @@ infer #1 (frame_st_id=0):
 1) flow denoise video chunk [z0_anchor, z1_hat]   # 2帧
    - 第0帧 init_latent=z0
    - 第1帧才是预测的未来 latent
-2) flow denoise action chunk [a_grp0(16步), a_grp1(16步)]  # 1 chunk = 2 group(对齐 2 video frame) = 32 steps
+2) flow denoise action chunk [a_grp0(16步), a_grp1(16步)]  # 1 action chunk = 2 group(对齐 2 video frame) = 32 steps
    - 条件：cache(空) + 刚预测的 video chunk
 
 execute #1（第一轮特殊）:
