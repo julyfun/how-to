@@ -54,7 +54,7 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 **状态型 (如 力/力矩)**
 - Tactile State -> [Fourier Encoding] -> expanded signal -> [3-layer MLP] -> [LayerNorm] -> [MLP] -> Tactile Token
 
-**+ embedding**
+**然后 + embedding**
 - Tactile Tokens -> [+ Shared Functional Area Embedding] -> MTTS Tokens -> [Tactile Expert]
 
 ## VGGT: Visual Geometry Grounded Transformer (38)

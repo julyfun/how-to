@@ -10,6 +10,13 @@ confidence: 2
 
 to read:
 
+## PaLM-E: An Embodied Multimodal Language Model
+[Gemini 3.1 Pro] PaLM-E 将连续传感器数据直接映射到预训练语言模型的嵌入空间来实现具身推理 | 👤 Robotics at Google 和 TU Berlin, Danny Driess, Danny Driess 和 Pete Florence | [🌐](https://palm-e.github.io/) | [📃 2303.03378](https://hjfy.top/arxiv/2303.03378) | [✨](https://www.alphaxiv.org/abs/2303.03378) | - |
+
+PaLM-E 将图像和状态数据通过编码器映射为向量，与文本 token 交错拼接成多模态句子，直接输入给预训练的 PaLM 模型自回归生成高层控制文本。
+
+实验发现混合训练视觉语言和机器人数据能提升单任务表现，并且扩大语言模型参数量可以显著减少多模态训练对原有语言能力的灾难性遗忘。
+
 ## SARM2: Multi-Task Stage Aware Reward Modeling for Self Improving Robotic Manipulation
 [Gemini 3.1 Pro] 结合基于动作原语的阶段估计器和多门控混合专家价值头来提供密集多任务奖励 | 👤 Stanford University, Qianzhong Chen, Mac Schwager | [🌐](https://qianzhong-chen.github.io/sarm2.github.io/) | [📃 2606.10305](https://hjfy.top/arxiv/2606.10305) | [✨](https://www.alphaxiv.org/abs/2606.10305) | [📂](https://qianzhong-chen.github.io/sarm2.github.io/) |
 
