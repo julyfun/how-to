@@ -54,11 +54,13 @@ confidence: 2
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260628223306877.png)
 
-1. 所有帧共享 8 个 learnable gist query embedding，这样就可以每帧留下 8 个 gist embed 和对应 kv cache.（完整视觉 token 是 120 个）.
+1. 所有帧共享 8 个 learnable gist query embedding[1]，这样就可以每帧留下 8 个 gist embed 和对应 kv cache.（完整视觉 token 是 120 个）.
 2. 滑动窗口完整视觉 token
 3. 起始帧完整视觉 token
 
 其他结构则是 Pi-like Video DiT + action expert DiT.
+
+1. 别忘了 query embedding 需要经过 W_q 才会得到真正 query.
 
 ## DiT4DiT (33)
 ⭐️⭐️ [YY 硕]
