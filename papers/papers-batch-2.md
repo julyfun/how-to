@@ -21,7 +21,10 @@ confidence: 2
 有很多训练 trick，包括5阶段课程学习、质量指标筛选（公开数据集质量表）. 然而，demo 没有什么新东西。
 
 ## GuidedVLA: ybw (11)
-一句话：给 pi0 action token 的  加手工设计的 auxiliary tasks.
+一句话：给 pi0 action expert 加深度、action-primitive 和 attn mask 的 auxiliary tasks 和特征
+
+这三个特征均可用外部 VLM, depthanything 和 SAM 打标签.
+
 - 在 mot 的 action expert 的 [9, 10, 11, 12] 层 block 中，让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y1，由 depth anything 监督.
 - 新的一条路径：`action tokens -> q; concat(image tokens, action tokens) -> kv` 用于:
     - 计算 这里 qk 的 attn score，这个 score 和 GT attn mask patchified 得到 obj_loss (GT 由其他 grounding 模型生成)
@@ -31,7 +34,7 @@ confidence: 2
 
 1. 关于 control net:
 ```python
-output = original_attention(x) + # 这里是纯 pi0 的
+output = original_attention(x) + # 这里是 pi0 原始的.
   linear(control_attention(x)) # 只不过这里 linear 初始化为 0 防止初始就让老模型乱掉
 ```
 
