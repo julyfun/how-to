@@ -114,9 +114,11 @@ action_v = action_dit(noisy_action, updated_kv, state_emb)
 ## RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies (42)
 ⭐️⭐️⭐ 26年7月非常难的 benchmark | 👤 MMLab@HKU, Tianxing Chen, Ping Luo | [🌐](http://robodojo-benchmark.com/) | [📃 2607.04434](https://hjfy.top/arxiv/2607.04434) | [✨](https://www.alphaxiv.org/abs/2607.04434) | [📂](https://github.com/RoboDojo-Benchmark/RoboDojo) |
 
-~pi0.5 果然是最强的.~ 仿真改用 issac lab 并给出难点方向 1) 泛化 e.g. 光照; 2) 记忆 e.g. 交换同色块; 3) 准度 e.g. 插小试管; 4) 长程 e.g. 下圈叉棋; 5) 开放 e.g. 算术题. 真实环境用 PiperX 等机械臂，也有合笔盖等 high precision 任务. 最强的 $pi_(0.5)$ 拿了 12% 左右分数.
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260709212409239.png)
 
+~pi0.5 果然是最强的.~ 仿真改用 issac lab 并给出难点方向 1) 泛化 e.g. 光照; 2) 记忆 e.g. 交换同色块; 3) 准度 e.g. 插小试管; 4) 长程 e.g. 下圈叉棋; 5) 开放 e.g. 算术题. 真机用 PiperX 等机械臂，也有合笔盖等 high precision 任务. 最强的 $pi_(0.5)$ 拿了 12% 左右分数. 仿真数据用 curobo 和遥操，真机数据用
 
+本文实验发现当前 VLA 在如下方面有严重问题：场景泛化; 长程任务；错误恢复；用记忆指导动作; 开放问题.
 
 ## ---
 
