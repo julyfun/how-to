@@ -85,20 +85,16 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 3. training-time action diffusion 过程中 `predicted_noise = model(noisy_action, state, condition, t)`，其中 condition 以 20% 概率丢弃为 null_token 以训练无条件分布. inference-time diffusion 过程中 `eps_uncond = model(action, state, null_token, t), eps_cond = model(action, state, target_condition, t), eps_guided = 加权，不用 autograd.`
 
 ## AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing (41)
-⭐️⭐️⭐⭐ 用最新观测修正长期 video plan 从而实现 v-a 并发 | 👤 Shanghai Jiao Tong University, Jisong Cai, Yao Mu | [🌐](https://serene-sivy.github.io/aha-wam/) | [📃 2606.09811](https://hjfy.top/arxiv/2606.09811) | [✨](https://www.alphaxiv.org/abs/2606.09811) | - |
+⭐️⭐️⭐⭐ 用最新观测修正长期 video plan 从而实现 v-a 异步 | 👤 Shanghai Jiao Tong University, Jisong Cai, Yao Mu | [🌐](https://serene-sivy.github.io/aha-wam/) | [📃 2606.09811](https://hjfy.top/arxiv/2606.09811) | [✨](https://www.alphaxiv.org/abs/2606.09811) | - |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260709163457123.png)
 
-本文希望一次 video denoise 后可以进行随机多次 action denoise. 本文基于 fastwam，首先添加了 6 帧 video 历史，然后每次 action denoise 时，使用了类似 ACT 中的 DETR 的槽位查询:
+本文希望每次 video denoise 后可以进行随机多次 action denoise. 本文基于 fastwam，首先添加了 6 帧 video 历史，然后每次 action denoise 时，使用了类似 ACT 中 DETR 的槽位查询: 为了让 current image 修正 kv histroy，先学习 learnable query emb，通过 cross attn image，然后再 cross attn layerkv，再 mlp，而且使用了 delta.
 
-为了让 current image 修正 kv histroy，先学习 learnable query emb，通过 cross attn image，然后再 cross attn layerkv，再 mlp，而且使用了 delta.
-
-于是 video dit 和 action dit 可以并发运行，video dit 可以在任意时刻更新历史 kv，并且 action dit 不需要等待它.
-
-一些有趣技巧 1) 训练时随机平移 action 对应的 history kv index 以适应并发推理.
+于是 video dit 和 action dit 可以异步或并发运行，video dit 可以在任意时刻更新历史 kv，并且 action dit 不需要等待它. 一些有趣技巧 1) 训练时随机平移 action 对应的 history kv index 以适应并发推理.
 2) Cuda 加速单独提速 10 倍. Action dit ODE 蒸馏 (teacher-student) 10 步降到 2 步.
 
-对于解决 WAM 恐怖的 video dit 延迟来说，并发是一个不错的思路，部署也会更为简单. 对于 IDM，这种思路似乎可以延续，只不过需要验证该范式是否有效. 本文 Demo 只有双臂 picknplace.
+对于解决 WAM 恐怖的 video dit 延迟来说，异步是一个不错的思路（而 slots 是一种实现方式），部署也会更为简单. 对于 IDM，这种思路似乎可以延续，只不过需要验证该范式是否有效. 本文 Demo 只有双臂 picknplace.
 
 ```python
 current_image # [B, 3, H, W] 新观测.
@@ -114,6 +110,14 @@ for (layer_k, layer_v), mlp_this_layer in zip(history, mlps):
 # MoT: action_dit 每一层对应一个 updated_kv.
 action_v = action_dit(noisy_action, updated_kv, state_emb)
 ```
+
+## RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies (42)
+ RoboDojo 提供了一个统一的虚实结合机器人操作基准测试和评测系统 | 👤 MMLab@HKU, Tianxing Chen, Ping Luo | [🌐](http://robodojo-benchmark.com/) | [📃 2607.04434](https://hjfy.top/arxiv/2607.04434) | [✨](https://www.alphaxiv.org/abs/2607.04434) | [📂](https://github.com/RoboDojo-Benchmark/RoboDojo) |
+
+RoboDojo 包括 42 个仿真任务和 18 个真实任务，通过 XPolicyLab 统一了策略开发与部署接口，让模型只需集成一次即可在并行仿真和标准化远程真机环境中进行评测。
+
+评测发现当前最强模型的成功率依然极低，与人类专家存在巨大鸿沟，尤其在长视野任务和开放语义理解上暴露出严重的可靠性问题。
+
 
 ## ---
 
