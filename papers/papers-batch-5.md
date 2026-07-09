@@ -89,7 +89,11 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260709163457123.png)
 
-本文希望一次 video denoise 后可以进行随机多次 action denoise. 本文基于 fastwam，首先添加了 6 帧 video 历史，然后每次 action denoise 时，取相机当前 image 生成 query，它对 video 历史 kv 采用 attention pooling (i.e. cross attn) 来修正历史 kv 并提供给 action dit. 于是 video dit 和 action dit 可以并发运行，video dit 可以在任意时刻更新历史 kv，并且 action dit 不需要等待它.
+本文希望一次 video denoise 后可以进行随机多次 action denoise. 本文基于 fastwam，首先添加了 6 帧 video 历史，然后每次 action denoise 时，使用了类似 ACT 中的 DETR 的槽位查询:
+
+为了让 current image 修正 kv histroy，先学习 learnable query emb，通过 cross attn image，然后再 cross attn layerkv，再 mlp，而且使用了 delta.
+
+于是 video dit 和 action dit 可以并发运行，video dit 可以在任意时刻更新历史 kv，并且 action dit 不需要等待它.
 
 一些有趣技巧 1) 训练时随机平移 action 对应的 history kv index 以适应并发推理.
 2) Cuda 加速单独提速 10 倍. Action dit ODE 蒸馏 (teacher-student) 10 步降到 2 步.
@@ -102,7 +106,7 @@ history_video_k, history_video_v # 历史信息, 每 layer 都是 [B, L_v, D]
 query_emb # [Q, D_q] 学习的.
 
 obs = image_encoder(current_image) # [B, N_img, D_img]
-guided_query_emb = cross_attn(query_emb -> obs) # [B, Q, D_q]
+guided_query_emb = cross_attn(query_emb -> obs) # [B, Q, D_q]. Attention pooling.
 for (layer_k, layer_v), mlp_this_layer in zip(history, mlps):
     residual = cross_attn(guided_query_emb -> layer_k layer_v) # 获取视觉差
     delta_k, delta_v = mlp_this_layer(concat(guided_query_emb, residual)) # 获取 kv 差
