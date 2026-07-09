@@ -85,29 +85,27 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 3. training-time action diffusion 过程中 `predicted_noise = model(noisy_action, state, condition, t)`，其中 condition 以 20% 概率丢弃为 null_token 以训练无条件分布. inference-time diffusion 过程中 `eps_uncond = model(action, state, null_token, t), eps_cond = model(action, state, target_condition, t), eps_guided = 加权，不用 autograd.`
 
 ## AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing
-⭐️⭐️⭐ 用最新观测修正长期 video plan 从而实现 v-a 并发 | 👤 Shanghai Jiao Tong University, Jisong Cai, Yao Mu | [🌐](https://serene-sivy.github.io/aha-wam/) | [📃 2606.09811](https://hjfy.top/arxiv/2606.09811) | [✨](https://www.alphaxiv.org/abs/2606.09811) | - |
+⭐️⭐️⭐⭐ 用最新观测修正长期 video plan 从而实现 v-a 并发 | 👤 Shanghai Jiao Tong University, Jisong Cai, Yao Mu | [🌐](https://serene-sivy.github.io/aha-wam/) | [📃 2606.09811](https://hjfy.top/arxiv/2606.09811) | [✨](https://www.alphaxiv.org/abs/2606.09811) | - |
 
 本文希望一次 video denoise 后可以进行随机多次 action denoise. 本文基于 fastwam，首先添加了 6 帧历史观测，然后每次 action denoise 时，取相机当前 obs 生成 query，对 video 历史 kv 采用 attention pooling 来修正历史 kv 并提供给 action dit. 于是 video dit 和 action dit 可以并发运行，video dit 可以在任意时刻更新历史 kv，并且 action dit 不需要等待它.
 
 ```python
-current_image # [B, 3, H, W]
-history_video_k, history_video_v # 每 block 都是 [B, L_v, D]
-query_emb # [Q, D_q]
+current_image # [B, 3, H, W] 新观测.
+history_video_k, history_video_v # 历史信息, 每 layer 都是 [B, L_v, D]
+query_emb # [Q, D_q] 学习的.
 
 obs = image_encoder(current_image) # [B, N_img, D_img]
 guided_query_emb = cross_attn(query_emb -> obs) # [B, Q, D_q]
 for (layer_k, layer_v), mlp_this_layer in zip(history, mlps):
     residual = cross_attn(guided_query_emb -> layer_k layer_v) # 获取视觉差
     delta_k, delta_v = mlp_this_layer(concat(guided_query_emb, residual)) # 获取 kv 差
-    updated_kv.append((
-        layer_k + delta_k * linear(delta_k), # Gated.
-        layer_v + delta_v * linear(delta_v),
-    ))
+    updated_kv.append((layer_k + delta_k * alpha, layer_v + delta_v * alpha))
 # MoT，action_dit 每一层对应一个 updated_kv.
-action_v = action_dit(noisy_action, updated_kv, )
+action_v = action_dit(noisy_action, updated_kv, state_emb)
 ```
 
-一些有趣技巧 1)
+一些有趣技巧 1) 训练时随机平移 action 对应的 history kv index 以适应并发推理.
+2) cuda 加速单独提速 10 倍. action dit ODE 蒸馏 (teacher-student) 10 步降到 2 步.
 
 ## AHA-WAM: Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing
 [Gemini 3.1 Pro] AHA-WAM 将世界动作模型拆分为低频长时 Video DiT
