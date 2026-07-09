@@ -85,9 +85,18 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 3. training-time action diffusion 过程中 `predicted_noise = model(noisy_action, state, condition, t)`，其中 condition 以 20% 概率丢弃为 null_token 以训练无条件分布. inference-time diffusion 过程中 `eps_uncond = model(action, state, null_token, t), eps_cond = model(action, state, target_condition, t), eps_guided = 加权，不用 autograd.`
 
 ## AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing
-⭐️⭐️⭐ 用最新观测修正长期 video plan 从而实现 v-a 异步 | 👤 Shanghai Jiao Tong University, Jisong Cai, Yao Mu | [🌐](https://serene-sivy.github.io/aha-wam/) | [📃 2606.09811](https://hjfy.top/arxiv/2606.09811) | [✨](https://www.alphaxiv.org/abs/2606.09811) | - |
+⭐️⭐️⭐ 用最新观测修正长期 video plan 从而实现 v-a 并发 | 👤 Shanghai Jiao Tong University, Jisong Cai, Yao Mu | [🌐](https://serene-sivy.github.io/aha-wam/) | [📃 2606.09811](https://hjfy.top/arxiv/2606.09811) | [✨](https://www.alphaxiv.org/abs/2606.09811) | - |
 
-本文希望一次 video denoise 后可以进行随机多次 action denoise.
+本文希望一次 video denoise 后可以进行随机多次 action denoise. 本文基于 fastwam，首先添加了 6 帧历史观测，然后每次 action denoise 时，取相机当前 obs 生成 query，对 video 历史 kv 采用 attention pooling 来修正历史 kv 并提供给 action dit. 于是 video dit 和 action dit 可以并发运行，video dit 可以在任意时刻更新历史 kv，并且 action dit 不需要等待它.
+
+```python
+current_image # [B, 3, H, W]
+history_video_k, history_video_v # 每 block 都是 [B, L_v, D]
+query_emb # [Q, D_q]
+
+obs = image_encoder(current_image) # [B, N_img, D_img]
+query_emb_guided_by_obs
+```
 
 一些有趣技巧 1)
 
