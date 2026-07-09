@@ -12,6 +12,8 @@ confidence: 2
 - https://hjfy.top/arxiv/2307.15818
 和 OpenVLA 同属一派，将 VLM 的最后 256 个 token id 分配给动作，直接将 x, y, z, yaw, pitch, roll, gripper 划分为 256 个离散桶，七个动作维度共享 token id 并通过位置区分语义，直接拼接丢给 VLM 输出隐状态，一个 head 解码出 id 再映射回动作空间. 缺点是离散化和自回归导致的精度不够.
 
+RT-1 输出的同样为离散词表，只不过是从零开始训练小型 transformer.
+
 TODO: 数据集这一块儿有空可以再看看.
 
 ## World Model for Robot Learning: A Comprehensive Survey (2)
