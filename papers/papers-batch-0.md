@@ -10,3 +10,7 @@ confidence: 2
 
 合并图片：https://small.im/zh-hans/merge-images
 
+- ⭐️⭐️
+- ⭐️⭐️⭐️ 有一些 insight
+- ⭐️⭐️⭐️⭐️ 似乎很有用
+- ⭐️⭐️⭐️⭐️⭐️ 新范式并且显著 work
