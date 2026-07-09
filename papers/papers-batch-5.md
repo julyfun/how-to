@@ -112,11 +112,10 @@ action_v = action_dit(noisy_action, updated_kv, state_emb)
 ```
 
 ## RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies (42)
- RoboDojo 提供了一个统一的虚实结合机器人操作基准测试和评测系统 | 👤 MMLab@HKU, Tianxing Chen, Ping Luo | [🌐](http://robodojo-benchmark.com/) | [📃 2607.04434](https://hjfy.top/arxiv/2607.04434) | [✨](https://www.alphaxiv.org/abs/2607.04434) | [📂](https://github.com/RoboDojo-Benchmark/RoboDojo) |
+⭐️⭐️⭐ 26年7月非常难的 benchmark | 👤 MMLab@HKU, Tianxing Chen, Ping Luo | [🌐](http://robodojo-benchmark.com/) | [📃 2607.04434](https://hjfy.top/arxiv/2607.04434) | [✨](https://www.alphaxiv.org/abs/2607.04434) | [📂](https://github.com/RoboDojo-Benchmark/RoboDojo) |
 
-RoboDojo 包括 42 个仿真任务和 18 个真实任务，通过 XPolicyLab 统一了策略开发与部署接口，让模型只需集成一次即可在并行仿真和标准化远程真机环境中进行评测。
+~pi0.5 果然是最强的.~ 仿真改用 issac lab 并给出难点方向 1) 泛化 e.g. 光照; 2) 记忆 e.g. 交换同色块; 3) 准度 e.g. 插小试管; 4) 长程 e.g. 下圈叉棋; 5) 开放 e.g. 算术题. 真实环境用 PiperX 等机械臂，也有合笔盖等 high precision 任务. 最强的 $pi_(0.5)$ 拿了 12% 左右分数.
 
-评测发现当前最强模型的成功率依然极低，与人类专家存在巨大鸿沟，尤其在长视野任务和开放语义理解上暴露出严重的可靠性问题。
 
 
 ## ---
