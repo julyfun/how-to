@@ -76,6 +76,8 @@ flowchart TD
 
 lingbot-va 的自回归扩散方法为：video/action diffusion 后对 clean token 计算 kv 存入 kv cache，此后 diffusion 每一层将会 attend 之前的 kv. 而 diffusion 顺序为 video 2 帧 -> action 2x16 帧（这部分相当于 IDM） -> video 2 帧 -> action 2x16 帧...
 
+默认实现为 shared backbone，通过 action_mode 分支区分 video input 和 action input，它会选择不同的 input embedder, time embedder 和 output head. KV cache 使用 ring buffer 维护，容量约 9792 tokens.
+
 ```python
 obs0 -> VAE -> z0
 
