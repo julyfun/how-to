@@ -95,7 +95,16 @@ history_video_k, history_video_v # 每 block 都是 [B, L_v, D]
 query_emb # [Q, D_q]
 
 obs = image_encoder(current_image) # [B, N_img, D_img]
-query_emb_guided_by_obs
+guided_query_emb = cross_attn(query_emb -> obs) # [B, Q, D_q]
+for (layer_k, layer_v), mlp_this_layer in zip(history, mlps):
+    residual = cross_attn(guided_query_emb -> layer_k layer_v) # 获取视觉差
+    delta_k, delta_v = mlp_this_layer(concat(guided_query_emb, residual)) # 获取 kv 差
+    updated_kv.append((
+        layer_k + delta_k * linear(delta_k), # Gated.
+        layer_v + delta_v * linear(delta_v),
+    ))
+# MoT，action_dit 每一层对应一个 updated_kv.
+action_v = action_dit(noisy_action, updated_kv, )
 ```
 
 一些有趣技巧 1)
