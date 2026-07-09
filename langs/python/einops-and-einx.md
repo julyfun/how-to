@@ -1,5 +1,5 @@
 ---
-title: "einops"
+title: "einops and einx"
 date: 2026-07-06 23:34:47
 tags: ["langs", "python"]
 author: "julyfun.m5air"
@@ -20,7 +20,7 @@ Also:
     reduce(ims, "b h w c -> h w", "min")
 ```
 
-and einx:k
+and einx:
 
 ```python
 z = einx.id("a (b c) -> (b a) c", x, b=2)             # Permute and (un)flatten axes
@@ -35,4 +35,3 @@ z = einx.add("a, b -> a b", x, y)                     # Outer sum
 z = einx.dot("a [b], [b] c -> a c", x, y)             # Matrix multiplication
 z = einx.get_at("b [h w] c, b i [2] -> b i c", x, y)  # Gather values at coordinates
 ```
-
