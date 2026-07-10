@@ -10,6 +10,13 @@ confidence: 2
 
 to read.
 
+## From Foundation to Application: Improving VLA Models in Practice
+[Gemini 3.1 Pro] 引入无辅助损失的 MoE 架构，并通过附加查询 token 蒸馏几何和时序特征 | 👤 Ant Digital Technologies, Wei Wu, Kecheng Zheng | [🌐](-) | [📃 2607.06403](https://hjfy.top/arxiv/2607.06403) | [✨](https://www.alphaxiv.org/abs/2607.06403) | [📂](-) |
+
+相比前作扩大了涵盖 20 种具身和人类主视角视频的预训练数据，将动作空间统一为包含全身关节的 55 维向量。模型在动作专家中引入无辅助损失的 token 级 MoE 架构，并附加当前和未来时间步的查询 token 向深度估计模型和因果视频模型蒸馏几何和时序特征。
+
+消融实验表明相对关节动作比绝对关节动作表现更好，均值标准差归一化能保留更大的有效动态范围。接触丰富的末端运动在笛卡尔空间表现更好，受姿态约束的任务在关节空间表现更好。
+
 ## UniVLA: Learning to Act Anywhere with Task-centric Latent Actions
 [Gemini 3.1 Pro] 通过潜在动作模型从视频中提取以任务为中心的潜在动作并在 DINO 特征空间中结合语言指令进行泛化策略训练 | 👤 The University of Hong Kong, Qingwen Bu, Hongyang Li | - | [📃 2505.06111](https://hjfy.top/arxiv/2505.06111) | [✨](https://www.alphaxiv.org/abs/2505.06111) | [📂](https://github.com/OpenDriveLab/UniVLA) |
 
