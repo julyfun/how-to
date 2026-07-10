@@ -18,3 +18,5 @@ confidence: 2
 例子: raw action -> [Linear] -> action tokens -> [some module] -> some data
 
 其中，数据不用包裹，可学习模块用 [] 包裹起来.
+
+## [两种树形图](../06/尾调用同级的树形图.md)
