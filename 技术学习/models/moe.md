@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-- MoE: 门控选专家 → Top-K激活 → 加权求和
+- MoE (as FFN): 独立 Linear 门控选专家 → Top-K激活 → 加权求和
 ```python
  class MoELayer:
      def __init__(self, hidden_size=768, num_experts=8, top_k=2):
@@ -26,10 +26,9 @@ confidence: 2
          probs = probs / probs.sum(dim=-1, keepdim=True)
 
          out = zeros_like(x)
-         for i in range(x.shape[0]):
+         for i in range(x.shape[0]): # batch
              for j in range(self.top_k):
-                 expert = self.experts[indices[i, j]]
-                 out[i] += probs[i, j] * expert(x[i:i+1])
+                 out[i] += probs[i, j] * self.experts[indices[i, j]](x[i:i+1])
 
          return out.view(B, S, H)
 
