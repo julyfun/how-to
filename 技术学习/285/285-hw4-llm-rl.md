@@ -24,8 +24,6 @@ for step in range(cfg.steps)  | 📂 hw4/hw4/train.py
         └── backward / optimizer.step()
 ```
 
-## Answer questions
-
 ## format_copy
 输入字符串，输出 `<answer>输入</answer>`.
 
@@ -33,6 +31,16 @@ for step in range(cfg.steps)  | 📂 hw4/hw4/train.py
 
 ## math_hard
 
-## GRPO ablation on format_copy
+## Answer questions
+
+### 1. Approximate KL
+
+### 2. Implementation
+
+按照 pdf 建议的顺序补全了 8 个函数.
+
+one bug or confusion point: 写 GRPO 的时候我发现 GRPO loss 的量纲和 GR-REINFORCE loss 完全不同，后者具有平凡 PG 的 `-log_prob * adv`，而前者是 `-(log_new - log_old).exp() * adv`. 很奇怪，只是梯度方向一样.
+
+### 4. GRPO ablation on format_copy
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-2.png)
