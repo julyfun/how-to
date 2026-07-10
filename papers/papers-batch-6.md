@@ -11,9 +11,11 @@ confidence: 2
 to read:
 
 ## lingbot-va 2.0: Native Video-Action Pretraining for Generalizable Robot Control
-⭐️⭐️⭐️ in-context learning 和 VLM 高层规划等优化 | 👤 Robbyant, Qihang Zhang, Yinghao Xu | [🌐](https://technology.robbyant.com/lingbot-va-v2) | [📃 -](-) | [✨ -](-) | [📂 -](-) |
+⭐️⭐️⭐️ 让 video dit 从机器人数据中预训练而不是 WAN | 👤 Robbyant, Qihang Zhang, Yinghao Xu | [🌐](https://technology.robbyant.com/lingbot-va-v2) | [📃 -](-) | [✨ -](-) | [📂 -](-) |
 
-LingBot-VA 2.0 包含一个对齐视觉基础模型的语义视觉动作 tokenizer，并在其隐空间上从头预训练因果 DiT。高层 VLM 规划器低频输出子任务上下文，低层策略的视频流采用稀疏 MoE 架构并辅以多块预测（MCP）损失。推理时采用异步执行，在机器人执行动作时用前向动力学模型想象下一帧并预测动作，并在真实观测到达时进行重接地。
+video dit 从零训练。
+
+其异步推理在 1.0 中就有，即把 pred video 当做观测直接预测下一个 action.
 
 相比于直接微调双向视频生成模型，完全原生的因果预训练避免了灾难性遗忘，同时人类第一人称视频的联合训练有效提升了泛化能力。
 
