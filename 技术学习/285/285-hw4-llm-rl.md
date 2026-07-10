@@ -39,7 +39,7 @@ for step in range(cfg.steps)  | 📂 hw4/hw4/train.py
 
 按照 pdf 建议的顺序补全了 8 个函数.
 
-one bug or confusion point: 写 GRPO 的时候我发现 GRPO loss 的量纲和 GR-REINFORCE loss 完全不同，后者具有平凡 PG 的 `-log_prob * adv`，而前者是 `-(log_new - log_old).exp() * adv`. 很奇怪，只是梯度方向一样.
+one bug or confusion point: 写 GRPO 的时候我发现 GRPO loss 的量纲和 GR-REINFORCE loss 似乎不同，后者具有平凡 PG surrogate 的 `-logprob * adv`，而前者是 `-(logprob_new - logprob_old).exp() * adv`. 后来询问发现 GRPO 也是正确的 surrogate.
 
 ### 4. GRPO ablation on format_copy
 
