@@ -10,19 +10,19 @@ confidence: 2
 
 to read:
 
+## lingbot-va 2.0: Native Video-Action Pretraining for Generalizable Robot Control
+⭐️⭐️⭐️ 从头预训练因果视频动作 DiT 并使用稀疏 MoE 提升视频流容量，通过前向动力学重接地的异步推理实现实时控制。 | 👤 Robbyant, Qihang Zhang, Yinghao Xu | [🌐](https://technology.robbyant.com/lingbot-va-v2) | [📃 -](-) | [✨ -](-) | [📂 -](-) |
+
+LingBot-VA 2.0 包含一个对齐视觉基础模型的语义视觉动作 tokenizer，并在其隐空间上从头预训练因果 DiT。高层 VLM 规划器低频输出子任务上下文，低层策略的视频流采用稀疏 MoE 架构并辅以多块预测（MCP）损失。推理时采用异步执行，在机器人执行动作时用前向动力学模型想象下一帧并预测动作，并在真实观测到达时进行重接地。
+
+相比于直接微调双向视频生成模型，完全原生的因果预训练避免了灾难性遗忘，同时人类第一人称视频的联合训练有效提升了泛化能力。
+
 ## lingbot-vla 2.0: From Foundation to Application: Improving VLA Models in Practice
 [Gemini 3.1 Pro] 引入无辅助损失的 MoE 架构，并通过附加查询 token 蒸馏几何和时序特征 | 👤 Ant Digital Technologies, Wei Wu, Kecheng Zheng | [🌐](https://technology.robbyant.com/lingbot-vla-v2) | [📃 2607.06403](https://hjfy.top/arxiv/2607.06403) | [✨](https://www.alphaxiv.org/abs/2607.06403) | - |
 
 相比前作扩大了涵盖 20 种具身和人类主视角视频的预训练数据，将动作空间统一为包含全身关节的 55 维向量。模型在动作专家中引入无辅助损失的 token 级 MoE 架构，并附加当前和未来时间步的查询 token 向深度估计模型和因果视频模型蒸馏几何和时序特征。
 
 消融实验表明相对关节动作比绝对关节动作表现更好，均值标准差归一化能保留更大的有效动态范围。接触丰富的末端运动在笛卡尔空间表现更好，受姿态约束的任务在关节空间表现更好。
-
-## lingbot-va 2.0: Native Video-Action Pretraining for Generalizable Robot Control
-[Gemini 3.1 Pro] 从头预训练因果视频动作 DiT 并使用稀疏 MoE 提升视频流容量，通过前向动力学重接地的异步推理实现实时控制。 | 👤 Robbyant, Qihang Zhang, Yinghao Xu | [🌐](https://technology.robbyant.com/lingbot-va-v2) | [📃 -](-) | [✨ -](-) | [📂 -](-) |
-
-LingBot-VA 2.0 包含一个对齐视觉基础模型的语义视觉动作 tokenizer，并在其隐空间上从头预训练因果 DiT。高层 VLM 规划器低频输出子任务上下文，低层策略的视频流采用稀疏 MoE 架构并辅以多块预测（MCP）损失。推理时采用异步执行，在机器人执行动作时用前向动力学模型想象下一帧并预测动作，并在真实观测到达时进行重接地。
-
-相比于直接微调双向视频生成模型，完全原生的因果预训练避免了灾难性遗忘，同时人类第一人称视频的联合训练有效提升了泛化能力。
 
 ## PaLM-E: An Embodied Multimodal Language Model
 [Gemini 3.1 Pro] PaLM-E 将连续传感器数据直接映射到预训练语言模型的嵌入空间来实现具身推理 | 👤 Robotics at Google 和 TU Berlin, Danny Driess, Danny Driess 和 Pete Florence | [🌐](https://palm-e.github.io/) | [📃 2303.03378](https://hjfy.top/arxiv/2303.03378) | [✨](https://www.alphaxiv.org/abs/2303.03378) | - |
