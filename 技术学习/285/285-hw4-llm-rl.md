@@ -24,9 +24,15 @@ for step in range(cfg.steps)  | 📂 hw4/hw4/train.py
         └── backward / optimizer.step()
 ```
 
+## Answer questions
+
 ## format_copy
 输入字符串，输出 `<answer>输入</answer>`.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image.png)
 
 ## math_hard
+
+## GRPO ablation on format_copy
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-2.png)
