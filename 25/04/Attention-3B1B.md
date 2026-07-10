@@ -4,7 +4,7 @@ date: 2024-04-27 21:22:27
 tags: ["notes", "julyfun", "25", "04"]
 ---
 
-$\text{h 你好 i}$
+$h 你好 $
 
 # 自注意力 Attention 3B1B
 
