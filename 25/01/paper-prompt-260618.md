@@ -12,7 +12,7 @@ confidence: 2
 
 ```markdown
 ## 论文标题
-[当前模型 e.g. Gemini 3.1 Pro] 一句话主要贡献或复现方法，逗号最多一个 | 👤 第一作者学校或机构, 第一作者, 通讯作者 | [🌐](项目网站) 搜不到就占位符 - | [📃 <arxiv-id e.g. 2505.11917>](https://hjfy.top/arxiv/<arxiv-id>) | [✨](https://www.alphaxiv.org/abs/<arxiv-id>) | [📂](代码连接) 搜不到就 - |
+[当前模型 e.g. Gemini 3.1 Pro] 一句话主要贡献或复现方法，逗号最多一个 | 👤 第一作者学校或机构, 第一作者, 通讯作者 | [🌐](项目网站) 搜不到就在 emoji 后加 -，空链接，后同 | [📃 <arxiv-id e.g. 2505.11917>](https://hjfy.top/arxiv/<arxiv-id>) | [✨](https://www.alphaxiv.org/abs/<arxiv-id>) | [📂](代码连接) 搜不到就 - |
 <空行>
 正文第一段 0-5 个逗号，说贡献，可选对比前作的新增，在限制句数中让小白都能 get 到如何去复现这篇论文。
 <空行>
