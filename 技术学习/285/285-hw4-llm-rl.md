@@ -13,9 +13,10 @@ confidence: 2
 ```python
 for step in range(cfg.steps)  | 📂 hw4/hw4/train.py
 ├── task.sample_train_batch(...)
-├── sampler.rollout(...)  | 📂 hw4/hw4/rollout/hf_sampler.py
+├── sampler.rollout(...)  | 对每个 prompt 生成多个 completion 作为一个 group | 📂 hw4/hw4/rollout/hf_sampler.py
 ├── 给每条 completion 打 reward
-├── compute_group_advantages(...)  | group 内相对优势
+├── compute_group_advantages(...)  | group 内相对 advantage
+├── 上述所有 rollout 制作成 minimatch
 └──  for ppo_epoch in range(cfg.ppo_epochs)
     └── for minibatch in iter_minibatches(...)
         ├── ratio = exp(new_logp - old_logprobs)
@@ -23,3 +24,9 @@ for step in range(cfg.steps)  | 📂 hw4/hw4/train.py
         └── backward / optimizer.step()
 ```
 
+## format_copy
+输入字符串，输出 `<answer>输入</answer>`.
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image.png)
+
+## math_hard

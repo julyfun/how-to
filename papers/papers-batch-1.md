@@ -73,7 +73,7 @@ flowchart TD
 ```
 
 ## Lingbot-va (4)
-- https://hjfy.top/arxiv/2601.21998
+- https://hjfy.top/arxiv/2601.21998 Lin Li, Yinghao Xu
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260708155628642.png)
 
