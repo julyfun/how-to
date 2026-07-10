@@ -18,7 +18,7 @@ sheriyuo @zhihu
 5.切记背八股 / 面经不一定有用，打铁还需自身硬
 
 算法部分
-1. 为什么要用 Actor-Critic 而不是纯 Critic？💬 critic-only 需要取最大奖励动作，对离散适用，但连续动作空间太大无法全部计算. SAC 和 DQN 接近但引入 actor
+1. 为什么要用 Actor-Critic 而不是纯 Critic？💬 critic-only 需要取最大奖励动作，对离散适用，但连续动作空间太大无法全部计算. SAC 和 DQN 接近但引入 actor，从最大奖励动作改为动作分布，支持连续动作空间.
 2. KL 散度和交叉熵、MLE 的关系？
 3. 不同 RL 场景应该如何设计 Reward？
 4. 如何理解 RL 中的 importance sampling / rejection sampling 等 monte carlo 方法？
