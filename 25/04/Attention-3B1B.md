@@ -4,12 +4,14 @@ date: 2024-04-27 21:22:27
 tags: ["notes", "julyfun", "25", "04"]
 ---
 
+$\text{h 你好 i}$
+
 # 自注意力 Attention 3B1B
 
 - 考虑:
   - mole 一词在不同上下文有不同含义.
   - 嵌入层将 mole 转换为泛型向量以后，Transformer 的下一层会**根据上下文再加一个偏移向量**。
-    ![image.png|500](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428220412.png)
+    ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to20250428220412.png)
 
 - $E_1^->$ 是词嵌入 $+$ 位置嵌入.
 - $Q_i^-> = W_Q dot E_i^->$ 形象比喻：$E_1^->$ 是第四个单词，且是名词。问在第四个单词前面有形容词不？
@@ -38,7 +40,7 @@ tags: ["notes", "julyfun", "25", "04"]
 
 # 交叉注意力
 
-- 文本和图像做交叉注意力时，
+- 文本和图像做交叉注意力时，$a \pi$
   - 文本 $==>^("CLIP or BERT")$ Embedding。随后计算 KV.
   - 图像 $==>^("resnet 等")$ Embedding, 然后计算 Q.
   - 这是文本到图像的注意力，即通过文本得到图像中文本对应的内容，并将其给予更高的权重.
