@@ -25,8 +25,19 @@ for step in range(cfg.steps)  | 📂 hw4/hw4/train.py
         └── backward / optimizer.step()
 ```
 
+其他细节：使用 lora 微调，预训练模型都是 Qwen/Qwen2.5-Math-1.5B-Instruct.
+
+
 ## format_copy
-输入字符串，输出 `<answer>输入</answer>`.
+输入：
+```
+system: You are a strict formatter.
+Return the final answer as XML using exactly one tag: <answer>...</answer>.
+Output only the XML tag and nothing else.
+user: Copy this integer exactly: 4348
+```
+
+正确输出 `<answer>4348</answer>`. 模型早期会输出 `Here is the final answer using exactly one tag: <answer>-1748</answer>` 这种废话.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image.png)
 
@@ -65,8 +76,12 @@ one bug or confusion point: 写 GRPO 的时候我发现 GRPO loss 的量纲和 G
 
 Q: Compare the WandB curves for the math runs. How do the two methods differ over the first 200 iterations? Why is that comparison interesting given the way the provided commands were chosen?
 
-A: GRPO reward 上升更快. 你说 interesting 在哪，可能是当前设置下每个 step 利用的样本数一样，可以显然确认 GRPO 样本效率更高吧。就 step
+A: GRPO reward 上升更快. 你说 interesting 在哪，可能是当前设置下每个 step 利用的样本数一样，可以显然确认 GRPO 样本效率更高吧。其实 GRPO 在同样 optimizer.step() 次数时上升稍慢，不过这当然是合理的。
 
 ### 4. GRPO ablation on format_copy
 
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-2.png)
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-4.png)
+
+Q: Summarize the extra GRPO runs you tried. Which hyperparameters mattered most? Which settings made learning worse, and why do you think they did?
+
+A: 主要有 ga1 导致初期 reward 上升快但是逐渐不稳定. ppo_epoch=5 当然样本效率更高，同样 step 上升更快.
