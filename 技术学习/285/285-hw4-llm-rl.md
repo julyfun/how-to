@@ -47,17 +47,25 @@ kl 是相对刚开始的 baseline model，因此自然会越来越大. 而 kl lo
 
 ### 1. Approximate KL
 
-In a short paragraph, explain why the estimator e^∆−∆−1 is a valid sampled-token estimator for the KL term used in this assignment, and why computing the exact full-vocabulary KL at every token position would be much more expensive in both compute and memory.
+Q: In a short paragraph, explain why the estimator e^∆−∆−1 is a valid sampled-token estimator for the KL term used in this assignment, and why computing the exact full-vocabulary KL at every token position would be much more expensive in both compute and memory.
 
-A: 回顾：∆ = log prob - log prob_ref. 尽管 -∆ 也是一个 unbiased 的 estimator，但可能为负数，且如果当前 policy 比 ref policy 对于某个 token 输出的概率小，则会出现
+A: 回顾：∆ = log prob - log prob_ref. 尽管 -∆ 也是一个 unbiased estimator，但可能为负数，且如果当前 policy 比 ref policy 对于某个 token 输出的概率小，则 -∆ > 0 从而奖励这种行为. "This is not a very natural surrogate for a divergence, since the role of KL term is to discourage deviations from the reference."
 
-而 `e^∆−∆−1` 期望等于 `E(log prob - log prob_ref) = KL(pi || pi_ref)`. 而且总是非负（和 KL 的非负保持一致）. 而 -∆
+而 `e^∆−∆−1` 期望等于 `E(log prob - log prob_ref) = KL(pi || pi_ref)`. 而且总是非负，和 KL 的非负保持一致.
 
 ### 2. Implementation
 
-按照 pdf 建议的顺序补全了 8 个函数.
+Q: Briefly describe.
+
+A: 按照 pdf 建议的顺序补全了 8 个函数.
 
 one bug or confusion point: 写 GRPO 的时候我发现 GRPO loss 的量纲和 GR-REINFORCE loss 似乎不同，后者具有平凡 PG surrogate 的 `-logprob * adv`，而前者是 `-(logprob_new - logprob_old).exp() * adv`. 后来询问发现 GRPO 也是正确的 surrogate.
+
+### 3. GR-REINFORCE vs. GRPO on math
+
+Q: Compare the WandB curves for the math runs. How do the two methods differ over the first 200 iterations? Why is that comparison interesting given the way the provided commands were chosen?
+
+A: GRPO reward 上升更快. 你说 interesting 在哪，可能是当前设置下每个 step 利用的样本数一样，可以显然确认 GRPO 样本效率更高吧。就 step
 
 ### 4. GRPO ablation on format_copy
 
