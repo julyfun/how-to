@@ -35,13 +35,23 @@ GRPO 一个 step 会多次更新，自然样本效率高点.
 ## math_hard
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-3.png)
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260711155628316.png)
 
 满分 1.1，取得了 0.4 的好成绩。
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260711155628316.png)
+
+kl 是相对刚开始的 baseline model，因此自然会越来越大. 而 kl loss 会抑制它增大。
+
 
 ## Answer questions
 
 ### 1. Approximate KL
+
+In a short paragraph, explain why the estimator e^∆−∆−1 is a valid sampled-token estimator for the KL term used in this assignment, and why computing the exact full-vocabulary KL at every token position would be much more expensive in both compute and memory.
+
+A: 回顾：∆ = log prob - log prob_ref. 尽管 -∆ 也是一个 unbiased 的 estimator，但可能为负数，且如果当前 policy 比 ref policy 对于某个 token 输出的概率小，则会出现
+
+而 `e^∆−∆−1` 期望等于 `E(log prob - log prob_ref) = KL(pi || pi_ref)`. 而且总是非负（和 KL 的非负保持一致）. 而 -∆
 
 ### 2. Implementation
 
