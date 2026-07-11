@@ -88,4 +88,19 @@ A: 主要有 ga1 导致初期 reward 上升快但是逐渐不稳定. ppo_epoch=5
 
 ## 5. Qualitative behavior
 
-Include one or two model-generation examples from WandB that you found informative or surprising from the math-hard task.
+Q: Include one or two model-generation examples from WandB that you found informative or surprising from the math-hard task.
+
+A: 注意奖励函数其实没有要求去掉推导过程.
+
+1. 居然用中文思考了:
+```
+To solve the problem, we need to find three Fibonacci numbers \(F_a\), \(F_b\), and \(F_c\) that form an increasing arithmetic sequence, and satisfy the condition \(a + b + c = 2000\). We need to compute the value of \(a\).
+
+First, let's recall that for three numbers to form an arithmetic sequence, the difference between consecutive terms must be the same. Therefore, we have \(F_b - F_a = F_c - F_b\), which simplifies to \(2F_b = F_a + F_c\).
+
+We will use the properties of the Fibonacci sequence and the given condition \(a + b + c = 2000\) to find the values of \(a\), \(b\), and \(c\).通过 Slate的算法，我们发现\(a = 665\).
+
+Thus, the value of \(a\) is \(\boxed{665}\).
+```
+
+2.
