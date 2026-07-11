@@ -31,6 +31,9 @@ for step in range(cfg.steps)  | 📂 hw4/hw4/train.py
 
 ## math_hard
 
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-3.png)
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260711155628316.png)
+
 ## Answer questions
 
 ### 1. Approximate KL
