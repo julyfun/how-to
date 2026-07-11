@@ -9,7 +9,8 @@ confidence: 2
 ---
 
 ## 回忆提纲
-补全 GRPO 和 GE-REINFORCE.
+补全 GRPO 和 GE-REINFORCE. 这里的 GRPO 是近似 on-policy 的，只不过一次在线采样会做 `ppo_epochs` 次 optimize，从第二次 optimize 开始是略有 off-policy. 要填的空只有 8 个函数.
+
 ```python
 for step in range(cfg.steps)  | 📂 hw4/hw4/train.py
 ├── task.sample_train_batch(...)
@@ -29,10 +30,14 @@ for step in range(cfg.steps)  | 📂 hw4/hw4/train.py
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image.png)
 
+GRPO 一个 step 会多次更新，自然样本效率高点.
+
 ## math_hard
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-3.png)
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260711155628316.png)
+
+满分 1.1，取得了 0.4 的好成绩。
 
 ## Answer questions
 
