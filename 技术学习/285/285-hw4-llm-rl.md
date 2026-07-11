@@ -103,4 +103,6 @@ We will use the properties of the Fibonacci sequence and the given condition \(a
 Thus, the value of \(a\) is \(\boxed{665}\).
 ```
 
-2.
+2. 有的在思考过程中间某一步开始会输出乱码，十分地掉 san.
+   ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260711170810795.png)
+3. 题目怎么这么难
