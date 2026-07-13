@@ -204,7 +204,7 @@ flowchart TD
     z --> residual[[🔥residual_policy]] --> A_res --> A_final["A = A_base + λ A_res"] --> Q2[["🧊Q_net (同一个)"]] --> Q_final --> target
     policy --> v[[1~3次去噪]] -->policy
     A_base --> A_final
-    target["target =<br>hinge(Q_base + δ - Q_final) - Q_final<br>"]
+    target["target =<br>hinge(Q_base + δ - Q_final) - Q_final<br>ps: hinge is max(0, x)"]
 ```
 
 递归

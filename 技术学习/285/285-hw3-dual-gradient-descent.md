@@ -52,4 +52,3 @@ confidence: 2
 
 **这就是对偶梯度下降（Dual Gradient Descent）！**
 老板走一步（最大化更新 θ，对应 Actor/Critic Loss），监管部门走一步（最小化更新 α，对应 Alpha Loss）。两者交替进行，最后系统会自动锁定在一个恰好满足 ℋ(θ) = ℋ_target 的动态平衡上。
-
