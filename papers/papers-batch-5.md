@@ -85,14 +85,14 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 3. training-time action diffusion 过程中 `predicted_noise = model(noisy_action, state, condition, t)`，其中 condition 以 20% 概率丢弃为 null_token 以训练无条件分布. inference-time diffusion 过程中 `eps_uncond = model(action, state, null_token, t), eps_cond = model(action, state, target_condition, t), eps_guided = 加权，不用 autograd.`
 
 ## AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing (41)
-⭐️⭐️⭐⭐ 用最新观测修正长期 video plan 从而实现 v-a 异步 | 👤 Shanghai Jiao Tong University, Jisong Cai, Yao Mu | [🌐](https://serene-sivy.github.io/aha-wam/) | [📃 2606.09811](https://hjfy.top/arxiv/2606.09811) | [✨](https://www.alphaxiv.org/abs/2606.09811) | - |
+⭐️⭐️⭐⭐ 用最新观测修正长期 video plan 从而实现 v-a 异步 | 👤 Shanghai Jiao Tong University, Jisong Cai, Yao Mu | [🌐](https://serene-sivy.github.io/aha-wam/) | [📃 2606.09811](https://hjfy.top/arxiv/2606.09811) | [✨](https://www.alphaxiv.org/abs/2606.09811) | [📂](https://github.com/serene-sivy/AHA-WAM/tree/main/experiments/robotwin) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260709163457123.png)
 
 本文希望每次 video denoise 后可以进行随机多次 action denoise. 本文基于 fastwam，首先添加了 6 帧 video 历史，然后每次 action denoise 时，使用了类似 ACT 中 DETR 的槽位查询: 为了让 current image 修正 kv histroy，先学习 learnable query emb，通过 cross attn image，然后再 cross attn layerkv，再 mlp，而且使用了 delta.
 
 于是 video dit 和 action dit 可以异步或并发运行，video dit 可以在任意时刻更新历史 kv，并且 action dit 不需要等待它. 一些有趣技巧 1) 训练时随机平移 action 对应的 history kv index 以适应并发推理.
-2) Cuda 加速单独提速 10 倍. Action dit ODE 蒸馏 (teacher-student) 10 步降到 2 步. 注意到 cuda 提速之前速度和 fastwam 差不多，毕竟 action dit 要做的事情和 fastwam 完全相同.
+2) Cuda 加速单独提速 10 倍. Action dit ODE 蒸馏 (teacher-student) 10 步降到 2 步. 注意到 cuda 提速之前比 fastwam 慢，毕竟 action dit 要做的事情一样还有额外历史查询.
 
 对于解决 WAM 恐怖的 video dit 延迟来说，异步是一个不错的思路（而 slots 是一种实现方式），部署也会更为简单. 这种思路似乎可以直接迁移到 IDM，只不过需要验证该范式是否有效. 本文 Demo 只有双臂 picknplace.
 
