@@ -8,6 +8,10 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+给 Y9000P 安装双系统的 arch linux.
+
+https://arch.icekylin.online/guide/rookie/basic-install
+
 ## 回忆提纲
 - 禁用服务
 - 设置时钟
@@ -20,7 +24,7 @@ confidence: 2
 - pacman 安装 grub
 - ok
 
-## recall
+## for grep
 
 `lsblk`
 
@@ -28,7 +32,7 @@ confidence: 2
 
 - [x] uninstall ubuntu
 
-[q] 压缩卷时可压缩空间远小于实际剩余空间? 
+[q] 压缩卷时可压缩空间远小于实际剩余空间?
 - [not-ok] 磁盘管理，右键属性，优化
 - [not-ok] https://blog.csdn.net/Rained_99/article/details/54023914
 - [ok] DiskGenius (橙色图标)，右键 C 盘，调整大小。然后会自动压缩 -> 重启 -> 分区 -> 重启.
@@ -85,5 +89,4 @@ order:
 
 [err] clash verge / party 装不了？ [sol] 先装教程里 pacman 那些软件！
 
-[err] 拼音配置相关: 
-
+[err] 拼音配置相关:
