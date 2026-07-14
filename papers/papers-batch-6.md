@@ -11,7 +11,7 @@ confidence: 2
 ## lingbot-va 2.0: Native Video-Action Pretraining for Generalizable Robot Control (43)
 ⭐️⭐️⭐️ 用机器人数据从零预训练 Video DiT | 👤 Robbyant, Qihang Zhang, Yinghao Xu | [🌐](https://technology.robbyant.com/lingbot-va-v2) | [📃 -](-) | [✨ -](-) | [📂 -](-) |
 
-video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外引入了 ICL: 直接编码一个演示轨迹作为 dit kv cache. 以及，异步开一个 VLM 输出 subtask text prompt 给 DiT.
+video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外引入了 in-context-learning: 直接编码一个演示轨迹作为 dit kv cache. 以及，异步开一个 VLM 输出 subtask text prompt 给 DiT.
 
 其异步推理在 1.0 中就有，即把 pred z 当做观测直接预测超前 action，只不过额外使用了 fdm，似乎是为了让 z 更准确，但直觉上没什么道理. [1]
 
