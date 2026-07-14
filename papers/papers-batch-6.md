@@ -11,20 +11,20 @@ confidence: 2
 ## lingbot-va 2.0: Native Video-Action Pretraining for Generalizable Robot Control (43)
 ⭐️⭐️⭐️ 让 video dit 从机器人数据中预训练而不是 WAN | 👤 Robbyant, Qihang Zhang, Yinghao Xu | [🌐](https://technology.robbyant.com/lingbot-va-v2) | [📃 -](-) | [✨ -](-) | [📂 -](-) |
 
-video DiT 从零训练。此外引入了 ICL: 直接编码一个演示轨迹作为 dit kv cache. 以及，异步开一个 VLM 输出 subtask text prompt 给 DiT.
+video DiT (MoE) 从零训练。此外引入了 ICL: 直接编码一个演示轨迹作为 dit kv cache. 以及，异步开一个 VLM 输出 subtask text prompt 给 DiT.
 
 其异步推理在 1.0 中就有，即把 pred z 当做观测直接预测超前 action，只不过额外使用了 fdm，似乎是为了让 z 更准确，但直觉上没什么道理. [1]
 
 1. obs0 -> [video dit] -> z_pred1 -> [action dit] -> a1（开始执行） -> [video dit (as FDM)] -> z1 并替换 z_pred1 的 kv -> [video dit] -> z_pred2 -> [action dit] -> a2. 在执行 a1 的过程中已经超前生成了 a2.
 
-## ---
-
 ## lingbot-vla 2.0: From Foundation to Application: Improving VLA Models in Practice
-[Gemini 3.1 Pro] 引入无辅助损失的 MoE 架构，并通过附加查询 token 蒸馏几何和时序特征 | 👤 Ant Digital Technologies, Wei Wu, Kecheng Zheng | [🌐](https://technology.robbyant.com/lingbot-vla-v2) | [📃 2607.06403](https://hjfy.top/arxiv/2607.06403) | [✨](https://www.alphaxiv.org/abs/2607.06403) | [📂](https://github.com/robbyant/lingbot-vla-v2) |
+⭐️⭐️⭐️ 增加了视频监督 | 👤 Ant Digital Technologies, Wei Wu, Kecheng Zheng | [🌐](https://technology.robbyant.com/lingbot-vla-v2) | [📃 2607.06403](https://hjfy.top/arxiv/2607.06403) | [✨](https://www.alphaxiv.org/abs/2607.06403) | [📂](https://github.com/robbyant/lingbot-vla-v2) |
 
 相比前作扩大了涵盖 20 种具身和人类主视角视频的预训练数据，将动作空间统一为包含全身关节的 55 维向量。模型在动作专家中引入无辅助损失的 token 级 MoE 架构，并附加当前和未来时间步的查询 token 向深度估计模型和因果视频模型蒸馏几何和时序特征。
 
 消融实验表明相对关节动作比绝对关节动作表现更好，均值标准差归一化能保留更大的有效动态范围。接触丰富的末端运动在笛卡尔空间表现更好，受姿态约束的任务在关节空间表现更好。
+
+## ---
 
 ## PaLM-E: An Embodied Multimodal Language Model
 [Gemini 3.1 Pro] PaLM-E 将连续传感器数据直接映射到预训练语言模型的嵌入空间来实现具身推理 | 👤 Robotics at Google 和 TU Berlin, Danny Driess, Danny Driess 和 Pete Florence | [🌐](https://palm-e.github.io/) | [📃 2303.03378](https://hjfy.top/arxiv/2303.03378) | [✨](https://www.alphaxiv.org/abs/2303.03378) | - |
