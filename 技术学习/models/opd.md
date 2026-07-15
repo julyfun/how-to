@@ -8,17 +8,17 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+思路：让 teacher 在 student 真实 rollout 的轨迹上去纠正分布.
+
 普通蒸馏：
 ```python
-for x, y_teacher in offline_dataset: # x: (b, vocab). y_teacher (b, vocab).
-    loss = KL(student(x), y_teacher) # next token.
-    update(student, loss)
+for traj, y_teacher in offline_dataset: # x: (b, L)int. y_teacher (b, L)int.
+    loss = KL(student(traj), teacher(traj)) # 一次性输出 len 个 dist. 需要一些 mask.
 ```
 
 OPD (on-policy distillation):
 ```python
-for x in prompts: # x: (b, L)
-    traj = student.generate(x) # (b, L, vocab)
-    for token_dist in traj: # (b, vocab)
-        loss =
+for prompt in prompts: # x: (b, prompt_len)
+    traj = student.generate(prompt) # (b, L)
+    loss = KL(student(cat(prompt, traj)), teacher(cat(prompt, traj))) # 需要一些 mask.
 ```
