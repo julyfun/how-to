@@ -35,11 +35,11 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 
 ## HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents
 
-[GPT-5] 用 MoT 和 visual latent token 做面向物理世界的 VLM，再用 self-evolving post-training 和 on-policy distillation 压到 2B 激活模型 | 👤 Tencent Robotics X × HY Vision Team, Xumin Yu, Shunyu Yao | [🌐](https://tairos.tencent.com/openSourceModels/hy-embodied) | [📃 2604.07430](https://hjfy.top/arxiv/2604.07430) | [✨](https://www.alphaxiv.org/abs/2604.07430) | [📂](https://github.com/Tencent-Hunyuan/HY-Embodied)
+[Gemini 3.1 Pro] 引入 MoT 架构和视觉潜变量 token 来训练具身多模态模型 | 👤 Tencent, Xumin Yu, Han Hu | [🌐-]() | [📃 2604.07430](https://hjfy.top/arxiv/2604.07430) | [✨](https://www.alphaxiv.org/abs/2604.07430) | [📂](https://github.com/Tencent-Hunyuan/HY-Embodied) |
 
-复现时先用 Hunyuan-1.8B 做语言基座；接 400M HY-ViT 2.0 和 MoT：视觉 token 走复制出来的 QKV 和 FFN，文本 token 走原始分支。每张图或视频帧末尾加一个 learnable visual latent token；用大 ViT 的 global feature 做监督。预训练用 389B general tokens 加 236B embodied 和 perception tokens；视觉分支还有 next-code prediction。mid-training 按 12:5:3 混 general、embodied、spatial 数据；之后用约 100K cold-start CoT 做 SFT。post-training 用 GRPO 在 50K 动态样本上训练；bbox、point、trajectory、number 和 open-ended answer 分别用结构化 reward 或 LLM judge。最后让 32B 激活模型经 RL 和 RFT 产出更好的推理轨迹；2B 激活 MoT 学生先自己 rollout，再在这些前缀上对齐老师的 next-token 分布。
+复制 LLM 的 FFN 和 QKV 参数专用于处理视觉 token，在每个视觉序列末尾附加可学习的视觉潜变量 token，使用大 ViT 的离散编码和全局特征提供额外监督，最后通过同策略蒸馏将大模型的推理能力转移到小模型。
 
-真实机器人实验只覆盖 Packing、Stacking 和 Hanging 三个任务，每个任务每个模型 20 次试验；VLA 做法是 MoT-2B 加 π0 和 π0.5 风格 Action Expert，先用 5K 小时 UMI 数据再用 300 到 700 条真机示范 SFT。论文主要验证 VLM 基座能力和下游可用性，离完整机器人学习栈还差数据采集、RL 部署和更多具身形态的公开细节。
+MoT 架构在几乎不增加推理开销的情况下提升了视觉能力，且视觉潜变量 token 能准确将图像的细粒度特征与语言指令对齐。
 
 ## ---
 
