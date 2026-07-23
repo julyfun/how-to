@@ -11,6 +11,8 @@ confidence: 2
 ## lingbot-va 2.0: Native Video-Action Pretraining for Generalizable Robot Control (43)
 ⭐️⭐️⭐️ 用机器人数据从零预训练 Video DiT | 👤 Robbyant, Qihang Zhang, Yinghao Xu | [🌐](https://technology.robbyant.com/lingbot-va-v2) | [📃 -](-) | [✨ -](-) | [📂 -](-) |
 
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260723204216312.png)
+
 video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外引入了 in-context-learning: 直接编码一个演示轨迹作为 dit kv cache. 以及，异步开一个 VLM 输出 subtask text prompt 给 DiT.
 
 其异步推理在 1.0 中就有，即把 pred z 当做观测直接预测超前 action，只不过额外使用了 fdm，似乎是为了让 z 更准确，但直觉上没什么道理. [1]
@@ -18,7 +20,9 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 1. obs0 -> [video dit] -> z_pred1 -> [action dit] -> a1（开始执行） -> [video dit (as FDM)] -> z1 并替换 z_pred1 的 kv -> [video dit] -> z_pred2 -> [action dit] -> a2. 在执行 a1 的过程中已经超前生成了 a2.
 
 ## lingbot-vla 2.0: From Foundation to Application: Improving VLA Models in Practice (44)
-⭐️⭐️ 增加了视频监督以及一些消融实验 | 👤 Ant Digital Technologies, Wei Wu, Kecheng Zheng | [🌐](https://technology.robbyant.com/lingbot-vla-v2) | [📃 2607.06403](https://hjfy.top/arxiv/2607.06403) | [✨](https://www.alphaxiv.org/abs/2607.06403) | [📂](https://github.com/robbyant/lingbot-vla-v2) |
+⭐️⭐️ 增加了视频监督; 一些消融实验 | 👤 Ant Digital Technologies, Wei Wu, Kecheng Zheng | [🌐](https://technology.robbyant.com/lingbot-vla-v2) | [📃 2607.06403](https://hjfy.top/arxiv/2607.06403) | [✨](https://www.alphaxiv.org/abs/2607.06403) | [📂](https://github.com/robbyant/lingbot-vla-v2) |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260723204353806.png)
 
 1. 数据集：将动作空间统一为包含全身关节的 55 维向量。引入了一些自动化标注流程.
 2. 架构: action expert 改为 moe. VLM 仍使用 Qwen2.5-VL，在 image-text token 后 concat [Q_t, Q_(t+T)]，在 VLM 最终输出通过 proj_depth 与 lingbot-depth token 对齐，以及 proj_video 与其提出的 DINO-video token 对齐.
@@ -26,6 +30,8 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 
 ## Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution (45)
 ⭐️⭐️⭐️ 改进了 train-RTC; 预训练从 VLM 中 query 动作 | 👤 Xiaomi Robotics, Rui Cai | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-0.html) | [📃 2602.12684](https://hjfy.top/arxiv/2602.12684) | [✨](https://www.alphaxiv.org/abs/2602.12684) | [📂](https://github.com/XiaomiRobotics/Xiaomi-Robotics-0) |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260723204116072.png)
 
 预训练分两步，1) 用 VL sample 微调 VLM 并从 query action chunk[1]. 2) 冻结 VLM 训练 action. 后训练用 training-time RTC，为了防止 copy 前缀动作，对较大的误差增加权重[2] 并缩短每帧 action 能够看见的前缀（Λ 形注意力），以及随机 mask 前缀. Demo 的耳机装盒比较流畅.
 
