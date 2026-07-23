@@ -59,6 +59,7 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 
 其他发现
 1. Model scaling 的曲线和 gen0 并不一致，后者在模型不足 7B 的时候 err 会逐渐上升.
+2. 文中图表显示 Pi0.5 暴打 xiaomi-robotics-0.
 
 ## ---
 
