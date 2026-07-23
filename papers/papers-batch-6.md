@@ -35,7 +35,7 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 
 预训练分两步，1) 用 VL sample 微调 VLM 并从 query action chunk[1]. 2) 冻结 VLM 训练 action. 后训练用 training-time RTC，为了防止 copy 前缀动作，对较大的误差增加权重[2] 并缩短每帧 action 能够看见的前缀（Λ 形注意力），以及随机 mask 前缀. Demo 的耳机装盒比较流畅.
 
-1. T 个 [A_i] embedding 分别经共享 projection 输出 N*A，组合后得到 [B,T,N,A]，再转成 [B,N,T,A]。 仅反向传播 L1 loss 最小的 chunk. 同时训练一个 `score query -> [VLM] -> score emb -> [score] -> pred L1`. 推理时不需要这些 query，score 似乎也没派上用场.
+1. T 个 [A_i] embedding 分别经共享 projection 输出 N*A，组合后得到 [B,T,N,A]，再转成 [B,N,T,A]。 仅反向传播 L1 loss 最小的 chunk. 同时训练一个 `score query -> [VLM] -> score emb -> [score] -> pred L1`，L1 中含有 score loss，机制比较奇怪. 推理时不需要这些 query，score 也没派上用场.
 2. 本文训练预测 velocity 时额外跑一个 5-step 无梯度生成，根据生成轨迹的 abs(pred_action - gt_action) 直接作为 velocity loss 权重。这简直就是 L3 loss.
 
 ## BeyondMimic (46)
@@ -56,6 +56,9 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 为了克服真实机器人高质量数据稀缺的问题，本文将 10 万小时无实体 UMI 轨迹切分为固定长度视频片段并利用 VLM 自动标注状态转移描述，使用这些数据对策略模型进行大规模预训练来学习基础动作生成，随后结合 7200 小时真实家庭场景跨实体数据和人工标注数据完成实体与指令对齐，最终实现了基于无实体数据的预训练能力向真机操控任务的转移。
 
 实验表明预训练动作误差随数据和模型规模增加而降低的现象能直接转化到真机成功率上，并且这种 scaling 收益尚未出现饱和。
+
+其他发现
+1. Model scaling 的曲线和 gen0 并不一致，后者在模型不足 7B 的时候 err 会逐渐上升.
 
 ## ---
 
