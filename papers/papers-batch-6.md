@@ -33,6 +33,16 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 1. T 个 [A_i] embedding 分别经共享 projection 输出 N*A，组合后得到 [B,T,N,A]，再转成 [B,N,T,A]。 仅反向传播 L1 loss 最小的 chunk. 同时训练一个 `score query -> [VLM] -> score emb -> [score] -> pred L1`. 推理时不需要这些 query，score 似乎也没派上用场.
 2. 本文训练预测 velocity 时额外跑一个 5-step 无梯度生成，根据生成轨迹的 abs(pred_action - gt_action) 直接作为 velocity loss 权重。这简直就是 L3 loss.
 
+## BeyondMimic
+[Gemini 3.1 Pro] 优先采样难点片段训练动作跟踪策略，再将其蒸馏成状态和动作的联合扩散模型用于下游控制 | 👤 UC Berkeley, Qiayuan Liao, C. Karen Liu | [🌐](https://beyondmimic.github.io/) | [📃 2508.08241](https://hjfy.top/arxiv/2508.08241) | [✨](https://www.alphaxiv.org/abs/2508.08241) | [📂]- |
+
+首先通过自适应采样失败率高的片段来训练动作跟踪强化学习策略，然后用该策略收集包含域随机化的离线数据，将其蒸馏为一个预测状态和动作的联合扩散模型，在真机推理时直接利用特定任务代价函数的梯度来引导采样过程完成全身控制。
+
+实验发现扩散模型在面对摔倒等分布外情况时会保持静止，方便人类安全地将机器人复位，而且直接预测笛卡尔空间的身体姿态比预测关节角度在各项控制任务上表现更好。
+
+
+## ---
+
 ## HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents
 
 [Gemini 3.1 Pro] 引入 MoT 架构和视觉潜变量 token 来训练具身多模态模型 | 👤 Tencent, Xumin Yu, Han Hu | [🌐-]() | [📃 2604.07430](https://hjfy.top/arxiv/2604.07430) | [✨](https://www.alphaxiv.org/abs/2604.07430) | [📂](https://github.com/Tencent-Hunyuan/HY-Embodied) |
@@ -40,15 +50,6 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 复制 LLM 的 FFN 和 QKV 参数专用于处理视觉 token，在每个视觉序列末尾附加可学习的视觉潜变量 token，使用大 ViT 的离散编码和全局特征提供额外监督，最后通过同策略蒸馏将大模型的推理能力转移到小模型。
 
 MoT 架构在几乎不增加推理开销的情况下提升了视觉能力，且视觉潜变量 token 能准确将图像的细粒度特征与语言指令对齐。
-
-## ---
-
-## BeyondMimic
-[Gemini 3.1 Pro] 优先采样难点片段训练动作跟踪策略，再将其蒸馏成状态和动作的联合扩散模型用于下游控制 | 👤 UC Berkeley, Qiayuan Liao, C. Karen Liu | [🌐](https://beyondmimic.github.io/) | [📃 2508.08241](https://hjfy.top/arxiv/2508.08241) | [✨](https://www.alphaxiv.org/abs/2508.08241) | [📂]- |
-
-首先通过自适应采样失败率高的片段来训练动作跟踪强化学习策略，然后用该策略收集包含域随机化的离线数据，将其蒸馏为一个预测状态和动作的联合扩散模型，在真机推理时直接利用特定任务代价函数的梯度来引导采样过程完成全身控制。
-
-实验发现扩散模型在面对摔倒等分布外情况时会保持静止，方便人类安全地将机器人复位，而且直接预测笛卡尔空间的身体姿态比预测关节角度在各项控制任务上表现更好。
 
 ## Coordinated Humanoid Manipulation with Choice Policies
 

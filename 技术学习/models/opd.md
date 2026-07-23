@@ -12,13 +12,13 @@ confidence: 2
 
 普通蒸馏：
 ```python
-for traj, y_teacher in offline_dataset: # x: (b, L)int. y_teacher (b, L)int.
+for traj, y_teacher in offline_dataset: # traj: (b, L)int. y_teacher (b, L)int.
     loss = KL(student(traj), teacher(traj)) # 一次性输出 len 个 dist. 需要一些 mask.
 ```
 
 OPD (on-policy distillation):
 ```python
-for prompt in prompts: # x: (b, prompt_len)
+for prompt in prompts: # prompt: (b, prompt_len)
     traj = student.generate(prompt) # (b, L)
     loss = KL(student(cat(prompt, traj)), teacher(cat(prompt, traj))) # 需要一些 mask.
 ```
