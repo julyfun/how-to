@@ -17,7 +17,7 @@ pred_tau = unet(noisy_tau, history_obs, step_k)
 cost = task_cost_function(pred_tau)
 # 3. 对输入的高维轨迹求梯度 (告诉它往哪里微调能降低 Cost)
 grad = autograd.grad(outputs=cost, inputs=noisy_tau)
-# 4. 在标准去噪更新的基础上，叠加上梯度引导项. 比如 scale 是 0.01 ~ 0.05
+# 4. 在标准去噪更新的基础上，叠加上梯度引导项. scale 与归一化有关 1e-5 ~ 0.05
 next_noisy_tau = ddpm_step(pred_tau, noisy_tau) - scale * grad
 ```
 
