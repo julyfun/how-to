@@ -25,25 +25,28 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 3. 消融实验：1) 相对 EEF ≈ 相对 joint > 绝对 joint. 2) 本文认为 meanstd 似乎比 q01-q99 更好学. 3) L2 loss > L1 loss，除了挤番茄酱.
 
 ## Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution (45)
-
-⭐️⭐️⭐️ 改进了 Training-time RTC & 预训练从 VLM 中 query 动作 | 👤 Xiaomi Robotics, Rui Cai | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-0.html) | [📃 2602.12684](https://hjfy.top/arxiv/2602.12684) | [✨](https://www.alphaxiv.org/abs/2602.12684) | [📂](https://github.com/XiaomiRobotics/Xiaomi-Robotics-0) |
+⭐️⭐️⭐️ 改进了 train-RTC; 预训练从 VLM 中 query 动作 | 👤 Xiaomi Robotics, Rui Cai | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-0.html) | [📃 2602.12684](https://hjfy.top/arxiv/2602.12684) | [✨](https://www.alphaxiv.org/abs/2602.12684) | [📂](https://github.com/XiaomiRobotics/Xiaomi-Robotics-0) |
 
 预训练分两步，1) 用 VL sample 微调 VLM 并从 query action chunk[1]. 2) 冻结 VLM 训练 action. 后训练用 training-time RTC，为了防止 copy 前缀动作，对较大的误差增加权重[2] 并缩短每帧 action 能够看见的前缀（Λ 形注意力），以及随机 mask 前缀. Demo 的耳机装盒比较流畅.
 
 1. T 个 [A_i] embedding 分别经共享 projection 输出 N*A，组合后得到 [B,T,N,A]，再转成 [B,N,T,A]。 仅反向传播 L1 loss 最小的 chunk. 同时训练一个 `score query -> [VLM] -> score emb -> [score] -> pred L1`. 推理时不需要这些 query，score 似乎也没派上用场.
 2. 本文训练预测 velocity 时额外跑一个 5-step 无梯度生成，根据生成轨迹的 abs(pred_action - gt_action) 直接作为 velocity loss 权重。这简直就是 L3 loss.
 
-## BeyondMimic
-⭐️⭐️⭐️⭐️ 引入了双足人形任务执行的诸多改进 | 👤 UC Berkeley, Qiayuan Liao, C. Karen Liu | [🌐](https://beyondmimic.github.io/) | [📃 2508.08241](https://hjfy.top/arxiv/2508.08241) | [✨](https://www.alphaxiv.org/abs/2508.08241) | [📂]- |
+## BeyondMimic (46)
+⭐️⭐️⭐️⭐️ 引入了双足人形任务执行的诸多改进 | 👤 UC Berkeley, Qiayuan Liao, C. Karen Liu | [🌐](https://beyondmimic.github.io/) | [📃 2508.08241](https://hjfy.top/arxiv/2508.08241) | [✨](https://www.alphaxiv.org/abs/2508.08241) | [📂](https://github.com/HybridRobotics/whole_body_tracking) |
 
 本文基于 Decision Diffuser 这种`给定历史轨迹和任务，IL 学习未来 (s, a) chunk` 的策略，依次改进：
-1. 为了解决离散 mocap 数据集的封闭问题，先纯 MuJoCo 训练一个 mocap RL 策略从而引入 domain randomization
-2.
+1. 为了解决离散 mocap 数据集的封闭问题，先对目标机器人纯 sim 训练一个 RL 从而引入 domain randomization。训练时提高失败片段的采样率.
+2. 前作 IL diffusion 的预测 action 不可用，本文将预测的 (s, a) 中的 s 从关节角空间改为笛卡尔空间.
 
-首先通过自适应采样失败率高的片段来训练动作跟踪强化学习策略，然后用该策略收集包含域随机化的离线数据，将其蒸馏为一个预测状态和动作的联合扩散模型，在真机推理时直接利用特定任务代价函数的梯度来引导采样过程完成全身控制。
+文章还做了海量工程优化. Demo 效果非常好，此外实验发现 diffusion model 在 OOD 情况下比 RL model 更稳定.
 
-实验发现扩散模型在面对摔倒等分布外情况时会保持静止，方便人类安全地将机器人复位，而且直接预测笛卡尔空间的身体姿态比预测关节角度在各项控制任务上表现更好。
+## Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories
+[Gemini 3.1 Pro] 先利用 VLM 标注的10万小时无实体 UMI 视频进行大规模预训练，再使用跨实体真机数据进行后训练对齐。 | 👤 小米, Jun Guo, Nan Sun | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-1.html) | [📃 2607.15330](https://hjfy.top/arxiv/2607.15330) | [✨](https://www.alphaxiv.org/abs/2607.15330) | [📂-]() |
 
+为了克服真实机器人高质量数据稀缺的问题，本文将 10 万小时无实体 UMI 轨迹切分为固定长度视频片段并利用 VLM 自动标注状态转移描述，使用这些数据对策略模型进行大规模预训练来学习基础动作生成，随后结合 7200 小时真实家庭场景跨实体数据和人工标注数据完成实体与指令对齐，最终实现了基于无实体数据的预训练能力向真机操控任务的转移。
+
+实验表明预训练动作误差随数据和模型规模增加而降低的现象能直接转化到真机成功率上，并且这种 scaling 收益尚未出现饱和。
 
 ## ---
 
