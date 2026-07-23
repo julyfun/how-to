@@ -45,21 +45,21 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 
 本文基于 Decision Diffuser 这种`给定历史轨迹和任务，IL 学习未来 (s, a) chunk` 的策略，依次改进：
 1. 为了解决离散 mocap 数据集的封闭问题，先对目标机器人纯 sim 训练多个 task-specific RL 从而引入 domain randomization。训练时提高失败片段的采样率.
-2. 以上述模型为 DAgger 专家，RL 蒸馏一个 VAE.
+2. 以上述模型为 DAgger 专家，RL 蒸馏一个 VAE. 用 VAE 训练预测未来 chunk 的 diffusion.
 3. 前作 IL diffusion 的预测 action 不可用，本文将预测的 (s, a) 中的 s 从关节角空间改为笛卡尔空间.
 
 文章还做了海量工程优化. Demo 效果非常好，此外实验发现 diffusion model 在 OOD 情况下比 RL model 更稳定.
 
-## Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories
-[Gemini 3.1 Pro] 先利用 VLM 标注的10万小时无实体 UMI 视频进行大规模预训练，再使用跨实体真机数据进行后训练对齐。 | 👤 小米, Jun Guo, Nan Sun | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-1.html) | [📃 2607.15330](https://hjfy.top/arxiv/2607.15330) | [✨](https://www.alphaxiv.org/abs/2607.15330) | [📂-]() |
+## Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories (47)
+⭐️⭐️ 10 万小时预训练 | 👤 小米, Jun Guo, Nan Sun | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-1.html) | [📃 2607.15330](https://hjfy.top/arxiv/2607.15330) | [✨](https://www.alphaxiv.org/abs/2607.15330) | [📂-]() |
 
-为了克服真实机器人高质量数据稀缺的问题，本文将 10 万小时无实体 UMI 轨迹切分为固定长度视频片段并利用 VLM 自动标注状态转移描述，使用这些数据对策略模型进行大规模预训练来学习基础动作生成，随后结合 7200 小时真实家庭场景跨实体数据和人工标注数据完成实体与指令对齐，最终实现了基于无实体数据的预训练能力向真机操控任务的转移。
-
-实验表明预训练动作误差随数据和模型规模增加而降低的现象能直接转化到真机成功率上，并且这种 scaling 收益尚未出现饱和。
+xiaomi 打造了 VLM 自动标注的流水线. 后训练则是遥操. 结论和 Gen 0 相似，即认为 scaling 尚未饱和.
 
 其他发现
 1. Model scaling 的曲线和 gen0 并不一致，后者在模型不足 7B 的时候 err 会逐渐上升.
-2. 文中图表显示 Pi0.5 暴打 xiaomi-robotics-0.
+2. 文中图表显示 Pi0.5 暴打 xiaomi-robotics-0?
+3. 文中图表 RoboCasa 似乎 Pi0-FAST 暴打 Pi0.5.
+4. Demo phone-packing 流畅得如同遥操.
 
 ## ---
 

@@ -245,7 +245,11 @@ obs1 = gated_residual(obs0, obs_y)                              # (B, Lo, 2048)
 act1 = gated_residual(act0, act_y)                              # (B, La, 1024)
 ```
 
-下面是 pi0.5. 一句话：对 state 进行 bin 离散并以文本丢进 VLM，预训练则对 action 使用 FAST[1] 分词器离散从而在不启用 action expert 的情况下进行 LLM-like NTP 预测并使用交叉熵 loss. 目的是大幅加快训练，而 infer-time 用 flow matching 反而更快。然而，对于跨本体 state 似乎没有做特殊处理，而都是归一化，可能需要通过语言指令来识别本体。
+## Pi0.5
+
+https://arxiv.org/abs/2504.16054
+
+一句话：对 state 进行 bin 离散并以文本丢进 VLM，预训练则对 action 使用 FAST[1] 分词器离散从而在不启用 action expert 的情况下进行 LLM-like NTP 预测并使用交叉熵 loss. 目的是大幅加快训练，而 infer-time 用 flow matching 反而更快。然而，对于跨本体 state 似乎没有做特殊处理，而都是归一化，可能需要通过语言指令来识别本体。
 
 架构新技巧:
 - pi0.5 flow time t 使用 adaRMSNorm[2] 用作 action flow condition. (pi0 是 MLP 直接为 token , concat action token)
