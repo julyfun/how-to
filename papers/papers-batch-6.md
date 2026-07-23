@@ -34,7 +34,10 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 2. 本文训练预测 velocity 时额外跑一个 5-step 无梯度生成，根据生成轨迹的 abs(pred_action - gt_action) 直接作为 velocity loss 权重。这简直就是 L3 loss.
 
 ## BeyondMimic
-⭐️⭐️⭐️⭐️  | 👤 UC Berkeley, Qiayuan Liao, C. Karen Liu | [🌐](https://beyondmimic.github.io/) | [📃 2508.08241](https://hjfy.top/arxiv/2508.08241) | [✨](https://www.alphaxiv.org/abs/2508.08241) | [📂]- |
+⭐️⭐️⭐️⭐️ 引入了双足人形任务执行的诸多改进 | 👤 UC Berkeley, Qiayuan Liao, C. Karen Liu | [🌐](https://beyondmimic.github.io/) | [📃 2508.08241](https://hjfy.top/arxiv/2508.08241) | [✨](https://www.alphaxiv.org/abs/2508.08241) | [📂]- |
+
+本文基于 Decision Diffuser 这种给定历史轨迹和任务，生成未来 (s, a) chunk 的策略. 改进点依次为：
+1. 为了解决离散 mocap 数据集的封闭问题，先训练一个 mocap RL 策略
 
 首先通过自适应采样失败率高的片段来训练动作跟踪强化学习策略，然后用该策略收集包含域随机化的离线数据，将其蒸馏为一个预测状态和动作的联合扩散模型，在真机推理时直接利用特定任务代价函数的梯度来引导采样过程完成全身控制。
 
