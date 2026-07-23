@@ -35,7 +35,7 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 ## BeyondMimic (46)
 ⭐️⭐️⭐️⭐️ 引入了双足人形任务执行的诸多改进 | 👤 UC Berkeley, Qiayuan Liao, C. Karen Liu | [🌐](https://beyondmimic.github.io/) | [📃 2508.08241](https://hjfy.top/arxiv/2508.08241) | [✨](https://www.alphaxiv.org/abs/2508.08241) | [📂](https://github.com/HybridRobotics/whole_body_tracking) |
 
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260723201558722.png)
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260723202456733.png)
 
 本文基于 Decision Diffuser 这种`给定历史轨迹和任务，IL 学习未来 (s, a) chunk` 的策略，依次改进：
 1. 为了解决离散 mocap 数据集的封闭问题，先对目标机器人纯 sim 训练多个 task-specific RL 从而引入 domain randomization。训练时提高失败片段的采样率.
