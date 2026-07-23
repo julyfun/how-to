@@ -4,31 +4,10 @@ date: 2023-11-16 19:03:00
 tags: ["readme"]
 ---
 
-How to do anything.
+## 我的文本 index. 中心是 how-to 即本仓库
 
-!!! tip "News"
-
-    [how-to.fun](https://how-to.fun) is now available! This site imports how-to as a submodule, so it will automatically update as `how-to` updates!
-
-!!! warning "Old articles here may be CSDN-like"
-
-    New articles here will provide better problem-related information.
-
-## Search your tricks in:
-
-- 摸鱼日志
-- notes by date (24/09, 24/11...)
-- by folder and file name (jd)
-- 滴答清单. (private info)
-- buffer repo. (private text)
-
-## To do
-
-- [] Better commit message by fish shell script.
-- [x] Smart content search engine. `jd` and `jst gf`.
-- [x] Integrate to `mfa.fish`.
-- [x] Website for this repo.
-- [ ] Identify language and location of an article.
+- how-to (use grep)
+- 滴答清单 (private info)
 
 ## Do
 
@@ -64,7 +43,7 @@ How to do anything.
 
 ```
 # show abnormal tracked files
-git ls-files | grep -v '\.md$' | grep -v '\.md"$'
+git ls-files | grep -Ev '\.(md|cpp|py|rs|typ)$'
 # list recent updated files (but ordered by name)
 git diff --name-only HEAD~100..HEAD
 ```
