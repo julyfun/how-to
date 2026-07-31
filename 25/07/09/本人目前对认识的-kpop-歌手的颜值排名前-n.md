@@ -8,17 +8,19 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-个人观点，主观野榜，只排前 10，本榜单还会随时变动
+认识的不多
 1. 张元英
+1. Minju (ILLIT)
 1. Ian (H2H)
-1. 孙彩瑛
+1. woni
 1. 林娜琏
 1. Carmen (H2H)
-1. Minju (ILLIT)
+1. 孙彩瑛
 1. 柳智敏
 1. Jiwoo (H2H)
-1. Moka (ILLIT)
 1. 周子瑜
+
+主要认识的团: IVE, ILLIT, AESPA, RESCENE, H2H, blackpink, babymonster, new jeans, twice, lesserafim, itzy, red velvet
 
 但如果你和我看法差不多，请加我好友
 
