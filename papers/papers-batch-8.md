@@ -1,5 +1,5 @@
 ---
-title: "paper batch 8"
+title: "papers batch 8"
 date: 2026-08-04 14:12:00
 tags: ["papers"]
 author: "julyfun.m5air"
