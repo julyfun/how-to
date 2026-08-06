@@ -43,7 +43,7 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260723202456733.png)
 
-本文基于 Decision Diffuser 这种`给定历史轨迹和任务，IL 学习未来 (s, a) chunk 后 classifier guidance` 的策略，依次改进：
+本文基于 Decision Diffuser 这种 `给定历史轨迹和 Task-specific objective，IL 学习未来 (s, a) chunk 后 classifier guidance` 的策略，依次改进：
 1. 为了解决离散 mocap 数据集的封闭问题，先对目标机器人纯 sim 训练多个 task-specific RL 从而引入 domain randomization。训练时提高失败片段的采样率.
 2. 以上述模型为 DAgger 专家，RL 蒸馏一个 VAE. 用 VAE 训练预测未来 chunk 的 diffusion 多峰合法分布.
 3. 前作 IL diffusion 的预测 action 不可用，本文将预测的 (s, a) 中的 s 从关节角空间改为笛卡尔空间.
@@ -53,7 +53,7 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 ## Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories (47)
 ⭐️⭐️ 10 万小时预训练 | 👤 小米, Jun Guo, Nan Sun | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-1.html) | [📃 2607.15330](https://hjfy.top/arxiv/2607.15330) | [✨](https://www.alphaxiv.org/abs/2607.15330) | [📂-]() |
 
-xiaomi 打造了 VLM 自动标注的流水线. 后训练则是遥操. 结论和 Gen 0 相似，即认为 scaling 尚未饱和.
+xiaomi 打造了 VLM 自动标注的流水线. 后训练则是遥操. 结论和 Gen 0 相似，即认为 scaling 尚未饱和. 登顶当前 robodojo sim.
 
 其他发现
 1. Model scaling 的曲线和 gen0 并不一致，后者在模型不足 7B 的时候 err 会逐渐上升.
