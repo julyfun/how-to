@@ -61,6 +61,21 @@ xiaomi 打造了 VLM 自动标注的流水线. 后训练则是遥操. 结论和 
 3. 文中图表 RoboCasa 似乎 Pi0-FAST 暴打 Pi0.5.
 4. Demo phone-packing 流畅得如同遥操.
 
+## Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control? (48)
+认为 action chunking 的有效性主要源于 implicit ensemble | 👤 Politecnico di Milano, Filippo Lazzati, Sergey Levine | [🌐](https://action-chunking.github.io) | [📃 2608.02547](https://hjfy.top/arxiv/2608.02547) | [✨](https://www.alphaxiv.org/abs/2608.02547) | [📂-]() |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260806221957072.png)
+
+先前假设认为 ac 的优势是:
+1. 时间一致性，即人类动作相邻的 action step 之间存在相互依赖.
+2. 通过开环执行多个 action 来降低累积误差次数.
+3. chunk 中靠后的 action 作为 aux task.
+
+然而本文通过多个 k-delayed-policy $a_t | o_(t-k)$ （这玩意儿没有时间一致性）完全复现了 ac performace 并认为:
+1. 建模非马尔科夫是对的，但时间一致性非必要.
+2. delayed 预测即可减少累积误差，即使次数不变.
+3. aux 优势仅适用于 short horizon
+
 ## ---
 
 ## HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents
