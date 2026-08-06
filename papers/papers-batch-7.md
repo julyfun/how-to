@@ -10,6 +10,13 @@ confidence: 2
 
 to read.
 
+## Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control?
+[Gemini 3.1 Pro] 发现 action chunking 的有效性主要源于隐式集成效应，因此提出将其显式实例化为随机延迟策略集成。 | 👤 Politecnico di Milano, Filippo Lazzati, Sergey Levine | [🌐](https://action-chunking.github.io) | [📃 2608.02547](https://hjfy.top/arxiv/2608.02547) | [✨](https://www.alphaxiv.org/abs/2608.02547) | [📂-]() |
+
+本文旨在解释 action chunking 为何在模仿学习中有效，推翻了时间一致性和表征学习等传统解释假设。作者发现动作分块的性能优势主要来自预测多样化时间关系所带来的隐式集成效应。复现这篇论文的方法是独立训练多个具有不同观察延迟步数的单步预测策略，并在推理阶段对它们的动作输出取平均，这样就能达到甚至超越原版动作分块的性能。
+
+作者在讨论中得出一个有趣结论：当机器人控制频率较高（如 50-60Hz）时延迟策略将无法匹敌动作分块的性能。这可能与人类真实反应频率较低有关，说明在此种高频设定下动作序列的时间一致性仍然不可或缺。
+
 ## UniVLA: Learning to Act Anywhere with Task-centric Latent Actions
 [Gemini 3.1 Pro] 通过潜在动作模型从视频中提取以任务为中心的潜在动作并在 DINO 特征空间中结合语言指令进行泛化策略训练 | 👤 The University of Hong Kong, Qingwen Bu, Hongyang Li | - | [📃 2505.06111](https://hjfy.top/arxiv/2505.06111) | [✨](https://www.alphaxiv.org/abs/2505.06111) | [📂](https://github.com/OpenDriveLab/UniVLA) |
 
@@ -32,5 +39,3 @@ VLP 通过前向树搜索结合两种模型，先由 VLM 生成候选动作的�
 GR00T N1 包含作为系统二的 Eagle-2 视觉语言模型和作为系统一的扩散 Transformer，两者通过交叉注意力机制结合，在包含人类视频、神经生成轨迹和真实机器人数据的异构数据集上联合端到端训练。
 
 实验表明利用视频生成模型合成的神经轨迹进行协同训练，可以显著提升模型在真实世界小样本微调时的表现。
-
-
