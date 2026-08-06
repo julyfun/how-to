@@ -164,4 +164,3 @@ PaLM-E 将图像和状态数据通过编码器映射为向量，与文本 token 
 [Gemini 3.1 Pro] 通过混合位置力控制器将 VLM 与触觉感知相连以激活预训练模型中的物理交互知识 | 👤 Tsinghua University, Jialei Huang, Yang Gao | - | [📃 2507.09160](https://hjfy.top/arxiv/2507.09160) | [✨](https://www.alphaxiv.org/abs/2507.09160) | - |
 
 提出了 Tactile-VLA 框架。该方法将视觉、语言和触觉传感深度融合，通过混合位置力控制器将模型意图转化为物理动作，并使用推理模块让机器人根据触觉反馈调整策略，只需少量演示就能激活模型的物理先验。
-
