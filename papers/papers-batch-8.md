@@ -8,6 +8,15 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+to read.
+
+## Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-design
+[Gemini 3.1 Pro] 训练基于 RoboTokens 的扩散 Transformer，利用自身预测的动力学奖励梯度引导形态生成 | 👤 Stanford University, Huy Ha, Shuran Song | [🌐](https://transformer-transformer.github.io) | [📃 2607.25798](https://hjfy.top/arxiv/2607.25798) | [✨](https://www.alphaxiv.org/abs/2607.25798) | [📂]- |
+
+为了解决特定任务的机器人形态设计问题，本文将机器人的物理结构和状态动作统一表示为 RoboTokens 并训练了一个扩散 Transformer。该模型通过掩码不同的 token 来同时学习形态生成和跨形态控制。在推理阶段，模型利用自身预测的完整动力学轨迹来计算奖励梯度，并用此梯度引导形态 token 的扩散去噪，从而生成针对目标轨迹优化的机器人设计。
+
+实验发现增加推理时间的并行采样能提升设计质量，但计算收益会在一分钟左右遇到瓶颈。此外当前方法仅支持基于图元的几何体表示，尚未支持任意网格或可变形物体。
+
 ## Explicit Kinematic Guidance from Analytic Concepts for Vision-Language-Action Models
 [Gemini 3.1 Pro] 引入物理概念专家先提取 3D 信息再微调 VLA | 👤 SJTU, Mingyang Sun, Jianhua Sun | [🌐]- | [📃 2607.26513](https://hjfy.top/arxiv/2607.26513) | [✨](https://www.alphaxiv.org/abs/2607.26513) | [📂]-
 
