@@ -10,7 +10,10 @@ confidence: 2
 
 ## 1. Offline RL: SAC+BC
 ### 回忆提纲
-本章节训练部分的 Q loss 和 SAC 基本一样，不知为什么魔改为 2 critic + 2 target critic (上划线为 target):
+
+做什么：从 offline (s, a) dataset 中采样. BC loss 让 `policy(s_sample)` 接近 `a_sample`。Q loss 让 `policy(s_sample)` 的得分更高.
+
+本章节训练部分的 Q loss 和 SAC 基本一样，但魔改为 2 critic + 2 target critic (上划线为 target):
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260805172449512.png)
 
 而 actor loss 添加了 alpha * BC 损失. alpha 取值 3 ~ 1000 不等，显然这个东西比较难调.
