@@ -1,5 +1,5 @@
 ---
-title: "285 hw5"
+title: "285 hw5: Offline RL"
 date: 2026-08-04 20:01:04
 tags: ["技术学习", "285"]
 author: "julyfun.m5air"
@@ -34,3 +34,11 @@ confidence: 2
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260805202116672.png)
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260805201949248.png)
+
+## 2. IQL
+
+### 回答问题
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-5.png)
+
+## 3. FQL
