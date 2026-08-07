@@ -78,7 +78,7 @@ xiaomi 打造了 VLM 自动标注的流水线. 后训练则是遥操. 结论和 
 
 ## Much Ado About Noising: Dispelling the Myths of Generative Robotic Control (49)
 
-CMU, Chaoyi Pan, Max Simchowitz.
+⭐️⭐️⭐️ CMU, Chaoyi Pan, Max Simchowitz.
 
 https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 
