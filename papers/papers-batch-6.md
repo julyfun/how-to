@@ -76,6 +76,14 @@ xiaomi 打造了 VLM 自动标注的流水线. 后训练则是遥操. 结论和 
 2. delayed 预测即可减少累积误差，即使预测次数极多.
 3. aux 优势仅适用于 short horizon。实际优势来源于其模拟了 n 个 delayed-policy.
 
+## Much Ado About Noising: Dispelling the Myths of Generative Robotic Control (49)
+
+CMU, Chaoyi Pan, Max Simchowitz.
+
+https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
+
+探讨 diffusion 这种 generative policy 相比 regression 的优势，认为主要是 iterative compute 带来的 precision 和 ood 情况下 stick to task manifold，**而不是** multimodal 和 expressiveness. 实验中前者仅在高精度任务下有优势.
+
 ## ---
 
 ## HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents
