@@ -37,7 +37,15 @@ confidence: 2
 
 ## 2. IQL
 
+### 回忆提纲
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260807163940796.png)
+
 ### 回答问题
+
+下图中的 a 是指数 exp(alpha * A) 的 alpha. 可以看出，cube 任务 a=1,3,10 都不错，而 ant 任务是 a=10 最好.
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-6.png)
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-5.png)
 
