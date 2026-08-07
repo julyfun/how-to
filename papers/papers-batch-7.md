@@ -10,9 +10,12 @@ confidence: 2
 
 to read.
 
-本文旨在解释 action chunking 为何在模仿学习中有效，推翻了时间一致性和表征学习等传统解释假设。作者发现动作分块的性能优势主要来自预测多样化时间关系所带来的隐式集成效应。复现这篇论文的方法是独立训练多个具有不同观察延迟步数的单步预测策略，并在推理阶段对它们的动作输出取平均，这样就能达到甚至超越原版动作分块的性能。
+## WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time
+[Gemini 3.1 Pro] 通过自监督视频预测将人类视频吸收到冻结 WAM 的轻量级记忆中，实现测试时训练和策略引导 | 👤 Peking University, Yusen Feng, He Wang | [🌐]- | [📃 2607.06988](https://hjfy.top/arxiv/2607.06988) | [✨](https://www.alphaxiv.org/abs/2607.06988) | [📂]- |
 
-作者在讨论中得出一个有趣结论：当机器人控制频率较高（如 50-60Hz）时延迟策略将无法匹敌动作分块的性能。这可能与人类真实反应频率较低有关，说明在此种高频设定下动作序列的时间一致性仍然不可或缺。
+为了解决机器人基础模型难以适应新任务的问题，本文提出 WAM-TTT 框架。该方法在元训练阶段使用成对的人机数据和键值记忆重建损失来对齐人机行为。测试时则冻结预训练的 WAM 模型，仅通过自监督视频预测更新轻量级自适应记忆的权重，从而在无需特定任务微调的情况下引导动作生成。
+
+实验表明，该方法在多种操作任务和泛化设置下，均一致优于将人类视频作为上下文条件的基线方法。
 
 ## UniVLA: Learning to Act Anywhere with Task-centric Latent Actions
 [Gemini 3.1 Pro] 通过潜在动作模型从视频中提取以任务为中心的潜在动作并在 DINO 特征空间中结合语言指令进行泛化策略训练 | 👤 The University of Hong Kong, Qingwen Bu, Hongyang Li | - | [📃 2505.06111](https://hjfy.top/arxiv/2505.06111) | [✨](https://www.alphaxiv.org/abs/2505.06111) | [📂](https://github.com/OpenDriveLab/UniVLA) |
