@@ -8,14 +8,14 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-to read.
-
 ## WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time
-[Gemini 3.1 Pro] 通过自监督视频预测将人类视频吸收到冻结 WAM 的轻量级记忆中，实现测试时训练和策略引导 | 👤 Peking University, Yusen Feng, He Wang | [🌐]- | [📃 2607.06988](https://hjfy.top/arxiv/2607.06988) | [✨](https://www.alphaxiv.org/abs/2607.06988) | [📂]- |
+[indexed] 通过自监督视频预测将人类视频吸收到冻结 WAM 的轻量级记忆中，实现测试时训练和策略引导 | 👤 Peking University, Yusen Feng, He Wang | [🌐]- | [📃 2607.06988](https://hjfy.top/arxiv/2607.06988) | [✨](https://www.alphaxiv.org/abs/2607.06988) | [📂]- |
 
-为了解决机器人基础模型难以适应新任务的问题，本文提出 WAM-TTT 框架。该方法在元训练阶段使用成对的人机数据和键值记忆重建损失来对齐人机行为。测试时则冻结预训练的 WAM 模型，仅通过自监督视频预测更新轻量级自适应记忆的权重，从而在无需特定任务微调的情况下引导动作生成。
+支持训练时录制 ego 视频引导 wam 到新任务或用户偏好，不是海量 kv 而是 fast-weight MLP.
 
-实验表明，该方法在多种操作任务和泛化设置下，均一致优于将人类视频作为上下文条件的基线方法。
+see also: https://github.com/ImChong/Robotics_Notebooks/blob/main/wiki/entities/paper-wam-ttt-human-video-test-time-steering.md
+
+to read:
 
 ## UniVLA: Learning to Act Anywhere with Task-centric Latent Actions
 [Gemini 3.1 Pro] 通过潜在动作模型从视频中提取以任务为中心的潜在动作并在 DINO 特征空间中结合语言指令进行泛化策略训练 | 👤 The University of Hong Kong, Qingwen Bu, Hongyang Li | - | [📃 2505.06111](https://hjfy.top/arxiv/2505.06111) | [✨](https://www.alphaxiv.org/abs/2505.06111) | [📂](https://github.com/OpenDriveLab/UniVLA) |
