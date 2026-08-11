@@ -56,8 +56,16 @@ confidence: 2
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260811154217216.png)
 
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260811155643007.png)
+
+在 285-0 有回忆提纲.
+
 ### 回答问题
 
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-7.png)
+题目要求 80%. alpha = 300 最优 .
 
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-8.png)
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-10.png)
+
+题目要求 30%. alpha = 10 最优.
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/merged-image-9.png)
