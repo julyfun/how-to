@@ -86,6 +86,13 @@ https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 
 ## ---
 
+## How Do VLAs Effectively Inherit from VLMs?
+[Gemini 3.1 Pro] 提出了 GrinningFace 表情包桌面操作基准测试，用于诊断和比较不同训练技术如何有效保留 VLM 的视觉语义先验 | 👤 Microsoft Research, Chuheng Zhang, Chuheng Zhang | [🌐](https://github.com/zhangchuheng123/GrinningFace) | [📃 2511.06619](https://hjfy.top/arxiv/2511.06619) | [✨](https://www.alphaxiv.org/abs/2511.06619) | [📂](https://github.com/zhangchuheng123/GrinningFace) |
+
+为了解决 VLA 模型容易遗忘 VLM 视觉语义先验的问题，本文引入了 GrinningFace 表情包放置诊断基准。该任务要求机械臂将物体放置在指令对应的表情包上，利用表情包罕见于机器人数据集的特性来测试先验知识的迁移效果。作者在仿真和真机上系统对比了全参数微调、LoRA、联合训练和潜在动作预测等多种方法。复现时可以参考其开源的 $\pi_0$ 架构代码库，并重点关注联合训练和潜在动作预测这两种有效策略。
+
+实验发现全参数微调会导致严重的知识遗忘，而冻结 VLM 或仅使用 LoRA 虽然能保留先验但难以快速适应复杂的运动技能。此外，在更多样化的数据集上预训练 VLA 也能显著提升模型表现。
+
 ## HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents
 
 [Gemini 3.1 Pro] 引入 MoT 架构和视觉潜变量 token 来训练具身多模态模型 | 👤 Tencent, Xumin Yu, Han Hu | [🌐-]() | [📃 2604.07430](https://hjfy.top/arxiv/2604.07430) | [✨](https://www.alphaxiv.org/abs/2604.07430) | [📂](https://github.com/Tencent-Hunyuan/HY-Embodied) |

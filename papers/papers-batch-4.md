@@ -23,7 +23,7 @@ confidence: 2
 ## LAPA (29)
 ⭐️⭐️⭐️ https://hjfy.top/arxiv/2410.11758
 
-自监督在相邻帧训练 IDM -> latent_token -> FDM 模型，作为 VLM 的 pretraining label.
+对于相邻帧自监督训练 IDM -> latent_token -> FDM 模型，作为 VLM 的 pretraining label.
 
 3 步训练:
 1. 自监督利用互联网视频训练一个 encoder: (x1, x2) -> z（VQ 离散化）和 decoder: (x1, z) -> x2，这类似于 IDM 和 FDM. 这里 x1 和 x2 相差 T 帧.
