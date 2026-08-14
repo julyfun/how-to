@@ -84,14 +84,17 @@ https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 
 探讨 diffusion 这种 generative policy 相比 regression 的优势，认为主要是 iterative compute 带来的 precision 和 ood 情况下 stick to task manifold，**而不是** multimodal 和 expressiveness. 实验中前者仅在高精度任务下有优势.
 
-## ---
 
-## How Do VLAs Effectively Inherit from VLMs?
-[Gemini 3.1 Pro] 提出了 GrinningFace 表情包桌面操作基准测试，用于诊断和比较不同训练技术如何有效保留 VLM 的视觉语义先验 | 👤 Microsoft Research, Chuheng Zhang, Chuheng Zhang | [🌐](https://github.com/zhangchuheng123/GrinningFace) | [📃 2511.06619](https://hjfy.top/arxiv/2511.06619) | [✨](https://www.alphaxiv.org/abs/2511.06619) | [📂](https://github.com/zhangchuheng123/GrinningFace) |
+## How Do VLAs Effectively Inherit from VLMs? (49)
+⭐️⭐️⭐️  | 👤 Microsoft Research, Chuheng Zhang, Chuheng Zhang | 🌐 - | [📃 2511.06619](https://hjfy.top/arxiv/2511.06619) | [✨](https://www.alphaxiv.org/abs/2511.06619) | [📂](https://github.com/zhangchuheng123/GrinningFace) |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260814133804968.png)
 
 为了解决 VLA 模型容易遗忘 VLM 视觉语义先验的问题，本文引入了 GrinningFace 表情包放置诊断基准。该任务要求机械臂将物体放置在指令对应的表情包上，利用表情包罕见于机器人数据集的特性来测试先验知识的迁移效果。作者在仿真和真机上系统对比了全参数微调、LoRA、联合训练和潜在动作预测等多种方法。复现时可以参考其开源的 $\pi_0$ 架构代码库，并重点关注联合训练和潜在动作预测这两种有效策略。
 
 实验发现全参数微调会导致严重的知识遗忘，而冻结 VLM 或仅使用 LoRA 虽然能保留先验但难以快速适应复杂的运动技能。此外，在更多样化的数据集上预训练 VLA 也能显著提升模型表现。
+
+## ---
 
 ## HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents
 
