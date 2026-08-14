@@ -88,9 +88,12 @@ https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 ## How Do VLAs Effectively Inherit from VLMs? (49)
 ⭐️⭐️⭐️  | 👤 Microsoft Research, Chuheng Zhang, Chuheng Zhang | 🌐 - | [📃 2511.06619](https://hjfy.top/arxiv/2511.06619) | [✨](https://www.alphaxiv.org/abs/2511.06619) | [📂](https://github.com/zhangchuheng123/GrinningFace) |
 
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260814133804968.png)
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260814134612261.png)
 
-为了解决 VLA 模型容易遗忘 VLM 视觉语义先验的问题，本文引入了 GrinningFace 表情包放置诊断基准。该任务要求机械臂将物体放置在指令对应的表情包上，利用表情包罕见于机器人数据集的特性来测试先验知识的迁移效果。作者在仿真和真机上系统对比了全参数微调、LoRA、联合训练和潜在动作预测等多种方法。复现时可以参考其开源的 $\pi_0$ 架构代码库，并重点关注联合训练和潜在动作预测这两种有效策略。
+为了解决 VLA 模型容易遗忘 VLM 视觉语义先验的问题，本文引入了表情包放置诊断基准。作者在仿真和真机上系统对比了全参数微调、LoRA、联合训练和潜在动作预测等多种方法。
+
+实验发现
+1. 相比传统全量微调，Frozen VLM（中间图）和 LoRA（右图）能保留 VLM 识别成功率，但拟合动作需要更多训练步骤.
 
 实验发现全参数微调会导致严重的知识遗忘，而冻结 VLM 或仅使用 LoRA 虽然能保留先验但难以快速适应复杂的运动技能。此外，在更多样化的数据集上预训练 VLA 也能显著提升模型表现。
 
