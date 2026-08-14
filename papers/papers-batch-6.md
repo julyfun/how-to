@@ -84,16 +84,15 @@ https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 
 探讨 diffusion 这种 generative policy 相比 regression 的优势，认为主要是 iterative compute 带来的 precision 和 ood 情况下 stick to task manifold，**而不是** multimodal 和 expressiveness. 实验中前者仅在高精度任务下有优势.
 
-
 ## How Do VLAs Effectively Inherit from VLMs? (49)
-⭐️⭐️⭐️  | 👤 Microsoft Research, Chuheng Zhang, Chuheng Zhang | 🌐 - | [📃 2511.06619](https://hjfy.top/arxiv/2511.06619) | [✨](https://www.alphaxiv.org/abs/2511.06619) | [📂](https://github.com/zhangchuheng123/GrinningFace) |
+⭐️⭐️⭐️ Frozen 和 co-training 能保留 VLM 的能力 | 👤 Microsoft Research, Chuheng Zhang, Chuheng Zhang | 🌐 - | [📃 2511.06619](https://hjfy.top/arxiv/2511.06619) | [✨](https://www.alphaxiv.org/abs/2511.06619) | [📂](https://github.com/zhangchuheng123/GrinningFace) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260814134612261.png)
 
 为了解决 VLA 模型容易遗忘 VLM 视觉语义先验的问题，本文引入了表情包放置诊断基准。作者在仿真和真机上系统对比了全参数微调、LoRA、联合训练和潜在动作预测等多种方法。
 
 实验发现:
-1. 相比传统全量微调，Frozen VLM（中间图，跳过预训练）和 LoRA（右图）能保留 VLM 识别成功率，但拟合动作需要更多训练步骤.
+1. 相比传统全量微调，Frozen VLM（中间图，跳过预训练）和 LoRA（右图）能保留 VLM 识别成功率，但拟合动作需要更多训练步.
 2. co-training VLM + VLA 取得了很好的表现.
 3. 多样的数据集提升了模型表现.
 4. LAPA 类型的 Latent Token 相较于离散 Token 对于训练效果更好. 本实验是在 pi0 基础上改动的，而且该结论与 pi0.5 不一致.
