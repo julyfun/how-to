@@ -98,7 +98,7 @@ https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 4. LAPA 类型的 Latent Token 相较于离散 Token 对于训练效果更好. 本实验是在 pi0 基础上改动的，而且该结论与 pi0.5 不一致.
 
 ## Do as I Do: Dexterous Manipulation Data from Everyday Human Videos
-[Gemini 3.1 Pro] 提出从单目 RGB 人类视频中重建并重定向手物交互到多指灵巧手的算法，生成可执行的机器人操作数据 | 👤 UC Berkeley, Bhawna Paliwal, Jitendra Malik | [🌐](https://do-as-i-do.com/) | [📃 2606.19333](https://hjfy.top/arxiv/2606.19333) | [✨](https://www.alphaxiv.org/abs/2606.19333) | [📂]- |
+⭐️⭐️⭐️ 较新的 RGB 重建手物和retargetting 流水线 | 👤 UC Berkeley, Bhawna Paliwal, Jitendra Malik | [🌐](https://do-as-i-do.com/) | [📃 2606.19333](https://hjfy.top/arxiv/2606.19333) | [✨](https://www.alphaxiv.org/abs/2606.19333) | [📂]- |
 
 为了解决灵巧手机器人操作数据难以规模化获取的问题，本文提出了 Do as I Do 算法。该算法首先利用视觉基础模型（如 HaWoR 和 SAM3D）从单目 RGB 视频中重建 3D 人手和物体的交互轨迹，然后通过基于采样的优化方法（在仿真环境中引入预热步骤、随机力扰动和过渡奖励）将这些轨迹重定向到物理结构不同的机器人灵巧手上，从而生成可在真实世界执行的机器人操作数据。
 
