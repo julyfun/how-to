@@ -97,18 +97,22 @@ https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 3. 多样的数据集提升了模型表现.
 4. LAPA 类型的 Latent Token 相较于离散 Token 对于训练效果更好. 本实验是在 pi0 基础上改动的，而且该结论与 pi0.5 不一致.
 
-## Do as I Do: Dexterous Manipulation Data from Everyday Human Videos
+## Do as I Do: Dexterous Manipulation Data from Everyday Human Videos (50)
 ⭐️⭐️⭐️ 较新的 RGB 重建手物和retargetting 流水线 | 👤 UC Berkeley, Bhawna Paliwal, Jitendra Malik | [🌐](https://do-as-i-do.com/) | [📃 2606.19333](https://hjfy.top/arxiv/2606.19333) | [✨](https://www.alphaxiv.org/abs/2606.19333) | [📂]- |
 
-为了解决灵巧手机器人操作数据难以规模化获取的问题，本文提出了 Do as I Do 算法。该算法首先利用视觉基础模型（如 HaWoR 和 SAM3D）从单目 RGB 视频中重建 3D 人手和物体的交互轨迹，然后通过基于采样的优化方法（在仿真环境中引入预热步骤、随机力扰动和过渡奖励）将这些轨迹重定向到物理结构不同的机器人灵巧手上，从而生成可在真实世界执行的机器人操作数据。
+又一种规模化获取灵巧手操作数据的流水线。
+1. 用HaWoR 从视频中重建手轨迹 ，用 SAM3D（这组自己开发的）追踪刚性物体 - 用于在物理仿真 retargetting 中计算模型和力.
+2. 基于采样的优化方法（类似 MPPI）来做 retargetting 到不同灵巧手上，在仿真中引入扰动和奖励.
 
-实验表明，该方法在手物交互估计和灵巧操作轨迹提取方面均优于现有方法，并能有效处理常见失败模式。此外，作者还基于实验结果为收集人类演示数据提供了一套实用指南。
+总之，本文非常适合作为手册丢给 codex.
 
 ## ---
 
 ## HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents
 
-[Gemini 3.1 Pro] 引入 MoT 架构和视觉潜变量 token 来训练具身多模态模型 | 👤 Tencent, Xumin Yu, Han Hu | [🌐-]() | [📃 2604.07430](https://hjfy.top/arxiv/2604.07430) | [✨](https://www.alphaxiv.org/abs/2604.07430) | [📂](https://github.com/Tencent-Hunyuan/HY-Embodied) |
+[Gemini 3.1 Pro] 混元：引入 MoT 架构和视觉潜变量 token 来训练具身多模态模型 | 👤 Tencent, Xumin Yu, Han Hu | [🌐-]() | [📃 2604.07430](https://hjfy.top/arxiv/2604.07430) | [✨](https://www.alphaxiv.org/abs/2604.07430) | [📂](https://github.com/Tencent-Hunyuan/HY-Embodied) |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260816182202242.png)
 
 复制 LLM 的 FFN 和 QKV 参数专用于处理视觉 token，在每个视觉序列末尾附加可学习的视觉潜变量 token，使用大 ViT 的离散编码和全局特征提供额外监督，最后通过同策略蒸馏将大模型的推理能力转移到小模型。
 
@@ -118,12 +122,18 @@ MoT 架构在几乎不增加推理开销的情况下提升了视觉能力，且�
 
 [GPT-5] 把全身遥操作拆成四个控制模块，再用单次前向生成并选择 5 组 action chunk | 👤 UC Berkeley, Haozhi Qi（与 Yen-Jen Wang 共同一作）, 通讯作者未署名 | [🌐](https://choice-policy.github.io/) | [📃 2512.25072](https://hjfy.top/arxiv/2512.25072) | [✨](https://www.alphaxiv.org/abs/2512.25072) | [📂](https://github.com/x-robotics-lab/minbc) |
 
-遥操作把全身控制拆成手眼跟随、手部抓握、末端位姿跟踪和行走四个模块。VR controller 驱动双臂与手指，100 Hz 强化学习 locomotion policy 接收 20 Hz 高层速度指令。训练 Choice Policy 时，冻结 DINOv3 编码 RGB、用 ResNet-18 编码可选深度并用 MLP 编码 proprioception。proposal head 一次输出 K=5 组 16 步 action chunk，score head 回归每组动作相对真值的 MSE。每个样本只向 MSE 最小的候选反传梯度，推理选择 predicted MSE 最小的候选并执行其中 8 步。
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260816182251402.png)
+
+遥操作把全身控制拆成手眼跟随、手部抓握、末端位姿跟踪和行走四个模块。VR controller 驱动双臂与手指，100 Hz 强化学习 locomotion policy 接收 20 Hz 高层速度指令。
+
+训练 Choice Policy 时，冻结 DINOv3 编码 RGB、用 ResNet-18 编码可选深度并用 MLP 编码 proprioception。proposal head 一次输出 K=5 组 16 步 action chunk，score head 回归每组动作相对真值的 MSE。每个样本只向 MSE 最小的候选反传梯度，推理选择 predicted MSE 最小的候选并执行其中 8 步。
 
 启用手眼跟随后 Choice Policy 的插盘成功次数从 2/10 升至 7/10，说明系统收益很大部分来自主动视角。白板任务只测 5 次且端到端仅完成 2/5；它没有 Diffusion Policy 对照。公开数据只有 1 条 train 和 1 条 test 的 debug set，README 示例使用的 CondHourglassDecoder 也与论文描述的两层 MLP 不完全一致，所以能跑通训练接口但不能严格复现实验表格。
 
 ## PaLM-E: An Embodied Multimodal Language Model
-[Gemini 3.1 Pro] PaLM-E 将连续传感器数据直接映射到预训练语言模型的嵌入空间来实现具身推理 | 👤 Robotics at Google 和 TU Berlin, Danny Driess, Danny Driess 和 Pete Florence | [🌐](https://palm-e.github.io/) | [📃 2303.03378](https://hjfy.top/arxiv/2303.03378) | [✨](https://www.alphaxiv.org/abs/2303.03378) | - |
+[Gemini 3.1 Pro] 谷歌：PaLM-E 直接把机器人数据映射到 LLM 嵌入空间 | 👤 Robotics at Google 和 TU Berlin, Danny Driess, Danny Driess 和 Pete Florence | [🌐](https://palm-e.github.io/) | [📃 2303.03378](https://hjfy.top/arxiv/2303.03378) | [✨](https://www.alphaxiv.org/abs/2303.03378) | - |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260816182520180.png)
 
 PaLM-E 将图像和状态数据通过编码器映射为向量，与文本 token 交错拼接成多模态句子，直接输入给预训练的 PaLM 模型自回归生成高层控制文本。
 
@@ -131,6 +141,8 @@ PaLM-E 将图像和状态数据通过编码器映射为向量，与文本 token 
 
 ## SARM2: Multi-Task Stage Aware Reward Modeling for Self Improving Robotic Manipulation
 [Gemini 3.1 Pro] 结合基于动作原语的阶段估计器和多门控混合专家价值头来提供密集多任务奖励 | 👤 Stanford University, Qianzhong Chen, Mac Schwager | [🌐](https://qianzhong-chen.github.io/sarm2.github.io/) | [📃 2606.10305](https://hjfy.top/arxiv/2606.10305) | [✨](https://www.alphaxiv.org/abs/2606.10305) | [📂](https://qianzhong-chen.github.io/sarm2.github.io/) |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260816182705598.png)
 
 提出多任务阶段感知奖励模型 RM。它结合了基于动作原语的阶段估计器和混合专家价值头，能为操作任务提供单步密集奖励并据此指导机器人利用自主数据迭代策略。
 

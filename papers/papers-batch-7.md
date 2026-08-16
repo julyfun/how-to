@@ -8,6 +8,16 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models
+
+GPT-5 通过统一状态动作表示、相机坐标系末端动作和行为上下文，将多机器人数据及人类视频扩展为可训练的通用 VLA 模型 | 👤 Qwen Team, Haoqi Yuan, Xiong-Hui Chen | [🌐](https://qwen.ai/blog?id=qwen-robotmanip) | [📃 2606.17846](https://hjfy.top/arxiv/2606.17846) | [✨](https://www.alphaxiv.org/abs/2606.17846) | [📂](https://github.com/QwenLM/Qwen-RobotManip)
+
+![主模型架构图](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/Qwen-RobotManip-method.png)
+
+论文针对不同机器人形态、关节动作、坐标系和数据采集方式不一致导致 VLA 难以从大规模数据泛化的问题，提出 Qwen-RobotManip。复现时使用 Qwen3.5-4B 作为视觉语言骨干，将每个机械臂编码为 29 维槽位并组成双臂 80 维状态动作向量，对缺失自由度使用二值掩码，再用相机坐标系末端位姿增量和 Camera Positional Encoding 对齐运动，接入 10 层 flow-matching DiT 动作专家，按机器人数据和视觉语言数据 9:1 联合预训练，最后在目标机器人数据上做动作监督微调。
+
+人类视频部分通过 MANO 手部关键点重定向到平行夹爪，用 SAM3 和 ProPainter 移除人手，再用 MuJoCo 逆运动学渲染 15 种机器人形态，生成约 24,808 小时合成机器人示范。论文的主要结论是 OOD 场景比 LIBERO 或 RoboTwin 的 IID 测试更能区分预训练质量，相机坐标系末端动作有助于跨机器人迁移；局限是合成视频存在重定向和修复误差，OOD 评测仍以仿真为主，当前仓库也没有发布模型权重。
+
 ## WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time
 [indexed] 通过自监督视频预测将人类视频吸收到冻结 WAM 的轻量级记忆中，实现测试时训练和策略引导 | 👤 Peking University, Yusen Feng, He Wang | [🌐]- | [📃 2607.06988](https://hjfy.top/arxiv/2607.06988) | [✨](https://www.alphaxiv.org/abs/2607.06988) | [📂]- |
 
