@@ -18,6 +18,26 @@ GPT-5 通过统一状态动作表示、相机坐标系末端动作和行为上�
 
 人类视频部分通过 MANO 手部关键点重定向到平行夹爪，用 SAM3 和 ProPainter 移除人手，再用 MuJoCo 逆运动学渲染 15 种机器人形态，生成约 24,808 小时合成机器人示范。论文的主要结论是 OOD 场景比 LIBERO 或 RoboTwin 的 IID 测试更能区分预训练质量，相机坐标系末端动作有助于跨机器人迁移；局限是合成视频存在重定向和修复误差，OOD 评测仍以仿真为主，当前仓库也没有发布模型权重。
 
+## DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation
+
+[GPT-5] 用定制外骨骼记录可执行的机器人手关节动作，再将视频中的人手修复成目标机器人手 | 👤 Columbia University, Mengda Xu, Shuran Song | [🌐](https://dex-umi.github.io/) | [📃 2505.21864](https://hjfy.top/arxiv/2505.21864) | [✨](https://www.alphaxiv.org/abs/2505.21864) | [📂](https://github.com/real-stanford/DexUMI)
+
+![DexUMI 系统总览](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/DexUMI-Teaser.png)
+
+论文要解决人手示范与机器人手之间的关节运动和视觉差异。复现时先针对目标机器人手优化并打印可穿戴外骨骼，在关节处安装编码器并在指尖安装触觉传感器，固定腕部相机采集人手操作视频、关节角和触觉数据，再用 SAM2 分割人手与外骨骼并用光流修复背景，最后用 DINO-V2 提取视觉特征并训练 Diffusion Policy，输出机器人腕部相对动作和手指相对动作。
+
+每种目标手都需要重新设计外骨骼，视觉修复仍有分割遗漏、模糊和光照不一致问题。相对手指动作比绝对动作更能容忍映射误差，触觉主要帮助被手遮挡的接触任务。
+
+## DEXOP: A Device for Robotic Transfer of Dexterous Human Manipulation
+
+[GPT-5] 用机械连杆让人手直接驱动带触觉传感器的被动机器人手，采集可直接训练机器人的示范数据 | 👤 MIT, Hao-Shu Fang, Pulkit Agrawal | [🌐](https://dex-op.github.io/) | [📃 2509.04441](https://hjfy.top/arxiv/2509.04441) | [✨](https://www.alphaxiv.org/abs/2509.04441) | 📂 -
+
+![DEXOP 系统总览](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/DEXOP-overview.png)
+
+论文提出一种被称为 perioperation 的采集方式。复现时制作与目标机器人手协同设计的被动外骨骼，通过连杆同步人手和被动机器人手，在手指、手掌和腕部安装视觉触觉传感器，采集双腕相机、触觉图像和关节状态，再用 ACT 进行行为克隆，输出机械臂关节增量和机器人手绝对关节位置。
+
+DEXOP 的数据与真实机器人在运动学、视觉和触觉配置上高度一致，因此基本不需要视觉后处理。当前系统仍受外骨骼制造误差、标定误差和机器人手自由度限制，实验中加入少量遥操作数据用于校准。
+
 ## WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time
 [indexed] 通过自监督视频预测将人类视频吸收到冻结 WAM 的轻量级记忆中，实现测试时训练和策略引导 | 👤 Peking University, Yusen Feng, He Wang | [🌐]- | [📃 2607.06988](https://hjfy.top/arxiv/2607.06988) | [✨](https://www.alphaxiv.org/abs/2607.06988) | [📂]- |
 
