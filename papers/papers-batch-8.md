@@ -10,6 +10,16 @@ confidence: 2
 
 to read.
 
+## Robust-WAM: Bridging Generative Pretraining and Semantic Foresight in World-Action Models
+
+[GPT-5] 保留预训练 WAM 的视频生成路径，用未来帧的 DINOv3 语义监督动作流 | 👤 The Hong Kong University of Science and Technology (Guangzhou), Haodong Yan, Haoang Li | [🌐](https://haodong-yan.github.io/robust-wam-project-page/) | [📃 2608.05903](https://hjfy.top/arxiv/2608.05903) | [✨](https://www.alphaxiv.org/abs/2608.05903) | [📂](https://github.com/Haodong-Yan/Robust-WAM-release)
+
+![Robust-WAM 方法图](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/Robust-WAM-method.png)
+
+论文针对 VAE latent 重像素细节导致 WAM 在光照等视觉变化下动作不稳的问题。复现时保留预训练 WAM 的 VAE、video DiT 和 action DiT，在每个未来时间步和相机视角加入一个 learnable query token，并复用对应 action token 的 positional encoding；训练时用 frozen DINOv3 ViT-B/16 提取未来真值帧 CLS feature，经 linear head 将 query output 与其做 cosine alignment，原视频生成和动作预测 loss 保持不变。推理时移除 DINOv3 和 alignment head，只保留 query token。
+
+方法已接入 GE-Act 和 FastWAM，也在 LingBot-VA 上评测。LIBERO-Plus、RoboTwin 随机扰动和真机未知光照均有改善；常规环境表现没有下降。新增参数约 0.016M，推理延迟约增加 4%。目前只发布 GE-Act checkpoint；FastWAM、LingBot-VA checkpoint 和真机部署指南尚未发布。
+
 ## Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-design
 [Gemini 3.1 Pro] 训练基于 RoboTokens 的扩散 Transformer，利用自身预测的动力学奖励梯度引导形态生成 | 👤 Stanford University, Huy Ha, Shuran Song | [🌐](https://transformer-transformer.github.io) | [📃 2607.25798](https://hjfy.top/arxiv/2607.25798) | [✨](https://www.alphaxiv.org/abs/2607.25798) | [📂]- |
 
