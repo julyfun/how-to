@@ -20,7 +20,7 @@ https://hjfy.top/arxiv/2606.17846
     3. 最优化找 base
     4. 下采样减速
 3. VL co-training
-4. 思维链 ECoT 数据
+    1. 思维链 ECoT 数据
 
 # --- AI ---
 
