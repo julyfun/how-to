@@ -15,12 +15,18 @@ https://hjfy.top/arxiv/2606.17846
 ### dataset
 1. OXE, DROID, RDT-1B,
 2. MANO 转换 EGO
-    1. visual: SAM3 + Propainter + Mujoco
-    2. 手部高频噪声： Savitzky–G 滤波
-    3. 最优化找 base
-    4. 下采样减速
+    - visual: SAM3 + Propainter + Mujoco
+    - 手部高频噪声： Savitzky–G 滤波
+    - 最优化找 base
+    - 下采样
 3. VL co-training
-    1. 思维链 ECoT 数据. infer 时动作专家会 cross-attend 这些表示.
+    - 思维链 ECoT 数据. infer 时动作专家会 cross-attend 这些表示.
+### 架构
+1. 本质不是 MoT，而是 cascaded，DiT 每层 cross-attend VLM 最后一层
+    - 推理 4 步.
+2. 表示: 29 * 2 + 预留 22
+    - state 用 absolute. 6d rot.
+    - action 用 relative EE pose, absolute joint. 3d 旋转向量
 
 # --- AI ---
 
