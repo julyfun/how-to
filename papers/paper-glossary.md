@@ -9,4 +9,4 @@ confidence: 2
 ---
 
 - MoT: 每层把两路 transformer 的 token 的 Q/K/V 投影后拼接，在同一个 self-attention 中计算
-- UMI: 人类使用手持夹爪收集的机器人训练数据，有 visual gap，无 joint 数据等问题。
+- UMI: 人类使用手持夹爪收集的机器人训练数据，存在 visual gap，无 joint 数据等问题。
