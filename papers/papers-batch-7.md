@@ -1,5 +1,5 @@
 ---
-title: "papers batch 7"
+title: "papers batch 7: CE Pretraining"
 date: 2026-07-08 14:29:34
 tags: ["papers"]
 author: "julyfun.m5air"
@@ -7,6 +7,20 @@ os: "Darwin julyfundeMacBook-Air.local 25.3.0 Darwin Kernel Version 25.3.0: Wed 
 assume-you-know: [computer]
 confidence: 2
 ---
+
+## Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models
+
+https://hjfy.top/arxiv/2606.17846
+
+### dataset
+1. OXE, DROID, RDT-1B,
+2. MANO 转换 EGO
+    1. visual: SAM3 + Propainter + Mujoco
+    2. 手部高频噪声： Savitzky–G 滤波
+    3. 最优化找 base
+    4. 下采样减速
+
+# --- AI ---
 
 ## Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models
 
