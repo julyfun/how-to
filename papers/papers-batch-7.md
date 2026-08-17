@@ -20,7 +20,7 @@ https://hjfy.top/arxiv/2606.17846
     3. 最优化找 base
     4. 下采样减速
 3. VL co-training
-    1. 思维链 ECoT 数据
+    1. 思维链 ECoT 数据. infer 时动作专家会 cross-attend 这些表示.
 
 # --- AI ---
 
