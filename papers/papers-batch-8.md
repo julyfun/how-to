@@ -10,6 +10,16 @@ confidence: 2
 
 to read.
 
+## RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning
+
+[GPT-5] 从 Diffusion Policy 开始做迭代离线和在线 PPO，再用一致性蒸馏得到单步控制器 | 👤 Shanghai Qizhi Institute, Kun Lei, Huazhe Xu | [🌐](https://lei-kun.github.io/RL-100/) | [📃 2510.14830](https://hjfy.top/arxiv/2510.14830) | [✨](https://www.alphaxiv.org/abs/2510.14830) | [📂](https://github.com/Lei-Kun/RL-100)
+
+![RL-100 训练流程](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/RL-100-pipeline.png)
+
+论文要把依赖人类示范的 Diffusion Policy 继续优化到稳定真机部署。复现时先用 teleop 数据训练 Diffusion Policy，再在每个环境动作内部的 K 个 denoising step 上共享同一个 advantage 并计算 clipped PPO loss；离线阶段用 IQL 训练 Q 和 V，以 AM-Q OPE 只接受估计性能提升的 policy，部署新 policy 采集 rollout 后合并回数据集并重新做 imitation learning，最后用 GAE 做少量 on-policy fine-tuning。训练期间同步加入 consistency distillation loss，将多步 diffusion teacher 压成单步 consistency policy。
+
+主要代价是每个任务仍需明确 reward、真实机器人 rollout、reset 和安全监控。100% 来自论文任务设定和有限评测次数，不能直接推为开放环境中的通用可靠性；单步 consistency policy 对噪声和动作不连续更敏感。
+
 ## Robust-WAM: Bridging Generative Pretraining and Semantic Foresight in World-Action Models
 
 [GPT-5] 保留预训练 WAM 的视频生成路径，用未来帧的 DINOv3 语义监督动作流 | 👤 The Hong Kong University of Science and Technology (Guangzhou), Haodong Yan, Haoang Li | [🌐](https://haodong-yan.github.io/robust-wam-project-page/) | [📃 2608.05903](https://hjfy.top/arxiv/2608.05903) | [✨](https://www.alphaxiv.org/abs/2608.05903) | [📂](https://github.com/Haodong-Yan/Robust-WAM-release)
