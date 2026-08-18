@@ -46,7 +46,9 @@ flowchart TD
 ## VLA-JEPA (24)
 ⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.10098 | Jingwen Sun, Zhibo Chen, 中科大
 
-在 ACT-like 基础上加上 WM 和 latent action query 来利用 human video 进行 pretrain，这一步非预测具体动作，仅表征动力学. 所谓的 JEPA joint-embedding 就是把输入 x (obs) 和目标 y (next_obs) 映射到同一个 latent 空间中做监督，从 latent y 直接回传梯度，区别于 video generation based 需要从像素空间回传梯度，以及 SD 训练的 VAE 需要编码所有图像细节.
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260818224302583.png)
+
+Cascaded. WM 和 latent action query 来利用 human video 进行 pretrain，这一步非预测具体动作，仅表征动力学. 所谓的 JEPA joint-embedding 就是把输入 x (obs) 和目标 y (next_obs) 映射到同一个 latent 空间中做监督，从 latent y 直接回传梯度，区别于 video generation based 需要从像素空间回传梯度，以及 SD 训练的 VAE 需要编码所有图像细节.
 
 下图中，V-JEPA 全程冻结，WM 是从零开始训练的 transformer，注意预测的是 V-JEPA 空间的潜在状态，而 latent-action 之前的就是一个 cascaded VLA.
 
