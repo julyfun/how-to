@@ -8,7 +8,26 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-to read.
+## CUPID: Curating Data your Robot Loves with Influence Functions
+[GPT-5] 用 influence functions 估计每条机器人示范对闭环回报的影响并据此筛选训练数据，支持过滤旧数据和选择新轨迹 | 👤 Stanford University, Christopher Agia, Jeannette Bohg | [🌐](https://cupid-curation.github.io/) | [📃 2506.19121](https://hjfy.top/arxiv/2506.19121) | [✨](https://www.alphaxiv.org/abs/2506.19121) | [📂](https://github.com/agiachris/cupid)
+
+![CUPID 方法图](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/cupid_method.png)
+
+CUPID 先用行为克隆训练 diffusion policy，再收集闭环 rollout 及回报。它用 TRAK 等方法计算训练状态动作对 rollout 动作的 influence，再按 rollout 回报加权汇总成每条示范的 performance influence。过滤任务删除负面影响最大的示范，选择任务保留正面影响最大的示范，最后重新训练策略。代码仓库提供训练、评估、influence 计算、生成筛选配置和重训四阶段流程。
+
+实验覆盖 RoboMimic 和 Franka 真机任务，CUPID 能识别低质量示范、分布偏移下的脆弱策略和背景诱导的伪相关。主要限制是 influence 计算成本接近一次策略训练，rollout 数量过少时 REINFORCE 风格估计方差较大。
+
+## ATHENA: Accelerated Multi-Task Heterogeneous Influence Functions for Robot Data Curation
+
+[GPT-5] 用闭环 rollout 的 influence function 给多任务 VLA 示范排序，再保留高价值子集进行联合微调 | 👤 Tongji University, Tao Xu, Yong-Lu Li | [🌐](https://sii-quantum.github.io/ATHENA.github.io/) | [📃 2606.16208](https://hjfy.top/arxiv/2606.16208) | [✨](https://www.alphaxiv.org/abs/2606.16208) | 📂 -
+
+![ATHENA 系统图](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/ATHENA-system.png)
+
+论文要把 CUPID 一类 influence function 数据筛选扩展到 3.3B 参数的多任务 VLA。复现时先微调 $\pi_0$ 并执行带成功或失败标签的闭环 rollout；对训练样本计算 flow-matching loss gradient，对 rollout action 计算 square-flow surrogate gradient；利用线性层梯度 $\delta x^\top$ 的 Kronecker 结构分别投影 activation 和 backpropagated error，避免构造完整参数梯度；再对投影梯度矩阵做 rank-$r$ Random Truncated Approximation，用低维近似代替稠密 Hessian inversion，最后聚合 timestep influence 得到每条 demonstration 的分数。
+
+多任务筛选使用 Multitask Influence Interaction，分别计算 demonstration 对自身任务的 local influence 和对其他任务的 cross-task influence，将二者按任务内排名归一化后相乘。若直接使用全局 influence 排名，梯度较强的任务会占据保留数据，部分任务可能几乎被删空。
+
+ATHENA 面向 VLA fine-tuning data curation，没有验证预训练数据筛选。方法仍需要为每个任务执行真实机器人 rollout，任务数量扩大后数据采集成本较高；低秩 Hessian 和一阶 influence 也只是局部近似。论文在 RoboTwin 2.0 的 50 个任务及 6 个真机任务上验证，使用一半到三分之二的数据可达到或超过全量联合微调。
 
 ## RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning
 
