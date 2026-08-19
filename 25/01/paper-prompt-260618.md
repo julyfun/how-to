@@ -52,7 +52,7 @@ confidence: 2
 - bad: `深度融合了视觉、语言、动作和触觉`
 - good: 直接说明 `15x8 触觉传感数组 -> [MLP] -> 36 个触觉 token -> concat image&text token -> [VLM]`
 
-好的用词（简单平实而能推测出复现方法）：`生成 subgoal image，经过 image encoder 送给 VLM`、`只有 LIBERO 测试，没有真机`.
+好的用词（简单平实而能推测出复现方法）：`生成 subgoal image，经过 image encoder 送给 VLM`、`只有 LIBERO 测试，没有真机`、`若要复现，则`.
 
 ## 正文示例
 
