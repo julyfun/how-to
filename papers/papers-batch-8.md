@@ -8,6 +8,15 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## DROID: A Large-Scale In-the-Wild Robot Manipulation Dataset
+[GPT-5] 构建统一硬件和采集协议的多场景机器人操作数据集，并验证其对策略泛化的帮助 | 👤 Stanford University, Alexander Khazatsky, Chelsea Finn | [🌐](https://droid-dataset.github.io/) | [📃 2403.12945](https://hjfy.top/arxiv/2403.12945) | [✨](https://www.alphaxiv.org/abs/2403.12945) | [📂](https://github.com/droid-dataset/droid_policy_learning)
+
+![DROID 机器人平台](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/droid_setup.png)
+
+DROID 通过 18 台 Franka Panda、两台可调 Zed 2 立体相机、腕部 Zed Mini 和 Oculus Quest 2 遥操作装置，在 13 个机构的 564 个场景采集 7.6 万条示范。每条数据包含多视角图像、深度、动作、语言指令和相机标定。复现时搭建同一硬件平台，在新场景中标定相机并随机抽取任务让操作者完成，再用现有 Diffusion Policy 等方法训练，比较加入 DROID 前后的 6 个任务和 4 个地点的常规及分布外表现。
+
+DROID 的贡献主要是数据规模、场景多样性和采集规范，不是新的策略结构。数据统一使用 Franka 形态，且部分自动相机标定在杂乱或视角重叠很少的场景中仍会失败。
+
 ## CUPID: Curating Data your Robot Loves with Influence Functions
 [GPT-5] 用 influence functions 估计每条机器人示范对闭环回报的影响并据此筛选训练数据，支持过滤旧数据和选择新轨迹 | 👤 Stanford University, Christopher Agia, Jeannette Bohg | [🌐](https://cupid-curation.github.io/) | [📃 2506.19121](https://hjfy.top/arxiv/2506.19121) | [✨](https://www.alphaxiv.org/abs/2506.19121) | [📂](https://github.com/agiachris/cupid)
 
