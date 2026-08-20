@@ -8,6 +8,15 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## Faster-WAM: Efficient Inference-Time Future Conditioning for Robust World Action Models
+[GPT-5] 保留一次生成的未来视觉表示并在部分 action 层复用，兼顾 OOD 鲁棒性和推理速度 | 👤 华中科技大学, Weiheng Zhao, Xinggang Wang | 🌐 - | [📃 2608.04404](https://hjfy.top/arxiv/2608.04404) | [✨](https://www.alphaxiv.org/abs/2608.04404) | [📂](https://github.com/hustvl/FasterWAM)
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/fasterwam-2608.04404-framework.png)
+
+Faster-WAM 基于 Wan2.2-TI2V-5B，先编码当前观测并用高斯噪声初始化未来视频 token。video expert 仅运行一次并缓存不同深度的 future KV，Interval KV-Fusion 聚合相邻层的 KV。SparseMoT 只在选定的 action stage 注入缓存，其余层单独更新 action token。该缓存供 10 次 action denoising 复用并输出 32 步动作。
+
+推理耗时 252.95 ms 是 Joint-WAM 的 2.21 倍速，但仍需运行 5B video expert 且交互层由人工指定。额外执行未来视频去噪没有收益。与 2608.02365 压缩 action DiT 至一层不同，这篇主要减少未来视觉表示的重复计算。
+
 ## Faster-WAM: Do World Action Models Need Deep Action Modules?
 [GPT-5] 将 30 层 WAM action DiT 缩成单层并复用视频骨干各层 KV | 👤 Huawei Noah’s Ark Lab, Liheng Ma, Rui Heng Yang | 🌐 - | [📃 2608.02365](https://hjfy.top/arxiv/2608.02365) | [✨](https://www.alphaxiv.org/abs/2608.02365) | 📂 -
 
