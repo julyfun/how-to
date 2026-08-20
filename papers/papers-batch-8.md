@@ -8,6 +8,15 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## RoboTTT: Context Scaling for Robot Policies
+[GPT-5] 用测试时更新的 fast weights 压缩 8K 步轨迹并保持固定推理成本 | 👤 NVIDIA、Stanford, Yunfan Jiang, Linxi “Jim” Fan | [🌐](https://research.nvidia.com/labs/gear/robottt/) | [📃 2607.15275](https://hjfy.top/arxiv/2607.15275) | [✨](https://www.alphaxiv.org/abs/2607.15275) | 📂 -
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/robotttt-model-arch.png)
+
+RoboTTT 基于 GR00T N1.7，在 16 个 action DiT layer 的 attention 后各接一个 TTT layer。每层用两层 MLP 作为 fast model 并以自监督损失学习 K→V，再用更新后的 MLP 查询 Q。state、noisy action 和 16 个 register token 跨时间进入 TTT，register token 负责携带 VLM 信息。推理时 slow weights 冻结并将 fast weights 持续传给下一时刻。
+
+训练时为每个 action chunk 独立采样 flow-matching 噪声并使用 TBPTT，避免显存随 8K 步历史增长。预训练使用 16 张 GB200 跑 30K steps，当前未发布代码。
+
 ## Faster-WAM: Efficient Inference-Time Future Conditioning for Robust World Action Models
 [GPT-5] 保留一次生成的未来视觉表示并在部分 action 层复用，兼顾 OOD 鲁棒性和推理速度 | 👤 华中科技大学, Weiheng Zhao, Xinggang Wang | 🌐 - | [📃 2608.04404](https://hjfy.top/arxiv/2608.04404) | [✨](https://www.alphaxiv.org/abs/2608.04404) | [📂](https://github.com/hustvl/FasterWAM)
 
