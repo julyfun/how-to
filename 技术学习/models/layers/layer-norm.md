@@ -13,10 +13,12 @@ assume-you-know:
 confidence: 2
 ---
 
-LN: 只要是特征就视为一个分布内，做归一化。
-- 图像 (b, c, h, w): 一个 sample 的 (c, h, w) 归一化，形状不变.
-- emb: (b, length, dimension)：一个 emb 内做归一化 (d, )
+Embedding (b, l, d):
+- LN: 让每个 (d,) 均值为 1. `mean = emb.mean(dim=-1, keepdim=True) [b, l, 1]`
+- BN: 刚好和 LN 相反，认为 emb 一个应该是均值为 1 的分布，(b, l, d) 的 (b, l) 均值为 1.
+- RMSNorm: 让每个 (d,) 特征落到单位球上.
 
-BN:
-- 图像 (b, c, h, w): 一个 channel 内归一化 (b, h, w)
-- emb: 刚好和 LN 相反，认为 emb 一个维度是一个分布，(b, l, d) 的 (b, l) 内归一化
+
+图像 (b, c, h, w)
+- LN: 一个 sample 的 (c, h, w) 归一化，形状不变.
+- BN: 一个 channel 内归一化 (b, h, w)
