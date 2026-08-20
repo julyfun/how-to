@@ -8,6 +8,15 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## BridgeVLA++: A Data-Efficient, Generalizable, and Memory-Augmented Vision-Language-Action Framework for 3D Manipulation
+[GPT-5] 在 BridgeVLA 的热图动作预测上加入时空记忆，使策略能利用历史步骤和被遮挡的早期几何 | 👤 中国科学院自动化研究所, Peiyan Li, Yan Huang | [🌐](https://bridgevla-plus.github.io/) | [📃 2608.05042](https://hjfy.top/arxiv/2608.05042) | [✨](https://www.alphaxiv.org/abs/2608.05042) | [📂](https://github.com/BridgeVLA/BridgeVLA)
+
+![BridgeVLA++ 架构](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/bridgevla_plus_architecture.png)
+
+BridgeVLA 先把点云渲染成三个正交视图并让 VLM 预测二维热图，再将热图峰值反投影成三维 waypoint。BridgeVLA++ 在 coarse stage 加入初始帧、最近两个 keyframe 和筛选后的 subgoal keyframe token，用于判断下一步做什么。在 fine stage 保存初始点云并按当前 waypoint 重新裁剪渲染，用较少遮挡的几何辅助精确定位。训练时还用二分类损失监督 subgoal keyframe selector。
+
+历史帧以编码后的视觉 token 缓存，空间记忆则在每个决策步重新渲染初始点云。新增记忆约占 2.7 亿参数并增加推理延迟，subgoal selector 仍依赖人工分段标注。
+
 ## DROID: A Large-Scale In-the-Wild Robot Manipulation Dataset
 [GPT-5] 构建统一硬件和采集协议的多场景机器人操作数据集，并验证其对策略泛化的帮助 | 👤 Stanford University, Alexander Khazatsky, Chelsea Finn | [🌐](https://droid-dataset.github.io/) | [📃 2403.12945](https://hjfy.top/arxiv/2403.12945) | [✨](https://www.alphaxiv.org/abs/2403.12945) | [📂](https://github.com/droid-dataset/droid_policy_learning)
 
