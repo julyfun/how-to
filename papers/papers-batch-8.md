@@ -26,8 +26,6 @@ Faster-WAM 使用 30 层 Wan2.2-TI2V-5B 作为视频骨干并缓存每层 KV。K
 
 它只减少 action 侧计算，完整视频骨干仍需前向运行。实验只有 LIBERO、LIBERO-Plus 和 RoboTwin 2.0 仿真，没有真机验证；论文报告单次 action chunk 推理为 66.5 ms。
 
-注意另有一篇同名论文 `2608.04404`，它研究推理时 future conditioning，与本文的浅层 action module 不是同一方法。
-
 ## BridgeVLA++: A Data-Efficient, Generalizable, and Memory-Augmented Vision-Language-Action Framework for 3D Manipulation
 [GPT-5] 在 BridgeVLA 的热图动作预测上加入时空记忆，使策略能利用历史步骤和被遮挡的早期几何 | 👤 中国科学院自动化研究所, Peiyan Li, Yan Huang | [🌐](https://bridgevla-plus.github.io/) | [📃 2608.05042](https://hjfy.top/arxiv/2608.05042) | [✨](https://www.alphaxiv.org/abs/2608.05042) | [📂](https://github.com/BridgeVLA/BridgeVLA)
 
