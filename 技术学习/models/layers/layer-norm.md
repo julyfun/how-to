@@ -14,8 +14,8 @@ confidence: 2
 ---
 
 Embedding (b, l, d):
-- LN: 让每个 (d,) 均值为 1. `mean = emb.mean(dim=-1, keepdim=True) [b, l, 1]`
-- BN: 刚好和 LN 相反，认为 emb 一个应该是均值为 1 的分布，(b, l, d) 的 (b, l) 均值为 1.
+- LN: 让每个 (d,) 内部标准正态分布. `mean = emb.mean(dim=-1, keepdim=True) [b, l, 1]`
+- BN: 刚好和 LN 相反，(b, l, d) 的 (b, l) 取 (- mean) / std
 - RMSNorm: 让每个 (d,) 特征落到单位球上.
 
 
