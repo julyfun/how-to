@@ -131,6 +131,15 @@ ATHENA 面向 VLA fine-tuning data curation，没有验证预训练数据筛选�
 传统 VLA 强化学习的评价器单帧输入难以捕捉操作中的跨时间动态，本文将轻量级 LeJEPA 架构引入作为评价器 WCM，让其同时预测未来潜在状态和估计回报，从而解决状态近似不足的问题，并兼容 Pi0 和 OpenVLA 强化训练。
 
 ## FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation
+[GPT-5] 接触前保留多模态 diffusion 采样并在接触后切到单步高频力控 | 👤 上海交通大学, Lifeng Zhuo, Chuan Wen | [🌐](https://fa-rdp.github.io/) | [📃 2607.28596](https://hjfy.top/arxiv/2607.28596) | [✨](https://www.alphaxiv.org/abs/2607.28596) | [📂](https://github.com/zhuolifeng/FA-RDP)
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/fa-rdp-method.png)
+
+FA-RDP 用一个视觉和力 Transformer 同时预测 10 Hz 的 16 步 chunk 与 30 Hz 的 48 步 chunk，两者都覆盖 1.6 秒。接触前 indicator 检测到动作仍有多种可行路径时，使用低频多步 DDIM；接触后动作不确定性下降时，改用高频单步模型并每步刷新 force token。高频模型通过 MCD 直接预测 clean action chunk，再由 DDPM 公式换算噪声并保留原始残差监督。
+
+indicator 的监督来自冻结低频策略对同一观测采样 8 次后的平均 action 误差，并非人工接触阶段标签。评测只有三项 Flexiv 真机任务，每项 60 条示范。
+
+## FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation
 [Gemini 3.1 Pro] 接触任务中自适应切换扩散策略的推理频率 | 👤 SJTU, Lifeng Zhuo, Han Xue | [🌐]- | [📃 2607.28596](https://hjfy.top/arxiv/2607.28596) | [✨](https://www.alphaxiv.org/abs/2607.28596) | [📂]-
 
 丰富接触任务在接触前需要低频多步采样以保持多模态，而接触后需要高频以反应反馈力，本文提出了频率自适应的反应式扩散策略，利用视觉-力混合 Transformer 根据接触状态动态预测高频和低频动作块。
