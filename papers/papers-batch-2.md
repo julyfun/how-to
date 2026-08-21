@@ -86,10 +86,10 @@ flowchart TD
     classDef highlight fill:#ffff00,stroke:#333,stroke-width:2px;
 ```
 
-## Implicit RDP (13)
+## ImplicitRDP (13)
 - https://hjfy.top/arxiv/2512.10946
 
-一句话：在一个 img 周期内构建高频的短期 wrench kv memory 并在 train-time-only 加入 virtual_target 和 stiffness auxiliary tasks 来强制模型利用力信息，推理时仅需力传感器+位控且并且没有用 admittance control. 例如在插入书本等任务中，如果书本怼到墙壁能快速感知到并反应.
+一句话：在一个 img 周期内构建高频的短期 wrench kv memory 并在 train-time-only 加入 virtual_target 和 stiffness auxiliary tasks 来强制模型利用力信息，推理时仅需力传感器+位控且并且没有用 admittance control. 效果：在插入书本等任务中，如果书本怼到墙壁能快速感知到并反应.
 
 力 reactive + 位控比较适合上述书本插缝的情形，但并不适合套手机壳；后者更需要力控，但力控对于到达目标点的反应却更慢。两者之间存在 tradeoff. 从一个角度考虑，
 人手没有编码器实际上不能做位控，机械臂擅长做位控任务，但前者却能实现一系列灵巧操作，到底是怎么控制的？
