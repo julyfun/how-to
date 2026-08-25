@@ -75,7 +75,7 @@ flowchart LR
             x2_a[轮式仿人型双臂]
         end
     end
-    subgraph 原力灵机 Dexmal
+    subgraph 原力灵机 Dexmal 北京 重庆
         wenbin_tang[唐文斌 @姚班<br>范浩强、周而进、汪天才]
     end
     subgraph 星海图 galaxea-ai 苏州
