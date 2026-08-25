@@ -1,5 +1,5 @@
 ---
-title: "拼接 TUI 流程图的实用 unicode 字符"
+title: "unicode-and-symbols-字符和符号"
 date: 2026-04-16 19:34:12
 tags: ["langs", "markdown"]
 author: "julyfun.m5air"
