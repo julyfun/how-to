@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models
+## Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models (51)
 
 https://hjfy.top/arxiv/2606.17846
 
@@ -22,11 +22,20 @@ https://hjfy.top/arxiv/2606.17846
 3. VL co-training
     - 思维链 ECoT 数据. infer 时动作专家会 cross-attend 这些表示.
 ### 架构
-1. 本质不是 MoT，而是 cascaded，DiT 每层 cross-attend VLM 最后一层
+1. 不是 MoT 而是 cascaded，DiT 每层 cross-attend VLM 最后一层
     - 推理 4 步.
 2. 表示: 29 * 2 + 预留 22
     - state 用 absolute. 6d rot.
     - action 用 relative EE pose, absolute joint. 3d 旋转向量
+
+## Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization
+[GPT-5] 用人类视频作为任务说明，让机器人无需更新参数执行未见过的操作 | 👤 Robbyant, Jiaming Zhou, Yinghao Xu 和 Junwei Liang | [🌐](https://robbyant-research.github.io/Zero-WAM/) | [📃 2608.26103](https://hjfy.top/arxiv/2608.26103) | [✨](https://www.alphaxiv.org/abs/2608.26103) | [📂](https://github.com/robbyant-research/Zero-WAM)
+
+![](https://raw.githubusercontent.com/robbyant-research/Zero-WAM/gh-pages/static/images/paper/framework-v1.0.webp)
+
+Zero-WAM 将人类示范视频作为视觉任务 specification，基于 Wan2.2-TI2V-5B 改成 causal video-action model。模型先根据人类视频和机器人历史生成下一段 robot video，再由 action Transformer 根据生成的视频解码对应动作。训练数据包括按任务均衡采样的 400K robot trajectories 和 HumanGen 的 74.2K 人机配对，后者由 VLM 解析机器人轨迹，再用图像编辑和视频生成模型合成人类操作视频。IFP 额外要求主分支预测多个跨步 future robot-video chunks，迫使表示利用人类视频中的任务信息。
+
+推理时人类视频只编码一次并缓存为 prefix memory，IFP 模块被移除，模型逐段生成机器人视频和动作。RoboTwin 2.0 的 7 个未见任务平均成功率为 46.95%，代码、模型和数据仓库目前标注为 2026 年 9 月 15 日前发布。
 
 # --- AI ---
 
