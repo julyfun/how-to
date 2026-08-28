@@ -33,7 +33,7 @@ https://hjfy.top/arxiv/2606.17846
 
 ![](https://raw.githubusercontent.com/robbyant-research/Zero-WAM/gh-pages/static/images/paper/framework-v1.0.webp)
 
-结构和 lingbot-va 一致。ICL 通过直接 WM 编码 human video，并使用 height-axis RoPE offset 区分.
+架构和 lingbot-va 一致。ICL 通过直接 WM 编码 human video，并使用 height-axis RoPE offset 区分.
 
 预训练 ICL 加入了 aux tasks (named FTP): 额外多预测几个 video chunk，从而避免模型忽略 ICL video.
 
@@ -51,10 +51,10 @@ https://hjfy.top/arxiv/2606.17846
 
 局限显然是假定 VLM-AE 模型且 VLM 无需噪声.
 
+注：
 1. DSRL，输入 obs/state，输出噪声，交给冻结的 AE 去噪并执行得到 reward. 去噪视为黑盒，故解决了 diffusion 难以 RL 的问题.
 2. 这个 a 的长度应该是一个人定的缓冲区长度，这个缓冲区只需覆盖 vla 最大可能延迟.
-
-> 呃我印象中 pi0 MoT diffusion 没法拆成上面这两个时间段的吧.
+3. pi MoT 的 self-attn mask 的 prefix <- suffix，所以都是先 vlm 出 prefix，再执行 AE 10 步去噪.
 
 # --- AI ---
 
