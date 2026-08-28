@@ -49,7 +49,9 @@ BridgeVLA 先把点云渲染成三个正交视图并让 VLM 预测二维热图�
 
 ![DROID 机器人平台](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/droid_setup.png)
 
-DROID 通过 18 台 Franka Panda、两台可调 Zed 2 立体相机、腕部 Zed Mini 和 Oculus Quest 2 遥操作装置，在 13 个机构的 564 个场景采集 7.6 万条示范。每条数据包含多视角图像、深度、动作、语言指令和相机标定。若要复现，则搭建同一硬件平台，在新场景中标定相机并随机抽取任务让操作者完成，再用现有 Diffusion Policy 等方法训练，比较加入 DROID 前后的 6 个任务和 4 个地点的常规及分布外表现。
+DROID 通过 18 台 Franka Panda、两台可调 Zed 2 立体相机、腕部 Zed Mini 和 Oculus Quest 2 遥操作装置，在 13 个机构的 564 个场景采集 7.6 万条示范。每条数据包含多视角图像、深度、动作、语言指令和相机标定。
+
+若要复现，则搭建同一硬件平台，在新场景中标定相机并随机抽取任务让操作者完成，再用现有 Diffusion Policy 等方法训练，比较加入 DROID 前后的 6 个任务和 4 个地点的常规及分布外表现。
 
 DROID 的贡献主要是数据规模、场景多样性和采集规范，不是新的策略结构。数据统一使用 Franka 形态，且部分自动相机标定在杂乱或视角重叠很少的场景中仍会失败。
 
