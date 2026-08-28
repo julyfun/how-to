@@ -28,7 +28,7 @@ https://hjfy.top/arxiv/2606.17846
     - state 用 absolute. 6d rot.
     - action 用 relative EE pose, absolute joint. 3d 旋转向量
 
-## Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization (51)
+## Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization (52)
 ⭐️⭐️⭐️ 直接用 WM 编码 ICL | 👤 Robbyant, Jiaming Zhou, Yinghao Xu 和 Junwei Liang | [🌐](https://robbyant-research.github.io/Zero-WAM/) | [📃 2608.26103](https://hjfy.top/arxiv/2608.26103) | [✨](https://www.alphaxiv.org/abs/2608.26103) | [📂](https://github.com/robbyant-research/Zero-WAM)
 
 ![](https://raw.githubusercontent.com/robbyant-research/Zero-WAM/gh-pages/static/images/paper/framework-v1.0.webp)
@@ -37,7 +37,15 @@ https://hjfy.top/arxiv/2606.17846
 
 预训练 ICL 加入了 aux tasks (named FTP): 额外多预测几个 video chunk，从而避免模型忽略 ICL video.
 
-此外，本文预训练采样时按任务而不是轨迹采样，避免同一任务权重过高.
+此外，本文预训练采样时按任务而不是轨迹采样，避免同一任务权重过高. 仿真 ablation 表明，仅仅这一 sampling 策略就在未见任务上比 lingbotva 提了 20 个点.
+
+> demo 是 inserting 任务.
+
+## Learning to Act While Waiting: RL Finetuning of Generalist Robot Policies Under Inference Latency (53)
+
+⭐️⭐️⭐️ 改进 DSRL 让 AE 获得更多信息 | 👤 Siemens、UC Berkeley、Microsoft、ETH Zurich, Brian Zhu, Sergey Levine | [🌐](https://async-rl-intermediate-information.github.io/) | [📃 2608.23831](https://hjfy.top/arxiv/2608.23831) | [✨](https://www.alphaxiv.org/abs/2608.23831) | 📂 -
+
+![](https://arxiv.org/html/2608.23831v2/body/figures/approach_diagram.png)
 
 # --- AI ---
 
