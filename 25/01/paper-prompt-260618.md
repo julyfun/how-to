@@ -79,4 +79,4 @@ Cosmos Policy 使用 Cosmos 作为预训练模型，然后让它同时预测 fra
 
 ---
 
-让 Pi0 的 VLM 输出 token 来决定是否 reasoning
+让 Pi0 的 VLM 输出额外 token 以此决定是否 reasoning
