@@ -47,6 +47,8 @@ https://hjfy.top/arxiv/2606.17846
 
 ![](https://arxiv.org/html/2608.23831v2/body/figures/approach_diagram.png)
 
+考虑一般 DSRL，输入 state，输出噪声，交给冻结的 AE 去噪并执行得到 reward. 去噪视为黑盒，故可以 RL.
+
 # --- AI ---
 
 ## Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models
