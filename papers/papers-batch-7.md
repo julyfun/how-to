@@ -47,10 +47,14 @@ https://hjfy.top/arxiv/2606.17846
 
 ![](https://arxiv.org/html/2608.23831v2/body/figures/approach_diagram.png)
 
-本文改进 DSRL[1]，首先将异步中必然要执行的 a 作为[2]
+本文改进 DSRL[1]，1. 将异步中必然要执行[2]的 a 作为 DSRL 的条件，2. 如上图，在噪声真正给 AE 使用之前的新 obs/state 也可以拿来作为条件. 最后与 RTC 结合一下。实验基于 pi0 上改动，发现能提升 SR.
 
-1. DSRL，输入 state，输出噪声，交给冻结的 AE 去噪并执行得到 reward. 去噪视为黑盒，故解决了 diffusion 难以 RL 的问题.
+局限显然是假定 VLM-AE 模型且 VLM 无需噪声.
+
+1. DSRL，输入 obs/state，输出噪声，交给冻结的 AE 去噪并执行得到 reward. 去噪视为黑盒，故解决了 diffusion 难以 RL 的问题.
 2. 这个 a 的长度应该是一个人定的缓冲区长度，这个缓冲区只需覆盖 vla 最大可能延迟.
+
+> 呃我印象中 pi0 MoT diffusion 没法拆成上面这两个时间段的吧.
 
 # --- AI ---
 
