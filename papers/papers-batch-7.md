@@ -43,11 +43,14 @@ https://hjfy.top/arxiv/2606.17846
 
 ## Learning to Act While Waiting: RL Finetuning of Generalist Robot Policies Under Inference Latency (53)
 
-⭐️⭐️⭐️ 改进 DSRL 让 AE 获得更多信息 | 👤 Siemens、UC Berkeley、Microsoft、ETH Zurich, Brian Zhu, Sergey Levine | [🌐](https://async-rl-intermediate-information.github.io/) | [📃 2608.23831](https://hjfy.top/arxiv/2608.23831) | [✨](https://www.alphaxiv.org/abs/2608.23831) | 📂 -
+⭐️⭐️⭐️ 对于异步推理，改进 DSRL 让 AE 获得更多信息 | 👤 Siemens、UC Berkeley、Microsoft、ETH Zurich, Brian Zhu, Sergey Levine | [🌐](https://async-rl-intermediate-information.github.io/) | [📃 2608.23831](https://hjfy.top/arxiv/2608.23831) | [✨](https://www.alphaxiv.org/abs/2608.23831) | 📂 -
 
 ![](https://arxiv.org/html/2608.23831v2/body/figures/approach_diagram.png)
 
-考虑一般 DSRL，输入 state，输出噪声，交给冻结的 AE 去噪并执行得到 reward. 去噪视为黑盒，故可以 RL.
+本文改进 DSRL[1]，首先将异步中必然要执行的 a 作为[2]
+
+1. DSRL，输入 state，输出噪声，交给冻结的 AE 去噪并执行得到 reward. 去噪视为黑盒，故解决了 diffusion 难以 RL 的问题.
+2. 这个 a 的长度应该是一个人定的缓冲区长度，这个缓冲区只需覆盖 vla 最大可能延迟.
 
 # --- AI ---
 
