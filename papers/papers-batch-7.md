@@ -56,6 +56,15 @@ https://hjfy.top/arxiv/2606.17846
 2. 这个 a 的长度应该是一个人定的缓冲区长度，这个缓冲区只需覆盖 vla 最大可能延迟.
 3. pi MoT 的 self-attn mask 的 prefix <- suffix，所以都是先 vlm 出 prefix，再执行 AE 10 步去噪.
 
+## Dyna-2: A 1-Million-Hour Scaling Law for World-Action Models (54)
+
+⭐️⭐️⭐️ Dyna-2 1M 小时 Ego 训练 WAM | 👤 Dyna Robotics, Brian Zhu 等 | [🌐](https://www.dyna.co/dyna-2) | 📃 - | ✨ - | 📂 -
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260831162741901.png)
+
+架构没有变化，预训练仅用 Ego，并呈现一定 scailing 曲线. 顺便提出了 one-step video-gen distillation. 此外的遮挡头部相机等 trick，多少有点面向投资人写 blog 了.
+
+
 # --- AI ---
 
 ## Noe-0 Research Preview: Breaking Through the Dexterity Bottleneck with End-to-End Non-Embodied Data
@@ -67,16 +76,6 @@ https://hjfy.top/arxiv/2606.17846
 Noe-0 的数据通过 RoboPocket 同步采集头戴相机和双腕相机，覆盖手部运动、接触细节和任务意图。模型将图像与任务语义输入同一表示，用联合 world-action 去噪同时隐式预测世界变化和规划动作，执行后再用新观测进行下一轮推理。后训练继续使用非具身数据，避免遥操作中的停顿、分段和反复修正压缩预训练得到的自然运动分布。
 
 系统配套 DM3 数据平台和 Data Agent，负责采集任务分发、自动质检、人工复核、标注和版本追踪。页面披露当前累计约 97,388 小时数据，覆盖 47 个城市和 18 个省级地区；固定验证集上，数据量从 10% 增至 100% 时动作损失由 0.0439 降至 0.0364。文章是研究预览，未公开完整模型、数据集和训练代码。
-
-## Dyna-2: A 1-Million-Hour Scaling Law for World-Action Models
-
-[GPT-5] Dyna-2 用超过百万小时的人类第一视角视频预训练 WAM，并验证人类数据规模可预测地提升机器人动作预测 | 👤 Dyna Robotics, Brian Zhu 等 | [🌐](https://www.dyna.co/dyna-2) | 📃 - | ✨ - | 📂 -
-
-![Dyna-2](https://www.dyna.co/assets/research/dyna-2-og.jpg)
-
-Dyna-2 是视频和动作联合生成的 world-action model。视频和动作分别 token 化并通过早期 DiT 层交互，视频分支用因果注意力，动作分支接收本体状态和语言指令；训练时用 flow matching 同时预测未来视频与动作，推理时只生成动作以降低延迟。复现需构造带手部姿态和伪动作标签的人类视频数据，再用 1k、10k、100k、1M 小时的嵌套数据规模训练模型并评估动作误差。
-
-主要结论是：人类视频上的误差随数据量呈幂律下降，纯人类预训练也能提升未见过的机器人数据表现，并进一步传递到少量机器人数据微调后的真机任务。数据集、训练代码和完整模型未公开，因此只能复现方法思想，难以严格复现实验。
 
 ## Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models
 
