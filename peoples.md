@@ -113,52 +113,44 @@ Pieter Abbeel
 Sergey Levine
 - 背景：博士毕业于斯坦福大学，导师为Andrew Ng；曾在Google Brain研究，2016年前后加入UC Berkeley任教。
 - 贡献：深度强化学习、离线强化学习、视觉控制和机器人策略学习的重要推动者；代表工作包括Guided Policy Search、Stochastic Value Gradients、Soft Actor-Critic（SAC）、视觉强化学习和机器人元学习。
-- 产业：2024年成为Physical Intelligence联合创始人之一，参与开发面向通用机器人的基础模型和机器人策略。
+- 产业：2024年成为Physical Intelligence联合创始人之一
 - 关系：Andrew Ng学生；与Pieter Abbeel共同构成伯克利“深度强化学习—机器人学习”主线；指导或影响Chelsea Finn、Abhishek Gupta、Sudeep Dasari等研究者。
 
-### Ken Goldberg
-
+Ken Goldberg
 - 背景：博士毕业于卡内基梅隆大学，1990年代加入UC Berkeley，长期任IEOR与EECS教授，主持AUTOLab。
 - 贡献：机器人抓取、自动化、人机协作、云机器人和医疗机器人领域的代表人物；创建Dex-Net系列，推动利用合成数据和深度学习进行可靠抓取；参与发起Robot Learning Foundation和Conference on Robot Learning（CoRL）。
 - 产业：共同创办Ambi Robotics，将仿真训练、抓取学习和仓储分拣系统商业化；另共同创办Jacobi Robotics。
 - 关系：伯克利机器人与自动化传统的重要奠基者之一；与Pieter Abbeel、Jeff Mahler等在机器人抓取和学习方面有合作。
 
-### Anca Dragan
-
+Anca Dragan
 - 背景：博士毕业于卡内基梅隆大学，导师为Siddhartha Srinivasa；2015年加入UC Berkeley，后进入OpenAI。
 - 贡献：人机协作、可解释机器人、机器人对人类意图的推断、协作式规划和反向奖励设计；代表性工作包括Coactive Learning、Inverse Reward Design及人机协同控制。
 - 关系：与Pieter Abbeel、Sergey Levine所在的伯克利机器人学习群体有交叉合作；其研究将“机器人如何完成任务”扩展到“机器人如何理解并协助人类”。
 
-### Chelsea Finn
-
+Chelsea Finn
 - 背景：本科毕业于斯坦福，博士毕业于UC Berkeley，导师为Pieter Abbeel；曾在Google Brain工作，后任Stanford教授。
-- 贡献：提出Model-Agnostic Meta-Learning（MAML），推动机器人少样本学习、视觉模仿学习和跨任务泛化；代表性工作包括MAML、One-Shot Visual Imitation Learning、元强化学习和机器人通用策略。
-- 产业：Physical Intelligence联合创始人之一，参与开发机器人基础模型π系列。
+- 产业：Physical Intelligence联合创始人之一，参与开发机器人基础模型π系列。DROID 通讯.
 - 关系：Pieter Abbeel学生；与Sergey Levine在机器人策略学习和通用机器人智能方向上形成伯克利—斯坦福—产业界的连续谱系。
 
-### Deepak Pathak
-
+Deepak Pathak
 - 背景：博士毕业于UC Berkeley，导师为Pieter Abbeel；后加入卡内基梅隆大学任教。
 - 贡献：内在动机、无监督视觉表征、机器人自主探索和视觉预测；代表性工作包括Curiosity-driven Exploration、Learning without Forgetting、Visual Foresight和ViNG。
 - 关系：Pieter Abbeel学生；与Sergey Levine、Chelsea Finn等共同推动从“单任务控制”向“可迁移机器人技能学习”转变。
 - 产业：2023年前后参与创办Skild AI，探索面向机器人和具身智能的通用模型。
 
-### Peter Chen
-
+Peter Chen
 - 背景：伯克利机器人学习研究者，曾在Pieter Abbeel团队工作。
 - 贡献：机器人视觉、策略学习和通用机器人系统研究。
 - 产业：Covariant联合创始人，负责将伯克利机器人学习研究转化为仓储分拣和工业机器人系统。
 - 关系：Pieter Abbeel团队成员；与Rocky Duan、Tianhao Zhang共同构成Covariant的伯克利创业班底。
 
-### Rocky Duan
-
+Rocky Duan
 - 背景：伯克利机器人学习研究者，长期参与深度强化学习与机器人策略研究。
 - 贡献：深度强化学习、机器人操作和大规模策略训练；参与推动机器人从实验室控制器向可部署系统演进。
 - 产业：Covariant联合创始人。
 - 关系：Pieter Abbeel、Peter Chen等合作者；属于伯克利机器人学习实验室向产业界外溢的代表人物。
 
-### Tianhao Zhang
-
+Tianhao Zhang
 - 背景：伯克利机器人学习研究者。
 - 贡献：机器人学习、深度强化学习及策略泛化。
 - 产业：Covariant联合创始人之一，参与建立面向工业机器人的“机器人智能”系统。
@@ -180,78 +172,41 @@ Sergey Levine
 
 ## 关键事件时间线
 
-### 2008—2012：伯克利机器人学习基础形成
-
 - 2008年前后，Pieter Abbeel加入UC Berkeley，建立Berkeley Robot Learning Lab。
 - 伯克利开始系统研究模仿学习、机器人示范学习和高维传感器输入下的控制。
 - Guided Policy Search等工作尝试把深度视觉表征与机器人控制结合起来，为后来的端到端机器人策略奠定基础。
 - Andrew Ng门下的博士生和研究者逐渐分布到Stanford、Berkeley、Google Brain等机构，形成早期深度学习与机器人学习网络。
-
-### 2013—2015：深度强化学习进入机器人
-
-- Sergey Levine加入伯克利机器人学习研究体系，推动深度强化学习用于连续控制和视觉运动策略。
+- 2013-2015: Sergey Levine加入伯克利机器人学习研究体系，推动深度强化学习用于连续控制和视觉运动策略。
 - Berkeley团队研究从传统的模型控制、轨迹优化逐步转向神经网络策略和价值函数。
 - BRETT等机器人项目展示了机器人利用视觉和深度学习完成装配、操作任务的可能性。
 - Pieter Abbeel团队与Google、OpenAI等研究群体形成密切合作，伯克利成为深度强化学习机器人研究中心之一。
-
-### 2015—2016：BAIR成立，机器人学习与AI汇流
-
 - 2015—2016年前后，Berkeley AI Research（BAIR）成立，将计算机视觉、机器学习、自然语言处理和机器人研究整合起来。
 - Ken Goldberg的AUTOLab继续推进机器人抓取、自动化和云机器人。
 - Dex-Net项目开始使用大规模合成数据训练抓取模型，探索机器人在现实仓储环境中的可靠操作。
 - Berkeley的研究重点从“单个机器人完成单个任务”转向“利用数据和算法学习可泛化技能”。
-
-### 2016—2017：SAC、MAML与机器人学习产业化前夜
-
-- Sergey Levine及其合作者提出Soft Actor-Critic（SAC），成为连续控制和机器人强化学习中应用最广泛的方法之一。
+- 2016-2017: Sergey Levine及其合作者提出Soft Actor-Critic（SAC），成为连续控制和机器人强化学习中应用最广泛的方法之一。
 - Chelsea Finn在伯克利完成MAML相关工作，推动少样本学习和跨任务快速适应。
 - Pieter Abbeel、Sergey Levine和Ken Goldberg分别从策略学习、强化学习和抓取自动化推进机器人智能。
 - Covariant成立，伯克利机器人学习成果开始直接进入仓储分拣和工业自动化领域。
-
-### 2018—2019：大规模机器人数据与无监督学习
-
-- Chelsea Finn离开伯克利后进入Stanford，继续发展元学习和机器人通用策略。
+- 2018-2019: Chelsea Finn离开伯克利后进入Stanford，继续发展元学习和机器人通用策略。
 - Deepak Pathak等人研究内在动机、视觉预测和自主探索，尝试让机器人在缺少人工标注的情况下学习。
 - RoboNet发布，汇集来自不同实验室和不同机器人平台的交互数据，推动“数据规模”成为机器人学习的重要变量。
 - Berkeley团队逐渐形成“仿真—真实机器人—跨平台数据”的研究路线。
-
-### 2020—2021：从单任务策略到可迁移技能
-
-- 伯克利及其合作团队持续研究视觉强化学习、离线强化学习、机器人模仿学习和跨任务泛化。
+- 2020: 伯克利及其合作团队持续研究视觉强化学习、离线强化学习、机器人模仿学习和跨任务泛化。
 - CQL等离线强化学习方法得到广泛关注，使机器人能够利用既有数据学习，而不必完全依赖在线试错。
 - BridgeData等项目扩大机器人示范数据规模，推动多任务、多机器人策略训练。
 - Anca Dragan在人机协作和机器人价值对齐方面的工作，使具身智能研究从纯粹的控制问题扩展到人与机器人共同决策。
-
-### 2022：机器人基础模型的前夜
-
-- 伯克利研究者参与视觉—语言—动作模型、机器人示范学习和大规模策略预训练。
+- 2022: 伯克利研究者参与视觉—语言—动作模型、机器人示范学习和大规模策略预训练。
 - 研究重点逐步由“强化学习算法性能”转向“机器人能否从互联网规模数据、跨平台数据和人类示范中学习”。
 - Pieter Abbeel、Sergey Levine及其学生和合作者开始更多进入产业界、风险投资和机器人创业生态。
-
-### 2023：通用机器人策略与产业创业升温
-
-- Berkeley团队参与BridgeData V2、Octo等开放机器人策略和数据项目，推动开源通用机器人策略的发展。
+- 2023: Berkeley团队参与BridgeData V2、Octo等开放机器人策略和数据项目，推动开源通用机器人策略的发展。
 - Covariant推出面向仓储机器人的通用机器人智能系统，强调通过数据持续学习新任务。
 - Deepak Pathak参与创办Skild AI，探索机器人基础模型。
 - 以伯克利为中心的机器人学习网络与Stanford、CMU、Google DeepMind、OpenAI等机构进一步融合。
-
-### 2024：Physical Intelligence与机器人基础模型
-
-- Sergey Levine和Chelsea Finn成为Physical Intelligence联合创始人，参与开发π系列机器人基础模型。
+- 2024: Sergey Levine和Chelsea Finn成为Physical Intelligence联合创始人，参与开发π系列机器人基础模型。
 - 伯克利机器人学习思想开始以“机器人基础模型”“跨任务策略”“视觉—语言—动作模型”等形式进入产业主流。
 - Ken Goldberg继续推进抓取自动化、仓储机器人和医疗机器人。
 - Pieter Abbeel则同时活跃于Covariant、Berkeley Robot Learning Lab和AI投资领域，成为连接学术界、产业界与创业生态的关键人物。
-
-## UCB谱系的主要特征
-
-与Stanford以3D视觉、几何计算和仿真环境为主线的谱系相比，UCB的具身智能发展更集中在以下几条路径：
-
-1. **机器人学习**：从示范学习、Guided Policy Search发展到深度强化学习和通用策略。
-2. **强化学习**：SAC、离线强化学习和视觉强化学习成为机器人决策的重要基础。
-3. **机器人抓取**：Dex-Net将合成数据、几何建模和深度学习结合起来，直接面向仓储和工业部署。
-4. **大规模数据**：RoboNet、BridgeData等项目将多机器人数据和跨平台泛化带入研究主流。
-5. **人机协作**：Anca Dragan等人把人类意图、价值对齐和协同决策纳入具身智能。
-6. **产业外溢**：Covariant、Ambi Robotics、Skild AI、Physical Intelligence等公司，构成伯克利机器人学习成果商业化的主要出口。
 
 ## 关系简图
 
