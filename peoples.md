@@ -10,6 +10,8 @@ confidence: 2
 
 感觉 mermaid 还是不太行，来个 markdown li + 自然叙述
 - UCB
+- 苏航
+- 任至意: 又称 Allen Ren. 做 Pi 的预训练
 
 企业
 - 大咖机器人：文强哥
