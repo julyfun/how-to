@@ -9,9 +9,11 @@ confidence: 2
 ---
 
 感觉 mermaid 还是不太行，来个 markdown li + 自然叙述
+- Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
 - Jason Ma: 马也骋，Dyna
 - Ren 任至意: 又称 Allen Ren，做 Pi 的预训练
 - Su 苏航: 交大毕业，现在清华.
+- Su 苏昊: 本科北航，博士斯坦福. 参与 ImageNet.
 - Wang 王尊玄: Genesis
 - Xu 徐丹飞: 佐治亚理工，同时在 NVIDIA. EgoMimic 通讯作者，参与 OXE. 他比较相信 Ego.
 - Yao 姚卯青: 智元合伙人，觅蜂科技 CEO.
@@ -136,6 +138,7 @@ flowchart LR
 
 articles:
 - https://zhuanlan.zhihu.com/p/655943844
+- https://zhuanlan.zhihu.com/p/1942577585402909352
 
 archive commit: 0cdea62fe9eb778ef183587c52e3e89ae4d7514b
 
