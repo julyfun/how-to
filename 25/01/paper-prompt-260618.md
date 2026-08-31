@@ -12,7 +12,7 @@ confidence: 2
 
 ```markdown
 ## <arxiv 论文标题>
-[当前模型具体代号例如 Gemini 3.1 Pro] 一句话主要解决的问题或复现方法，逗号最多一个 | 👤 第一作者学校或机构, 第一作者, 通讯作者或者最后作者 | [🌐](项目网站) 搜不到则显示 "🌐 -" 且无需中括号，后同 | [📃 <arxiv-id e.g. 2505.11917>](https://hjfy.top/arxiv/<arxiv-id>) | [✨](https://www.alphaxiv.org/pdf/<arxiv-id>) | [📂](代码连接) 搜不到就 - |
+[当前模型详细代号例如 Gemini 3.1 Pro, GPT-5.6-Sol] 一句话主要解决的问题或复现方法，逗号最多一个 | 👤 第一作者学校或机构, 第一作者, 通讯作者或者最后作者 | [🌐](项目网站) 搜不到则显示 "🌐 -" 且无需中括号，后同 | [📃 <arxiv-id e.g. 2505.11917>](https://hjfy.top/arxiv/<arxiv-id>) | [✨](https://www.alphaxiv.org/pdf/<arxiv-id>) | [📂](代码连接) 搜不到就 - |
 <空行>
 ![](主图片) 即一张论文主要 system 图或模型架构图，将此图用本地 picgo 上传得到链接，picgo 默认端点已经配置好了
 <空行>

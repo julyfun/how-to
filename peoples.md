@@ -8,6 +8,15 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+感觉 mermaid 还是不太行，来个 markdown li + 自然叙述
+- UCB
+
+企业
+- 大咖机器人：文强哥
+- DYNA：CEO 为 Jason Ma
+
+---
+
 ```mermaid
 flowchart LR
     subgraph UCB
