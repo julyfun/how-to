@@ -9,13 +9,15 @@ confidence: 2
 ---
 
 感觉 mermaid 还是不太行，来个 markdown li + 自然叙述
-- UCB
-- 苏航
-- 任至意: 又称 Allen Ren. 做 Pi 的预训练
+- Jason Ma: 马也骋，Dyna
+- s 苏航: 交大毕业，现在清华.
+- w 王尊玄:
+- 徐丹飞: 佐治亚理工，同时在 NVIDIA. EgoMimic 通讯作者，参与 OXE. 他比较相信 Ego.
+- 任至意: 又称 Allen Ren，做 Pi 的预训练
 
 企业
 - 大咖机器人：文强哥
-- DYNA：CEO 为 Jason Ma
+- DYNA：CEO 为 Jason Ma. 总部在硅谷，分部在上海长宁区.
 
 ---
 
