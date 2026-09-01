@@ -74,7 +74,7 @@ confidence: 2
 
 架构没有变化，预训练仅用 Ego，并呈现一定 scailing 曲线. 顺便使用了 co-training 和 one-step video-gen distillation. 此外的遮挡头部相机等 trick 多少有点面向投资人写 blog 了.
 
-## DM0.5: 面向开放世界的通用具身智能基础模型
+## DM0.5: 面向开放世界的通用具身智能基础模型 (56)
 
 ⭐️⭐️⭐️ 应用了1分钟历史、Co-training 等技巧 | 👤 原力灵机 Dexmal | [🌐](https://www.dexmal.com/blog/dm0.5) | 📃 - | ✨ - | [📂](https://github.com/dexmal/opendm)
 
