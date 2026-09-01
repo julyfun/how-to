@@ -74,6 +74,20 @@ confidence: 2
 
 架构没有变化，预训练仅用 Ego，并呈现一定 scailing 曲线. 顺便使用了 co-training 和 one-step video-gen distillation. 此外的遮挡头部相机等 trick 多少有点面向投资人写 blog 了.
 
+## DM0.5: 面向开放世界的通用具身智能基础模型
+
+⭐️⭐️⭐️ 应用了1分钟历史、Co-training 等技巧 | 👤 原力灵机 Dexmal | [🌐](https://www.dexmal.com/blog/dm0.5) | 📃 - | ✨ - | [📂](https://github.com/dexmal/opendm)
+
+![DM0.5 架构](https://www.dexmal.com/blog/dm0.5/image%204.png)
+
+DM0.5 架构仍为 Pi-Like，由 4B VLM 和 680M Action Expert 构成。模型在机器人操作、导航、人类第一视角视频和通用视觉语言数据上混合训练。
+
+- **Context Abstraction Layer：** 对历史帧做时间和空间采样，再压缩为固定数量 token；训练时随机改变历史长度，使历史缺失时仍可工作。
+- **Embodiment CoT：** 加入 11 种自回归辅助任务，监督任务阶段、环境变化、未来事件和动作意图。
+- **Trajectory Alignment：** 不强制预测动作与演示的固定时刻对应，而用动态规划寻找单调递增的动作匹配，减少不同遥操作速度造成的相位噪声。
+- **数据清洗：** 删除异常值、静止段和无效动作，统一等价动作表示并自动修正任务标签。
+
+例如“拿起杯子擦桌子再放回原位”，当前画面已经看不到杯子的初始位置；DM0.5 从历史 token 中找回该位置，再输出放回动作。推理速度声称在 RTX 4090 上约 10 Hz、H100 上约 20 Hz。真机 Table30 v2 成功率为 43%，但博客没有给出这些模块各自贡献的完整消融，发表时刷到了 Robodojo sim 第一，主要是 memory 得分高.
 
 # --- AI ---
 

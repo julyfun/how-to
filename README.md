@@ -4,11 +4,6 @@ date: 2023-11-16 19:03:00
 tags: ["readme"]
 ---
 
-## 我的文本 index. 中心是 how-to 即本仓库
-
-- how-to (use grep)
-- 滴答清单 (private info)
-
 ## Do
 
 - List the links. For respect to the author and reference.
