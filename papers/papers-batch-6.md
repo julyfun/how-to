@@ -84,8 +84,8 @@ https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 
 探讨 diffusion 这种 generative policy 相比 regression 的优势，认为主要是 iterative compute 带来的 precision 和 ood 情况下 stick to task manifold，**而不是** multimodal 和 expressiveness. 实验中前者仅在高精度任务下有优势.
 
-## How Do VLAs Effectively Inherit from VLMs? (49)
-⭐️⭐️⭐️ Frozen 和 co-training 能保留 VLM 的能力 | 👤 Microsoft Research, Chuheng Zhang, Chuheng Zhang | 🌐 - | [📃 2511.06619](https://hjfy.top/arxiv/2511.06619) | [✨](https://www.alphaxiv.org/abs/2511.06619) | [📂](https://github.com/zhangchuheng123/GrinningFace) |
+## How Do VLAs Effectively Inherit from VLMs? (50)
+⭐️⭐️⭐️ 认为 Frozen 和 co-training 能保留 VLM 的能力 | 👤 Microsoft Research, Chuheng Zhang, Chuheng Zhang | 🌐 - | [📃 2511.06619](https://hjfy.top/arxiv/2511.06619) | [✨](https://www.alphaxiv.org/abs/2511.06619) | [📂](https://github.com/zhangchuheng123/GrinningFace) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260814134612261.png)
 
@@ -96,15 +96,6 @@ https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 2. co-training VLM + VLA 取得了很好的表现.
 3. 多样的数据集提升了模型表现.
 4. LAPA 类型的 Latent Token 相较于离散 Token 对于训练效果更好. 本实验是在 pi0 基础上改动的，而且该结论与 pi0.5 不一致.
-
-## Do as I Do: Dexterous Manipulation Data from Everyday Human Videos (50)
-⭐️⭐️⭐️ 较新的 RGB 重建手物和retargetting 流水线 | 👤 UC Berkeley, Bhawna Paliwal, Jitendra Malik | [🌐](https://do-as-i-do.com/) | [📃 2606.19333](https://hjfy.top/arxiv/2606.19333) | [✨](https://www.alphaxiv.org/abs/2606.19333) | [📂]- |
-
-又一种规模化获取灵巧手操作数据的流水线。
-1. 用HaWoR 从视频中重建手轨迹 ，用 SAM3D（这组自己开发的）追踪刚性物体 - 用于在物理仿真 retargetting 中计算模型和力.
-2. 基于采样的优化方法（类似 MPPI）来做 retargetting 到不同灵巧手上，在仿真中引入扰动和奖励.
-
-总之，本文非常适合作为手册丢给 codex.
 
 ## ---
 

@@ -8,9 +8,19 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models (51)
+## Do as I Do: Dexterous Manipulation Data from Everyday Human Videos (51)
+⭐️⭐️⭐️ 较新的 RGB 重建手物和retargetting 流水线 | 👤 UC Berkeley, Bhawna Paliwal, Jitendra Malik | [🌐](https://do-as-i-do.com/) | [📃 2606.19333](https://hjfy.top/arxiv/2606.19333) | [✨](https://www.alphaxiv.org/abs/2606.19333) | [📂]- |
 
-https://hjfy.top/arxiv/2606.17846
+又一种规模化获取灵巧手操作数据的流水线。
+1. 用HaWoR 从视频中重建手轨迹 ，用 SAM3D（这组自己开发的）追踪刚性物体 - 用于在物理仿真 retargetting 中计算模型和力.
+2. 基于采样的优化方法（类似 MPPI）来做 retargetting 到不同灵巧手上，在仿真中引入扰动和奖励.
+
+总之，本文非常适合作为手册丢给 codex.
+
+
+## Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models (52)
+
+⭐️⭐️⭐️⭐️ https://hjfy.top/arxiv/2606.17846
 
 ### dataset
 1. OXE, DROID, RDT-1B,
@@ -28,7 +38,7 @@ https://hjfy.top/arxiv/2606.17846
     - state 用 absolute. 6d rot.
     - action 用 relative EE pose, absolute joint. 3d 旋转向量
 
-## Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization (52)
+## Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization (53)
 ⭐️⭐️⭐️ 直接用 WM 编码 ICL | 👤 Robbyant, Jiaming Zhou, Yinghao Xu 和 Junwei Liang | [🌐](https://robbyant-research.github.io/Zero-WAM/) | [📃 2608.26103](https://hjfy.top/arxiv/2608.26103) | [✨](https://www.alphaxiv.org/abs/2608.26103) | [📂](https://github.com/robbyant-research/Zero-WAM)
 
 ![](https://raw.githubusercontent.com/robbyant-research/Zero-WAM/gh-pages/static/images/paper/framework-v1.0.webp)
@@ -41,7 +51,7 @@ https://hjfy.top/arxiv/2606.17846
 
 > demo 是 inserting 任务.
 
-## Learning to Act While Waiting: RL Finetuning of Generalist Robot Policies Under Inference Latency (53)
+## Learning to Act While Waiting: RL Finetuning of Generalist Robot Policies Under Inference Latency (54)
 
 ⭐️⭐️⭐️ 对于异步推理，改进 DSRL 让 AE 获得更多信息 | 👤 Siemens、UC Berkeley、Microsoft、ETH Zurich, Brian Zhu, Sergey Levine | [🌐](https://async-rl-intermediate-information.github.io/) | [📃 2608.23831](https://hjfy.top/arxiv/2608.23831) | [✨](https://www.alphaxiv.org/abs/2608.23831) | 📂 -
 
@@ -56,7 +66,7 @@ https://hjfy.top/arxiv/2606.17846
 2. 这个 a 的长度应该是一个人定的缓冲区长度，这个缓冲区只需覆盖 vla 最大可能延迟.
 3. pi MoT 的 self-attn mask 的 prefix <- suffix，所以都是先 vlm 出 prefix，再执行 AE 10 步去噪.
 
-## Dyna-2: A 1-Million-Hour Scaling Law for World-Action Models (54)
+## Dyna-2: A 1-Million-Hour Scaling Law for World-Action Models (55)
 
 ⭐️⭐️⭐️ Dyna-2 1M 小时 Ego 训练 WAM | 👤 Dyna Robotics, Brian Zhu 等 | [🌐](https://www.dyna.co/dyna-2) | 📃 - | ✨ - | 📂 -
 
