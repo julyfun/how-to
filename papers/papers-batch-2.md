@@ -15,10 +15,10 @@ confidence: 2
 - 实际上使用多个 Q_net 取 min 来进行悲观估计.
 - Q_net 这部分看出是 off-policy 的，因为这里 `r` 来自 replay_buffer 而 `a_next = current_policy(s_next)` 则来自 current_policy. 这是 off-policy 多种形式中的一种.
 
-## GreenVLA (10)
+## Green-VLA (10)
 - https://hjfy.top/arxiv/2602.00919
 
-有很多训练 trick，包括5阶段课程学习、质量指标筛选（公开数据集质量表）. 然而，demo 没有什么新东西。
+给出了很多训练 trick，包括5阶段课程学习、质量指标筛选（公开数据集质量表）. 然而，demo 没有什么新东西。
 
 ## GuidedVLA: ybw (11)
 一句话：给 pi0 action expert 加深度、action-primitive 和 attn mask 的 auxiliary tasks 和特征
