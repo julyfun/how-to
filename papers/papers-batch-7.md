@@ -89,6 +89,15 @@ DM0.5 架构仍为 Pi-Like，由 4B VLM 和 680M Action Expert 构成。模型�
 
 例如“拿起杯子擦桌子再放回原位”，当前画面已经看不到杯子的初始位置；DM0.5 从历史 token 中找回该位置，再输出放回动作。推理速度声称在 RTX 4090 上约 10 Hz、H100 上约 20 Hz。真机 Table30 v2 成功率为 43%，但博客没有给出这些模块各自贡献的完整消融，发表时刷到了 Robodojo sim 第一，主要是 memory 得分高.
 
+## Video Prediction Policy: A Generalist Robot Policy with Predictive Visual Representations (57)
+[GPT-5] 先微调视频生成模型提取预测表征，再接 diffusion policy 学动作 | 👤 Tsinghua University, Yucheng Hu, Jianyu Chen | [🌐](https://video-prediction-policy.github.io/) | [📃 2412.14803](https://hjfy.top/arxiv/2412.14803) | [✨](https://www.alphaxiv.org/pdf/2412.14803) | [📂](https://github.com/roboterax/video-prediction-policy)
+
+![](https://video-prediction-policy.github.io/media/images/method.png)
+
+本文想解决机器人策略只看静态图，抓不住动作变化的问题。作者先把 Stable Video Diffusion 微调成面向操作的 TVP。再用 Video Former 把视频模型里的时空表征压成固定 token，最后接 diffusion policy 生成动作。复现时关键是两阶段训练：先混合互联网人类操作数据和机器人操作数据做视频预测，再在 CALVIN、MetaWorld 和真实机器人数据上训练动作头。实验上它在 CALVIN、MetaWorld 和两个真实平台上都优于基线。推理时每个观测只过一次 TVP，单次小于 160ms，配合 10 步 action chunking 可跑到 7-10Hz。
+
+有趣的是，单步预测表征已经能带出物体和机械臂的运动信息，不必真的把完整未来视频采样出来。去掉互联网数据、去掉 SVD 预训练或去掉 Video Former 都会让性能明显下降，说明预训练视频模型和特征聚合都很关键。
+
 # --- AI ---
 
 ## Noe-0 Research Preview: Breaking Through the Dexterity Bottleneck with End-to-End Non-Embodied Data
