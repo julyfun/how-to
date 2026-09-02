@@ -1,5 +1,5 @@
 ---
-title: "papers batch 7: CE Pretraining"
+title: "papers batch 7"
 date: 2026-07-08 14:29:34
 tags: ["papers"]
 author: "julyfun.m5air"
@@ -90,13 +90,13 @@ DM0.5 架构仍为 Pi-Like，由 4B VLM 和 680M Action Expert 构成。模型�
 例如“拿起杯子擦桌子再放回原位”，当前画面已经看不到杯子的初始位置；DM0.5 从历史 token 中找回该位置，再输出放回动作。推理速度声称在 RTX 4090 上约 10 Hz、H100 上约 20 Hz。真机 Table30 v2 成功率为 43%，但博客没有给出这些模块各自贡献的完整消融，发表时刷到了 Robodojo sim 第一，主要是 memory 得分高.
 
 ## Video Prediction Policy: A Generalist Robot Policy with Predictive Visual Representations (57)
-⭐️⭐️⭐️⭐️ 先微调视频生成模型提取预测表征，再接 diffusion policy 学动作 | 👤 Tsinghua University, Yucheng Hu, Jianyu Chen | [🌐](https://video-prediction-policy.github.io/) | [📃 2412.14803](https://hjfy.top/arxiv/2412.14803) | [✨](https://www.alphaxiv.org/pdf/2412.14803) | [📂](https://github.com/roboterax/video-prediction-policy)
+⭐️⭐️⭐️⭐️ 微调 SVD 并将 UNet latent 输入 DiT DP | 👤 Tsinghua University, Yucheng Hu, Jianyu Chen | [🌐](https://video-prediction-policy.github.io/) | [📃 2412.14803](https://hjfy.top/arxiv/2412.14803) | [✨](https://www.alphaxiv.org/pdf/2412.14803) | [📂](https://github.com/roboterax/video-prediction-policy)
 
 ![](https://video-prediction-policy.github.io/media/images/method.png)
 
-本文想解决机器人视觉编码器预训练只关注静态信息的问题。作者先把 Stable Video Diffusion 微调成面向操作的 TVP[1]，单次前向后[2]将其中 UNet 每一层 feature 拼接（中间形状小的直接线性插值到一样大），再用 Video Former[3] 把视频模型里的时空表征压成固定 token，最后接 DiT AE 生成动作。
+本文是 Video Action Model 早期工作，想解决机器人视觉编码器预训练只关注静态信息的问题。作者先把 Stable Video Diffusion 微调成面向操作的 TVP[1]，单次前向后[2]将其中 UNet 每一层 feature 拼接（中间形状小的直接线性插值到一样大），再用 Video Former[3] 把视频模型里的时空表征压成固定 token，最后接 DiT AE 生成动作。
 
-有趣的是，单步预测表征已经能带出物体和机械臂的运动信息，不必真的把完整未来视频采样出来。去掉互联网数据、去掉 SVD 预训练或去掉 Video Former 都会让性能明显下降，说明预训练视频模型和特征聚合都很关键。
+去掉互联网数据（是的，本文先用互联网数据微调了 SVD）、去掉 SVD 预训练(from scratch) 或去掉 Video Former 都会让性能明显下降.
 
 1. 新。就是让 SVD 去 cross attn `CLIP(task_desc)`.
 2. 可视化实验中展现了单步去噪生成的图像运动趋势也十分清楚.
