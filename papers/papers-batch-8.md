@@ -8,6 +8,8 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+# --- AI ---
+
 ## RoboTTT: Context Scaling for Robot Policies
 [GPT-5] 用测试时更新的 fast weights 压缩 8K 步轨迹并保持固定推理成本 | 👤 NVIDIA、Stanford, Yunfan Jiang, Linxi “Jim” Fan | [🌐](https://research.nvidia.com/labs/gear/robottt/) | [📃 2607.15275](https://hjfy.top/arxiv/2607.15275) | [✨](https://www.alphaxiv.org/abs/2607.15275) | 📂 -
 
