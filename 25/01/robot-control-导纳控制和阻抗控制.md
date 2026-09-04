@@ -1,5 +1,5 @@
 ---
-title: "导纳控制和阻抗控制"
+title: "Robot control, 导纳控制和阻抗控制"
 date: 2025-01-01 20:51:26
 tags: ["25", "01"]
 author: "julyfun.m5air"
@@ -8,17 +8,24 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-阻抗控制(Impedance Control, desired 位置 -> 力)需要最常规的闭环力矩控制器，不一定要独立力传感器
+阻抗控制(Impedance Control, 期望位置 -> 力[1])需要最常规的闭环力矩控制器，不一定要独立力传感器
+- 把软的变硬.
 - 输入 位置 目标 x_des, v_des, a_des （一般是多个点）和当前 x, v, a
 - 输出 力 `F_cmd = K * (x_des - x) + B * (v_des - v) + M * (a_des - a)`
 
-导纳控制(Admittance control，external 力 -> 位置)不需要闭环力矩控制器，但需要力传感器. 适合需要根据环境施加的力”让步“的场景
+导纳控制(Admittance control，外部力 -> 期望位置[1])不需要闭环力矩控制器，但需要力传感器. 适合需要根据环境施加的力”让步“的场景. 得出期望位置以后还会交给阻抗控制器.
+- 把硬的变软.
 - 输入 外力, v, x_ref 是机器人在无外力时应该跟踪的位置
 - 输出 位置.  计算加速度 `a = (F_ext - B * v - K * (x - x_ref)) / M`，然后显示欧拉积分直接 * dt 计算 v, a.
 
+1. 这里都是指末端的.
+
 ---
 
-柔顺控制(Compliance Control)
+力控
+- 可以用 impedance control 或 admittance control 实现.
+
+柔顺控制(Compliance Control): ?
 
 通用控制 (p 位置, F 外力) -> T 输出力矩.
 - `  F = k(p  - p0) - m p'' - σ p'  `
