@@ -31,3 +31,6 @@ confidence: 2
 通用控制 (p 位置, F 外力) -> T 输出力矩.
 - `  F = k(p  - p0) - m p'' - σ p'  `
 - 可设定: k 刚度 (stiffness. 常见 10000N/m) . m 惯性 . σ 阻尼 (damping).
+
+不错的文章：https://zhuanlan.zhihu.com/p/31811242 : 为什么我们在机器人运动控制中一直在强调力控？（Force/Torque Control）
+- 单单将关节目标位置（Target Position）作为控制输出量远远不能达到应用的要求，必须引入力矩/力控制输出量，或者将力矩/力作为闭环反馈量引入控制.
