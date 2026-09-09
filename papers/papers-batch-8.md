@@ -72,7 +72,7 @@ CUPID 先用行为克隆训练 diffusion policy，再收集闭环 rollout 及回
 
 ![ATHENA 系统图](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/ATHENA-system.png)
 
-论文要把 CUPID 一类 influence function 数据筛选扩展到 3.3B 参数的多任务 VLA。复现时先微调 $\pi_0$ 并执行带成功或失败标签的闭环 rollout；对训练样本计算 flow-matching loss gradient，对 rollout action 计算 square-flow surrogate gradient；利用线性层梯度 $\delta x^\top$ 的 Kronecker 结构分别投影 activation 和 backpropagated error，避免构造完整参数梯度；再对投影梯度矩阵做 rank-$r$ Random Truncated Approximation，用低维近似代替稠密 Hessian inversion，最后聚合 timestep influence 得到每条 demonstration 的分数。
+论文要把 CUPID 一类 influence function 数据筛选扩展到 3.3B 参数的多任务 VLA。复现时先微调 $pi_0$ 并执行带成功或失败标签的闭环 rollout；对训练样本计算 flow-matching loss gradient，对 rollout action 计算 square-flow surrogate gradient；利用线性层梯度 $delta x^top$ 的 Kronecker 结构分别投影 activation 和 backpropagated error，避免构造完整参数梯度；再对投影梯度矩阵做 rank-$r$ Random Truncated Approximation，用低维近似代替稠密 Hessian inversion，最后聚合 timestep influence 得到每条 demonstration 的分数。
 
 多任务筛选使用 Multitask Influence Interaction，分别计算 demonstration 对自身任务的 local influence 和对其他任务的 cross-task influence，将二者按任务内排名归一化后相乘。若直接使用全局 influence 排名，梯度较强的任务会占据保留数据，部分任务可能几乎被删空。
 
