@@ -102,6 +102,21 @@ DM0.5 架构仍为 Pi-Like，由 4B VLM 和 680M Action Expert 构成。模型�
 2. 可视化实验中展现了单步去噪生成的图像运动趋势也十分清楚.
 3. 新. 基于 attn 和 FFN 将视频 latent 提取为固定数量 token，上图中有.
 
+## OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining
+⭐️⭐️⭐️⭐️ 系统比较 WAM 的架构和训练选择 | 👤 National University of Singapore, Yuran Wang, Lin Shao 和 Hang Zhao | [🌐](https://openwam-official.github.io/) | [📃 2609.07398](https://hjfy.top/arxiv/2609.07398) | [✨](https://www.alphaxiv.org/pdf/2609.07398) | [📂](https://github.com/OpenWAM-Official/OpenWAM) |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/openwam-architecture.png)
+
+为了解决现有 WAM 同时改动多个组件而难以判断收益来源的问题，本文提供模块化代码并逐项比较视频骨干、视觉编码器、动作网络、注意力方向、预训练数据和去噪顺序。最终 OpenWAM-α 使用传统架构，Wan2.2-TI2V-5B 视频 DiT 和独立的 1B ActionDiT。当前图像经冻结的 Wan VAE 编码后与带噪未来视频 latent 输入视频分支；带噪的 80 维动作序列输入动作分支。两分支在全部 30 层通过联合 self-attention 互相读取特征，各自通过 cross-attention 接收语言和机器人状态。预训练混合约 6400 小时数据：人类视频只监督视频预测；机器人数据同时监督视频和动作的 flow matching。训练时两个分支独立采样噪声时间并更新两个 DiT，冻结 VAE 和文本编码器；推理时固定当前帧并同步去噪 10 步得到动作。文章附录是不错的 recipe.
+
+Takeaways:
+1. WAM 具身预训练主要改进泛化能力.
+2. 同等时长下包含 Ego 数据有助于改进泛化.
+3. 先人类后机器人 (pre + mid training) 和直接联合预训练 (pre only) 没有区别.
+4. IDM 对比 Joint 生成没有优势.
+5. 视觉特征压缩有收益 e.g. DINO-V3 + S-VAE.
+6. WAM vs VLA: 前者 ID 优势，后者 OOD 优势.
+
 # --- AI ---
 
 ## Noe-0 Research Preview: Breaking Through the Dexterity Bottleneck with End-to-End Non-Embodied Data
