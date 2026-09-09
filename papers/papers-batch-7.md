@@ -102,7 +102,7 @@ DM0.5 架构仍为 Pi-Like，由 4B VLM 和 680M Action Expert 构成。模型�
 2. 可视化实验中展现了单步去噪生成的图像运动趋势也十分清楚.
 3. 新. 基于 attn 和 FFN 将视频 latent 提取为固定数量 token，上图中有.
 
-## OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining
+## OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining (58)
 ⭐️⭐️⭐️⭐️ 系统比较 WAM 的架构和训练选择 | 👤 National University of Singapore, Yuran Wang, Lin Shao 和 Hang Zhao | [🌐](https://openwam-official.github.io/) | [📃 2609.07398](https://hjfy.top/arxiv/2609.07398) | [✨](https://www.alphaxiv.org/pdf/2609.07398) | [📂](https://github.com/OpenWAM-Official/OpenWAM) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/openwam-architecture.png)
