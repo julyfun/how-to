@@ -51,7 +51,7 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 文章还做了海量工程优化. Demo 效果非常好，此外实验发现 diffusion model 在 OOD 情况下比 RL model 更稳定.
 
 ## Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories (47)
-⭐️⭐️⭐️ 10 万小时预训练 | 👤 小米, Jun Guo, Nan Sun | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-1.html) | [📃 2607.15330](https://hjfy.top/arxiv/2607.15330) | [✨](https://www.alphaxiv.org/abs/2607.15330) | [📂-]() |
+⭐️⭐️⭐️⭐️ 10 万小时预训练 | 👤 小米, Jun Guo, Nan Sun | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-1.html) | [📃 2607.15330](https://hjfy.top/arxiv/2607.15330) | [✨](https://www.alphaxiv.org/abs/2607.15330) | [📂-]() |
 
 xiaomi 打造了 VLM 自动标注的流水线. 后训练则是遥操. 结论和 Gen0 相似，即认为 scaling 尚未饱和. 登顶当前 robodojo sim.
 
@@ -59,7 +59,7 @@ xiaomi 打造了 VLM 自动标注的流水线. 后训练则是遥操. 结论和 
 1. Model scaling 的曲线和 gen0 并不一致，后者在模型不足 7B 的时候 err 会逐渐上升.
 2. 文中图表显示 Pi0.5 暴打 xiaomi-robotics-0?
 3. 文中图表 RoboCasa 似乎 Pi0-FAST 暴打 Pi0.5.
-4. Demo phone-packing 流畅得如同遥操.
+4. 具有非常棒的 Demo，phone-packing 流畅得如同遥操.
 
 ## Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control? (48)
 ⭐️⭐️⭐️ 认为 action chunking 的有效性主要源于 implicit ensemble | 👤 Politecnico di Milano, Filippo Lazzati, Sergey Levine | [🌐](https://action-chunking.github.io) | [📃 2608.02547](https://hjfy.top/arxiv/2608.02547) | [✨](https://www.alphaxiv.org/abs/2608.02547) | [📂-]() |
