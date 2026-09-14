@@ -10,6 +10,15 @@ confidence: 2
 
 # --- AI ---
 
+GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation
+[GPT-6] 单步生成未来视觉 latent 后由逆动力学模型输出动作，联合训练时筛选与示范动作相容的未来预测 | 👤 AgiBot, AgiBot Research Team（首位个人作者 Renhang Liu）, Maoqing Yao | [🌐](https://ge-act-v2.github.io/) | [📃 2609.05588](https://hjfy.top/arxiv/2609.05588) | [✨](https://www.alphaxiv.org/pdf/2609.05588) | 📂 - |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/ge-act-v2-system.png)
+
+为利用无动作标签的视频和无语言标签的机器人轨迹，本文分别预训练未来视觉生成器和逆动力学模型 IDM。CoAE（基于 DC-AE 的图像自编码器）通过图像重建及三种视觉教师的特征对齐将每帧压成 24 个 512 维 token。冻结的 Qwen3.5-2B 提供图像条件下的文本特征；SVP（采用条件 MeanFlow 的 DiT）一次前向生成未来 latent；IDM 读取当前与未来 latent 及机器人状态后用五步 flow matching 输出关节动作。联合训练的 KASO 每次生成四个候选未来，按 IDM 在候选未来与真实未来条件下的动作速度预测差异选一个进行端到端更新；同时保留真实视频预测和真实视频条件下的动作损失。生成器和 IDM 从随机权重训练；CoAE 继承部分 DC-AE 权重。
+
+真机主实验直接评估预训练模型；仿真实验先做基准内微调再测 OOD。300 至 30000 小时的 scaling 指联合训练阶段，各组此前已共享 39000 小时视频及 32000 小时动作轨迹预训练。顺序指令、部分精细操作和 LIBERO-Plus 背景扰动仍是弱项；项目页代码尚待发布。
+
 ## RoboTTT: Context Scaling for Robot Policies
 [GPT-5] 用测试时更新的 fast weights 压缩 8K 步轨迹并保持固定推理成本 | 👤 NVIDIA、Stanford, Yunfan Jiang, Linxi “Jim” Fan | [🌐](https://research.nvidia.com/labs/gear/robottt/) | [📃 2607.15275](https://hjfy.top/arxiv/2607.15275) | [✨](https://www.alphaxiv.org/abs/2607.15275) | 📂 -
 
