@@ -226,9 +226,15 @@ Ken Goldberg ── AUTOLab / Dex-Net / Ambi Robotics
 Anca Dragan ── Berkeley HRI / OpenAI
 ```
 
-# markdown li
+# 上海篇
 
-感觉 mermaid 还是不太行，来个 markdown li + 自然叙述
+徐英豪 (Yinghao Xu):
+- 背景：港科大助理教授
+- 贡献：lingbot-map, va, world, depth.
+- 关系
+
+# peoples: markdown li
+
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
 - Jason Ma: 马也骋，Dyna
 - Ren 任至意: 又称 Allen Ren，做 Pi 的预训练
