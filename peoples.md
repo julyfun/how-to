@@ -229,7 +229,7 @@ Anca Dragan ── Berkeley HRI / OpenAI
 # 上海篇
 
 徐英豪 (Yinghao Xu):
-- 背景：3D Vision 出身，之前在灵波。港科大助理教授.
+- 背景：浙大本科，港中文博士，斯坦福计算成像实验室博士后。3D Vision 出身，之前在灵波做了很多 WM 工作。港科大助理教授.
 - 贡献：lingbot-map/va/world/depth 以及 Zero-WAM 的通讯作者
 - 关系
 
