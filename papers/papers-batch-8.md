@@ -8,16 +8,17 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-# --- AI ---
-
-## JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling
-deepseek-flash[1m] 冻结 V-JEPA 2.1 把当前帧与未来帧叠成两帧一起编码得到的联合表征当作预测目标，让共享的 Qwen2.5-0.5B 预测器在同一个前向里既回归它又产出动作条件 | 👤 中国人民大学, Yihan Lin, Cheng Chi 和 Jing Zhang | [🌐](https://spritewithoutice.github.io/JEPA_WAM/) | [📃 2608.09381](https://hjfy.top/arxiv/2608.09381) | [✨](https://www.alphaxiv.org/pdf/2608.09381) | [📂](https://github.com/SpriteWithoutIce/JEPA_WAM)
+## JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling (59)
+⭐️⭐️⭐️ deepseek-flash[1m] 冻结 V-JEPA 2.1 把当前帧与未来帧叠成两帧一起编码得到的联合表征当作预测目标，让共享的 Qwen2.5-0.5B 预测器在同一个前向里既回归它又产出动作条件 | 👤 中国人民大学, Yihan Lin, Cheng Chi 和 Jing Zhang | [🌐](https://spritewithoutice.github.io/JEPA_WAM/) | [📃 2608.09381](https://hjfy.top/arxiv/2608.09381) | [✨](https://www.alphaxiv.org/pdf/2608.09381) | [📂](https://github.com/SpriteWithoutIce/JEPA_WAM)
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/jepa-wam-2608.09381-arch.png)
 
 视频生成式的 world action model 推理贵。已有的 latent 方案把未来压成少量 token 或把预测模块与动作生成分开。本文冻结 V-JEPA 2.1 ViT-L/16，训练时把当前帧 O_t 与 δ 步后那一帧沿时间轴叠成两帧一起编码当作预测目标，因 V-JEPA 的 tubelet 是 2 帧所以输出仍是每视角 24x24 个 1024 维 patch token 且与当前帧 token 位置一一对应。共享预测器是 Qwen2.5-0.5B。视觉 token 经 1024→896→896 的两层 MLP 送入，其视觉位置的隐状态再经 896→2048→1024 的 MLP 逐 patch 余弦回归该目标。动作侧另加 64 个 action placeholder token 取其隐状态条件一个 16 层 DiT 的 flow matching action expert。同一目标也能挂到预训练 π0.5 上：加 64 个可学 future token 其输出隐状态 reshape 成 8x8 再上采样到 24x24 对齐 V-JEPA ViT-G 目标，动作 token 屏蔽不让看它们。推理时删掉预测分支只用当前帧。
 
 消融里 joint 目标 79.2 高于 future only 77.3 和显式端点相减 70.9。但冻结特征探针显示端点相减更会预测端点位移(R² 0.740 对 0.718)，joint 的优势在时间间隔解码和扣掉端点位移后的轨迹残差。LIBERO-Plus 分项上 camera 79.2 和 noise 83.6 很高而 robot 扰动只有 59.2 低于 π0.5 的 75.3，涨的主要是场景外观层面的泛化。作者也承认这个目标和语言无关，同一观测在不同指令下通向不同转移时表达不了。
+
+
+# --- AI ---
 
 ## GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation
 [GPT-6] 单步生成未来视觉 latent 后由逆动力学模型输出动作，联合训练时筛选与示范动作相容的未来预测 | 👤 AgiBot, AgiBot Research Team（首位个人作者 Renhang Liu）, Maoqing Yao | [🌐](https://ge-act-v2.github.io/) | [📃 2609.05588](https://hjfy.top/arxiv/2609.05588) | [✨](https://www.alphaxiv.org/pdf/2609.05588) | 📂 - |
