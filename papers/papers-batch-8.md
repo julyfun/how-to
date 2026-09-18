@@ -21,6 +21,15 @@ confidence: 2
 
 # --- AI ---
 
+## OM-1: Frontier Robot Intelligence, Learned Firsthand from Humans
+deepseek-flash[1m] 只用人类戴着采集设备干活产生的数据训练一个跨机器人本体的策略，不用遥操作也不用真机数据 | 👤 Reward AI (旧金山湾区, 联创 Zipeng Fu 和 Chen Wang) | [🌐](https://rewardai.com/blog/OM-1/) | 📃 - | ✨ - | 📂 -
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/om1-2609-omnibody-framework.png)
+
+想让机器人有人一样的手部操作效率，采数据的设备就不能逼人改动作。作者沿用自己之前的 DexCap 做了一副 7 自由度的可穿戴 Omnibody Hand，手指不对着人手逐关节复制，只保留捏取、指屈和从精确抓过渡到力量抓这几件事。数据端同时录三路：图像(全局快门手内相机)、接触前的接近感和接触后的触觉与指间接近觉、手臂与手指位姿(视觉惯性再融合电磁跟踪)，另外沿同一条轨迹记力。策略 OM-1 是单阶段训练的，最早的演示和最新的演示喂同一个模型，没有单独的预训练和后训练，也不吃遥操作和真机数据。推理时每个模态按它自己传感器的原始频率进网络而不是重采样到统一帧率。输出动作带方向、速度、力和抓取等事件的时机，底下还有个仿真里用 RL 训出来的高频控制层，考虑速度加速度相关的动力学、扰动和延迟，并且跑在自己的时钟上不被策略推理延迟卡住。
+
+没有 arXiv 论文也没有开源代码，架构细节、参数量、损失和超参一概没给，能复现的只有采集端。唯一的定量结果在跟踪上：3 到 67 cm/s 八个速度各跑十次，电磁跟踪的过冲均误差从 0.4 mm 涨到 9.5 mm 而视觉惯性从 2.1 mm 涨到 24.9 mm。任务侧只有一句不到 30 分钟数据学会新任务。没有任务名也没有成功率，也没有和遥操作或真机数据的对照组。
+
 ## RoboRSI: Stable, Efficient, and Reusable Robot Self-Evolution in Complex Real-World Environments
 deepseek-flash[1m] 用 Manager、Planner、Engineer、Reviewer 四个 agent 组成闭环，让机器人自己迭代拆任务改代码并把稳定分支固化成代码技能 | 👤 穹彻智能 Noematrix Team | [🌐](https://lab.noematrix.ai/blog/2-roborsi/) | 📃 - | ✨ - | [📂](https://github.com/nssmd/RoboRSI)
 
