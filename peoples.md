@@ -238,7 +238,31 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - 贡献：MMDetection3D, PointLLM, CVPR2023 最有影响力 paper.
 - 关系：阿汐是其博士生.
 
-# peoples: markdown li
+# 北京其他
+
+## 人大高瓴
+
+胡迪 (Di Hu)：
+- 背景：本科、博士均西北工业大学（2010–2014 / 2014–2019，导师李学龙，亦受卢孝强、聂飞平指导）；2019–2020 百度研究院 Research Scientist；2020 年入职人大高瓴，现准聘副教授、博导。
+- 贡献：创办 GeWu-Lab（格物实验室），人大 manipulation 唯一贯穿 2023–2026 的组；MS-Bot（CoRL 2024 Oral，视听触多传感器融合精细操作）；AnyTouch（ICLR 2025，视触觉跨设备统一表征）；KOI（CoRL 2024）；多模态学习侧有 OGM、Mal）；2026 与北京人形机器人创新中心联合开源 Robo-ValueRL。
+- 关系：李学龙学生；长期合作王东、赵斌（TeleAI/中科院自动化所）与文继荣；指导学生卫雅珂（2026 毕业留人大高瓴任教）、夏文科、冯若轩、杨泽群等；与朝闻道机器人、T三方合作 MS-Bot。与卢策吾、王鹤、弋力无合作证据。
+
+张静 (Jing Zhang)：
+- 背景：本科北京交通大学（2002–2006）；清华计算机硕士（2006–2009）、博士（2012–2016）；2009–2012 IBM 中国研发中心；2016 入职人大，讲师→副教授（2020）→教授，现任计算机系系主任。
+- 贡献：智谱 ZR-0 通讯作者（ECCV 2026，2.6B 参数 VLA，双系统 + 密集具身思维链，LIBERO 单臂 97.8%、RoboTwin 双臂 88.7%，配 6000 万帧 ProcCorpus-60M，代码开源在 RUCKBReasoning/ZR-0）；ProcVLM（过程奖励 VLM）；SIGKDD 2020 时间检验 oogle Scholar 引用 1.3 万+。
+- 关系：清华计算机博士（师从唐杰、李娟子——此条仅单一来源，建议核实）；与智谱深度合作（ZR-0、ProcVLM 均有智谱实习作者）；人大知识工程方向出身，近年转向大模型对齐 + 具身。
+
+金琴 (Qin Jin)：
+- 背景：清华计算机本硕（1996 / 1999）；CMU 博士（Language and Informati 大信息学院正教授。
+- 贡献：AIM3 Lab（Multi-level Multi-aspect Multi-modal）PI，与 GeWu-Lab 并列的第二个 manipulation 通讯锚点；EasyMimic（ICRA 2026，$300 低成本 SO100-Plus 平台，从人类视频 + 少量机器人数据微调 GR00T N1.5，四任务平均 0.88 vs 纯机器人数据 0.26；VLA 规模化与可靠性系列（Rethinking VLA Model Scaling、VLA 可靠性信号等6 篇以上）。
+- 关系：CMU 博士；实验室四大方向含「3D & Embodied」，明确配备机械臂、机 、字节、腾讯、CMU、NTU 合作。
+
+卢志武 (Zhiwu Lu)：
+- 背景：本科武汉大学数学（1998–2002）；北大应用数学硕士（2002–2005）；香港城市大学计算机博士（2008–2011）；北大计算机所助理研究员（2011–2013）；2013 人大信息学院副教授，2019 起高瓴教授；软通动力首席 AI 科学家。
+- 贡献：文澜 BriVL 主要设计者（Nature Communications 2022）；视频生成底座 VDT（ICLR 2024）；近期切入 cross-embodiment VLA：MoH 动作分块（ICML 2026，通讯）、Action Priors for Cross-embodiment Robot Manipulation、TempoVLA、Free-View Robot Ma
+- 关系：学生丁明宇（Mingyu Ding）是其进入 manipulation 的关键纽带 —— 人大本硕（2020 硕士毕业，导师卢志武），现 UNC Chapel Hill 助理教授，两人以平等合作者身份共同通讯 MoH 与 Action Priors；另有学生高一钊（智子引擎 CEO）；合作文继荣、宋睿华
+
+# 其他
 
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
 - Jason Ma: 马也骋，Dyna
