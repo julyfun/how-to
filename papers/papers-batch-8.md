@@ -21,6 +21,10 @@ confidence: 2
 
 # --- AI ---
 
+## Bench2Dex
+
+灵巧手 bench.
+
 ## OM-1: Frontier Robot Intelligence, Learned Firsthand from Humans
 deepseek-flash[1m] 只用人类戴着采集设备干活产生的数据训练一个跨机器人本体的策略，不用遥操作也不用真机数据 | 👤 Reward AI (旧金山湾区, 联创 Zipeng Fu 和 Chen Wang) | [🌐](https://rewardai.com/blog/OM-1/) | 📃 - | ✨ - | 📂 -
 
