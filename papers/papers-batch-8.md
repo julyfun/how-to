@@ -21,6 +21,15 @@ confidence: 2
 
 # --- AI ---
 
+## RoboRSI: Stable, Efficient, and Reusable Robot Self-Evolution in Complex Real-World Environments
+deepseek-flash[1m] 用 Manager、Planner、Engineer、Reviewer 四个 agent 组成闭环，让机器人自己迭代拆任务改代码并把稳定分支固化成代码技能 | 👤 穹彻智能 Noematrix Team | [🌐](https://lab.noematrix.ai/blog/2-roborsi/) | 📃 - | ✨ - | [📂](https://github.com/nssmd/RoboRSI)
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/roborsi-2609-framework.png)
+
+动机是让机器人在真实场景里自己迭代出技能。四个 sub-agent 分工：Manager 维护任务队列、并发 worker、断点与技能版本，Planner 出计划，Engineer 调机器人工具读日志写候选实现，Reviewer 从执行证据里定位最早出错的节点并把修订建议送回 Manager。技能按四层组织成树：最上面是 long_horizon/<task> 任务族，往下是复合技能、atomic/<task> 原子任务、base/<robot>/<prim> 基础技能(感知、移动、抓取、放置)，基础技能直接暴露成 agent 的 tool。执行结果沿调用路径回流。稳定分支固化成 Code Skill(SKILL.md 加 policy.py)，执行数据可以训练 learning-based policy。改动要过 no-regression gate 才提交且每次改动是一个普通 git commit。复现只要 clone 仓库、设一个 OpenAI 兼容 Responses endpoint 的 key、跑 scripts/reproduce_libero_pro.sh。
+
+主推的通过率都是累计口径（任务在某个 release 里至少通过过一次），不是固定策略的 per-episode 成功率。角色消融里 RoboTwin 上只留 Engineer 是 9/50，加上 Planner 和 Reviewer 到 36/50。开源仓库里 base skill 只带 libero 和 robotwin 两套仿真实现，真机要照 docs/real-robot-tool-spec.md 重写 policy.py。
+
 ## GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation
 [GPT-6] 单步生成未来视觉 latent 后由逆动力学模型输出动作，联合训练时筛选与示范动作相容的未来预测 | 👤 AgiBot, AgiBot Research Team（首位个人作者 Renhang Liu）, Maoqing Yao | [🌐](https://ge-act-v2.github.io/) | [📃 2609.05588](https://hjfy.top/arxiv/2609.05588) | [✨](https://www.alphaxiv.org/pdf/2609.05588) | 📂 - |
 
