@@ -18,7 +18,6 @@ confidence: 2
 1. 视觉编码：视觉 token 经 1024→896→896 的两层 MLP 送入，其视觉位置的隐状态再经 896→2048→1024 的 MLP 逐 patch 余弦回归该目标.
 2. 奇怪 tokens: AE 有几十个 future tokens 似乎没有监督，也不知道是干啥的.
 
-
 # --- AI ---
 
 ## Loop the Loopies!
