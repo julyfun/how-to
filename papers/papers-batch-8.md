@@ -21,6 +21,15 @@ confidence: 2
 
 # --- AI ---
 
+## Loop the Loopies!
+GPT-5.6-Sol 让 Qwen3-MoE 的每个 Attention 和 MoE 层连续执行两次并利用省下的激活内存扩大 microbatch | 👤 IQuest Research, Zitian Gao, Bryan Dai | 🌐 - | [📃 2607.16051](https://hjfy.top/arxiv/2607.16051) | [✨](https://www.alphaxiv.org/pdf/2607.16051) | - |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/figure-1.png)
+
+以往 looped Transformer 重复计算后常输给同训练成本的更大普通模型。Loopie 基于 Qwen3-MoE，将每个 Attention 和 MoE 层就地执行两次；27 个存储层由此产生 54 次 block 计算。activation checkpointing 让激活内存随存储层数变化，省下的内存把单卡 microbatch 从 1 提到 2。若要复现则用 Megatron-LM 训练 20B-A2B 或 6B-A0.6B 模型，依次完成 3.5T token 预训练和高质量 annealing、2T token supervised pre-training、数学和代码 GSPO 强化学习；supervised pre-training 采用 128K 上下文和全局 batch 1024并且只对回答 token 计算 loss。
+
+论文只按预训练 wall-clock time 匹配成本，没有系统比较推理成本。主要 post-training 实验集中在数学和代码，supervised pre-training 的消融也不完整。官方 GitHub 链接截至查询时仍为 404，完整训练数据与 checkpoint 可用性因此有限。
+
 ## Bench2Dex
 
 灵巧手 bench.
