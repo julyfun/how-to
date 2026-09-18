@@ -13,10 +13,10 @@ confidence: 2
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/jepa-wam-2608.09381-arch.png)
 
-用 LLM 输入当前图像 JEPA，对齐未来几帧 JEPA [1]. 同时 LLM 输入 action placeholder，将其隐状态用作 AE 的 cross-attn. [2]. JEPA 辅助 loss 还可以作为插件加入
+用 LLM 输入当前图像 JEPA，对齐未来几帧 JEPA [1]. 同时 LLM 输入 action placeholder，将其隐状态用作 AE 的 cross-attn [2]. JEPA 辅助 loss 还可以作为插件加入 pi05，在 LIBERO-plus 上提点 1.8，Robotwin Clean 提点 9.2，Random 提点 0.3.
 
-1. 视觉 token 经 1024→896→896 的两层 MLP 送入，其视觉位置的隐状态再经 896→2048→1024 的 MLP 逐 patch 余弦回归该目标.
-2. AE 有几十个 future tokens 似乎没有监督，也不知道是干啥的.
+1. 视觉编码：视觉 token 经 1024→896→896 的两层 MLP 送入，其视觉位置的隐状态再经 896→2048→1024 的 MLP 逐 patch 余弦回归该目标.
+2. 奇怪 tokens: AE 有几十个 future tokens 似乎没有监督，也不知道是干啥的.
 
 
 # --- AI ---
