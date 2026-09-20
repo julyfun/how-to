@@ -262,6 +262,12 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - 贡献：文澜 BriVL 主要设计者（Nature Communications 2022）；视频生成底座 VDT（ICLR 2024）；近期切入 cross-embodiment VLA：MoH 动作分块（ICML 2026，通讯）、Action Priors for Cross-embodiment Robot Manipulation、TempoVLA、Free-View Robot Ma
 - 关系：学生丁明宇（Mingyu Ding）是其进入 manipulation 的关键纽带 —— 人大本硕（2020 硕士毕业，导师卢志武），现 UNC Chapel Hill 助理教授，两人以平等合作者身份共同通讯 MoH 与 Action Priors；另有学生高一钊（智子引擎 CEO）；合作文继荣、宋睿华
 
+# 初创
+光轮智能（北京）
+- 背景：成立于 2023.1，CEO 谢晨博士（曾任英伟达自动驾驶仿真负责人）
+- 产品：仿真基础设施SimFoundry，Ego数据平台 EgoSuite.
+- 学术：开源了10万小时的 EgoSuite-Open100K.
+
 # 其他
 
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
