@@ -39,9 +39,13 @@ flowchart TD
 
 这个 demo 比较精彩，用 sharpa hand 实现了使用电动螺丝刀、试管吸液和双指拧瓶盖.
 
-## LIFT: yi wang (23)
+## LIFT (23)
 
-将预训练的 pi0.5 的 action expert 复制一份参数作为 learnable force expert，提供 1 秒的 force kv history. 通过 teleop online dagger 训练 force expert. LIFT 并非为了 contact-rich 场景设计，而是证明后训练阶段才引入 force 仍然是有价值的。不过 multi-task 能力还未开发（pi0.5 本身在这些任务上也不怎么 multitask）. 训练时输出 cmd 还是 state 也值得仔细思考，可从人类采集 & replay & rollout 角度考虑。
+Accelerating VLA Post-Training with Reactive Force Injection | 把 VLA 策略的视觉分支冻结、并联一个零初始化的力反应专家，再用两阶段在线 DAgger 注入力反馈 👍 | 👤 上海交通大学, 王奕(共同一作), 温川/卢策吾(通讯) | 🌐 - | [📃 2607.14236](https://hjfy.top/arxiv/2607.14236) | [✨](https://www.alphaxiv.org/pdf/2607.14236) | [📂](https://github.com/y-wng/lift)
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260920163618843.png)
+
+将预训练的 pi0.5 的 action expert 复制一份参数作为 learnable force expert，cross-attn 1 秒的 GRU force history. 通过 teleop online dagger 训练 force expert. LIFT 并非为了 contact-rich 场景设计，而是证明后训练阶段才引入 force 仍然是有价值的。不过 multi-task 能力还未开发（pi0.5 本身在这些任务上也不怎么 multitask）. 训练时输出 cmd 还是 state 也值得仔细思考，可从人类采集 & replay & rollout 角度考虑。
 
 ## VLA-JEPA (24)
 ⭐️⭐️⭐️ https://hjfy.top/arxiv/2602.10098 | Jingwen Sun, Zhibo Chen, 中科大

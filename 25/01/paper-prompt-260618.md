@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-使用 arxiv api 阅读论文，输出:
+使用 arxiv api 阅读论文，输出到执行的 md（未指定则覆盖 ~/tmp/1.md）:
 
 ```markdown
 ## <arxiv 论文标题>
