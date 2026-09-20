@@ -26,7 +26,7 @@ confidence: 2
 
 他是这样做的：先训一个 pi05，然后人类继续演示的同时把 obs 输入 policy 推理（但不执行），如果人类 chunk 和 policy chunk 相差大就认为 OOD 并**让人类从当前位置继续采集**并作为 dagger 数据集. 另外，人类采集数据还会用来训练一个优势器（假定人类总是优的），这个和 OOD 判别无关，只是给数据集打标方便进行优势 conditioned 学习的.
 
-比较奇怪的请求介入的时候人类只是继续刚才采集的轨迹而已，完全等价于在 offline umi dataset 上直接做 odd detector 筛选“dagger”数据集，因此 online umi 这个核心 claim 没立住.
+比较奇怪的是请求介入的时候人类只是继续刚才的动作而已，完全等价于在 offline umi dataset 上直接做 odd detector 筛选“dagger”数据集，因此 online umi 这个核心 claim 没立住.
 
 1. Energy Score(OOD Detector) 衡量人的动作块与这批采样点的距离并减去采样点自身的分散度；
 2. advantage 模型从相隔 50 帧的一对观测预测相对进度
