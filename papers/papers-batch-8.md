@@ -33,6 +33,15 @@ confidence: 2
 
 # --- AI ---
 
+## LIFT: Accelerating VLA Post-Training with Reactive Force Injection
+deepseek-flash[1m] 把 VLA 策略的视觉分支冻结、并联一个零初始化的力反应专家，再用两阶段在线 DAgger 注入力反馈 👍 | 👤 上海交通大学, 王奕(共同一作), 温川/卢策吾(通讯) | 🌐 - | [📃 2607.14236](https://hjfy.top/arxiv/2607.14236) | [✨](https://www.alphaxiv.org/pdf/2607.14236) | [📂](https://github.com/y-wng/lift)
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/lift_fig_system.png)
+
+现在的 VLA 只会看图不会摸东西，遇上接触密集任务因为遮挡和深度不清就抓瞎；LIFT 不改主干，而是在预训练动作专家旁边并联一个由原权重初始化的力反应专家，把末端 6D 力经因果力记忆和零初始化交叉注意力喂进去。关键设计是初始化时力残差严格为零，策略输出与预训练 π0.5 完全一致，随后用两阶段在线 DAgger 以固定 1:1 的离线与在线比例训练——照着这个思路换个双臂平台也能复刻。
+
+局限在于实验只在单臂加单个六维力传感器上验证了三个接触密集任务，泛化性未知，而且整套流程的前提是有力觉硬件并且能持续拿到人工纠错数据。
+
 ## Loop the Loopies!
 GPT-5.6-Sol 让 Qwen3-MoE 的每个 Attention 和 MoE 层连续执行两次并利用省下的激活内存扩大 microbatch | 👤 IQuest Research, Zitian Gao, Bryan Dai | 🌐 - | [📃 2607.16051](https://hjfy.top/arxiv/2607.16051) | [✨](https://www.alphaxiv.org/pdf/2607.16051) | - |
 
