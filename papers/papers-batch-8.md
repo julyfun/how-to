@@ -18,6 +18,19 @@ confidence: 2
 1. 视觉编码：视觉 token 经 1024→896→896 的两层 MLP 送入，其视觉位置的隐状态再经 896→2048→1024 的 MLP 逐 patch 余弦回归该目标.
 2. 奇怪 tokens: AE 有几十个 future tokens 似乎没有监督，也不知道是干啥的.
 
+
+## HIL-UMI: Bringing Human-in-the-Loop Post-Training of Vision-Language-Action Models to Universal Manipulation Interface (60)
+⭐️⭐️⭐️ robot-tree teacher-forcing umi dagger | 👤 西安交通大学, Zimu Han, Hao Dong（北京大学 和 PrimeBot） | [🌐](https://hil-umi.github.io) | [📃 2609.20659](https://hjfy.top/arxiv/2609.20659) | [✨](https://www.alphaxiv.org/pdf/2609.20659) | [📂](https://github.com/HIL-UMI/HIL-UMI-Official) |
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/hil-umi-framework.png)
+
+他是这样做的：先训一个 pi05，然后人类继续演示的同时把 obs 输入 policy 推理（但不执行），如果人类 chunk 和 policy chunk 相差大就认为 OOD 并**让人类从当前位置继续采集**并作为 dagger 数据集. 另外，人类采集数据还会用来训练一个优势器（假定人类总是优的），这个和 OOD 判别无关，只是给数据集打标方便进行优势 conditioned 学习的.
+
+比较奇怪的请求介入的时候人类只是继续刚才采集的轨迹而已，完全等价于在 offline umi dataset 上直接做 odd detector 筛选“dagger”数据集，因此 online umi 这个核心 claim 没立住.
+
+1. Energy Score(OOD Detector) 衡量人的动作块与这批采样点的距离并减去采样点自身的分散度；
+2. advantage 模型从相隔 50 帧的一对观测预测相对进度
+
 # --- AI ---
 
 ## Loop the Loopies!
