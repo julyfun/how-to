@@ -41,7 +41,7 @@ flowchart TD
 
 ## LIFT (23)
 
-Accelerating VLA Post-Training with Reactive Force Injection | 把 VLA 策略的视觉分支冻结、并联一个零初始化的力反应专家，再用两阶段在线 DAgger 注入力反馈 👍 | 👤 上海交通大学, 王奕(共同一作), 温川/卢策吾(通讯) | 🌐 - | [📃 2607.14236](https://hjfy.top/arxiv/2607.14236) | [✨](https://www.alphaxiv.org/pdf/2607.14236) | [📂](https://github.com/y-wng/lift)
+Accelerating VLA Post-Training with Reactive Force Injection | 把 VLA 策略的视觉分支冻结、并联一个零初始化的力反应专家，再用两阶段在线 DAgger 注入力反馈 👍 | 👤 上海交通大学, 王奕(共同一作), 温川/卢策吾(通讯) | 🌐 - | [📃 2607.14236](https://hjfy.top/arxiv/2607.14236) | [✨](https://www.alphaxiv.org/abs/2607.14236) | [📂](https://github.com/y-wng/lift)
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260920163618843.png)
 

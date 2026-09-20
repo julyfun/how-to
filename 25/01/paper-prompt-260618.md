@@ -8,11 +8,11 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-使用 arxiv api 阅读论文，输出到执行的 md（未指定则覆盖 ~/tmp/1.md），输出后不用多说话:
+使用 arxiv api 阅读论文，输出极简概述到执行的 md（未指定则覆盖 ~/tmp/1.md），输出后不用多说话:
 
 ```markdown
 ## <arxiv 论文标题>
-[当前模型详细代号例如 Gemini 3.1 Pro, GPT-5.6-Sol] 一句话主要解决的问题或复现方法，逗号最多一个 | 👤 第一作者学校或机构, 第一作者, 通讯作者或者最后作者 | [🌐](项目网站) 搜不到则显示 "🌐 -" 且无需中括号，后同 | [📃 <arxiv-id e.g. 2505.11917>](https://hjfy.top/arxiv/<arxiv-id>) | [✨](https://www.alphaxiv.org/pdf/<arxiv-id>) | [📂](代码连接) |
+[当前模型详细代号例如 Gemini 3.1 Pro, GPT-5.6-Sol] 一句话总结解决的问题或创新方法，逗号最多一个 | 👤 第一作者学校或机构, 第一作者, 通讯作者或者最后作者 | [🌐](项目网站) 搜不到则显示 "🌐 -" 且无需中括号，后同 | [📃 <arxiv-id e.g. 2505.11917>](https://hjfy.top/arxiv/<arxiv-id>) | [✨](https://www.alphaxiv.org/abs/<arxiv-id>) | [📂](代码连接) |
 <空行>
 ![](主图片) 即一张论文主要 system 图或模型架构图，将此图用本地 picgo 上传得到链接，picgo 默认端点已经配置好了
 <空行>
@@ -20,6 +20,10 @@ confidence: 2
 <空行>
 第二段可选，0-3 个逗号。用于指出局限性或总结实验中得到的一些有趣结论（不用说成功率提升多少之类的）
 ```
+
+## 一句话总结约束
+
+不要使用文章新命名的词汇，用 cs.RO 以及 AI 广泛使用的通用词汇. 例如，不要说 "foresight token 查询未来隐状态"，这里 "foresight token" 实际是 AI 通用的 "learnable embedding".
 
 ## 写法约束
 

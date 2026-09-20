@@ -9,7 +9,7 @@ confidence: 2
 ---
 
 ## JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling (59)
-⭐️⭐️⭐️ LLM/VLM aligned to JEPA | 👤 中国人民大学, Yihan Lin, Cheng Chi 和 Jing Zhang | [🌐](https://spritewithoutice.github.io/JEPA_WAM/) | [📃 2608.09381](https://hjfy.top/arxiv/2608.09381) | [✨](https://www.alphaxiv.org/pdf/2608.09381) | [📂](https://github.com/SpriteWithoutIce/JEPA_WAM)
+⭐️⭐️⭐️ LLM/VLM aligned to JEPA | 👤 中国人民大学, Yihan Lin, Cheng Chi 和 Jing Zhang | [🌐](https://spritewithoutice.github.io/JEPA_WAM/) | [📃 2608.09381](https://hjfy.top/arxiv/2608.09381) | [✨](https://www.alphaxiv.org/abs/2608.09381) | [📂](https://github.com/SpriteWithoutIce/JEPA_WAM)
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/jepa-wam-2608.09381-arch.png)
 
@@ -20,7 +20,7 @@ confidence: 2
 
 
 ## HIL-UMI: Bringing Human-in-the-Loop Post-Training of Vision-Language-Action Models to Universal Manipulation Interface (60)
-⭐️⭐️⭐️ robot-tree teacher-forcing umi dagger | 👤 西安交通大学, Zimu Han, Hao Dong（北京大学 和 PrimeBot） | [🌐](https://hil-umi.github.io) | [📃 2609.20659](https://hjfy.top/arxiv/2609.20659) | [✨](https://www.alphaxiv.org/pdf/2609.20659) | [📂](https://github.com/HIL-UMI/HIL-UMI-Official) |
+⭐️⭐️⭐️ robot-tree teacher-forcing umi dagger | 👤 西安交通大学, Zimu Han, Hao Dong（北京大学 和 PrimeBot） | [🌐](https://hil-umi.github.io) | [📃 2609.20659](https://hjfy.top/arxiv/2609.20659) | [✨](https://www.alphaxiv.org/abs/2609.20659) | [📂](https://github.com/HIL-UMI/HIL-UMI-Official) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/hil-umi-framework.png)
 
@@ -34,7 +34,7 @@ confidence: 2
 # --- AI ---
 
 ## InternVLA-A1.5
-deepseek-flash[1m] Unifying Understanding, Latent Foresight, and Action for Compositional Generalization 用冻结视频模型监督隐空间 foresight token、把动作专家挂在原生 VLM 主干上 | 👤 马浩翔/贾增/庞江淼, 上海人工智能实验室 物理智能团队 | [🌐](https://internrobotics.github.io/internvla-a15.github.io/) | [📃 2607.04988](https://hjfy.top/arxiv/2607.04988) | [✨](https://www.alphaxiv.org/pdf/2607.04988) | [📂](https://github.com/InternRobotics/InternVLA-A-series)
+deepseek-flash[1m] Unifying Understanding, Latent Foresight, and Action for Compositional Generalization. 用冻结视频模型监督隐空间 foresight token、把动作专家挂在原生 VLM 主干上 | 👤 马浩翔/贾增/庞江淼, 上海人工智能实验室 物理智能团队 | [🌐](https://internrobotics.github.io/internvla-a15.github.io/) | [📃 2607.04988](https://hjfy.top/arxiv/2607.04988) | [✨](https://www.alphaxiv.org/abs/2607.04988) | [📂](https://github.com/InternRobotics/InternVLA-A-series)
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/internvla_a15_teaser.png)
 
@@ -42,8 +42,19 @@ deepseek-flash[1m] Unifying Understanding, Latent Foresight, and Action for Comp
 
 代码放在 InternVLA-A 系列合集仓库里，没有单篇独立 repo，复现要先挑对子目录；另外视频分支只在训练时存在、推理时被丢掉，所以 foresight 到底在推理期还剩多少作用，值得自己实测一下。
 
+## GIFT: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation
+deepseek-flash[1m] 在策略中间视觉 token 上挂三个只在训练期存在的辅助头做监督 | 👤 中科院自动化所, 郑宇鹏, 张启超/李浩然/赵冬斌 | [🌐](https://openphoenix-team.github.io/GIFT-pages) | [📃 2609.04193](https://hjfy.top/arxiv/2609.04193) | [✨](https://www.alphaxiv.org/abs/2609.04193) | 📂 -
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/gift_teaser.png)
+
+VLA 和世界模型类策略的视觉特征很丰富但原生训练目标不保证中间特征保留控制需要的结构；GIFT 在策略的中间视觉 token 上接三个只在训练期存在的头：几何头从冻结的 VGGT（几何基础模型）向浅层视觉 token 蒸馏方向与尺度，可供性头用 K 个 learnable query 回归 20 维交互目标（角色 ID、物体在锚点物体系下的位姿、末端在物体系下的位姿、夹爪开合）；目标头用 goal token 预测任务相关区域的二值掩码并以 BCE 加 Dice 监督。复现只需加这三个头和三组损失、不动主干，推理时把辅助头全部丢掉，也不需要任何额外输入。
+
+三种策略上 GIFT 都可挂：Qwen3-VL 主干加动作查询直接回归的 StarVLA-OFT、视频扩散与动作扩散并行的 Fast-WAM、先想未来再反推动作的逆动力学变体。no-injection（把辅助预测也喂给动作分支）比只用监督的版本更差，说明这批结构信号作为训练梯度有用，作为推理期输入没用。
+
+局限是全部实验都是后训练阶段加辅助监督，没有验证从零预训练是否同样有效；项目页没有放出代码。
+
 ## Loop the Loopies!
-GPT-5.6-Sol 让 Qwen3-MoE 的每个 Attention 和 MoE 层连续执行两次并利用省下的激活内存扩大 microbatch | 👤 IQuest Research, Zitian Gao, Bryan Dai | 🌐 - | [📃 2607.16051](https://hjfy.top/arxiv/2607.16051) | [✨](https://www.alphaxiv.org/pdf/2607.16051) | - |
+GPT-5.6-Sol 让 Qwen3-MoE 的每个 Attention 和 MoE 层连续执行两次并利用省下的激活内存扩大 microbatch | 👤 IQuest Research, Zitian Gao, Bryan Dai | 🌐 - | [📃 2607.16051](https://hjfy.top/arxiv/2607.16051) | [✨](https://www.alphaxiv.org/abs/2607.16051) | - |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/figure-1.png)
 
@@ -74,7 +85,7 @@ deepseek-flash[1m] 用 Manager、Planner、Engineer、Reviewer 四个 agent 组�
 主推的通过率都是累计口径（任务在某个 release 里至少通过过一次），不是固定策略的 per-episode 成功率。角色消融里 RoboTwin 上只留 Engineer 是 9/50，加上 Planner 和 Reviewer 到 36/50。开源仓库里 base skill 只带 libero 和 robotwin 两套仿真实现，真机要照 docs/real-robot-tool-spec.md 重写 policy.py。
 
 ## GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation
-[GPT-6] 单步生成未来视觉 latent 后由逆动力学模型输出动作，联合训练时筛选与示范动作相容的未来预测 | 👤 AgiBot, AgiBot Research Team（首位个人作者 Renhang Liu）, Maoqing Yao | [🌐](https://ge-act-v2.github.io/) | [📃 2609.05588](https://hjfy.top/arxiv/2609.05588) | [✨](https://www.alphaxiv.org/pdf/2609.05588) | 📂 - |
+[GPT-6] 单步生成未来视觉 latent 后由逆动力学模型输出动作，联合训练时筛选与示范动作相容的未来预测 | 👤 AgiBot, AgiBot Research Team（首位个人作者 Renhang Liu）, Maoqing Yao | [🌐](https://ge-act-v2.github.io/) | [📃 2609.05588](https://hjfy.top/arxiv/2609.05588) | [✨](https://www.alphaxiv.org/abs/2609.05588) | 📂 - |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/ge-act-v2-system.png)
 

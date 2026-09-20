@@ -90,7 +90,7 @@ DM0.5 架构仍为 Pi-Like，由 4B VLM 和 680M Action Expert 构成。模型�
 例如“拿起杯子擦桌子再放回原位”，当前画面已经看不到杯子的初始位置；DM0.5 从历史 token 中找回该位置，再输出放回动作。推理速度声称在 RTX 4090 上约 10 Hz、H100 上约 20 Hz。真机 Table30 v2 成功率为 43%，但博客没有给出这些模块各自贡献的完整消融，发表时刷到了 Robodojo sim 第一，主要是 memory 得分高.
 
 ## Video Prediction Policy: A Generalist Robot Policy with Predictive Visual Representations (57)
-⭐️⭐️⭐️⭐️ 微调 SVD 并将 UNet latent 输入 DiT DP | 👤 Tsinghua University, Yucheng Hu, Jianyu Chen | [🌐](https://video-prediction-policy.github.io/) | [📃 2412.14803](https://hjfy.top/arxiv/2412.14803) | [✨](https://www.alphaxiv.org/pdf/2412.14803) | [📂](https://github.com/roboterax/video-prediction-policy)
+⭐️⭐️⭐️⭐️ 微调 SVD 并将 UNet latent 输入 DiT DP | 👤 Tsinghua University, Yucheng Hu, Jianyu Chen | [🌐](https://video-prediction-policy.github.io/) | [📃 2412.14803](https://hjfy.top/arxiv/2412.14803) | [✨](https://www.alphaxiv.org/abs/2412.14803) | [📂](https://github.com/roboterax/video-prediction-policy)
 
 ![](https://video-prediction-policy.github.io/media/images/method.png)
 
@@ -103,7 +103,7 @@ DM0.5 架构仍为 Pi-Like，由 4B VLM 和 680M Action Expert 构成。模型�
 3. 新. 基于 attn 和 FFN 将视频 latent 提取为固定数量 token，上图中有.
 
 ## OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining (58)
-⭐️⭐️⭐️⭐️ 系统比较 WAM 的架构和训练选择 | 👤 National University of Singapore, Yuran Wang, Lin Shao 和 Hang Zhao | [🌐](https://openwam-official.github.io/) | [📃 2609.07398](https://hjfy.top/arxiv/2609.07398) | [✨](https://www.alphaxiv.org/pdf/2609.07398) | [📂](https://github.com/OpenWAM-Official/OpenWAM) |
+⭐️⭐️⭐️⭐️ 系统比较 WAM 的架构和训练选择 | 👤 National University of Singapore, Yuran Wang, Lin Shao 和 Hang Zhao | [🌐](https://openwam-official.github.io/) | [📃 2609.07398](https://hjfy.top/arxiv/2609.07398) | [✨](https://www.alphaxiv.org/abs/2609.07398) | [📂](https://github.com/OpenWAM-Official/OpenWAM) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/openwam-architecture.png)
 
