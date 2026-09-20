@@ -33,14 +33,14 @@ confidence: 2
 
 # --- AI ---
 
-## LIFT: Accelerating VLA Post-Training with Reactive Force Injection
-deepseek-flash[1m] 把 VLA 策略的视觉分支冻结、并联一个零初始化的力反应专家，再用两阶段在线 DAgger 注入力反馈 👍 | 👤 上海交通大学, 王奕(共同一作), 温川/卢策吾(通讯) | 🌐 - | [📃 2607.14236](https://hjfy.top/arxiv/2607.14236) | [✨](https://www.alphaxiv.org/pdf/2607.14236) | [📂](https://github.com/y-wng/lift)
+## InternVLA-A1.5
+deepseek-flash[1m] Unifying Understanding, Latent Foresight, and Action for Compositional Generalization 用冻结视频模型监督隐空间 foresight token、把动作专家挂在原生 VLM 主干上 | 👤 马浩翔/贾增/庞江淼, 上海人工智能实验室 物理智能团队 | [🌐](https://internrobotics.github.io/internvla-a15.github.io/) | [📃 2607.04988](https://hjfy.top/arxiv/2607.04988) | [✨](https://www.alphaxiv.org/pdf/2607.04988) | [📂](https://github.com/InternRobotics/InternVLA-A-series)
 
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/lift_fig_system.png)
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/internvla_a15_teaser.png)
 
-现在的 VLA 只会看图不会摸东西，遇上接触密集任务因为遮挡和深度不清就抓瞎；LIFT 不改主干，而是在预训练动作专家旁边并联一个由原权重初始化的力反应专家，把末端 6D 力经因果力记忆和零初始化交叉注意力喂进去。关键设计是初始化时力残差严格为零，策略输出与预训练 π0.5 完全一致，随后用两阶段在线 DAgger 以固定 1:1 的离线与在线比例训练——照着这个思路换个双臂平台也能复刻。
+以前的 VLA 要么为了加动作输出把 VLM 主干微调得丢掉了语言语义，要么在像素空间从零训练未来预测、白白浪费预训练视频模型的动力学知识；A1.5 直接拿 Qwen3.5-2B 当主干继续做 VQA 和子任务预测，只挂一个轻量统一动作专家，再让可学习的 foresight token 把未来压成隐空间编码、由冻结的 WAN2.2-5B 监督，推理时丢掉视频分支只走 flow matching，复现用 120 万条机器人 episode 加 300 万多模态样本。
 
-局限在于实验只在单臂加单个六维力传感器上验证了三个接触密集任务，泛化性未知，而且整套流程的前提是有力觉硬件并且能持续拿到人工纠错数据。
+代码放在 InternVLA-A 系列合集仓库里，没有单篇独立 repo，复现要先挑对子目录；另外视频分支只在训练时存在、推理时被丢掉，所以 foresight 到底在推理期还剩多少作用，值得自己实测一下。
 
 ## Loop the Loopies!
 GPT-5.6-Sol 让 Qwen3-MoE 的每个 Attention 和 MoE 层连续执行两次并利用省下的激活内存扩大 microbatch | 👤 IQuest Research, Zitian Gao, Bryan Dai | 🌐 - | [📃 2607.16051](https://hjfy.top/arxiv/2607.16051) | [✨](https://www.alphaxiv.org/pdf/2607.16051) | - |
