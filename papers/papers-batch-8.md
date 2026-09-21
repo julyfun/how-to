@@ -31,17 +31,17 @@ confidence: 2
 1. Energy Score(OOD Detector) 衡量人的动作块与这批采样点的距离并减去采样点自身的分散度；
 2. advantage 模型从相隔 50 帧的一对观测预测相对进度
 
-# --- AI ---
+## X-VLA (61)
+⭐️⭐️⭐️⭐️ Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model | 每个数据源独立 learnable embedding & action proj | 👤 清华大学智能产业研究院 AIR, 郑良亮, 王泰/詹仙园 | [🌐](https://thu-air-dream.github.io/X-VLA/) | [📃 2510.10274](https://hjfy.top/arxiv/2510.10274) | [✨](https://www.alphaxiv.org/abs/2510.10274) | [📂](https://github.com/2toinf/X-VLA)
 
-## X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model
-deepseek-flash[1m] 用每个数据源一组可学习 embedding 让一个 flow-matching Transformer 混训多种机器人 | 👤 清华大学智能产业研究院 AIR, 郑良亮, 王泰/詹仙园 | [🌐](https://thu-air-dream.github.io/X-VLA/) | [📃 2510.10274](https://hjfy.top/arxiv/2510.10274) | [✨](https://www.alphaxiv.org/abs/2510.10274) | [📂](https://github.com/2toinf/X-VLA)
-
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/xvla_fig1b.png)
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260921180618684.png)
 
 多个机器人平台的数据混在一起训一个策略时相机数、动作空间和任务分布都不一样；X-VLA 按硬件配置给每个数据源一组可学习 embedding（soft prompt，论文叫 Soft Prompt Library），按机器人类型取出后与图像文本 token 拼接送入主干，主干是堆叠的标准自注意力模块，推理走 flow matching 生成动作块。若要复现：主视角图像和指令只走 Florence-Large（约 0.9B 总量里的大头），腕部等附加视角只过共享 ViT 不过 VLM，本体状态和 flow 时间步与噪声动作块拼接后经线性层投影，soft prompt、动作输入输出投影是唯一按域分开的参数（占总量 0.04%）；第一阶段在 290K 条 episode 上预训练，第二阶段冻结主干只训练新域的 soft prompt 加 LoRA。
 
 相比只给每个机器人配一个动作输出头，soft prompt 在生成动作的早期就进入主干，相机设置和任务分布的差异也能被吸收。T-SNE 显示两个仅在主视角上不同的 Franka 数据源聚在一起，说明 soft prompt 学到的是硬件结构上的相似性。局限是主干只有 0.9B、预训练数据 290K 条 episode，论文自己说机器人数据的规模和多样性仍远不如语言和视觉语言领域。
 
+
+# --- AI ---
 
 ## InternVLA-A1.5
 deepseek-flash[1m] Unifying Understanding, Latent Foresight, and Action for Compositional Generalization. 用冻结视频模型监督隐空间 foresight token、把动作专家挂在原生 VLM 主干上 | 👤 马浩翔/贾增/庞江淼, 上海人工智能实验室 物理智能团队 | [🌐](https://internrobotics.github.io/internvla-a15.github.io/) | [📃 2607.04988](https://hjfy.top/arxiv/2607.04988) | [✨](https://www.alphaxiv.org/abs/2607.04988) | [📂](https://github.com/InternRobotics/InternVLA-A-series)
