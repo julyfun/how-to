@@ -10,4 +10,23 @@ confidence: 2
 
 ## AdaLN
 
-fm/diffusion 专用的
+fm/diffusion
+
+```python
+class AdaLN:
+    def __init__(self, hidden_dim, cond_dim):
+        self.norm = LayerNorm( hidden_dim, elementwise_affine=False )
+        self.to_scale_shift = Linear( cond_dim, 2 * hidden_dim )
+
+    def forward(self, x, cond):
+        # x:    [batch, tokens, hidden_dim], cond: [batch, cond_dim]
+        scale, shift = split( self.to_scale_shift(cond), num_splits=2 )
+
+        # 扩展到每个 token
+        scale = scale[:, None, :]
+        shift = shift[:, None, :]
+
+        x_norm = self.norm(x)
+        return (1.0 + scale) * x_norm + shift
+```
+t⟶TimeEmbedding(t)⟶MLP⟶AdaLN modulation⟶(γ,β)
