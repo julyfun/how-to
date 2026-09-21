@@ -9,3 +9,5 @@ confidence: 2
 ---
 
 ## AdaLN
+
+fm/diffusion 专用的
