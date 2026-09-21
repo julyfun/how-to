@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling (59)
+## JEPA-WAM (59)
 ⭐️⭐️⭐️ LLM/VLM aligned to JEPA | 👤 中国人民大学, Yihan Lin, Cheng Chi 和 Jing Zhang | [🌐](https://spritewithoutice.github.io/JEPA_WAM/) | [📃 2608.09381](https://hjfy.top/arxiv/2608.09381) | [✨](https://www.alphaxiv.org/abs/2608.09381) | [📂](https://github.com/SpriteWithoutIce/JEPA_WAM)
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/jepa-wam-2608.09381-arch.png)
@@ -18,8 +18,7 @@ confidence: 2
 1. 视觉编码：视觉 token 经 1024→896→896 的两层 MLP 送入，其视觉位置的隐状态再经 896→2048→1024 的 MLP 逐 patch 余弦回归该目标.
 2. 奇怪 tokens: AE 有几十个 future tokens 似乎没有监督，也不知道是干啥的.
 
-
-## HIL-UMI: Bringing Human-in-the-Loop Post-Training of Vision-Language-Action Models to Universal Manipulation Interface (60)
+## HIL-UMI (60)
 ⭐️⭐️⭐️ robot-tree teacher-forcing umi dagger | 👤 西安交通大学, Zimu Han, Hao Dong（北京大学 和 PrimeBot） | [🌐](https://hil-umi.github.io) | [📃 2609.20659](https://hjfy.top/arxiv/2609.20659) | [✨](https://www.alphaxiv.org/abs/2609.20659) | [📂](https://github.com/HIL-UMI/HIL-UMI-Official) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/hil-umi-framework.png)
@@ -32,14 +31,16 @@ confidence: 2
 2. advantage 模型从相隔 50 帧的一对观测预测相对进度
 
 ## X-VLA (61)
-⭐️⭐️⭐️⭐️ Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model | 每个数据源独立 learnable embedding & action proj | 👤 清华大学智能产业研究院 AIR, 郑良亮, 王泰/詹仙园 | [🌐](https://thu-air-dream.github.io/X-VLA/) | [📃 2510.10274](https://hjfy.top/arxiv/2510.10274) | [✨](https://www.alphaxiv.org/abs/2510.10274) | [📂](https://github.com/2toinf/X-VLA)
+⭐️⭐️⭐️⭐️ 每个数据源独立 learnable embedding & action proj | 👤 清华大学智能产业研究院 AIR, 郑良亮, 王泰/詹仙园 | [🌐](https://thu-air-dream.github.io/X-VLA/) | [📃 2510.10274](https://hjfy.top/arxiv/2510.10274) | [✨](https://www.alphaxiv.org/abs/2510.10274) | [📂](https://github.com/2toinf/X-VLA)
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260921180618684.png)
 
-多个机器人平台的数据混在一起训一个策略时相机数、动作空间和任务分布都不一样；X-VLA 按硬件配置给每个数据源一组可学习 embedding（soft prompt，论文叫 Soft Prompt Library），按机器人类型取出后与图像文本 token 拼接送入主干，主干是堆叠的标准自注意力模块，推理走 flow matching 生成动作块。若要复现：主视角图像和指令只走 Florence-Large（约 0.9B 总量里的大头），腕部等附加视角只过共享 ViT 不过 VLM，本体状态和 flow 时间步与噪声动作块拼接后经线性层投影，soft prompt、动作输入输出投影是唯一按域分开的参数（占总量 0.04%）；第一阶段在 290K 条 episode 上预训练，第二阶段冻结主干只训练新域的 soft prompt 加 LoRA。
+本文发现随意混异构数据会掉点，于是提出给每个数据源一个独立 learnable embedding (32 tokens, 叫做 soft prompt) 以及独立 action input/output proj，感觉很 make sense. 后训练先冻结主干给新本体 warmup library，然后解冻主干或LoRA. 性能截至今天依然能打.
 
-相比只给每个机器人配一个动作输出头，soft prompt 在生成动作的早期就进入主干，相机设置和任务分布的差异也能被吸收。T-SNE 显示两个仅在主视角上不同的 Franka 数据源聚在一起，说明 soft prompt 学到的是硬件结构上的相似性。局限是主干只有 0.9B、预训练数据 290K 条 episode，论文自己说机器人数据的规模和多样性仍远不如语言和视觉语言领域。
-
+1. 上图中间 shared linear proj 不对，代码中 main 和 others 为独立 proj.
+2. 腕部视角确实不经过 vlm，不知道为什么.
+3. noisy action 那里 proprio 和 flow t 确实是重复拼接的.
+4. AE 输出 `[B, chunk_t+T_vlm+T_aux+32, 1024]` 以后直接过 `DomainAwareLinear(1024, 20)`
 
 # --- AI ---
 
