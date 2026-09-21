@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-使用 arxiv api 阅读论文，输出极简概述到执行的 md（未指定则覆盖 ~/tmp/1.md），输出后不用多说话:
+使用 arxiv api 阅读论文，写入极简概述到执行的 md（未指定则覆盖 ~/tmp/1.md），写入后无需再跟我解释论文，回答“已完成”即可.
 
 ```markdown
 ## <arxiv 论文标题>
