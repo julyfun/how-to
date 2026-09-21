@@ -8,6 +8,53 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+普通树形调用：
+
+```
+调用树，即每行一个函数或一个重要循环，不重要可省略. 多行小步骤可合并为中文简述. 每行简述功能.
+如该节点进入新文件，先标明步骤所在文件路径再写内容。进入新文件则标注文件名. 跨进程（如通过 websocket）也需要说明跨进程. 单节点如因长度换行则需空4格作为缩进. e.g.
+📂 1.py:1175 f() 简述函数功能
+├── f1() :1180 简述功能
+│       多行简述则像这样缩进
+├── Type.method()
+│   ├── while(...)
+│   │   └── self.g()  📂 2.py:795
+│   └── ...
+│       └── ...
+└── ...
+
+代码块用主要语言包裹，如 ``python
+```
+
+```zig
+std.debug.print()
+├── std.debug.lockStderr()
+│   ├── Io.lockStderr()
+│   │   ├── Threaded.lockStderr()
+│   │   └── Threaded.initLockedStderr()
+│   └── Io.LockedStderr.clear()
+├── Io.Writer.print()
+│   ├── Io.Writer.writeAll()
+│   │   └── Io.Writer.write()
+│   └── Io.Writer.printValue()
+│       └── Io.Writer.writeAll()
+└── std.debug.unlockStderr()
+    ├── Io.unlockStderr()
+    └── Threaded.unlockStderr()
+        ├── Io.Writer.flush()
+        │   └── Writer.defaultFlush()
+        │       └── File.Writer.drain()
+        │           └── File.Writer.drainStreaming()
+        │               └── File.writeStreaming()
+        │                   └── Io.operate()
+        │                       └── Threaded.operate()
+        │                           └── Threaded.fileWriteStreaming()
+        │                               └── posix.system.writev() # 这里调用 macos 平台函数
+        └── mutexUnlock()
+```
+
+---
+
 ```
 展示函数调用链. 使用尾调用同级的树形图，即每行一个函数或一个重要循环，不重要可省略，并且一个函数的子函数中的最后一个与父函数必须处于同一缩进，其他缩进 + 1 e.g.
 f()
@@ -45,50 +92,4 @@ Threaded.unlockStderr()
 │   posix.system.writev() # 这里调用 macos 平台函数
 │   while (...) {...}
 mutexUnlock()
-```
-
----
-
-普通树形调用：
-
-```
-调用树，即每行一个函数或一个重要循环，不重要可省略. 多行小步骤可合并为中文简述. 每行简述功能.
-标明步骤所在文件的相对路径。如果和父函数同属一个文件，省略。进入新文件则标注文件名. 跨进程（如通过 websocket）也需要说明跨进程. e.g.
-f()  📂 1.py:1175 (简述函数功能)
-├── f1() (简述功能)
-├── Type.method()
-│   ├── while(...)
-│   │   └── self.g()  📂 2.py:795
-│   └── ...
-│       └── ...
-└── ...
-
-代码块用对应语言包裹，如 ``python
-```
-
-```zig
-std.debug.print()
-├── std.debug.lockStderr()
-│   ├── Io.lockStderr()
-│   │   ├── Threaded.lockStderr()
-│   │   └── Threaded.initLockedStderr()
-│   └── Io.LockedStderr.clear()
-├── Io.Writer.print()
-│   ├── Io.Writer.writeAll()
-│   │   └── Io.Writer.write()
-│   └── Io.Writer.printValue()
-│       └── Io.Writer.writeAll()
-└── std.debug.unlockStderr()
-    ├── Io.unlockStderr()
-    └── Threaded.unlockStderr()
-        ├── Io.Writer.flush()
-        │   └── Writer.defaultFlush()
-        │       └── File.Writer.drain()
-        │           └── File.Writer.drainStreaming()
-        │               └── File.writeStreaming()
-        │                   └── Io.operate()
-        │                       └── Threaded.operate()
-        │                           └── Threaded.fileWriteStreaming()
-        │                               └── posix.system.writev() # 这里调用 macos 平台函数
-        └── mutexUnlock()
 ```
