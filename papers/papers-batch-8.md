@@ -35,12 +35,12 @@ confidence: 2
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260921180618684.png)
 
-本文发现随意混异构数据会掉点，于是提出给每个数据源一个独立 learnable embedding (32 tokens, 叫做 soft prompt) 以及独立 action input/output proj，感觉很 make sense. 后训练先冻结主干给新本体 warmup library，然后解冻主干或LoRA. 性能截至今天依然能打.
+本文发现随意混异构数据会掉点，于是提出给每个数据源一个独立 learnable embedding (32 tokens, 叫做 soft prompt) 以及独立 action input/output proj，感觉很 make sense. 后训练先冻结主干给新本体 warmup library，然后解冻主干或LoRA. Cascaded 架构. 性能截至今天依然能打.
 
-1. 上图中间 shared linear proj 不对，代码中 main 和 others 为独立 proj.
+1. 上图中间 shared linear proj 有误，代码中 main 和 others 为独立 proj.
 2. 腕部视角确实不经过 vlm，不知道为什么.
 3. noisy action 那里 proprio 和 flow t 确实是重复拼接的.
-4. AE 输出 `[B, chunk_t+T_vlm+T_aux+32, 1024]` 以后直接过 `DomainAwareLinear(1024, 20)`
+4. AE 输出 `[B, chunk_t+T_vlm+T_aux+32, 1024]` 以后直接过 `DomainAwareLinear(1024, 20)`. soft prompt 在最末尾.
 
 # --- AI ---
 
