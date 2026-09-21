@@ -37,7 +37,7 @@ confidence: 2
     - state 用 absolute. 6d rot.
     - action 用 relative EE pose, absolute joint. 3d 旋转向量
 
-这里 context 类似于 history，`concat[ encoder(history_img),  mlp(state), mlp(action + ) ]`
+本架构的 context 类似于 history，`C = [encoder(history_img),  mlp(state + e_temp), mlp(action + e_temp + e_slot)]`，然后 VLM Input = `[visual tokens, lang tokens, C]`. 这里 e_temp 和 e_slot 是 learnable embedding，
 
 ## Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization (53)
 ⭐️⭐️⭐️ 直接用 WM 编码 ICL | 👤 Robbyant, Jiaming Zhou, Yinghao Xu 和 Junwei Liang | [🌐](https://robbyant-research.github.io/Zero-WAM/) | [📃 2608.26103](https://hjfy.top/arxiv/2608.26103) | [✨](https://www.alphaxiv.org/abs/2608.26103) | [📂](https://github.com/robbyant-research/Zero-WAM)
