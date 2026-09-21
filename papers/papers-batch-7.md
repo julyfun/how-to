@@ -20,7 +20,7 @@ confidence: 2
 
 ## Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models (52)
 
-⭐️⭐️⭐️⭐️ https://hjfy.top/arxiv/2606.17846
+⭐️⭐️⭐️⭐️ https://hjfy.top/arxiv/2606.17846 | https://alphaxiv.org/abs/2606.17846
 
 ### dataset
 1. OXE, DROID, RDT-1B,
@@ -32,11 +32,12 @@ confidence: 2
 3. VL co-training
     - 思维链 ECoT 数据. infer 时动作专家会 cross-attend 这些表示.
 ### 架构
-1. 不是 MoT 而是 cascaded，DiT 每层 cross-attend VLM 最后一层
-    - 推理 4 步.
+1. 不是 MoT 而是 cascaded，DiT 每层 cross-attend VLM 最后一层. 推理 4 步.
 2. 表示: 29 * 2 + 预留 22
     - state 用 absolute. 6d rot.
     - action 用 relative EE pose, absolute joint. 3d 旋转向量
+
+这里 context 类似于 history，`concat[ encoder(history_img),  mlp(state), mlp(action + ) ]`
 
 ## Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization (53)
 ⭐️⭐️⭐️ 直接用 WM 编码 ICL | 👤 Robbyant, Jiaming Zhou, Yinghao Xu 和 Junwei Liang | [🌐](https://robbyant-research.github.io/Zero-WAM/) | [📃 2608.26103](https://hjfy.top/arxiv/2608.26103) | [✨](https://www.alphaxiv.org/abs/2608.26103) | [📂](https://github.com/robbyant-research/Zero-WAM)
