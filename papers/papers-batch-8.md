@@ -43,9 +43,9 @@ confidence: 2
 4. AE 输出 `[B, chunk_t+T_vlm+T_aux+32, 1024]` 以后直接过 `DomainAwareLinear(1024, 20)`. soft prompt 在最末尾.
 
 ## ReconVLA (62)
-⭐️⭐️⭐️ https://www.alphaxiv.org/abs/2508.10333
+⭐️⭐️⭐️ https://www.alphaxiv.org/abs/2508.10333 | Wenxuan Song, Haoang Li, 港中深广
 
-LLaVA 自回归出 action token, 同时 img hidden 被用作 DiT 到
+LLaVA 自回归出 action token, 同时 img hidden 作为独立 DiT 到 DINO gaze region 的 condition 来监督.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/674510509a5a178aef147c3609490f17.jpg)
 
