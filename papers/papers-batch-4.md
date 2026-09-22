@@ -28,7 +28,7 @@ confidence: 2
 3 步训练:
 1. 自监督利用互联网视频训练一个 encoder: (x1, x2) -> z（VQ 离散化）和 decoder: (x1, z) -> x2，这类似于 IDM 和 FDM. 这里 x1 和 x2 相差 T 帧.
 2. 监督 Latent Pretraining: 利用上面模型打 label，然后给 VLM 接入一个新的 latent head，输入 x, l 输出 z
-3. Action FT: 给 VLM 接入 action head，输入 x, l 输出 action
+3. Action FT: 让 VLM next-token-predict 出 7d action hidden states 并接 action head.
 
 当然，对于 ego 视频来说画面的变化无法实际上完全用 z 解释，因素还有视角变化和物体运动等，因此这一套自监督不算很完备.
 
