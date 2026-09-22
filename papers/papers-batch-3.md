@@ -13,7 +13,9 @@ confidence: 2
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260611232213721.png)
 
-cosmos policy 的续作, video backbone (Wan2.1，冻结) 用作编码器而单一 DiT 从 noise 中解码出 flow v (video v 和 action v，共享去噪时间步). DiT 利用 kv cache 实现了历史观测.
+cosmos policy 的续作,
+
+video backbone (Wan2.1，冻结) 预测 video v 和 action v，共享去噪时间步. DiT 利用 kv cache 实现了历史观测.
 
 demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录中有 train-infer 的 attn mask 设计和 infer 加速等不错的资料.
 
