@@ -239,7 +239,7 @@ flowchart TD
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260609095214986.png)
 
-一句话：使用 video model 直接去噪预测 proprio token, action token chunk 和 value token.
+一句话：使用 video model 直接去噪 proprio/action chunk/img/value token.
 
 这三者是 minmax 归一化然后直接被广播到 CxHxW 的 image token 形状, 还支持预测 `V(s)` 从而实现从 rollout 数据中学习以及 model-based planning (1 action -> 3 states -> 15 Q(s, a)).
 
