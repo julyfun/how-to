@@ -42,6 +42,13 @@ confidence: 2
 3. noisy action 那里 proprio 和 flow t 确实是重复拼接的.
 4. AE 输出 `[B, chunk_t+T_vlm+T_aux+32, 1024]` 以后直接过 `DomainAwareLinear(1024, 20)`. soft prompt 在最末尾.
 
+## ReconVLA (62)
+⭐️⭐️⭐️ https://www.alphaxiv.org/abs/2508.10333
+
+LLaVA 自回归出 action token, 同时 img hidden 被用作 DiT 到
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/674510509a5a178aef147c3609490f17.jpg)
+
 # --- AI ---
 
 ## InternVLA-A1.5
