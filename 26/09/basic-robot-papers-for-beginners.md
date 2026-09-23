@@ -23,7 +23,7 @@ confidence: 2
     - [x] pi06 | 25.11 稀疏 RL 训练进度估计器给数据打 0/1 advantage 作为 VLA condition
 - [ ] WM
     - [x] EnerVerse | 25.11 稀疏自回归扩散训练 Unet-VM，中间层 latent 作为 AE cross-attn kv
-    - [x] DreamDojo | 26.2 LAPA 式提取 WM Ego 预训练所需的 latent action condition 并用于动作择优
+    - [x] DreamDojo | 26.2 LAPA 式提取 WM 预训练 Ego 所需的 latent action condition 并将 WM 用于其他policy择优
     - [x] Ctrl-World (for IL) | 26.3 WM simulator rollout + 人工选择后训练数据
     - [ ] PlaNet ?
     - [x] Sora
