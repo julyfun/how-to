@@ -49,6 +49,16 @@ LLaVA 自回归出 action token, 同时 img hidden 作为独立 DiT 到 DINO gaz
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/674510509a5a178aef147c3609490f17.jpg)
 
+## Faster-WAM 华中科 (63)
+保留一次生成的未来视觉表示并在部分 action 层复用，兼顾 OOD 鲁棒性和推理速度 | 👤 华中科技大学, Weiheng Zhao, Xinggang Wang | 🌐 - | [📃 2608.04404](https://hjfy.top/arxiv/2608.04404) | [✨](https://www.alphaxiv.org/abs/2608.04404) | [📂](https://github.com/hustvl/FasterWAM)
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/fasterwam-2608.04404-framework.png)
+
+Faster-WAM 基于 Wan2.2-TI2V-5B，先编码当前观测并用高斯噪声初始化未来视频 token。video expert 仅运行一次并缓存不同深度的 future KV，Interval KV-Fusion 聚合相邻层的 KV。SparseMoT 只在选定的 action stage 注入缓存，其余层单独更新 action token。该缓存供 10 次 action denoising 复用并输出 32 步动作。
+
+推理耗时 252.95 ms 是 Joint-WAM 的 2.21 倍速，但仍需运行 5B video expert 且交互层由人工指定。额外执行未来视频去噪没有收益。与 2608.02365 压缩 action DiT 至一层不同，这篇主要减少未来视觉表示的重复计算。
+
+
 # --- AI ---
 
 ## InternVLA-A1.5
@@ -119,15 +129,6 @@ deepseek-flash[1m] 用 Manager、Planner、Engineer、Reviewer 四个 agent 组�
 RoboTTT 基于 GR00T N1.7，在 16 个 action DiT layer 的 attention 后各接一个 TTT layer。每层用两层 MLP 作为 fast model 并以自监督损失学习 K→V，再用更新后的 MLP 查询 Q。state、noisy action 和 16 个 register token 跨时间进入 TTT，register token 负责携带 VLM 信息。推理时 slow weights 冻结并将 fast weights 持续传给下一时刻。
 
 训练时为每个 action chunk 独立采样 flow-matching 噪声并使用 TBPTT，避免显存随 8K 步历史增长。预训练使用 16 张 GB200 跑 30K steps，当前未发布代码。
-
-## Faster-WAM: Efficient Inference-Time Future Conditioning for Robust World Action Models
-[GPT-5] 保留一次生成的未来视觉表示并在部分 action 层复用，兼顾 OOD 鲁棒性和推理速度 | 👤 华中科技大学, Weiheng Zhao, Xinggang Wang | 🌐 - | [📃 2608.04404](https://hjfy.top/arxiv/2608.04404) | [✨](https://www.alphaxiv.org/abs/2608.04404) | [📂](https://github.com/hustvl/FasterWAM)
-
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/fasterwam-2608.04404-framework.png)
-
-Faster-WAM 基于 Wan2.2-TI2V-5B，先编码当前观测并用高斯噪声初始化未来视频 token。video expert 仅运行一次并缓存不同深度的 future KV，Interval KV-Fusion 聚合相邻层的 KV。SparseMoT 只在选定的 action stage 注入缓存，其余层单独更新 action token。该缓存供 10 次 action denoising 复用并输出 32 步动作。
-
-推理耗时 252.95 ms 是 Joint-WAM 的 2.21 倍速，但仍需运行 5B video expert 且交互层由人工指定。额外执行未来视频去噪没有收益。与 2608.02365 压缩 action DiT 至一层不同，这篇主要减少未来视觉表示的重复计算。
 
 ## Faster-WAM: Do World Action Models Need Deep Action Modules?
 [GPT-5] 将 30 层 WAM action DiT 缩成单层并复用视频骨干各层 KV | 👤 Huawei Noah’s Ark Lab, Liheng Ma, Rui Heng Yang | 🌐 - | [📃 2608.02365](https://hjfy.top/arxiv/2608.02365) | [✨](https://www.alphaxiv.org/abs/2608.02365) | 📂 -
