@@ -50,14 +50,11 @@ LLaVA 自回归出 action token, 同时 img hidden 作为独立 DiT 到 DINO gaz
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/674510509a5a178aef147c3609490f17.jpg)
 
 ## Faster-WAM 华中科 (63)
-保留一次生成的未来视觉表示并在部分 action 层复用，兼顾 OOD 鲁棒性和推理速度 | 👤 华中科技大学, Weiheng Zhao, Xinggang Wang | 🌐 - | [📃 2608.04404](https://hjfy.top/arxiv/2608.04404) | [✨](https://www.alphaxiv.org/abs/2608.04404) | [📂](https://github.com/hustvl/FasterWAM)
+⭐️⭐️⭐️ 推理时 video 仍前向一次 + SparseMoT | 👤 华中科技大学, Weiheng Zhao, Xinggang Wang | 🌐 - | [📃 2608.04404](https://hjfy.top/arxiv/2608.04404) | [✨](https://www.alphaxiv.org/abs/2608.04404) | [📂](https://github.com/hustvl/FasterWAM)
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/fasterwam-2608.04404-framework.png)
 
-Faster-WAM 基于 Wan2.2-TI2V-5B，先编码当前观测并用高斯噪声初始化未来视频 token。video expert 仅运行一次并缓存不同深度的 future KV，Interval KV-Fusion 聚合相邻层的 KV。SparseMoT 只在选定的 action stage 注入缓存，其余层单独更新 action token。该缓存供 10 次 action denoising 复用并输出 32 步动作。
-
-推理耗时 252.95 ms 是 Joint-WAM 的 2.21 倍速，但仍需运行 5B video expert 且交互层由人工指定。额外执行未来视频去噪没有收益。与 2608.02365 压缩 action DiT 至一层不同，这篇主要减少未来视觉表示的重复计算。
-
+action 仍能看到 video，但是前向一次. 训练时，这个前向一次的 velocity 也会被监督（和 fastwam 一样）. SparseMoT 每个 4 层看一次，
 
 # --- AI ---
 
