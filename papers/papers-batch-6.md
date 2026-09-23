@@ -89,13 +89,13 @@ https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260814134612261.png)
 
-为了解决 VLA 模型容易遗忘 VLM 视觉语义先验的问题，本文引入了表情包放置诊断基准。作者在仿真和真机上系统对比了全参数微调、LoRA、联合训练和潜在动作预测等多种方法。
+为了防止 VLM 遗忘视觉语义先验，本文引入一个非常简单的表情包放置诊断基准。作者在仿真和真机上系统对比了全参数微调、LoRA、联合训练和潜在动作预测等多种方法。
 
 实验发现:
 1. 相比传统全量微调，Frozen VLM（中间图，跳过预训练）和 LoRA（右图）能保留 VLM 识别成功率，但拟合动作需要更多训练步.
 2. co-training VLM + VLA 取得了很好的表现.
 3. 多样的数据集提升了模型表现.
-4. LAPA 类型的 Latent Token 相较于离散 Token 对于训练效果更好. 本实验是在 pi0 基础上改动的，而且该结论与 pi0.5 不一致.
+4. LAPA 类型的 Latent Token 相较于离散 Token 对于训练效果更好. 本实验是在 pi0 基础上改动的.
 
 ## ---
 

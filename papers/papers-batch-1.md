@@ -37,43 +37,6 @@ TODO: 数据集这一块儿有空可以再看看.
 
 所谓双 DiT，其实就是 MoT，即 video DiT 和 action DiT 在每个 transformer layer 通过 self-attention 双向注意.
 
-```mermaid
-flowchart TD
-    video["Training Video<br/>(B, 3, T=33, H=224, W=448)"] --> vae["Wan VAE Encode"]
-    vae --> z0["Video Latents z_0<br/>(B, 48, T_lat=9, 28, 56)"]
-    z0 --> zv["Add Flow Noise<br/>sample t_v, eps_v"]
-    zv --> vpre["Video Expert pre_dit<br/>patchify + 3D RoPE"]
-
-    prompt["Task Prompt / Cached Text<br/>(B, L=128, D=4096)"] --> ctx["Text Context"]
-    state["Robot State<br/>(B, T, D_state=8)"] --> prop["proprio_encoder(Linear)<br/>as 1 state token"]
-    prop --> ctx
-    ctx --> vpre
-
-    action["GT Actions a_0<br/>(B, T_act=32, A=7)"] --> za["Add Flow Noise<br/>sample t_a, eps_a"]
-    za --> apre["Action Expert pre_dit<br/>Linear(A -> 1024) + 1D RoPE"]
-    ctx --> apre
-
-    vpre --> vt["Video Tokens<br/>(B, S_v=3528, D_v=3072)"]
-    apre --> at["Action Tokens<br/>(B, 32, D_a=1024)"]
-    vt --> mot["MoT Mixed Transformer<br/>30 layers shared masked self-attn"]
-    at --> mot
-    mask["Mask<br/>video->video causal<br/>action->first-frame video + action"] --> mot
-
-    mot --> vpost["Video post_dit<br/>unpatchify"]
-    mot --> apost["Action post_dit<br/>Linear(1024 -> A)"]
-    vpost --> pv["Predicted video velocity<br/>(B, 48, T_lat', 28, 56)"]
-    apost --> pa["Predicted action velocity<br/>(B, 32, 7)"]
-
-    zv --> vtgt["Target video velocity"]
-    za --> atgt["Target action velocity"]
-    pv --> vloss["Video FM Loss"]
-    vtgt --> vloss
-    pa --> aloss["Action FM Loss"]
-    atgt --> aloss
-    vloss --> total["Total Loss<br/>lambda_v * L_video + lambda_a * L_action"]
-    aloss --> total
-```
-
 ## Lingbot-va (4)
 - https://hjfy.top/arxiv/2601.21998 Lin Li, Yinghao Xu
 
@@ -117,40 +80,6 @@ execute #2 起:
 compute_kv_cache #2:
     再次 clear_pred_cache()
     追加新的 real_z / real_a(real_a != pred_a)
-```
-
-### Infer-time denoise video
-```mermaid
-flowchart TD
-    cache["模块外 KV Cache<br/>来自 compute_kv_cache #1<br/>real history only: z/a KV<br/>capacity per block: [B_eff=2, 9792, 24, 128]<br/>这里 eff=2 是 CFG 用的"] -.-> attn
-    noise_z["sample video noise<br/>latents: [1, 48, 2, 24, 20]<br/>表示 [z2_hat, z3_hat]"] --> prep["CFG repeat + grid/timestep<br/>[B_eff=2, 48, 2, 24, 20]"]
-    prep --> vemb[["patch_embedding_mlp<br/>192 -> 3072"]]
-    vemb --> vt["video tokens<br/>seq_len = 2 * 12 * 10 = 240<br/>[B_eff=2, 240, 3072]"]
-    prompt["cached prompt_embeds<br/>[B_eff=2, 512, 4096]"] --> textproj[["text_embedder<br/>4096 -> 3072"]]
-    textproj --> txt["text tokens<br/>[B_eff=2, 512, 3072]"]
-    vt --> attn[["Shared WanTransformerBlock x30<br/>self-attn 读模块外 KV Cache<br/>cross-attn 读 text tokens"]]
-    txt --> attn
-    attn --> vhead[["norm_out + proj_out"]]
-    vhead --> vvel["video velocity<br/>tokens [B_eff=2, 240, 192]<br/>unpatch -> [B_eff=2, 48, 2, 24, 20]"]
-    vvel --> sched["Flow scheduler step<br/>更新 [z2_hat, z3_hat]"]
-    sched --> predcache["最后一步 update_cache=1<br/>把 predicted video KV 写入 cache<br/>is_pred=True"]
-```
-
-### Denoise action
-```mermaid
-flowchart TD
-    cache["模块外 KV Cache<br/>real history + 刚写入的 predicted video chunk KV<br/>z/a history + [z2_hat,z3_hat]"] -.-> attn
-    noise_a["sample action noise<br/>actions: [1, 30, 2, 16, 1]<br/>表示 [a_grp2, a_grp3]"] --> prep["CFG repeat + grid/timestep<br/>[B_eff=2, 30, 2, 16, 1]"]
-    prep --> aemb[["action_embedder<br/>30 -> 3072"]]
-    aemb --> at["action tokens<br/>seq_len = 2 * 16 = 32<br/>[B_eff=2, 32, 3072]"]
-    prompt["cached prompt_embeds<br/>[B_eff=2, 512, 4096]"] --> textproj[["text_embedder<br/>4096 -> 3072"]]
-    textproj --> txt["text tokens<br/>[B_eff=2, 512, 3072]"]
-    at --> attn[["Shared WanTransformerBlock x30<br/>self-attn 读模块外 KV Cache<br/>cross-attn 读 text tokens"]]
-    txt --> attn
-    attn --> ahead[["norm_out + action_proj_out"]]
-    ahead --> avel["action velocity<br/>[B_eff=2, 32, 30]<br/>reshape -> [B_eff=2, 30, 2, 16, 1]"]
-    avel --> sched["Flow scheduler step<br/>更新 [a_grp2, a_grp3]"]
-    sched --> predcache["最后一步 update_cache=1<br/>把 predicted action KV 写入 cache<br/>is_pred=True"]
 ```
 
 ## RTC (5)
