@@ -185,22 +185,23 @@ https://arxiv.org/abs/2504.16054
 架构新技巧:
 - pi0.5 flow time t 使用 adaRMSNorm[2] 用作 action flow condition. (pi0 是 MLP 直接为 token , concat action token)
 - pi0.5 将 state 离散化为 task prompt（在 pi0 中，state 是过 linear 进 action expert）
+- 另外预训练/后训练有一种 KI 做法：AE 的梯度不传回 VLM 防止损害，而 VLM 通过 next-token-predict 离散 action 来学习动作表征.
 
 1. FAST tokenizer 就是先将整个 action chunk (原文说了是 compressing the action chunks) 先 encode 为 8 个 latent 然后 vector quantize 就完事. 最终将 50x19 action 转为 8 个 token.
-2. adarmsnorm:
+2. adarmsnorm: 其实就是 RMSNorm 后用 flow t 取 scale + bias 一下.
    ```python
-   # 1. 提取时间步 t 的正弦位置编码
+   # 1. 提取时间步 flow t 的正弦位置编码
    # t: (b,)
    # time_emb: (b, emb=2048)
    time_emb = SinusoidalEmbedding(t, dim=2048)
    # 2. 通过两层带 Swish 激活的 MLP 投影得到条件向量
    # adarms_cond: (b, emb=2048)
-   adarms_cond = Swish(Linear(Swish(Linear(time_emb))))
+   time_cond = Swish(Linear(Swish(Linear(time_emb))))
    # --- 以下发生在 Action Expert (Gemma-300m) 的每一层 Transformer Block 中 ---
    # 3. 在 Action Expert 的每一层，将条件向量映射为缩放 (scale) 和平移 (shift) 参数
    # scale, shift 形状均为 (b, emb=2048)
    # 注意：由于 action_tokens 形状是 (b, ah=50, emb=2048)，这里会将 scale/shift 广播 (broadcast) 到序列长度维度
-   scale, shift = Linear(adarms_cond, out_features=2048 * 2).chunk(2, dim=-1)
+   scale, shift = Linear(time_cond, out_features=2048 * 2).chunk(2, dim=-1)
    # 4. 对隐藏层 x 应用 RMSNorm 后，注入时间信息
    # x: (b, ah=50, emb=2048)
    # x_out: (b, ah=50, emb=2048)
@@ -241,67 +242,9 @@ flowchart TD
     vt --> loss
 ```
 
-pi0.6
-```mermaid
-flowchart TD
-    img["Images<br/>(B, n_cam=3, H=224, W=224, C=3)"] --> siglip["Image Encoder<br/>SigLIP 400M"]
-    txt["Text + Discrete State Tokens<br/>(B, max_token_len=200)"] --> tok["Gemma Token Embedding"]
-
-    siglip --> vis["Visual Tokens<br/>(B, n_cam*256, D_vlm)"]
-    tok --> textemb["Text/State Embeddings<br/>(B, 200, D_vlm)"]
-    vis --> prefix["Prefix Tokens<br/>(image + text + state + metadata)"]
-    textemb --> prefix
-
-    noisy["Noisy Actions a_eta<br/>(B, horizon=50, action_dim=32)"] --> actproj["action_in_proj"]
-    time["Flow Time eta<br/>(B,)"] --> timemlp["Time MLP for adaRMSNorm"]
-
-    actproj --> suffix["Suffix Action Tokens<br/>(B, seq_len=50, D_ae)"]
-    timemlp --> adarms["adaRMSNorm condition<br/>(B, D_ae)"]
-
-    prefix --> pg["pi*0.6 VLA Backbone<br/>Gemma 3 4B"]
-    suffix --> ae["Action Expert<br/>860M"]
-    adarms --> ae
-
-    pg <--> shared["Shared Masked Self-Attn<br/>(qkv head_dim=256)"]
-    ae <--> shared
-
-    shared --> actout["action_out_proj"]
-    actout --> vt["Predicted Flow f_theta<br/>(B, 50, action_dim=32)"]
-    gt["GT Action Chunk a<br/>(B, 50, action_dim=32)"] --> ftarget["Target omega - a<br/>(B, 50, action_dim=32)"]
-    noise["Noise omega ~ N(0,I)<br/>(B, 50, action_dim=32)"] --> noisy
-    noise --> ftarget
-    ftarget --> floss["Flow Matching Loss<br/>alpha_eta * ||f_theta - (omega - a)||^2"]
-    vt --> floss
-
-    img --> vfsiglip["Value Image Encoder<br/>SigLIP 400M"]
-    txt --> vftok["Value Text Embedding"]
-    vfsiglip --> vfprefix["Value Prefix Tokens"]
-    vftok --> vfprefix
-    vfprefix --> vf["Value Function<br/>Gemma 270M + value head"]
-    vf --> vdist["Value Distribution<br/>p_phi(V | o_t, l), 201 bins"]
-    returns["MC Return R_t<br/>from success/failure episode reward"] --> vloss["Value CE Loss<br/>CE(p_phi, discretized R_t)"]
-    vdist --> vloss
-    vdist --> vscalar["Scalar Value V(o)<br/>E over value bins"]
-    vscalar --> adv["Advantage A(o,a)<br/>r_t:t+N + V(o_t+N) - V(o_t)"]
-    adv --> bin["Binarize<br/>I_t = 1[A > epsilon_l]"]
-    bin --> advtxt["Advantage Text Token<br/>'positive' / 'negative'"]
-    advtxt --> tok
-
-    pg --> subtask["Subtask Text Tokens<br/>(e.g. 'tamp the coffee')"]
-    pg --> fastout["FAST Discrete Action Tokens<br/>a^l_t:t+H"]
-    gt --> fasttok["FAST Tokenizer"]
-    fasttok --> fastgt["GT FAST Action Tokens"]
-    subtask --> tokce["Next-token CE/NLL<br/>subtask + FAST action tokens"]
-    fastout --> tokce
-    fastgt --> tokce
-
-    classDef pi06 fill:#fff2b3,stroke:#d6a600,stroke-width:2px,color:#111;
-    class pg,ae,vfsiglip,vftok,vfprefix,vf,vdist,vscalar,adv,bin,advtxt,fastout,fasttok,fastgt,tokce pi06;
-```
-
 ## 总结
 
-VLA 架构的大方向:
+VLA 其中几种架构:
 1. [VLM] -> embedding -> [MLP(i.e. action head)] -> action
 2. [VLM] -> embedding -> kv -> [Decoder transformer, attended by learnable q pos embedding] -> [action head] -> action (ACT-like)
 3. [VLM] -> MoT <-> [action expert] -> [action head] -> action (Pi-like)
