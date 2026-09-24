@@ -55,6 +55,9 @@ confidence: 2
         - [ ] MotuBrain
     - [x] Query-based 架构 (ACT-like)
         - [x] VLA-JEPA | 26.2 query latent action 并在 JEPA 空间监督从而 leverage human video
+    - [x] Reactive
+        - [x] AHA-WAM | 26.6 Context Routing 实现 v-a 异步
+        - [x] InternW0 | 26.9 Context Routing + 力触觉
 - [ ] 数据工作
     - [x] EgoRecovery 26.7 | 人类手动摆出失败配置并纠正，提取意图调制 Gated 动作解码
 - [ ] VLA Framework
@@ -65,3 +68,5 @@ confidence: 2
 TODO
 - [ ] MMLab 的 EGOWILD2DEX https://mmlab.hk/egowild2dex/
 - 9/23 推荐的五六篇文章 https://shuiyuan.sjtu.edu.cn/t/topic/506513/350
+
+- 每日新闻 https://theroboradar.com
