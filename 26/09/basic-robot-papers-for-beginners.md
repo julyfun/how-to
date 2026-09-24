@@ -68,5 +68,10 @@ confidence: 2
 TODO
 - [ ] MMLab 的 EGOWILD2DEX https://mmlab.hk/egowild2dex/
 - 9/23 推荐的五六篇文章 https://shuiyuan.sjtu.edu.cn/t/topic/506513/350
+- [ ] xiaomi https://www.alphaxiv.org/zh/abs/2609.28161v1
+- [ ] 斯坦福 CE https://www.alphaxiv.org/pdf/2609.27095
+- [ ] 字节 embodied SWE: https://arxiv.org/pdf/2609.27308
+- [ ] bench
 
 - 每日新闻 https://theroboradar.com
+- 每日 paper https://paper.axi404.top/daily/2026-09-24#cat-cs-CV
