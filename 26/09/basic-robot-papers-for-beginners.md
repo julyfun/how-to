@@ -53,6 +53,8 @@ confidence: 2
         - [ ] MotuBrain
     - [x] Query-based (ACT-like)
         - [x] VLA-JEPA | 26.2 query latent action 并在 JEPA 空间监督从而 leverage human video
+- [ ] 数据工作
+    - [ ] EgoRecovery 26.7 | 提取动作意图
 - [ ] VLA Framework
     - [ ] FLuxVLA
     - [x] RLinf
