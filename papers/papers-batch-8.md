@@ -56,6 +56,10 @@ LLaVA 自回归出 action token, 同时 img hidden 作为独立 DiT 到 DINO gaz
 
 video 前向一次，action 能看到 video. 训练时，这个前向一次的 velocity 也会被监督（和 fastwam 一样）. SparseMoT 的 action 每 4 层看一次 video，并且看的是 learnable 加权的 4 层 video kv cache，文章称 Dense < Stride-4 < Stride-4 & 加权.
 
+## G0.5 (64)
+
+https://www.alphaxiv.org/abs/2608.11739v1
+
 ## 不同的 WAM 架构
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/06530698dcc2d4d498a32e6b18d81b8d.jpg)
