@@ -7,7 +7,6 @@ os: "Darwin julyfundeMacBook-Air.local 25.3.0 Darwin Kernel Version 25.3.0: Wed 
 assume-you-know: [computer]
 confidence: 2
 ---
-
 - [x] 基础
     - [x] CLIP | 21.1 通过直接匹配图-文编码来训练
     - [x] DINO | 21.4 以 EMA & 全局视图的教师与局部视图学生进行自蒸馏
@@ -54,7 +53,7 @@ confidence: 2
         - [x] DiT4DiT | 26.3 非 MoT & 带 diffusion shift & action_to_video_only 的实践
         - [x] FastWAM | 26.3 video gen 仅作为辅助任务
         - [ ] MotuBrain
-    - [x] Query-based (ACT-like)
+    - [x] Query-based 架构 (ACT-like)
         - [x] VLA-JEPA | 26.2 query latent action 并在 JEPA 空间监督从而 leverage human video
 - [ ] 数据工作
     - [x] EgoRecovery 26.7 | 人类手动摆出失败配置并纠正，提取意图调制 Gated 动作解码
