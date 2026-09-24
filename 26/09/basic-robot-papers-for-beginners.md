@@ -16,11 +16,14 @@ confidence: 2
     - [x] LLaVA | 23.4 将 CLIP 投影到 LLM 空间并进行问答训练
     - [x] QwenVL | 23.8 将 CLIP 通过 256 learnable-queries cross-attn 变换到 LLM 空间
 - [x] VLA
-    - [x] OpenVLA | 24.6 用 VLM 的 next-token-prediction 输出离散动作
-    - [x] pi0 | 24.10 推出 MoT & FM & zero-padding 大规模预训练范式
-    - [x] pi05 | 25.4 预训练扩充 CE/互联网，离散动作预训练，subtask 作为辅助损失和 CoT
-    - [x] SmolVLA | 25.6 裁剪 MoT 并交错使用 CA 和 SA 以让模型更轻量化
-    - [x] pi06 | 25.11 稀疏 RL 训练进度估计器给数据打 0/1 advantage 作为 VLA condition
+    - [x] 基模
+        - [x] OpenVLA | 24.6 用 VLM 的 next-token-prediction 输出离散动作
+        - [x] pi0 | 24.10 推出 MoT & FM & zero-padding 大规模预训练范式
+        - [x] pi05 | 25.4 预训练扩充 CE/互联网，离散动作预训练，subtask 作为辅助损失和 CoT
+        - [x] SmolVLA | 25.6 裁剪 MoT 并交错使用 CA 和 SA 以让模型更轻量化
+        - [x] pi06 | 25.11 稀疏 RL 训练进度估计器给数据打 0/1 advantage 作为 VLA condition
+    - [x] 自回归
+        - [x] G0.5 | 26.8 带 ActionCodec 和 CoT 的自回归 VLA，实验 AR > FM
 - [ ] WM
     - [x] EnerVerse | 25.11 稀疏自回归扩散训练 Unet-VM，中间层 latent 作为 AE cross-attn kv
     - [x] DreamDojo | 26.2 LAPA 式提取 WM 预训练 Ego 所需的 latent action condition 并将 WM 用于其他policy择优
@@ -54,7 +57,7 @@ confidence: 2
     - [x] Query-based (ACT-like)
         - [x] VLA-JEPA | 26.2 query latent action 并在 JEPA 空间监督从而 leverage human video
 - [ ] 数据工作
-    - [ ] EgoRecovery 26.7 | 提取动作意图
+    - [x] EgoRecovery 26.7 | 人类手动摆出失败配置并纠正，提取意图调制 Gated 动作解码
 - [ ] VLA Framework
     - [ ] FLuxVLA
     - [x] RLinf
