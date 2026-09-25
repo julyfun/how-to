@@ -9,6 +9,7 @@
 .obsidian
 .obsidian.vimrc
 .jsttmp
+.vimrc
 
 # [binary]
 1
@@ -25,4 +26,3 @@ __pycache__
 # [ignore]
 ignoreme-*
 ignore-*
-
