@@ -60,6 +60,12 @@ video 前向一次，action 能看到 video. 训练时，这个前向一次的 v
 
 https://www.alphaxiv.org/abs/2608.11739v1
 
+## InternW0 (65)
+
+https://www.alphaxiv.org/abs/2609.27656v1
+
+## patchwam (66)
+
 ## 不同的 WAM 架构
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/06530698dcc2d4d498a32e6b18d81b8d.jpg)
