@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-by: deepseek 41 flash
+by: deepseek 41 flash. verified ok.
 
 see: https://ameow.xyz/archives/tailscale-derp-server-deployment
 
