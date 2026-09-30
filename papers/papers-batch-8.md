@@ -35,7 +35,7 @@ confidence: 2
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260921180618684.png)
 
-本文发现随意混异构数据会掉点，于是提出给每个数据源一个独立 learnable embedding (32 tokens, 叫做 soft prompt) 以及独立 action input/output proj，感觉很 make sense. 后训练先冻结主干给新本体 warmup library，然后解冻主干或LoRA. Cascaded 架构. 性能截至今天依然能打.
+本文发现随意混异构数据会掉点，于是提出给每个数据源一个独立 learnable embedding (32 tokens, 叫做 soft prompt，拼接到 encoded vl 之后) 以及独立 action input/output proj，感觉很 make sense. 后训练先冻结主干给新本体 warmup library，然后解冻主干或LoRA. Cascaded 架构. 性能截至今天依然能打.
 
 1. 上图中间 shared linear proj 有误，代码中 main 和 others 为独立 proj.
 2. 腕部视角确实不经过 vlm，不知道为什么.
@@ -65,6 +65,8 @@ https://www.alphaxiv.org/abs/2608.11739v1
 ⭐️⭐️ https://www.alphaxiv.org/abs/2609.27656v1
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260930172139878.png)
+
+
 
 ## patchwam (66)
 
