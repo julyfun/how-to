@@ -27,12 +27,12 @@ confidence: 2
 
 - 在 mot 的 action expert 的 [9, 10, 11, 12] 层 block 中，让 action tokens 的 q 去 attend `depth_proj(depth_enc(img))` 的 kv 得到 y1，由 depth anything 监督.
 - 新的一条路径：`action tokens -> q; concat(image tokens, action tokens) -> kv` 用于:
-    - 计算 这里 qk 的 attn score，这个 score 和 GT attn mask patchified 得到 obj_loss (GT 由其他 grounding 模型生成)
+    - 计算 这里 qk 的 attn score 直接对齐 patchified GT attn mask 得到 obj_loss (GT 由其他 grounding 模型生成)
     - 以及产生 pred_skill(one-hot，类似于 "pick" "place" "hold" 分类)，计算额外 skill_loss. 除了 loss 还会得到 y2 y3.
     - action tokens += linear(concat(y1, y2, y3))
-    - 上述 qkv 在代码中被称为 control_qkv [1]. y1 y2 y3 带门控.
+        - 上述 qkv 在代码中被称为 control_qkv [1]. y1 y2 y3 带门控.
 
-1. 关于 control net:
+1. 关于 control net-like:
 ```python
 output = original_attention(x) + # 这里是 pi0 原始的.
   linear(control_attention(x)) # 只不过这里 linear 初始化为 0 防止初始就让老模型乱掉
