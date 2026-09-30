@@ -45,7 +45,7 @@ confidence: 2
 ## ReconVLA (62)
 ⭐️⭐️⭐️ https://www.alphaxiv.org/abs/2508.10333 | Wenxuan Song, Haoang Li, 港中深广
 
-LLaVA 自回归出 action token, 同时 img hidden 作为独立 DiT 到 DINO gaze region 的 condition 来监督.
+LLaVA 自回归出 action token, 同时 img hidden 作为 `独立 DiT 到 DINO gaze region` 的 condition 来监督.
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/674510509a5a178aef147c3609490f17.jpg)
 
@@ -58,7 +58,11 @@ video 仅前向一次，action 能看到 video. 训练时，这个前向一次�
 
 ## G0.5 (64)
 
-https://www.alphaxiv.org/abs/2608.11739v1
+⭐️⭐️⭐️ 星海图 https://www.alphaxiv.org/abs/2608.11739v1
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260930192553887.png)
+
+带 ActionCodec 和 CoT 的自回归 VLA，实验 AR > FM. 然而实测 AR 并没有完整开源，开源的 FM 效果倒还行.
 
 ## InternW0 (65)
 
@@ -66,7 +70,7 @@ https://www.alphaxiv.org/abs/2608.11739v1
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260930172139878.png)
 
-用 AHA-WAM 的方式实现力触觉 reactive.
+用 AHA-WAM 的方式实现力触觉 reactive，预训练 3000h+ InternData，实现了很好的 C2R.
 
 ## patchwam (66)
 
