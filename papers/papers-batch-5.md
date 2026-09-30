@@ -113,7 +113,7 @@ action_v = action_dit(noisy_action, updated_kv, state_emb)
 
 ```python
 current_image  # 新观测
-video_kv_cache # video DiT 缓存，第一帧为 clean，后续为生成；每层含 K/V
+video_kv_cache # video DiT 缓存，第一帧为 clean
 base_queries   # [Q, D]，可学习槽位
 
 obs_tokens = encode_visual_obs(current_image)       # [B, L_obs, D]
