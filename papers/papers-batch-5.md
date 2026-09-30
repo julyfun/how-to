@@ -111,6 +111,28 @@ for (layer_k, layer_v), mlp_this_layer in zip(history, mlps):
 action_v = action_dit(noisy_action, updated_kv, state_emb)
 ```
 
+```python
+current_image  # 新观测
+video_kv_cache # video DiT 缓存，第一帧为 clean，后续为生成；每层含 K/V
+base_queries   # [Q, D]，可学习槽位
+
+obs_tokens = encode_visual_obs(current_image)       # [B, L_obs, D]
+guided_queries = cross_attn(base_queries, obs_tokens) # [B, Q, D]
+
+updated_kv = []
+for layer_kv, layer_modules in zip(video_kv_cache, editor_layers):
+    k0, v0 = first_frame(layer_kv)                    # [B, S, D]
+    routed = cross_attn(
+        layer_modules.query_proj(guided_queries), k0, v0
+    )                                                  # [B, Q, D]
+    decoded = cross_attn(k0, routed, routed)           # [B, S, D]，映射回视频 token
+    delta_k, delta_v = layer_modules.mlp(decoded).chunk(2, dim=-1)
+    gate = sigmoid(layer_modules.delta_gate)
+    updated_kv.append((k0 + gate * delta_k, v0 + gate * delta_v))
+
+action_v = action_dit(noisy_action, updated_kv, state_emb)
+```
+
 ## RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies (42)
 ⭐️⭐️⭐ 26年7月非常难的 benchmark | 👤 MMLab@HKU, Tianxing Chen, Ping Luo | [🌐](http://robodojo-benchmark.com/) | [📃 2607.04434](https://hjfy.top/arxiv/2607.04434) | [✨](https://www.alphaxiv.org/abs/2607.04434) | [📂](https://github.com/RoboDojo-Benchmark/RoboDojo) |
 
