@@ -66,6 +66,8 @@ https://www.alphaxiv.org/abs/2609.27656v1
 
 ## patchwam (66)
 
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260930163147759.png)
+
 ## 不同的 WAM 架构
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/06530698dcc2d4d498a32e6b18d81b8d.jpg)
