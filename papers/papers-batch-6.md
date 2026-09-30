@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## lingbot-va 2.0: Native Video-Action Pretraining for Generalizable Robot Control (43)
+## lingbot-va 2.0 (43)
 ⭐️⭐️⭐️ 用机器人数据从零预训练 Video DiT | 👤 Robbyant, Qihang Zhang, Yinghao Xu | [🌐](https://technology.robbyant.com/lingbot-va-v2) | [📃 -](-) | [✨ -](-) | [📂 -](-) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260723204216312.png)
@@ -19,7 +19,7 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 
 1. obs0 -> [video dit] -> z_pred1 -> [action dit] -> a1（开始执行） -> [video dit (as FDM)] -> z1 并替换 z_pred1 的 kv -> [video dit] -> z_pred2 -> [action dit] -> a2. 在执行 a1 的过程中已经超前生成了 a2.
 
-## lingbot-vla 2.0: From Foundation to Application: Improving VLA Models in Practice (44)
+## lingbot-vla 2.0 (44)
 ⭐️⭐️ 增加了视频监督; 一些消融实验 | 👤 Ant Digital Technologies, Wei Wu, Kecheng Zheng | [🌐](https://technology.robbyant.com/lingbot-vla-v2) | [📃 2607.06403](https://hjfy.top/arxiv/2607.06403) | [✨](https://www.alphaxiv.org/abs/2607.06403) | [📂](https://github.com/robbyant/lingbot-vla-v2) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260723204353806.png)
@@ -28,7 +28,7 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 2. 架构: action expert 改为 moe. VLM 仍使用 Qwen2.5-VL，在 image-text token 后 concat [Q_t, Q_(t+T)]，在 VLM 最终输出通过 proj_depth 与 lingbot-depth token 对齐，以及 proj_video 与其提出的 DINO-video token 对齐.
 3. 消融实验：1) 相对 EEF ≈ 相对 joint > 绝对 joint. 2) 本文认为 meanstd 似乎比 q01-q99 更好学. 3) L2 loss > L1 loss，除了挤番茄酱.
 
-## Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution (45)
+## Xiaomi-Robotics-0 (45)
 ⭐️⭐️⭐️ 改进了 train-RTC; 预训练从 VLM 中 query 动作 | 👤 Xiaomi Robotics, Rui Cai | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-0.html) | [📃 2602.12684](https://hjfy.top/arxiv/2602.12684) | [✨](https://www.alphaxiv.org/abs/2602.12684) | [📂](https://github.com/XiaomiRobotics/Xiaomi-Robotics-0) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260723204116072.png)
@@ -50,7 +50,7 @@ video DiT 从零训练，使用了 MoE 且没有直接继承 WAN 架构。此外
 
 文章还做了海量工程优化. Demo 效果非常好，此外实验发现 diffusion model 在 OOD 情况下比 RL model 更稳定.
 
-## Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories (47)
+## Xiaomi-Robotics-1 (47)
 ⭐️⭐️⭐️⭐️ 10 万小时预训练 | 👤 小米, Jun Guo, Nan Sun | [🌐](https://robotics.xiaomi.com/xiaomi-robotics-1.html) | [📃 2607.15330](https://hjfy.top/arxiv/2607.15330) | [✨](https://www.alphaxiv.org/abs/2607.15330) | [📂-]() |
 
 xiaomi 打造了 VLM 自动标注的流水线，并用 10wh UMI 预训练 + 10kh 异构数据中训练（文中称为 post-training），值得注意的是本文认为**跨本体应当在中训练中完成**. 本文也认为 scaling 尚未饱和，登顶发布时 robodojo sim.
@@ -59,7 +59,7 @@ xiaomi 打造了 VLM 自动标注的流水线，并用 10wh UMI 预训练 + 10kh
 1. Model scaling 的曲线和 gen0 并不一致，gen0 在模型不足 7B 的时候 err 会逐渐上升.
 2. 文中图表显示 Pi0.5 暴打 xiaomi-robotics-0?
 3. 文中图表 RoboCasa 似乎 Pi0-FAST 暴打 Pi0.5.
-4. 具有非常棒的 Demo，phone-packing 流畅得如同遥操.
+4. 具有非常强的 Demo，十分流畅且细节动作做的很好.
 
 ## Why Does Action Chunking Improve Behavioral Cloning Performance in Robotic Control? (48)
 ⭐️⭐️⭐️ 认为 action chunking 的有效性主要源于 implicit ensemble | 👤 Politecnico di Milano, Filippo Lazzati, Sergey Levine | [🌐](https://action-chunking.github.io) | [📃 2608.02547](https://hjfy.top/arxiv/2608.02547) | [✨](https://www.alphaxiv.org/abs/2608.02547) | [📂-]() |
@@ -76,9 +76,9 @@ xiaomi 打造了 VLM 自动标注的流水线，并用 10wh UMI 预训练 + 10kh
 2. delayed 预测即可减少累积误差，即使预测次数极多.
 3. aux 优势仅适用于 short horizon。实际优势来源于其模拟了 n 个 delayed-policy.
 
-## Much Ado About Noising: Dispelling the Myths of Generative Robotic Control (49)
+## Much Ado About Noising (49)
 
-⭐️⭐️⭐️ CMU, Chaoyi Pan, Max Simchowitz.
+⭐️⭐️⭐️ CMU, Chaoyi Pan, Max Simchowitz. (: Dispelling the Myths of Generative Robotic Control)
 
 https://simchowitzlabpublic.github.io/much-ado-about-noising-project/
 
