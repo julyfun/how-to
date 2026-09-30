@@ -77,7 +77,7 @@ confidence: 2
 
 ## DM0.5: 面向开放世界的通用具身智能基础模型 (56)
 
-⭐️⭐️⭐️ 应用了1分钟历史、Co-training 等技巧 | 👤 原力灵机 Dexmal | [🌐](https://www.dexmal.com/blog/dm0.5) | 📃 - | ✨ - | [📂](https://github.com/dexmal/opendm)
+⭐️⭐️⭐️ 应用了1分钟历史、动态规划轨迹 loss 等技巧 | 👤 原力灵机 Dexmal | [🌐](https://www.dexmal.com/blog/dm0.5) | 📃 - | ✨ - | [📂](https://github.com/dexmal/opendm)
 
 ![DM0.5 架构](https://www.dexmal.com/blog/dm0.5/image%204.png)
 

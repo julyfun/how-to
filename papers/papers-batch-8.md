@@ -62,7 +62,7 @@ video 仅前向一次，action 能看到 video. 训练时，这个前向一次�
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260930192553887.png)
 
-带 ActionCodec 和 CoT 的自回归 VLA，实验 AR > FM. 然而实测 AR 并没有完整开源，开源的 FM 效果倒还行.
+带 ActionCodec、CoT 和 MEM visual memory 的自回归 VLA，实验 AR > FM. 然而实测 AR 并没有完整开源，开源的 FM 效果倒还行.
 
 ## InternW0 (65)
 
