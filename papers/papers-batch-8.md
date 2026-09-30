@@ -66,7 +66,7 @@ https://www.alphaxiv.org/abs/2608.11739v1
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260930172139878.png)
 
-AHA-WAM 和
+用 AHA-WAM 的方式实现力触觉 reactive.
 
 ## patchwam (66)
 

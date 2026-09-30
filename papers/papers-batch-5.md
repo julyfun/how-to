@@ -97,21 +97,6 @@ Yuan, Yang Gao | [🌐](https://ftp1-policy.github.io/) | [📃 2606.13102](http
 对于解决 WAM 恐怖的 video dit 延迟来说，异步是一个不错的思路（而 slots 是一种实现方式），部署也会更为简单. 这种思路似乎可以直接迁移到 IDM，只不过需要验证该范式是否有效. 本文 Demo 只有双臂 picknplace.
 
 ```python
-current_image # [B, 3, H, W] 新观测.
-history_video_k, history_video_v # 历史信息, 每 layer 都是 [B, L_v, D]
-query_emb # [Q, D_q] 学习的.
-
-obs = image_encoder(current_image) # [B, N_img, D_img]
-guided_query_emb = cross_attn(query_emb -> obs) # [B, Q, D_q]. Attention pooling.
-for (layer_k, layer_v), mlp_this_layer in zip(history, mlps):
-    residual = cross_attn(guided_query_emb -> layer_k layer_v) # 获取视觉差
-    delta_k, delta_v = mlp_this_layer(concat(guided_query_emb, residual)) # 获取 kv 差
-    updated_kv.append((layer_k + delta_k * alpha, layer_v + delta_v * alpha))
-# MoT: action_dit 每一层对应一个 updated_kv.
-action_v = action_dit(noisy_action, updated_kv, state_emb)
-```
-
-```python
 current_image  # 新观测
 video_kv_cache # video DiT 缓存，第一帧为 clean
 base_queries   # [Q, D]，可学习槽位
@@ -133,7 +118,7 @@ for layer_kv, layer_modules in zip(video_kv_cache, editor_layers):
 action_v = action_dit(noisy_action, updated_kv, state_emb)
 ```
 
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/%E6%88%AA%E5%B1%8F%202026-09-30%2018.59.31.png)
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/%E6%88%AA%E5%B1%8F%202026-09-30%2019.11.30.png)
 
 ## RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies (42)
 ⭐️⭐️⭐ 26年7月非常难的 benchmark | 👤 MMLab@HKU, Tianxing Chen, Ping Luo | [🌐](http://robodojo-benchmark.com/) | [📃 2607.04434](https://hjfy.top/arxiv/2607.04434) | [✨](https://www.alphaxiv.org/abs/2607.04434) | [📂](https://github.com/RoboDojo-Benchmark/RoboDojo) |
