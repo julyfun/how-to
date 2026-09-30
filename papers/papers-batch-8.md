@@ -66,7 +66,13 @@ https://www.alphaxiv.org/abs/2609.27656v1
 
 ## patchwam (66)
 
+⭐️⭐️ https://www.alphaxiv.org/abs/2609.25961
+
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260930163147759.png)
+
+以 FLUX 图像生成模型作为单 backbone，无需预训练，并将 action 直接无学习编码到 image patch 空间进行 image-action 联合去噪，刷到了 C2R 当前最高分 66.72%.
+
+然而，没有做真机实验。而且用了单图像生成模型而非 video model，缺乏动力学先验，而且很难说是 WAM，整个架构感觉怪怪的.
 
 ## 不同的 WAM 架构
 
