@@ -19,6 +19,10 @@
 [
 *.zip
 *.rar
+*.png
+*.jpg
+*.webp
+*.gif
 
 # [py]
 __pycache__
