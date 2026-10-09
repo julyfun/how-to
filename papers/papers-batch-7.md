@@ -97,7 +97,7 @@ DM0.5 架构仍为 Pi-Like，由 4B VLM 和 680M Action Expert 构成。模型�
 
 本文是 Video Action Model 早期工作，想解决 VLA 只关注静态信息的问题。作者先把 Stable Video Diffusion 微调成面向操作的 TVP[1]，单次前向后[2]将其中 UNet 每一层 feature 拼接（中间形状小的直接线性插值到一样大），再用 Video Former[3] 把视频模型里的时空表征压成固定 token，最后接 DiT AE 生成动作。
 
-去掉互联网数据（本文先用互联网数据微调了 SVD）、去掉 SVD 预训练(from scratch) 或去掉 Video Former 都会让性能明显下降.
+去掉互联网数据（本文先用互联网数据微调了 Stable Video Diffusion）、去掉 SVD 预训练(from scratch) 或去掉 Video Former 都会让性能明显下降.
 
 1. 新。就是让 SVD 去 cross attn `CLIP(task_desc)`.
 2. 可视化实验中展现了单步去噪生成的图像运动趋势也十分清楚.

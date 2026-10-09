@@ -16,9 +16,36 @@ confidence: 2
 ## MEM (28)
 ⭐️⭐️⭐️ PI 团队
 
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622151337338.png)
+
 直接复制一个 pi0.5 的 VLM 作为 system 2 来做 text-level 长时序总结，而 system 1 改用 video 输入达到短时序能力.
 
-![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260622151337338.png)
+短时记忆是魔改 ViT 实现的。来看看**普通 ViT**:
+
+```python
+x = patchify(image) + spatial_pos         # [B, N, D]
+for layer in layers:
+    q, k, v = layer.qkv(layer.norm1(x))
+    x = x + layer.attn(q, k, v)           # patch 间双向 attention
+    x = x + layer.ffn(layer.norm2(x))
+return x
+```
+
+**MEM ViT** 加性加入 temporal attention:
+```python
+x = patchify(video) + spatial_pos         # [B, T, N, D]
+for i, layer in enumerate(layers, 1):
+    temporal = (i % 4 == 0 and T > 1)
+    z = x + time_pos if temporal else x   # 固定 sinusoidal；当前帧为 0
+    q, k, v = layer.qkv(layer.norm1(z))    # 两种 attention 共用 QKV
+
+    y = spatial_attn(q, k, v)             # [B*T, N, D]，双向
+    if temporal:
+        y = y + temporal_attn(q, k, v)    # [B*N, T, D]，causal
+    x = x + layer.out(y)
+    x = x + layer.ffn(layer.norm2(x))
+return x[:, -1]                          # [B, N, D]，只输出当前帧
+```
 
 ## LAPA (29)
 ⭐️⭐️⭐️ https://hjfy.top/arxiv/2410.11758
