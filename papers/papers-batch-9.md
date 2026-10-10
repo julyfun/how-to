@@ -59,7 +59,7 @@ WM simulator rollout，然后人工从中选择后训练数据
 
 ## GPT-6 Astra as Embodied Policies (73)
 
-https://www.alphaxiv.org/pdf/2609.38537
+⭐️⭐️ https://www.alphaxiv.org/pdf/2609.38537
 
 ---
 long-wam
