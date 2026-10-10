@@ -13,7 +13,6 @@ confidence: 2
 - Clean My Mac
 
 ## Editor IDE
-- Cursor 25/6
 - Zed 25/1 轻量 AI & good vim
 
 ## online
@@ -22,27 +21,22 @@ confidence: 2
 
 ## cli
 - [-] serie: Better git graph 25/10
-- `brew install translate-shell` `trans -s en -t zh-CN -I` 25/10
-- ghostty, iTerm2, konsole
+- ghostty
 
 ## cli.ai
 - kimi: Cheap 25/12
-- claudecode + GLM4.7: Cheap 25/12
 
 ## cli.disk
 - dua i `(dua-cil)`
 
 ## os.mac
-- Alfred5 (for pre-M4)
+- Alfred5
 
 ## automize
 - wakatime 25/12 统计 Coding 时间
 
 ## notes
 - neovim 无需多言 23/7
-- Obsidian 24/7
-    - [compared to nvim & vscode] in-place render typst math
-    - upload to OSS with ctrl-v
 - Picgo 配合 Obsidian
 - Dida 清单 适合存 api-tokens 25/1
     - 跨所有平台
