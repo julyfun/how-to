@@ -46,8 +46,14 @@ WM simulator rollout，然后人工从中选择后训练数据
 
 ## PhysicalRSI (71)
 
-⭐️ mmlab | https://mmlab.hk/research/PhysicalRSI
+⭐️⭐️ mmlab | https://mmlab.hk/research/PhysicalRSI
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261010160023089.png)
 
-让 GPT 自己决定 调用 VLA / "move_eef" "rotate_wrist_pitch" / 规控.
+让 GPT 自己决定 调用 VLA / "move_eef" "rotate_wrist_pitch" / task-specific 规控，写 SKILL.
+
+##
+
+⭐️⭐️
+
+long-wam
