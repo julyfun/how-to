@@ -13,14 +13,14 @@ flowchart TD
   pytorch --> Linear --> MLP --> CNN --> RNN
   MLP --> softmax --> regression --> auto-regression
   Linear --> forward-backward-optimizer --> MLP & SGD
-  SGD --> AdamW --> gradient-clipping
+  SGD --> AdamW
+  MLP --> RL[RL, see 285-0]
   transformer --> gradient-clipping
-  Parameter --> embedding --> image-patch
+  nn.Parameter --> embedding --> image-patch
   CNN --> image-patch --> patch-embedding --> vision-transformer
-  pytorch --> Parameter --> Linear
+  pytorch --> nn.Parameter --> Linear
   CNN --> attention --> transformer --> vision-transformer --> DINO
-  embedding --> token-tokenizer
-  transformer --> decoder-only-transformer
+  embedding --> token-tokenizer --> transformer --> decoder-only-transformer
   encoder-decoder --> transformer
   transformer --> auto-regression
   CNN --> AE --> VAE --> encoder-decoder --> flow-matching --> diffusion
