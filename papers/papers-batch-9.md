@@ -59,7 +59,11 @@ WM simulator rollout，然后人工从中选择后训练数据
 
 ## GPT-6 Astra as Embodied Policies (73)
 
-⭐️⭐️ https://www.alphaxiv.org/pdf/2609.38537
+⭐️⭐️ 银河通用 | https://www.alphaxiv.org/pdf/2609.38537
+
+对于 pi05 提交的每一个 chunk，经过 FK 后 GPT 直接看，决定是否接管.
+
+每个 episode 消耗 token 12M+.
 
 ---
 long-wam
