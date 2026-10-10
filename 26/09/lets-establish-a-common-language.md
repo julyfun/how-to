@@ -11,14 +11,24 @@ confidence: 2
 ```mermaid
 flowchart TD
   pytorch --> Linear --> MLP --> CNN --> RNN
-  MLP --> regression --> auto-regression
-  Linear --> forward-backward-optimizer --> MLP
+  MLP --> softmax --> regression --> auto-regression
+  Linear --> forward-backward-optimizer --> MLP & SGD
+  SGD --> AdamW --> gradient-clipping
+  transformer --> gradient-clipping
   Parameter --> embedding --> image-patch
   CNN --> image-patch --> patch-embedding --> vision-transformer
   pytorch --> Parameter --> Linear
-  attention --> transformer --> vision-transformer
+  CNN --> attention --> transformer --> vision-transformer --> DINO
+  embedding --> token-tokenizer
+  transformer --> decoder-only-transformer
+  encoder-decoder --> transformer
   transformer --> auto-regression
+  CNN --> AE --> VAE --> encoder-decoder --> flow-matching --> diffusion
+  flow-matching --> latent
+  diffusion & latent --> Stable-Diffusion
 ```
+
+try:
 
 ```mermaid
 flowchart TD
@@ -32,7 +42,8 @@ flowchart TD
     nn.Parameter --> embedding & image-patch & patch-embedding
     CNN --> image-patch
     %% level 4
-    attention
+    CNN --> attention
     transformer
     %% level 5
+    attention --> transformer --> vision-transformer
 ```
