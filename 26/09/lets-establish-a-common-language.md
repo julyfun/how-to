@@ -8,6 +8,8 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+### Deep learning
+
 ```mermaid
 flowchart TD
   pytorch --> Linear --> MLP --> CNN --> RNN
@@ -17,15 +19,26 @@ flowchart TD
   MLP --> RL[RL, see 285-0]
   transformer --> gradient-clipping
   nn.Parameter --> embedding --> image-patch
-  CNN --> image-patch --> patch-embedding --> vision-transformer
+  CNN --> ResNet --> image-patch --> patch-embedding --> vision-transformer
   pytorch --> nn.Parameter --> Linear
-  CNN & embedding --> positional-embedding --> attention --> transformer --> vision-transformer --> DINO
+  CNN & embedding --> positional-embedding --> attention --> transformer --> vision-transformer --> DINO & MoT
   embedding --> token-tokenizer --> transformer --> decoder-only-transformer
   encoder-decoder --> transformer
   transformer --> auto-regression
-  CNN --> AE --> VAE --> encoder-decoder --> flow-matching --> diffusion
+  diffusion & transformer --> DiT
+  CNN --> AE --> VAE --> encoder-decoder --> UNet --> flow-matching --> diffusion
   flow-matching --> latent
   diffusion & latent --> Stable-Diffusion
+```
+
+### Robot Policy Beginnner
+
+```mermaid
+flowchart TD
+    flow-matching & diffusion & DINO & CLIP --> Diffusion-Policy --> TinyVLA --> Pi0 --> Pi05 --> Pi06 --> MEM
+    Pi0 --> action-expert
+    ACT-action-chunking & MoT & VLM --> Pi0
+    Pi05 --> OpenWAM
 ```
 
 try:
