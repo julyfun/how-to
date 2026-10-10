@@ -1,32 +1,12 @@
-# [os files]
-.DS_Store
+# 默认忽略所有文件
+*
 
-# [editor files]
-.nvimlog
-*.swp
-.vscode/*
-**/.zed/*
-.obsidian
-.obsidian.vimrc
-.jsttmp
-.vimrc
+# 允许遍历所有目录
+!*/
 
-# [binary]
-1
-:*
-'
-]
-[
-*.zip
-*.rar
-*.png
-*.jpg
-*.webp
-*.gif
+# 只允许这些扩展名
+!*.md
+!*.py
+!*.typ
+!*.cpp
 
-# [py]
-__pycache__
-
-# [ignore]
-ignoreme-*
-ignore-*

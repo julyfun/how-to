@@ -43,3 +43,5 @@ WM simulator rollout，然后人工从中选择后训练数据
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261009214912158.png)
 
 从手工设计的失败情形录制人类 Ego 纠正数据，以及机器人rollout失败的时候，人类手动摆出失败配置并纠正; 提取意图调制 Gated 动作解码
+
+## PhysicalRSI ()
