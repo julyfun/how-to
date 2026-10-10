@@ -11,8 +11,28 @@ confidence: 2
 ```mermaid
 flowchart TD
   pytorch --> Linear --> MLP --> CNN --> RNN
-  MLP --> regression
-  CNN --> image-patch --> hi
+  MLP --> regression --> auto-regression
+  Linear --> forward-backward-optimizer --> MLP
+  Parameter --> embedding --> image-patch
+  CNN --> image-patch --> patch-embedding --> vision-transformer
   pytorch --> Parameter --> Linear
   attention --> transformer --> vision-transformer
+  transformer --> auto-regression
+```
+
+```mermaid
+flowchart TD
+    %% level 0
+    pytorch
+    %% level 1
+    pytorch --> Linear & MLP & regression & nn.Parameter & weights & forward-backward-optimizer
+    %% level 2
+    MLP --> CNN & RNN
+    %% level 3
+    nn.Parameter --> embedding & image-patch & patch-embedding
+    CNN --> image-patch
+    %% level 4
+    attention
+    transformer
+    %% level 5
 ```
