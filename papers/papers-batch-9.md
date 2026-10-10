@@ -52,8 +52,16 @@ WM simulator rollout，然后人工从中选择后训练数据
 
 让 GPT 自己决定 调用 VLA / "move_eef" "rotate_wrist_pitch" / task-specific 规控，写 SKILL.
 
-##
+## RealtimeWAM (72)
 
 ⭐️⭐️
 
+
+## GPT-6 Astra as Embodied Policies (73)
+
+https://www.alphaxiv.org/pdf/2609.38537
+
+---
 long-wam
+another openwam
+robolab
