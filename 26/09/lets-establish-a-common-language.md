@@ -19,7 +19,7 @@ flowchart TD
   nn.Parameter --> embedding --> image-patch
   CNN --> image-patch --> patch-embedding --> vision-transformer
   pytorch --> nn.Parameter --> Linear
-  CNN --> attention --> transformer --> vision-transformer --> DINO
+  CNN & embedding --> positional-embedding --> attention --> transformer --> vision-transformer --> DINO
   embedding --> token-tokenizer --> transformer --> decoder-only-transformer
   encoder-decoder --> transformer
   transformer --> auto-regression
