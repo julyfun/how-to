@@ -19,5 +19,5 @@ confidence: 2
 - 1:00 我还在看 Tac-DINO 硬件等.
 - 2:00 交流各个论文细节，回顾 RL 基础知识.
 - 2:20 - 4:40 应该在搞第一版 PPT，从个人背景开始，中间切换排版风格，再调整 Tac-DINO 开始的三篇文章，然后是项目以及最后 Interests.
-- 5:00 GPT 提问题，复习优化器，WAM，以及 deep-learning & robot & agent 基础知识.
+- 5:00 GPT 提问题，复习优化器等 deep-learning & robot & agent 基础知识.
 - 6:00 
