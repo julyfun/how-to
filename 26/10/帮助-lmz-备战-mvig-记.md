@@ -14,4 +14,10 @@ confidence: 2
 
 随后周六还是无所事事了一天，直到晚上 23:00 才赶紧复习。这次计划是针对简历大读特读，然后写 PPT. 然而，这一搞居然就是不间断也不吃饭的 15 小时. Let's review what happened.
 
-- 23:00 lmz 看她的 Tac-DINO 而我用 zed
+- 23:00 lmz 看她的 Tac-DINO 而我用 zed 写 mermaid 知识结构图 (其实没有什么用).
+- 0:00 我在 alphaxiv 仔细阅读 Tac-DINO 细节.
+- 1:00 我还在看 Tac-DINO 硬件等.
+- 2:00 交流各个论文细节，回顾 RL 基础知识.
+- 2:20 - 4:40 应该在搞第一版 PPT，从个人背景开始，中间切换排版风格，再调整 Tac-DINO 开始的三篇文章，然后是项目以及最后 Interests.
+- 5:00 GPT 提问题，复习优化器，WAM，以及 deep-learning & robot & agent 基础知识.
+- 6:00 
