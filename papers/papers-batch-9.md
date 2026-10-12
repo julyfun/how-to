@@ -54,11 +54,17 @@ WM simulator rollout，然后人工从中选择后训练数据
 
 ## RealtimeWAM (72)
 
-[TODO]
+⭐️⭐️ Chengtao Lv, Wena Wang, NTU & 北航 | https://www.alphaxiv.org/abs/2610.06617
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261012180502781.png)
+
+TACD: 就是蒸馏目标改为 teacher 多步 rollout 的平均速度. 提点 1-2%. 但是显然，这样训练就变慢了.
+
+CEWP: 修改 MoT 计算顺序，同时计算 WM 和 AE 的同层 block. 提升 GPU 利用率. 并没有异步.
 
 ## GPT-6 Astra as Embodied Policies (73)
 
-⭐️⭐️ 银河通用 | https://www.alphaxiv.org/pdf/2609.38537
+⭐️⭐️ 银河通用 | https://www.alphaxiv.org/abs/2609.38537
 
 对于 pi05 提交的每一个 chunk，经过 FK 后 GPT 直接看 image + chunk，决定是否接管. Astra 选择接受其前 1–15 步，或替换为 1–5 步的末端执行器修正动作. 仿真分数比单纯 GPT 和单纯 pi05 都高.
 
