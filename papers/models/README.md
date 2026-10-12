@@ -16,3 +16,5 @@ fm/diffusion 常用
 flow step t -> t_emb -> [MLP] -> [Linear] inside Ada -> split as γ,β
 x = (1.0 + γ) * layer_norm(x) + β
 ```
+
+## CD
