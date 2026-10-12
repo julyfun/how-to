@@ -70,7 +70,12 @@ CEWP: 修改 MoT 计算顺序，同时计算 WM 和 AE 的同层 block. 提升 G
 
 每个 episode 消耗 token 12M+.
 
+## LongWAM (74)
+
+⭐️⭐️ Wei Huang, Yukang Chen; NVIDIA | https://www.alphaxiv.org/abs/2610.10528
+
+然而，没有真机实验 result，真机 demo 是比较 trivial 的 picknplace.
+
 ---
-long-wam
 another openwam
 robolab
