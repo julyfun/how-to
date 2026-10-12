@@ -24,7 +24,7 @@ x = (1.0 + γ) * layer_norm(x) + β
 方法则是 “通过相邻时刻的一致性约束”.
 
 ```python
-s, t = sample_adjacent_times()                  # s < t. time 0 is pure noise.
+s, t = sample_adjacent_times()                  # t < s. time=0 is noise => time=1 is clean.
 x_t = add_noise(x0, noise(), t)
 x_s = x_t + (s - t) * teacher(x_t, t)           # 教师做一步 Euler 求解
 target = stop_grad(ema(x_s, s))
