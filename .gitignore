@@ -9,4 +9,4 @@
 !*.py
 !*.typ
 !*.cpp
-
+!.gitignore
