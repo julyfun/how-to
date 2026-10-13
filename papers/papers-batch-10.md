@@ -46,3 +46,8 @@ confidence: 2
 先训练一个将一段轨迹 `[T, 3]` 编码为 latent 的 enc-dec，然后训练一个 1.7B DiT，输入 VL & action flow history，接 decoder 输出未来 action flow 和 scene flow. 右边 MoT 接一个 AE 输出 action.
 
 点数挺高的。
+
+## DiVeR (78)
+
+⭐️⭐️⭐️ Seongheon Park, Yasuyuki Matsushita; 微软 & 威斯康星大学 | https://www.alphaxiv.org/abs/2610.04933
+
