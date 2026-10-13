@@ -24,9 +24,9 @@ confidence: 2
 - FDM 加入反事实监督后，RGB MSE 下降 34.5% 且 16 个同状态结果的识别准确率从 21.1% 升至 71.3%
 - 单一多目标模型（同时训练策略、IDM 和 FDM）的策略成功率为 92.8% 低于专用策略模型的 97.8% 且其反事实 FDM 误差也高于专用 FDM
 
-## BEHAVIORAL CLONING MYSTERY (76)
+## Behavior Cloning Mystery (76)
 
-⭐️⭐️⭐️
+⭐️⭐️⭐️ https://www.alphaxiv.org/abs/2610.07056
 
-之前就发过 blog. 用一个比较 TOY 的 ocbench 发现了如下问题：
+sergey 之前就发过的 blog. 用一个比较 toy 的 ocbench 发现了如下问题：
 1.
