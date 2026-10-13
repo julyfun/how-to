@@ -28,5 +28,8 @@ confidence: 2
 
 ⭐️⭐️⭐️ https://www.alphaxiv.org/abs/2610.07056
 
-sergey 之前就发过的 blog. 用一个比较 toy 的 ocbench 发现了如下问题：
-1.
+sergey 之前就发过的 blog. 用一个比较 toy 的 ocbench (resMLP flow bc, 130M 参数) 发现了如下问题：
+1. 验证集 flow loss 上升时，成功率仍然上升.
+2. action chunk (开环) 成功率 >> 单步闭环.
+3. 更复杂的动作 pattern（e.g. 人类的）可能需要更大的网络.
+4.
