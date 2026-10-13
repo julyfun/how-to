@@ -74,7 +74,7 @@ confidence: 2
     - 其中 `<range>` 可以是 `i: <symbol> 内` | `a: 含 <symbol>` | `t: 直到 <symbol>（不含）` | `f: 直到 <symbol>`
     - 其中 `<symbol>` 可以是 ```" ' ` ( [ { <``
 - `V` 并用光标选择多行 + `y` 复制，或 + `d` 删除，或 + `x` 剪切：🔥🔥🔥
-- `ctrl-v` 选中多行，`I` 插入多行光标，编辑完成后 `Esc` 可多行插入
+- `ctrl-v` 选中多行，`I` / `$A` / `c` 开始编辑单行，编辑完成后 `Esc` 自动应用到多行
 
 ## Zed 内置快捷键
 - `ds"`: delete surrounding `"`
@@ -86,4 +86,3 @@ confidence: 2
 
 ## 原始 vim 补丁
 - `"_d`: 替换 d，可以防止覆盖剪切板.
-
