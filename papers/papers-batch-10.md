@@ -39,6 +39,10 @@ confidence: 2
 
 ## UNITAS (77)
 
-⭐️⭐️⭐️
+⭐️⭐️⭐️ Ruixiang Wang, 贾奎; 跨维智能&港中深 | https://www.alphaxiv.org/abs/2610.12099
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261013171357298.png)
+
+先训练一个将一段轨迹 `[T, 3]` 编码为 latent 的 enc-dec，然后训练一个 1.7B DiT，输入 VL & action flow history，接 decoder 输出未来 action flow 和 scene flow. 右边 MoT 接一个 AE 输出 action.
+
+点数挺高的。
