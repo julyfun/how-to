@@ -62,3 +62,7 @@ confidence: 2
 ⭐️⭐️⭐️ Jiaheng Hu; Amazon, UT | https://www.alphaxiv.org/abs/2609.38982
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261015040007274.png)
+
+基于 code as policy. 考虑到 agent 真机试错有点贵，先让 agent 在仿真中获得 py 和 md 常识。然后有一个 idea: 如果真机失败，就微调仿真器复现真机失败情况（例如瓶子滑落），然后 agent 提出多个方案常识修复.
+
+感觉很 make sense，但是怎么都这么 trivial，我们搞 agent policy 真的能节约 openai 一个 subagent 一分钟的时间吗.
