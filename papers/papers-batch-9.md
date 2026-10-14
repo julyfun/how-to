@@ -78,4 +78,8 @@ CEWP: 修改 MoT 计算顺序，同时计算 WM 和 AE 的同层 block. 提升 G
 
 本文发现对 WAM 加长 video history 必须开启 AR，也就是预训练和后训练的 video 输入部分用 causal attention & 块级 teacher-forcing，而采用双向注意力不会随着历史长度提点. 仿真上 RoboCasa GR-1 提点 17%.
 
-然而，没有真机实验 result，真机 demo 是比较 trivial 的 picknplace.
+然而，几乎没有真机实验 result，真机 demo 是比较 trivial 的 picknplace.
+
+AI 椰青分享:
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261014192442391.png)
