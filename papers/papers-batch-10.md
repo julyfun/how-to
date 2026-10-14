@@ -56,3 +56,9 @@ confidence: 2
 本文发现在 pick and place 任务上，那些分歧程度高的动作片段对于成功率的影响更大. 通过提高分歧程度高的片段的训练权重，可以提升成功率。
 
 基模是 pi0.
+
+## SimEX (79)
+
+⭐️⭐️⭐️ Jiaheng Hu; Amazon, UT | https://www.alphaxiv.org/abs/2609.38982
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261015040007274.png)
