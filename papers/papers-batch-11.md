@@ -13,3 +13,5 @@ confidence: 2
 ⭐️⭐️ ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261015200126855.png)
 
 通过文本记录 环境状态, 机器人状态 和 任务状态. dojo 刷到 70.
+
+##
