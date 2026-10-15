@@ -66,3 +66,21 @@ confidence: 2
 基于 code as policy. 考虑到 agent 真机试错有点贵，先让 agent 在仿真中获得 py 和 md 常识。然后有一个 idea: 如果真机失败，就微调仿真器复现真机失败情况（例如瓶子滑落），然后 agent 提出多个方案常识修复.
 
 感觉很 make sense，但是怎么都这么 trivial，我们搞 agent policy 真的能节约 openai 一个 subagent 一分钟的时间吗.
+
+## ASENA (80)
+
+⭐️⭐️ NVIDIA | https://www.alphaxiv.org/abs/2609.39207
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261015171812595.png)
+
+一个比较 trivial 的 agent => api => VLN 的工作. 得到指令会做一些规控检查.
+
+## HAND Me the Data (81)
+
+⭐️ 南加州 | https://www.alphaxiv.org/abs/2505.20455
+
+利用单次人手演示，从无任务标签的机器人操作数据中检索相似行为：先按视觉特征筛选，再按手部与夹爪的二维相对运动轨迹匹配，并通过LoRA微调策略。
+
+也是比较 trivial.
+
+##
