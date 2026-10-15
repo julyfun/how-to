@@ -87,4 +87,8 @@ confidence: 2
 
 ⭐️⭐️ Sateesh Kumar, UT | https://www.alphaxiv.org/abs/2508.01131
 
-自动找
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261015193846462.png)
+
+策略是带语言条件的 Transformer，输出头为 GMM。
+
+视觉、动作、形状、语言分别用 DINOv2、光流特征、PointNet++、文本嵌入检索示范；再让每种检索结果各自训练一个参考策略，看它对目标示范动作的预测似然，似然越高，分到的权重越大，最终训练时就越常采样该来源的数据。
