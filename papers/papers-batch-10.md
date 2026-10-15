@@ -83,4 +83,8 @@ confidence: 2
 
 也是比较 trivial.
 
-## Collage
+## Collage (82)
+
+⭐️⭐️ Sateesh Kumar, UT | https://www.alphaxiv.org/abs/2508.01131
+
+自动找
