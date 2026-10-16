@@ -18,7 +18,7 @@ confidence: 2
 
 ## When Do Discrete Actions Make Good Continuous Controllers? (84)
 
-⭐️⭐️⭐️⭐️ Zeji Yi, Guanya Shi, CMU | https://www.alphaxiv.org/abs/2610.20429
+⭐️⭐️⭐️⭐️ 离散动作或许不劣于连续. Zeji Yi, Guanya Shi, CMU | https://www.alphaxiv.org/abs/2610.20429
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261016180730842.png)
 
