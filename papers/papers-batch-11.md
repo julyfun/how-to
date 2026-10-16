@@ -10,8 +10,14 @@ confidence: 2
 
 ## Embodied Turing Machines (83)
 
-⭐️⭐️ ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261015200126855.png)
+⭐️⭐️ NTU | https://arxiv.org/html/2610.12369v1
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261015200126855.png)
 
 通过文本记录 环境状态, 机器人状态 和 任务状态. dojo 刷到 70.
 
-##
+## When Do Discrete Actions Make Good Continuous Controllers? (84)
+
+⭐️⭐️⭐️⭐️ Zeji Yi, Guanya Shi, CMU | https://www.alphaxiv.org/abs/2610.20429
+
+
