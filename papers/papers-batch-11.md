@@ -26,7 +26,7 @@ confidence: 2
 
 为了让离散动作协调，用 flow 调节 logits + 逐渐随机确定采样. CFG 能降低 token ambiguity 和动作分散度，但是 GT coverage 也会减小.
 
-另外，tokenize 过程中注入几何先验还不如 uniform bin.
+另外，tokenize 过程中注入几何先验（如 FAST 编码）还不如 uniform bin.
 
 ---
 
