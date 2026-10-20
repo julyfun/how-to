@@ -231,11 +231,16 @@ Anca Dragan ── Berkeley HRI / OpenAI
 庞江淼 (Jiangmiao Pang)
 - 背景：浙大博士。当前在 AI Lab.
 - 贡献：MMDetection3D, PointLLM, CVPR2023 最有影响力 paper.
-- 关系：阿汐是其博士生.
+- 关系：axi 导师.
 
 罗剑岚 (Jianlan Luo)
 - 背景：UCB 博 & 博后
 - 贡献：参与 OXE，智元 SOP & τ0
+- 关系：
+
+张瀚博 (Hanbo Zhang)
+- 背景：西交博，字节研究员. NUS 新加坡国立博后.
+- 贡献：参与 GR-2
 - 关系：
 
 # SJTU 篇
@@ -251,9 +256,12 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - 贡献：感觉最近主要在探索.
 - 关系：czx 导师 (26/10).
 
-# 北京其他
+# 港大篇
+李弘扬 | https://lihongyang.info/
+- 背景：港中文博士，自驾出身 (OpenDriveLab)
+- 贡献：
 
-## 人大高瓴
+# 人大高瓴
 胡迪 (Di Hu)：
 - 背景：本科、博士均西北工业大学（2010–2014 / 2014–2019，导师李学龙，亦受卢孝强、聂飞平指导）；2019–2020 百度研究院 Research Scientist；2020 年入职人大高瓴，现准聘副教授、博导。
 - 贡献：创办 GeWu-Lab（格物实验室），人大 manipulation 唯一贯穿 2023–2026 的组；MS-Bot（CoRL 2024 Oral，视听触多传感器融合精细操作）；AnyTouch（ICLR 2025，视触觉跨设备统一表征）；KOI（CoRL 2024）；多模态学习侧有 OGM、Mal）；2026 与北京人形机器人创新中心联合开源 Robo-ValueRL。
