@@ -227,7 +227,6 @@ Anca Dragan ── Berkeley HRI / OpenAI
 ```
 
 # 上海篇
-
 徐英豪 (Yinghao Xu):
 - 背景：浙大本科，港中文博士，斯坦福计算成像实验室博士后。3D Vision 出身，之前在灵波做了很多 WM 工作。港科大助理教授.
 - 贡献：lingbot-map/va/world/depth 以及 Zero-WAM 的通讯作者
@@ -262,10 +261,17 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - 贡献：文澜 BriVL 主要设计者（Nature Communications 2022）；视频生成底座 VDT（ICLR 2024）；近期切入 cross-embodiment VLA：MoH 动作分块（ICML 2026，通讯）、Action Priors for Cross-embodiment Robot Manipulation、TempoVLA、Free-View Robot Ma
 - 关系：学生丁明宇（Mingyu Ding）是其进入 manipulation 的关键纽带 —— 人大本硕（2020 硕士毕业，导师卢志武），现 UNC Chapel Hill 助理教授，两人以平等合作者身份共同通讯 MoH 与 Action Priors；另有学生高一钊（智子引擎 CEO）；合作文继荣、宋睿华
 
-# 上交
+# SJTU 篇
 孙凌峰
 - 背景：密院+UCB 机械工程博士
 - 贡献：NovaFlow 共一；2026 年提出 KIWI 全景相机夹爪
+
+张伟男
+
+刘明桓 | https://www.sii.edu.cn/2026/0727/c94a1169/page1.htm
+- 背景：上交 CS 博士，UT Austin 博后
+- 贡献：感觉最近主要在探索.
+- 关系：
 
 # 初创
 光轮智能（北京）
@@ -286,8 +292,8 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - Yi 弋力：
 
 企业
-- 大咖机器人：文强哥
-- Dyna：CEO 为 Jason Ma. 总部在硅谷，分部在上海长宁区.
+- 大咖机器人：许文强
+- Dyna 达纳：CEO 为 Jason Ma. 总部在硅谷，分部在上海长宁区.
 
 # mermaid
 
