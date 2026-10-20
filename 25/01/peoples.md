@@ -103,7 +103,6 @@ confidence: 2
 # UCB 篇
 
 ## 核心人物
-
 Pieter Abbeel
 - 背景：比利时裔美国计算机科学家，博士毕业于斯坦福大学，导师为Andrew Ng；2008年加入加州大学伯克利分校，任EECS教授，长期主持Berkeley Robot Learning Lab。
 - 贡献：推动机器人模仿学习、深度强化学习和端到端控制；代表性工作包括Guided Policy Search、深度视觉运动策略、机器人技能学习和大规模机器人数据集；参与创建Berkeley AI Research（BAIR）。
@@ -157,7 +156,6 @@ Tianhao Zhang
 - 关系：Pieter Abbeel团队成员；与Peter Chen、Rocky Duan共同将伯克利的机器人学习研究转化为商业产品。
 
 ## 辅助人物
-
 - Andrew Ng：斯坦福与Baidu AI的重要人物，Pieter Abbeel和Sergey Levine的博士导师；其强化学习与机器学习研究对伯克利机器人学习谱系影响深远。
 - Jeff Mahler：伯克利AUTOLab研究者，Dex-Net核心作者之一，后参与机器人抓取产业化。
 - Abhishek Gupta：伯克利机器人学习研究者，参与视觉运动控制、策略学习和机器人操作。
@@ -171,7 +169,6 @@ Tianhao Zhang
 - Berkeley DeepDrive：由伯克利视觉、自动驾驶和机器人研究者共同推动，促进感知、仿真和机器人系统研究向产业转化。
 
 ## 关键事件时间线
-
 - 2008年前后，Pieter Abbeel加入UC Berkeley，建立Berkeley Robot Learning Lab。
 - 伯克利开始系统研究模仿学习、机器人示范学习和高维传感器输入下的控制。
 - Guided Policy Search等工作尝试把深度视觉表征与机器人控制结合起来，为后来的端到端机器人策略奠定基础。
@@ -209,7 +206,6 @@ Tianhao Zhang
 - Pieter Abbeel则同时活跃于Covariant、Berkeley Robot Learning Lab和AI投资领域，成为连接学术界、产业界与创业生态的关键人物。
 
 ## 关系简图
-
 ```text
 Andrew Ng（Stanford）
         │
@@ -226,7 +222,7 @@ Ken Goldberg ── AUTOLab / Dex-Net / Ambi Robotics
 Anca Dragan ── Berkeley HRI / OpenAI
 ```
 
-# 上海篇
+## AI Lab
 徐英豪 (Yinghao Xu):
 - 背景：浙大本科，港中文博士，斯坦福计算成像实验室博士后。3D Vision 出身，之前在灵波做了很多 WM 工作。港科大助理教授.
 - 贡献：lingbot-map/va/world/depth 以及 Zero-WAM 的通讯作者
@@ -237,10 +233,27 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - 贡献：MMDetection3D, PointLLM, CVPR2023 最有影响力 paper.
 - 关系：阿汐是其博士生.
 
+罗剑岚 (Jianlan Luo)
+- 背景：UCB 博 & 博后
+- 贡献：参与 OXE，智元 SOP & τ0
+- 关系：
+
+# SJTU 篇
+孙凌峰 (Lingfeng Sun)
+- 背景：密院+UCB 机械工程博士
+- 贡献：NovaFlow 共一；2026 年提出 KIWI 全景相机夹爪
+
+张伟楠 (Weinan Zhang)
+- 背景：
+
+刘明桓 (Minghuan Liu) | https://www.sii.edu.cn/2026/0727/c94a1169/page1.htm
+- 背景：上交 CS 博士，UT Austin 博后
+- 贡献：感觉最近主要在探索.
+- 关系：czx 导师 (26/10).
+
 # 北京其他
 
 ## 人大高瓴
-
 胡迪 (Di Hu)：
 - 背景：本科、博士均西北工业大学（2010–2014 / 2014–2019，导师李学龙，亦受卢孝强、聂飞平指导）；2019–2020 百度研究院 Research Scientist；2020 年入职人大高瓴，现准聘副教授、博导。
 - 贡献：创办 GeWu-Lab（格物实验室），人大 manipulation 唯一贯穿 2023–2026 的组；MS-Bot（CoRL 2024 Oral，视听触多传感器融合精细操作）；AnyTouch（ICLR 2025，视触觉跨设备统一表征）；KOI（CoRL 2024）；多模态学习侧有 OGM、Mal）；2026 与北京人形机器人创新中心联合开源 Robo-ValueRL。
@@ -261,26 +274,17 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - 贡献：文澜 BriVL 主要设计者（Nature Communications 2022）；视频生成底座 VDT（ICLR 2024）；近期切入 cross-embodiment VLA：MoH 动作分块（ICML 2026，通讯）、Action Priors for Cross-embodiment Robot Manipulation、TempoVLA、Free-View Robot Ma
 - 关系：学生丁明宇（Mingyu Ding）是其进入 manipulation 的关键纽带 —— 人大本硕（2020 硕士毕业，导师卢志武），现 UNC Chapel Hill 助理教授，两人以平等合作者身份共同通讯 MoH 与 Action Priors；另有学生高一钊（智子引擎 CEO）；合作文继荣、宋睿华
 
-# SJTU 篇
-孙凌峰
-- 背景：密院+UCB 机械工程博士
-- 贡献：NovaFlow 共一；2026 年提出 KIWI 全景相机夹爪
-
-张伟男
-
-刘明桓 | https://www.sii.edu.cn/2026/0727/c94a1169/page1.htm
-- 背景：上交 CS 博士，UT Austin 博后
-- 贡献：感觉最近主要在探索.
-- 关系：
-
 # 初创
 光轮智能（北京）
 - 背景：成立于 2023.1，CEO 谢晨博士（曾任英伟达自动驾驶仿真负责人）
 - 产品：仿真基础设施SimFoundry，Ego数据平台 EgoSuite.
 - 学术：开源了10万小时的 EgoSuite-Open100K.
 
-# 其他
+大咖机器人：许文强
 
+Dyna 达纳：CEO 为 Jason Ma. 总部在硅谷，分部在上海长宁区.
+
+# 其他
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
 - Jason Ma: 马也骋，Dyna
 - Ren 任至意: 又称 Allen Ren，做 Pi 的预训练
@@ -291,129 +295,8 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - Yao 姚卯青: 智元合伙人，觅蜂科技 CEO.
 - Yi 弋力：
 
-企业
-- 大咖机器人：许文强
-- Dyna 达纳：CEO 为 Jason Ma. 总部在硅谷，分部在上海长宁区.
+- Selen 在我们组里工作过的: https://selen-suyue.github.io/biosite/archives/
 
-# mermaid
-
-```mermaid
-flowchart LR
-    subgraph UCB
-        wuenda[吴恩达] --> pieter --> sergey_levine
-        trevor_darrrel[Trevor Darrrel<br> : 自动驾驶]
-    end
-
-    subgraph 清华
-        pieter --> yang_gao[高阳]
-        trevor_darrrel --> huazhe[许华哲]
-    end
-
-    subgraph UCSD
-        xiaolong_wang[王小龙]
-        hao_su[苏浩 : ImageNet, ManiSkill]
-    end
-
-    subgraph MIT
-        song_han[韩松 : EgoVLA]
-        haoshu_fang[Haoshu Fang:<br>DEXOP-通过连杆传到的 dexumi]
-    end
-
-    subgraph Stanford
-        shurang_song[宋舒然]
-        mengda_xu[Mengda Xu:<br>DexUMI-穿戴式UMI手套，可带tactile]
-    end
-
-    subgraph Columbia
-        yunzhu_li[Yunzhu Li<br>早期做过仿真、手套，现在啥都做]
-    end
-
-    bolei_zhou --> fcx[fcx : InterleaveVLA]
-    subgraph UCLA 加州洛杉矶
-        bolei_zhou[周博磊 : CV,自驾]
-    end
-
-    subgraph 复旦
-        xiaosong_jia[贾萧松<br>: GuidedVLA]
-    end
-
-    subgraph HKU
-        hongyang_li[李洪阳 : 自驾]
-        hengshuang_zhao[Hengshuang Zhao : 自驾 <br> 机器人领域有DreamAvoid]
-        chonghao[司马崇昊]
-    end
-
-    subgraph AI Lab
-        jiangmiao_pang[庞江淼 : HOMIE]
-    end
-
-    subgraph MVIG
-        zhuochen_miao
-    end
-```
-
-```mermaid
-flowchart LR
-    subgraph 自变量 X2ROBOT
-        qian_wang[王潜 @清华]
-        hao_wang[王昊 CTO @北大]
-        subgraph 工作
-            WALL_OSS
-        end
-        subgraph 产品
-            x2_a[轮式仿人型双臂]
-        end
-    end
-    subgraph 原力灵机 Dexmal 北京 重庆
-        wenbin_tang[唐文斌 @姚班<br>范浩强、周而进、汪天才]
-    end
-    subgraph 星海图 galaxea-ai 苏州
-        subgraph 产品: A1 机械臂 : R1 人型
-        end
-        hang_zhao[赵行 @清华叉院]
-        huazhe_xu.1[许华哲（已离开）]
-    end
-    subgraph 破壳机器人 ShellAI
-        subgraph 赛道: C端家用
-        end
-        subgraph 模型: WALL-E
-        end
-        huazhe_xu[许华哲 @清华叉院]
-    end
-
-    subgraph 银河通用 galbot
-        he_wang[王鹤 @北大]
-        subgraph 产品
-            galbot_G1[G1]
-        end
-    end
-
-    subgraph BeingBeyond 智在无界
-        zongqing_lu[卢宗青 @北大]
-    end
-
-    subgraph 千寻
-    end
-
-    subgraph 松灵
-    end
-    subgraph Dyna
-        jason_ma
-    end
-    subgraph 魔法原子
-    end
-    subgraph 方舟无限
-    end
-    subgraph 简智 GenRobot
-        jianxing_chen[陈建兴]
-    end
-```
-
-articles:
+# articles
 - https://zhuanlan.zhihu.com/p/655943844
 - https://zhuanlan.zhihu.com/p/1942577585402909352
-
-archive commit: 0cdea62fe9eb778ef183587c52e3e89ae4d7514b
-
-博客：
-- 在我们组里工作过的 selen: https://selen-suyue.github.io/biosite/archives/
