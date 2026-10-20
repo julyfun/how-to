@@ -249,7 +249,9 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - 贡献：NovaFlow 共一；2026 年提出 KIWI 全景相机夹爪
 
 张伟楠 (Weinan Zhang)
-- 背景：
+- 背景：ACM 班，伦敦大学 CS 博士.
+- 贡献：MobileUse. 做了很多基础研究.
+- 关系：写了动手学强化学习.
 
 刘明桓 (Minghuan Liu) | https://www.sii.edu.cn/2026/0727/c94a1169/page1.htm
 - 背景：上交 CS 博士，UT Austin 博后
