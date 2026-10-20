@@ -10,7 +10,7 @@ confidence: 2
 
 ## Embodied Turing Machines (83)
 
-⭐️⭐️ NTU | https://arxiv.org/html/2610.12369v1
+⭐️⭐️ NTU 南洋理工 | https://arxiv.org/html/2610.12369v1
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261015200126855.png)
 

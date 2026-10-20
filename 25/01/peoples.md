@@ -222,7 +222,7 @@ Ken Goldberg ── AUTOLab / Dex-Net / Ambi Robotics
 Anca Dragan ── Berkeley HRI / OpenAI
 ```
 
-## AI Lab
+# AI Lab
 徐英豪 (Yinghao Xu):
 - 背景：浙大本科，港中文博士，斯坦福计算成像实验室博士后。3D Vision 出身，之前在灵波做了很多 WM 工作。港科大助理教授.
 - 贡献：lingbot-map/va/world/depth 以及 Zero-WAM 的通讯作者
@@ -243,25 +243,31 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - 贡献：参与 GR-2
 - 关系：
 
+# 创智
+刘明桓 (Minghuan Liu) | https://www.sii.edu.cn/2026/0727/c94a1169/page1.htm
+- 背景：上交 CS 博士，UT Austin 博后
+- 贡献：感觉最近主要在探索.
+- 关系：czx 导师 (26/10).
+
 # SJTU 篇
 孙凌峰 (Lingfeng Sun)
 - 背景：密院+UCB 机械工程博士
 - 贡献：NovaFlow 共一；2026 年提出 KIWI 全景相机夹爪
 
 张伟楠 (Weinan Zhang)
-- 背景：ACM 班，伦敦大学 CS 博士.
-- 贡献：MobileUse. 做了很多基础研究.
+- 背景：ACM 班，伦敦大学 CS 博士. 现在计算机学院.
+- 贡献：MobileUse. 做了很多 Agentic AI 和 RL 方向.
 - 关系：写了动手学强化学习.
 
-刘明桓 (Minghuan Liu) | https://www.sii.edu.cn/2026/0727/c94a1169/page1.htm
-- 背景：上交 CS 博士，UT Austin 博后
-- 贡献：感觉最近主要在探索.
-- 关系：czx 导师 (26/10).
+穆尧
+
+严骏驰
 
 # 港大篇
 李弘扬 | https://lihongyang.info/
 - 背景：港中文博士，自驾出身 (OpenDriveLab)
 - 贡献：
+- 关系：
 
 # 人大高瓴
 胡迪 (Di Hu)：
