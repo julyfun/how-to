@@ -30,8 +30,10 @@ confidence: 2
 
 ## 智元 CEL (85)
 
-96 台机器人共享经验，失败时用 s-dtw / vlm 等方式寻找接近的成功片段并提高 sft 权重.
+96 台机器人共享经验，失败时用 s-dtw / vlm 等方式寻找接近的成功片段并提高其 sft 权重.
 
 ---
 
 - [ ] https://research.neoteai.com/n0-twam/ 触觉 VLA
+- [ ] UNIWAM
+- [ ] robodojo 榜单
