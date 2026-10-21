@@ -46,6 +46,13 @@ libero plus 92, robotwin c2r 68.
 
 ## VAM (87)
 
+https://www.alphaxiv.org/abs/2610.22368
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261022012815404.png)
+
+动机大概是解决 recap 离线迭代太慢以及观测歧义问题. 本文将 trainer 改为 online，并且 value history 会经过 GRU 输入给 VLA.
+输入 buffer 从
+
 ## https://openphoenix-team.github.io/Phoenix-pages/
 
 ---
