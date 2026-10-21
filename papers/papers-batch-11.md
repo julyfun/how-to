@@ -51,9 +51,20 @@ https://www.alphaxiv.org/abs/2610.22368
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261022012815404.png)
 
 动机大概是解决 recap 离线迭代太慢以及观测歧义问题. 本文将 trainer 改为 online，并且 value history 会经过 GRU 输入给 VLA.
-输入 buffer 从
 
-## https://openphoenix-team.github.io/Phoenix-pages/
+replay buffer 混合了离线 sft，dagger 和真机 rollout 数据。advantage FM 根据本轮 `H步 td advantage[1]` 的 70% 分位数打 01 优势标签.
+
+1. `r[t:t+H] + gamma^H*(1 - d_t)V(s_(t+H)) - V(s_t)`
+
+## Phoenix (88)
+
+https://openphoenix-team.github.io/Phoenix-pages/
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261022013811864.png)
+
+dojo 真机榜一，c2r 72. libero plus 94.
+
+5w 小时 EGO + teleop + UMI 数据. 有触觉.
 
 ---
 
