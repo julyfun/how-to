@@ -32,7 +32,17 @@ confidence: 2
 
 96 台机器人共享经验，失败时用 s-dtw / vlm 等方式寻找接近的成功片段并提高其 sft 权重. 该方法称为 FERT.
 
-FERT
+FERT 需要人在旁边打 01 标，但是不加数据.
+
+## UniWAM (86)
+
+https://www.alphaxiv.org/abs/2610.02054
+
+Motus 架构 (VLM + WAN + AE).
+
+后训练非常非常 hack. Latent 随机 0-50% 扰动，生成 A2A (从随机噪声开始生成下一段动作，而是把机器人刚执行过的动作片段加少量噪声作为生成起点，η=0.02)
+
+libero plus 92, robotwin c2r 68.
 
 ---
 
