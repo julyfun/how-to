@@ -28,6 +28,10 @@ confidence: 2
 
 另外，tokenize 过程中注入几何先验（如 FAST 编码）还不如 uniform bin.
 
+## 智元 CEL (85)
+
+96 台机器人共享经验，失败时用 s-dtw / vlm 等方式寻找接近的成功片段并提高 sft 权重.
+
 ---
 
 - [ ] https://research.neoteai.com/n0-twam/ 触觉 VLA
