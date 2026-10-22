@@ -74,4 +74,14 @@ ILA 有触觉. PhysCanvas 模拟器.
 
 FDU & NeoteAI | https://www.alphaxiv.org/abs/2607.23783
 
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261022211730229.png)
+
+触觉有独立 expert. 另外会输出预测触觉，并输入给 ae
+
+触觉编码为自己提出的 Neoforce，初始化为 DINOv2，触觉 -> 三轴表面力图(3, H, W) -> 力觉信息.
+
+在 UniVTAC 和 NeoSim 上. 点数挺高. 真机点数和 pi05 差不多.
+
+## OneWM (90)
+
 
