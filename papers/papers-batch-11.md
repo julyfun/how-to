@@ -30,6 +30,8 @@ confidence: 2
 
 ## 智元 CEL (85)
 
+⭐️⭐️⭐️
+
 96 台机器人共享经验，失败时用 s-dtw / vlm 等方式寻找接近的成功片段并提高其 sft 权重. 该方法称为 FERT.
 
 FERT 需要人在旁边打 01 标，但是不加数据.
@@ -69,6 +71,8 @@ MWA 变体，ILA 变体和 PhysCanvas 变体. MWA 刷到 dojo 真机榜一（无
 ILA 有触觉. PhysCanvas 模拟器.
 
 ## n0-twam (89)
+
+https://www.alphaxiv.org/abs/2607.23783
 
 ---
 
