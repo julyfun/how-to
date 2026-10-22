@@ -62,7 +62,7 @@ https://openphoenix-team.github.io/Phoenix-pages/
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261022013811864.png)
 
-MWA 变体，ILA 变体和 PhysCanvas 变体. MWA 刷到 dojo 真机榜一，c2r 72. libero plus 94.
+MWA 变体，ILA 变体和 PhysCanvas 变体. MWA 刷到 dojo 真机榜一（无仿真），c2r 72. libero plus 94.
 
 5w 小时 EGO + teleop + UMI 数据.
 
