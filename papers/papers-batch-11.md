@@ -38,7 +38,7 @@ FERT 需要人在旁边打 01 标，但是不加数据.
 
 ## UniWAM (86)
 
-https://www.alphaxiv.org/abs/2610.02054
+港科大 & 欧拉万象 | https://www.alphaxiv.org/abs/2610.02054
 
 Motus 架构 (VLM + WAN + AE).
 
@@ -48,7 +48,7 @@ libero plus 92, robotwin c2r 68.
 
 ## VAM (87)
 
-https://www.alphaxiv.org/abs/2610.22368
+wenye yu | https://www.alphaxiv.org/abs/2610.22368
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261022012815404.png)
 
@@ -60,7 +60,7 @@ replay buffer 混合了离线 sft，dagger 和真机 rollout 数据。advantage 
 
 ## Phoenix (88)
 
-https://openphoenix-team.github.io/Phoenix-pages/
+无界动力 | https://openphoenix-team.github.io/Phoenix-pages/
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261022013811864.png)
 
@@ -72,5 +72,6 @@ ILA 有触觉. PhysCanvas 模拟器.
 
 ## n0-twam (89)
 
-https://www.alphaxiv.org/abs/2607.23783
+FDU & NeoteAI | https://www.alphaxiv.org/abs/2607.23783
+
 
