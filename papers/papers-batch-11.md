@@ -84,4 +84,8 @@ FDU & NeoteAI | https://www.alphaxiv.org/abs/2607.23783
 
 ## OneWM (90)
 
+HKU & SJTU | https://www.alphaxiv.org/abs/2610.21095
 
+采用 FDM 的，以预测的 action 为条件预测 video，video 仅为 aux loss. 有数据配比的，详细看一下.
+
+Endless Dream: blindly 以预测 video 为条件继续执行.
