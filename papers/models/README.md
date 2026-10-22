@@ -31,3 +31,15 @@ target = stop_grad(ema(x_s, s))
 loss = distance(student(x_t, t), target)
 optimize(student, loss); update_ema(ema, student)
 ```
+
+## Linear Attn
+
+- (nk kn) nk
+- n n @ n k
+- -> nk (every token get a sum prod)
+
+- what about:
+- nk (kn nk)
+- n k @ k k
+
+- each dim +1 能得到线性的 result

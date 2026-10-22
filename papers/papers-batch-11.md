@@ -74,8 +74,3 @@ ILA 有触觉. PhysCanvas 模拟器.
 
 https://www.alphaxiv.org/abs/2607.23783
 
----
-
-- dream1
-- [ ] https://research.neoteai.com/n0-twam/ 触觉 VLA
-- [ ] robodojo 榜单
