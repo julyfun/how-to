@@ -15,3 +15,11 @@ confidence: 2
 https://dreamlabs.ai/research/dream-1/
 
 没有提到架构，只说 eef, 并且认为 WAM 有自动适应本体和头部视角的能力.
+
+其实 demo 拍摄的比较拉，但是我们真机 zero-shot 实测其实还可以.
+
+## BOE (92)
+
+方佳鑫, FDU, 椰青分享 | https://www.alphaxiv.org/abs/2610.14746
+
+用 leanable query kan
