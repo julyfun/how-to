@@ -27,3 +27,7 @@ https://dreamlabs.ai/research/dream-1/
 用 learnable query （直接放 video dit） 代替 MoT. ae 只有两层.
 
 主要是为了加速，以及（据称）减少无关视觉干扰.
+
+## ForceWAM (93)
+
+xinkai wang, FDU, SJTU, 杨理欣
