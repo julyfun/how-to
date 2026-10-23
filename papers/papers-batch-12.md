@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-时间预算非常不够，大概读一下.
+时间预算非常不够，大概读一下，只看 idea.
 
 ## Dream1 (91)
 
@@ -31,3 +31,11 @@ https://dreamlabs.ai/research/dream-1/
 ## ForceWAM (93)
 
 zijun xu, wendi chen, FDU, SJTU, 杨理欣
+
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261023161010589.png)
+
+训练一个预测未来六轴力矩的 WM，然后小型 IDM, reactive.
+
+训练数据有 demo & play，其中 play 是探索性按压等非成功操作. Play 数据只用于训练 IDM.
+
+
