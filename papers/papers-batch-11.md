@@ -60,7 +60,7 @@ replay buffer 混合了离线 sft，dagger 和真机 rollout 数据。advantage 
 
 ## Phoenix (88)
 
-无界动力 | https://openphoenix-team.github.io/Phoenix-pages/
+无界动力 | https://openphoenix-team.github.io/Phoenix-pages/ (26/10/11)
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261022013811864.png)
 
