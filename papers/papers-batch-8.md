@@ -74,7 +74,7 @@ LLaVA 自回归出 action token, 同时 img hidden 作为 `独立 DiT 到 DINO g
 
 ## patchwam (66)
 
-⭐️⭐️ 西湖大学 | https://www.alphaxiv.org/abs/2609.25961
+⭐️⭐️ 西湖大学 tianheng wang, kaicheng yu | https://www.alphaxiv.org/abs/2609.25961
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260930163147759.png)
 
