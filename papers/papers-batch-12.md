@@ -20,6 +20,10 @@ https://dreamlabs.ai/research/dream-1/
 
 ## BOE (92)
 
-方佳鑫, FDU, 椰青分享 | https://www.alphaxiv.org/abs/2610.14746
+⭐️⭐️ 方佳鑫, FDU, 椰青分享 | https://www.alphaxiv.org/abs/2610.14746
 
-用 leanable query kan
+![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261023150719804.png)
+
+用 learnable query （直接放 video dit） 代替 MoT. ae 只有两层.
+
+主要是为了加速，以及（据称）减少无关视觉干扰.
