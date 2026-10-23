@@ -30,4 +30,4 @@ https://dreamlabs.ai/research/dream-1/
 
 ## ForceWAM (93)
 
-xinkai wang, FDU, SJTU, 杨理欣
+zijun xu, wendi chen, FDU, SJTU, 杨理欣
