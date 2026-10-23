@@ -30,7 +30,7 @@ https://dreamlabs.ai/research/dream-1/
 
 ## ForceWAM (93)
 
-⭐️⭐️⭐️l zijun xu, wendi chen, FDU, SJTU, 杨理欣
+⭐️⭐️⭐️ zijun xu, wendi chen, FDU, SJTU, 杨理欣
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261023161010589.png)
 
@@ -39,3 +39,9 @@ https://dreamlabs.ai/research/dream-1/
 训练数据有 demo & play，其中 play 是探索性按压等非成功操作. Play 数据只用于训练 IDM.
 
 ## EvoMemVLA (94)
+
+⭐️⭐️ yuheng na, haoang li, XJTU | https://www.alphaxiv.org/pdf/2610.05418
+
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261023172206442.png" height="250"/>
+
+为了增强记忆能力，用 DINOV3 提取图片特征后，训练 LAPA-style encoder，插入 state 历史中送入 VLM.
