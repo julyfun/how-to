@@ -12,3 +12,6 @@ confidence: 2
 
 ## Dream1 (91)
 
+https://dreamlabs.ai/research/dream-1/
+
+没有提到架构，只说 eef, 并且认为 WAM 有自动适应本体和头部视角的能力.

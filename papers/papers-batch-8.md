@@ -74,13 +74,31 @@ LLaVA 自回归出 action token, 同时 img hidden 作为 `独立 DiT 到 DINO g
 
 ## patchwam (66)
 
-⭐️⭐️ https://www.alphaxiv.org/abs/2609.25961
+⭐️⭐️ 西湖大学 | https://www.alphaxiv.org/abs/2609.25961
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260930163147759.png)
 
 以 FLUX 图像生成模型作为单 backbone，无需预训练，并将 action 直接无学习编码到 image patch 空间进行 image-action 联合去噪，刷到了 C2R 当前最高分 66.72%.
 
 然而，没有做真机实验。而且用了单图像生成模型而非 video model，缺乏动力学先验，而且很难说是 WAM，整个架构感觉怪怪的.
+
+后训练 c2r 非常 tricky，并且每个榜单还特调了不同的数据增强策略.
+
+```
+常规 RoboTwin：以 p=0.5 随机启用增强，参数在同一视角的时间帧间共享。
+颜色抖动：亮度、对比度、饱和度、色调随机调整。
+Gamma：随机 gamma 0.9–1.1。
+高斯噪声：std=0.01。
+随机裁剪缩放：保持宽高比，缩放比例 0.95–1.0。
+随机旋转：±5°，均值填充。
+C2R 外观增强：总概率 p=0.8，各摄像头独立采样、时间上保持一致。
+C2R 光照/颜色：亮度、对比度、饱和度、色调、gamma 0.7–1.4、曝光 ±0.5EV、色温扰动。
+C2R 模糊：高斯模糊，概率 0.3，sigma 0–1.5。
+C2R 高斯噪声：std=0.03。
+C2R 风格迁移（AdaIN/通道统计）：概率 0.5，随机目标均值/方差和混合强度。
+C2R Fourier/FFT：概率 0.5，在频域随机调制幅度包络，保持相位不变。
+C2R 背景替换：配置为关闭
+```
 
 ## 不同的 WAM 架构
 
