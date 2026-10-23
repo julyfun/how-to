@@ -30,7 +30,7 @@ https://dreamlabs.ai/research/dream-1/
 
 ## ForceWAM (93)
 
-zijun xu, wendi chen, FDU, SJTU, 杨理欣
+⭐️⭐️⭐️l zijun xu, wendi chen, FDU, SJTU, 杨理欣
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261023161010589.png)
 
@@ -38,4 +38,4 @@ zijun xu, wendi chen, FDU, SJTU, 杨理欣
 
 训练数据有 demo & play，其中 play 是探索性按压等非成功操作. Play 数据只用于训练 IDM.
 
-
+## EvoMemVLA (94)

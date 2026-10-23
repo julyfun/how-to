@@ -47,7 +47,7 @@ confidence: 2
 
 点数挺高的。
 
-## DiVeR (78)
+## DiVeR (78) 分歧片段
 
 ⭐️⭐️⭐️ Seongheon Park, Yasuyuki Matsushita; 微软 & 威斯康星大学 | https://www.alphaxiv.org/abs/2610.04933
 

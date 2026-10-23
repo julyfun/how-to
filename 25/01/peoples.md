@@ -243,11 +243,15 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - 贡献：参与 GR-2
 - 关系：
 
-# 创智
+# 创智 sii
 刘明桓 (Minghuan Liu) | https://www.sii.edu.cn/2026/0727/c94a1169/page1.htm
 - 背景：上交 CS 博士，UT Austin 博后
 - 贡献：感觉最近主要在探索.
 - 关系：czx 导师 (26/10).
+
+杨理欣
+
+李彦伟
 
 # SJTU 篇
 孙凌峰 (Lingfeng Sun)
