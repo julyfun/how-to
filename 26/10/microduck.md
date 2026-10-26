@@ -14,3 +14,8 @@ confidence: 2
 - [ ] 螺丝之类的
 
 ## 购买列表
+1. [x] 舵机x15
+2. [ ] 主控 Radxa
+3. [ ] 存储卡 microSD
+4. [ ] USB-C 1m
+5. [ ] Robot HAT C1
