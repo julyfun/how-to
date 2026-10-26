@@ -83,3 +83,5 @@ flowchart LR
 ```
 
 ## FOMI (96)
+
+yishu shen, yinghao xu, HKUST 港科大 | 剪刀手 UMI. 没有安装力传感器也没有安装触觉传感器。Why not use generalist?
