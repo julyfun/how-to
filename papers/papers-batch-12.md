@@ -85,3 +85,13 @@ flowchart LR
 ## FOMI (96)
 
 yishu shen, yinghao xu, HKUST 港科大 | 剪刀手 UMI. 没有安装力传感器也没有安装触觉传感器。Why not use generalist?
+
+## When One Step Is Enough (97)
+
+⭐️⭐️⭐️ 日本 ARAYA Inc | https://www.alphaxiv.org/abs/2610.30735
+
+拿 SmolVLA、X-VLA、FLOWER、π0.5、LAP 以及 XR-0 这六个模型的官方 ckpt 测试 FM 多步积分和单步积分.
+
+结论是对于 1B 以上并且训练充分的模型，一步和多步基本等价
+
+然而 qwen-manip 中呈现 FM4 和 FM10 在 robotwin c2r (joint) 上有显著差异.
