@@ -81,3 +81,5 @@ flowchart LR
     S["状态 s_t、目标 g_t、上下文 ξ"] --> V["Critic MLP<br/>256 → 128"]
     V --> Q["回报估计"]
 ```
+
+## FOMI (96)
