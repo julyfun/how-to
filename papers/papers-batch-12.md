@@ -44,4 +44,38 @@ https://dreamlabs.ai/research/dream-1/
 
 <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261023172206442.png" height="250"/>
 
-为了增强记忆能力，用 DINOV3 提取图片特征后，训练 LAPA-style encoder，插入 state 历史中送入 VLM.
+为了增强记忆能力，用 DINOV3 提取图片特征后，训练 LAPA-style 相邻帧隐式动力学 encoder，插入 state 历史中送入 VLM.
+
+## SuperMimic (95)
+
+⭐️⭐️⭐️⭐️⭐️ qiayuan liao, UCB | https://www.alphaxiv.org/abs/2610.28480
+
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261026123027999.png"/>
+
+引入 WM 加速 rollout 10 倍，通过 32 步 wm imagine 将 policy 训练时样本效率提升 64 倍.
+
+```mermaid
+flowchart LR
+    S["当前状态 s_t"] --> D["动力学 MLP<br/>2048 → 2048 → 2048"]
+    A["动作 a_t"] --> D
+    X["仿真上下文 ξ"] --> D
+    D --> NS["下一状态 ŝ_(t+1)"]
+
+    NS -.-> R["奖励预测头"]
+    NS -.-> O["无噪声观测预测头"]
+    NS -.-> T["终止概率预测头"]
+    G["目标 g_t"] -.-> R
+    G -.-> T
+```
+```mermaid
+flowchart LR
+    G["未来 10 帧参考动作"] --> E["动作编码器 MLP<br/>2048 → 1024 → 512 → 256"]
+    E --> Z["32 维潜变量 z"]
+
+    O["最近 10 帧观测历史"] --> D["共享解码器 MLP<br/>2048 → 1024 → 512 → 256"]
+    Z --> D
+    D --> A["29 维动作<br/>关节设定值"]
+
+    S["状态 s_t、目标 g_t、上下文 ξ"] --> V["Critic MLP<br/>256 → 128"]
+    V --> Q["回报估计"]
+```
