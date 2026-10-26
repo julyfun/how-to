@@ -95,3 +95,9 @@ yishu shen, yinghao xu, HKUST 港科大 | 剪刀手 UMI. 没有安装力传感�
 结论是对于 1B 以上并且训练充分的模型，一步和多步基本等价
 
 然而 qwen-manip 中呈现 FM4 和 FM10 在 robotwin c2r (joint) 上有显著差异.
+
+## EmbodiedEvo (98)
+
+Einsai.AI(香港, Calvin Xiao) | https://www.alphaxiv.org/abs/2610.18867
+
+智能体先在每类任务的单一演练场景（Playground）中探索，将沉淀的 skills & lessons 固化后直接迁移给新场景中的独立智能体复用. 在依赖记忆的任务和协调动作更有优势.
