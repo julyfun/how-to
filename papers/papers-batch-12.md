@@ -104,5 +104,8 @@ Einsai.AI(香港, Calvin Xiao) | https://www.alphaxiv.org/abs/2610.18867
 
 ## FLORA (99)
 
-NVIDIA 推出的切分、标注和打分模型，是三个 Qwen 训练的.
+NVIDIA 推出的切分、标注和打分模型 (9B, 17B, 397B-A17B)，是三个 Qwen 训练的. 在 WGO-Bench, RoboReward 和 Robometer 取得 SOTA 而成本只有 astra 1/125.
 
+奖励可以标稀疏或者每 0.5s 稠密. 权重已开源.
+
+## PrismWAM (100)
