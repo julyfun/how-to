@@ -9,7 +9,8 @@ confidence: 2
 ---
 
 ## 在线可视化零件
-https://nowpop.art/cad/v/Pop3D-ZVP4B.g3d
+- https://nowpop.art/cad/v/Pop3D-ZVP4B.g3d
+- 模型文件: https://github.com/7757/fanduck
 
 ## 购买列表
 看腾讯文档. https://docs.qq.com/sheet/DWHVuV25QQ1hpY29C?tab=000001
