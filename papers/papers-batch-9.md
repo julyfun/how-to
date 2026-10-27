@@ -66,7 +66,7 @@ CEWP: 修改 MoT 计算顺序，同时计算 WM 和 AE 的同层 block. 提升 G
 
 ⭐️⭐️ 银河通用 | https://www.alphaxiv.org/abs/2609.38537
 
-对于 pi05 提交的每一个 chunk，经过 FK 后 GPT 直接看 image + chunk，决定是否接管. Astra 选择接受其前 1–15 步，或替换为 1–5 步的末端执行器修正动作. 仿真分数比单纯 GPT 和单纯 pi05 都高.
+robodojo 自己测的. 对于 pi05 提交的每一个 chunk，经过 FK 后 GPT 直接看 image + chunk，决定是否接管. Astra 选择接受其前 1–15 步，或替换为 1–5 步的末端执行器修正动作. 仿真分数比单纯 GPT 和单纯 pi05 都高.
 
 每个 episode 消耗 token 12M+.
 
