@@ -101,3 +101,9 @@ yishu shen, yinghao xu, HKUST 港科大 | 剪刀手 UMI. 没有安装力传感�
 Einsai.AI(香港, Calvin Xiao) | https://www.alphaxiv.org/abs/2610.18867
 
 智能体先在每类任务的单一演练场景（Playground）中探索，将沉淀的 skills & lessons 固化后直接迁移给新场景中的独立智能体复用. 在依赖记忆的任务和协调动作更有优势.
+
+## FLORA (99)
+
+NVIDIA 推出的切分、标注和打分模型，是三个 Qwen 训练的.
+
+
