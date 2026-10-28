@@ -15,4 +15,4 @@ confidence: 2
 - ⭐️⭐️⭐️⭐️ 似乎很有用
 - ⭐️⭐️⭐️⭐️⭐️ 新范式并且显著 work
 
-rewrite abs in zh. 废话少. 本文 idea 非常 trivial，避免高深和故弄玄虚.
+rewrite abs in zh. 废话少. 本文 idea 非常 trivial，避免高深，故弄玄虚和论文新造的词和词组.
