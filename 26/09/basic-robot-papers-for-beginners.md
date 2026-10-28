@@ -16,11 +16,11 @@ confidence: 2
     - QwenVL | 23.8 将 CLIP 通过 256 learnable-queries cross-attn 变换到 LLM 空间
 - VLA
     - 基模
-        - OpenVLA | 24.6 用 VLM 的 next-token-prediction 输出离散动作
-        - pi0 | 24.10 推出 MoT & FM & zero-padding 大规模预训练范式
-        - pi05 | 25.4 预训练扩充 CE/互联网，离散 pretrain，subtask 作为辅助损失和 CoT
+        - OpenVLA | 24.6 VLM next-token-prediction 输出离散动作
+        - pi0 | 24.10 MoT & FM & zero-padding
+        - pi05 | 25.4 扩充 CE/互联网，FAST，subtask
         - SmolVLA | 25.6 裁剪 MoT 并交错使用 CA 和 SA 以让模型更轻量化
-        - pi06 | 25.11 稀疏 RL 训练进度估计器给数据打 0/1 advantage 作为 VLA condition
+        - pi06 | 25.11 稀疏 RL 训练进度估计器给数据打 0/1 advantage
     - 自回归
         - G0.5 | 26.8 带 ActionCodec 和 CoT 的自回归 VLA，实验 AR > FM
 - [ ] WM
@@ -60,6 +60,8 @@ confidence: 2
         - AHA-WAM | 26.6 Context Routing 实现 v-a 异步
         - InternW0 | 26.9 Context Routing + 力触觉
 - 数据工作
+    - 无标签数据
+        - ATM | 24.1 预测二维点轨迹
     - EgoRecovery 26.7 | 人类手动摆出失败配置并纠正，提取意图调制 Gated 动作解码
 - VLA Framework
     - [ ] FLuxVLA
