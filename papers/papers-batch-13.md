@@ -7,4 +7,11 @@ os: "Darwin julyfundeMacBook-Air.local 27.0.0 Darwin Kernel Version 27.0.0: Tue 
 assume-you-know: [computer]
 confidence: 2
 ---
-alsdkjfalsdjkfal
+## RynnVLA-Latent (101)
+
+⭐⭐⭐️ 达摩院 | https://www.alphaxiv.org/abs/2610.34356
+
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261028172041584.png"/>
+
+LAPA style，但是监督残差 + 3D Flow + 相机位姿.
+
