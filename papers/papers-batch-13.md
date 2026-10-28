@@ -13,5 +13,6 @@ confidence: 2
 
 <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261028172041584.png"/>
 
-LAPA style，但是监督残差 + 3D Flow + 相机位姿.
+LAPA style，但是监督残差(Depth Anything 3 两帧直接相减) + 3D Flow + 相机位姿. 处理了 3w 小时 robot, ego & sim 数据.
 
+灵巧仿真 & 夹爪真机上还可以.
