@@ -109,3 +109,11 @@ NVIDIA 推出的切分、标注和打分模型 (9B, 17B, 397B-A17B)，是三个 
 奖励可以标稀疏或者每 0.5s 稠密. 权重已开源.
 
 ## PrismWAM (100)
+
+⭐️⭐️⭐️ 清华, NVIDIA | https://www.alphaxiv.org/abs/2610.26564
+
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261028164335319.png"/>
+
+本文考虑到WAM不应该从 rgb 反推动作，应该从深度反推动作. 因此，RGB 仅仅是辅助任务，并且只预测任务完成后的一帧. 两者共享 WAN 主干.
+
+C2R 挺高的，但是这是当然的.
