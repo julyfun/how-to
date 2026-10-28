@@ -16,3 +16,11 @@ confidence: 2
 LAPA style，但是监督了残差(Depth Anything 3 两帧直接相减) + 3D Flow + 相机位姿. 处理了 3w 小时 robot, ego & sim 数据.
 
 灵巧仿真 & 夹爪真机上 demo 还可以.
+
+## VLA-Delta (102)
+
+⭐ Qi Lu, Xuhong Zhang, OmniAI, ZJU | https://www.alphaxiv.org/pdf/2610.21306
+
+加了光流、结构化、difference text 监督... Qwen backbone... 调参大师来了...
+
+整个网站、文章和图都非常 vibe.
