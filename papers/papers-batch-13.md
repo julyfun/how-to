@@ -72,6 +72,11 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 
 ## OmniVTA 数据集 (107)
 
+Yuhang Zhang, Wenchao Ding, NUS 新加坡国立 & TARS | https://www.alphaxiv.org/abs/2603.19201
+
+- 方法：
+	1. 本文构建了一个 20k traj 的触觉数据集.
+	2. 视觉
 
 
 - Agentic World Action Models
