@@ -20,8 +20,8 @@ confidence: 2
 
 给出了很多训练 trick，包括5阶段课程学习、质量指标筛选（公开数据集质量表）. 然而，demo 没有什么新东西。
 
-## GuidedVLA: ybw (11)
-一句话：给 pi0 action expert 加深度、action-primitive 和 attn mask 的 auxiliary tasks 和特征
+## GuidedVLA (11)
+👍  一句话：给 pi0 action expert 加深度、action-primitive 和 attn mask 的 auxiliary tasks 和特征
 
 这三个特征均可用外部 VLM, depthanything 和 SAM 打标签.
 

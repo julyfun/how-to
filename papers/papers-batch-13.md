@@ -27,11 +27,15 @@ LAPA style，但是监督了残差(Depth Anything 3 两帧直接相减) + 3D Flo
 
 ## ATM (103)
 
-Chuan wen, pieter abbeel | https://www.alphaxiv.org/abs/2401.00025
+👍 Chuan wen, pieter abbeel | https://www.alphaxiv.org/abs/2401.00025
 
 早期一种利用无标签数据的方式. 让一个 transformer 预测二维点轨迹，再训练一个 ViT 风格的下游策略，输入二维轨迹 & img 输出动作.
 
 训练时随机撒点筛选动静大的点作为预测目标，推理时由于无法预知哪些点动静大，故 4x8 均匀撒点后预测. 这是因为作者认为 Track Transformer 本身具备置换不变性（Permutation Invariance）.
+
+## Contact Trajectory Prompting (104)
+
+👍 
 
 - Agentic World Action Models
 - imagewam
