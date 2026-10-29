@@ -52,9 +52,14 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261029190857460.png"/>
 
 早就看过了，明确一些细节.
-- 动机：
+- 动机：解决 contact-rich 任务传统人工 dagger 不平滑的问题.
 - 方法：
-- 结果：
+	1. 机械臂带力反馈。rollout dagger 时人类轻轻把机械臂往正确方向推.
+	2. 此时机械臂并不是因为受力直接被推开，而是根据一个虚拟弹簧公式改变位控目标，同时记录位置差值和末端收到的外力.
+	3. 训练 residual policy，输入和原始一样，输出位置差和目标外力.
+	4. rollout 预测 delta 和期望外力，用导纳控制（如果目标力大于真实力，则贴得更紧）
+- 结果：翻书、皮带装配、齿轮插入和线缆布设.
+
 
 
 - Agentic World Action Models
