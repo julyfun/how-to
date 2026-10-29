@@ -47,9 +47,14 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 
 ## CR-Dagger (106)
 
-xiaomeng xu, shuran song, Stanford | https://www.alphaxiv.org/abs/2506.16685
+⭐⭐⭐️ xiaomeng xu, shuran song, Stanford | https://www.alphaxiv.org/abs/2506.16685
+
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261029190857460.png"/>
 
 早就看过了，明确一些细节.
+- 动机：
+- 方法：
+- 结果：
 
 
 - Agentic World Action Models
