@@ -66,6 +66,8 @@ confidence: 2
 	- CR-DAgger 25.1 |基于导纳控制的残差 DAgger
 	- RoboPocket 26.3 | UMI DAgger
 	- EgoRecovery 26.7 | 人类手动摆出失败配置并纠正，提取意图调制 Gated 动作解码
+- 触觉 VLA/WAM
+	- TacForesight  26.6| 以 force 预测未来 tactile 作为辅助条件
 - VLA Framework
     - [ ] FLuxVLA
     - RLinf

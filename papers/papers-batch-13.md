@@ -45,6 +45,15 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 
 👍 xian nie, wenchao ding, TARS | https://www.alphaxiv.org/abs/2610.18848
 
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261029211436942.png"/>
+
+动机：力触一起输入的话，触觉信号会有 200ms 这样一个延迟，不如预测触觉.
+方法：
+1. tactile encoder
+2. tactile WM 中编码历史帧 tactile 以后，在历史 force condition 下预测未来 tac feature. 参数量 11.8M.（不是这怎么感觉有点欠约束）
+3. 在 policy 中当前 tactile feature 去 cross-attend WM 给出的未来 tactile feature 作为 policy 条件. 下游是小 policy.;
+结果：主要是在有扰动的擦拭任务上成功率高.
+
 ## CR-Dagger (106)
 
 ⭐⭐⭐️ xiaomeng xu, shuran song, Stanford | https://www.alphaxiv.org/abs/2506.16685
