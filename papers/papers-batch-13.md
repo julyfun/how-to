@@ -69,6 +69,10 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 	4. rollout 预测 delta 和期望外力，用导纳控制（如果目标力大于真实力，则贴得更紧）
 - 结果：翻书、皮带装配、齿轮插入和线缆布设.
 
+## OmniVTA (107)
+
+
+
 - Agentic World Action Models
 - imagewam
 - PhysCanvas
