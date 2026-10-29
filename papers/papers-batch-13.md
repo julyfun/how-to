@@ -80,7 +80,7 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 
 ## DexPort (108)
 
-Amber Xie, Haozhi Qi | https://www.alphaxiv.org/pdf/2610.32969
+Amber Xie, Haozhi Qi, Amazon FAR | https://www.alphaxiv.org/pdf/2610.32969
 
 堆积如山
 - Agentic World Action Models
