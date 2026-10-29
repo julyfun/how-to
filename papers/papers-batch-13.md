@@ -82,6 +82,12 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 
 Amber Xie, Haozhi Qi, Amazon FAR | https://www.alphaxiv.org/pdf/2610.32969
 
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261029235318154.png"/>
+
+- 动机：想要同构采集，但是又想降低硬件压力，故用更低自由度的Quest 2 控制器.
+- 方法：
+	1. 通过 quest2 的按钮切换拇指移动/抓握/捏取等 skill，其上的摇杆
+
 堆积如山
 - Agentic World Action Models
 - imagewam
