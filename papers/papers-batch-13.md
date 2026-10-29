@@ -79,6 +79,7 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 	2. cascaded 架构：wm 预测未来 vis & tac 然后送给 adaptive policy（根据预测的接触概率调整 vis & tac 权重）
 
 ## DexPort (108)
+
 Amber Xie, Haozhi Qi | https://www.alphaxiv.org/pdf/2610.32969
 
 堆积如山
