@@ -171,9 +171,11 @@ Yingxue Zhang]
 
 结论真的假的？ 感觉实验 settings 不够强.
 
-## BORA: czx (17)
+## BORA (17)
 
-本文在离线训练 Q net, V net(仅用于辅助训练 Q_net) 的同时更新 vlm encoder，并在在线阶段冻结 Q，只额外训练一个 MLP 级别的 residual policy.
+zhongxi chen
+
+本文在 offline IQL 训练 Q net, V net(仅用于辅助训练 Q_net) 的同时更新 vlm encoder，并在在线阶段冻结 Q，只额外训练一个 MLP residual policy.
 
 demo 仅限慢速 pick and place 以及食指大拇指的简单捏握.
 
@@ -186,7 +188,7 @@ flowchart TD
     policy --> v[[1~3次去噪]] -->policy
     A --> loss_act["loss_act =<br>-ppo_clip(A, advantage(Q, V))<br> + λ_bc * bc_loss(A, A_demo)"]
 ```
-- expectile_loss: [todo]
+- expectile_loss:
   ```python
   diff = Q.detach() - V
   weight = torch.where(diff > 0, tau, 1 - tau)

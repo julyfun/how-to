@@ -8,7 +8,7 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## Behavior Prompting Policy: Demonstrations as Prompts for Manipulation (35)
+## BPP - Behavior Prompting Policy (35)
 ⭐️⭐️⭐️ 将单条演示作为 in-context 任务提示 | 👤 Stanford, Austin Patel, Shuran Song | [🌐](https://behavior-prompting.github.io) | [📃 2606.30457](https://hjfy.top/arxiv/2606.30457) | [✨](https://www.alphaxiv.org/abs/2606.30457) | [📂](https://github.com/real-stanford/behavior_prompting) |
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20260705173413639.png)

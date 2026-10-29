@@ -35,7 +35,9 @@ LAPA style，但是监督了残差(Depth Anything 3 两帧直接相减) + 3D Flo
 
 ## Contact Trajectory Prompting (104)
 
-👍 
+👍 xian nie | https://www.alphaxiv.org/abs/2610.18848
+
+BPP 触觉版本. VAE 训练一个视觉触觉编码器.
 
 - Agentic World Action Models
 - imagewam
