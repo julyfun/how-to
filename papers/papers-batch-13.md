@@ -70,15 +70,19 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 	4. rollout 预测 delta 和期望外力，用导纳控制（如果目标力大于真实力，则贴得更紧）
 - 结果：翻书、皮带装配、齿轮插入和线缆布设.
 
-## OmniVTA 数据集 (107)
+## OmniVTA (107)
 
-Yuhang Zhang, Wenchao Ding, NUS 新加坡国立 & TARS | https://www.alphaxiv.org/abs/2603.19201
+⭐⭐⭐ Yuhang Zhang, Wenchao Ding, NUS 新加坡国立 & TARS | https://www.alphaxiv.org/abs/2603.19201
 
 - 方法：
-	1. 本文构建了一个 20k traj 的触觉数据集.
-	2. 视觉
+	1. 本文构建了一个 20k traj 的触觉数据集 OmniViTac.
+	2. cascaded 架构：wm 预测未来 vis & tac 然后送给 adaptive policy（根据预测的接触概率调整 vis & tac 权重）
 
+## DexPort (108)
+Amber Xie, Haozhi Qi | https://www.alphaxiv.org/pdf/2610.32969
 
+堆积如山
 - Agentic World Action Models
 - imagewam
 - PhysCanvas
+- AW-0
