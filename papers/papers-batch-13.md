@@ -45,6 +45,12 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 
 👍 xian nie, wenchao ding, TARS | https://www.alphaxiv.org/abs/2610.18848
 
+## CR-Dagger (106)
+
+xiaomeng xu, shuran song, Stanford | https://www.alphaxiv.org/abs/2506.16685
+
+早就看过了，明确一些细节.
+
 
 - Agentic World Action Models
 - imagewam
