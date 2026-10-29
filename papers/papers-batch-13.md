@@ -39,7 +39,7 @@ LAPA style，但是监督了残差(Depth Anything 3 两帧直接相减) + 3D Flo
 
 BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还原动作和触觉)，然后每对数据是用同一任务里另一 episode[1] 的触觉数据来 prompting 接下来的动作
 
-1. 考虑推理 ICL 不是让你复制这个触觉对应的动作，所以需要另一 episode.
+1. 考虑推理 ICL 不是让你复制这个触觉对应的动作，所以需要另一 episode，和 BPP 一致.
 
 ## TacForesight (105)
 
@@ -49,9 +49,10 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 
 动机：力触一起输入的话，触觉信号会有 200ms 这样一个延迟，不如预测触觉.
 方法：
-1. tactile encoder
-2. tactile WM 中编码历史帧 tactile 以后，在历史 force condition 下预测未来 tac feature. 参数量 11.8M.（不是这怎么感觉有点欠约束）
-3. 在 policy 中当前 tactile feature 去 cross-attend WM 给出的未来 tactile feature 作为 policy 条件. 下游是小 policy.;
+1. Xense 千觉视触觉传感器.
+2. tactile encoder
+3. tactile WM 中编码历史帧 tactile 以后，在历史 force condition 下预测未来 tac feature. 参数量 11.8M.（不是这怎么感觉有点欠约束）
+4. 在 policy 中当前 tactile feature 去 cross-attend WM 给出的未来 tactile feature 作为 policy 条件. 下游是小 policy;
 结果：demo 擦花瓶，刷卡和拧瓶盖，速度慢但是准度还可以，抗光照和手持扰动.
 
 ## CR-Dagger (106)
@@ -69,7 +70,7 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 	4. rollout 预测 delta 和期望外力，用导纳控制（如果目标力大于真实力，则贴得更紧）
 - 结果：翻书、皮带装配、齿轮插入和线缆布设.
 
-## OmniVTA (107)
+## OmniVTA 数据集 (107)
 
 
 
