@@ -39,4 +39,4 @@ LAPA style，但是监督了残差(Depth Anything 3 两帧直接相减) + 3D Flo
 
 - Agentic World Action Models
 - imagewam
-- nx papers
+- PhysCanvas
