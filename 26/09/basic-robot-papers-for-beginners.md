@@ -59,10 +59,12 @@ confidence: 2
     - Reactive
         - AHA-WAM | 26.6 Context Routing 实现 v-a 异步
         - InternW0 | 26.9 Context Routing + 力触觉
-- 数据工作
+- 数据打标
     - 无标签数据
         - ATM | 24.1 预测二维点轨迹
-    - EgoRecovery 26.7 | 人类手动摆出失败配置并纠正，提取意图调制 Gated 动作解码
+- DAgger
+	- CR-DAgger 
+	- EgoRecovery 26.7 | 人类手动摆出失败配置并纠正，提取意图调制 Gated 动作解码
 - VLA Framework
     - [ ] FLuxVLA
     - RLinf

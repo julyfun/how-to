@@ -15,14 +15,11 @@ confidence: 2
 
 Recap: 众所周知，diffusion policy 使用 obs_encoder(obs) 获得 global_cond 并直接 FiLM 调制 UNet 中的多层 x.
 
-本文仅需在上述 obs_encoder 内部 cross-attn 一条演示下采样得到的 `[enc(rgb), mlp(propio), mlp(action)]`，训练为成对数据（从同任务另一个。
+本文仅需在上述 obs_encoder 内部 cross-attn 一条演示下采样得到的 `[enc(rgb), mlp(propio), mlp(action)]`，训练为成对数据：学习某个 episode 时，取同任务另一个 episode 作为 prompt. From scratch 直接训练带 prompt 的策略训练.
 
 实现了 1. infer-time 指定折叠方式（训练时见过多种折叠方式）; 2. infer-time 指定绘制数字（训练时未见过的数字）。实验发现需要训练数据多样性高时才能很好地 steering，当然，还是无法跨 action primitive 的.
 
-这篇文章 abs:
-1. We study Bahavior Propmting.
-2. To enable this, we present contributions in algo, data and evaluation.
-3. For algo, we.. For data we identify that .. is the primer driver **and introduce iPhUMI**.
+这篇文章 abs 不错，可以抄抄.
 
 ## SOE: Sample-Efficient Robot Policy Self-Improvement via On-Manifold Exploration (36)
 ⭐️⭐️⭐️ 在更低维度的 observation latent 上随机扰动来让 Policy 探索 | 👤 上海交通大学, Yang Jin, Chuan Wen、Cewu Lu |
