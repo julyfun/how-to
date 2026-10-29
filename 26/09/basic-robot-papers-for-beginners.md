@@ -63,7 +63,8 @@ confidence: 2
     - 无标签数据
         - ATM | 24.1 预测二维点轨迹
 - DAgger
-	- CR-DAgger 
+	- CR-DAgger 25.1 |基于导纳控制的残差 DAgger
+	- RoboPocket 26.3 | UMI DAgger
 	- EgoRecovery 26.7 | 人类手动摆出失败配置并纠正，提取意图调制 Gated 动作解码
 - VLA Framework
     - [ ] FLuxVLA
