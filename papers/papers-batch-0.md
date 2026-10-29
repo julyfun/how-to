@@ -10,6 +10,8 @@ confidence: 2
 
 合并图片：https://small.im/zh-hans/merge-images
 
+
+- ⭐ 不太正常
 - ⭐️⭐️ 正常
 - ⭐️⭐️⭐️ 值得日后参考
 - ⭐️⭐️⭐️⭐️ 精选文章

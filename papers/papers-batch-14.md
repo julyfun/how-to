@@ -12,4 +12,13 @@ confidence: 2
 
 ## ImageWAM (109)
 
-Wenyao Zhang, Xiaokang Yang, SJTU | https://www.alphaxiv.org/abs/2606.19531
+️️⭐️️⭐️⭐️ Wenyao Zhang, Xiaokang Yang, SJTU | https://www.alphaxiv.org/abs/2606.19531
+
+- 动机：也许不需要 VM，只需要 edit.
+- 方法：
+	1. MoT 架构不变，换为 FLUX.2 4B (flow-matching)，编辑目标是 16 帧以后的观测图像，进行监督，推理时仅前向一次干净图像.
+- 结果：
+	1. 真机 demo 是 pick and place，精度和流畅度不错
+	2. 点数挺高, robotwin  c2c r2r ~93%
+
+## 你好
