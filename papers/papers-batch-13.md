@@ -84,15 +84,15 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 
 <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261029235318154.png"/>
 
-- 动机：想要采训硬件，但是又想降低硬件压力，故用更低自由度的Quest 2 控制器.
+- 动机：想要采训硬件一致，但是又想降低 dex 手搓压力，故用更低自由度的 Quest 2 控制器和 primitive.
 - 方法：
-	1. 通过 quest2 的按钮切换拇指移动/抓握/捏取等 skill，其上的摇杆调节弯曲/捏取程度（两个自由度），直控 WUJI Hand.
-	2. 训练 policy 依然是全自由度动作，但是用 command 而非 state（否则报告了合不紧问题）.
-	3. 用了 DINO-DP.
+	1. 通过 quest2 的按钮切换拇指移动/抓握/捏取等 primitive，其上的摇杆调节弯曲/捏取程度（两个自由度），直控 WUJI Hand.
+	2. 训练 policy 依然是全自由度动作，但是用 command 而非 state（报告了 state 合不紧问题）.
+	3. 用的 DINO-DP.
 - 结果：
 	1. action label 用 command/state 成功率 64%/11%.
 	2. 有一个小的预训练 (in-the-wild 0/500/1000) 表明预训练有助于 seen obj/unseen obj/干扰物场景的成功率.
-- 估计也挺累.
+- 估计也是挺费劲.
 
 堆积如山
 - Agentic World Action Models

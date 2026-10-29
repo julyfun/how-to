@@ -10,11 +10,11 @@ confidence: 2
 
 合并图片：https://small.im/zh-hans/merge-images
 
-- ⭐️⭐️
-- ⭐️⭐️⭐️ 有一些 insight
-- ⭐️⭐️⭐️⭐️ 似乎很有用
+- ⭐️⭐️ 正常
+- ⭐️⭐️⭐️ 值得日后参考
+- ⭐️⭐️⭐️⭐️ 精选文章
 - ⭐️⭐️⭐️⭐️⭐️ 新范式并且显著 work
 
 rewrite abs in zh. 废话少. 本文 idea 非常 trivial 可以由常用 DL 词汇组合而来，避免 high-level，故弄玄虚和论文新造词和词组.
 
-.. atm
+例如，核心变化是？（相较于
