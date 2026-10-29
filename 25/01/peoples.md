@@ -251,7 +251,14 @@ Anca Dragan ── Berkeley HRI / OpenAI
 
 杨理欣
 
+王薪恺 xinkai wang
+- 背景: 东南大学, sii
+- 贡献: LaMP, MRUCT
+- 关系: lixin 的 2023 届 phd
+
 李彦伟
+
+
 
 # SJTU 篇
 孙凌峰 (Lingfeng Sun)
