@@ -35,9 +35,16 @@ LAPA style，但是监督了残差(Depth Anything 3 两帧直接相减) + 3D Flo
 
 ## Contact Trajectory Prompting (104)
 
-👍 xian nie | https://www.alphaxiv.org/abs/2610.18848
+👍 xian nie, shuicheng yan, TARS | https://www.alphaxiv.org/abs/2610.18848
 
-BPP 触觉版本. VAE 训练一个视觉触觉编码器.
+BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还原动作和触觉)，然后每对数据是用同一任务里另一 episode[1] 的触觉数据来 prompting 接下来的动作
+
+1. 考虑推理 ICL 不是让你复制这个触觉对应的动作，所以需要另一 episode.
+
+## TacForesight (105)
+
+👍 xian nie, wenchao ding, TARS | https://www.alphaxiv.org/abs/2610.18848
+
 
 - Agentic World Action Models
 - imagewam
