@@ -26,7 +26,7 @@ confidence: 2
 
 消融表明按事件预测显著提升按照指令预测视频的效果；VLM 上层规划大幅提升 SR. 发布时登顶 dojo (32.26%)，但 dojo 并没有使用 VLM 上层规划.
 
-注：VPP1 的架构 query UNet 中间特征交给 AE，但是本作向 MoT 投降了.
+注：前作 VPP1 的架构 query UNet 中间特征交给 AE，但是本作向 MoT 投降了.
 
 ## Ctrl-world (69)
 
