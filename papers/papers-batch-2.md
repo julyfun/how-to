@@ -91,9 +91,10 @@ flowchart TD
 
 一句话：在一个 img 周期内构建高频的短期 wrench kv memory 并在 train-time-only 加入 virtual_target 和 stiffness auxiliary tasks 来强制模型利用力信息，推理时仅需力传感器+位控且并且没有用 admittance control. 效果：在插入书本等任务中，如果书本怼到墙壁能快速感知到并反应.
 
-力 reactive + 位控比较适合上述书本插缝的情形，但并不适合套手机壳；后者更需要力控，但力控对于到达目标点的反应却更慢。两者之间存在 tradeoff. 从一个角度考虑，
+你可能会问，为什么用 virtual target 作为辅助任务而不是力呢？两者其实都行，但是消融表明 virtual target 更好，可能是因为模态更直接.
 
-令人疑惑，人手没有编码器实际上不能做位控，机械臂擅长做位控任务，但前者却能实现一系列灵巧操作，到底是怎么控制的？
+- 力 reactive + 位控比较适合上述书本插缝的情形，但并不适合套手机壳；后者更需要力控，但力控对于到达目标点的反应却更慢。两者之间存在 tradeoff. 从一个角度考虑，
+- 令人疑惑，人手没有编码器实际上不能做位控，机械臂擅长做位控任务，但前者却能实现一系列灵巧操作，到底是怎么控制的？
 
 ```python
 noisy_action[i] ---attend--> noise_action[<=i] & fast_kv[<=i] & slow_kv
@@ -151,7 +152,7 @@ noise_2 = randn(B,16,13)
 ```
 
 ## Adaptive Compliance Policy (14)
-- https://arxiv.org/pdf/2410.09309
+yifan hou, shuran song, Stanford | https://alphaxiv.org/abs/2410.09309
 
 预测 virtual target 和 stiffness 从而在纯位控机器人上使用 admittance control
 
