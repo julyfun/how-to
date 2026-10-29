@@ -95,7 +95,5 @@ BPP 的触觉版本. VAE 训练一个动作和触觉编码器 (token decode 还�
 - 估计也是挺费劲.
 
 堆积如山
-- Agentic World Action Models
-- imagewam
 - PhysCanvas
 - AW-0

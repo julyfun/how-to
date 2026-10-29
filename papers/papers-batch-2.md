@@ -87,7 +87,7 @@ flowchart TD
 ```
 
 ## ImplicitRDP (13)
-- https://www.alphaxiv.org/abs/2512.10946
+👍🏻 👍  | https://www.alphaxiv.org/abs/2512.10946
 
 一句话：在一个 img 周期内构建高频的短期 wrench kv memory 并在 train-time-only 加入 virtual_target 和 stiffness auxiliary tasks 来强制模型利用力信息，推理时仅需力传感器+位控且并且没有用 admittance control. 效果：在插入书本等任务中，如果书本怼到墙壁能快速感知到并反应.
 
