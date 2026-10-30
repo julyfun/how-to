@@ -23,5 +23,6 @@ https://axi404.top/blog/eai-papers#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E6%8D%AE
 ## RL-token (110)
 ⭐⭐️️⭐️️⭐️️️️ Charles Xu, PI |https://www.alphaxiv.org/abs/2604.23073 
 
-- 动机：想通过小 RL 提升动作 precision 和 speed，但是 DSRL 能调节的范围又太小.
-- 方法：VLA 输出额外 token，第一阶段用它重建 VLA 输入. 第二阶段冻结 VLA 和提取器，训练 actor critic，这俩都会接收 RL token. actor 还额外接收 VLA 给出的参考
+- 动机：想通过小 RL 提升动作 precision 和 speed，但是 DSRL 能调节的局限性又太强.
+- 方法：VLA 输出额外 token，第一阶段用它重建 VLA 输入. 第二阶段冻结 VLA 和提取器，训练 actor critic，这俩都会接收 RL token. actor 还额外接收 VLA 给出的参考动作块&带正则化防偏离，critic 则接收待评估动作块. 给人工标注的成功/失败奖励即可.
+- 结果：成功率和 DSRL 差不多，但是 RLT 更快.
