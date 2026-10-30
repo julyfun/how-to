@@ -11,7 +11,6 @@ confidence: 2
 go on this:
 https://axi404.top/blog/eai-papers#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E6%8D%AE%E9%9B%86
 ## ImageWAM (109)
-
 ️️⭐️️⭐️⭐️ Wenyao Zhang, Xiaokang Yang, SJTU | https://www.alphaxiv.org/abs/2606.19531
 
 - 动机：也许不需要 VM，只需要 edit.
@@ -21,4 +20,7 @@ https://axi404.top/blog/eai-papers#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E6%8D%AE
 	1. 真机 demo 是 pick and place，精度和流畅度不错
 	2. 点数挺高, robotwin  c2c r2r ~93%
 
-## RL-token
+## RL-token (110)
+⭐️️⭐️️⭐️️ Charles Xu, PI |https://www.alphaxiv.org/abs/2604.23073 
+
+- 动机
