@@ -59,9 +59,12 @@ confidence: 2
     - Reactive
         - AHA-WAM | 26.6 Context Routing 实现 v-a 异步
         - InternW0 | 26.9 Context Routing + 力触觉
-- 数据打标
-    - 无标签数据
-        - ATM | 24.1 预测二维点轨迹
+- 数据集
+	- OXE | 23.10
+	- DROID | 24.3 单臂 Franka + robotiq 尽量多场景和物体. 350h
+	- 
+- 无标签数据
+	- ATM | 24.1 预测二维点轨迹
 - DAgger
 	- CR-DAgger 25.1 |基于导纳控制的残差 DAgger
 	- RoboPocket 26.3 | UMI DAgger

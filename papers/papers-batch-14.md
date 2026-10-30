@@ -21,4 +21,4 @@ https://axi404.top/blog/eai-papers#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E6%8D%AE
 	1. 真机 demo 是 pick and place，精度和流畅度不错
 	2. 点数挺高, robotwin  c2c r2r ~93%
 
-## 你好
+## RL-token
