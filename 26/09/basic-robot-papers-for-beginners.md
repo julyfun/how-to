@@ -59,10 +59,12 @@ confidence: 2
     - Reactive
         - AHA-WAM | 26.6 Context Routing 实现 v-a 异步
         - InternW0 | 26.9 Context Routing + 力触觉
-- 数据集 `本文相对于其他机器人数据集的特色动机是？`
-	- BridgeData V2 | 23.8 
+- 数据集 `本文相对于其他机器人数据集的特色动机是？硬件/环境？1-2句话高质量`
+	- RH20T | 23.7 带力和部分触觉的 4 本体 11万条，来自 haoshu
+	- BridgeData V2 | 23.8 多环境 widowx6 万条
 	- OXE | 23.10 室内跨本体数据
 	- DROID | 24.3 单臂 Franka + robotiq 尽量多场景和物体. 350h
+	- ABC-130K | 26.6 较灵巧的
 - 无标签数据
 	- ATM | 24.1 预测二维点轨迹
 - DAgger
