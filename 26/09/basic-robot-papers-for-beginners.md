@@ -65,6 +65,7 @@ confidence: 2
 	- OXE | 23.10 室内跨本体数据
 	- DROID | 24.3 单臂 Franka + robotiq 尽量多场景和物体. 350h
 	- AgiBot World Beta| 25.3 agibot g1100万条广泛室内场景，部分带触觉
+	- Galaxea Open-World | 25.8 星海图 R1 移动双臂 in-the-wild 500h
 	- RoboCoin| 25.11 各种移动机器人 18 万条带详细语言标注
 	- RoboMind| 25.12; 31 条异构/移动/触觉/仿真
 	- MolmoAct2 | 26.5 in-the-wild 三视角 YAM
