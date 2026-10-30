@@ -8,8 +8,8 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-哎哟喂 ~~~~~~~~~ can't read all of them ~~~~~
-
+go on this:
+https://axi404.top/blog/eai-papers#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E6%8D%AE%E9%9B%86
 ## ImageWAM (109)
 
 ️️⭐️️⭐️⭐️ Wenyao Zhang, Xiaokang Yang, SJTU | https://www.alphaxiv.org/abs/2606.19531
