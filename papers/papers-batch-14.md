@@ -23,4 +23,5 @@ https://axi404.top/blog/eai-papers#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E6%8D%AE
 ## RL-token (110)
 ⭐️️⭐️️⭐️️ Charles Xu, PI |https://www.alphaxiv.org/abs/2604.23073 
 
-- 动机
+- 动机：通过小 RL 提升动作 precision 和 speed
+- 方法：
