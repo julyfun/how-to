@@ -70,6 +70,7 @@ confidence: 2
 	- RoboMind| 25.12; 31 条异构/移动/触觉/仿真
 	- MolmoAct2 | 26.5 in-the-wild 三视角 YAM
 	- ABC-130K | 26.6 YAM 3500h 较灵巧任务
+	- SharpaDex v1.0 | 26.9 Sharpa 指尖力触觉 300h，任务看起来挺灵巧
 - 无标签数据
 	- ATM | 24.1 预测二维点轨迹
 - DAgger
