@@ -16,7 +16,7 @@ confidence: 2
 
 裁剪 MoT 并交错使用 CA 和 SA 以让模型更轻量化.
 
-## VPP2 (68)
+## **VPP2** (68)
 
 ⭐️⭐️⭐️ 郭彦江, 陈建宇，清华&星动纪元 | https://www.alphaxiv.org/abs/2610.10270
 
