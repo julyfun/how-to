@@ -35,5 +35,13 @@ https://axi404.top/blog/eai-papers#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E6%8D%AE
 RVQ 直出 action 执行，比 pi05-style 的 KI 点数高 1%. no demo.
 
 ## Deepseek V41 Flash (112)
+- CED: decoder 后 20 层直接用第 20 层的 hidden state.
 
+## Phoenix-MWA (113)
+⭐⭐⭐ 无界动力（北京） | https://openphoenix-team.github.io/Phoenix-pages/
 
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261102215129225.png"/>
+
+其编码器蒸馏了深度和 JEPA，然后用它额外训了一个 VAE，与 WAN-VAE 在 channel 上 concat.l
+
+另外，sampler 直接使用了 intern-w0 的.
