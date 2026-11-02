@@ -34,3 +34,6 @@ https://axi404.top/blog/eai-papers#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E6%8D%AE
 
 RVQ 直出 action 执行，比 pi05-style 的 KI 点数高 1%. no demo.
 
+## Deepseek V41 Flash (112)
+
+
