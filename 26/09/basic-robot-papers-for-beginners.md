@@ -69,11 +69,12 @@ confidence: 2
 	- Galaxea Open-World | 25.8 星海图 R1 移动双臂 in-the-wild 500h
 	- RoboCoin| 25.11 各种移动机器人 18 万条带详细语言标注
 	- RoboMind| 25.12; 31 条异构/移动/触觉/仿真
+	- Open-H-Embodimen | 26.4 医疗机器人 750h
 	- MolmoAct2 | 26.5 in-the-wild 三视角 YAM
 	- ABC-130K | 26.6 YAM 3500h 较灵巧任务
 	- OpenNeoData | 26.9 N0 的视触觉 5000h 数据，含 TacUMI 和真机
 	- SharpaDex v1.0 | 26.9 Sharpa 指尖力触觉 300h，任务看起来挺灵巧
-	- EgoSteer
+	- EgoSteer | 26.7 ego 9600h, 遥操作以及 dagger 187h
 	- RoboAtom | 26.10 有 1.69wh 的原子操作数据集
 - 无标签数据
 	- ATM | 24.1 预测二维点轨迹
