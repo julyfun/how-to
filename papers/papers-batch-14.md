@@ -36,6 +36,10 @@ RVQ 直出 action 执行，比 pi05-style 的 KI 点数高 1%. no demo.
 
 ## Deepseek V41 Flash (112)
 - CED: decoder 后 20 层直接用第 20 层的 hidden state.
+- CSA2: CSA（用滑动窗口最近原始 token + 历史压缩 token） 改进版
+- Single-Pass mHC、Engram 与 DSpark
+- 每 token 的 KV 缓存从 V4 的 3514 bytes 降到 890 bytes.
+- 后训练没有变化.
 
 ## Phoenix-MWA (113)
 ⭐⭐⭐ 无界动力（北京） | https://openphoenix-team.github.io/Phoenix-pages/
