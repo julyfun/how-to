@@ -59,6 +59,9 @@ confidence: 2
     - Reactive
         - AHA-WAM | 26.6 Context Routing 实现 v-a 异步
         - InternW0 | 26.9 Context Routing + 力触觉
+- 奇怪的架构
+	- dVLA | 25.9 用 VLM 做 discrete diffusion 同时出 image,text,action token https://www.alphaxiv.org/pdf/2509.25681
+		- discrete diffusion 就是从 all mask 开始，每步出 logits 后随机确定一些 token.
 - 数据集 `本文相对于其他机器人数据集的特色动机是？硬件/环境/时长？1-2句话高质量`
 	- RH20T | 23.7 带力和部分触觉的 4 本体 11万条，来自 haoshu
 	- BridgeData V2 | 23.8 多环境 widowx6 万条
@@ -80,7 +83,7 @@ confidence: 2
 	- ATM | 24.1 预测二维点轨迹
 - 仿真数据集
 	- InternData-M1 | 25.10, 24.4w eps 的 isaac 仿真数据，随机物体场景
-	- InternData-A1 | 25.11, 7433h，isaac + curobo 运动规划，涉及刚性、可动、柔性和液体物体
+	- InternData-A1 | 25.11, 7433h，isaac + curobo 运动规划，涉及刚性、可动、柔性和液体 https://www.alphaxiv.org/abs/2511.16651
 - DAgger
 	- CR-DAgger 25.1 |基于导纳控制的残差 DAgger
 	- RoboPocket 26.3 | UMI DAgger
@@ -98,7 +101,6 @@ TODO
 - [ ] xiaomi https://www.alphaxiv.org/zh/abs/2609.28161v1
 - [ ] 斯坦福 CE https://www.alphaxiv.org/pdf/2609.27095
 - [ ] 字节 embodied SWE: https://arxiv.org/pdf/2609.27308
-- [ ] bench
 
 - 每日新闻 https://theroboradar.com
 - 每日 paper https://paper.axi404.top/daily/2026-09-24#cat-cs-CV
