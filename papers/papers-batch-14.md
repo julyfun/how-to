@@ -33,3 +33,4 @@ https://axi404.top/blog/eai-papers#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E6%8D%AE
 一种 RVQ 设计，注重以下指标：“相邻动作片段的 token 更稳定、减少不必要的 token 数量、让 token 更好地对应图像和指令，以及减少 token 之间的依赖”
 
 RVQ 直出 action 执行，比 pi05-style 的 KI 点数高 1%. no demo.
+

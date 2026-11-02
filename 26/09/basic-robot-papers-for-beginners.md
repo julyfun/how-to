@@ -78,6 +78,9 @@ confidence: 2
 	- RoboAtom | 26.10 有 1.69wh 的原子操作数据集
 - 无标签数据
 	- ATM | 24.1 预测二维点轨迹
+- 仿真数据集
+	- InternData-M1 | 25.10, 24.4w eps 的 isaac 仿真数据，随机物体场景
+	- InternData-A1 | 25.11, 7433h，isaac + curobo 运动规划，涉及刚性、可动、柔性和液体物体
 - DAgger
 	- CR-DAgger 25.1 |基于导纳控制的残差 DAgger
 	- RoboPocket 26.3 | UMI DAgger
