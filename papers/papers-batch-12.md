@@ -18,7 +18,7 @@ https://dreamlabs.ai/research/dream-1/
 
 其实 demo 拍摄的比较拉，但是我们真机 zero-shot 实测其实还可以.
 
-## BOE (92)
+## BOE; BridgeWAM (92)
 
 ⭐️⭐️ 方佳鑫, FDU, 椰青分享 | https://www.alphaxiv.org/abs/2610.14746
 
@@ -26,7 +26,7 @@ https://dreamlabs.ai/research/dream-1/
 
 用 learnable query （直接放 video dit） 代替 MoT. ae 只有两层.
 
-主要是为了加速，以及（据称）减少无关视觉干扰.
+主要是为了加速，以及（据称）减少无关视觉干扰. 不过用 VPP 套这个 BoE，作者说掉点了.
 
 ## ForceWAM (93)
 
