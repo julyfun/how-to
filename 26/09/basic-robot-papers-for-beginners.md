@@ -85,7 +85,7 @@ confidence: 2
 	- InternData-M1 | 25.10, 24.4w eps 的 isaac 仿真数据，随机物体场景
 	- InternData-A1 | 25.11, 7433h，isaac + curobo 运动规划，涉及刚性、可动、柔性和液体 https://www.alphaxiv.org/abs/2511.16651
 - Benchmark
-	- Bench2Dex | 灵巧手 bench
+	- Bench2Dex | 26 灵巧手 bench, Isaac，采集的触觉数据巨大无比
 - DAgger
 	- CR-DAgger 25.1 |基于导纳控制的残差 DAgger
 	- RoboPocket 26.3 | UMI DAgger
