@@ -97,7 +97,7 @@ confidence: 2
     - RLinf
     - StarVLA
 - 初创
-	- liber0 | 26.9 220Mh human 联训VLA三专家
+	- liber0 | 26.9 220Mh human 联训V/L/A三专家，配套机器人和手套
 
 TODO
 - [ ] MMLab 的 EGOWILD2DEX https://mmlab.hk/egowild2dex/
