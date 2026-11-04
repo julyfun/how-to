@@ -49,3 +49,6 @@ RVQ 直出 action 执行，比 pi05-style 的 KI 点数高 1%. no demo.
 其编码器蒸馏了深度和 JEPA，然后用它额外训了一个 VAE，与 WAN-VAE 在 channel 上 concat.l
 
 另外，sampler 直接使用了 intern-w0 的.
+
+## Wave Forcing (114)
+⭐⭐⭐ yijie jin, zhijie deng, SJTU DENG Lab | https://sjtu-deng-lab.github.io/WaveForcing/
