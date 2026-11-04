@@ -303,13 +303,18 @@ Anca Dragan ── Berkeley HRI / OpenAI
 
 # 初创
 光轮智能（北京）
-- 背景：成立于 2023.1，CEO 谢晨博士（曾任英伟达自动驾驶仿真负责人）
+- 组成：成立于 2023.1，CEO 谢晨博士（曾任英伟达自动驾驶仿真负责人）
 - 产品：仿真基础设施SimFoundry，Ego数据平台 EgoSuite.
 - 学术：开源了10万小时的 EgoSuite-Open100K.
 
 大咖机器人：许文强
 
 Dyna 达纳：CEO 为 Jason Ma. 总部在硅谷，分部在上海长宁区.
+
+LiberAI（北京，将闲）
+- 组成：创始人兼 CEO 刘松铭，联创林凡淇（Data Scaling Laws），均为清华 PHD.
+- 学术：RDT1&2, Liber-0
+- 融资：融资10亿+
 
 # 其他
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
