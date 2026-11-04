@@ -61,3 +61,7 @@ RVQ 直出 action 执行，比 pi05-style 的 KI 点数高 1%. no demo.
 
 ## BEYOND VALIDATION LOSS (115)
 <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261104122429439.png"/>
+
+⭐⭐ zhanyi sun , shuran song | https://www.alphaxiv.org/abs/2611.01565
+
+本文发现 dp & pi05 在 mimicgen 和 robocasa 上，训多了以后 pass@1 提升单 pass@k 下降，并认为其反映了动作分布下降。于是提出不是使用动作 val loss 而是用多次生成的误差分为数来判断训练终止... 并提出使用生成模型（U-Net 图像和 DiT 动作）提升动作覆盖.
