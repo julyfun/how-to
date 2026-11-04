@@ -54,7 +54,10 @@ RVQ 直出 action 执行，比 pi05-style 的 KI 点数高 1%. no demo.
 ⭐⭐⭐ yijie jin, zhijie deng, SJTU DENG Lab | https://sjtu-deng-lab.github.io/WaveForcing/
 
 推理加速 2.5x
-- 4 GPU 对 4 个 chunk 同时流式去噪逐步推进时间步.
+- 4 GPU 对 4 个 chunk 同时流式去噪逐步推进时间步，就是把 rolling forcing 的 bi attn 改为 causal attn.
 - 1GPU 做 kv cache filling
 - 3GPU 做 VAE pipeline.
-三阶段训练 mixednoise-init + DMD + self-generated history
+三阶段训练 mixednoise-init + 分布匹配蒸馏 DMD + self-generated history DMD
+
+## BEYOND VALIDATION LOSS (115)
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261104122429439.png"/>
