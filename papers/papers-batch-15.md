@@ -8,6 +8,8 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
-## EgoSteer
+## EgoSteer (117)
 
+## AIRoA-0 (118)
 
+日本AI机器人协会 AIRoA | https://a-0.airoa.io/ | https://www.alphaxiv.org/abs/2611.03815
