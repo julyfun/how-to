@@ -19,3 +19,9 @@ confidence: 2
 不演了，我们就是 pi05！作者用 YUBI[1] 采集了 1.6wh 纯 UMI 数据，无任何本体数据，直接 pi05 + subtask 辅助 loss + 后训练额外当前阶段分类头
 
 1. YUBI: Quest3 手柄+头显定位。
+
+## RoboScope Kit (119)
+
+dengke wu, 赵波 | https://www.alphaxiv.org/abs/2611.03850
+
+加速 robotwin 仿真评测. 1.5x - 4.5x.
