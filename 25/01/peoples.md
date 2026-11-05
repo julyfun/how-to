@@ -274,6 +274,9 @@ Anca Dragan ── Berkeley HRI / OpenAI
 
 严骏驰
 
+赵波
+- MINT 实验室.
+
 # 港大篇
 李弘扬 | https://lihongyang.info/
 - 背景：港中文博士，自驾出身 (OpenDriveLab)
