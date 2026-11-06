@@ -37,7 +37,7 @@ dengke wu, 赵波 | https://www.alphaxiv.org/abs/2611.03850
 
 京东 jun cen, duo zheng | https://www.alphaxiv.org/abs/2610.40748
 
-c2r 有 73.4%. 预训练是 ego + 真机 + 仿真，滑动窗口+历史抽帧. IDM. `Action Forcing`: 一块 action chunk 中不同的 action token 加不同的噪声来训练...
+c2r 有 73.4%. 预训练是 ego + 真机 + 仿真，滑动窗口+历史抽帧; IDM 注意力; 采用 `Action Forcing`: 一块 action chunk 中不同的 action token 加不同的噪声来训练...
 
 ## delta flow (121)
 
@@ -46,3 +46,5 @@ Kuangji Zuo, Jianfei Yang, NTU 南洋理工 | https://www.alphaxiv.org/abs/2610.
 将 A2A 思路引用到 V2V. 应用到不同的架构上.
 
 发现对于 pi05, imagewam, fastwam 都能提点. (libero-plus only)
+
+顺便发现对于 imagewam 这个图像编辑策略，动作到 model 进行梯度截断可以提升 +5 PSNR.
