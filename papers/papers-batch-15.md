@@ -14,10 +14,12 @@ PKU AI, yifan zhong, yandong yang |https://egosteer.github.io/
 
 demo 有灵巧手叠盒子，确实不简单...
 
+提出了 EgoSmith 流水线，据说很快.
+
 
 ## AIRoA-0 (118)
 
-日本 AIRoA, 11/2 | https://a-0.airoa.io/ | https://www.alphaxiv.org/abs/2611.03815
+⭐️ AIRoA, 11/2 | https://a-0.airoa.io/ | https://www.alphaxiv.org/abs/2611.03815
 
 <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261105160140745.png"/>
 
