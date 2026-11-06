@@ -37,4 +37,4 @@ dengke wu, 赵波 | https://www.alphaxiv.org/abs/2611.03850
 
 京东 jun cen, duo zheng | https://www.alphaxiv.org/abs/2610.40748
 
-
+c2r 有 73.4%. 预训练是 ego + 真机 + 仿真，滑动窗口+历史抽帧.
