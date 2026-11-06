@@ -10,12 +10,12 @@ confidence: 2
 
 ## EgoSteer (117)
 
-⭐️⭐️ PKU AI, yifan zhong, yandong yang |https://egosteer.github.io/
+⭐️⭐️ PKU AI, yifan zhong, yandong yang |https://egosteer.github.io/ | https://www.alphaxiv.org/abs/2607.09701
 
 demo 有手叠盒子，还挺好看的（睿研 RY-H2 6DOF）
 - 提出了 EgoSmith 流水线，据说很快.
 - 架构：qwen-vla 加上一个 wm expert 预测未来 dinov3，这是纯粹的辅助任务.
-- 支持 dagger & 一些非常 trivial 的对齐技巧
+- 支持 dagger & 一些非常 trivial 的对齐技巧. 所谓 steer 就是“让 ego 数据对灵巧手有用”
 
 ## AIRoA-0 (118)
 
@@ -37,4 +37,12 @@ dengke wu, 赵波 | https://www.alphaxiv.org/abs/2611.03850
 
 京东 jun cen, duo zheng | https://www.alphaxiv.org/abs/2610.40748
 
-c2r 有 73.4%. 预训练是 ego + 真机 + 仿真，滑动窗口+历史抽帧.
+c2r 有 73.4%. 预训练是 ego + 真机 + 仿真，滑动窗口+历史抽帧. IDM. `Action Forcing`: 一块 action chunk 中不同的 action token 加不同的噪声来训练...
+
+## delta flow (121)
+
+Kuangji Zuo, Jianfei Yang, NTU 南洋理工 | https://www.alphaxiv.org/abs/2610.15794
+
+将 A2A 思路引用到 V2V. 应用到不同的架构上.
+
+发现对于 pi05, imagewam, fastwam 都能提点.
