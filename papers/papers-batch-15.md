@@ -45,4 +45,4 @@ Kuangji Zuo, Jianfei Yang, NTU 南洋理工 | https://www.alphaxiv.org/abs/2610.
 
 将 A2A 思路引用到 V2V. 应用到不同的架构上.
 
-发现对于 pi05, imagewam, fastwam 都能提点.
+发现对于 pi05, imagewam, fastwam 都能提点. (libero-plus only)
