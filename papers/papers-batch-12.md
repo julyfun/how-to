@@ -54,7 +54,7 @@ https://dreamlabs.ai/research/dream-1/
 
 引入 WM 加速 rollout 10 倍，通过 32 步 wm imagine 将 policy 训练时样本效率提升 64 倍.
 
-不是这 idea 也许做运控的其他人也能想到... 但是到底咋调出来的...
+wm 只预测 1 步，因此并不 conditioned on policy. 而要进行多步预测（可视化）的话，就要 wm -> policy -> wm -> policy... 这样去 roll.
 
 ```mermaid
 flowchart LR
