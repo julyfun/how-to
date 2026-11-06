@@ -48,3 +48,11 @@ Kuangji Zuo, Jianfei Yang, NTU 南洋理工 | https://www.alphaxiv.org/abs/2610.
 发现对于 pi05, imagewam, fastwam 都能提点. (libero-plus only)
 
 顺便发现对于 imagewam 这个图像编辑策略，动作到 model 进行梯度截断可以提升 +5 PSNR.
+
+## Reinforcement Learning Enables.. (122)
+
+ETHZ 苏黎世 | https://www.alphaxiv.org/abs/2611.06905
+
+用了各种 RL 方法；其中 OGPO 是一种
+
+OGPO > BoN (Best of N, using critic Q) > SFT
