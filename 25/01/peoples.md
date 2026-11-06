@@ -332,6 +332,8 @@ LiberAI（北京，将闲）
 
 - Selen 在我们组里工作过的: https://selen-suyue.github.io/biosite/archives/
 
+- 张志鹏
+
 # articles
 - https://zhuanlan.zhihu.com/p/655943844
 - https://zhuanlan.zhihu.com/p/1942577585402909352

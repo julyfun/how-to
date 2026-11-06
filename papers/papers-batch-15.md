@@ -12,9 +12,9 @@ confidence: 2
 
 PKU AI, yifan zhong, yandong yang |https://egosteer.github.io/
 
-demo 有灵巧手叠盒子，确实不简单...
-
-提出了 EgoSmith 流水线，据说很快.
+demo 有手叠盒子，还挺好看的（睿研 RY-H2 6DOF）
+- 提出了 EgoSmith 流水线，据说很快.
+- 架构：qwen-vla 加上一个 wm expert 预测未来 dinov3，这是纯粹的辅助任务.
 
 
 ## AIRoA-0 (118)
