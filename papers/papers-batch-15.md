@@ -53,6 +53,9 @@ Kuangji Zuo, Jianfei Yang, NTU 南洋理工 | https://www.alphaxiv.org/abs/2610.
 
 ETHZ 苏黎世 | https://www.alphaxiv.org/abs/2611.06905
 
-用了各种 RL 方法；其中 OGPO 是一种
+用了各种 RL 方法；其中 OGPO 是一种引导 flow 向高 critic 价值的方法.
 
 OGPO > BoN (Best of N, using critic Q) > SFT
+
+
+## Should the Action Expert Train the VLM (123)

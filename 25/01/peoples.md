@@ -277,6 +277,9 @@ Anca Dragan ── Berkeley HRI / OpenAI
 赵波
 - MINT 实验室.
 
+张志鹏:
+- 无界动力（北京），SJTU AI 学院，上交 autolab.
+
 # 港大篇
 李弘扬 | https://lihongyang.info/
 - 背景：港中文博士，自驾出身 (OpenDriveLab)
@@ -319,6 +322,9 @@ LiberAI（北京，将闲）
 - 学术：RDT1&2, Liber-0
 - 融资：融资10亿+
 
+无界动力
+- 学术：PhoenixWAM
+
 # 其他
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
 - Jason Ma: 马也骋，Dyna
@@ -331,8 +337,6 @@ LiberAI（北京，将闲）
 - Yi 弋力：
 
 - Selen 在我们组里工作过的: https://selen-suyue.github.io/biosite/archives/
-
-- 张志鹏
 
 # articles
 - https://zhuanlan.zhihu.com/p/655943844
