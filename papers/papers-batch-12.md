@@ -55,8 +55,11 @@ https://dreamlabs.ai/research/dream-1/
 引入 WM 加速 rollout 10 倍，通过 32 步 wm imagine 将 policy 训练时样本效率提升 64 倍.
 
 wm 只预测 1 步，因此并不 conditioned on policy. 而要进行多步预测的话，就要 wm -> policy -> wm -> policy... 这样去 roll.
-- 训练 WM 时，8 步窗口，直接从 replay buffer 中取.
+- 训练 WM 时，8 步窗口，直接从 replay buffer 中取 (s, a)，自回归预测 s_hat, loss 直接取 s_hat <=> s>
 	- <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261106115025922.png"/>
+- 训练 policy 时，32 步窗口，冻结 WM:
+	- <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261106115133126.png"/>
+	- 通过 BPTT 反传梯度.
 
 ```mermaid
 flowchart LR
