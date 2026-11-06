@@ -10,13 +10,18 @@ confidence: 2
 
 ## EgoSteer (117)
 
+PKU AI, yifan zhong, yandong yang |https://egosteer.github.io/
+
+demo 有灵巧手叠盒子，确实不简单...
+
+
 ## AIRoA-0 (118)
 
 日本 AIRoA, 11/2 | https://a-0.airoa.io/ | https://www.alphaxiv.org/abs/2611.03815
 
 <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261105160140745.png"/>
 
-不演了，我们就是 pi05！作者用 YUBI[1] 采集了 1.6wh 纯 UMI 数据，无任何本体数据，直接 pi05 + subtask 辅助 loss + 后训练额外当前阶段分类头
+不演了，我们就是 pi05！作者用 YUBI[1] 采集了 1.6wh 纯 UMI 数据，无任何本体数据，直接 pi05 + subtask 辅助 loss + 后训练额外当前阶段分类头. 但是这个 demo 简直拉完了，无限单手 pick and place.
 
 1. YUBI: Quest3 手柄+头显定位。
 
