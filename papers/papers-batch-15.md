@@ -43,11 +43,9 @@ c2r 有 73.4%. 预训练是 ego + 真机 + 仿真，滑动窗口+历史抽帧; I
 
 Kuangji Zuo, Jianfei Yang, NTU 南洋理工 | https://www.alphaxiv.org/abs/2610.15794
 
-将 A2A 思路引用到 V2V. 应用到不同的架构上，可以 inference only.
+将 A2A 思路引用到 V2V. 应用到不同的架构上，可以 inference only. 发现对于 pi05, imagewam, fastwam 都能提点. (libero-plus only)
 
-发现对于 pi05, imagewam, fastwam 都能提点. (libero-plus only)
-
-顺便发现对于 imagewam 这个图像编辑策略，动作到 model 进行梯度截断可以提升 +5 PSNR.
+顺便发现对于 imagewam 这个图像编辑策略，动作到 model 进行梯度截断可以提升 +5 PSNR. 另外还认为稀疏预测更好.
 
 ## Reinforcement Learning Enables.. (122)
 
@@ -59,3 +57,13 @@ OGPO > BoN (Best of N, using critic Q) > SFT
 
 
 ## Should the Action Expert Train the VLM (123)
+
+NVIDIA, boyi li | https://www.alphaxiv.org/abs/2611.05249
+
+从结论上论文认为 VLM 至少得有一路动作监督，token 和梯度哪一路都行，两路都断掉的时候最差；有动作 token 的时候，从头一起训的话不隔离还是更好一些
+
+## When the Simulator Fails, Not the Policy (124)
+
+Tsinghua, alex zhou & yongchao chen | https://www.alphaxiv.org/abs/2610.41857
+
+本文通过审计插件评估了 robotwin 等仿真器的碰撞穿透 bug. `在 RoboTwin 2.0（PhysX 5.3.1）中，相距 1–2 cm 的碰撞体被误报为约 2 cm 的穿透，接触求解器随之在单步内以数米每秒的速度将其弹出。` 修复以后成功率提高.
