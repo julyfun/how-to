@@ -49,12 +49,11 @@ Kuangji Zuo, Jianfei Yang, NTU 南洋理工 | https://www.alphaxiv.org/abs/2610.
 
 ## Reinforcement Learning Enables.. (122)
 
-ETHZ 苏黎世 | https://www.alphaxiv.org/abs/2611.06905
+ETHZ 苏黎世 | https://www.alphaxiv.org/abs/2611.06905 | https://lasgroup.github.io/generalist-improvement/
 
 用了各种 RL 方法；其中 OGPO 是一种引导 flow 向高 critic 价值的方法.
 
 OGPO > BoN (Best of N, using critic Q) > SFT
-
 
 ## Should the Action Expert Train the VLM (123)
 
@@ -67,3 +66,5 @@ NVIDIA, boyi li | https://www.alphaxiv.org/abs/2611.05249
 Tsinghua, alex zhou & yongchao chen | https://www.alphaxiv.org/abs/2610.41857
 
 本文通过审计插件评估了 robotwin 等仿真器的碰撞穿透 bug. `在 RoboTwin 2.0（PhysX 5.3.1）中，相距 1–2 cm 的碰撞体被误报为约 2 cm 的穿透，接触求解器随之在单步内以数米每秒的速度将其弹出。` 修复以后成功率提高.
+
+"把 PhysX 5.3.1 源码里的那 1 个错误阈值常量改掉，89% 提高到了 98%，异常弹出回合由 12/100 降为 0"
