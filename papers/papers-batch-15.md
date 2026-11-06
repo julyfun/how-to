@@ -43,7 +43,7 @@ c2r 有 73.4%. 预训练是 ego + 真机 + 仿真，滑动窗口+历史抽帧; I
 
 Kuangji Zuo, Jianfei Yang, NTU 南洋理工 | https://www.alphaxiv.org/abs/2610.15794
 
-将 A2A 思路引用到 V2V. 应用到不同的架构上.
+将 A2A 思路引用到 V2V. 应用到不同的架构上，可以 inference only.
 
 发现对于 pi05, imagewam, fastwam 都能提点. (libero-plus only)
 
