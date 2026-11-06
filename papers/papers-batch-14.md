@@ -21,7 +21,7 @@ https://axi404.top/blog/eai-papers#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E6%8D%AE
 	2. 点数挺高, robotwin  c2c r2r ~93%
 
 ## RL-token (110)
-⭐⭐️️⭐️️⭐️️️️ Charles Xu, PI |https://www.alphaxiv.org/abs/2604.23073 
+⭐⭐️️⭐️️⭐️️️️ Charles Xu, PI |https://www.alphaxiv.org/abs/2604.23073
 
 - 动机：想通过小 RL 提升动作 precision 和 speed，但是 DSRL 能调节的局限性又太强.
 - 方法：VLA 输出额外 token，第一阶段用它重建 VLA 输入. 第二阶段冻结 VLA 和提取器，训练 actor critic，这俩都会接收 RL token. actor 还额外接收 VLA 给出的参考动作块&带正则化防偏离，critic 则接收待评估动作块. 给人工标注的成功/失败奖励即可.
@@ -37,7 +37,7 @@ RVQ 直出 action 执行，比 pi05-style 的 KI 点数高 1%. no demo.
 ## Deepseek V41 Flash (112)
 - CED: decoder 后 20 层直接用第 20 层的 hidden state.
 - CSA2: CSA（用滑动窗口最近原始 token + 历史压缩 token） 改进版
-- Single-Pass mHC、Engram 与 DSpark
+- Single-Pass mHC、Engram 与 DSpark (wtf is this)
 - 每 token 的 KV 缓存从 V4 的 3514 bytes 降到 890 bytes.
 - 后训练没有变化.
 
@@ -53,7 +53,7 @@ RVQ 直出 action 执行，比 pi05-style 的 KI 点数高 1%. no demo.
 ## Wave Forcing (114)
 ⭐⭐⭐ yijie jin, zhijie deng, SJTU DENG Lab | https://sjtu-deng-lab.github.io/WaveForcing/
 
-推理加速 2.5x
+Video DiT 推理加速 2.5x
 - 4 GPU 对 4 个 chunk 同时流式去噪逐步推进时间步，就是把 rolling forcing 的 bi attn 改为 causal attn.
 - 1GPU 做 kv cache filling
 - 3GPU 做 VAE pipeline.
