@@ -46,6 +46,8 @@ https://dreamlabs.ai/research/dream-1/
 
 为了增强记忆能力，用 DINOV3 提取图片特征后，训练 LAPA-style 相邻帧隐式动力学 encoder，插入 state 历史中送入 VLM.
 
+RMBench 上移除 delta tokens（仍保留视觉历史帧和子任务路由），整体成功率从 80.7% 降到 52.3%；改用简单的 DINOv3 特征相减则为 47.1%
+
 ## SuperMimic (95)
 
 ⭐️⭐️⭐️⭐️⭐️ qiayuan liao, UCB | https://www.alphaxiv.org/abs/2610.28480
