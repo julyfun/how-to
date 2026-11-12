@@ -120,7 +120,7 @@ ablation 做了组成权重，编码器，以及人类视频权重 alpha.
 
 ## praxis-1 (127)
 
-纽约 runway | https://runway.com/research/introducing-praxis-1
+纽约 runway | https://runway.com/research/praxis-1-video-pretraining-to-robot-control
 
 本文表示 praxis 模型在世界模型中训练取得了收益，并将开放权重.
 
