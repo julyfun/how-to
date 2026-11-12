@@ -128,6 +128,10 @@ ablation 做了组成权重，编码器，以及人类视频权重 alpha.
 
 ## RoboTTT (128)
 
+yunfan jiang, linxi fan, nvidia & stanford | https://www.alphaxiv.org/pdf/2607.15275
+
+用快速权重记住历史. 主要在真机测试，提点很大.
+
 ```python
 W = W0  # 本层、本条序列的初始快速权重
 
