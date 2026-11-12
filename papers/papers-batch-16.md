@@ -117,3 +117,5 @@ ablation 做了组成权重，编码器，以及人类视频权重 alpha.
 - t=0.9 的 action 是看 t= 0.9 的 video 还是前向到终点的 video ?
 
 本文 IDM 的 video 是前向多次，然后固定，action 只看终点的 video.
+
+- 4d-hof
