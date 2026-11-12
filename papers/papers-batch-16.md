@@ -124,6 +124,10 @@ ablation 做了组成权重，编码器，以及人类视频权重 alpha.
 
 本文表示 praxis 模型在世界模型中训练取得了收益，并将开放权重. 其架构略微不同于 mot, 其 AE 是 cross-attn VM 特征的.
 
+然后他这个 attn map 很奇怪，看似是
+
+当算力被限制的时候，
+
 - yanwei 的SWAM
 - 4d-hof
 - lingbot-touch
