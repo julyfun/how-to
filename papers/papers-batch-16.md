@@ -124,9 +124,21 @@ ablation 做了组成权重，编码器，以及人类视频权重 alpha.
 
 本文表示 praxis 模型在世界模型中训练取得了收益，并将开放权重. 其架构略微不同于 mot, 其 AE 是 cross-attn VM 特征的.
 
-然后他这个 attn map 很奇怪，看似是
+然后他这个 attn map 很奇怪，看似是 LLM-like 的，和 jiarui battle 了一下，带历史的话效率会高很多. (1 个监督 vs L 个监督).
 
-当算力被限制的时候，
+## RoboTTT (128)
+
+```python
+W = W0  # 本层、本条序列的初始快速权重
+
+for t in range(seq_len):
+    q, k, v = project_qkv(h2[:, t])       # 第 t 个时间步的表示
+    W_next = W - lr * grad(loss(f_W(k), v))  # W_next = W_t，由 W_{t-1} 更新
+    z[:, t] = f_W_next(q)                 # 用更新后的 W_t 读取
+    W = W_next                            # 传给下一个时间步：W_{t+1} 的起点
+
+h3 = h2 + tanh(alpha) * z
+```
 
 - yanwei 的SWAM
 - 4d-hof
