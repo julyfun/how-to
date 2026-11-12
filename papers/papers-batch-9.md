@@ -14,7 +14,7 @@ confidence: 2
 
 ![](https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261009120733328.png)
 
-裁剪一半 MoT 并交错使用 CA 和 SA 以让模型更轻量化.
+仅用前一半 MoT 并交错使用 CA 和 SA 以让模型更轻量化.
 
 ## **VPP2** (68)
 
