@@ -144,6 +144,46 @@ for t in range(seq_len):
 h3 = h2 + tanh(alpha) * z
 ```
 
+## Motubrain 2.0 (129)
+
+生数，谭恒楷 | https://mp.weixin.qq.com/s/Id5LOBW93fMjyTdQXBhkeg https://motubrain.com/motubrain2.0-live
+
+直播训练 WAM.
+- 自己训视频模型 Vidu(20B), 互联网 200wh, ego40wh, UMI 10wh, 真机 2wh.
+- 参考 VGGT 和 Depth Anything 3，改用 view embedding 标记视角，并交替进行视角内、视角间的 attention
+- 同时统一 camera frame（相机参考系）
+- 后训练 only 的 memory.
+- cross 到 da3 & vggt
+- H-bridge (中间一半层 MoT)
+- token 拼接, plus view embedding
+- relative eef , 刷榜部分用 joint. 预训练后训练呢？
+- few shot, 统一 4epoch. (1ep - 51ep)
+- agent rsi 公开 tool use
+
+## gr00t-2 (130)
+
+NVIDIA | https://research.nvidia.com/labs/gear/gr00t-2/#cite , https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf
+
+cosmos-predict-2.5B 40wh ego + 1wh UMI + 2wh robot 数据预训练，接 GRPO RL. recipe 很全可以多 ask ai. 消融：
+- human video 有 scaling.
+- 后训练独立 action codec 掉点
+- UMI-10K 能涨点
+- 腕部视角重投影 (umi 相机像素投影到机械臂相机）对齐能涨点...
+-
+
+## CloudRobo-WM (131)
+
+华为 | Xpolicylab 有代码，没 report
+
+- canonical
+- 随机 dropout 视觉
+- h-bricdge
+- pointmap dino 直接 token concat
+- 大后训练
+
+---
+
+- Awomo
 - yanwei 的SWAM
 - 4d-hof
 - lingbot-touch
