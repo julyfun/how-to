@@ -181,6 +181,10 @@ cosmos-predict-2.5B 40wh ego + 1wh UMI + 2wh robot 数据预训练，接 GRPO RL
 - pointmap dino 直接 token concat
 - 大后训练
 
+## PICA-WAM (132)
+
+基于 InternW0, 加 patchwam 监督，学生 jitter 第三层对齐教师干净第八层，对比 intenrw0 涨了两个点. c2r 74.7.
+
 ---
 
 - Awomo
