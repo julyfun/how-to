@@ -323,14 +323,24 @@ LiberAI（北京，将闲）
 - 融资：融资10亿+
 
 无界动力
+- 组成：创始人张玉峰，北京/上海
 - 学术：PhoenixWAM
 
 银河通用 galbot
-- 组成: he wang
+- 组成: 王鹤 he wang
+- 学术：好像没有
+- 产品：galbot G1 轮式双臂
 
 星海图 galaxea
 - 组成：赵行
 - 学术：G0.5 自回归
+- 产品：R1, 轮式双臂
+
+Reward AI: OM-1，demo 快速调酒
+
+- 智元机器人, 罗剑岚, SOP, τ₀-VLA
+- 极佳视界 GigaAI, GigaBrain, GigaWorld
+- 生数科技：MotusBrain
 
 # 其他
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
