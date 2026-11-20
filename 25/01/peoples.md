@@ -325,6 +325,13 @@ LiberAI（北京，将闲）
 无界动力
 - 学术：PhoenixWAM
 
+银河通用 galbot
+- 组成: he wang
+
+星海图 galaxea
+- 组成：赵行
+- 学术：G0.5 自回归
+
 # 其他
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
 - Jason Ma: 马也骋，Dyna
