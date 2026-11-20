@@ -15,3 +15,11 @@ confidence: 2
 通用进度模型。用 100w eps，在 t/T 进度监督的基础上构造偏好监督，即同一任务的两条轨迹判断哪条轨迹更好（通过失败轨迹、倒放和错配任务自动构造数据）.
 
 基模: Qwen-VL-4B-Instruct. 实验先用 IQL 训练 critic 然后 SAC-DSRL 微调 pi0. 不过任务也是比较简单. 基本就是 pick and place & singletask.
+
+
+## WiTac (134)
+
+---
+
+reread 打卡
+- ..
