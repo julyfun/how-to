@@ -341,6 +341,7 @@ Reward AI: OM-1，demo 快速调酒
 - 智元机器人, 罗剑岚, SOP, τ₀-VLA
 - 极佳视界 GigaAI, GigaBrain, GigaWorld
 - 生数科技：MotusBrain
+- 破壳机器人：许华哲, RoboAPI
 
 # 其他
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
