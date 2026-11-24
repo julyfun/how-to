@@ -13,3 +13,15 @@ confidence: 2
 jacky liang, andy zeng, Google | https://www.alphaxiv.org/abs/2209.07753
 
 应用 LLM 将自然语言翻译为 python 代码，并提出层级式代码生成：允许带未定义函数，稍后再定义.
+
+## VoxPoser (142)
+
+wenlong huang, feifei li, Stanford | https://www.alphaxiv.org/abs/2307.05973
+
+VLM 进行检测和分割，LLM 编写多种类型的 python value map，然后零阶优化选择轨迹.
+
+## SayCan (143)
+
+andy zeng, google | https://www.alphaxiv.org/pdf/2204.01691
+
+给出指令后用 LLM & 规则判断是否可行，进行 planning，再执行.
