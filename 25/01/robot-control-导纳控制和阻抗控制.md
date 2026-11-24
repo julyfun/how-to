@@ -8,6 +8,8 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+两者都把机械臂末端当作“连着弹簧和阻尼器”的点.
+
 阻抗控制(Impedance Control, 期望位置 -> 力[1])
 - 需要最常规的闭环力矩控制器，不一定要独立力传感器。SDK 需要力矩/电流接口.
 - 把软的变硬.
