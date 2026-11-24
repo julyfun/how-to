@@ -16,7 +16,6 @@ confidence: 2
 
 基模: Qwen-VL-4B-Instruct. 实验先用 IQL 训练 critic 然后 SAC-DSRL 微调 pi0. 不过任务也是比较简单. 基本就是 pick and place & singletask.
 
-
 ## WiTac (134)
 
 ## 下面补充老文章的索引
@@ -43,6 +42,14 @@ danfei xu, feifei li | https://www.alphaxiv.org/abs/2108.03298
 
 ## SERL (138)
 
-jianlan luo, chelsea finn, sergey levine | https://www.alphaxiv.org/abs/2401.16013
+jianlan luo, chelsea finn, sergey levine, UCB | https://www.alphaxiv.org/abs/2401.16013
 
-本文贡献是提供了 Sample Efficient 软件框架，基于 RLPD（SAC，且采样时一半来自 replay buffer 一半来自示范数据）同时补充了视觉奖励判别器，自动复位，阻抗控制器和
+本文贡献是提供了 Sample Efficient 软件框架，基于 RLPD（SAC，且采样时一半来自 replay buffer 一半来自示范数据）同时补充了视觉成功判别器，自动复位，阻抗控制器和并发执行动作和训练. 没有 BC 损失.
+
+## Hil-SERL (139)
+
+jianlan luo, sergey levine, UCB | https://www.alphaxiv.org/pdf/2410.21845
+
+SERL + 人工纠正. 即使是人工纠正数据，也使用成功判别器给奖励. 仍然没有 BC 损失.
+
+任务变难了一点.
