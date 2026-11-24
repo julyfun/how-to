@@ -25,3 +25,9 @@ VLM 进行检测和分割，LLM 编写多种类型的 python value map，然后�
 andy zeng, google | https://www.alphaxiv.org/pdf/2204.01691
 
 给出指令后用 LLM & 规则判断是否可行，进行 planning，再执行.
+
+## MOKA (144)
+
+fangchen liu, sergey, UCB | https://www.alphaxiv.org/abs/2403.03174
+
+用冻结的 VLM 先标候选点，然后 motion planning.
