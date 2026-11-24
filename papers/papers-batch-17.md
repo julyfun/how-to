@@ -64,4 +64,3 @@ yunfei li, yonghui wu, 字节 | https://www.alphaxiv.org/abs/2512.01801
 
 - GELLO: 小臂同构
 - OPEN TEACH: VR 手势控制各种机械臂
-
