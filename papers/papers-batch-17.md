@@ -19,7 +19,30 @@ confidence: 2
 
 ## WiTac (134)
 
----
+## 下面补充老文章的索引
 
-reread 打卡
-- ..
+## Behavior Generation with Latent Actions (135)
+
+⭐️⭐️⭐️ 首尔大学 & 纽约大学，Pinto 组 | https://www.alphaxiv.org/abs/2403.03181
+
+提出了 VQ-Bet，通过 RVQ 离散化动作，transformer 一个头预测它们的 logits，另一个直接回归连续偏移量保证动作精确.
+
+## Robomimic (136)
+
+danfei xu, feifei li | https://www.alphaxiv.org/abs/2108.03298
+
+2021，纯视觉输入，mujoco 仿真，按数据质量划分不同 track...
+
+## A Careful Examination of ... LBM (137)
+
+⭐️⭐️⭐️ 丰田 TRI | https://www.alphaxiv.org/pdf/2507.05331
+
+用一个 from scratch 的较大 DP 验证了预训练 scaling，包括成功率提升以及后训练所需数据减少 (3-5x less). 任务比较难包含组装任务，相对来说比较 solid.
+
+不过论文没有深入拆解具体的表征或因果机制，主要证据仍是 SR.
+
+## SERL (138)
+
+jianlan luo, chelsea finn, sergey levine | https://www.alphaxiv.org/abs/2401.16013
+
+本文贡献是提供了 Sample Efficient 软件框架，基于 RLPD（SAC，且采样时一半来自 replay buffer 一半来自示范数据）同时补充了视觉奖励判别器，自动复位，阻抗控制器和

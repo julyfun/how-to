@@ -343,6 +343,12 @@ Reward AI: OM-1，demo 快速调酒
 - 生数科技：MotusBrain
 - 破壳机器人：许华哲, RoboAPI
 
+星动纪元 (ROBOTERA)
+- 组成：清华陈建宇(Ctrl-World)
+- 学术：Era0
+- 产品：XHAND1
+
+
 # 其他
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
 - Jason Ma: 马也骋，Dyna
