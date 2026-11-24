@@ -53,3 +53,9 @@ jianlan luo, sergey levine, UCB | https://www.alphaxiv.org/pdf/2410.21845
 SERL + 人工纠正. 即使是人工纠正数据，也使用成功判别器给奖励. 仍然没有 BC 损失.
 
 任务变难了一点.
+
+## GR-RL (140)
+
+yunfei li, yonghui wu, 字节 | https://www.alphaxiv.org/abs/2512.01801
+
+离线阶段用 TD3 + BC 训练 critic，丢弃其 actor，然后对 VLA 进行 DSRL. 对数据镜像对称相当于数据量翻倍，这个我尝试过感觉有点 dirty work.
