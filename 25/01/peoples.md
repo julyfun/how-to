@@ -308,59 +308,70 @@ Anca Dragan ── Berkeley HRI / OpenAI
 - 关系：学生丁明宇（Mingyu Ding）是其进入 manipulation 的关键纽带 —— 人大本硕（2020 硕士毕业，导师卢志武），现 UNC Chapel Hill 助理教授，两人以平等合作者身份共同通讯 MoH 与 Action Priors；另有学生高一钊（智子引擎 CEO）；合作文继荣、宋睿华
 
 # 初创
+
+Reward AI
+- 组成：付子鹏 & 王晨（斯坦福）. 加州.
+- 模型：OM-1，demo 快速调酒
+
+Dyna 达纳
+- 组成：CEO 为 Jason Ma. 总部在硅谷，分部在上海长宁区.
+
 光轮智能（北京）
 - 组成：成立于 2023.1，CEO 谢晨博士（曾任英伟达自动驾驶仿真负责人）
 - 产品：仿真基础设施SimFoundry，Ego数据平台 EgoSuite.
 - 学术：开源了10万小时的 EgoSuite-Open100K.
 
-大咖机器人：许文强
+极佳视界
+- GigaAI, GigaBrain, GigaWorld，北京
 
-Dyna 达纳：CEO 为 Jason Ma. 总部在硅谷，分部在上海长宁区.
+大咖机器人
+- 徐文强，北京
 
 LiberAI（北京，将闲）
 - 组成：创始人兼 CEO 刘松铭，联创林凡淇（Data Scaling Laws），均为清华 PHD.
 - 学术：RDT1&2, Liber-0
 - 融资：融资10亿+
 
-无界动力
-- 组成：创始人张玉峰，北京/上海
+无界动力 being beyond
+- 组成：创始人张玉峰（索尼），许闻达(CMU)，北京/上海
 - 学术：PhoenixWAM
-
-银河通用 galbot
-- 组成: 王鹤 he wang
-- 学术：好像没有
-- 产品：galbot G1 轮式双臂
-
-星海图 galaxea
-- 组成：赵行
-- 学术：G0.5 自回归
-- 产品：R1, 轮式双臂
-
-Reward AI
-- 组成：付子鹏 & 王晨（斯坦福）. 加州.
-- 模型：OM-1，demo 快速调酒
-
-智元机器人
-- 组成：罗剑岚, SOP, τ₀-VLA
-
-极佳视界 GigaAI, GigaBrain, GigaWorld
 
 生数科技：
 - 组成：朱军（清华人工智能研究院），总部北京
 - 学术：MotusBrain, Vidu 世界模型
 
-破壳机器人
-- 组成：许华哲（清华叉院）. 上海.
-- 学术：RoboAPI
+星海图 galaxea
+- 组成：赵行（清华叉院）。总部北京。
+- 学术：G0.5 自回归
+- 产品：R1, 轮式双臂
 
 星动纪元 (ROBOTERA)
-- 组成：清华陈建宇(Ctrl-World)
+- 组成：清华陈建宇(Ctrl-World)，总部北京。
 - 学术：Era0
 - 产品：XHAND1
 
-自变量 (x-square robot)
-- 组成：王潜（清华&南加州），王昊
-- 学术: WALL-OSS VLA
+松延动力 (noetix)
+- 组成：姜哲源。北京
+- 学术：Audio2Face
+- 产品：通用双足机器人 N2
+
+它石智能
+- 组成：陈亦伦（清华+大疆），丁文超（华为天才少年），上海
+- 学术：TARS-AWE
+- 产品：DexHand 灵巧手（21自由度）
+
+银河通用 galbot
+- 组成: 王鹤（北大）
+- 学术：好像没有
+- 产品：galbot G1 轮式双臂
+
+智元机器人 (agibot)
+- 组成：罗剑岚, 彭志辉。总部上海
+- SOP, τ₀-VLA
+
+破壳机器人
+- 组成：许华哲（清华叉院）. 上海.
+- 学术：RoboAPI
 
 千寻机器人 (spirit AI)
 - 组成：高阳。杭州/北京
@@ -371,10 +382,9 @@ Reward AI
 - 组成：吴长征（小米）。总部无锡
 - 产品：MagicDog
 
-松延动力 (noetix)
-- 组成：姜哲源。北京
-- 学术：Audio2Face
-- 产品：通用双足机器人 N2
+自变量 (x-square robot)
+- 组成：王潜（清华&南加州），王昊。深圳
+- 学术: WALL-OSS VLA
 
 # 其他
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
