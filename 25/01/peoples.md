@@ -336,18 +336,45 @@ LiberAI（北京，将闲）
 - 学术：G0.5 自回归
 - 产品：R1, 轮式双臂
 
-Reward AI: OM-1，demo 快速调酒
+Reward AI
+- 组成：付子鹏 & 王晨（斯坦福）. 加州.
+- 模型：OM-1，demo 快速调酒
 
-- 智元机器人, 罗剑岚, SOP, τ₀-VLA
-- 极佳视界 GigaAI, GigaBrain, GigaWorld
-- 生数科技：MotusBrain
-- 破壳机器人：许华哲, RoboAPI
+智元机器人
+- 组成：罗剑岚, SOP, τ₀-VLA
+
+极佳视界 GigaAI, GigaBrain, GigaWorld
+
+生数科技：
+- 组成：朱军（清华人工智能研究院），总部北京
+- 学术：MotusBrain, Vidu 世界模型
+
+破壳机器人
+- 组成：许华哲（清华叉院）. 上海.
+- 学术：RoboAPI
 
 星动纪元 (ROBOTERA)
 - 组成：清华陈建宇(Ctrl-World)
 - 学术：Era0
 - 产品：XHAND1
 
+自变量 (x-square robot)
+- 组成：王潜（清华&南加州），王昊
+- 学术: WALL-OSS VLA
+
+千寻机器人 (spirit AI)
+- 组成：高阳。杭州/北京
+- 学术：spirit 1.5
+- 产品：moz0
+
+魔法原子 (magiclab)
+- 组成：吴长征（小米）。总部无锡
+- 产品：MagicDog
+
+松延动力 (noetix)
+- 组成：姜哲源。北京
+- 学术：Audio2Face
+- 产品：通用双足机器人 N2
 
 # 其他
 - Fang 方浩树: 卢老板学生，MIT 博士后。代表作 GraspNet.
