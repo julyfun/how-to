@@ -46,4 +46,6 @@ chenxi wang, cewu lu | https://www.alphaxiv.org/abs/2404.12281
 
 <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261125161221690.png"/>
 
-将点云直接作为 DP 输入.
+将点云直接作为 DP 输入. 体素化 + 稀疏 3d 卷积后先 transformer encode 后用 learnable embedding 去 query 出来（选择性保留重要信息）.
+
+demo: pick and place.
