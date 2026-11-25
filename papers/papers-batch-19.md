@@ -15,3 +15,9 @@ confidence: 2
 主要是从 qwen3.5-base 开始就做 co-training，没有分阶段预训练. 另外一个 x-tokenizer 统一不同类型本体编码为离散动作.
 
 demo 有一个用剪刀剪纸，其他没什么特别的.
+
+## OmniAct (151)
+
+UW 华盛顿大学，xiang fan | https://www.alphaxiv.org/abs/2611.33158v1
+
+适应百万种本体. 具体来说输入端用 Fourier 特征编码等方式编码完整本体信息，输出端则是老方法：对多余自由度 noise sampling mask & loss mask.
