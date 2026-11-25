@@ -49,3 +49,21 @@ chenxi wang, cewu lu | https://www.alphaxiv.org/abs/2404.12281
 将点云直接作为 DP 输入. 体素化 + 稀疏 3d 卷积后先 transformer encode 后用 learnable embedding 去 query 出来（选择性保留重要信息）.
 
 demo: pick and place.
+
+## FP3 (147)
+
+rujia yang, chuan wen, yang gao | https://www.alphaxiv.org/abs/2503.08950
+
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261125164506593.png"/>
+
+如上所示. 编码器为 Uni3d-ViT.
+
+预训练 DROID, sft 80 条数据. 输入点云，三视角，相机为 zed mini 和 zed 2.
+
+## 3D-VLA (148)
+
+UMass 马萨诸塞大学 haoyu zhen, chuang gan | https://www.alphaxiv.org/abs/2403.09631
+
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261125165238713.png"/>
+
+离散动作 VLA，同时监督未来想象动作（见上，diffusion model 通过 lora 微调）和语言任务.
