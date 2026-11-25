@@ -8,4 +8,8 @@ assume-you-know: [computer]
 confidence: 2
 ---
 
+## wall-oss-1.0
 
+自变量 Ryan Yu, qian wang | https://x2robot.com/en/blog/wall-oss-1
+
+主要是从 qwen3.5-base 开始就做 co-training. 另外一个 x-tokenizer 统一不同类型本体编码为离散动作.
