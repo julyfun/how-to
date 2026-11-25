@@ -40,4 +40,10 @@ wenlong huang, feifei li, Stanford | https://www.alphaxiv.org/abs/2409.01652
 
 DINOV2 提取关键点，在深度图上拿到三维点，然后用 VLM 写约束求解器.
 
+## RISE (146)
 
+chenxi wang, cewu lu | https://www.alphaxiv.org/abs/2404.12281
+
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261125161221690.png"/>
+
+将点云直接作为 DP 输入.
