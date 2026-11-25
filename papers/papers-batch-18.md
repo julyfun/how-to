@@ -31,3 +31,13 @@ andy zeng, google | https://www.alphaxiv.org/pdf/2204.01691
 fangchen liu, sergey, UCB | https://www.alphaxiv.org/abs/2403.03174
 
 用冻结的 VLM 先标候选点，然后 motion planning.
+
+## ReKep (145)
+
+wenlong huang, feifei li, Stanford | https://www.alphaxiv.org/abs/2409.01652
+
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261125155126255.png"/>
+
+DINOV2 提取关键点，在深度图上拿到三维点，然后用 VLM 写约束求解器.
+
+
