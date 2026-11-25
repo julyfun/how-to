@@ -20,4 +20,6 @@ demo 有一个用剪刀剪纸，其他没什么特别的.
 
 UW 华盛顿大学，xiang fan | https://www.alphaxiv.org/abs/2611.33158v1
 
-适应百万种本体. 具体来说输入端用 Fourier 特征编码等方式编码完整本体信息，输出端则是老方法：对多余自由度 noise sampling mask & loss mask.
+单策略适应百万种本体. 具体来说输入端构建运动学图用 Fourier 特征编码等方式编码完整本体信息，输出端则是老方法：对多余自由度 noise sampling mask & loss mask.
+
+基模是 siglip2 + qwen2.5vl
