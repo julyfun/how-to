@@ -66,4 +66,16 @@ UMass 马萨诸塞大学 haoyu zhen, chuang gan | https://www.alphaxiv.org/abs/2
 
 <img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261125165238713.png"/>
 
-离散动作 VLA，同时监督未来想象动作（见上，diffusion model 通过 lora 微调）和语言任务.
+离散动作 VLA，同时监督未来想象动作（见上，diffusion model 通过 lora 微调）和语言任务. 网站已坏菜.
+
+## PointVLA (149)
+
+美的 yichen zhu | https://www.alphaxiv.org/abs/2503.07511
+
+<img src="https://how-to-1258460161.cos.ap-shanghai.myqcloud.com/how-to/20261125165907433.png"/>
+
+对一个训练好的 VLA，冻结 AE，解冻 VLM，然后将编码的 3d feature 直接 proj 并相加到 ae hidden...
+
+demo 非常晃.
+
+老文章补充结束.
