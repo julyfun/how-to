@@ -34,4 +34,3 @@ pred_final = pred_uncond + scale * (pred_cond - pred_uncond)
 # 4. 用最终预测值进行标准的去噪更新
 next_noisy_tau = ddpm_step(pred_final, noisy_tau)
 ```
-
