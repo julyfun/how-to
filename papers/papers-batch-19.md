@@ -29,3 +29,15 @@ UW 华盛顿大学，xiang fan | https://www.alphaxiv.org/abs/2611.33158v1
 哈佛 Xiaoshen Han, Yilun Du | https://www.alphaxiv.org/abs/2607.09648
 
 从预测 action chunk 改为预测 B-spline 关键点. 本文声称能让轨迹更平滑，且可以调快慢. 实验接到 DP 和 ACT 上做的.
+
+## SWAM (153)
+
+👍🏻 yu zhou, xinyuan xia, yanwei li | https://www.alphaxiv.org/abs/2611.12870
+
+注意力就是 action_to_video_only (IDM).
+
+- 详细且含环境信息的标注最好
+- 机器人数据标注：详细描述加环境信息
+- UMI 动作标签覆盖率越高越好
+- Ego 与 UMI 1:1 采样最好
+- WM 部分原生输入比 DINO / SIGLIP / QWEN-VL 好
