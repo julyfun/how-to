@@ -15,6 +15,8 @@ confidence: 2
 
 cosmos policy 的续作, video backbone (Wan2.1，冻结) 预测 video v 和 action v，共享去噪时间步. 利用 kv cache 实现了历史观测.
 
+dit 最后一层的 action latent 和 video latent 的 model_dim 一样，仅 token 数量不一样. 每个预测 block 的 action latent 是 [B, 24, 5120]，同一层的 video latent 是 [B, 1760, 5120].
+
 demo 亮点是 agibot-G1 穿鞋带以及 unseen 地前进按电梯按钮. 附录中有 train-infer 的 attn mask 设计和 infer 加速等不错的资料.
 
 ## EgoScale (22)
